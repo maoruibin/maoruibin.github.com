@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Hello World!
+title: 毛瑞斌
 tagline: Supporting tagline
 ---
 {% include JB/setup %}
@@ -16,10 +16,10 @@ In `_config.yml` remember to specify your own data:
     title : My Blog =)
     
     author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
+      name : 大侠咕咚
+      email : maoruibin9035@gmail.com
+      github : maoruibin
+      twitter : dxgudong
 
 The theme should reference these variables whenever needed.
     
