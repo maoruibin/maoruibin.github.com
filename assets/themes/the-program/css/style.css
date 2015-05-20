@@ -548,13 +548,13 @@ html {
   color: #2d2d2d;
 }
 #page {
-  background: url('/assets/themes/the-program/skin/100-90-5-monochrome.png');
+  /*background: url('/assets/themes/the-program/skin/100-90-5-monochrome.png');*/
   background-repeat: repeat;
   background-position: 0 0;
-  background-color: #e2e2de;
+  background-color: #009688;
 }
 .body .unit-body {
-  background-color: #fafafa;
+  background-color: #f5f5f5;
 }
 /* LINK */
 a:link {
