@@ -8,13 +8,17 @@ highlighter: pygments
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
+<<<<<<< HEAD
 title : 毛瑞斌
+=======
+title : 咕咚
+>>>>>>> 4d63a8623906eb43dd3e753659608d669dab767f
 tagline: Site Tagline
 author :
-  name : Name Lastname
-  email : blah@email.test
-  github : username
-  twitter : username
+  name : maoruibin
+  email : maoruibin9035@gmail.com
+  github : maoruibin
+  twitter : 1252768410@qq.com
   feedburner : feedname
 
 # The production_url is only used when full-domain names are needed
