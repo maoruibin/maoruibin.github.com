@@ -10,12 +10,12 @@ highlighter: pygments
 #
 
 title : 咕咚
-tagline: Site Tagline
+tagline: 
 author :
   name : maoruibin
   email : maoruibin9035@gmail.com
   github : maoruibin
-  twitter : 1252768410@qq.com
+  twitter : dxgudong
   feedburner : feedname
 
 # The production_url is only used when full-domain names are needed
