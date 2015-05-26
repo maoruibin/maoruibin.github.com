@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: 咕咚
+tagline:
 ---
 {% include JB/setup %}
 
@@ -20,6 +20,9 @@ In `_config.yml` remember to specify your own data:
       email : blah@email.test
       github : username
       twitter : username
+      google : username
+      weibo : username      
+
 
 The theme should reference these variables whenever needed.
     

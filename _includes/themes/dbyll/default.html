@@ -30,6 +30,14 @@
   <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
   -->
 
+  <link rel="apple-touch-icon" sizes="72x72" href="/content/favicon-196x196.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/content/favicon-196x196.png">
+
+<link rel="icon" type="image/png" href="/content/favicon-196x196.png" sizes="196x196"/>
+<link rel="icon" type="image/png" href="/content/favicon-32x32.png" sizes="32x32"/>
+<link rel="icon" type="image/png" href="/content/favicon-16x16.png" sizes="16x16"/>
+
+
   <!-- atom & rss feed -->
   <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
   <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
@@ -61,8 +69,20 @@
         <i class="fa fa-envelope"></i>
       </a>
       {% endif %}
+
+      {% if site.author.google %}
+      <a type="button" class="navbar-toggle nav-link" href="http://google.com/{{ site.author.google }}">
+        <i class="fa fa-google-plus"></i>
+      </a>
+      {% endif %}
+      {% if site.author.weibo %}
+      <a type="button" class="navbar-toggle nav-link" href="mailto:{{ site.author.weibo }}">
+        <i class="fa fa-weibo"></i>
+      </a>
+      {% endif %}
+
       <a class="navbar-brand" href="{% if BASE_PATH %}{{ BASE_PATH }}{% else %}/{% endif %}">
-        <img src="http://www.gravatar.com/avatar/{{site.author.email_md5}}?s=35" class="img-circle" />
+        <img src="/assets/themes/dbyll/img/logo.png" class="img-circle" />
         {{ site.title }}
       </a>
     </div>

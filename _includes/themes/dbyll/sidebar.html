@@ -1,67 +1,100 @@
+
 <! -- sidebar.html -->
-<header class="sidebar-header" role="banner">
-	<a href="{% if BASE_PATH %}{{ BASE_PATH }}{% else %}/{% endif %}">
-		<img src="/assets/themes/dbyll/img/logo.png" id="sidebar-header-logo" class="img-circle" />
-	</a>
-	<h3 class="title">
-		<a href="{% if BASE_PATH %}{{ BASE_PATH }}{% else %}/{% endif %}">{{ site.title }}</a>
-	</h3>
-	<p id="bio" class="text-center">
-		I am a developer for mobile app and most work if for Android Device,except work,I like play basketball very much. 
-	</p>
-</header>
+<div  class="sidebar-content">
+<!-- 水平居中 margin:0px auto; width:500px;   -->
+<!-- position:absolute; 
+	top:50%; 
+	left:50%;
+-->	 
+	<header class="sidebar-header" role="banner">
+		<a href="{% if BASE_PATH %}{{ BASE_PATH }}{% else %}/{% endif %}">
+			<img src="/assets/themes/dbyll/img/logo.png" id="sidebar-header-logo" class="img-circle" />
+		</a>
+		<h3 class="title">
+			<a href="{% if BASE_PATH %}{{ BASE_PATH }}{% else %}/{% endif %}">{{ site.title }}</a>
+		</h3>
+		<p class="text-center">
+			I am a developer for mobile app<br>most work if for Android Device<br>except my work time<br>I like play basketball very much. 
+		</p>
+	</header>
 
-{% if site.author.bio %}
-<div id="bio" class="text-center">
-	{{ site.author.bio }}
-</div>
-{% endif %}
+	{% if site.author.bio %}
+	<div id="bio" class="text-center">
+		<a href="{% if BASE_PATH %}{{ BASE_PATH }}{% else %}/{% endif %}">
+			{{ site.author.bio }}
+		</a>
+	</div>
+	{% endif %}
 
-<div id="contact-list" class="text-center">
-	<ul class="list-unstyled list-inline">
+	<div id="contact-list" class="text-center">
+		<ul class="list-unstyled list-inline">
 		{% if site.author.github %}
 		<li>
-			<a class="btn btn-default btn-sm" href="https://github.com/{{ site.author.github }}">
-				<i class="fa fa-github-alt fa-lg"></i>
+			<a class="btn btn-default btn-sm btn-icon" href="https://github.com/{{ site.author.github }}" target="_blank">
+				<i class="fa fa-github-alt fa-2x"></i>
 			</a>
 		</li>
 		{% endif %}
+
 		{% if site.author.twitter %}
 		<li>
-			<a class="btn btn-default btn-sm" href="https://twitter.com/{{ site.author.twitter }}">
-				<i class="fa fa-twitter fa-lg"></i>
+			<a class="btn btn-default btn-sm btn-icon" href="https://twitter.com/{{ site.author.twitter }}" target="_blank">
+				<i class="fa fa-twitter fa-2x"></i>
 			</a>
 		</li>
 		{% endif %}
+		
+
+		{% if site.author.google %}
+		<li>
+			<a class="btn btn-default btn-sm btn-icon" href="http://plus.google.com/{{ site.author.google}}?rel=author" target="_blank">
+				<i class="fa fa-google-plus fa-2x"></i>
+			</a>
+		</li>
+		{% endif %}
+
+		{% if site.author.weibo %}
+		<li>
+			<a class="btn btn-default btn-sm btn-icon" href="http://weibo.com/u/{{ site.author.weibo }}" target="_blank">
+				<i class="fa fa-weibo fa-2x"></i>
+			</a>
+		</li>
+		{% endif %}
+
 		{% if site.author.email %}
 		<li>
-			<a class="btn btn-default btn-sm" href="mailto:{{ site.author.email }}">
-				<i class="fa fa-envelope fa-lg"></i>
+			<a class="btn btn-default btn-sm btn-icon" href="mailto:{{ site.author.email }}" target="_blank">
+				<i class="fa fa-envelope fa-2x"></i>
 			</a>
 		</li>
 		{% endif %}
+
 	</ul>
 	<ul id="contact-list-secondary" class="list-unstyled list-inline">
 		{% if site.author.pinterest %}
 		<li>
-			<a class="btn btn-default btn-sm" href="https://pinterest.com/{{ site.author.pinterest }}">
-				<i class="fa fa-pinterest fa-lg"></i>
+			<a class="btn btn-default btn-sm btn-icon" href="https://pinterest.com/{{ site.author.pinterest }}">
+				<i class="fa fa-pinterest fa-2x"></i>
 			</a>
 		</li>
 		{% endif %}
 		{% if site.author.linkedin %}
 		<li>
-			<a class="btn btn-default btn-sm" href="https://linkedin.com/in/{{ site.author.linkedin }}">
-				<i class="fa fa-linkedin fa-lg"></i>
+			<a class="btn btn-default btn-sm btn-icon" href="https://linkedin.com/pub/{{ site.author.linkedin }}">
+				<i class="fa fa-linkedin fa-2x"></i>
 			</a>
 		</li>
 		{% endif %}
+		<!--
 		<li>
-			<a class="btn btn-default btn-sm" href="{{ BASE_PATH }}{{ site.JB.rss_path }}">
-				<i class="fa fa-rss fa-lg"></i>
+			<a class="btn btn-default btn-sm btn-icon" href="{{ site.BASE_PATH }}/{{ site.rss_path }}">
+				<i class="fa fa-rss fa-2x"></i>
 			</a>
 		</li>
+		-->
 	</ul>
-</div>
+	</div>
 
+
+</div>
 <! -- sidebar.html end -->

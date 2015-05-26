@@ -1,51 +1,64 @@
+/*
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:500&subset=latin,latin-ext);
-
+*/
 body{
   color: #2c3e50;
+  font-family: "Karla",Roboto,Helvetica,Arial,sans-serif;
 }
-p {
-  font-size:14px;
-  font-size:.875rem;
+html{
+  /*font-family:"Helvetica Neue",
+  Helvetica,Arial,sans-serif;*/
+  font-family: "Karla",Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px;
+  line-height:1.5;
 }
+
 .sidebar {
   position: fixed;
   top: 0px;
-  padding-top: 10%;
-  background-color: #26A69A;
+  padding-top: 15%;
+  background-color: #00786a;
   color: #fff;
 }
-
+.sidebar-content{
+  max-width:22rem;
+  margin:0px auto;
+}
 .sidebar-header {
   text-align: center;
   margin-bottom: 10px;
 }
 
 #sidebar-header-logo{
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
 } 
 
 .sidebar-header h3{
-  font-size: 3.6rem;
+  font-size: 2.0rem;
   font-weight: bold;
-  margin-top: 3rem;
+  margin-top: 2.0rem;
 }
 
-.sidebar-header #bio{
-  font-size: 1.8rem;
+.sidebar-header p{
+  font-size: 1.0rem;
   color: rgba(255,255,255,.5);
-  margin-bottom: 3rem;
+  margin-top: 2.0rem;
 }
 
 
 .sidebar-header .title{
-  letter-spacing: 3px;
-  text-transform: uppercase;
+  letter-spacing: 1.0px;;
 }
 
 .sidebar-header .title a{
   text-decoration: none;
   color: #fff;
+}
+
+a {
+  color: #268bd2;
+  text-decoration: none;
 }
 
 a.nav-link {
@@ -59,10 +72,20 @@ a.nav-link i{
 a.nav-link:hover { color: #777 }
 
 #bio {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 11px;
+  /*font-family: "Courier New", Courier, monospace;*/
+  font-family:  "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 20px;
   margin: 0 auto;
-  margin-bottom: 10px;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+#bio a{
+   color: #f2f2f2;
+}
+
+#bio a:hover{
+   text-decoration: underline;
 }
 
 #contact-list li .fa,
@@ -73,11 +96,44 @@ article .share .btn {
   -webkit-transition:color .2s ease-out, background 1s ease-in;
   transition:color .2s ease-out, background 1s ease-in;
 }
+
+#contact-list li:hover .fa-google-plus,
+article .share .google-plus:hover{
+  color: #dd4b39;
+  border-color: #dd4b39;
+}
+
+#contact-list li:hover .fa-weibo,
+article .share .weibo:hover{
+  color: #e6162d;
+  border-color: #e6162d;
+}
+
 #contact-list li:hover .fa-twitter,
 article .share .twitter:hover {
   color: #00ACEE;
   border-color: #00ACEE;
 }
+
+
+
+#contact-list i{
+  margin-top: 0.37rem;
+}
+
+.btn-icon{
+  display: block;
+  position: relative;
+  border: 1px solid #BBB;
+  border-radius: 50%;
+  font-weight: bold;
+  text-shadow: none;
+  color: #BBB;
+  -webkit-font-smoothing: antialiased;
+  width: 3.0rem;
+  height: 3.0rem;
+}
+
 #contact-list li:hover .fa-linkedin {
   color: #1D87BD;
 }
@@ -131,7 +187,12 @@ article.home div a, article.home pre a { color: #2c3e50; }
 article.home div a:hover, article.home pre a:hover { color: #2c3e50; text-decoration: none; }
 article img { max-width: 100%; }
 
-h1,h2,h3,h4,h5,h6 { font-family: 'Ubuntu', sans-serif; }
+h1,h2,h3,h4,h5,h6 {
+/* font-family: 'Ubuntu', sans-serif; */
+ font-family:  "Helvetica Neue",Helvetica,Arial,sans-serif;
+ line-height: 1.25;
+ letter-spacing: -.03em;
+}
 article.home h1,
 article.home h2,
 article.home h3,
