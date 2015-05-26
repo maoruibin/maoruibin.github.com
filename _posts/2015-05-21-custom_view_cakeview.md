@@ -1,6 +1,9 @@
 ---
 layout: post
 title: 自定义view之饼状图的实现
+categories:
+  - Android
+tags: [Android,CustomView]
 ---
 ##CakeView##
 

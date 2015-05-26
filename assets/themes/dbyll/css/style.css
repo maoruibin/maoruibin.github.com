@@ -6,13 +6,20 @@ body{
   font-family: "Karla",Roboto,Helvetica,Arial,sans-serif;
 }
 html{
-  /*font-family:"Helvetica Neue",
-  Helvetica,Arial,sans-serif;*/
   font-family: "Karla",Roboto,Helvetica,Arial,sans-serif;
   font-size:16px;
   line-height:1.5;
 }
-
+li{
+  list-style-type:none;
+}
+a {
+  text-decoration: none;
+  line-height: inherit;
+}
+a:hover {
+  text-decoration: none;
+}
 .sidebar {
   position: fixed;
   top: 0px;
@@ -72,8 +79,6 @@ a.nav-link i{
 a.nav-link:hover { color: #777 }
 
 #bio {
-  /*font-family: "Courier New", Courier, monospace;*/
-  font-family:  "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 20px;
   margin: 0 auto;
   margin-bottom: 2rem;
@@ -187,28 +192,18 @@ article.home div a, article.home pre a { color: #2c3e50; }
 article.home div a:hover, article.home pre a:hover { color: #2c3e50; text-decoration: none; }
 article img { max-width: 100%; }
 
-h1,h2,h3,h4,h5,h6 {
-/* font-family: 'Ubuntu', sans-serif; */
- font-family:  "Helvetica Neue",Helvetica,Arial,sans-serif;
- line-height: 1.25;
- letter-spacing: -.03em;
-}
-article.home h1,
-article.home h2,
-article.home h3,
-article.home h4,
-article.home h5,
-article.home h6 {
-  font-family: 'Ubuntu', sans-serif;
-  color: #f2756a;
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway","Roboto Condensed",Roboto,sans-serif;
+  margin-top: .8rem;
+  margin-bottom: .6rem;
+  font-weight: normal;
+  line-height: 1.25;
+  letter-spacing: -.03em;
+  color: #313131;
+  text-rendering: optimizeLegibility;
 }
 
-article.home h1 a,
-article.home h2 a,
-article.home h3 a,
-article.home h4 a {
-  color: #f2756a;
-}
 article.home h1 a:hover,
 article.home h2 a:hover,
 article.home h3 a:hover,
@@ -261,3 +256,31 @@ footer {
     left: inherit;
     right: 0px;
 }
+
+/* 主页样式文件 */
+
+.posts{
+
+}
+.posts .datatime{
+  margin-bottom:1rem; 
+}
+
+.post-title {
+  text-align: left;
+  font-size: 2.125rem;
+  margin-bottom: 0.9375rem;
+  font-weight: bolder;
+}
+
+.post-title a {
+  color: black;
+}
+.post-content{
+   font-size: 1.0rem;
+   font-weight: normal;
+}
+.posts li{
+  margin-bottom: 4rem;
+}
+

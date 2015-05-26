@@ -4,43 +4,30 @@ title: Dbyll
 tagline:
 ---
 {% include JB/setup %}
-
+<ul class="posts" id="posts">
 {% for post in paginator.posts %}
 {% if post.hidden != true %}
-<article class="home" style="margin-top:40px">
 
-  <span class="post-date">
-    {% assign d = post.date | date: "%d" | plus:'0' %}
-    {{ post.date | date: "%B" }}
-    {% case d %}
-    {% when 1 or 21 or 31 %}{{ d }}st,
-    {% when 2 or 22 %}{{ d }}nd,
-    {% when 3 or 23 %}{{ d }}rd,
-    {% else %}{{ d }}th,
-    {% endcase %}
-    {{ post.date | date: "%Y" }}
-  </span>
+  {% for post in site.posts %}
+    <li>
+     <h3 class="post-title">
+        <a href="{{ BASE_PATH }}{{ post.url }}" target="_blank">
+          {{ post.title }}
+        </a>
+      </h3>
+      <div class="datatime">
+         <span>{{ post.date | date_to_string }}</span>
+      </div>
+      <div class="post-content">
+          {{ post.content | strip_html | truncatewords:30 }}
+      </div>
 
-  <h3>
-    <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
-  </h3>
+    </li>
+  {% endfor %}
 
-  <div>
-
-    {% if post.fullview %}
-    {{ post.content }}
-    {% else %}
-
-    <a href="{{ BASE_PATH }}{{post.url }}">
-      {% if post.shortinfo %}{{ post.shortinfo }}{% elsif post.description %}{{ post.description }}{% else %}{{ post.excerpt }}{% endif %}
-    </a>
-
-    {% endif %}
-  </div>
-
-</article>
 {% endif %}
 {% endfor %}
+</ul>
 <hr/>
 
 <ul class="pager">
