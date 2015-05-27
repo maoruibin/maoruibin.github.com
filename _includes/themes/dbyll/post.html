@@ -2,7 +2,7 @@
   <h1>{{ page.title }} {% if page.tagline %}<small>{{page.tagline}}</small>{% endif %}</h1>
 </div>
 <article>
-	<div class="col-sm-10">
+	<div class="col-sm-10" style="padding-bottom:5rem;">
     <span class="post-date">
       {% assign d = page.date | date: "%d" | plus:'0' %}
       {{ page.date | date: "%B" }}
@@ -102,7 +102,7 @@
       </section>
 
       <section class="col-sm-6 author">
-        <img src="http://www.gravatar.com/avatar/{{site.author.email_md5}}" class="img-rounded author-image" />
+        <img src="/assets/themes/dbyll/img/logo.png" class="img-rounded author-image" />
         <h4 class="section-title author-name">{{site.author.name}}</h4>
         <p class="author-bio">{{site.author.bio}}</p>
       </section>

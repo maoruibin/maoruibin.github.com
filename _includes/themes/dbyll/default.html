@@ -98,8 +98,8 @@
   </nav>
 
   <!-- nav-menu-dropdown -->
-  <div class="btn-group hidden-xs" id="nav-menu">
-   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+  <div class="btn-group hidden-xs" id="nav-menu" >
+   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="display:none;">
      <i class="fa fa-bars"></i>
    </button>
    <ul class="dropdown-menu" role="menu">
@@ -118,7 +118,7 @@
  <div class="col-sm-9 col-sm-offset-3">
   {{ content }}
 
-  <footer>
+  <footer style="display:none;">
     <hr/>
     <p>
       &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}

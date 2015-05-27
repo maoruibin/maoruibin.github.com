@@ -24,8 +24,10 @@ a:hover {
   position: fixed;
   top: 0px;
   padding-top: 15%;
-  background-color: #00786a;
-  color: #fff;
+  background: -webkit-linear-gradient(#009688,#00695C);
+  background: -o-linear-gradient(#009688,#00695C);
+  background: -moz-linear-gradient(#009688,#00695C);
+  background: linear-gradient(#009688,#00695C);
 }
 .sidebar-content{
   max-width:22rem;
@@ -181,7 +183,7 @@ article{
 .post-date {
   text-transform: uppercase;
   font-size: 14px;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
 }
 
 article {
@@ -260,8 +262,19 @@ footer {
 /* 主页样式文件 */
 
 .posts{
-
+  border: 0px solid #f0f0f0;
+  margin-right: 20rem;
 }
+#pager{
+   margin-right: 22rem;
+   margin-left: 2.3rem;
+}
+.posts li{
+  margin-bottom: 4rem;
+  padding-right: 2rem;
+  border: 0px solid #000000;
+}
+
 .posts .datatime{
   margin-bottom:1rem; 
 }
@@ -280,7 +293,11 @@ footer {
    font-size: 1.0rem;
    font-weight: normal;
 }
-.posts li{
-  margin-bottom: 4rem;
-}
 
+/*顶部细线*/
+.page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  margin-left: 5rem;
+  border-bottom: 0px solid #eee;
+}

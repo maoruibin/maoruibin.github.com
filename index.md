@@ -23,33 +23,31 @@ tagline:
     </li>
   {% endfor %}
 </ul>
-<ul class="pager">
+<ul class="pager" id="pager">
 
   {% if paginator.previous_page %}
   <li class="previous">
     {% if paginator.previous_page == 1 %}
-    <a href="{{ BASE_PATH }}/">&larr; Newer</a>
+    <a href="{{ BASE_PATH }}/">&larr;</a>
     {% else %}
-    <a href="{{ BASE_PATH }}/{{ site.paginate_path | replace: ':num', paginator.previous_page }}">&larr; Newer</a>
+    <a href="{{ BASE_PATH }}/{{ site.paginate_path | replace: ':num', paginator.previous_page }}">&larr;</a>
     {% endif %}
   </li>
   {% else %}
   <li class="previous disabled">
-    <a>&larr; Newer</a>
+    <a>&larr;</a>
   </li>
   {% endif %}
 
-  <li>
-    <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-  </li>
+
 
   {% if paginator.next_page %}
   <li class="next">
-    <a href="{{ BASE_PATH }}/{{ site.paginate_path|replace: ':num',paginator.next_page }}">Older &rarr;</a>
+    <a href="{{ BASE_PATH }}/{{ site.paginate_path|replace: ':num',paginator.next_page }}">&rarr;</a>
   </li>
   {% else %}
   <li class="next disabled">
-    <a>Older &rarr;</a>
+    <a>&rarr;</a>
   </li>
   {% endif %}
   
