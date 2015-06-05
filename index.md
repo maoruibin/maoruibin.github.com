@@ -17,7 +17,7 @@ tagline:
          <span>{{ post.date | date_to_string }}</span>
       </div>
       <div class="post-content">
-          {{ post.content | strip_html | truncatewords:30 }}
+          {{ post.content | strip_html | truncatewords:4 }}
       </div>
 
     </li>
