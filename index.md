@@ -9,7 +9,7 @@ tagline:
   {% for post in site.posts %}
     <li>
      <h3 class="post-title">
-        <a href="{{ BASE_PATH }}{{ post.url }}" target="_blank">
+        <a href="{{ BASE_PATH }}{{ post.url }}">
           {{ post.title }}
         </a>
       </h3>
