@@ -93,3 +93,15 @@ values/attrs.xml
 
 如果现在想试试效果，可以直接在MainFest文件中指定App的主题，看看是否起作用。
 先说到着，打会球去
+
+具体设计到用代码切换主题时，可以使用Activity的一个方法 reload方法；
+也可以使用下面的方式
+
+    public void reload() {
+        Intent intent = getIntent();
+        overridePendingTransition(0, 0);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        finish();
+        overridePendingTransition(0, 0);
+        startActivity(intent);
+    }

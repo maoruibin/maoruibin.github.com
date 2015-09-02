@@ -40,8 +40,10 @@ a:hover {
 }
 
 #sidebar-header-logo{
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
+  margin-right: auto;
+  margin-left: auto;
 } 
 
 .sidebar-header h3{
@@ -86,6 +88,7 @@ a.nav-link:hover { color: #777 }
   margin: 0 auto;
   margin-bottom: 2rem;
   margin-top: 2rem;
+  display: none;
 }
 
 #bio a{
@@ -127,6 +130,10 @@ article .share .twitter:hover {
 
 #contact-list i{
   margin-top: 0.37rem;
+}
+
+#contact-list {
+  margin-top: 2rem;
 }
 
 .btn-icon{
@@ -264,7 +271,7 @@ footer {
 
 .posts{
   border: 0px solid #f0f0f0;
-  margin-right: 20rem;
+  margin-right: 5rem;
 }
 #pager{
    margin-right: 22rem;
@@ -301,4 +308,10 @@ footer {
   margin: 40px 0 20px;
   margin-left: 5rem;
   border-bottom: 0px solid #eee;
+}
+
+/*针对顶部的移动端适配*/
+.mobile-navbar-header{
+  padding-top: 10%;
+  padding-bottom: 10%;
 }

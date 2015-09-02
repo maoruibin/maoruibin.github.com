@@ -9,7 +9,7 @@ highlighter: pygments
 # so be sure to set them if your theme uses them.
 #
 
-title : GuDong
+title : 咕咚
 tagline: 
 author :
   name : maoruibin
@@ -19,7 +19,7 @@ author :
   google : 107689066812933417058
   weibo : 1874136301
   feedburner : feedname
-  bio : Home
+  bio : 主页
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 

@@ -45,47 +45,59 @@
 
 <body>
 
-  <nav class="navbar navbar-default visible-xs" role="navigation">
+  <nav class="navbar navbar-default visible-xs" role="navigation" style="text-align:center;background: -webkit-linear-gradient(#009688,#00695C);background: -o-linear-gradient(#009688,#00695C);background: -moz-linear-gradient(#009688,#00695C);background: linear-gradient(#009688,#00695C);">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      {% if site.author.github %}
-      <a type="button" class="navbar-toggle nav-link" href="http://github.com/{{ site.author.github }}">
-        <i class="fa fa-github"></i>
-      </a>
-      {% endif %}
-      {% if site.author.twitter %}
-      <a type="button" class="navbar-toggle nav-link" href="http://twitter.com/{{ site.author.twitter }}">
-        <i class="fa fa-twitter"></i>
-      </a>
-      {% endif %}
-      {% if site.author.email %}
-      <a type="button" class="navbar-toggle nav-link" href="mailto:{{ site.author.email }}">
-        <i class="fa fa-envelope"></i>
-      </a>
-      {% endif %}
+    <div class="navbar-header mobile-navbar-header" style="margin:0 auto;text-align:center; display:inline-block;">
+      
+      <div style="border:0px solid #000;float:left;margin:0 auto;text-align:center;width:100%;padding-left:35%;">
+         <a class="navbar-brand"  style="color:#ffffff;" href="{% if BASE_PATH %}{{ BASE_PATH }}{% else %}/{% endif %}">
+          <img src="/assets/themes/dbyll/img/logo.png" class="img-circle" />
+          <br>{{ site.title }}
+        </a>
+      </div>
+      <div style="border:0px solid #00F;float:center;width:100%;margin-top:11em;">
+        <p class="text-center" style="color:#c0c0c0">
+        Android开发者 米粉 G粉 爱编程 爱代码 
+        </p>
+        </div>
+      <div style="border:0px solid #00F;float:center;width:100%;margin-top:3em;">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        {% if site.author.github %}
+        <a type="button" class="navbar-toggle nav-link" href="http://github.com/{{ site.author.github }}">
+          <i class="fa fa-github"></i>
+        </a>
+        {% endif %}
+        {% if site.author.twitter %}
+        <a type="button" class="navbar-toggle nav-link" href="http://twitter.com/{{ site.author.twitter }}">
+          <i class="fa fa-twitter"></i>
+        </a>
+        {% endif %}
+        {% if site.author.email %}
+        <a type="button" class="navbar-toggle nav-link" href="mailto:{{ site.author.email }}">
+          <i class="fa fa-envelope"></i>
+        </a>
+        {% endif %}
 
-      {% if site.author.google %}
-      <a type="button" class="navbar-toggle nav-link" href="http://google.com/{{ site.author.google }}">
-        <i class="fa fa-google-plus"></i>
-      </a>
-      {% endif %}
-      {% if site.author.weibo %}
-      <a type="button" class="navbar-toggle nav-link" href="mailto:{{ site.author.weibo }}">
-        <i class="fa fa-weibo"></i>
-      </a>
-      {% endif %}
-
-      <a class="navbar-brand" href="{% if BASE_PATH %}{{ BASE_PATH }}{% else %}/{% endif %}">
-        <img src="/assets/themes/dbyll/img/logo.png" class="img-circle" />
-        {{ site.title }}
-      </a>
+        {% if site.author.google %}
+        <a type="button" class="navbar-toggle nav-link" href="http://google.com/{{ site.author.google }}">
+          <i class="fa fa-google-plus"></i>
+        </a>
+        {% endif %}
+        {% if site.author.weibo %}
+        <a type="button" class="navbar-toggle nav-link" href="mailto:{{ site.author.weibo }}">
+          <i class="fa fa-weibo"></i>
+        </a>
+        {% endif %}
+      </div>
+      
+      <div class="clear"></div>
     </div>
+    
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
