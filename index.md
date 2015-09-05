@@ -14,7 +14,7 @@ tagline:
         </a>
       </h3>
       <div class="datatime">
-         <span>{{ post.date | date_to_string }}</span>
+         <span>{{ post.date | date: "%m/%d/%Y" }}</span>
       </div>
       <div class="post-content">
           {{ post.content | strip_html | truncatewords:4 }}

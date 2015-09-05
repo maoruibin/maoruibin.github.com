@@ -14,7 +14,7 @@
 			<a href="{% if BASE_PATH %}{{ BASE_PATH }}{% else %}/{% endif %}">{{ site.title }}</a>
 		</h3>
 		<p class="text-center">
-			一个Android开发者<br>G粉-米粉<br>爱编程，爱代码<br>编程不是工作，而是修行. 
+			Android Developer<br>G粉-米粉<br>爱编程，爱代码<br>Coding不仅是工作，更是修行。
 		</p>
 	</header>
 
@@ -28,18 +28,26 @@
 
 	<div id="contact-list" class="text-center">
 		<ul class="list-unstyled list-inline">
-		{% if site.author.github %}
+		{% if site.author.weibo %}
 		<li>
-			<a class="btn btn-default btn-sm btn-icon" href="https://github.com/{{ site.author.github }}" target="_blank">
-				<i class="fa fa-github-alt fa-2x"></i>
+			<a class="btn btn-default btn-sm btn-icon" href="http://weibo.com/u/{{ site.author.weibo }}" target="_blank">
+				<i class="fa fa-weibo fa-2x"></i>
+			</a>
+		</li>
+		{% endif %}
+		
+		{% if site.author.zhihu %}
+		<li>
+			<a class="btn btn-default btn-sm btn-icon" href="http://www.zhihu.com/people/{{ site.author.zhihu }}" target="_blank">
+				<i class="fa fa-zhihu fa-2x">知</i>
 			</a>
 		</li>
 		{% endif %}
 
-		{% if site.author.twitter %}
+		{% if site.author.github %}
 		<li>
-			<a class="btn btn-default btn-sm btn-icon" href="https://twitter.com/{{ site.author.twitter }}" target="_blank">
-				<i class="fa fa-twitter fa-2x"></i>
+			<a class="btn btn-default btn-sm btn-icon" href="https://github.com/{{ site.author.github }}" target="_blank">
+				<i class="fa fa-github-alt fa-2x"></i>
 			</a>
 		</li>
 		{% endif %}
@@ -53,13 +61,6 @@
 		</li>
 		{% endif %}
 
-		{% if site.author.weibo %}
-		<li>
-			<a class="btn btn-default btn-sm btn-icon" href="http://weibo.com/u/{{ site.author.weibo }}" target="_blank">
-				<i class="fa fa-weibo fa-2x"></i>
-			</a>
-		</li>
-		{% endif %}
 
 		{% if site.author.email %}
 		<li>
