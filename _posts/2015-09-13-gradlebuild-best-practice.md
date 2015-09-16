@@ -3,13 +3,15 @@ layout: post
 title: "build.gradle最佳实践"
 description: "AndroidStudio中使用build.gradle的最佳实践"
 categories:
-  - life
+  - Android
 tags: [Android,Tool]
 ---
 {% include JB/setup %}
+
 使用AndroidStudio进行开发，其中很重要的一个文件就是build.gradle,他是整个项目的控制中心，这里收集一些日常会用到的语法或者使用技巧，以备后用。
 
 ###1、在buildTypes中使用buildConfigField
+
 下面是默认的buildTypes形式
 
     buildTypes {
@@ -43,7 +45,9 @@ tags: [Android,Tool]
         }
     }
 
-可以看到在上面指定了一个key为LOG_DEBUG的field,在release type下为false，在debug type下为true，具体在代码中就可以这样使用。<br>
+可以看到在上面指定了一个key为LOG_DEBUG的field,在release type下为false，在debug type下为true，具体在代码中就可以这样使用。
+
+
 因为我在项目中使用了开源库[Logger](https://github.com/orhanobut/logger)进行日志输出，这个lib可以在Application的onCreate方法中进行开关设置，从而控制Log日志是否显示在console，所以最终使用如下：
 
     if(BuildConfig.LOG_DEBUG){

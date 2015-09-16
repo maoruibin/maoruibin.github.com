@@ -174,16 +174,20 @@ article .share .gplus:hover {
   padding-bottom: 10px;
 }
 
-.page-header {
-  color: #e74c3c;
-  /*text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);*/
-}
 
-
+/**
 .post-date {
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 1px;
+}
+**/
+
+.post-date {
+    display: block;
+    margin-top: -.5rem;
+    margin-bottom: 1rem;
+    color: #9a9a9a;
 }
 
 article {
@@ -296,10 +300,11 @@ footer {
 
 /*顶部细线*/
 .page-header {
-  padding-bottom: 9px;
-  margin: 0px 0 20px;
-  margin-left: 4.2rem;
-  border-bottom: 0px solid #eee;
+  margin-bottom: 0em;
+  margin-top: 2rem;
+  padding-top: 4rem;
+  color: #e74c3c;
+  border: 0px solid #000ccc;
 }
 
 /*针对顶部的移动端适配*/
@@ -313,9 +318,17 @@ article{
 }
 
 .article_body{
-  line-height: 30px;
+  line-height: 25px;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 16px;
+  border: 0px solid #ff0000;
+}
+
+.post-date {
+    display: block;
+    margin-bottom: 2rem;
+    color: #9a9a9a;
+    border: 0px solid #ff0000;
 }
 
 .article_body h4 {
@@ -333,10 +346,11 @@ article{
 }
 
 .article_body p{
-  margin-top: 0.5em;
+  margin-top: 0;
+  margin-bottom: 1.5em;
 }
 
-
+/*代码样式*/
 pre {
     margin-bottom: 2em;
     margin-top: 0em;
@@ -344,7 +358,7 @@ pre {
     display: block;
     padding: 16px;
     font-size: 14px;
-    line-height: 1.8;
+    line-height: 1.5;
     color: #333;
     word-break: break-all;
     word-wrap: break-word;
