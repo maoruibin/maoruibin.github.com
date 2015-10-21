@@ -5,7 +5,11 @@ categories:
   - Android
 tags: [WebView,Encode]
 ---
-今天在做软件版本日志信息介绍时（当用户第一次打开软件、或者是软件新版本，那么打开首页就会显示一个软件的版本介绍。这里我用Dialog来显示这些信息，但是因为Android中提供的Dialog对文字的格式化支持的不够好，如果粗体换行等控制，所以就在本地写了一个html文件，然后自定义了Dialog的View，使用WebView作为显示日志更新信息，从而让文本控制变得更加容易。），用到的WebView。日志文件中包含中文，在加载时就出现了乱码，加载方式如下
+在做App+这个项目时，使用了WebView来展示更新日志，但是在加载本地Html文件的时候，出现了乱码问题。这篇博客记录自己错误出现的原因
+、以及解决方法。
+
+由于本地Html文件日志文件中包含中文，在加载时就出现了乱码，加载方式如下
+
     
     String formatLodString = buf.toString();
     webView.loadData(formatLodString, "text/html", "UTF-8");

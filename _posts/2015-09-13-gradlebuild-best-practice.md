@@ -7,10 +7,9 @@ categories:
 tags: [Android,Tool,Practice]
 ---
 {% include JB/setup %}
+使用AndroidStudio进行开发，其中很重要的一个文件就是build.gradle,他是整个项目的控制中心，这里收集一些日常会用到的语法或者使用技巧，以备后用。这篇博客主要说明
+buildTypes节点下使用buildConfigField。
 
-使用AndroidStudio进行开发，其中很重要的一个文件就是build.gradle,他是整个项目的控制中心，这里收集一些日常会用到的语法或者使用技巧，以备后用。
-
-###在buildTypes中使用buildConfigField
 
 下面是默认的buildTypes形式
 

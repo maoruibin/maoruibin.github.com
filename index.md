@@ -7,6 +7,10 @@ tagline:
 
 <ul class="posts" id="posts">
   {% for post in site.posts %}
+  
+    {% if post.title != "关于" and post.title != "编程之路" and  post.title != "我的项目"  %}
+    
+    
     <li>
      <h3 class="post-title">
         <a href="{{ BASE_PATH }}{{ post.url }}">
@@ -17,10 +21,11 @@ tagline:
          <span>{{ post.date | date: "%m/%d/%Y" }}</span>
       </div>
       <div class="post-content">
-          {{ post.content | strip_html | truncatewords:4 }}
+             {{ post.excerpt }}
       </div>
 
     </li>
+    {% endif %}
   {% endfor %}
 </ul>
 <ul class="pager" id="pager">

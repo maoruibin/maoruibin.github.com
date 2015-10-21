@@ -7,7 +7,9 @@ categories:
 tags: [KeyWords]
 ---
 {% include JB/setup %}
-Java有众多关键字，今天看到了volatile，有必要记录一下这个关键字的几个关键点。
+Java有众多关键字，volatile作为一个和同步相关的关键字，很少在自己的项目中使用，今天在看Handler源码时无意看到，顺便便了解了下。
+记录以备后用。
+
 
 volatile关键字 可以被看作是一种 “程度较轻的 synchronized”；与 synchronized 块相比，volatile 变量所需的编码较少，并且运行时开销也较少，但是它所能实现的功能也仅是 synchronized 的一部分。
 

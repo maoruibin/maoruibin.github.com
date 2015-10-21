@@ -5,6 +5,8 @@ categories:
   - Android
 tags: [Android,Function]
 ---
+在Android设备上实现锁屏功能。
+
 ##最终结果
 点击主界面的锁屏按钮，实现立即锁屏
 

@@ -7,7 +7,8 @@ categories:
 tags: [Android,Theme,Dialog]
 ---
 {% include JB/setup %}
-####介绍
+如果自己做个人App项目，很可能在一些情况下用到Dialog,Android自己也提供了系统Dialog,但是在MaterialDesigner出现之前，样子确实很丑，这篇博客讲解如何使用Support包中
+的API来实现MD风格的Dialog。
 
 Support V7包在22.1.0之前的任何一个版本，AlertDialog一直都是Android4.0风格，直到Support-V7:22.1.0，在这之前，如果我们的项目中要使用Material样式的Dialog，对不起，Android5.0以下的设备根本不支持，但是还好，开源界的大神从来都不缺乏无私的奉献精神，在support-v7包更新到V22.1.0之前，Github上已经出现了几个非常不错的MaterialDialog开源库，如下
 [https://github.com/afollestad/material-dialogs](https://github.com/afollestad/material-dialogs)<br>

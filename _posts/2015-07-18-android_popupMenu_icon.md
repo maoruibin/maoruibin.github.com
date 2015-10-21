@@ -5,6 +5,7 @@ categories:
   - Android
 tags: [PopupMenu]
 ---
+在做App+项目的过程中，因为每个Item上面都有一个PopupMenu，但是当时在xml文件中设置icon后，却发现icon不生效，下面是这个问题的解决方案。
 
 自从MaterialDesigner出现后，像下图所示的设置流式布局随处可见。
   

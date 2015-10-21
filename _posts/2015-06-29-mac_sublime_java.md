@@ -7,6 +7,7 @@ tags: [Util]
 ---
 在Mac下使用Sublime时，如果要编译java文件，直接使用command+B命令就可以达到编译的效果，此时会在java源文件的目录下生成对应的.class文件，但这显然不能够满足我们的需求。
 如何才能直接编译并运行java代码呢？
+
   
 我最终通过如下解决方案，达到了command+B 在Sublime控制台显示运行结果的效果
 

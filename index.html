@@ -19,8 +19,10 @@ tagline:
          <span>{{ post.date | date: "%m/%d/%Y" }}</span>
       </div>
       <div class="post-content">
-          {{ post.content | strip_html | truncatewords:30 }}
+          <!--{{ post.content | strip_html | truncatewords:30 }}-->
+          {{ post.excerpt }}
       </div>
+
 
     </li>
   {% endfor %}

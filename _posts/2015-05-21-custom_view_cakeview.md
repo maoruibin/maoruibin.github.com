@@ -5,7 +5,7 @@ categories:
   - Android
 tags: [Android,CustomView]
 ---
-##CakeView##
+一个圆形饼状View的实现过程。
 
 **CakeView**是一个通过自定义做的饼状图，如下图所示，会根据比例显示不同的占比。
 
