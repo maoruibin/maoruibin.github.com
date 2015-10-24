@@ -2,130 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3930bbd9-c079-44d7-a9e8-66862decf1eb" name="Default" comment="新增了">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/profile.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project.md" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/404.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/History.markdown" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Rakefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_drafts/jekyll-introduction-draft.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/analytics" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/analytics-providers/getclicky" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/analytics-providers/google" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/analytics-providers/mixpanel" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/analytics-providers/piwik" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/categories_list" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/comments" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/comments-providers/disqus" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/comments-providers/facebook" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/comments-providers/intensedebate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/comments-providers/livefyre" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/file_exists" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/gist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/is_production" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/liquid_raw" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/pages_list" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/posts_collate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/setup" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/sharing" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/sort_collection" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/JB/tags_list" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/themes/bootstrap-3/default.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/themes/bootstrap-3/page.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/themes/bootstrap-3/post.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/themes/bootstrap-3/settings.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/themes/dbyll/default.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/themes/dbyll/page.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/themes/dbyll/post.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/themes/dbyll/settings.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/themes/dbyll/sidebar.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_layouts/sidebar.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_plugins/debug.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-05-18-project.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-05-19-way.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-05-20-about.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-05-21-custom_view_cakeview.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-05-26-lock_screen.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-06-03-color_alaph.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-06-03-jekyll.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-06-29-mac_sublime_java.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-07-18-android_popupMenu_icon.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-07-18-android_shift_theme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-07-25-android_webview_chinese_encode.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-08-03-AtomicInteger_Introduce.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-08-03-AtomicInteger_Unsafe.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-08-03-java_important_word.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-09-10-alert_dialog_theme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-09-13-gradlebuild-best-practice.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-09-27-project-rule.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-10-13-github-usage.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/archive.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/bootstrap-3/bootstrap/css/bootstrap-theme.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/bootstrap-3/bootstrap/css/bs-sticky-footer.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/bootstrap-3/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/bootstrap-3/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/bootstrap-3/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/bootstrap-3/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/bootstrap-3/bootstrap/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/bootstrap-3/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/img/QQ20150718-1@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/img/QQ20150718-2@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/img/QQ20150718-3@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/img/cakeview_principle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/img/cakeview_principle_v2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/img/cakeview_v2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/img/class_loader_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/img/class_loader_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/img/class_loader_3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/img/device-2015-09-11-dialog_theme_bug.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/img/device-2015-09-11-dialog_theme_bug_fix.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/img/github_usage_1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/img/github_usage_2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/img/github_usage_3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/img/github_usage_4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/img/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/img/logo_01.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/img/logo_02.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/img/mmb_index.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/img/sublime_java.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/js/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/resources/bootstrap.vertical-tabs/bootstrap.vertical-tabs.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/resources/bootstrap/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/resources/bootstrap/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/resources/font-awesome/css/font-awesome.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/resources/font-awesome/css/font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/resources/font-awesome/fonts/FontAwesome.otf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/resources/font-awesome/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/resources/font-awesome/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/resources/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/resources/font-awesome/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/resources/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/resources/jquery/jquery-1.10.2.min.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/resources/jquery/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/themes/dbyll/resources/syntax/syntax.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/atom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/categories.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/changelog.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/content/favicon-16x16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/content/favicon-196x196.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/content/favicon-32x32.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/index.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pages.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/about.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/about/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rss.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sitemap.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tags.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/_posts/2015-10-20-java-loader.md" afterPath="$PROJECT_DIR$/_posts/2015-10-20-java-loader.markdown" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/footer.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/head.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/header.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_includes/page_divider.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_layouts/archive.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_layouts/default.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_layouts/page.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_layouts/post.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-04-18-welcome-to-jekyll.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-05-19-way.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-05-21-custom_view_cakeview.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-05-26-lock_screen.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-06-03-color_alaph.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-06-03-jekyll.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-06-29-mac_sublime_java.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-07-18-android_popupMenu_icon.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-07-18-android_shift_theme.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-07-25-android_webview_chinese_encode.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-08-03-AtomicInteger_Introduce.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-08-03-AtomicInteger_Unsafe.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-08-03-java_important_word.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-09-10-alert_dialog_theme.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-09-13-gradlebuild-best-practice.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-09-27-project-rule.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-10-13-github-usage.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2015-10-20-java-loader.markdown" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_config.yml" afterPath="$PROJECT_DIR$/_config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about.md" afterPath="$PROJECT_DIR$/about.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_layouts/default.html" afterPath="$PROJECT_DIR$/_layouts/default.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_layouts/page.html" afterPath="$PROJECT_DIR$/_layouts/page.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_layouts/post.html" afterPath="$PROJECT_DIR$/_layouts/post.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="a9a68dc1-a5a2-4b1a-80da-135d4fe60141" name="Failed commit: Default" comment="修改关于" />
     <ignored path="maoruibin.github.com.iws" />
@@ -137,7 +41,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="ChangesViewManager" flattened_view="false" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -147,6 +51,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.15625">
+              <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="2015-05-21-custom_view_cakeview.markdown" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2015-05-21-custom_view_cakeview.markdown">
           <provider editor-type-id="MultiMarkdownFxPreviewEditor">
@@ -204,7 +118,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015-10-13-github-usage.markdown" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2015-10-13-github-usage.markdown" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2015-10-13-github-usage.markdown">
           <provider editor-type-id="MultiMarkdownFxPreviewEditor">
             <state />
@@ -213,8 +127,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.6438357">
-              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+            <state vertical-scroll-proportion="-5.6896553">
+              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -282,16 +196,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="way.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_site/个人/2015/05/19/way.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.2083333">
-              <caret line="232" column="0" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -322,7 +226,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/_posts/2015-10-12-java-static.md" />
         <option value="$PROJECT_DIR$/_posts/2015-05-20-blog_test_one.md" />
         <option value="$PROJECT_DIR$/assets/themes/dbyll/css/style.css" />
@@ -370,6 +273,7 @@
         <option value="$PROJECT_DIR$/_posts/2015-07-18-android_popupMenu_icon.markdown" />
         <option value="$PROJECT_DIR$/_posts/2015-10-20-java-loader.markdown" />
         <option value="$PROJECT_DIR$/_posts/2015-10-13-github-usage.markdown" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -433,48 +337,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="maoruibin.github.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="maoruibin.github.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="maoruibin.github.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="maoruibin.github.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_sass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="maoruibin.github.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="maoruibin.github.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_posts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -496,8 +358,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$/_posts" />
       <recent name="$PROJECT_DIR$/assets/themes/dbyll/img" />
     </key>
@@ -692,7 +554,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.81894153" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.52294856" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -715,6 +577,14 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.yml" />
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -728,13 +598,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1104,13 +967,21 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6438357">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        <state vertical-scroll-proportion="-5.6896553">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
           <folding />
         </state>
       </provider>
       <provider editor-type-id="MultiMarkdownFxHtmlEditor">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15625">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

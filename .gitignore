@@ -9,3 +9,5 @@ _site
 # Bundler
 Gemfile.lock
 .bundle/
+
+.idea/
