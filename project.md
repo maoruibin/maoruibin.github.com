@@ -14,13 +14,15 @@ App+是一个MD风格的用于传送、提取APK文件的开源工具软件。
 [Fir主页](http://fir.im/appplus  )
 
 ###PowerKey
-模仿MIUI6 长按电源键的关机App
+模仿 MIUI6 长按电源键的关机App
 
 [Github项目主页](https://github.com/maoruibin/PowerKey) 
 
 ###PassBook
 用于存储日常生活中用到的密码。目前已经在市场下架，不过自己仍然在使用。
 
+这个项目暂时没有展示链接了，等以后再补充吧！
 
-![mmb](/assets/mmb_index.png "mmb")
-<br><br><br>
+
+<!-- ![mmb](/assets/mmb_index.png "mmb") -->
+
