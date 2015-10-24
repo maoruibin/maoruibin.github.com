@@ -1,7 +1,18 @@
 ---
-theme :
-  name : dbyll
 layout: default
 ---
-{% include JB/setup %}
-{% include themes/dbyll/page.html %}
+<div class="wrapper">
+<div class="page">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
+
+  {% include page_divider.html %}
+
+  <article class="post-content">
+    {{ content }}
+  </article>
+
+</div>
+</div>
