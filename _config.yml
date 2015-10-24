@@ -14,8 +14,10 @@ emailname: QQ Mail
 name: 咕咚
 description: >
   有意义就是好好活，好好活就有意义。
-baseurl: / # the subpath of your site, e.g. /blog/
-url: "http://bencentra.github.io" # the base hostname & protocol for your site
+# the subpath of your site, e.g. /blog/
+baseurl: /
+# the base hostname & protocol for your site
+url: "http://maoruibin.github.io"
 cover: "assets/header_image.jpg"
 logo: "assets/logo.png"
 
