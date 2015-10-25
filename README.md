@@ -158,6 +158,7 @@ descriptions:
     desc: "Posts describing Jekyll setup techniques."
 ```
 
+
 ## Contributing
 
 Want to help make this theme even better? Contributions from the community are welcome!
