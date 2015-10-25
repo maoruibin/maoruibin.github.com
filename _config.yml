@@ -37,7 +37,11 @@ jekyll-archives:
     tag: '/tag/:name/'
 
 # Disqus comments
-disqus_shortname: gudong
+# disqus_shortname: gudong
+
+disqus_shortname:
+
+duoshuo_shortname: maoruibin
 
 # Google analytics
 # ga_tracking_id: "UA-64640288-1"
