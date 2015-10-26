@@ -46,46 +46,61 @@ layout: default
 </section>
 
 <section class="share">
-  <span>Share: </span>
-  {% for social in site.social %}
-		{% if social.name == "Weibo" and social.share == true %}
-		<a href="//v.t.sina.com.cn/share/share.php?title={{ page.title | cgi_escape }} 分享自@{{ social.username }}的个人博客&url={{ site.url | append: site.baseurl }}{{ page.id }}.html"
-			 onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">
-			<i class="fa fa-{{ social.icon }}"></i>
-		</a>
-		{% endif %}
+  <!--<span>Share: </span>-->
+  <!--{% for social in site.social %}-->
+		<!--{% if social.name == "Weibo" and social.share == true %}-->
+		<!--<a href="//v.t.sina.com.cn/share/share.php?title={{ page.title | cgi_escape }} 分享自@{{ social.username }}的个人博客&url={{ site.url | append: site.baseurl }}{{ page.id }}.html"-->
+			 <!--onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">-->
+			<!--<i class="fa fa-{{ social.icon }}"></i>-->
+		<!--</a>-->
+		<!--{% endif %}-->
 
-		{% if social.name == "Twitter" and social.share == true %}
-  		<a href="//twitter.com/share?text={{ page.title | cgi_escape }}&url={{ site.url | append: site.baseurl }}{{ page.id }}.html&via={{social.username}}"
-  			onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">
-  			<i class="fa fa-{{ social.icon | remove_first: '-square' }}-square fa-lg"></i>
-  		</a>
-  	{% endif %}
-  	{% if social.name == "Facebook" and social.share == true %}
-  		<a href="//www.facebook.com/sharer.php?t={{ page.title | cgi_escape }}&u={{ site.url | append: site.baseurl }}{{ page.id }}.html"
-  			onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">
-  			<i class="fa fa-{{ social.icon | remove_first: '-square' }}-square fa-lg"></i>
-  		</a>
-  	{% endif %}
-  	{% if social.name == "Google+" and social.share == true %}
-  		<a href="//plus.google.com/share?title={{ page.title | cgi_escape }}&url={{ site.url | append: site.baseurl }}{{ page.id }}.html"
-  			onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">
-  			<i class="fa fa-{{ social.icon | remove_first: '-square' }}-square fa-lg"></i>
-  		</a>
-  	{% endif %}
-  	{% if social.name == "LinkedIn" and social.share == true %}
-  		<a href="//www.linkedin.com/shareArticle?mini=true&url={{ site.url | append: site.baseurl }}{{ page.id }}.html"
-  			onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">
-  			<i class="fa fa-{{ social.icon | remove_first: '-square' }}-square fa-lg"></i>
-  		</a>
-  	{% endif %}
-  	{% if social.name == "Pinterest" and social.share == true %}
-  		<a href="//www.pinterest.com/pin/create/button/?description={{ page.title | cgi_escape }}&url={{ site.url | append: site.baseurl }}{{ page.id }}.html&media={{ site.url }}{% if page.cover %}{{ page.cover | prepend: site.baseurl  }}{% elsif site.cover %}{{ site.cover | prepend: site.baseurl }}{% else %}{{ site.logo | prepend: site.baseurl }}{% endif %}"
-  			onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">
-  			<i class="fa fa-{{ social.icon | remove_first: '-square' }}-square fa-lg"></i>
-  		</a>
-  	{% endif %}
-  {% endfor %}
+		<!--{% if social.name == "Twitter" and social.share == true %}-->
+  		<!--<a href="//twitter.com/share?text={{ page.title | cgi_escape }}&url={{ site.url | append: site.baseurl }}{{ page.id }}.html&via={{social.username}}"-->
+  			<!--onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">-->
+  			<!--<i class="fa fa-{{ social.icon | remove_first: '-square' }}-square fa-lg"></i>-->
+  		<!--</a>-->
+  	<!--{% endif %}-->
+  	<!--{% if social.name == "Facebook" and social.share == true %}-->
+  		<!--<a href="//www.facebook.com/sharer.php?t={{ page.title | cgi_escape }}&u={{ site.url | append: site.baseurl }}{{ page.id }}.html"-->
+  			<!--onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">-->
+  			<!--<i class="fa fa-{{ social.icon | remove_first: '-square' }}-square fa-lg"></i>-->
+  		<!--</a>-->
+  	<!--{% endif %}-->
+  	<!--{% if social.name == "Google+" and social.share == true %}-->
+  		<!--<a href="//plus.google.com/share?title={{ page.title | cgi_escape }}&url={{ site.url | append: site.baseurl }}{{ page.id }}.html"-->
+  			<!--onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">-->
+  			<!--<i class="fa fa-{{ social.icon | remove_first: '-square' }}-square fa-lg"></i>-->
+  		<!--</a>-->
+  	<!--{% endif %}-->
+  	<!--{% if social.name == "LinkedIn" and social.share == true %}-->
+  		<!--<a href="//www.linkedin.com/shareArticle?mini=true&url={{ site.url | append: site.baseurl }}{{ page.id }}.html"-->
+  			<!--onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">-->
+  			<!--<i class="fa fa-{{ social.icon | remove_first: '-square' }}-square fa-lg"></i>-->
+  		<!--</a>-->
+  	<!--{% endif %}-->
+  	<!--{% if social.name == "Pinterest" and social.share == true %}-->
+  		<!--<a href="//www.pinterest.com/pin/create/button/?description={{ page.title | cgi_escape }}&url={{ site.url | append: site.baseurl }}{{ page.id }}.html&media={{ site.url }}{% if page.cover %}{{ page.cover | prepend: site.baseurl  }}{% elsif site.cover %}{{ site.cover | prepend: site.baseurl }}{% else %}{{ site.logo | prepend: site.baseurl }}{% endif %}"-->
+  			<!--onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">-->
+  			<!--<i class="fa fa-{{ social.icon | remove_first: '-square' }}-square fa-lg"></i>-->
+  		<!--</a>-->
+  	<!--{% endif %}-->
+  <!--{% endfor %}-->
+	<div class="ds-share" data-thread-key="{{ page.id }}" data-title="{{ page.title | cgi_escape }}" data-images="" data-content="此处请替换为分享时显示的内容" data-url="{{ site.url | append: site.baseurl }}{{ page.id }}.html">
+		<div class="ds-share-inline">
+			<ul  class="ds-share-icons-16">
+
+				<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+				<li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+				<li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+				<li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+				<li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+			</ul>
+			<div class="ds-share-icons-more">
+			</div>
+		</div>
+	</div>
 </section>
 
 {% if site.duoshuo_shortname %}

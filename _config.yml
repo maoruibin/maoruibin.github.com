@@ -76,7 +76,7 @@ social:
     username: 大侠咕咚
     url: http://weibo.com/u/1874136301
     desc: Follow me on Weibo
-    share: true
+    share: false
 
   - name: GitHub
     icon: github
@@ -97,7 +97,7 @@ social:
     username: 瑞斌
     url: http://plus.google.com/107689066812933417058?rel=author
     desc: Add me to your Circles
-    share: true
+    share: false
 
   - name: Twitter
     icon: twitter
