@@ -19,6 +19,7 @@ baseurl: /
 # the base hostname & protocol for your site
 url: "http://maoruibin.github.io"
 cover: "assets/header_image.jpg"
+theme_color: "#607D8B"
 logo: "assets/logo.png"
 
 # Build settings

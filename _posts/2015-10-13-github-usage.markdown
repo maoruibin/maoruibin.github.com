@@ -5,6 +5,7 @@ title:  "如何用好github中的watch、star、fork"
 description: ""
 categories: 技术
 tags: Github Usage
+cover:  "#3e4145"
 ---
 在每个github项目的右上角，都有三个按钮。分别是watch、star、fork，但是很多人对这三个按钮的使用却不怎么了解，这篇博客，结合自己的理解和使用，谈谈我对他们的理解。
 
