@@ -7,13 +7,12 @@ categories: 技术
 tags: Github Usage
 cover:  "#3e4145"
 ---
-在每个github项目的右上角，都有三个按钮。分别是watch、star、fork，但是很多人对这三个按钮的使用却不怎么了解，这篇博客，结合自己的理解和使用，谈谈我对他们的理解。
+在每个github项目的右上角，都有三个按钮,分别是watch、star、fork，但是很多人对这三个按钮的使用却不怎么了解，
+包括一开始使用github的我也是如此，这篇博客，结合自己的理解和使用，谈谈我对他们的理解。
 
 
-`自我反省`：下方的截图水平有点低，跟高大上的博客主题相比，截图有点寒掺，等有时间重新用Keynote打磨一下。
-<br><br>
-![usage](/assets/github_usage_1.jpg "sss")
-<br><br>
+如下图所示这是我们经常看到的三个按钮。
+![usage](/assets/github_usage_1.png "usage")
 从左至右，依次是watch star fork,关于这三个按钮的含义，结合自己使用github这么久，讲讲自己的理解。
 
 ### watch
