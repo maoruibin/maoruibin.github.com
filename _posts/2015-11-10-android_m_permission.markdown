@@ -122,3 +122,5 @@ not need to grant permissions when they install or update the app. It also gives
 [Everything every Android Developer must know about new Android's Runtime Permission](http://inthecheesefactory.com/blog/things-you-need-to-know-about-android-m-permission-developer-edition/en)
 
 这篇英文博文内容很长、内容也比较多，十足的干货。您慢用~
+
+后记：偶然发现已经有哥们把上面的这篇文章做了翻译，真是极好的，附上[翻译链接](http://jijiaxin89.com/2015/08/30/Android-s-Runtime-Permission/)，给翻译者同学点赞，辛苦！
