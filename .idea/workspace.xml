@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a81bbcf3-93ed-47ad-9a5d-05bd058fa906" name="Default" comment="update header background">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_posts/2015-11-17-Android-hotfix.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-04-17-change-log.markdown" afterPath="$PROJECT_DIR$/_posts/2015-04-17-change-log.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-04-18-welcome-to-jekyll.markdown" afterPath="$PROJECT_DIR$/_posts/2015-04-18-welcome-to-jekyll.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-05-19-way.markdown" afterPath="$PROJECT_DIR$/_posts/2015-05-19-way.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-05-21-custom_view_cakeview.markdown" afterPath="$PROJECT_DIR$/_posts/2015-05-21-custom_view_cakeview.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-05-26-lock_screen.markdown" afterPath="$PROJECT_DIR$/_posts/2015-05-26-lock_screen.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-06-03-color_alaph.markdown" afterPath="$PROJECT_DIR$/_posts/2015-06-03-color_alaph.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-06-03-jekyll.markdown" afterPath="$PROJECT_DIR$/_posts/2015-06-03-jekyll.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-06-29-mac_sublime_java.markdown" afterPath="$PROJECT_DIR$/_posts/2015-06-29-mac_sublime_java.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-07-18-android_popupMenu_icon.markdown" afterPath="$PROJECT_DIR$/_posts/2015-07-18-android_popupMenu_icon.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-07-18-android_shift_theme.markdown" afterPath="$PROJECT_DIR$/_posts/2015-07-18-android_shift_theme.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-07-25-android_webview_chinese_encode.markdown" afterPath="$PROJECT_DIR$/_posts/2015-07-25-android_webview_chinese_encode.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-08-03-AtomicInteger_Introduce.markdown" afterPath="$PROJECT_DIR$/_posts/2015-08-03-AtomicInteger_Introduce.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-08-03-AtomicInteger_Unsafe.markdown" afterPath="$PROJECT_DIR$/_posts/2015-08-03-AtomicInteger_Unsafe.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-08-03-java_important_word.markdown" afterPath="$PROJECT_DIR$/_posts/2015-08-03-java_important_word.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-09-10-alert_dialog_theme.markdown" afterPath="$PROJECT_DIR$/_posts/2015-09-10-alert_dialog_theme.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-09-13-gradlebuild-best-practice.markdown" afterPath="$PROJECT_DIR$/_posts/2015-09-13-gradlebuild-best-practice.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-09-27-project-rule.markdown" afterPath="$PROJECT_DIR$/_posts/2015-09-27-project-rule.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-10-13-github-usage.markdown" afterPath="$PROJECT_DIR$/_posts/2015-10-13-github-usage.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-10-20-java-loader.markdown" afterPath="$PROJECT_DIR$/_posts/2015-10-20-java-loader.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-10-24-1024.markdown" afterPath="$PROJECT_DIR$/_posts/2015-10-24-1024.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-10-27-bitmap-tip.markdown" afterPath="$PROJECT_DIR$/_posts/2015-10-27-bitmap-tip.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-11-10-android_m_permission.markdown" afterPath="$PROJECT_DIR$/_posts/2015-11-10-android_m_permission.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about.md" afterPath="$PROJECT_DIR$/about.md" />
     </list>
     <ignored path="maoruibin.github.com.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -99,19 +76,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015-09-10-alert_dialog_theme.markdown" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2015-09-10-alert_dialog_theme.markdown">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.586207">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="2015-09-13-gradlebuild-best-practice.markdown" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2015-09-13-gradlebuild-best-practice.markdown">
           <provider selected="true" editor-type-id="text-editor">
@@ -151,10 +115,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015-11-10-android_m_permission.markdown" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2015-11-10-android_m_permission.markdown" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2015-11-10-android_m_permission.markdown">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7966102">
+            <state vertical-scroll-proportion="-16.206896">
               <caret line="138" column="115" selection-start-line="138" selection-start-column="115" selection-end-line="138" selection-end-column="115" />
               <folding />
             </state>
@@ -169,6 +133,19 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-2.586207">
               <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="about.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/about.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.36960986">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -210,7 +187,6 @@
         <option value="$PROJECT_DIR$/_layouts/about.html" />
         <option value="$PROJECT_DIR$/_layouts/page_with_comment.html" />
         <option value="$PROJECT_DIR$/project.md" />
-        <option value="$PROJECT_DIR$/about.md" />
         <option value="$PROJECT_DIR$/_layouts/page.html" />
         <option value="$PROJECT_DIR$/_includes/head.html" />
         <option value="$PROJECT_DIR$/_sass/_layout.scss" />
@@ -241,6 +217,7 @@
         <option value="$PROJECT_DIR$/_posts/2015-05-19-way.markdown" />
         <option value="$PROJECT_DIR$/_posts/2015-06-03-jekyll.markdown" />
         <option value="$PROJECT_DIR$/_posts/2015-11-10-android_m_permission.markdown" />
+        <option value="$PROJECT_DIR$/about.md" />
       </list>
     </option>
   </component>
@@ -585,7 +562,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15059446" sideWeight="0.48963732" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14531043" sideWeight="0.49654576" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28137386" sideWeight="0.49654576" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -781,23 +758,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/about.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1034484">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
-        <state />
-      </provider>
-      <provider editor-type-id="MultiMarkdownFxHtmlEditor">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_layouts/archive.html">
@@ -1144,12 +1104,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2015-11-10-android_m_permission.markdown">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7966102">
+        <state vertical-scroll-proportion="-16.206896">
           <caret line="138" column="115" selection-start-line="138" selection-start-column="115" selection-end-line="138" selection-end-column="115" />
           <folding />
         </state>
       </provider>
       <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36960986">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
+        <state />
+      </provider>
+      <provider editor-type-id="MultiMarkdownFxHtmlEditor">
         <state />
       </provider>
     </entry>
