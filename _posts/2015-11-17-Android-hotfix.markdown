@@ -6,7 +6,7 @@ description: "最近在社区看到很多关于Android热修复相关的技术�
 categories: Technology
 tags: Android HotFix Collection
 ---
-最近在社区看到很多关于Android热修复相关的技术文章以及开源项目，这里对这些文章就行整理，方便查阅。
+最近在社区看到很多关于Android热修复相关的技术文章以及开源项目，这里就对最近看到的文章、开源项目做个简单的整理，方便查阅。
 
 ### 热修复准备
 
