@@ -2,7 +2,7 @@
 layout: post
 author: 咕咚
 title: Android设备上实现锁屏
-categories: 技术
+categories: Technology
 tags: Function
 ---
 在Android设备上实现锁屏功能。

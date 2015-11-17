@@ -2,7 +2,7 @@
 layout: post
 author: 咕咚
 title: App中主题Theme使用以及Theme切换
-categories: 技术
+categories: Technology
 tags:  Theme Android
 ---
 在众多Android应用中，尤其是阅读类App，为了给用户提供更好的使用体验，App设计者一般都会提供两套主题，最常见的就是Light Theme和Dark Theme,分别对应了日间模式和夜间模式。比如第三方微博客户端Smooth,知乎等等他们都有这样的实现。

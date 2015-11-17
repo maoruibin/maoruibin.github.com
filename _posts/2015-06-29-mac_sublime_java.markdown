@@ -2,7 +2,7 @@
 layout: post
 author: 咕咚
 title: MAC 系统如何使用 Sublime Text 3 直接编译运行java代码
-categories: 技术
+categories: Technology
 tags: Util Mac
 ---
 在Mac下使用Sublime时，如果要编译java文件，直接使用command+B命令就可以达到编译的效果，此时会在java源文件的目录下生成对应的.class文件，但这显然不能够满足我们的需求。

@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title:  "Java关键字之volatile"
 description:  "描述信息"
-categories: 技术
+categories: Technology
 tags:  KeyWords Java
 ---
 Java有众多关键字，volatile作为一个和同步相关的关键字，很少在自己的项目中使用，今天在看Handler源码时无意看到，顺便便了解了下。

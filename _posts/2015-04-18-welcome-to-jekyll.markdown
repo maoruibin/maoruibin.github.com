@@ -3,7 +3,7 @@ layout: post
 title:  "Welcome to Jekyll!"
 date:   2015-04-18 08:43:59
 author: Ben Centra
-categories: 其他
+categories: Other
 tags:	  
 cover:  "assets/instacode.png"
 ---

@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "博客更新日志"
 description: "利用Github搭建博客后,我写的第一篇博客"
-categories: 个人
+categories: Private
 cover: "zzz"
 tags:	Jekyll
 ---

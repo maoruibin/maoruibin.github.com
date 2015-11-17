@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title:  "Unsafe类介绍"
 description: "描述信息"
-categories: 技术
+categories: Technology
 tags: 安全 Java
 ---
 这个类是用于执行低级别、不安全操作的方法集合。尽管这个类和所有的方法都是公开的（public），但是这个类的使用仍然受限，你无法在自己的java程序中直接使用该类，因为只有授信的代码才能获得该类的实例。

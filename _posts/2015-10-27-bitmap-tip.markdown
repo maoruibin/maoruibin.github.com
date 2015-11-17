@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "Bitmap相关的知识点整理"
 description: ""
-categories: 技术
+categories: Technology
 cover: "zzz"
 tags:   Bitmap Android
 ---

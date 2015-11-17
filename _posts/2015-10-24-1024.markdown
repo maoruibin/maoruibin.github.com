@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "我的1024这天"
 description: ""
-categories: 个人
+categories: Private
 tags:	Way
 cover:  "assets/1024_programer.png"
 ---

@@ -4,7 +4,7 @@ title: "Java类加载机制"
 date:   2015-10-20 04:43:59
 description: "AndroidStudio中使用build.gradle的最佳实践"
 author: 咕咚
-categories: 技术
+categories: Technology
 tags: ClassLoader Java
 cover:  "assets/instacode.png" 
 ---
