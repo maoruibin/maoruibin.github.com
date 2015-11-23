@@ -3,6 +3,7 @@ layout: post
 author: 咕咚
 title: " MVP 模式在 GankDaily 中的应用"
 description: ""
+cover:  "#8f4b2e"
 categories: Technology
 tags: Android App
 ---
