@@ -4,7 +4,7 @@ author: 咕咚
 title: "在Android5.0以上设备实现过度动画"
 description: ""
 categories: Technology
-publish: false
+publish: true
 tags: Android Animation
 ---
 从Android5.0开始，系统提供一个很好看的Activity间的转场动画，具体就是共享两个界面中一些共有的View，让前后两个界面的跳转变得很流畅
