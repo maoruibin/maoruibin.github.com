@@ -325,7 +325,7 @@ pre code.hljs {
 			}
 		}
 		.profile {
-			max-width: 320px;
+			max-width: 260px;
 			margin: auto;
 			padding-bottom: 0.5em;
  		}
@@ -415,3 +415,26 @@ pre code.hljs {
 		}
 	}
 }
+/**
+*关于界面
+**/
+
+.social-media-list-about{
+    text-align:center;
+    list-style-type:none;
+    margin-top: 2.5em;
+}
+.social-media-list-about li{
+    display:inline;
+}
+
+.social-media-list-about li a{
+
+}
+
+.social-media-list-about i{
+    width:2em;
+    font-size:28px;
+}
+
+

@@ -4,7 +4,41 @@ title: 关于我
 permalink: /about/
 ---
 
-<img src="{{ site.baseurl }}assets/profile.jpg" title="Profile Picture" class="profile">
+<img src="{{ site.baseurl }}assets/profile_circle.png" title="Profile Picture" class="profile">
+
+<ul class="social-media-list-about">
+    {% for social in site.social %}
+        {% if social.url != null %}
+        <li>
+        {% if social.name == 'Weibo' %}
+          <a  href="{{ social.url }}" title="{{ social.desc }}" style="color:#E6434F">
+            <i class="fa  fa-{{ social.icon }}"></i>
+          </a>        
+        {% endif %}
+        
+        {% if social.name == 'GitHub' %}
+              <a  href="{{ social.url }}" title="{{ social.desc }}" style="color:#5D5D5D">
+                <i class="fa  fa-{{ social.icon }}"></i>
+              </a>        
+        {% endif %}
+        
+        {% if social.name == 'Zhihu' %}
+          <a  href="{{ social.url }}" title="{{ social.desc }}" style="color:#0185DD">
+            <i class="fa  fa-{{ social.icon }}" style="font-size:26px;">知</i>
+          </a>        
+        {% endif %}
+        
+       {% if social.name == 'Google+' %}
+          <a  href="{{ social.url }}" title="{{ social.desc }}" style="color:#EA4335">
+            <i class="fa  fa-{{ social.icon }}" style="font-size:22px;"></i>
+          </a>        
+        {% endif %}
+
+        </li>
+        {% endif %} 
+    {% endfor %}
+</ul>
+<br>
 
 我是一个Android开发者，目前在北京一家互联网房产公司工作，公司致力于房地产中介管理实践，主要从事房产中介企业内部运营管理软件研发。
 
