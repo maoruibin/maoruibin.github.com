@@ -14,10 +14,21 @@
       <ul id="js-navigation-menu" class="navigation-menu show">
       	{% for page in site.pages %}
           {% if page.title and page.main_nav != false and page.title != 'Typography' %}
+
+          {% if page.title == '关于' %}
+              <li class="nav-link">
+                  <a href="./about-me/index.html">
+                      {{ page.title }}
+                  </a>
+              </li>
+          {% else %}
           <li class="nav-link">
-						<a href="{{ page.url | remove_first: '/' | prepend: site.baseurl }}">
-							{{ page.title }}
-						</a>
+              <a href="{{ page.url | remove_first: '/' | prepend: site.baseurl }}">
+                  {{ page.title }}
+              </a>
+          </li>
+          {% endif %}
+
           {% endif %}
         {% endfor %}
       </ul>
