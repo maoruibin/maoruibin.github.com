@@ -14,12 +14,15 @@ permalink: /posts/
 	{% endfor %}
 	<ul class="posts-list">
 	{% for post in site.categories[cat] %}
-		<li>
-			<strong>
-				<a href="{{ post.url | remove_first: '/' | prepend: site.baseurl }}">{{ post.title }}</a>
-			</strong>
-			<span class="post-date">- {{ post.date | date_to_long_string }}</span>
-		</li>
+		<!-- 只有发布状态的文章会显示-->
+		{% if post.publish != false%}
+			<li>
+				<strong>
+					<a href="{{ post.url | remove_first: '/' | prepend: site.baseurl }}">{{ post.title }}</a>
+				</strong>
+				<span class="post-date">- {{ post.date | date_to_long_string }}</span>
+			</li>
+		{% endif %}
 	{% endfor %}
 	</ul>
 	{% if forloop.last == false %}<hr>{% endif %}
