@@ -11,3 +11,4 @@ Gemfile.lock
 .bundle/
 
 .idea/
+.idea/workspace.xml
