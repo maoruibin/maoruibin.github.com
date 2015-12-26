@@ -25,7 +25,8 @@ watch翻译过来可以称之为观察，点击watch可以看到如下的列表�
 默认每一个用户都是处于Not watching的状态，当你选择Watching，表示你以后会关注这个项目的所有动态，以后只要这个项目发生变动，如被别人提交了pull request、被别人发起了issue等等情况，
 你都会在自己的个人通知中心，收到一条通知消息，如果你设置了个人邮箱，那么你的邮箱也可能收到相应的邮件
 
-如下，我watching了开源项目 android-cn/android-discuss ，那么以后任何人只要在这个项目下提交了issue或者在issue下面有任何留言，我的通知中心就会通知我。
+如下，我watching了开源项目 android-cn/android-discuss ，那么以后任何人只要在这个项目下提交了issue或者在issue下面有任何留言，
+我的通知中心就会通知我。如果你配置了邮箱，你还可能会因此不断的收到邮件。
 
 
 ![usage](/assets/github_usage_3.jpg "usage")

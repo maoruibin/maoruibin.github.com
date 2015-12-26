@@ -5,7 +5,6 @@ title: "关于AppPlus的点点滴滴"
 description: ""
 cover:  "#3F51B5"
 categories: Technology
-publish: false
 tags: Android App
 ---
 AppPlus从今年7月份开始开发，到现在不知不觉已经过了5个多月了，今晚刚发布完0.3.0版本，突然想写点什么，所以就有了这篇文章。

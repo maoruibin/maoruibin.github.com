@@ -29,7 +29,13 @@ layout: default
 				</section>
 				<section class="post-meta">
 					<!--<div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>-->
-					<div class="post-date">{{ post.date | date: "%Y-%m-%d" }}</div>
+					<!--<div class="post-date">{{ post.date | date: "%Y-%m-%d" }}</div>-->
+					<div class="post-date">
+						发表于 {{ post.date | date: "%Y-%m-%d" }}&nbsp;&nbsp;
+						<a href="{{ post.url | remove_first: '/' | prepend: site.baseurl }}#comments">
+							<span class="ds-thread-count" data-thread-key="{{ post.id }}"></span>
+						</a>
+					</div>
 					<div class="post-categories">
 					{% if post.categories %}in {% for cat in post.categories %}
 					  {% if site.jekyll-archives %}
@@ -97,6 +103,22 @@ layout: default
     <a href="{{ site.baseurl }}posts">View All Posts by Category</a>
   </p>
 </nav>
+<div>
 
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+		var duoshuoQuery = {short_name:"{{ site.duoshuo_shortname }}"};
+		(function() {
+				var ds = document.createElement('script');
+				ds.type = 'text/javascript';ds.async = true;
+				ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+				ds.charset = 'UTF-8';
+				(document.getElementsByTagName('head')[0]
+				 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+
+
+</div>
 </div>
 </div>

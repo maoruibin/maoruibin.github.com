@@ -5,7 +5,6 @@ title: "当 Dagger2 应用在 MVP 框架中"
 description: ""
 cover:  "#5FAD9C"
 categories: Technology
-publish: false
 tags: Dagger MVP
 ---
 关于 Dagger2 自己一只想搞明白，但是从去年开始到现在，说真的，看过不少介绍 Dagger2 的文章，但自己一只云里雾里，最近打算把 Dagger2

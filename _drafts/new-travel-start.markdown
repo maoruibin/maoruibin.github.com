@@ -5,7 +5,6 @@ title: "一个新旅程的开始"
 description: ""
 cover:  "#12B3A8"
 categories: Private
-publish: false
 tags: 写给自己看
 ---
 2015年11月26日 19:26 分，一个特殊的时间，一声啼哭，一个新生命来到了这个世界。

@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "咕咚的2015年终总结"
 description: ""
-cover:  "#84BA40"
+cover:  "#d35400"
 categories: Private
 tags: 年终总结
 ---
