@@ -1,6 +1,6 @@
-<footer class="site-footer">
+<footer class="site-footer" style="border:0px dashed #000;">
 
-  <div class="wrapper">
+  <div class="wrapper" style="border:0px dashed #000;">
 
     <h3 class="footer-heading">{{ site.title }}</h3>
 
@@ -46,19 +46,29 @@
       </ul>
     </div>
 
-    <div class="site-signature">
+    <div class="site-signature" style="border:0px dashed #000;">
     	<p class="rss-subscribe text"><strong>Subscribe <a href="{{ "feed.xml" | prepend: site.baseurl }}">via RSS</a></strong></p>
-      <p class="text">{{ site.description }}</p>
+      	<p class="text">{{ site.description }}</p>
     </div>
 
+
+
   </div>
+
+	<div class="site-version">
+		<p>Powered by <a href="http://jekyllcn.com">Jekyll</a>,&nbsp;Theme from <a href="https://github.com/bencentra/centrarium">centrarium</a>.</p>
+	</div>
 
 </footer>
 
 <!-- Scripts -->
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>-->
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>-->
+
+<!-- thanks to http://www.bootcdn.cn/lightbox2/ -->
+<script src="//cdn.bootcss.com/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/lightbox2/2.8.2/js/lightbox.min.js"></script>
 <script>
 
 $(document).ready(function() {

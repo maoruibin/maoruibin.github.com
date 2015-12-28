@@ -411,7 +411,18 @@ pre code.hljs {
 		}
 		font-size: 0.9em;
 		a {
-			text-decoration: underline;
+			text-decoration: none;
+		}
+	}
+	/*
+	*  Site Version info
+	*/
+	.site-version {
+		margin-top: 2.0em;
+		font-size: 0.8em;
+		text-align:center;
+		a {
+			text-decoration: none;
 		}
 	}
 }
