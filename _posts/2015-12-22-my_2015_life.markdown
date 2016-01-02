@@ -1,9 +1,9 @@
 ---
 layout: post
 author: 咕咚
-title: "咕咚的2015"
+title: "Bye 2015，Hi 2016~"
 description: ""
-cover:  "#d35400"
+cover:  "zzz"
 categories: Private
 tags: 年终总结
 ---
