@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "Bye 2015，Hi 2016~"
 description: ""
-cover:  "zzz"
+cover:  "assets/head_2015_life.jpg"
 categories: Private
 tags: 年终总结
 ---
@@ -50,7 +50,7 @@ tags: 年终总结
 复杂的模块，最终经过自己三次版本迭代达到了自己心目中的理想状态。
 
 但后来被证明，自己因为大量使用枚举，以至于在后续维护时，出现了一些问题，而且在Android中大量使用枚举，在许多开发建议中都说，这样不好，
-我知道的是不好处，除了他会生成大量静态对象，可能会造成内存泄露，其余的弊端，暂时不得而知。
+但就我目前知道大量使用枚举的弊端，除了他会生成大量静态对象，可能会造成内存泄露，其余的，暂时不得而知。
 
 到后来，年中的时候，老大离职了，尽管不舍，但是这却也是互联网公司中最普遍的现象。
 
@@ -61,7 +61,7 @@ tags: 年终总结
 同时那段时间，公司又经历了一次人员流动潮。那段时间真叫动荡。后来顶着压力，硬是把项目按时交接了，
 记得很清楚，有一天加了一个通宵的班，加到自己流鼻血！！！
 
-然后第二天早晨回到家后，当我喝到媳妇给熬得粥的时候，觉得好幸福的。
+然后第二天早晨回到家，当我喝到媳妇给熬得粥的时候，突然觉得好感动~
 
 这次的人员变动，涉及到了我们 Android 团队，有两个同事相继离职，同时 Android 团队的负责人被也调去负责服务端，因为服务端负责人也已经离职（好混乱的局面），
 所以自己被提为 Android 负责人，因为 Android 团队人员偏少，所以接下来的一段时间，需要自己面试招聘新同学。
@@ -82,7 +82,7 @@ tags: 年终总结
 
 ##一些有意义的事
 
-尽管工作中遇到的事挺多的，但是公司有一点一直特别好，不加班(很少加班)，所以使得自己的业余时间还是比较多的，周末从来都是双休。
+尽管工作中遇到的事挺多的，但是公司有一点一直特别好，不加班(严格点说是极少加班)，所以使得自己的业余时间还是比较多的，周末从来都是双休。
 
 自己在业余的时间也确实做了不少事(相比去年)。
 
@@ -174,10 +174,17 @@ AppPlus 是自己做的一个手机 App 管理软件，[为什么开发了 AppPl
 一场说走就走的旅行，这是自己想了很久的一件事，但是从大学到现在，自己也没有真真的迈出过哪一步。
 
 今年11月初，终于，利用一个周末的时间，去了一次济南，自己选择济南，一是因为离北京比较近，二是因为我一个小学同学在济南读研，去济南顺便也是看他！
-哈哈，我亲梅竹马的好基友。
+
+![pos4](https://c1.xmssmc.mws.xiaomi.net/kss_web/thumb?i=WiLRc-UYQkrZ5JAYyMz3MuIRwOyRo-A3zgb7aPy_CJGhcrTkLf8-QbUMoig6iKWI&c=1001&tm=1451744693&w=1024&h=768&s=KiWSukvcAQrmx4i0zH3QLdjBlb8&auto_rotate=1)
+
+<p style="text-align:center">青梅竹马的好基友</p>
 
 周五晚上的火车，周六早晨就到济南，简单跟天哥（小学同学）吃过早饭，自己就迫不及待去了千佛山，自己一直很喜欢山川，千佛山不怎么高，没多久自己就到了山顶，
 后来自己一个人听着音乐穿梭在密林中，真真切切的感受到自由的存在，一种久违的感觉。
+
+![pos5](https://c1.xmssmc.mws.xiaomi.net/kss_web/thumb?i=opvEl2qH0GNmXTdVOlsTFcSluHkXBGuoQbd6lP79j2uGDNFlrGrawT1VjxKwrNtU8WkqdnlghJY5MKq1H-C2jg&c=1001&tm=1451744693&w=1024&h=768&s=JEHZvBWwrNJcCvvt6kB9EsmlCh8&auto_rotate=1)
+
+<p style="text-align:center">行走在小路上</p>
 
 后来接着去了趵突泉、大明湖，最让我影响深刻的还是周日去的泰山。
 
@@ -187,7 +194,6 @@ AppPlus 是自己做的一个手机 App 管理软件，[为什么开发了 AppPl
 后来到山顶后，我们尽情拍照纪念，毫不保留的把自己知道的 pos 摆个够。
 
 ![pos3](https://c1.xmssmc.mws.xiaomi.net/kss_web/thumb?i=pDb4QP7-bVahLSxN77TI_cjd7aXl4lgXtdJn7yJR0fcmsJDJEx3OCmbAt6S52ONY&c=1001&tm=1451744693&w=1024&h=768&s=FJ4OPY0lFrEqpzmwcs6vP2wBFus&auto_rotate=1)
-
 <p style="text-align:center">那就是最终的泰山顶</p>
 
 ![pos1](https://c1.xmssmc.mws.xiaomi.net/kss_web/thumb?i=Z7FmBMIYCKxo8gJV2j8fx8gcvgUXH5TFw2qiU-0cOM9vFFkKSXPKsA0heJ8hrMZd&c=1001&tm=1451744693&w=1024&h=768&s=TDkLaDQYV90hurOKzoM_PbCq8tI&auto_rotate=1)
