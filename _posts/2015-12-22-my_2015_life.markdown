@@ -119,6 +119,8 @@ tags: 年终总结
 
 ### 开源了 AppPlus 
 
+![appplus](/assets/2015_summary_appplus.png "appplus")
+
 AppPlus 是自己做的一个手机 App 管理软件，[为什么开发了 AppPlus](technology/2015/12/21/reason-for-appplus.html)，
 按照我一直以来的习惯，这个 App 力争简单易用，一开始为了学习主题切换，曾加入过换肤等功能，后来觉得臃肿，最终还是去掉了。
 
@@ -175,14 +177,14 @@ AppPlus 是自己做的一个手机 App 管理软件，[为什么开发了 AppPl
 
 今年11月初，终于，利用一个周末的时间，去了一次济南，自己选择济南，一是因为离北京比较近，二是因为我一个小学同学在济南读研，去济南顺便也是看他！
 
-![pos4](https://c1.xmssmc.mws.xiaomi.net/kss_web/thumb?i=WiLRc-UYQkrZ5JAYyMz3MuIRwOyRo-A3zgb7aPy_CJGhcrTkLf8-QbUMoig6iKWI&c=1001&tm=1451744693&w=1024&h=768&s=KiWSukvcAQrmx4i0zH3QLdjBlb8&auto_rotate=1)
+![pos4](/assets/tanshan_4.jpg "tanshan")
 
 <p style="text-align:center">青梅竹马的好基友</p>
 
 周五晚上的火车，周六早晨就到济南，简单跟天哥（小学同学）吃过早饭，自己就迫不及待去了千佛山，自己一直很喜欢山川，千佛山不怎么高，没多久自己就到了山顶，
 后来自己一个人听着音乐穿梭在密林中，真真切切的感受到自由的存在，一种久违的感觉。
 
-![pos5](https://c1.xmssmc.mws.xiaomi.net/kss_web/thumb?i=opvEl2qH0GNmXTdVOlsTFcSluHkXBGuoQbd6lP79j2uGDNFlrGrawT1VjxKwrNtU8WkqdnlghJY5MKq1H-C2jg&c=1001&tm=1451744693&w=1024&h=768&s=JEHZvBWwrNJcCvvt6kB9EsmlCh8&auto_rotate=1)
+![pos5](/assets/tanshan_1.jpg "tanshan")
 
 <p style="text-align:center">行走在小路上</p>
 
@@ -193,14 +195,14 @@ AppPlus 是自己做的一个手机 App 管理软件，[为什么开发了 AppPl
 
 后来到山顶后，我们尽情拍照纪念，毫不保留的把自己知道的 pos 摆个够。
 
-![pos3](https://c1.xmssmc.mws.xiaomi.net/kss_web/thumb?i=pDb4QP7-bVahLSxN77TI_cjd7aXl4lgXtdJn7yJR0fcmsJDJEx3OCmbAt6S52ONY&c=1001&tm=1451744693&w=1024&h=768&s=FJ4OPY0lFrEqpzmwcs6vP2wBFus&auto_rotate=1)
+![pos3](/assets/tanshan_5.jpg "tanshan")
 <p style="text-align:center">那就是最终的泰山顶</p>
 
-![pos1](https://c1.xmssmc.mws.xiaomi.net/kss_web/thumb?i=Z7FmBMIYCKxo8gJV2j8fx8gcvgUXH5TFw2qiU-0cOM9vFFkKSXPKsA0heJ8hrMZd&c=1001&tm=1451744693&w=1024&h=768&s=TDkLaDQYV90hurOKzoM_PbCq8tI&auto_rotate=1)
+![pos1](/assets/tanshan_2.jpg "tanshan")
 
 <p style="text-align:center">会当凌绝顶，一览众山小</p>
 
-![pos2](https://c1.xmssmc.mws.xiaomi.net/kss_web/thumb?i=ORN0tbcsvK-v4Vs0lyGp8H4d6qG0qrLtZEo0FGlsXIyIPl1nkR6qOwUBTZlNAs7F&c=1001&tm=1451744693&w=1024&h=768&s=X3XgSFJ2BRlo2Bo-nsiRTr81jLg&auto_rotate=1)
+![pos2](/assets/tanshan_3.jpg "tanshan")
 
 <p style="text-align:center">故作眺望，哈哈~</p>
  
@@ -211,7 +213,10 @@ AppPlus 是自己做的一个手机 App 管理软件，[为什么开发了 AppPl
 从大学毕业开始，自己保持了最久的习惯莫过于此。自己是一个标准的篮球粉丝，特爱打球，工作后，即使工作再忙，周末的时间自己总会
 抽空去附近的球场打球。
 
-今年亦如此，因为租住房间的附近有一个公园，公园中有一个球场，所以每周末，自己总会抽空去打球。每次打的大汗淋淋，出汗的感觉真好(有人给擦汗更好~)
+![basketball](/assets/2015_summary_basketball.png "北理工球场")
+<p style="text-align:center">北理工的球场~</p>
+
+今年亦如此，因为租住房间的附近有一个公园，公园中有一个球场，所以每周末，自己总会抽空去打球。每次打的大汗淋淋，出汗的感觉真好(有人给递纸巾更好 ^_^)
 
 ## 2015 不足遗憾
 
@@ -219,16 +224,14 @@ AppPlus 是自己做的一个手机 App 管理软件，[为什么开发了 AppPl
 
 * 算法数据结构,待补！
 
-* 技术类书籍看的比较多，但综合书籍看的少，看书有益
+* 技术类书籍看的比较多，但综合书籍看的少
 
 * 执行力欠缺。
 
 
 ## 2016 希望计划
 
-* 凡事预则立，不预则废，继续用好 Wunderlist。
-
-* 换一个工作环境（小米？蚂蚁？），希望自己做的业务是自己喜欢的。
+* 凡事预则立，不预则废，继续用好 [Wunderlist](https://www.wunderlist.com/zh/)。
 
 * 翻译自己认为不错的国外文章（要求不高，明年必须翻译一篇）
 
@@ -241,6 +244,8 @@ AppPlus 是自己做的一个手机 App 管理软件，[为什么开发了 AppPl
 * 学会Node.js(给自己的App搭建一个后台) 
 
 * 继续学习PS(可以做ICON)
+
+* 坚持写博客(每月至少一篇)
 
 * 拍照记事，每天一记。
 

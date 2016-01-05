@@ -57,11 +57,11 @@ layout: default
 {% endif %}
 {% endif %}
 
-<section class="rss">
+<section class="rss" style="display:none;">
 	<p class="rss-subscribe text"><strong>Subscribe <a href="{{ "feed.xml" | prepend: site.baseurl }}">via RSS</a></strong></p>
 </section>
 
-<section class="share">
+<section class="share" style="display:none;">
   <!--<span>Share: </span>-->
   <!--{% for social in site.social %}-->
 		<!--{% if social.name == "Weibo" and social.share == true %}-->
@@ -102,15 +102,14 @@ layout: default
   		<!--</a>-->
   	<!--{% endif %}-->
   <!--{% endfor %}-->
-	<div class="ds-share" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-images="" data-content="" data-url="{{ site.url | append: site.baseurl }}{{ page.id }}.html">
+	<div class="ds-share" style="display:none;" style="border:0px solid red;margin-top:6em;" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-images="" data-content="" data-url="{{ site.url | append: site.baseurl }}{{ page.id }}.html">
 		<div class="ds-share-inline">
 			<ul  class="ds-share-icons-16">
 
-				<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+				<li><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+				<li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
 				<li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
 				<li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-				<li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-				<li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
 
 			</ul>
 			<div class="ds-share-icons-more">
@@ -120,7 +119,7 @@ layout: default
 </section>
 
 {% if site.duoshuo_shortname %}
-	<div id="comments">
+	<div id="comments" style="margin-top:6em;margin-bottom:6em;">
 		<div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title | cgi_escape }}" data-url="{{ site.url | append: site.baseurl }}{{ page.id }}.html"></div>
 	</div>
 	<!-- 多说评论框 end -->
