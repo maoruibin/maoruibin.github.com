@@ -80,7 +80,7 @@ github 本身没有这个功能，但是 github 从来也不缺有思想有执�
   你就可以 watching 它，这里面都是一些关于 Android 技术的交流，如果有任何新问题，你都可以收到通知，你可以查看别人的回答，
   你可以回答别人提出的问题，这是一个很好的学习成长方式。
   
-  其他值得watch的项目还有很多，比如 github 上很多的 Awesome 系列的项目，你 watch 这些项目了，
+  其他值得watch的项目还有很多，比如 github 上很多的 Awesome 系列的项目,如[Awesome-MaterialDesign](https://github.com/lightSky/Awesome-MaterialDesign)等，你 watch 这些项目了，
   只要项目新增一些好玩好用的东西，你就会收到通知。
   
   我在知乎上看到有人问这样的问题，说 github 上有哪些值得 watch 的项目，其实有很多，我自己也整理了一些，但是没放到 github ，
