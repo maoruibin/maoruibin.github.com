@@ -1,66 +1,115 @@
-<footer class="site-footer" style="border:0px dashed #000;">
+<!-- Footer -->
 
-  <div class="wrapper" style="border:0px dashed #000;">
+<style type="text/css">
+    .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    }
 
-    <h3 class="footer-heading">{{ site.title }}</h3>
+    .row {
+    margin-right: -15px;
+    margin-left: -15px;
+    }
 
-    <div class="site-navigation">
-    	
-    	<p><strong>Site Map</strong></p>
-      <ul class="pages">
-        {% for page in site.pages %}
-						{% if page.title and page.main_nav != false and page.title != 'Typography'  %}
-							<li class="nav-link">
-								<a href="{{ page.url | remove_first: '/' | prepend: site.baseurl }}">
-									{{ page.title }}
-								</a>
-						{% endif %}
-        {% endfor %}
-      </ul>
+    .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    }
+
+    footer .list-inline {
+    margin: 0;
+    padding: 0;
+    }
+
+    .list-inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+    }
+
+    .text-center {
+    text-align: center;
+    }
+
+    .text-right {
+    text-align: right;
+    }
+
+    .list-inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+    }
+
+    .fa-lg{
+        font-size: 1.5em;
+    }
+</style>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                <div class="text-center" style="margin-bottom:0.8em;">
+                    <div style="font-size: 1.2em;"><a href="{{ site.baseurl }}" >{{ site.title }}</a></div>
+                    <div>{{ site.slogin}}</div>
+                </div>
+
+                <ul class="list-inline text-center">
+                    {% for social in site.social %}
+                    {% if social.url != null %}
+                    <li>
+                        {% if social.name == 'Weibo' %}
+                        <a href="{{ social.url }}" title="{{ social.desc }}" target="_blank" class="weibo">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        {% endif %}
+                        {% if social.name == 'GitHub' %}
+                        <a href="{{ social.url }}" title="{{ social.desc }}" target="_blank" class="github">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        {% endif %}
+                        {% if social.name == 'Zhihu' %}
+                        <a href="{{ social.url }}" title="{{ social.desc }}" target="_blank" class="zhihu">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-zhihu fa-stack-1x fa-inverse">知</i>
+                                </span>
+                        </a>
+                        {% endif %}
+                        {% if social.name == 'Google+' %}
+                        <a href="{{ social.url }}" title="{{ social.desc }}" target="_blank" class="google">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        {% endif %}
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+
+                <!--<p class="copyright text-muted">Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}</p>-->
+                <div class="site-version text-right" style="display:block;">
+                    <p>Powered by <a href="http://jekyllcn.com">Jekyll</a>,&nbsp;Theme from <a
+                            href="https://github.com/bencentra/centrarium">Centrarium</a>.</p>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="site-contact">
-
-    	<p><strong>Contact</strong></p>
-      <ul class="social-media-list">
-      	<li>
-      		<a href="mailto:{{ site.email }}">
-	      		<i class="fa fa-envelope-o"></i>
-	      		<span class="username">{{ site.emailname }}</span>
-      		</a>
-      	</li>
-
-      	{% for social in site.social %}
-	      	{% if social.url != null %}
-	      	<li>
-	          <a href="{{ social.url }}" title="{{ social.desc }}">
-	            <i class="fa fa-{{ social.icon }}">
-								{% if social.name == 'Zhihu' %}知{% endif %}
-							</i>
-	            <span class="username">{% if social.username %}{{ social.username }}{% else %}{{ social.name }}{% endif %}</span>
-	          </a>
-	        </li>
-	      	{% endif %}
-      	{% endfor %}
-
-      </ul>
-    </div>
-
-    <div class="site-signature" style="border:0px dashed #000;">
-    	<p class="rss-subscribe text"><strong>Subscribe <a href="{{ "feed.xml" | prepend: site.baseurl }}">via RSS</a></strong></p>
-      	<p class="text">{{ site.description }}</p>
-    </div>
-
-
-
-  </div>
-
-	<div class="site-version">
-		<p>Powered by <a href="http://jekyllcn.com">Jekyll</a>,&nbsp;Theme from <a href="https://github.com/bencentra/centrarium">Centrarium</a>.</p>
-	</div>
-
 </footer>
-
 <!-- Scripts -->
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <!--<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>-->
@@ -91,6 +140,7 @@ $(document).ready(function() {
 
 });
 
+
 </script>
 
 {% if site.ga_tracking_id %}
@@ -105,5 +155,6 @@ $(document).ready(function() {
   	'page': '{{ page.url }}',
   	'title': '{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}'
   });
+
 </script>
 {% endif %}

@@ -5,44 +5,11 @@ permalink: /about/
 ---
 
 <img src="{{ site.baseurl }}assets/profile_circle.png" title="Profile Picture" class="profile">
-
-<ul class="social-media-list-about">
-    {% for social in site.social %}
-        {% if social.url != null %}
-        <li>
-        {% if social.name == 'Weibo' %}
-          <a  href="{{ social.url }}" title="{{ social.desc }}" style="color:#E6434F">
-            <i class="fa  fa-{{ social.icon }}"></i>
-          </a>        
-        {% endif %}
-        
-        {% if social.name == 'GitHub' %}
-              <a  href="{{ social.url }}" title="{{ social.desc }}" style="color:#5D5D5D">
-                <i class="fa  fa-{{ social.icon }}"></i>
-              </a>        
-        {% endif %}
-        
-        {% if social.name == 'Zhihu' %}
-          <a  href="{{ social.url }}" title="{{ social.desc }}" style="color:#0185DD">
-            <i class="fa  fa-{{ social.icon }}" style="font-size:26px;">知</i>
-          </a>        
-        {% endif %}
-        
-       {% if social.name == 'Google+' %}
-          <a  href="{{ social.url }}" title="{{ social.desc }}" style="color:#EA4335">
-            <i class="fa  fa-{{ social.icon }}" style="font-size:22px;"></i>
-          </a>        
-        {% endif %}
-
-        </li>
-        {% endif %} 
-    {% endfor %}
-</ul>
 <br>
 
 ##我
 
-网名 咕咚，Android开发者，13年大学毕业，计算机科学与技术专业。
+网名"咕咚"，Android开发者，13年大学毕业，计算机科学与技术专业。
 
 目前已在北京工作近三年，擅长 Android 应用开发，曾在一家创业公司有过Web前端和后端的开发经历。
 

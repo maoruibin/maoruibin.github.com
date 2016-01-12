@@ -9,6 +9,7 @@ exclude:
 # Site settings
 title: 咕咚
 subtitle: "Android Developer 谷粉 米粉<br> 快乐工作 快乐生活"
+slogin: "生命不息，折腾不止。"
 email: 1252768410@qq.com
 emailname: QQ Mail
 name: 咕咚
@@ -20,7 +21,7 @@ baseurl: /
 url: "http://maoruibin.github.io"
 cover: "assets/header_image.jpg"
 theme_color: "#607D8B"
-logo: "assets/logo.png"
+# logo: "assets/logo.png"
 
 # Build settings
 markdown: kramdown

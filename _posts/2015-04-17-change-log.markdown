@@ -9,6 +9,30 @@ tags:	Jekyll
 ---
 这篇博文用于记录，自己在修改博客时具体的修改记录，如颜色设置、联系方式配置等信息，以便日后查看。
 
+###2016/01/12
+
+修改底部四个按钮大小 在 footer.html
+
+    .fa-lg{
+            font-size: 1.5em;
+        }
+
+设置顶部 Title(咕咚)的高度
+
+      .logo {
+        float: left;
+        height: 4em;
+        border:0px solid #000;
+        padding-top: 0.6em;
+        @include media ($tablet) {
+        	padding-left: $em-base;
+        }
+
+设置底部的按分类查看为隐藏
+
+      <p style="display:none;">
+        <a href="{{ site.baseurl }}posts">View All Posts by Category</a>
+      </p>
 
 ### 2015/12/5
 为博文增加了一个开关，如下所示

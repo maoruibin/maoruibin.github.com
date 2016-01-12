@@ -133,6 +133,8 @@ pre code.hljs {
   .logo {
     float: left;
     height: 4em;
+    border:0px solid #000;
+    padding-top: 0.6em;
     @include media ($tablet) {
     	padding-left: $em-base;
     }
@@ -142,7 +144,8 @@ pre code.hljs {
       padding-right: 1em;
     }
     span {
-    	font-size: 1.25em;
+    	font-size: 1.5em;
+    	text-align:center;
     }
   }
   nav {
@@ -337,7 +340,11 @@ pre code.hljs {
 */
 .site-footer {
 	$link-color: $white;
-	padding: 1em 1em 2em 1em;
+	$weibo-color: $weibo_primary;
+	$github-color: $github_primary;
+	$zhihu-color: $zhihu_primary;
+	$google-color: $google_primary;
+	padding: 4em 3em 4em 3em;
 	background-color: $highlight-color;
 	color: $white;
 	a {
@@ -352,6 +359,32 @@ pre code.hljs {
 	    outline: none;
 	  }
 	}
+
+    a.weibo{
+      color: $weibo-color;
+      &:hover {
+        color: darken($weibo-color, 10%);
+      }
+    }
+	a.github{
+	  color: $github-color;
+      &:hover {
+        color: darken($github-color, 10%);
+      }
+	}
+	a.zhihu{
+	  color: $zhihu-color;
+      &:hover {
+        color: darken($zhihu-color, 10%);
+      }
+	}
+	a.google{
+      color: $google-color;
+      &:hover {
+        color: darken($google-color, 10%);
+      }
+    }
+
 	.wrapper {
 		@include outer-container;
 	}
@@ -418,34 +451,28 @@ pre code.hljs {
 	*  Site Version info
 	*/
 	.site-version {
-		margin-top: 2.0em;
+		margin-top: 3em;
 		font-size: 0.8em;
 		text-align:center;
 		a {
 			text-decoration: none;
 		}
 	}
+
+	footer {
+      padding: 50px 0 65px;
+    }
+    footer .list-inline {
+      margin: 0;
+      padding: 0;
+    }
+    footer .copyright {
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 0;
+    }
 }
 /**
 *关于界面
 **/
-
-.social-media-list-about{
-    text-align:center;
-    list-style-type:none;
-    margin-top: 2.5em;
-}
-.social-media-list-about li{
-    display:inline;
-}
-
-.social-media-list-about li a{
-
-}
-
-.social-media-list-about i{
-    width:2em;
-    font-size:28px;
-}
-
 
