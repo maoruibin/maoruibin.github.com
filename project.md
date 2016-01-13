@@ -6,7 +6,9 @@ permalink: /project/
 
 从一开始工作，自己就是个比较爱动手的开发者，总喜欢自己做点属于自己的东西，最好还能方便别人，不过凡事并不是想得那么简单。
 
-###GankDaily
+如果要查看项目效果展示，可点击 [https://makerslate.io/gudong](https://makerslate.io/gudong) 查看更多。
+
+### [GankDaily](https://github.com/maoruibin/GankDaily)
 自己利用[干货集中营](http://gank.io/)对外开放的 [API](http://gank.io/api) 为干货集中营开发的一个手机客户端软件，客户端主要用于展现网站技术干货。
 
 该 App 是自己在 drakeet 的[妹纸](https://github.com/drakeet/Meizhi)基础上修改而来，但是不论在 UI 方面还是项目结构方面，
@@ -18,24 +20,24 @@ permalink: /project/
 
 [Fir主页](http://fir.im/gankdaily  )
 
-###AppPlus
+### [AppPlus](https://github.com/maoruibin/AppPlus)
 App+是一个MD风格的用于传送、提取APK文件的开源工具软件。
 
 [Github项目主页](https://github.com/maoruibin/AppPlus)
 
 [Fir主页](http://fir.im/appplus  )
 
-###PowerKey
+### [PowerKey](https://github.com/maoruibin/PowerKey)
 模仿 MIUI6 长按电源键的关机App
 
 [Github项目主页](https://github.com/maoruibin/PowerKey) 
 
-###PassBook
+### PassBook
 用于存储日常生活中用到的密码。目前已经在市场下架，不过自己仍然在使用。
 
 这个项目暂时没有展示链接了，等以后再补充吧！
 
-###美丽屋
+### [美丽屋](http://bj.meiliwu.com/)
 
 这是目前所做的公司项目,一个房屋交易平台。
 

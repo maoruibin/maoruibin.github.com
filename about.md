@@ -7,23 +7,24 @@ permalink: /about/
 <img src="{{ site.baseurl }}assets/profile_circle.png" title="Profile Picture" class="profile">
 <br>
 
-##我
+网名"咕咚"，Android开发者，13年毕业于内工大，计算机科学与技术专业。
 
-网名"咕咚"，Android开发者，13年大学毕业，计算机科学与技术专业。
+12年到北京，已在北京工作近三年，擅长 Android 应用开发。
 
-目前已在北京工作近三年，擅长 Android 应用开发，曾在一家创业公司有过Web前端和后端的开发经历。
+除了 Android 也曾有过 Web 前端和后端的开发经历。
 
-热爱开源，乐于分享，喜欢听歌、唱歌。喜欢运动，跑步、登山、打球，尤其喜欢篮球，是一个忠实的篮球迷。
+热爱开源，乐于分享，是一个忠实的 Github 用户。
 
-欢迎交流。
+我的 Github [个人主页](https://github.com/maoruibin) 欢迎follow 咕咚。
 
-##开源项目
+喜欢倒腾，空闲时会开发点自己的应用。
 
-[GankDaily](https://github.com/maoruibin/GankDaily)
+喜欢户外运动，篮球、乒乓球...
 
-[AppPlus](https://github.com/maoruibin/AppPlus)
+尤其喜欢打篮球，最爱！
 
-更多项目详情 请见[项目列表](/project)
+位置：组织中锋。
 
-或者 <a href="https://makerslate.io/gudong" target="_blank">https://makerslate.io/gudong</a>
+个人作品
 
+<a href="/project" target="_blank">链接</a> 
