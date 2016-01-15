@@ -22,7 +22,7 @@ tags: Licence
 
 在重构完成后，我觉得自己已经不是在单纯的练习一些语法知识了，发现自己其实在做一个客户端。因为我想突出干货内容，所以后来就把干货首页改为了当天的干货信息，也就是下面的样子。
 
-![dd](https://i.mi.com/file/92869046/full?type=note_img&fileid=92869046.__h0F6awi7b5T8SDm1aqRA)
+<img src="/assets/licence_1.jpeg" style="width: 50%;margin: auto;">
 
 同时为了突出时间，还对图片做了亮度的调节，所以图片看上去暗点，这样时间也就显得更清楚一点。
 
@@ -30,7 +30,7 @@ tags: Licence
 
 其实一开始，我是知道原项目是基于一个开源协议发布的，因为自己在看代码的过程中也多次看到drakeet在代码中的协议内容，包括在MeiZhi的Readme文件中也有这样的字样
 
-![license](https://i.mi.com/file/92869046/full?type=note_img&fileid=92869046.vMFt-5HIcmBuQOic1A4R9A)
+![license](/assets/licence_2.jpeg)
 
 但是自己没有花精力去像思考代码结构那样思考开源协议，然后就把代码公布，这也许是很多开发者不注意的问题。
 
@@ -42,7 +42,7 @@ tags: Licence
 
 此外，drakeet同学也提供一张有用的图片，如下所示，
 
-![license](https://i.mi.com/file/92869046/full?type=note_img&fileid=92869046.3sxK8iekAiCefbS4z-l20w)
+![license](/assets/licence_3.jpeg)
 
 关于开源协议如果有更好的资料欢迎补充，自己最近也会多多学习并了解这方面！
 
