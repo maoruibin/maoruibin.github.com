@@ -23,7 +23,21 @@ AppPlus 是自己今年七月份开始做的一个小产品，它是一个主要
  当然在使用 AndroidStudio 进行开发的过程中，AS 插件库里也已经有插件([adb-idea](https://github.com/pbreault/adb-idea))
  可以做到一键清数据，但是他只能针对调试中的应用，如果我想清理其他 APP 的缓存，他就不行了。
  
- 所以我需要一个 APP 能帮助我显示出最近打开的应用，并且提供一个按钮可以打开应用详情界面
+ 所以我需要一个 APP 能帮助我显示出最近打开的应用，并且提供一个按钮可以打开应用详情界面。
+ 
+ Update:最近刚看到一个有用的Api可以方便的清除应用的缓存数据
+    
+    /**
+    * Permits an application to erase its own data from disk. 
+    * This is equivalent to the user choosing to clear the app's
+    * data from within the device settings UI.It erases all dynamic
+    * data associated with the app -- its private data and data in its
+    * private area on external storage -- but does not remove the
+    * installed application itself, nor any OBB files.
+    */
+    ActivityManager.clearApplicationUserData()
+
+这个方法由 `ActivityManager` 提供，可一键清理app产生的用户数据。   
  
 ###二、我想方便快捷的导出手机中已安装应用的安装包
  
@@ -35,7 +49,7 @@ AppPlus 是自己今年七月份开始做的一个小产品，它是一个主要
  当你下载好 QQ 的安装包 QQ.exe,点击安装后，除非你人为保存安装包，系统是不会给你把安装包存下来的，Android 不一样，他会把应用的安装包
  都存在本地。
  
- 所以在 Android 手机上，只要知道了应用的安装包路径，导出还是挺容易的，不就是复制到一个自己制定的目录吗。这也不是什么高深的技术。
+ 所以在 Android 手机上，只要知道了应用的安装包路径，导出还是挺容易的，不就是复制到一个自己指定的目录吗。这也不是什么高深的技术。
  
  另外，尽管市场上已经有很多可以提供导出安装包功能的软件，我为什么还要自己做一个?
  
@@ -45,7 +59,7 @@ AppPlus 是自己今年七月份开始做的一个小产品，它是一个主要
  
  导出成功后会『友好』的弹出一个 Toast ，提示安装包已导出，顺便在 Toast 中指明导出的路径，如下所示
  
- ![bad](/assets/appplus_about_1.png "bad")
+ <img src="/assets/appplus_about_1.png" style="width: 50%;margin: auto;">
  
  但是因为 Toast 的弹出时间太短了，以至于我一次很难记住安装包到底被导出到那个路径下了，所以一般你需要再次导出一次，然后
  特意去注意 Toast 上提示的路径，你才可以记住导出的路径。It's too bad !
@@ -54,7 +68,7 @@ AppPlus 是自己今年七月份开始做的一个小产品，它是一个主要
  
 ###三、不喜欢广告。
   
-  用户体验这么差，怎么好意思加广告，不得而知！
+  用户体验这么差，怎么好意思加广告！
   
 ###四、学习
   

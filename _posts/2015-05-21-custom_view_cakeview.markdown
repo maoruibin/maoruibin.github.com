@@ -9,11 +9,12 @@ tags: View
 
 **CakeView**是一个通过自定义做的饼状图，如下图所示，会根据比例显示不同的占比。
 
-![CakeView效果图](/assets/cakeview_v2.png "CakeView效果图")
+<img src="/assets/cakeview_v2.png"  alt="CakeView原理图" title="CakeView原理图"  style="width: 50%;margin: auto;">
 
 这个view会根据传入的两个数字参数 生成不同的占比大小。
 
 ###实现原理###
+
 画出一个背景为红色的大圆圈，然后再画一个圆心跟红色圆圈一致的扇形。最后在中央画一个白色小圆，然后大概的样式就出来了，最后在中央写上文字内容即可。如下演示
 ![CakeView原理图](/assets/cakeview_principle_v2.png "CakeView原理图")
 
@@ -61,4 +62,8 @@ tags: View
 此外。整个实现过程中，还发现canvas有一个特别好的方法**drawTextOnPath()** 
 利用这个方法可以方便的文字的显示位置。
 
-具体的项目已经发布在了Github。附上项目地址：[ViewKit](http://www.github.com/maoruibin/ViewKit "CakeView")
+update:上述的画饼状图的方式会存在过度绘制的问题，尽管问题看上去不大，其实如果只是画一个圆圈，没必要这么麻烦，可以直接
+画一个指定宽度的圆线就对了，自己的实现其实有点麻烦了。
+
+更新于 2016/01/16 00:30
+
