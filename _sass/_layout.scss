@@ -344,6 +344,7 @@ pre code.hljs {
 	$github-color: $github_primary;
 	$zhihu-color: $zhihu_primary;
 	$google-color: $google_primary;
+	$twitter-color: $twitter_primary;
 	padding: 4em 3em 4em 3em;
 	background-color: $highlight-color;
 	color: $white;
@@ -382,6 +383,12 @@ pre code.hljs {
       color: $google-color;
       &:hover {
         color: darken($google-color, 10%);
+      }
+    }
+    a.twitter{
+      color: $twitter-color;
+      &:hover {
+        color: darken($twitter-color, 10%);
       }
     }
 
