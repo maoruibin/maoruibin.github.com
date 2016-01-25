@@ -84,14 +84,14 @@ Android 中的过度绘制是指同一个像素被绘制多次，从绘制性能
 
 <br>
 <br>
-<p style="text-align:center">微信 VS Keep</p>
+<p style="text-align:center">微信 VS 回家吃饭</p>
 <br>
 
 <img src="/assets/over_draw_good_two.png" style="width: 50%;margin: auto;float:left;">
 <img src="/assets/over_draw_bad_two.png" style="width: 50%;margin: auto;float:right;">
 <br>
 <br>
-<p style="text-align:center">微博 VS 回家吃饭</p>
+<p style="text-align:center">微博 VS Keep</p>
 <br>
  
 ### 避免过度绘制的 Tips 
