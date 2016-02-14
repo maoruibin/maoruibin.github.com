@@ -92,7 +92,7 @@ RxJava 的核心在于 异步。他的出现主要方便简化原来复杂的异
 
 RxJava 的异步实现主要是通过一种可扩展的观察者模式得到的。RxJava 有四个基本概念：Observable (可观察者，即被观察者)、 Observer (观察者)、 subscribe (订阅)、事件。
 
-被`观察者`(Observable) 发出 `事件`(Event) `观察者`(Observer) `订阅`(Subscribe)事件，当`被观察者`发出事件，观察者则会接受消息事件。
+`被观察者`(Observable) 发出 `事件`(Event) `观察者`(Observer) `订阅`(Subscribe)事件，当`被观察者`发出事件，观察者则会接受消息事件。
 
 
 ### 简单使用
