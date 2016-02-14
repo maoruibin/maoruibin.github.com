@@ -9,6 +9,24 @@ tags:	Jekyll
 ---
 这篇博文用于记录，自己在修改博客时具体的修改记录，如颜色设置、联系方式配置等信息，以便日后查看。
 
+###2016/01/20
+
+修改代码块的主题样式在 _include/head.html 文件中修改
+    
+        <!-- thanks to http://www.bootcdn.cn/lightbox2/      -->
+        <!-- thanks to http://www.bootcdn.cn/highlight.js/   -->
+        <!-- thanks to https://highlightjs.org/static/demo/  -->
+        <link  rel="stylesheet" href="//cdn.bootcss.com/highlight.js/8.5/styles/androidstudio.min.css">
+        <link rel="stylesheet" href="//cdn.bootcss.com/lightbox2/2.8.2/css/lightbox.css">
+        
+修改代码块的padding font  在 _sass/_layout.scss
+        
+        pre code.hljs {
+        	font-size: modular-scale(0);
+        	padding: 1.5em;
+        }
+
+
 ###2016/01/12
 
 修改底部四个按钮大小 在 footer.html

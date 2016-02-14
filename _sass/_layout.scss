@@ -41,7 +41,8 @@ code {
 }
 
 pre code.hljs {
-	font-size: modular-scale(-1);
+	font-size: modular-scale(0);
+	padding: 1.5em;
 }
 
 .page-divider {
