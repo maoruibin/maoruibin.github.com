@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>开源协议小风波</title>
+  <meta name="description" content="今天无意间在做项目的过程中，因为没有遵守开源协议，导致了一个小误会，尽管已经跟drakeet同学致歉，但后来还是觉得有必要把事情再梳理一遍，让更多的开发者注重一下开源协议。">
+  
+  <meta name="author" content="咕咚">
+  <meta name="copyright" content="&copy; 咕咚 2016">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/monokai_sublime.min.css">-->
+    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">-->
+
+    <!-- thanks to http://www.bootcdn.cn/lightbox2/      -->
+    <!-- thanks to http://www.bootcdn.cn/highlight.js/   -->
+    <!-- thanks to https://highlightjs.org/static/demo/  -->
+    <link  rel="stylesheet" href="//cdn.bootcss.com/highlight.js/8.5/styles/androidstudio.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/lightbox2/2.8.2/css/lightbox.css">
+
+    <!-- Bootstrap Core CSS -->
+    <!--<link rel="stylesheet" href="/css/bootstrap.min.css">-->
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+	<link rel="manifest" href="/assets/icons/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Facebook OGP cards -->
+  <meta property="og:description" content="今天无意间在做项目的过程中，因为没有遵守开源协议，导致了一个小误会，尽管已经跟drakeet同学致歉，但后来还是觉得有必要把事情再梳理一遍，让更多的开发者注重一下开源协议。" />
+  <meta property="og:url" content="http://maoruibin.github.io" />
+  <meta property="og:site_name" content="咕咚" />
+  <meta property="og:title" content="开源协议小风波" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://maoruibin.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="开源协议小风波">
+  <meta name="twitter:description" content="今天无意间在做项目的过程中，因为没有遵守开源协议，导致了一个小误会，尽管已经跟drakeet同学致歉，但后来还是觉得有必要把事情再梳理一遍，让更多的开发者注重一下开源协议。">
+  <meta name="twitter:image" content="http://maoruibin.github.io/assets/logo.png">
+  <meta name="twitter:url" content="http://maoruibin.github.io">
+
+  
+
+	<!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://maoruibin.github.io//thinking/2015/11/24/copy-right-meizhi.html">
+  <link rel="alternate" type="application/rss+xml" title="咕咚" href="http://maoruibin.github.io//feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+    	
+      <span>咕咚</span>
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+    	<i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+      	
+          
+
+          
+          <li class="nav-link">
+              <a href="/about/">
+                  关于我
+              </a>
+          </li>
+          
+
+          
+        
+          
+        
+          
+        
+          
+        
+          
+
+          
+          <li class="nav-link">
+              <a href="/posts/">
+                  博文
+              </a>
+          </li>
+          
+
+          
+        
+          
+
+          
+          <li class="nav-link">
+              <a href="/project/">
+                  项目
+              </a>
+          </li>
+          
+
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container "
+		 
+		>
+	<div class="scrim ">
+		<header class="post-header">
+		  <h1 class="title">开源协议小风波</h1>
+		  <p class="info">by <strong>咕咚</strong></p>
+		</header>
+	</div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+	<!--<div class="post-date">November 24, 2015</div>-->
+	<div class="post-date">
+		发表于 2015-11-24&nbsp;&nbsp;
+		<a href="#comments">
+			<span class="ds-thread-count" data-thread-key="/thinking/2015/11/24/copy-right-meizhi"></span>
+		</a>
+	</div>
+	<div class="post-categories">
+	in 
+	  
+		<a href="/category/thinking">Thinking</a>
+	  
+	
+	</div>
+</section>
+
+<article class="post-content">
+  <p>今天无意间在做项目的过程中，因为没有遵守开源协议，导致了一个小误会，尽管已经跟drakeet同学致歉，但后来还是觉得有必要把事情再梳理一遍，让更多的开发者注重一下开源协议。</p>
+
+<p>一开始在微博看到了@drakeet 同学开源了一个项目，叫 <a href="https://github.com/drakeet/Meizhi">MeiZhi</a>，一个干货集中营的 unofficial 客户端，客户端用于在手机端更好的显示技术干货信息，因为自己平时也比较关注技术干货，自己也就开始使用。</p>
+
+<p>整个客户端一开始都是drakeet一个人设计开发完成，其实对于程序员来说，写代码、开发往往是最轻松的事，最难的往往是设计，最终drakeet的干货客户端给人的视觉操作体验整体还是非常不错的，其中有很多细节，完成的很不错。</p>
+
+<p>后来自己阅读了源码，更是对代码钦佩不已。项目中使用了RxJava Retrofit以及JAVA8新特性lambda ，整个项目代码很简洁，很优雅。</p>
+
+<p>因为自己之前没有接触RxJava等知识，所以自己想仿照项目，自己动手实践一边RxJava的语法内容，以及lambda，因为我相信实践出真知，后来自己就new了一个项目，开始使用干货集中营的api进行开发，开始动手练习</p>
+
+<p>后来在写页面的时候，觉得把所有的数据获取逻辑写在Activity中其实不好，这样Activity会显得臃肿，正巧那段时间，大家在讨论MVP，所以自己就干脆使用MVP来做项目，毕竟是小项目，重构起来还是挺方便，重构很顺利。</p>
+
+<p>在重构完成后，我觉得自己已经不是在单纯的练习一些语法知识了，发现自己其实在做一个客户端。因为我想突出干货内容，所以后来就把干货首页改为了当天的干货信息，也就是下面的样子。</p>
+
+<p><img src="/assets/licence_1.jpeg" style="width: 50%;margin: auto;" /></p>
+
+<p>同时为了突出时间，还对图片做了亮度的调节，所以图片看上去暗点，这样时间也就显得更清楚一点。</p>
+
+<p>后来代码被自己review了好几次，然后尝试发beta版，在一些开发者朋友的反馈下，自己又改了一些细节，然后就把应用发布了，同时代码也公布在github。</p>
+
+<p>其实一开始，我是知道原项目是基于一个开源协议发布的，因为自己在看代码的过程中也多次看到drakeet在代码中的协议内容，包括在MeiZhi的Readme文件中也有这样的字样</p>
+
+<p><img src="/assets/licence_2.jpeg" alt="license" /></p>
+
+<p>但是自己没有花精力去像思考代码结构那样思考开源协议，然后就把代码公布，这也许是很多开发者不注意的问题。</p>
+
+<p>对于我们而言很多时候都会把精力集中在具体的代码，而对于代码之外的一些东西往往会很容易忽略。</p>
+
+<p>通过这件事提醒我们，作为开发者应该了解一些开源协议的问题，开源协议有很多，但是常用的就那些。</p>
+
+<p>自己事后也开始找一些开源协议相关的资料,<a href="http://kymjs.com/manager/2015/11/21/01/">聊聊Apache开源协议</a> @kymjs张涛</p>
+
+<p>此外，drakeet同学也提供一张有用的图片，如下所示，</p>
+
+<p><img src="/assets/licence_3.jpeg" alt="license" /></p>
+
+<p>关于开源协议如果有更好的资料欢迎补充，自己最近也会多多学习并了解这方面！</p>
+
+<p>再次感谢drakeet同学的及时指正，我的项目GankDaily也会尽快按照协议进行修正！不过最近因为自己的时间问题可能无法及时更新代码，可能需要过段时间才可以，不过开源协议这块，以后自己一定会注意到！</p>
+
+<p>当然说这么多，也希望大家可以在以后的工作开发中，注意到这个问题的存在，让我们一起对开源协议保持敬畏并了解学习使用它。</p>
+
+<p>附：文中出现的一些链接</p>
+
+<p>干货集中营 <a href="http://gank.io/">http://gank.io/</a></p>
+
+<p>妹纸 <a href="https://github.com/drakeet/Meizhi">https://github.com/drakeet/Meizhi</a></p>
+
+<p>GankDaily <a href="https://github.com/maoruibin/GankDaily">https://github.com/maoruibin/GankDaily</a></p>
+
+<p>聊聊Apache开源协议<a href="http://kymjs.com/manager/2015/11/21/01/">http://kymjs.com/manager/2015/11/21/01/</a></p>
+
+
+</article>
+
+
+
+<section class="tags">
+	<strong>Tags:</strong> <a href="/tag/Licence">Licence</a>
+</section>
+
+
+
+<section class="rss" style="display:none;">
+	<p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share" style="display:none;">
+  <!--<span>Share: </span>-->
+  <!---->
+		<!---->
+
+		<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  <!---->
+		<!---->
+
+		<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  <!---->
+		<!---->
+
+		<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  <!---->
+		<!---->
+
+		<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  <!---->
+		<!---->
+
+		<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  <!---->
+	<div class="ds-share" style="display:none;" style="border:0px solid red;margin-top:6em;" data-thread-key="/thinking/2015/11/24/copy-right-meizhi" data-title="开源协议小风波" data-images="" data-content="" data-url="http://maoruibin.github.io//thinking/2015/11/24/copy-right-meizhi.html">
+		<div class="ds-share-inline">
+			<ul  class="ds-share-icons-16">
+
+				<li><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+				<li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+				<li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+				<li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+
+			</ul>
+			<div class="ds-share-icons-more">
+			</div>
+		</div>
+	</div>
+</section>
+
+
+	<div id="comments" style="margin-top:6em;margin-bottom:6em;">
+		<div class="ds-thread" data-thread-key="/thinking/2015/11/24/copy-right-meizhi" data-title="%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE%E5%B0%8F%E9%A3%8E%E6%B3%A2" data-url="http://maoruibin.github.io//thinking/2015/11/24/copy-right-meizhi.html"></div>
+	</div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+		var duoshuoQuery = {short_name:"maoruibin"};
+		(function() {
+				var ds = document.createElement('script');
+				ds.type = 'text/javascript';ds.async = true;
+				ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+				ds.charset = 'UTF-8';
+				(document.getElementsByTagName('head')[0]
+				 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+<style type="text/css">
+    .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    }
+
+    .row {
+    margin-right: -15px;
+    margin-left: -15px;
+    }
+
+    .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    }
+
+    footer .list-inline {
+    margin: 0;
+    padding: 0;
+    }
+
+    .list-inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+    }
+
+    .text-center {
+    text-align: center;
+    }
+
+    .text-right {
+    text-align: right;
+    }
+
+    .list-inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+    }
+
+    .fa-lg{
+        font-size: 1.5em;
+    }
+</style>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                <div class="text-center" style="margin-bottom:0.8em;">
+                    <div style="font-size: 1.2em;"><a href="/" >咕咚</a></div>
+                    <div>生命不息，折腾不止。</div>
+                </div>
+
+                <ul class="list-inline text-center">
+                    
+                    
+                    <li>
+                        
+                        <a href="http://weibo.com/u/1874136301" title="Follow me on Weibo" target="_blank" class="weibo">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        <a href="https://github.com/maoruibin" title="Follow me on GitHub" target="_blank" class="github">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                        
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        
+                        <a href="http://www.zhihu.com/people/maoruibin" title="Follow me on ZhiHu" target="_blank" class="zhihu">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-zhihu fa-stack-1x fa-inverse">知</i>
+                                </span>
+                        </a>
+                        
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        
+                        
+                        <a href="http://plus.google.com/107689066812933417058?rel=author" title="Add me to your Circles" target="_blank" class="google">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        
+                        
+                        
+                        <a href="https://twitter.com/maoruibin9035" title="Add me to your Circles" target="_blank" class="twitter">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                    </li>
+                    
+                    
+                </ul>
+
+                <!--<p class="copyright text-muted">Copyright &copy; 咕咚 2016</p>-->
+                <div class="site-version text-right" style="display:block;">
+                    <p>Powered by <a href="http://jekyllcn.com">Jekyll</a>,&nbsp;Theme from <a
+                            href="https://github.com/bencentra/centrarium">Centrarium</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>-->
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>-->
+
+<!-- thanks to http://www.bootcdn.cn/lightbox2/ -->
+<script src="//cdn.bootcss.com/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/lightbox2/2.8.2/js/lightbox.min.js"></script>
+<script>
+
+$(document).ready(function() {
+
+	// Syntax highlighting
+	hljs.initHighlightingOnLoad();
+
+	// Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+
+});
+
+
+</script>
+
+
+
+
+  </body>
+
+</html>

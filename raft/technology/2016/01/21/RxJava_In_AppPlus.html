@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RxJava 在 AppPlus 中的应用</title>
+  <meta name="description" content="RxJava 已经出来很长一段时间了，国内也已经有很多公司在使用，与此同时，有不少优秀的开发者也不断的在开源社区分享自己对 RxJava的使用理解，而且这个过程中也产出了不少优秀的 RxJava 资料。自己通过这些资料以及一些开源项目也在不断的学习 RxJava，从一开始的 GankDaily 项目中蹒跚学步，到...">
+  
+  <meta name="author" content="咕咚">
+  <meta name="copyright" content="&copy; 咕咚 2016">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/monokai_sublime.min.css">-->
+    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">-->
+
+    <!-- thanks to http://www.bootcdn.cn/lightbox2/      -->
+    <!-- thanks to http://www.bootcdn.cn/highlight.js/   -->
+    <!-- thanks to https://highlightjs.org/static/demo/  -->
+    <link  rel="stylesheet" href="//cdn.bootcss.com/highlight.js/8.5/styles/androidstudio.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/lightbox2/2.8.2/css/lightbox.css">
+
+    <!-- Bootstrap Core CSS -->
+    <!--<link rel="stylesheet" href="/css/bootstrap.min.css">-->
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+	<link rel="manifest" href="/assets/icons/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Facebook OGP cards -->
+  <meta property="og:description" content="RxJava 已经出来很长一段时间了，国内也已经有很多公司在使用，与此同时，有不少优秀的开发者也不断的在开源社区分享自己对 RxJava的使用理解，而且这个过程中也产出了不少优秀的 RxJava 资料。自己通过这些资料以及一些开源项目也在不断的学习 RxJava，从一开始的 GankDaily 项目中蹒跚学步，到..." />
+  <meta property="og:url" content="http://maoruibin.github.io" />
+  <meta property="og:site_name" content="咕咚" />
+  <meta property="og:title" content="RxJava 在 AppPlus 中的应用" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://maoruibin.github.io/zzz" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="RxJava 在 AppPlus 中的应用">
+  <meta name="twitter:description" content="RxJava 已经出来很长一段时间了，国内也已经有很多公司在使用，与此同时，有不少优秀的开发者也不断的在开源社区分享自己对 RxJava的使用理解，而且这个过程中也产出了不少优秀的 RxJava 资料。自己通过这些资料以及一些开源项目也在不断的学习 RxJava，从一开始的 GankDaily 项目中蹒跚学步，到...">
+  <meta name="twitter:image" content="http://maoruibin.github.io/zzz">
+  <meta name="twitter:url" content="http://maoruibin.github.io">
+
+  
+
+	<!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://maoruibin.github.io//technology/2016/01/21/RxJava_In_AppPlus.html">
+  <link rel="alternate" type="application/rss+xml" title="咕咚" href="http://maoruibin.github.io//feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+    	
+      <span>咕咚</span>
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+    	<i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+      	
+          
+
+          
+          <li class="nav-link">
+              <a href="/about/">
+                  关于我
+              </a>
+          </li>
+          
+
+          
+        
+          
+        
+          
+        
+          
+        
+          
+
+          
+          <li class="nav-link">
+              <a href="/posts/">
+                  博文
+              </a>
+          </li>
+          
+
+          
+        
+          
+
+          
+          <li class="nav-link">
+              <a href="/project/">
+                  项目
+              </a>
+          </li>
+          
+
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover"
+		 
+		 
+			style="background-color:#607D8B;"
+			
+		 
+		>
+	<div class="scrim has-cover">
+		<header class="post-header">
+		  <h1 class="title">RxJava 在 AppPlus 中的应用</h1>
+		  <p class="info">by <strong>咕咚</strong></p>
+		</header>
+	</div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+	<!--<div class="post-date">January 21, 2016</div>-->
+	<div class="post-date">
+		发表于 2016-01-21&nbsp;&nbsp;
+		<a href="#comments">
+			<span class="ds-thread-count" data-thread-key="/technology/2016/01/21/RxJava_In_AppPlus"></span>
+		</a>
+	</div>
+	<div class="post-categories">
+	in 
+	  
+		<a href="/category/technology">Technology</a>
+	  
+	
+	</div>
+</section>
+
+<article class="post-content">
+  <p>RxJava 已经出来很长一段时间了，国内也已经有很多公司在使用，与此同时，有不少优秀的开发者也不断的在开源社区分享自己对 RxJava
+的使用理解，而且这个过程中也产出了不少优秀的 RxJava 资料。自己通过这些资料以及一些开源项目也在不断的学习 RxJava，
+从一开始的 GankDaily 项目中蹒跚学步，到 AppPlus 中的大量实战，自己对 RxJava 的应用也变得熟练了起来，
+这篇文章结合自己的实践，简单说说 RxJava 以及它在 AppPlus 这个项目中的应用。</p>
+
+<h3 id="section">前言</h3>
+
+<p>先说一些与技术无关的内容。</p>
+
+<p>其实关于 RxJava 的使用介绍文档，国内已经有很多非常优秀的文章，比如扔物线的 <a href="http://gank.io/post/560e15be2dca930e00da1083">给 Android 开发者的 RxJava 详解</a>
+以及 hi大头鬼hi 的<a href="http://blog.csdn.net/lzyzsd/article/details/41833541">深入浅出RxJava (译文)</a>系列文章，都是非常不错的文章，自己把上面的文章至少读了两遍以上，
+从中收获颇多，而且文章中已经把 RxJava 的很多要点写的很清楚了，尤其是扔物线的那篇。</p>
+
+<p>所以，如果想了解 RxJava 使用方法，推荐直接去看上面两位的博文，这篇文章主要是记录自己学习过程中的一些感悟、以及自己在 <a href="https://github.com/maoruibin/AppPlus">AppPlus</a> 这个项目中的实践。</p>
+
+<p>关于自己为什么要写这篇，主要是因为在看了别人的文章后，觉得有必要记录一下自己的理解，毕竟，别人的文章是别人的理解，是人家自己的学习记录以及思考。
+很多知识点只有经过自己的思考、应用、再思考、再理解才会变成自己的知识，
+当然不排除那种只看一遍就能领会 RxJava 核心思想的牛人，反正自己不是，纸上得来终觉浅，所以自己在读完了上面的文章后把 RxJava 应用到了自己的项目 
+<a href="https://github.com/maoruibin/AppPlus">AppPlus</a> 中，并且决定在这里记录一些自己对 RxJava 的一些理解，用于加深对 RxJava 的认识理解。</p>
+
+<h3 id="rxjava">为什么要有 RxJava</h3>
+
+<p>RxJava 的核心在于 异步。他的出现主要方便简化原来复杂的异步逻辑处理，下面是扔物线举出的一个实例，一个数组中含有多个图片本地路径，现在要把他们显示在
+一 ImageView 上，这是一个典型的异步过程。用传统的方式</p>
+
+<pre><code>new Thread() {
+    @Override
+    public void run() {
+        super.run();
+        for (File folder : folders) {
+            File[] files = folder.listFiles();
+            for (File file : files) {
+                if (file.getName().endsWith(".png")) {
+                    final Bitmap bitmap = getBitmapFromFile(file);
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            imageCollectorView.addImage(bitmap);
+                        }
+                    });
+                }
+            }
+        }
+    }
+}.start();
+</code></pre>
+
+<p>使用 RxJava 的方式</p>
+
+<pre><code>Observable.from(folders)
+    .flatMap(new Func1&lt;File, Observable&lt;File&gt;&gt;() {
+        @Override
+        public Observable&lt;File&gt; call(File file) {
+            return Observable.from(file.listFiles());
+        }
+    })
+    .filter(new Func1&lt;File, Boolean&gt;() {
+        @Override
+        public Boolean call(File file) {
+            return file.getName().endsWith(".png");
+        }
+    })
+    .map(new Func1&lt;File, Bitmap&gt;() {
+        @Override
+        public Bitmap call(File file) {
+            return getBitmapFromFile(file);
+        }
+    })
+    .subscribeOn(Schedulers.io())
+    .observeOn(AndroidSchedulers.mainThread())
+    .subscribe(new Action1&lt;Bitmap&gt;() {
+        @Override
+        public void call(Bitmap bitmap) {
+            imageCollectorView.addImage(bitmap);
+        }
+    });
+</code></pre>
+
+<p>使用 RxJava 后的好处是程序结构变的清晰了，整个实现逻辑是流式风格，特别适合阅读，可以显著的提升代码的阅读性。
+如果整个团队都使用 RxJava ,那么后续维护成本就会降低写，因为代码的阅读性得到了提高。</p>
+
+<p>有种面向过程编程的感觉啊~</p>
+
+<h3 id="rxjava-">RxJava 原理介绍</h3>
+
+<p>RxJava 的异步实现主要是通过一种可扩展的观察者模式得到的。RxJava 有四个基本概念：Observable (可观察者，即被观察者)、 Observer (观察者)、 subscribe (订阅)、事件。</p>
+
+<p><code>被观察者</code>(Observable) 发出 <code>事件</code>(Event) <code>观察者</code>(Observer) <code>订阅</code>(Subscribe)事件，当<code>被观察者</code>发出事件，观察者则会接受消息事件。</p>
+
+<h3 id="section-1">简单使用</h3>
+
+<p>这里忽略如何引入 RxJava 的方式，具体可去 <a href="https://github.com/ReactiveX/RxJava">RxJava</a> 开源站点去获取。</p>
+
+<p>首先来看 AppPlus 中的一个应用场景，在首页，我们需要查询最近运行的程序列表，这很明显一个异步过程，符合 RxJava 的应用场景，
+我们在工作线程去获取数据，获取数据完毕后，回到主线程完成界面更新。</p>
+
+<p>整个过程中， <code>被观察者</code>是一个抽象的数据获取过程，而<code>观察者</code>则是界面更新这个操作，在实际应用中，大多数情况下
+被观察者和观察者都是这种抽象的概念。</p>
+
+<p>下面首先定义一个观察者，这段代码在 <a href="https://github.com/maoruibin/AppPlus/blob/04a177710d4914469f68860e16c7105004f82021/app/src/main/java/com/gudong/appkit/ui/fragment/AppListFragment.java#L284-L284">AppListFragment</a>中。</p>
+
+<pre><code>Subscriber&lt;List&lt;AppEntity&gt;&gt; subscriber = new Subscriber&lt;List&lt;AppEntity&gt;&gt;() {
+    @Override
+    public void onNext(List&lt;AppEntity&gt; appEntities) {
+         setData(appEntities, mType);
+    }
+
+    @Override
+    public void onCompleted() {
+        loadingFinish();
+    }
+
+    @Override
+    public void onError(Throwable throwable) {
+        Log.d(tag, "Error!");
+    }
+};
+</code></pre>
+
+<p>这个<code>观察者</code> 等待 <code>被观察者</code> 获取数据，<code>被观察者</code>获取到数据后就会自动发布事件，然后自动调用到观察者中已经定义好的
+回调方法，如上所示，调用 setData() 方法去更新界面，很简单的逻辑。</p>
+
+<p>那<code>被观察者</code>如何定义，如下所示</p>
+
+<pre><code>  Observable&lt;List&lt;AppEntity&gt;&gt; observable =  DataHelper.getRunningAppEntity(getActivity());
+   
+  /**
+     * get the running app list info
+     * @param ctx
+     * @return
+     */
+    public static Observable&lt;List&lt;AppEntity&gt;&gt; getRunningAppEntity(final Context ctx) {
+        return RxUtil.makeObservable(new Callable&lt;List&lt;AppEntity&gt;&gt;() {
+            @Override
+            public List&lt;AppEntity&gt; call() throws Exception {
+                List&lt;ActivityManager.RunningAppProcessInfo&gt; runningList = ProcessManager.getRunningAppProcessInfo(ctx);
+                List&lt;AppEntity&gt; list = new ArrayList&lt;&gt;();
+                for (ActivityManager.RunningAppProcessInfo processInfo : runningList) {
+                    String packageName = processInfo.processName;
+                    if (isNotShowSelf(ctx, packageName)) continue;
+                    AppEntity entity = DataHelper.getAppByPackageName(packageName);
+                    if (entity == null) continue;
+                    list.add(entity);
+                }
+                return list;
+            }
+        });
+    }
+</code></pre>
+
+<p>这里牵扯到另一个问题，如何让自己的异步方法返回一个 Observable 对象，具体查看另一篇不错的译文 <a href="http://www.devtf.cn/?p=734">将数据库操作 RxJava 化的方法</a></p>
+
+<p>现在观察者与被观察者都已经建立好了，按照之前的说法，现在只需要要通过 observable 的 subscribe 方法就可以将两者关联起来，</p>
+
+<pre><code>observable.subscribe(subscriber);
+</code></pre>
+
+<p>但是这里还有一个问题，我们写惯了 Android 的异步代码，都知道这样一个道理，获取数据等耗时操作要写在
+工作线程中，以防止应用 ANR ，但是数据获取成功后，要更新界面，就需要到把这个操作放到主线程中去完成，通常我们使用 Handler 就可以方便的做到上述这点，
+但是使用 RxJava 后我们怎么办，现在在被观察者和观察者中都没有看到任何和线程切换的操作，默认他们都应该是在主线程中运行。</p>
+
+<p>不出意外的话，执行上面的代码，程序应该会奔溃，因为获取最近运行的程序列表是一个耗时操作，把它刚在主线程明显是有问题的，那怎么办？</p>
+
+<p>这里不妨设想下，如果 RxJava 可以提供两个方法，一个用来控制<code>被观察者</code>中逻辑代码的执行线程，另一个用来控制<code>观察者</code>执行的线程该多好，那对我们程序员
+来说不非常方便吗，写惯了以前的 Android 代码，我们对那些代码应该放在主线程、那些代码应该放在子线程已经非常清楚，所以如果 RxJava 可以提供这样的
+线程控制 API 那一定是极好的。</p>
+
+<p>既然都这样设想了，RxJava 必然已经提供了这样的方法，否则我也不会设想，哈哈~下面就说说 RxJava 中的线程控制</p>
+
+<h3 id="section-2">线程控制</h3>
+
+<p>RXJava 使用 subscribeOn() 和 observeOn() 两个方法来对线程进行控制</p>
+
+<p>subscribeOn(): 指定 subscribe() 所发生的线程，即 Observable.OnSubscribe 被激活时所处的线程。或者叫做事件产生的线程。</p>
+
+<p>observeOn(): 指定 Subscriber 所运行在的线程。或者叫做事件消费的线程。一般的我们用到的这里应该是主线程</p>
+
+<p>经过这个分析，修改上面的代码，如下所示</p>
+
+<pre><code>observable
+    // 指定了获取数据的操作（被观察者）发生在 io 线程
+    .subscribeOn(Schedulers.io())
+    // 指定了界面更新的操作 (观察者) 发生在 mainThread
+    .observeOn(AndroidSchedulers.mainThread())
+    // 观察者订阅数据获取这一事件
+    .subscribe(subscriber);
+</code></pre>
+
+<p>关于 Schedulers 内置的那几个线程可选项可查看扔物线博客 线程控制 —— Scheduler (一) 那一章节。</p>
+
+<p>到此为止，使用 RxJava 完成一个异步事件订阅就完成了。</p>
+
+
+</article>
+
+
+
+<section class="tags">
+	<strong>Tags:</strong> <a href="/tag/Android">Android</a>,&nbsp;<a href="/tag/RxJava">RxJava</a>
+</section>
+
+
+
+<section class="rss" style="display:none;">
+	<p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share" style="display:none;">
+  <!--<span>Share: </span>-->
+  <!---->
+		<!---->
+
+		<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  <!---->
+		<!---->
+
+		<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  <!---->
+		<!---->
+
+		<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  <!---->
+		<!---->
+
+		<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  <!---->
+		<!---->
+
+		<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  <!---->
+	<div class="ds-share" style="display:none;" style="border:0px solid red;margin-top:6em;" data-thread-key="/technology/2016/01/21/RxJava_In_AppPlus" data-title="RxJava 在 AppPlus 中的应用" data-images="" data-content="" data-url="http://maoruibin.github.io//technology/2016/01/21/RxJava_In_AppPlus.html">
+		<div class="ds-share-inline">
+			<ul  class="ds-share-icons-16">
+
+				<li><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+				<li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+				<li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+				<li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+
+			</ul>
+			<div class="ds-share-icons-more">
+			</div>
+		</div>
+	</div>
+</section>
+
+
+	<div id="comments" style="margin-top:6em;margin-bottom:6em;">
+		<div class="ds-thread" data-thread-key="/technology/2016/01/21/RxJava_In_AppPlus" data-title="RxJava+%E5%9C%A8+AppPlus+%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8" data-url="http://maoruibin.github.io//technology/2016/01/21/RxJava_In_AppPlus.html"></div>
+	</div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+		var duoshuoQuery = {short_name:"maoruibin"};
+		(function() {
+				var ds = document.createElement('script');
+				ds.type = 'text/javascript';ds.async = true;
+				ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+				ds.charset = 'UTF-8';
+				(document.getElementsByTagName('head')[0]
+				 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+<style type="text/css">
+    .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    }
+
+    .row {
+    margin-right: -15px;
+    margin-left: -15px;
+    }
+
+    .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    }
+
+    footer .list-inline {
+    margin: 0;
+    padding: 0;
+    }
+
+    .list-inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+    }
+
+    .text-center {
+    text-align: center;
+    }
+
+    .text-right {
+    text-align: right;
+    }
+
+    .list-inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+    }
+
+    .fa-lg{
+        font-size: 1.5em;
+    }
+</style>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                <div class="text-center" style="margin-bottom:0.8em;">
+                    <div style="font-size: 1.2em;"><a href="/" >咕咚</a></div>
+                    <div>生命不息，折腾不止。</div>
+                </div>
+
+                <ul class="list-inline text-center">
+                    
+                    
+                    <li>
+                        
+                        <a href="http://weibo.com/u/1874136301" title="Follow me on Weibo" target="_blank" class="weibo">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        <a href="https://github.com/maoruibin" title="Follow me on GitHub" target="_blank" class="github">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                        
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        
+                        <a href="http://www.zhihu.com/people/maoruibin" title="Follow me on ZhiHu" target="_blank" class="zhihu">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-zhihu fa-stack-1x fa-inverse">知</i>
+                                </span>
+                        </a>
+                        
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        
+                        
+                        <a href="http://plus.google.com/107689066812933417058?rel=author" title="Add me to your Circles" target="_blank" class="google">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        
+                        
+                        
+                        <a href="https://twitter.com/maoruibin9035" title="Add me to your Circles" target="_blank" class="twitter">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                    </li>
+                    
+                    
+                </ul>
+
+                <!--<p class="copyright text-muted">Copyright &copy; 咕咚 2016</p>-->
+                <div class="site-version text-right" style="display:block;">
+                    <p>Powered by <a href="http://jekyllcn.com">Jekyll</a>,&nbsp;Theme from <a
+                            href="https://github.com/bencentra/centrarium">Centrarium</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>-->
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>-->
+
+<!-- thanks to http://www.bootcdn.cn/lightbox2/ -->
+<script src="//cdn.bootcss.com/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/lightbox2/2.8.2/js/lightbox.min.js"></script>
+<script>
+
+$(document).ready(function() {
+
+	// Syntax highlighting
+	hljs.initHighlightingOnLoad();
+
+	// Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+
+});
+
+
+</script>
+
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>利用 Gradle Task 查看远程依赖库的本地存储路径</title>
+  <meta name="description" content="这篇文章主要分享一个主题，如何在 AndroidStudio 中利用 gradle 查看自己项目中引入的三方依赖库的本地缓存路径。相信一些同学会对这个话题感兴趣的。">
+  
+  <meta name="author" content="咕咚">
+  <meta name="copyright" content="&copy; 咕咚 2016">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/monokai_sublime.min.css">-->
+    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">-->
+
+    <!-- thanks to http://www.bootcdn.cn/lightbox2/      -->
+    <!-- thanks to http://www.bootcdn.cn/highlight.js/   -->
+    <!-- thanks to https://highlightjs.org/static/demo/  -->
+    <link  rel="stylesheet" href="//cdn.bootcss.com/highlight.js/8.5/styles/androidstudio.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/lightbox2/2.8.2/css/lightbox.css">
+
+    <!-- Bootstrap Core CSS -->
+    <!--<link rel="stylesheet" href="/css/bootstrap.min.css">-->
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+	<link rel="manifest" href="/assets/icons/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Facebook OGP cards -->
+  <meta property="og:description" content="这篇文章主要分享一个主题，如何在 AndroidStudio 中利用 gradle 查看自己项目中引入的三方依赖库的本地缓存路径。相信一些同学会对这个话题感兴趣的。" />
+  <meta property="og:url" content="http://maoruibin.github.io" />
+  <meta property="og:site_name" content="咕咚" />
+  <meta property="og:title" content="利用 Gradle Task 查看远程依赖库的本地存储路径" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://maoruibin.github.io/#84BA40" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="利用 Gradle Task 查看远程依赖库的本地存储路径">
+  <meta name="twitter:description" content="这篇文章主要分享一个主题，如何在 AndroidStudio 中利用 gradle 查看自己项目中引入的三方依赖库的本地缓存路径。相信一些同学会对这个话题感兴趣的。">
+  <meta name="twitter:image" content="http://maoruibin.github.io/#84BA40">
+  <meta name="twitter:url" content="http://maoruibin.github.io">
+
+  
+
+	<!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://maoruibin.github.io//technology/2015/12/20/watch_dependencies_path.html">
+  <link rel="alternate" type="application/rss+xml" title="咕咚" href="http://maoruibin.github.io//feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+    	
+      <span>咕咚</span>
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+    	<i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+      	
+          
+
+          
+          <li class="nav-link">
+              <a href="/about/">
+                  关于我
+              </a>
+          </li>
+          
+
+          
+        
+          
+        
+          
+        
+          
+        
+          
+
+          
+          <li class="nav-link">
+              <a href="/posts/">
+                  博文
+              </a>
+          </li>
+          
+
+          
+        
+          
+
+          
+          <li class="nav-link">
+              <a href="/project/">
+                  项目
+              </a>
+          </li>
+          
+
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover"
+		 
+		 
+	    style="background-color:#84BA40;"
+			
+		 
+		>
+	<div class="scrim has-cover">
+		<header class="post-header">
+		  <h1 class="title">利用 Gradle Task 查看远程依赖库的本地存储路径</h1>
+		  <p class="info">by <strong>咕咚</strong></p>
+		</header>
+	</div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+	<!--<div class="post-date">December 20, 2015</div>-->
+	<div class="post-date">
+		发表于 2015-12-20&nbsp;&nbsp;
+		<a href="#comments">
+			<span class="ds-thread-count" data-thread-key="/technology/2015/12/20/watch_dependencies_path"></span>
+		</a>
+	</div>
+	<div class="post-categories">
+	in 
+	  
+		<a href="/category/technology">Technology</a>
+	  
+	
+	</div>
+</section>
+
+<article class="post-content">
+  <p>这篇文章主要分享一个主题，如何在 AndroidStudio 中利用 gradle 查看自己项目中引入的三方依赖库的本地缓存路径。相信一些同学会对这个
+话题感兴趣的。</p>
+
+<h3 id="section">问题</h3>
+
+<p>自从使用 AndroidStudio + Gradle 开始项目开发，我们已经用到了很多 gradle 带来的特性，比如要在项目中使用三方 Lib ，
+我们再也不需要像 eclipse 时代，需要我们手动下载对应的 jar 包，从 gradle 开始，我们只要在build.gradle 加入三方lib的
+dependencies 路径，然后同步，lib就自动下载到本地了。</p>
+
+<p>例如，我们要在自己的项目中引用 square 公司的网络框架 OkHttp ，只需要在 build.gradle
+文件中加一行依赖路径即可，如下所示</p>
+
+<pre><code>compile 'com.squareup.okhttp:okhttp:2.5.0'
+</code></pre>
+
+<p>加入之后，同步，我们就可以使用 okhttp 提供的各种 API ，很简单的导入方式。</p>
+
+<p>但是时间久了，我就愈发想知道，gradle到底把lib给存到什么地方了，
+今天搜了一圈，找到一个靠谱的方法，特意分享下，也不是什么技术点，只是解决我心中的一个疑问而已。</p>
+
+<h3 id="section-1">答案</h3>
+
+<pre><code> dependencies{
+     .....
+ }
+ 
+ //显示依赖包的存储路径   
+ task showMeCache &lt;&lt; {
+     configurations.compile.each { println it }
+ }
+</code></pre>
+
+<p>如上所示，只需要在 build.gradle 文件中，增加如上所示的一个 task ,然后打开 AndroidStudio 自带的 Terminal 窗口，执行</p>
+
+<pre><code>gradle showMeCache
+</code></pre>
+
+<p>即可看到所有依赖的对应路径，</p>
+
+<p>Note : 因为 gradle 文件顺序执行的特点，这个任务应该定义在<code>dependencies</code>节点之下。</p>
+
+<h3 id="section-2">结果</h3>
+
+<pre><code>:app:showMeCache
+/Users/mao/workpace/person/AppPlus/app/libs/lite-orm-1.7.0.jar
+/Users/mao/workpace/person/AppPlus/app/libs/umeng-update-v2.6.0.1.jar
+/Users/mao/Downloads/android/sdk/extras/android/m2repository/com/android/support/appcompat-v7/23.1.1/appcompat-v7-23.1.1.aar
+/Users/mao/Downloads/android/sdk/extras/android/m2repository/com/android/support/design/23.1.1/design-23.1.1.aar
+/Users/mao/.gradle/caches/modules-2/files-2.1/com.jenzz/materialpreference/1.3/def38f1784f5f789b10ed388e385f7857e765405/materialpreference-1.3.aar
+/Users/mao/.gradle/caches/modules-2/files-2.1/com.readystatesoftware.systembartint/systembartint/1.0.3/de4f7404e2f58d8f6e83cb1e85d0c2d6c2987287/systembartint-1.0.3.jar
+/Users/mao/Downloads/android/sdk/extras/android/m2repository/com/android/support/gridlayout-v7/22.2.0/gridlayout-v7-22.2.0.aar
+/Users/mao/.gradle/caches/modules-2/files-2.1/com.umeng.analytics/analytics/5.6.4/76fed6d2233b958f0c1d589aa366785e0ab5c8f1/analytics-5.6.4.jar
+/Users/mao/Downloads/android/sdk/extras/android/m2repository/com/android/support/percent/23.1.0/percent-23.1.0.aar
+/Users/mao/.gradle/caches/modules-2/files-2.1/com.jaredrummler/android-processes/1.0.2/704bbcb3f6d25c5da24b3e0199b178520ad7ca7e/android-processes-1.0.2.aar
+/Users/mao/Downloads/android/sdk/extras/android/m2repository/com/android/support/support-v4/23.1.1/support-v4-23.1.1.aar
+/Users/mao/Downloads/android/sdk/extras/android/m2repository/com/android/support/recyclerview-v7/23.1.1/recyclerview-v7-23.1.1.aar
+/Users/mao/Downloads/android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar
+</code></pre>
+
+<p>Enjoy it.</p>
+
+
+</article>
+
+
+
+<section class="tags">
+	<strong>Tags:</strong> <a href="/tag/Gradle">Gradle</a>,&nbsp;<a href="/tag/Task">Task</a>
+</section>
+
+
+
+<section class="rss" style="display:none;">
+	<p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share" style="display:none;">
+  <!--<span>Share: </span>-->
+  <!---->
+		<!---->
+
+		<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  <!---->
+		<!---->
+
+		<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  <!---->
+		<!---->
+
+		<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  <!---->
+		<!---->
+
+		<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  <!---->
+		<!---->
+
+		<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  <!---->
+	<div class="ds-share" style="display:none;" style="border:0px solid red;margin-top:6em;" data-thread-key="/technology/2015/12/20/watch_dependencies_path" data-title="利用 Gradle Task 查看远程依赖库的本地存储路径" data-images="" data-content="" data-url="http://maoruibin.github.io//technology/2015/12/20/watch_dependencies_path.html">
+		<div class="ds-share-inline">
+			<ul  class="ds-share-icons-16">
+
+				<li><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+				<li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+				<li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+				<li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+
+			</ul>
+			<div class="ds-share-icons-more">
+			</div>
+		</div>
+	</div>
+</section>
+
+
+	<div id="comments" style="margin-top:6em;margin-bottom:6em;">
+		<div class="ds-thread" data-thread-key="/technology/2015/12/20/watch_dependencies_path" data-title="%E5%88%A9%E7%94%A8+Gradle+Task+%E6%9F%A5%E7%9C%8B%E8%BF%9C%E7%A8%8B%E4%BE%9D%E8%B5%96%E5%BA%93%E7%9A%84%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E8%B7%AF%E5%BE%84" data-url="http://maoruibin.github.io//technology/2015/12/20/watch_dependencies_path.html"></div>
+	</div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+		var duoshuoQuery = {short_name:"maoruibin"};
+		(function() {
+				var ds = document.createElement('script');
+				ds.type = 'text/javascript';ds.async = true;
+				ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+				ds.charset = 'UTF-8';
+				(document.getElementsByTagName('head')[0]
+				 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+<style type="text/css">
+    .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    }
+
+    .row {
+    margin-right: -15px;
+    margin-left: -15px;
+    }
+
+    .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    }
+
+    footer .list-inline {
+    margin: 0;
+    padding: 0;
+    }
+
+    .list-inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+    }
+
+    .text-center {
+    text-align: center;
+    }
+
+    .text-right {
+    text-align: right;
+    }
+
+    .list-inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+    }
+
+    .fa-lg{
+        font-size: 1.5em;
+    }
+</style>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                <div class="text-center" style="margin-bottom:0.8em;">
+                    <div style="font-size: 1.2em;"><a href="/" >咕咚</a></div>
+                    <div>生命不息，折腾不止。</div>
+                </div>
+
+                <ul class="list-inline text-center">
+                    
+                    
+                    <li>
+                        
+                        <a href="http://weibo.com/u/1874136301" title="Follow me on Weibo" target="_blank" class="weibo">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        <a href="https://github.com/maoruibin" title="Follow me on GitHub" target="_blank" class="github">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                        
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        
+                        <a href="http://www.zhihu.com/people/maoruibin" title="Follow me on ZhiHu" target="_blank" class="zhihu">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-zhihu fa-stack-1x fa-inverse">知</i>
+                                </span>
+                        </a>
+                        
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        
+                        
+                        <a href="http://plus.google.com/107689066812933417058?rel=author" title="Add me to your Circles" target="_blank" class="google">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        
+                        
+                        
+                        <a href="https://twitter.com/maoruibin9035" title="Add me to your Circles" target="_blank" class="twitter">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                    </li>
+                    
+                    
+                </ul>
+
+                <!--<p class="copyright text-muted">Copyright &copy; 咕咚 2016</p>-->
+                <div class="site-version text-right" style="display:block;">
+                    <p>Powered by <a href="http://jekyllcn.com">Jekyll</a>,&nbsp;Theme from <a
+                            href="https://github.com/bencentra/centrarium">Centrarium</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>-->
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>-->
+
+<!-- thanks to http://www.bootcdn.cn/lightbox2/ -->
+<script src="//cdn.bootcss.com/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/lightbox2/2.8.2/js/lightbox.min.js"></script>
+<script>
+
+$(document).ready(function() {
+
+	// Syntax highlighting
+	hljs.initHighlightingOnLoad();
+
+	// Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+
+});
+
+
+</script>
+
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>咕咚</title>
+  <meta name="description" content="有意义就是好好活，好好活就有意义。
+">
+  
+  <meta name="author" content="咕咚">
+  <meta name="copyright" content="&copy; 咕咚 2016">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/monokai_sublime.min.css">-->
+    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">-->
+
+    <!-- thanks to http://www.bootcdn.cn/lightbox2/      -->
+    <!-- thanks to http://www.bootcdn.cn/highlight.js/   -->
+    <!-- thanks to https://highlightjs.org/static/demo/  -->
+    <link  rel="stylesheet" href="//cdn.bootcss.com/highlight.js/8.5/styles/androidstudio.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/lightbox2/2.8.2/css/lightbox.css">
+
+    <!-- Bootstrap Core CSS -->
+    <!--<link rel="stylesheet" href="/css/bootstrap.min.css">-->
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+	<link rel="manifest" href="/assets/icons/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Facebook OGP cards -->
+  <meta property="og:description" content="有意义就是好好活，好好活就有意义。
+" />
+  <meta property="og:url" content="http://maoruibin.github.io" />
+  <meta property="og:site_name" content="咕咚" />
+  <meta property="og:title" content="咕咚" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://maoruibin.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="咕咚">
+  <meta name="twitter:description" content="有意义就是好好活，好好活就有意义。
+">
+  <meta name="twitter:image" content="http://maoruibin.github.io/assets/logo.png">
+  <meta name="twitter:url" content="http://maoruibin.github.io">
+
+  
+
+	<!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://maoruibin.github.io//page2/">
+  <link rel="alternate" type="application/rss+xml" title="咕咚" href="http://maoruibin.github.io//feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+    	
+      <span>咕咚</span>
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+    	<i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+      	
+          
+
+          
+          <li class="nav-link">
+              <a href="/about/">
+                  关于我
+              </a>
+          </li>
+          
+
+          
+        
+          
+        
+          
+        
+          
+        
+          
+
+          
+          <li class="nav-link">
+              <a href="/posts/">
+                  博文
+              </a>
+          </li>
+          
+
+          
+        
+          
+
+          
+          <li class="nav-link">
+              <a href="/project/">
+                  项目
+              </a>
+          </li>
+          
+
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="home">
+
+<div class="site-header-container has-cover" style="background-image: url(/assets/header_image.jpg);">
+	<div class="scrim has-cover">
+		<header class="site-header">
+		  <h1 class="title">咕咚</h1>
+		  <p class="subtitle">Android Developer 谷粉 米粉<br> 快乐工作 快乐生活</p>
+		</header>
+	</div>
+</div>
+
+<div class="wrapper">
+<ul class="post-list">
+  
+	  <!-- if the param of publish in post is false,the post will not appear in post list -->
+	  
+			  <li>
+				<h2>
+				  <a class="post-link" href="/%E6%8A%80%E6%9C%AF/2015/11/10/android_m_permission.html">在Android 6.0 设备上动态获取权限</a>
+				</h2>
+				<section class="post-excerpt" itemprop="description">
+				  <p>
+							<!--众所周知，Android 6.0 相比之前的Android版本有一个很大的不同点，就是动态获取权限。今天自己在做拨号功能时，正巧遇到这个问题， 顺手记录下在Android 6.0 上如何动态获取权限。 下面从自己一开始的问题入手 实现拨号功能 说到拨号，一个 Intent 就搞定，代码如下， private void callDirectly(String mobile){ Intent intent = new Intent(); intent.setAction("android.intent.action.CALL"); intent.setData(Uri.parse("tel:" + mobile)); mContext.startActivity(intent); } 当然 你可别忘了在 Manifest 文件中去声明拨号的权限 &lt;uses-permission android:name="android.permission.CALL_PHONE" /&gt; 问题 如果在 Android 6.0 以前的设备上，上面的代码都是没有问题的，但是如果是在 Android 6.0 设备上，并且项目的 targetSdkVersion 你设置的是23，那么 当你执行上面的拨号代码时，程序将会奔溃掉。 此时你肯定想到了 如果 targetSdkVersion 值设置的小于23是不是就不会奔溃了，恩，确实如此， 此时即使使用Android6.0的设备，程序也不会奔溃，原因显而易见，Android 的权限机制是...-->
+							<p>众所周知，Android 6.0 相比之前的Android版本有一个很大的不同点，就是动态获取权限。今天自己在做拨号功能时，正巧遇到这个问题，
+顺手记录下在Android 6.0 上如何动态获取权限。</p>
+
+
+						</p>
+				</section>
+				<section class="post-meta">
+					<!--<div class="post-date">November 10, 2015</div>-->
+					<!--<div class="post-date">2015-11-10</div>-->
+					<div class="post-date">
+						发表于 2015-11-10&nbsp;&nbsp;
+						<a href="/%E6%8A%80%E6%9C%AF/2015/11/10/android_m_permission.html#comments">
+							<span class="ds-thread-count" data-thread-key="/%E6%8A%80%E6%9C%AF/2015/11/10/android_m_permission"></span>
+						</a>
+					</div>
+					<div class="post-categories">
+					in 
+					  
+						<a href="/category/技术">技术</a>
+					  
+					
+					</div>
+				</section>
+			  </li>
+			  
+			  <hr>
+			  
+	  
+  
+	  <!-- if the param of publish in post is false,the post will not appear in post list -->
+	  
+			  <li>
+				<h2>
+				  <a class="post-link" href="/technology/2015/10/27/bitmap-tip.html">Bitmap相关的知识点整理</a>
+				</h2>
+				<section class="post-excerpt" itemprop="description">
+				  <p>
+							<!--图片是Android应用常见的资源，在Android中，图片数据用Bitmap这个类封装。这篇文章整理跟他相关的一些知识点。 1、Bitmap.Config 这是Bitmap的一个内部类(枚举)，是Bitmap关于色彩显示的配置，不同的配置对应不同的加载效果，下面是相应的文档介绍 Possible bitmap configurations. A bitmap configuration describes how pixels are stored. This affects the quality (color depth) as well as the ability to display transparent/translucent colors. 它包含四个枚举值，分别如下 Bitmap.Config { ALPHA_8 ARGB_4444 ARGB_8888 RGB_565 } 具体这四个值分别代表了色彩的不同存储方式。这四个值指定了每一个像素的所占数据的大小，每个像素点都是1byte整数倍的数据。 ALPHA_8代表每个像素点只占一个字节的大小，这个字节仅仅存储跟透明度相关的数据。 ARGB_4444 代表16位ARGB位图 ARGB_8888 代表32位ARGB位图，Android默认加载图片使用此种配置，所以每个像素占4字节。 RGB_565 代表8位RGB位图 当然像素点占用的字节越多，他所存储的信息也就越多，图像也就越逼真，同时占用的内存也就越大。 2、大图缩放处理 设想一下自己手机拍了一张图片 大小为3120 *...-->
+							<p>图片是Android应用常见的资源，在Android中，图片数据用Bitmap这个类封装。这篇文章整理跟他相关的一些知识点。</p>
+
+
+						</p>
+				</section>
+				<section class="post-meta">
+					<!--<div class="post-date">October 27, 2015</div>-->
+					<!--<div class="post-date">2015-10-27</div>-->
+					<div class="post-date">
+						发表于 2015-10-27&nbsp;&nbsp;
+						<a href="/technology/2015/10/27/bitmap-tip.html#comments">
+							<span class="ds-thread-count" data-thread-key="/technology/2015/10/27/bitmap-tip"></span>
+						</a>
+					</div>
+					<div class="post-categories">
+					in 
+					  
+						<a href="/category/technology">Technology</a>
+					  
+					
+					</div>
+				</section>
+			  </li>
+			  
+			  <hr>
+			  
+	  
+  
+	  <!-- if the param of publish in post is false,the post will not appear in post list -->
+	  
+			  <li>
+				<h2>
+				  <a class="post-link" href="/private/2015/10/24/1024.html">我的1024这天</a>
+				</h2>
+				<section class="post-excerpt" itemprop="description">
+				  <p>
+							<!--今天是10月24，也就是所谓的程序员节，很多程序员朋友今天都是关上电脑，挂着免战牌，或游戏、或聚会玩耍…恩，我是个例外。以下纯粹以流水账的形式记录了我的一天。 如有雷同，纯属巧合。 早晨 9点起床，在洗漱的同时给自己做了个荷包蛋，因为上周买的老北京糖火烧还有三个没吃，所以2个荷包蛋+1个糖火烧就做了我的早餐，这配置还不错，哦，不对，应该是搭配。 吃完早餐，是时候去早市买点蔬菜水果了，上周买下的水果都已经吃光了，蔬菜只剩下两个大白萝卜还有一些小胡萝卜以及若干西红柿。 拿起钥匙骑上我的自行车，很快就到了每周必去的早市。今天也没买什么特别的，买了点新鲜的蔬菜如芹菜、大葱，买芹菜主要是想炒猪肉吃，哈哈，然后买了些水果，香蕉、橘子之类的。 很快双手已经满满得了，其实早市的鱼也相当不错，一斤大小的鲫鱼8块多钱，价格真的很惠民。但是自己懒得做鱼，况且做的也不好，想想还是算了。撤~ 中午 回来后，房间还不算很乱，也没什么好收拾的，然后跟媳妇在微信上汇报了一下今天的早市战绩，一切OK，然后坐在阳台的沙发上，享受下阳光的温暖，顺便给自己老妈打了个电话。恩，远在北京，父母看不到你， 还是很挂念儿女的，每周一个电话不能少！！ 不知不觉一点了，也该吃饭了。想了想，一定要把刚买的芹菜吃了，新鲜，炒肉吃一定很香。接着洗了芹菜、摘了菜叶，然后切了段大葱和生姜，从冰箱中取出上周才买的猪肉，将猪肉切成小块状准备好下锅， 当锅里的油烧开后，噼里啪啦一阵子， 恩，厨房已经香气逼人啦，不久后，芹菜炒肉出锅，感觉炒的还不错，就拍了张照片，顺便给媳妇秀下，哈哈！下面是今天的作品，你们随便感受下，味道还是很不错的。 平淡的生活 Tip:最近程序员圈子中有一种文体很火 —— 一张食物图片配一句“平淡的生活”,以此试图低调的彰显自己高生活水准(我猜)，最近在一些微信群很火的样子。赶快get起来吧！ 接着煮了点面条，就当主食吃了，吃饭时总是爱思考，饭快要吃完的时候，突然对之前的博客主题有了新的想法， 然后等不及吃完就来到电脑旁，开始倒腾博客主题，好吧，这已经是下午的事了… 下午 找博客主题 我向来比较喜欢简洁、高大上、绚丽、有意思、好看的东西，没办法，一直这样，也许是由于这个属性才导致我一直入行程序员到现在（恩，这点待考究，不严谨）。之前自己就已经有 一个自己的个人博客了，当时几乎是仿照Google大神Chris Banes的个人博客做的，如下图。 曾经那个我最爱的主题 其实从开始到之前的一段时间，我都很喜欢这个主题，但是无奈，你不能拒绝一个可以选择更好的机会，再说看久了总觉得太单一了，而且原来的主题在一些配置方面确实很麻烦，我之前曾花了大力气在上面，改CSS 添加新元素…那是还在6、7月份的时候，还是花了很多精力的，其实放弃这些劳动成果还是有点不忍心的。 然后浏览Jekyll主题库中的主题，发现有一个主题不错，看上去像是我的菜，而且看demo就很不错的样子，配置文档写的也很详细，恩，就是你了。 安装主题 犹豫再三，我还是决定放弃之前的那套主题，尽管为她已经付出很多了，但我觉得，有更好的就值得尝试。即使失败了，不还有备份吗，嘿嘿~~ 后路已经有了，就更加坚定了！ 下载主题文件、解压缩、覆盖原主题….一切看起来还不错的样子…接着根据新主题文档的安装教程，开始正式的安装。 # cd into project directory cd centrarium # install Bundler if you don't have it already gem install...-->
+							<p>今天是10月24，也就是所谓的程序员节，很多程序员朋友今天都是关上电脑，挂着免战牌，或游戏、或聚会玩耍…恩，我是个例外。以下纯粹以流水账的形式记录了我的一天。
+如有雷同，纯属巧合。</p>
+
+
+						</p>
+				</section>
+				<section class="post-meta">
+					<!--<div class="post-date">October 24, 2015</div>-->
+					<!--<div class="post-date">2015-10-24</div>-->
+					<div class="post-date">
+						发表于 2015-10-24&nbsp;&nbsp;
+						<a href="/private/2015/10/24/1024.html#comments">
+							<span class="ds-thread-count" data-thread-key="/private/2015/10/24/1024"></span>
+						</a>
+					</div>
+					<div class="post-categories">
+					in 
+					  
+						<a href="/category/private">Private</a>
+					  
+					
+					</div>
+				</section>
+			  </li>
+			  
+			  <hr>
+			  
+	  
+  
+	  <!-- if the param of publish in post is false,the post will not appear in post list -->
+	  
+			  <li>
+				<h2>
+				  <a class="post-link" href="/technology/2015/10/20/java-loader.html">Java类加载机制</a>
+				</h2>
+				<section class="post-excerpt" itemprop="description">
+				  <p>
+							<!--作为一个Java程序员，我们写过很多Java类，那他们具体是怎么运行起来的呢？ 一开始，我也没有去关心过这个问题，或者说是自己没有在这方面思考过，但是后来觉得，既然每天都在做这些事，为什么不深入了解下具体的原理逻辑呢。知其然还应该知其所以然，作为一个有追求程序员(恩，我是个有追求的程序员~)， 我们应该对自己有更高的要求。博文是自己对Java类加载的一些认识，如有错误欠缺，欢迎指正补充。 这里，我们在开始主题之前，先梳理一下上面提出的这个问题。 首先举个简单的例子，来引出我们的问题 比如，现在需要我们编写一个Java类Person，他有一个包名比如说com.gudong.demo,然后这个类会有一个修饰符 public，具体代码就应该是下面的样子， package com.gudong.demo public class Person{ } 接着类里面我们会定义一些成员变量，比方说，定义一个int型的age来表示Person的年龄 private int age; 也有可能定义一个类属性，比如说人的最大年龄 public static final int MAX_AGR = 122;//from wiki 接着我们还会定义一些方法，比如main方法 public static void main(String[]args){ System.out.println("hello world!"); } 还有可能定义一些内部类 static class Area{ private String name; } 在一个类里，我们还可以定义除上面所说的很多种数据。 当我们写完一个类，我们可能做的就是运行了，点击运行按钮，我们的程序就可以按照我们预期的方式执行了, 这里一定要明白一点，因为我们大多数时候用的是IDE，所以这里省去了自己编译的步骤，如果你使用命令行进行编写代码，那么你一定知道， 在执行Java代码前，一定要先执行javac命令，也就是编译命令。 javac全称应该叫做java compile 如果没猜错的话。 所以我们写完代码，首先要进行应该是编译，那么编译会做什么事呢？...-->
+							<p>作为一个Java程序员，我们写过很多Java类，那他们具体是怎么运行起来的呢？
+一开始，我也没有去关心过这个问题，或者说是自己没有在这方面思考过，但是后来觉得，既然每天都在做这些事，为什么不深入了解下具体的原理逻辑呢。知其然还应该知其所以然，作为一个有追求程序员(恩，我是个有追求的程序员~)，
+我们应该对自己有更高的要求。博文是自己对Java类加载的一些认识，如有错误欠缺，欢迎指正补充。</p>
+
+
+						</p>
+				</section>
+				<section class="post-meta">
+					<!--<div class="post-date">October 20, 2015</div>-->
+					<!--<div class="post-date">2015-10-20</div>-->
+					<div class="post-date">
+						发表于 2015-10-20&nbsp;&nbsp;
+						<a href="/technology/2015/10/20/java-loader.html#comments">
+							<span class="ds-thread-count" data-thread-key="/technology/2015/10/20/java-loader"></span>
+						</a>
+					</div>
+					<div class="post-categories">
+					in 
+					  
+						<a href="/category/technology">Technology</a>
+					  
+					
+					</div>
+				</section>
+			  </li>
+			  
+			  <hr>
+			  
+	  
+  
+	  <!-- if the param of publish in post is false,the post will not appear in post list -->
+	  
+			  <li>
+				<h2>
+				  <a class="post-link" href="/technology/2015/10/13/github-usage.html">如何用好github中的watch、star、fork</a>
+				</h2>
+				<section class="post-excerpt" itemprop="description">
+				  <p>
+							<!--在每个 github 项目的右上角，都有三个按钮,分别是 watch、star、fork，但是有些刚开始使用 github 的同学，可能对这三个按钮的使用却不怎么了解， 包括一开始使用 github 的我也是如此，这篇博客，结合自己的理解和使用，说说这三个按钮的用法以及一些个人见解。 如下图所示这是我们经常看到的三个按钮。 从左至右，依次是 watch star fork,下面分别说下他们的具体作用。 watch watch翻译过来可以称之为观察，点击watch可以看到如下的列表。 默认每一个用户都是处于Not watching的状态，当你选择Watching，表示你以后会关注这个项目的所有动态，以后只要这个项目发生变动，如被别人提交了pull request、被别人发起了issue等等情况， 你都会在自己的个人通知中心，收到一条通知消息，如果你设置了个人邮箱，那么你的邮箱也可能收到相应的邮件 如下，我 watch 了开源项目 android-cn/android-discuss ，那么以后任何人只要在这个项目下提交了 issue 或者在 issue 下面有任何留言， 我的通知中心就会通知我。如果你配置了邮箱，你还可能会因此不断的收到邮件。 如果你不想接受这些通知，那么点击 Not Watching 即可。 另外这里有一篇文章讲如何正确接收 GitHub 的消息邮件，很不错的一篇文章，推荐大家看看。 star star 翻译过来应该是星星，但是这个翻译没任何具体意义，这里解释为关注或者点赞更合适，当你点击 star,表示你喜欢这个项目或者通俗点，可以把他理解成朋友圈的点赞吧，表示对这个项目的支持。 不过相比朋友圈的点赞，github 里面会有一个列表，专门收集了你所有 start 过的项目， 点击 github 个人头像，可以看到 your star的条目，点击就可以查看你...-->
+							<p>在每个 github 项目的右上角，都有三个按钮,分别是 watch、star、fork，但是有些刚开始使用 github 的同学，可能对这三个按钮的使用却不怎么了解，
+包括一开始使用 github 的我也是如此，这篇博客，结合自己的理解和使用，说说这三个按钮的用法以及一些个人见解。</p>
+
+
+						</p>
+				</section>
+				<section class="post-meta">
+					<!--<div class="post-date">October 13, 2015</div>-->
+					<!--<div class="post-date">2015-10-13</div>-->
+					<div class="post-date">
+						发表于 2015-10-13&nbsp;&nbsp;
+						<a href="/technology/2015/10/13/github-usage.html#comments">
+							<span class="ds-thread-count" data-thread-key="/technology/2015/10/13/github-usage"></span>
+						</a>
+					</div>
+					<div class="post-categories">
+					in 
+					  
+						<a href="/category/technology">Technology</a>
+					  
+					
+					</div>
+				</section>
+			  </li>
+			  
+			  <hr>
+			  
+	  
+  
+	  <!-- if the param of publish in post is false,the post will not appear in post list -->
+	  
+			  <li>
+				<h2>
+				  <a class="post-link" href="/technology/2015/09/27/project-rule.html">我的Android项目开发规范（不断更新）</a>
+				</h2>
+				<section class="post-excerpt" itemprop="description">
+				  <p>
+							<!--代码永远写不完，但是写的时间久了，就应该形成自己的代码规范或者自己团队的规范，尽管一些规范已经形成于脑海，但是还是有必要记录下来。从现在开始，一点点积累开发规范。这里积累开发过程中所有的规范细节，尽可能详细。 类文件 项目目录结构 接口文件 命名规范 id命名采用右侧格式 {view缩写}{module_name}{view的逻辑名称} 空间 缩写 LinearLayout ll RelativeLayout rl FrameLayout fl TextView tv EditText et Button btn ImageView iv ProgressBar pb Spinner spn ListView lv RecycleView rcv RadioButton rb CheckBox cb 接口命名规范 命名规则与类一样采用大驼峰命名法，多以able或ible结尾。例如： interface Runable | interface Accessible 自己定义的接口最好以I开头 接口中定义的方法以on开头，如onInit(); 成员变量命名规范 采用小驼峰命名法，以m开头。 临时变量命名 使用标准的Java命名方法，不推荐使用Google的m命名法。例如： private String...-->
+							<p>代码永远写不完，但是写的时间久了，就应该形成自己的代码规范或者自己团队的规范，尽管一些规范已经形成于脑海，但是还是有必要记录下来。从现在开始，一点点积累开发规范。这里积累开发过程中所有的规范细节，尽可能详细。</p>
+
+
+						</p>
+				</section>
+				<section class="post-meta">
+					<!--<div class="post-date">September 27, 2015</div>-->
+					<!--<div class="post-date">2015-09-27</div>-->
+					<div class="post-date">
+						发表于 2015-09-27&nbsp;&nbsp;
+						<a href="/technology/2015/09/27/project-rule.html#comments">
+							<span class="ds-thread-count" data-thread-key="/technology/2015/09/27/project-rule"></span>
+						</a>
+					</div>
+					<div class="post-categories">
+					in 
+					  
+						<a href="/category/technology">Technology</a>
+					  
+					
+					</div>
+				</section>
+			  </li>
+			  
+			  <hr>
+			  
+	  
+  
+	  <!-- if the param of publish in post is false,the post will not appear in post list -->
+	  
+			  <li>
+				<h2>
+				  <a class="post-link" href="/technology/2015/09/13/gradlebuild-best-practice.html">build.gradle最佳实践之buildConfigField</a>
+				</h2>
+				<section class="post-excerpt" itemprop="description">
+				  <p>
+							<!--使用AndroidStudio进行开发，其中很重要的一个文件就是build.gradle,他是整个项目的控制中心，这里收集一些日常会用到的语法或者使用技巧，以备后用。这篇博客主要说明 buildTypes节点下使用buildConfigField。 下面是默认的buildTypes形式 buildTypes { release { proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro' signingConfig signingConfigs.release } } 但是这里其实默认还有一个debug type,只不过默认不显示，显示完整如下 buildTypes { release { proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro' signingConfig signingConfigs.release } debug{ } } 这两者用于指定不同的build type，当我们打包编译项目时，我们能不能这里就可以设置一些参数信息，直接可以作用于项目，从而在项目中,动态根据build.gradle中设置的信息，进行一些代码层面的逻辑处理，比如在debug type下正常输出日志信息，但是release type下，屏蔽日志输出。那么就可以通过buildConfigField进行动态设置如下 buildTypes { release { buildConfigField "boolean", "LOG_DEBUG", "false" proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro' signingConfig signingConfigs.release } debug{ buildConfigField "boolean",...-->
+							<p>使用AndroidStudio进行开发，其中很重要的一个文件就是build.gradle,他是整个项目的控制中心，这里收集一些日常会用到的语法或者使用技巧，以备后用。这篇博客主要说明
+buildTypes节点下使用buildConfigField。</p>
+
+
+						</p>
+				</section>
+				<section class="post-meta">
+					<!--<div class="post-date">September 13, 2015</div>-->
+					<!--<div class="post-date">2015-09-13</div>-->
+					<div class="post-date">
+						发表于 2015-09-13&nbsp;&nbsp;
+						<a href="/technology/2015/09/13/gradlebuild-best-practice.html#comments">
+							<span class="ds-thread-count" data-thread-key="/technology/2015/09/13/gradlebuild-best-practice"></span>
+						</a>
+					</div>
+					<div class="post-categories">
+					in 
+					  
+						<a href="/category/technology">Technology</a>
+					  
+					
+					</div>
+				</section>
+			  </li>
+			  
+			  <hr>
+			  
+	  
+  
+	  <!-- if the param of publish in post is false,the post will not appear in post list -->
+	  
+			  <li>
+				<h2>
+				  <a class="post-link" href="/technology/2015/09/10/alert_dialog_theme.html">用Support包显示MaterialDialog</a>
+				</h2>
+				<section class="post-excerpt" itemprop="description">
+				  <p>
+							<!--如果自己做个人App项目，很可能在一些情况下用到Dialog,Android自己也提供了系统Dialog,但是在MaterialDesigner出现之前，样子确实很丑，这篇博客讲解如何使用Support包中 的API来实现MD风格的Dialog。 Support V7包在22.1.0之前的任何一个版本，AlertDialog一直都是Android4.0风格，直到Support-V7:22.1.0，在这之前，如果我们的项目中要使用Material样式的Dialog，对不起，Android5.0以下的设备根本不支持，但是还好，开源界的大神从来都不缺乏无私的奉献精神，在support-v7包更新到V22.1.0之前，Github上已经出现了几个非常不错的MaterialDialog开源库，如下 https://github.com/afollestad/material-dialogs https://github.com/drakeet/MaterialDialog 使用上面的开源库，就可以很轻松的在Android5.0以下的设备上实现MaterialDialog的效果。 但是，如开始所说，support-v7更新到22.1.0之后，我们就再也不需要使用上面的开源库来获得MaterialDiaolg了。直接使用Support中的AlertDialog就可以实现MD风格的Dialog了。 准备工作 1、将项目targetSdkVersion设为22或者以上 2、加入对应的support依赖支持 targetSdkVersion 22 compile 'com.android.support:appcompat-v7:22.1.0' 使用 直接上代码 new AlertDialog.Builder(getActivity()) .setTitle(R.string.title_export) .setMessage(contentInfo) .setPositiveButton(R.string.dialog_confirm_yes, new DialogInterface.OnClickListener() { @Override public void onClick(DialogInterface dialogInterface, int i) { copyFile(srcFile, exportFile); } }) .setNegativeButton(R.string.dialog_now_watch, new DialogInterface.OnClickListener() { @Override public void onClick(DialogInterface dialogInterface, int i) { browseFile(exportFile.getParentFile());...-->
+							<p>如果自己做个人App项目，很可能在一些情况下用到Dialog,Android自己也提供了系统Dialog,但是在MaterialDesigner出现之前，样子确实很丑，这篇博客讲解如何使用Support包中
+的API来实现MD风格的Dialog。</p>
+
+
+						</p>
+				</section>
+				<section class="post-meta">
+					<!--<div class="post-date">September 10, 2015</div>-->
+					<!--<div class="post-date">2015-09-10</div>-->
+					<div class="post-date">
+						发表于 2015-09-10&nbsp;&nbsp;
+						<a href="/technology/2015/09/10/alert_dialog_theme.html#comments">
+							<span class="ds-thread-count" data-thread-key="/technology/2015/09/10/alert_dialog_theme"></span>
+						</a>
+					</div>
+					<div class="post-categories">
+					in 
+					  
+						<a href="/category/technology">Technology</a>
+					  
+					
+					</div>
+				</section>
+			  </li>
+			  
+			  <hr>
+			  
+	  
+  
+	  <!-- if the param of publish in post is false,the post will not appear in post list -->
+	  
+			  <li>
+				<h2>
+				  <a class="post-link" href="/technology/2015/08/03/java_important_word.html">Java关键字之volatile</a>
+				</h2>
+				<section class="post-excerpt" itemprop="description">
+				  <p>
+							<!--Java有众多关键字，volatile作为一个和同步相关的关键字，很少在自己的项目中使用，今天在看Handler源码时无意看到，顺便便了解了下。
+记录以备后用。
+
+volatile关键字 可以被看作是一种 “程度较轻的 synchronized”；与 synchronized 块相比，volatile 变量所需的编码较少，并且运行时开销也较少，但是它所能实现的功能也仅是 synchronized 的一部分。
+
+一般的，Java中设置变量的操作，除了long和double类型的变量，其余都是原子操作，也就是说，对于基本的变量设置操作没必要使用同步。
+
+在JVM1.2之前，Java的内存模型，总是从主内存读取变量，就是说，变量只存在于内存的一个地方，但是随着JVM的成熟，读取内存的过程也做了相应的更改。
+
+在当前的内存模型下，线程可以把变量在本地内存（比如机器的寄存器），而不是直接在内存读取，这个变化的原因，我猜测可能是下面的原因：
+如果频繁的修改读取内存中的一个变量，可能效率比较低，在JVM1.2之后，做了优化，发现如果一个变量被频繁的读取修改，那么就把这个变量先放到本地寄存器，这个读取效率更高。每次直接去读寄存器中的数据。
+
+但是，现在就出现一个问题，一个线程在主内存修改了变量的值，另一个线程在寄存器修改了这个变量的值，此时就出现了变量值不同步的问题，最终数据不一致。
+这时，volatile关键字就出现了。
+
+只要把变量声明为volatile，这就指示JVM，这个变量是不稳定的，只要成员变量发生变化，强迫线程将变化同步到主内存，一般说来，多任务环境下各任务间共享的标志都应该加volatile修饰。
+Volatile修饰的成员变量在每次被线程访问时，都强迫从共享内存中重读该成员变量的值。而且，当成员变量发生变化时，强迫线程将变化值回写到共享内存。这样在任何时刻，两个不同的线程总是看到某个成员变量的同一个值。
+
+总结：
+volatile关键字就是提示VM：对于这个成员变量不能保存它的私有拷贝，而应直接与共享成员变量交互
+使用volatile关键字，就表示着将屏蔽掉JVM对变量访问的优化，所以在效率上比较低，因此一定在必要时才使用此关键字。
+
+摘抄
+
+point1 : Volatile修饰的成员变量在每次被线程访问时，都强迫从共享内存重新读取该成员的值，而且，当成员变量值发生变化时，强迫将变化的值重新写入共享内存，这样两个不同的线程在访问同一个共享变量的值时，始终看到的是同一个值。
+
+point2 : java语言规范指出：为了获取最佳的运行速度，允许线程保留共享变量的副本，当这个线程进入或者离开同步代码块时，才与共享成员变量进行比对，如果有变化再更新共享成员变量。这样当多个线程同时访问一个共享变量时，可能会存在值不同步的现象。
+
+-->
+							<p>Java有众多关键字，volatile作为一个和同步相关的关键字，很少在自己的项目中使用，今天在看Handler源码时无意看到，顺便便了解了下。
+记录以备后用。</p>
+
+
+						</p>
+				</section>
+				<section class="post-meta">
+					<!--<div class="post-date">August 3, 2015</div>-->
+					<!--<div class="post-date">2015-08-03</div>-->
+					<div class="post-date">
+						发表于 2015-08-03&nbsp;&nbsp;
+						<a href="/technology/2015/08/03/java_important_word.html#comments">
+							<span class="ds-thread-count" data-thread-key="/technology/2015/08/03/java_important_word"></span>
+						</a>
+					</div>
+					<div class="post-categories">
+					in 
+					  
+						<a href="/category/technology">Technology</a>
+					  
+					
+					</div>
+				</section>
+			  </li>
+			  
+			  <hr>
+			  
+	  
+  
+	  <!-- if the param of publish in post is false,the post will not appear in post list -->
+	  
+			  <li>
+				<h2>
+				  <a class="post-link" href="/technology/2015/08/03/AtomicInteger_Unsafe.html">Unsafe类介绍</a>
+				</h2>
+				<section class="post-excerpt" itemprop="description">
+				  <p>
+							<!--这个类是用于执行低级别、不安全操作的方法集合。尽管这个类和所有的方法都是公开的（public），但是这个类的使用仍然受限，你无法在自己的java程序中直接使用该类，因为只有授信的代码才能获得该类的实例。 从上面的描述，可以了解到该类是用来执行较低级别的操作的，比如获取某个属性在内存中的位置，(在AtomicInteger中就用到了)不过一般人很少会有这样的需求。 今天在看AsynTask源码时，发现AsynTask中，他利用自己的ThreadFactory生成Thread时，用了AtomicInteger来生成对应的线程ID，如下： private static final ThreadFactory sThreadFactory = new ThreadFactory() { private final AtomicInteger mCount = new AtomicInteger(1); public Thread newThread(Runnable r) { return new Thread(r, "AsyncTask #" + mCount.getAndIncrement()); } }; 然后看AtomicInteger的方法getAndIncrement（） /** * Atomically increments by one the current value. * * @return the previous value */...-->
+							<p>这个类是用于执行低级别、不安全操作的方法集合。尽管这个类和所有的方法都是公开的（public），但是这个类的使用仍然受限，你无法在自己的java程序中直接使用该类，因为只有授信的代码才能获得该类的实例。
+从上面的描述，可以了解到该类是用来执行较低级别的操作的，比如获取某个属性在内存中的位置，(在AtomicInteger中就用到了)不过一般人很少会有这样的需求。</p>
+
+
+						</p>
+				</section>
+				<section class="post-meta">
+					<!--<div class="post-date">August 3, 2015</div>-->
+					<!--<div class="post-date">2015-08-03</div>-->
+					<div class="post-date">
+						发表于 2015-08-03&nbsp;&nbsp;
+						<a href="/technology/2015/08/03/AtomicInteger_Unsafe.html#comments">
+							<span class="ds-thread-count" data-thread-key="/technology/2015/08/03/AtomicInteger_Unsafe"></span>
+						</a>
+					</div>
+					<div class="post-categories">
+					in 
+					  
+						<a href="/category/technology">Technology</a>
+					  
+					
+					</div>
+				</section>
+			  </li>
+			  
+	  
+  
+</ul>
+
+<nav class="pagination" role="navigation">
+	<p>
+
+		
+
+				
+				<a class="newer-posts" href="/">
+								<span class="fa-stack fa-lg">
+									<i class="fa fa-square fa-stack-2x"></i>
+									<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+								</span>
+				</a>
+				
+
+		
+
+    <span class="page-number">Page 2 of 4</span>
+
+		
+		<a class="newer-posts" href="/page3">
+	    <span class="fa-stack fa-lg">
+			  <i class="fa fa-square fa-stack-2x"></i>
+			  <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+			</span>
+		</a>
+		
+	</p>
+  <p style="display:none;">
+    <a href="/posts">View All Posts by Category</a>
+  </p>
+</nav>
+<div>
+
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+		var duoshuoQuery = {short_name:"maoruibin"};
+		(function() {
+				var ds = document.createElement('script');
+				ds.type = 'text/javascript';ds.async = true;
+				ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+				ds.charset = 'UTF-8';
+				(document.getElementsByTagName('head')[0]
+				 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+
+
+</div>
+</div>
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+<style type="text/css">
+    .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    }
+
+    .row {
+    margin-right: -15px;
+    margin-left: -15px;
+    }
+
+    .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    }
+
+    footer .list-inline {
+    margin: 0;
+    padding: 0;
+    }
+
+    .list-inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+    }
+
+    .text-center {
+    text-align: center;
+    }
+
+    .text-right {
+    text-align: right;
+    }
+
+    .list-inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+    }
+
+    .fa-lg{
+        font-size: 1.5em;
+    }
+</style>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                <div class="text-center" style="margin-bottom:0.8em;">
+                    <div style="font-size: 1.2em;"><a href="/" >咕咚</a></div>
+                    <div>生命不息，折腾不止。</div>
+                </div>
+
+                <ul class="list-inline text-center">
+                    
+                    
+                    <li>
+                        
+                        <a href="http://weibo.com/u/1874136301" title="Follow me on Weibo" target="_blank" class="weibo">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        <a href="https://github.com/maoruibin" title="Follow me on GitHub" target="_blank" class="github">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                        
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        
+                        <a href="http://www.zhihu.com/people/maoruibin" title="Follow me on ZhiHu" target="_blank" class="zhihu">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-zhihu fa-stack-1x fa-inverse">知</i>
+                                </span>
+                        </a>
+                        
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        
+                        
+                        <a href="http://plus.google.com/107689066812933417058?rel=author" title="Add me to your Circles" target="_blank" class="google">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        
+                        
+                        
+                        <a href="https://twitter.com/maoruibin9035" title="Add me to your Circles" target="_blank" class="twitter">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                    </li>
+                    
+                    
+                </ul>
+
+                <!--<p class="copyright text-muted">Copyright &copy; 咕咚 2016</p>-->
+                <div class="site-version text-right" style="display:block;">
+                    <p>Powered by <a href="http://jekyllcn.com">Jekyll</a>,&nbsp;Theme from <a
+                            href="https://github.com/bencentra/centrarium">Centrarium</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>-->
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>-->
+
+<!-- thanks to http://www.bootcdn.cn/lightbox2/ -->
+<script src="//cdn.bootcss.com/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/lightbox2/2.8.2/js/lightbox.min.js"></script>
+<script>
+
+$(document).ready(function() {
+
+	// Syntax highlighting
+	hljs.initHighlightingOnLoad();
+
+	// Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+
+});
+
+
+</script>
+
+
+
+
+  </body>
+
+</html>

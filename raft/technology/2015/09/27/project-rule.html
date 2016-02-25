@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>我的Android项目开发规范（不断更新）</title>
+  <meta name="description" content="代码永远写不完，但是写的时间久了，就应该形成自己的代码规范或者自己团队的规范，尽管一些规范已经形成于脑海，但是还是有必要记录下来。从现在开始，一点点积累开发规范。这里积累开发过程中所有的规范细节，尽可能详细。">
+  
+  <meta name="author" content="咕咚">
+  <meta name="copyright" content="&copy; 咕咚 2016">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/monokai_sublime.min.css">-->
+    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">-->
+
+    <!-- thanks to http://www.bootcdn.cn/lightbox2/      -->
+    <!-- thanks to http://www.bootcdn.cn/highlight.js/   -->
+    <!-- thanks to https://highlightjs.org/static/demo/  -->
+    <link  rel="stylesheet" href="//cdn.bootcss.com/highlight.js/8.5/styles/androidstudio.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/lightbox2/2.8.2/css/lightbox.css">
+
+    <!-- Bootstrap Core CSS -->
+    <!--<link rel="stylesheet" href="/css/bootstrap.min.css">-->
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+	<link rel="manifest" href="/assets/icons/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Facebook OGP cards -->
+  <meta property="og:description" content="代码永远写不完，但是写的时间久了，就应该形成自己的代码规范或者自己团队的规范，尽管一些规范已经形成于脑海，但是还是有必要记录下来。从现在开始，一点点积累开发规范。这里积累开发过程中所有的规范细节，尽可能详细。" />
+  <meta property="og:url" content="http://maoruibin.github.io" />
+  <meta property="og:site_name" content="咕咚" />
+  <meta property="og:title" content="我的Android项目开发规范（不断更新）" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://maoruibin.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="我的Android项目开发规范（不断更新）">
+  <meta name="twitter:description" content="代码永远写不完，但是写的时间久了，就应该形成自己的代码规范或者自己团队的规范，尽管一些规范已经形成于脑海，但是还是有必要记录下来。从现在开始，一点点积累开发规范。这里积累开发过程中所有的规范细节，尽可能详细。">
+  <meta name="twitter:image" content="http://maoruibin.github.io/assets/logo.png">
+  <meta name="twitter:url" content="http://maoruibin.github.io">
+
+  
+
+	<!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://maoruibin.github.io//technology/2015/09/27/project-rule.html">
+  <link rel="alternate" type="application/rss+xml" title="咕咚" href="http://maoruibin.github.io//feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+    	
+      <span>咕咚</span>
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+    	<i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+      	
+          
+
+          
+          <li class="nav-link">
+              <a href="/about/">
+                  关于我
+              </a>
+          </li>
+          
+
+          
+        
+          
+        
+          
+        
+          
+        
+          
+
+          
+          <li class="nav-link">
+              <a href="/posts/">
+                  博文
+              </a>
+          </li>
+          
+
+          
+        
+          
+
+          
+          <li class="nav-link">
+              <a href="/project/">
+                  项目
+              </a>
+          </li>
+          
+
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container "
+		 
+		>
+	<div class="scrim ">
+		<header class="post-header">
+		  <h1 class="title">我的Android项目开发规范（不断更新）</h1>
+		  <p class="info">by <strong>咕咚</strong></p>
+		</header>
+	</div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+	<!--<div class="post-date">September 27, 2015</div>-->
+	<div class="post-date">
+		发表于 2015-09-27&nbsp;&nbsp;
+		<a href="#comments">
+			<span class="ds-thread-count" data-thread-key="/technology/2015/09/27/project-rule"></span>
+		</a>
+	</div>
+	<div class="post-categories">
+	in 
+	  
+		<a href="/category/technology">Technology</a>
+	  
+	
+	</div>
+</section>
+
+<article class="post-content">
+  <p>代码永远写不完，但是写的时间久了，就应该形成自己的代码规范或者自己团队的规范，尽管一些规范已经形成于脑海，但是还是有必要记录下来。从现在开始，一点点积累开发规范。这里积累开发过程中所有的规范细节，尽可能详细。</p>
+
+<h3 id="section">类文件</h3>
+
+<h3 id="section-1">项目目录结构</h3>
+
+<h3 id="section-2">接口文件</h3>
+
+<h3 id="section-3">命名规范</h3>
+<ul>
+  <li>id命名采用右侧格式 {view缩写}<em>{module_name}</em>{view的逻辑名称}</li>
+</ul>
+<table>
+    <tr>
+        <td>空间</td>
+        <td>缩写</td>
+    </tr>
+    <tr>
+        <td>LinearLayout</td>
+        <td>ll</td>
+    </tr>
+    <tr>
+        <td>RelativeLayout</td>
+        <td>rl</td>
+    </tr>
+    <tr>
+        <td>FrameLayout</td>
+        <td>fl</td>
+    </tr>
+    <tr>
+        <td>TextView</td>
+        <td>tv</td>
+    </tr>
+    <tr>
+        <td>EditText</td>
+        <td>et</td>
+    </tr>
+    <tr>
+        <td>Button</td>
+        <td>btn</td>
+    </tr>
+    <tr>
+        <td>ImageView</td>
+        <td>iv</td>
+    </tr>
+    <tr>
+        <td>ProgressBar</td>
+        <td>pb</td>
+    </tr>
+    <tr>
+        <td>Spinner</td>
+        <td>spn</td>
+    </tr>
+    <tr>
+        <td>ListView</td>
+        <td>lv</td>
+    </tr>
+    <tr>
+        <td>RecycleView</td>
+        <td>rcv</td>
+    </tr>
+    <tr>
+        <td>RadioButton</td>
+        <td>rb</td>
+    </tr>
+    <tr>
+        <td>CheckBox</td>
+        <td>cb</td>
+    </tr>
+</table>
+
+<ul>
+  <li>
+    <p>接口命名规范</p>
+
+    <p>命名规则与类一样采用大驼峰命名法，多以able或ible结尾。例如：<br />
+  interface Runable | interface Accessible
+  自己定义的接口最好以I开头<br />
+  接口中定义的方法以on开头，如onInit();</p>
+  </li>
+  <li>
+    <p>成员变量命名规范</p>
+
+    <p>采用小驼峰命名法，以m开头。</p>
+  </li>
+  <li>
+    <p>临时变量命名
+  使用标准的Java命名方法，不推荐使用Google的m命名法。例如：</p>
+
+    <p>private String userName; 而不推荐使用 private String mUserName;</p>
+  </li>
+  <li>
+    <p>常量命名</p>
+
+    <p>常量使用全大写字母加下划线的方式命名。例如：</p>
+
+    <p>public static final String TAG = “tag”;</p>
+  </li>
+  <li>
+    <p>控件实例命名</p>
+
+    <p>类中控件名称必须与xml布局id保持一致(可以去掉{module_name})。例如:</p>
+
+    <p>在布局文件中 Button 的id为: android:id=”@+id/btn_pay”</p>
+
+    <p>private Button mBtnPay;</p>
+  </li>
+  <li>
+    <p>方法命名规范</p>
+
+    <p>动词或动名词，采用小驼峰命名法。例如：</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>run();</td>
+          <td>onCreate();</td>
+          <td>syncProducts();</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>布局文件(Layout)命名规范</p>
+
+    <p>全部小写，采用下划线命名法。其中{module_name}为业务模块或是功能模块等模块化的名称或简称。<br />
+  对于小项目，可以不用使用module_name作为前缀。</p>
+
+    <ul>
+      <li>
+        <p>activity layout： {module_name}<em>activity</em>{名称} 例如：</p>
+
+        <table>
+          <tbody>
+            <tr>
+              <td>user_activity_main.xml</td>
+              <td>user_activity_shopping.xml</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <p>fragment layout:{module_name}<em>fragment</em>{名称} 例如：</p>
+
+        <table>
+          <tbody>
+            <tr>
+              <td>user_fragment_main.xml</td>
+              <td>user_fragment_shopping.xml</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <p>Dialog layout: {module_name}<em>dialog</em>{名称} 例如：</p>
+
+        <p>user_dialog_loading.xml</p>
+      </li>
+      <li>
+        <p>列表项布局命名：{module_name}<em>list_item</em>{名称} 例如：</p>
+
+        <p>user_listitem_customer.xml</p>
+      </li>
+      <li>
+        <p>包含项布局命名：include_{名称} 例如：</p>
+
+        <p>include_head.xml</p>
+      </li>
+      <li>
+        <p>adapter的子布局： {module_name}<em>item</em>{名称} 例如：</p>
+
+        <p>user_item_order.xml</p>
+      </li>
+      <li>
+        <p>widget layout： {module_name}<em>widget</em>{名称} 例如：</p>
+
+        <p>user_widget_shopping_detail.xml</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+</article>
+
+
+
+<section class="tags">
+	<strong>Tags:</strong> <a href="/tag/Android">Android</a>,&nbsp;<a href="/tag/Practice">Practice</a>
+</section>
+
+
+
+<section class="rss" style="display:none;">
+	<p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share" style="display:none;">
+  <!--<span>Share: </span>-->
+  <!---->
+		<!---->
+
+		<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  <!---->
+		<!---->
+
+		<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  <!---->
+		<!---->
+
+		<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  <!---->
+		<!---->
+
+		<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  <!---->
+		<!---->
+
+		<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  	<!---->
+  <!---->
+	<div class="ds-share" style="display:none;" style="border:0px solid red;margin-top:6em;" data-thread-key="/technology/2015/09/27/project-rule" data-title="我的Android项目开发规范（不断更新）" data-images="" data-content="" data-url="http://maoruibin.github.io//technology/2015/09/27/project-rule.html">
+		<div class="ds-share-inline">
+			<ul  class="ds-share-icons-16">
+
+				<li><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+				<li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+				<li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+				<li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+
+			</ul>
+			<div class="ds-share-icons-more">
+			</div>
+		</div>
+	</div>
+</section>
+
+
+	<div id="comments" style="margin-top:6em;margin-bottom:6em;">
+		<div class="ds-thread" data-thread-key="/technology/2015/09/27/project-rule" data-title="%E6%88%91%E7%9A%84Android%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%EF%BC%88%E4%B8%8D%E6%96%AD%E6%9B%B4%E6%96%B0%EF%BC%89" data-url="http://maoruibin.github.io//technology/2015/09/27/project-rule.html"></div>
+	</div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+		var duoshuoQuery = {short_name:"maoruibin"};
+		(function() {
+				var ds = document.createElement('script');
+				ds.type = 'text/javascript';ds.async = true;
+				ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+				ds.charset = 'UTF-8';
+				(document.getElementsByTagName('head')[0]
+				 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+<style type="text/css">
+    .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    }
+
+    .row {
+    margin-right: -15px;
+    margin-left: -15px;
+    }
+
+    .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    }
+
+    footer .list-inline {
+    margin: 0;
+    padding: 0;
+    }
+
+    .list-inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+    }
+
+    .text-center {
+    text-align: center;
+    }
+
+    .text-right {
+    text-align: right;
+    }
+
+    .list-inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+    }
+
+    .fa-lg{
+        font-size: 1.5em;
+    }
+</style>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                <div class="text-center" style="margin-bottom:0.8em;">
+                    <div style="font-size: 1.2em;"><a href="/" >咕咚</a></div>
+                    <div>生命不息，折腾不止。</div>
+                </div>
+
+                <ul class="list-inline text-center">
+                    
+                    
+                    <li>
+                        
+                        <a href="http://weibo.com/u/1874136301" title="Follow me on Weibo" target="_blank" class="weibo">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        <a href="https://github.com/maoruibin" title="Follow me on GitHub" target="_blank" class="github">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                        
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        
+                        <a href="http://www.zhihu.com/people/maoruibin" title="Follow me on ZhiHu" target="_blank" class="zhihu">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-zhihu fa-stack-1x fa-inverse">知</i>
+                                </span>
+                        </a>
+                        
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        
+                        
+                        <a href="http://plus.google.com/107689066812933417058?rel=author" title="Add me to your Circles" target="_blank" class="google">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        
+                        
+                        
+                        <a href="https://twitter.com/maoruibin9035" title="Add me to your Circles" target="_blank" class="twitter">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                    </li>
+                    
+                    
+                </ul>
+
+                <!--<p class="copyright text-muted">Copyright &copy; 咕咚 2016</p>-->
+                <div class="site-version text-right" style="display:block;">
+                    <p>Powered by <a href="http://jekyllcn.com">Jekyll</a>,&nbsp;Theme from <a
+                            href="https://github.com/bencentra/centrarium">Centrarium</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>-->
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>-->
+
+<!-- thanks to http://www.bootcdn.cn/lightbox2/ -->
+<script src="//cdn.bootcss.com/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/lightbox2/2.8.2/js/lightbox.min.js"></script>
+<script>
+
+$(document).ready(function() {
+
+	// Syntax highlighting
+	hljs.initHighlightingOnLoad();
+
+	// Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+
+});
+
+
+</script>
+
+
+
+
+  </body>
+
+</html>

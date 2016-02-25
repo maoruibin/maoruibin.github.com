@@ -36,7 +36,8 @@ layout: default
 							<span class="ds-thread-count" data-thread-key="{{ post.id }}"></span>
 						</a>
 					</div>
-					<div class="post-categories">
+					<!--  category 和 tag 不能喝 github page 共存-->
+					<div class="post-categories" style="display:none;">
 					{% if post.categories %}in {% for cat in post.categories %}
 					  {% if site.jekyll-archives %}
 						<a href="{{ site.baseurl }}category/{{ cat }}">{{ cat | capitalize }}</a>{% if forloop.last == false %}, {% endif %}

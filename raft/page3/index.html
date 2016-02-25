@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>咕咚</title>
+  <meta name="description" content="有意义就是好好活，好好活就有意义。
+">
+  
+  <meta name="author" content="咕咚">
+  <meta name="copyright" content="&copy; 咕咚 2016">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/monokai_sublime.min.css">-->
+    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">-->
+
+    <!-- thanks to http://www.bootcdn.cn/lightbox2/      -->
+    <!-- thanks to http://www.bootcdn.cn/highlight.js/   -->
+    <!-- thanks to https://highlightjs.org/static/demo/  -->
+    <link  rel="stylesheet" href="//cdn.bootcss.com/highlight.js/8.5/styles/androidstudio.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/lightbox2/2.8.2/css/lightbox.css">
+
+    <!-- Bootstrap Core CSS -->
+    <!--<link rel="stylesheet" href="/css/bootstrap.min.css">-->
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+	<link rel="manifest" href="/assets/icons/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Facebook OGP cards -->
+  <meta property="og:description" content="有意义就是好好活，好好活就有意义。
+" />
+  <meta property="og:url" content="http://maoruibin.github.io" />
+  <meta property="og:site_name" content="咕咚" />
+  <meta property="og:title" content="咕咚" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://maoruibin.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="咕咚">
+  <meta name="twitter:description" content="有意义就是好好活，好好活就有意义。
+">
+  <meta name="twitter:image" content="http://maoruibin.github.io/assets/logo.png">
+  <meta name="twitter:url" content="http://maoruibin.github.io">
+
+  
+
+	<!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://maoruibin.github.io//page3/">
+  <link rel="alternate" type="application/rss+xml" title="咕咚" href="http://maoruibin.github.io//feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+    	
+      <span>咕咚</span>
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+    	<i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+      	
+          
+
+          
+          <li class="nav-link">
+              <a href="/about/">
+                  关于我
+              </a>
+          </li>
+          
+
+          
+        
+          
+        
+          
+        
+          
+        
+          
+
+          
+          <li class="nav-link">
+              <a href="/posts/">
+                  博文
+              </a>
+          </li>
+          
+
+          
+        
+          
+
+          
+          <li class="nav-link">
+              <a href="/project/">
+                  项目
+              </a>
+          </li>
+          
+
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="home">
+
+<div class="site-header-container has-cover" style="background-image: url(/assets/header_image.jpg);">
+	<div class="scrim has-cover">
+		<header class="site-header">
+		  <h1 class="title">咕咚</h1>
+		  <p class="subtitle">Android Developer 谷粉 米粉<br> 快乐工作 快乐生活</p>
+		</header>
+	</div>
+</div>
+
+<div class="wrapper">
+<ul class="post-list">
+  
+	  <!-- if the param of publish in post is false,the post will not appear in post list -->
+	  
+			  <li>
+				<h2>
+				  <a class="post-link" href="/technology/2015/08/03/AtomicInteger_Introduce.html">AtomicInteger 一个和高并发有关的工具类</a>
+				</h2>
+				<section class="post-excerpt" itemprop="description">
+				  <p>
+							<!--AtomicInteger，一个提供原子操作的Integer的类。在Java语言中，++i和i++操作并不是线程安全的，在使用的时候，不可避免的会用到synchronized关键字。而AtomicInteger则通过一种线程安全的加减操作接口。
+
+使用AtomicInteger是非常的安全的
+那么为什么不使用记数器自加呢，例如count++这样的，因为这种计数是线程不安全的，高并发访问时统计会有误，而AtomicInteger为什么能够达到多而不乱，处理高并发应付自如呢？
+这是由硬件提供原子操作指令实现的。在非激烈竞争的情况下，开销更小，速度更快。Java.util.concurrent中实现的原子操作类包括：
+AtomicBoolean、AtomicInteger、AtomicLong、AtomicReference。
+-->
+							<p>AtomicInteger，一个提供原子操作的Integer的类。在Java语言中，++i和i++操作并不是线程安全的，在使用的时候，不可避免的会用到synchronized关键字。而AtomicInteger则通过一种线程安全的加减操作接口。</p>
+
+
+						</p>
+				</section>
+				<section class="post-meta">
+					<!--<div class="post-date">August 3, 2015</div>-->
+					<!--<div class="post-date">2015-08-03</div>-->
+					<div class="post-date">
+						发表于 2015-08-03&nbsp;&nbsp;
+						<a href="/technology/2015/08/03/AtomicInteger_Introduce.html#comments">
+							<span class="ds-thread-count" data-thread-key="/technology/2015/08/03/AtomicInteger_Introduce"></span>
+						</a>
+					</div>
+					<div class="post-categories">
+					in 
+					  
+						<a href="/category/technology">Technology</a>
+					  
+					
+					</div>
+				</section>
+			  </li>
+			  
+			  <hr>
+			  
+	  
+  
+	  <!-- if the param of publish in post is false,the post will not appear in post list -->
+	  
+			  <li>
+				<h2>
+				  <a class="post-link" href="/technology/2015/07/25/android_webview_chinese_encode.html">Android使用WebView加载中文时，乱码问题解决</a>
+				</h2>
+				<section class="post-excerpt" itemprop="description">
+				  <p>
+							<!--在做App+这个项目时，使用了WebView来展示更新日志，但是在加载本地Html文件的时候，出现了乱码问题。这篇博客记录自己错误出现的原因
+、以及解决方法。
+
+由于本地Html文件日志文件中包含中文，在加载时就出现了乱码，加载方式如下
+
+String formatLodString = buf.toString();
+webView.loadData(formatLodString, "text/html", "UTF-8");
+
+
+解决方案：
+使用webView的方法loadDataWithBaseURL。
+
+String formatLodString = buf.toString();
+webView.loadDataWithBaseURL(null,formatLodString,"text/html","UTF-8",null);
+
+
+有用的链接
+
+Android webview loadData 中文乱码
+-->
+							<p>在做App+这个项目时，使用了WebView来展示更新日志，但是在加载本地Html文件的时候，出现了乱码问题。这篇博客记录自己错误出现的原因
+、以及解决方法。</p>
+
+
+						</p>
+				</section>
+				<section class="post-meta">
+					<!--<div class="post-date">July 25, 2015</div>-->
+					<!--<div class="post-date">2015-07-25</div>-->
+					<div class="post-date">
+						发表于 2015-07-25&nbsp;&nbsp;
+						<a href="/technology/2015/07/25/android_webview_chinese_encode.html#comments">
+							<span class="ds-thread-count" data-thread-key="/technology/2015/07/25/android_webview_chinese_encode"></span>
+						</a>
+					</div>
+					<div class="post-categories">
+					in 
+					  
+						<a href="/category/technology">Technology</a>
+					  
+					
+					</div>
+				</section>
+			  </li>
+			  
+			  <hr>
+			  
+	  
+  
+	  <!-- if the param of publish in post is false,the post will not appear in post list -->
+	  
+			  <li>
+				<h2>
+				  <a class="post-link" href="/technology/2015/07/18/android_shift_theme.html">App中主题Theme使用以及Theme切换</a>
+				</h2>
+				<section class="post-excerpt" itemprop="description">
+				  <p>
+							<!--在众多Android应用中，尤其是阅读类App，为了给用户提供更好的使用体验，App设计者一般都会提供两套主题，最常见的就是Light Theme和Dark Theme,分别对应了日间模式和夜间模式。比如第三方微博客户端Smooth,知乎等等他们都有这样的实现。 因为自己对这块一直也比较感兴趣，所以自己就先尝试着做了一次，目前只是简单的尝试了下，下面记录一下这个过程，如果能帮助到更多的人，再好不过啦！ 关于主题，我分两步走，第一步 主体使用，第二部主题切换 1、主题使用 其实，Android已经为我们提供了一套成型的主题，我们要做的就是在他的基础上个性化自己的主题样式，首先在项目目录的values/styles.xml建立一个Light主题，如下 &lt;style name="Theme_AppTheme" parent="Theme.AppCompat.Light.NoActionBar"&gt; &lt;!-- 主题对应主色调 --&gt; &lt;item name="colorPrimary"&gt;#673AB7&lt;/item&gt; &lt;!-- 主题对应深色调 在Android 5.0上主要表现在StatusBar上--&gt; &lt;item name="colorPrimaryDark"&gt;#512DA8&lt;/item&gt; &lt;!-- 主题中的强调色 --&gt; &lt;!--比如你的App使用了FloatActionBar，那么他的颜色默认就是他了--&gt; &lt;item name="colorAccent"&gt;#FF4081&lt;/item&gt; &lt;!-- 下面这三个属性比较有意思，也是后面切换主题的关键 单独拿出来说--&gt; &lt;item name="title_text"&gt;@android:color/black&lt;/item&gt; &lt;item name="body_text"&gt;#303030&lt;/item&gt; &lt;/style&gt; 很明显，上面的两个属性“title_text”和“body_text”是Android没有提供的。但其实这里才是后面切换主题的关键点。 说道这里，先让我们先想想，如果让我们自己做主题切换，我们怎么才能做到点击一个主题切换按钮，就能让全局的样式都改变呢？ 比方说，我们的布局中有一个TextView 如下 &lt;TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@android:color/black"/&gt; 现在他的颜色是black，此时如果我们的用户选择了另一个主题，我们怎么才能让他的颜色变成white,最常见的方法就是 通过代码的方式设置颜色（textView.setTextColor(**)），但是对于全局那么多的View，很明显，这样做事做不可能的，此刻联想一下App的国际化我们是怎么做到的，无非是在需要显示文本内容的地方，不使用具体的文字，而是用一个string的资源标识符去占位！如下 values/layout.xml文件 &lt;Button android:text="@string/hello_world" android:layout_width="wrap_content"...-->
+							<p>在众多Android应用中，尤其是阅读类App，为了给用户提供更好的使用体验，App设计者一般都会提供两套主题，最常见的就是Light Theme和Dark Theme,分别对应了日间模式和夜间模式。比如第三方微博客户端Smooth,知乎等等他们都有这样的实现。</p>
+
+
+						</p>
+				</section>
+				<section class="post-meta">
+					<!--<div class="post-date">July 18, 2015</div>-->
+					<!--<div class="post-date">2015-07-18</div>-->
+					<div class="post-date">
+						发表于 2015-07-18&nbsp;&nbsp;
+						<a href="/technology/2015/07/18/android_shift_theme.html#comments">
+							<span class="ds-thread-count" data-thread-key="/technology/2015/07/18/android_shift_theme"></span>
+						</a>
+					</div>
+					<div class="post-categories">
+					in 
+					  
+						<a href="/category/technology">Technology</a>
+					  
+					
+					</div>
+				</section>
+			  </li>
+			  
+			  <hr>
+			  
+	  
+  
+	  <!-- if the param of publish in post is false,the post will not appear in post list -->
+	  
+			  <li>
+				<h2>
+				  <a class="post-link" href="/technology/2015/07/18/android_popupMenu_icon.html">在流式布局中使用PopupMenu，以及遇到的问题</a>
+				</h2>
+				<section class="post-excerpt" itemprop="description">
+				  <p>
+							<!--在做 AppPlus 项目的过程中，因为每个 Item 上面都有一个 PopupMenu，但是当时在xml文件中设置icon后，却发现icon不生效，下面是这个问题的解决方案。 问题 自从MaterialDesigner出现后，像下图所示的设置流式布局随处可见。 其中每个Item上都有一个OverFlow(更多)的icon，点击会弹出一个菜单，实现方式很简单，首先在meun文件中，新建一个menu文件，如下所示 src/main/res/menu/item_pop_menu.xml &lt;?xml version="1.0" encoding="utf-8"?&gt; &lt;menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"&gt; &lt;item android:title="@string/menu_pop_item_file" android:icon="@drawable/ic_launcher" android:id="@+id/pop_file"/&gt; &lt;item android:title="@string/menu_pop_item_share" android:icon="@drawable/ic_launcher" android:id="@+id/pop_share"/&gt; &lt;/menu&gt; 然后在对应List的Adapter中处理那个OverFlow(更多)按钮的点击事件，如下所示 /** * 在ancho旁边显示菜单 * @param ancho 触发PopupMenu的View */ private void showPopMenu(View ancho) { PopupMenu popupMenu = new PopupMenu(mContext,ancho); popupMenu.getMenuInflater().inflate(R.menu.item_pop_menu,popupMenu.getMenu()); //menu item的点击事件监听 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {...-->
+							<p>在做 AppPlus 项目的过程中，因为每个 Item 上面都有一个 PopupMenu，但是当时在xml文件中设置icon后，却发现icon不生效，下面是这个问题的解决方案。</p>
+
+
+						</p>
+				</section>
+				<section class="post-meta">
+					<!--<div class="post-date">July 18, 2015</div>-->
+					<!--<div class="post-date">2015-07-18</div>-->
+					<div class="post-date">
+						发表于 2015-07-18&nbsp;&nbsp;
+						<a href="/technology/2015/07/18/android_popupMenu_icon.html#comments">
+							<span class="ds-thread-count" data-thread-key="/technology/2015/07/18/android_popupMenu_icon"></span>
+						</a>
+					</div>
+					<div class="post-categories">
+					in 
+					  
+						<a href="/category/technology">Technology</a>
+					  
+					
+					</div>
+				</section>
+			  </li>
+			  
+			  <hr>
+			  
+	  
+  
+	  <!-- if the param of publish in post is false,the post will not appear in post list -->
+	  
+			  <li>
+				<h2>
+				  <a class="post-link" href="/technology/2015/06/29/mac_sublime_java.html">MAC 系统如何使用 Sublime Text 3 直接编译运行java代码</a>
+				</h2>
+				<section class="post-excerpt" itemprop="description">
+				  <p>
+							<!--在Mac下使用Sublime时，如果要编译java文件，直接使用command+B命令就可以达到编译的效果，此时会在java源文件的目录下生成对应的.class文件，但这显然不能够满足我们的需求。
+如何才能直接编译并运行java代码呢？
+
+我最终通过如下解决方案，达到了command+B 在Sublime控制台显示运行结果的效果
+
+第一步
+打开Finder 应用程序-&gt; Sublime Text -&gt; 右击 显示包内容 -&gt; /Contents/MacOS/Packages/Java.sublime-package
+
+第二步
+替换这个压缩文件夹下面 JavaC.sublime-build 的文件内容为
+
+{
+"cmd": ["java", "$file_base_name"],
+"file_regex": "^ *\\[javac\\] (.+):([0-9]+):() (.*)$",
+"selector": "source.java"
+}
+
+
+ps:这个地方小费了点功夫，在mac上没有合适的软件可以编辑Java.sublime-package 这个文件里面的内容，后来我是这么做的，把文件发送到windows电脑上，然后用360压缩解决。
+
+第三步
+重新打开Sublime，使用快捷键command+B进行编译然后直接运行，然后控制台打印出 HelloWorld字符串，如下所示，妥妥的。
+
+
+-->
+							<p>在Mac下使用Sublime时，如果要编译java文件，直接使用command+B命令就可以达到编译的效果，此时会在java源文件的目录下生成对应的.class文件，但这显然不能够满足我们的需求。
+如何才能直接编译并运行java代码呢？</p>
+
+
+						</p>
+				</section>
+				<section class="post-meta">
+					<!--<div class="post-date">June 29, 2015</div>-->
+					<!--<div class="post-date">2015-06-29</div>-->
+					<div class="post-date">
+						发表于 2015-06-29&nbsp;&nbsp;
+						<a href="/technology/2015/06/29/mac_sublime_java.html#comments">
+							<span class="ds-thread-count" data-thread-key="/technology/2015/06/29/mac_sublime_java"></span>
+						</a>
+					</div>
+					<div class="post-categories">
+					in 
+					  
+						<a href="/category/technology">Technology</a>
+					  
+					
+					</div>
+				</section>
+			  </li>
+			  
+			  <hr>
+			  
+	  
+  
+	  <!-- if the param of publish in post is false,the post will not appear in post list -->
+	  
+			  <li>
+				<h2>
+				  <a class="post-link" href="/other/2015/06/03/jekyll.html">和Jekyll相关的有用博客网址收集</a>
+				</h2>
+				<section class="post-excerpt" itemprop="description">
+				  <p>
+							<!--在使用优化博客时，经常会去一些其他的博客学习别人的经验，或者一些技巧，这篇文章主要收集有用的和 Jekyll 相关的博文。
+
+jekyll 官网文档部分翻译
+
+Jekyll 语法简单笔记
+-->
+							<p>在使用优化博客时，经常会去一些其他的博客学习别人的经验，或者一些技巧，这篇文章主要收集有用的和 Jekyll 相关的博文。</p>
+
+
+						</p>
+				</section>
+				<section class="post-meta">
+					<!--<div class="post-date">June 3, 2015</div>-->
+					<!--<div class="post-date">2015-06-03</div>-->
+					<div class="post-date">
+						发表于 2015-06-03&nbsp;&nbsp;
+						<a href="/other/2015/06/03/jekyll.html#comments">
+							<span class="ds-thread-count" data-thread-key="/other/2015/06/03/jekyll"></span>
+						</a>
+					</div>
+					<div class="post-categories">
+					in 
+					  
+						<a href="/category/other">Other</a>
+					  
+					
+					</div>
+				</section>
+			  </li>
+			  
+			  <hr>
+			  
+	  
+  
+	  <!-- if the param of publish in post is false,the post will not appear in post list -->
+	  
+			  <li>
+				<h2>
+				  <a class="post-link" href="/technology/2015/06/03/color_alaph.html">Android通过颜色设置背景透明度</a>
+				</h2>
+				<section class="post-excerpt" itemprop="description">
+				  <p>
+							<!--在开发过程中，经常需要把一个View的背景设置为某个颜色的半透明状态。通常我们可以通过设置颜色值的前两位而达到效果，一般情况下也能满足基本需求，比如白色色值为#ffffff,那么他的半透明颜色值可以写成#88ffffff，这样设置背景后也可以出现半透明效果。其实颜色值的前两位就是控制颜色的半透明状态的。 但是有时设计师可能会跟你提这样的要求，他需要你设置一个0.56等等很参数化的半透明颜色，这时就很难用经验值去设置了，今天看到一个很不错的Util方法，可以动态根据半透明值，生成对应的颜色值。 如下，这个方法可以给指定的颜色指定具体值的alpha值，只要传一个Color的字符串形式，如#f5f5f5,然后传递一个0到1的double值 即可得到对应的半透明颜色，亲测有效。 /** * Adds alpha to a hex color * * @param originalColor color, without alpha * @param alpha from 0.0 to 1.0 * @return the original color with alpha */ public static String addAlpha(String originalColor, double alpha) { long alphaFixed = Math.round(alpha * 255); String alphaHex...-->
+							<p>在开发过程中，经常需要把一个View的背景设置为某个颜色的半透明状态。通常我们可以通过设置颜色值的前两位而达到效果，一般情况下也能满足基本需求，比如白色色值为#ffffff,那么他的半透明颜色值可以写成#88ffffff，这样设置背景后也可以出现半透明效果。其实颜色值的前两位就是控制颜色的半透明状态的。</p>
+
+
+						</p>
+				</section>
+				<section class="post-meta">
+					<!--<div class="post-date">June 3, 2015</div>-->
+					<!--<div class="post-date">2015-06-03</div>-->
+					<div class="post-date">
+						发表于 2015-06-03&nbsp;&nbsp;
+						<a href="/technology/2015/06/03/color_alaph.html#comments">
+							<span class="ds-thread-count" data-thread-key="/technology/2015/06/03/color_alaph"></span>
+						</a>
+					</div>
+					<div class="post-categories">
+					in 
+					  
+						<a href="/category/technology">Technology</a>
+					  
+					
+					</div>
+				</section>
+			  </li>
+			  
+			  <hr>
+			  
+	  
+  
+	  <!-- if the param of publish in post is false,the post will not appear in post list -->
+	  
+			  <li>
+				<h2>
+				  <a class="post-link" href="/technology/2015/05/26/lock_screen.html">Android设备上实现锁屏</a>
+				</h2>
+				<section class="post-excerpt" itemprop="description">
+				  <p>
+							<!--在Android设备上实现锁屏功能。 最终结果 点击主界面的锁屏按钮，实现立即锁屏 准备阶段 新建一个空的Android项目，并在主界面上拖放一个按钮。并在Button的布局文件中声明onClick事件。如下 &lt;Button android:text="锁屏" android:layout_width="match_parent" android:layout_height="wrap_content" android:onClick="lockScreen"/&gt; 在MainActivity.java文件中实现lockScreen方法。 实现步骤 1、创建一个空的广播接受者AdminManageReceiver.java import android.app.admin.DeviceAdminReceiver; public class AdminManageReceiver extends DeviceAdminReceiver { } 2、配置Manifest文件 &lt;receiver android:name=".AdminManageReceiver" android:label="@string/app_name" android:permission="android.permission.BIND_DEVICE_ADMIN" &gt; &lt;meta-data android:name="android.app.device_admin" android:resource="@xml/device_admin" /&gt; &lt;intent-filter&gt; &lt;action android:name="android.app.action.DEVICE_ADMIN_ENABLED" /&gt; &lt;/intent-filter&gt; &lt;/receiver&gt; 3、新建文件device_admin.xml AdminManageReceiver需要一个资源文件的支持，我们在res目录下面创建名为xml的文件夹，接着创建device_admin.xml文件，内容如下 &lt;device-admin xmlns:android="http://schemas.android.com/apk/res/android"&gt; &lt;uses-policies&gt; &lt;force-lock /&gt; &lt;/uses-policies&gt; &lt;/device-admin&gt; 4、主逻辑的实现 直接上MainActivity.java 代码如下...-->
+							<p>在Android设备上实现锁屏功能。</p>
+
+
+						</p>
+				</section>
+				<section class="post-meta">
+					<!--<div class="post-date">May 26, 2015</div>-->
+					<!--<div class="post-date">2015-05-26</div>-->
+					<div class="post-date">
+						发表于 2015-05-26&nbsp;&nbsp;
+						<a href="/technology/2015/05/26/lock_screen.html#comments">
+							<span class="ds-thread-count" data-thread-key="/technology/2015/05/26/lock_screen"></span>
+						</a>
+					</div>
+					<div class="post-categories">
+					in 
+					  
+						<a href="/category/technology">Technology</a>
+					  
+					
+					</div>
+				</section>
+			  </li>
+			  
+			  <hr>
+			  
+	  
+  
+	  <!-- if the param of publish in post is false,the post will not appear in post list -->
+	  
+			  <li>
+				<h2>
+				  <a class="post-link" href="/technology/2015/05/21/custom_view_cakeview.html">自定义view之饼状图的实现</a>
+				</h2>
+				<section class="post-excerpt" itemprop="description">
+				  <p>
+							<!--一个圆形饼状View的实现过程。 CakeView是一个通过自定义做的饼状图，如下图所示，会根据比例显示不同的占比。 这个view会根据传入的两个数字参数 生成不同的占比大小。 实现原理 画出一个背景为红色的大圆圈，然后再画一个圆心跟红色圆圈一致的扇形。最后在中央画一个白色小圆，然后大概的样式就出来了，最后在中央写上文字内容即可。如下演示 上面已经很清楚的看到了具体的实现过程。核心操作均在onDraw方法，如下 @Override protected void onDraw(Canvas canvas) { super.onDraw(canvas); RectF rPrimary = new RectF(0,0,mWidth,mWidth); RectF rSecond = new RectF(mBorderWidth,mBorderWidth,mWidth-mBorderWidth,mWidth-mBorderWidth); //绘制主色圆圈 canvas.drawOval(rPrimary, mPrimaryPaint); //绘制副色圆圈 这里绘制一个指定角度的扇形 canvas.drawArc(rPrimary, mStartAngle, mSweepAngle, true, mSecondaryPaint); //绘制中心圆圈 白色中心 canvas.drawOval(rSecond, mCenterPaint); //绘制标题文本 if(!TextUtils.isEmpty(mTitle)){ Path titlePath = new Path(); titlePath.moveTo(mHalf * (1f / 4f),...-->
+							<p>一个圆形饼状View的实现过程。</p>
+
+
+						</p>
+				</section>
+				<section class="post-meta">
+					<!--<div class="post-date">May 21, 2015</div>-->
+					<!--<div class="post-date">2015-05-21</div>-->
+					<div class="post-date">
+						发表于 2015-05-21&nbsp;&nbsp;
+						<a href="/technology/2015/05/21/custom_view_cakeview.html#comments">
+							<span class="ds-thread-count" data-thread-key="/technology/2015/05/21/custom_view_cakeview"></span>
+						</a>
+					</div>
+					<div class="post-categories">
+					in 
+					  
+						<a href="/category/technology">Technology</a>
+					  
+					
+					</div>
+				</section>
+			  </li>
+			  
+			  <hr>
+			  
+	  
+  
+	  <!-- if the param of publish in post is false,the post will not appear in post list -->
+	  
+			  <li>
+				<h2>
+				  <a class="post-link" href="/private/2015/05/19/way.html">我的开发之路</a>
+				</h2>
+				<section class="post-excerpt" itemprop="description">
+				  <p>
+							<!--对于自己做开发工作到现在，有时想想，也许是命运的安排。
+
+高中填报志愿，我选择的是当时比较热门的机械设计制造，但是因为成绩没够着，并且服从调配，所以被调到了计算机科学与技术专业，从此我便和软件、程序挂起了钩。
+
+大一开始学习C语言，却发现对这个东西一点都没感觉，持续到大二，还是没感觉，后来就觉得不对啊，即使是被选择到了计算机专业，但也不能荒废时间啊，后来自己开始上网找教程，
+自学一些比较有意思的项目，我记得很清楚，当时看了一个视频教程《C语言也能干大事》，
+才发现原来编程是可以让我产生兴趣的。从此便开始了自己的程序员之旅。
+
+后来开始不停的学习新东西，乐此不疲，从一开始的MFC到后来的Java，再开始学习JavaScript、Css、JavaWeb、三大框架，数据库。
+后来发现自学其实是个特别有意思的事情，你可以学习任何你想学习的东西。
+
+后来甚至翘课去听一些网络教程，说到这里，我觉得对于在校大学生，如果你现在还在大学，同时对编程有兴趣，建议除了专业相关的重要课程，翘课学习自己喜欢的东西，未尝不可。
+
+后来大四第一学期，一所北京培训机构去学校宣讲，招收学生去北京培训移动开发，而且培训费有优惠，所以就来到了北京，开始参加Android开发培训…
+
+培训时间是四个月，第三个月试着去面试，顺利的拿到Offer,然后开始自己的开发生涯。
+
+第一份工作是在一家创业公司做Android开发，一开始公司只有五个人，CEO，前端、市场、移动客户端。老板是华为出生，懂技术懂销售。
+
+到公司后服务端老板负责，我负责客户端，至于产品设计，无，当时在我的建议下，用腾讯的一个原型工具，花了一周时间，自己做了一个简单的产品原型，然后就开始开发客户端。
+
+用了三个月时间，在13年5月份产品上线，产品功能很简单，帮助用户查询周边的农场，数据全部来自老板之前做的web网站。
+
+后来，微信公众号比较火，老板说能不能做个公众号，研究了段时间，没过多久，用 PHP 写的后台做了公司公众号，不知不觉也算是PHP入门了。
+
+再后来公司要转型（恩，这是典型的创业公司），要做农产品电商，需要做一个电商网站，但是老板公务繁忙，没时间搞，只能让我负责，还好有一家公司提供整个一套电商解决方案。
+
+后来还算顺利的利用三方提供的方案，搭起了网站的雏形，至此Android已经和我没有关系了。
+
+尽管网站已经可以跑起来了，但是问题很多，界面丑，后台管理缺功能等等问题接踵而至。从此开始有做起了网页前端，不时的开始去改后台逻辑。
+
+14年3月网站总算能见人了，这时的网站首页，已经被我改的面目全非（褒义），因为我比较喜欢小米（我是一个代码层面的米粉），后来整个主页被我改的颇有几分小米官网的感觉，现在想想也是醉了。
+
+我改版后的商城主页地址    http://www.ubive.com
+
+一个农产品电商主页，其实不该走简洁路线，这是一个产品定位问题，但当时确实任性了，完全按照个人主观喜好去做，目前网页现在还是这个风格。优倍商城 不知道网站现在运营如何，但是老板确实挺牛，没有融资，坚持了三年，也是蛮拼的，祝福老板。
+
+网站上线的几个月后，继续负责网站优化，但是隐隐觉得我还是爱Android多一点，后来14年六月份辞职，继续开始自己的Android开发之路。
+
+-->
+							<p>对于自己做开发工作到现在，有时想想，也许是命运的安排。</p>
+
+
+						</p>
+				</section>
+				<section class="post-meta">
+					<!--<div class="post-date">May 19, 2015</div>-->
+					<!--<div class="post-date">2015-05-19</div>-->
+					<div class="post-date">
+						发表于 2015-05-19&nbsp;&nbsp;
+						<a href="/private/2015/05/19/way.html#comments">
+							<span class="ds-thread-count" data-thread-key="/private/2015/05/19/way"></span>
+						</a>
+					</div>
+					<div class="post-categories">
+					in 
+					  
+						<a href="/category/private">Private</a>
+					  
+					
+					</div>
+				</section>
+			  </li>
+			  
+	  
+  
+</ul>
+
+<nav class="pagination" role="navigation">
+	<p>
+
+		
+
+				
+				<a class="newer-posts" href="/page2">
+								<span class="fa-stack fa-lg">
+									<i class="fa fa-square fa-stack-2x"></i>
+									<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+								</span>
+				</a>
+				
+
+		
+
+    <span class="page-number">Page 3 of 4</span>
+
+		
+		<a class="newer-posts" href="/page4">
+	    <span class="fa-stack fa-lg">
+			  <i class="fa fa-square fa-stack-2x"></i>
+			  <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+			</span>
+		</a>
+		
+	</p>
+  <p style="display:none;">
+    <a href="/posts">View All Posts by Category</a>
+  </p>
+</nav>
+<div>
+
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+		var duoshuoQuery = {short_name:"maoruibin"};
+		(function() {
+				var ds = document.createElement('script');
+				ds.type = 'text/javascript';ds.async = true;
+				ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+				ds.charset = 'UTF-8';
+				(document.getElementsByTagName('head')[0]
+				 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+
+
+</div>
+</div>
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+<style type="text/css">
+    .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    }
+
+    .row {
+    margin-right: -15px;
+    margin-left: -15px;
+    }
+
+    .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    }
+
+    footer .list-inline {
+    margin: 0;
+    padding: 0;
+    }
+
+    .list-inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+    }
+
+    .text-center {
+    text-align: center;
+    }
+
+    .text-right {
+    text-align: right;
+    }
+
+    .list-inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+    }
+
+    .fa-lg{
+        font-size: 1.5em;
+    }
+</style>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                <div class="text-center" style="margin-bottom:0.8em;">
+                    <div style="font-size: 1.2em;"><a href="/" >咕咚</a></div>
+                    <div>生命不息，折腾不止。</div>
+                </div>
+
+                <ul class="list-inline text-center">
+                    
+                    
+                    <li>
+                        
+                        <a href="http://weibo.com/u/1874136301" title="Follow me on Weibo" target="_blank" class="weibo">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        <a href="https://github.com/maoruibin" title="Follow me on GitHub" target="_blank" class="github">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                        
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        
+                        <a href="http://www.zhihu.com/people/maoruibin" title="Follow me on ZhiHu" target="_blank" class="zhihu">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-zhihu fa-stack-1x fa-inverse">知</i>
+                                </span>
+                        </a>
+                        
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        
+                        
+                        <a href="http://plus.google.com/107689066812933417058?rel=author" title="Add me to your Circles" target="_blank" class="google">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        
+                        
+                        
+                        
+                        <a href="https://twitter.com/maoruibin9035" title="Add me to your Circles" target="_blank" class="twitter">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                        
+                    </li>
+                    
+                    
+                </ul>
+
+                <!--<p class="copyright text-muted">Copyright &copy; 咕咚 2016</p>-->
+                <div class="site-version text-right" style="display:block;">
+                    <p>Powered by <a href="http://jekyllcn.com">Jekyll</a>,&nbsp;Theme from <a
+                            href="https://github.com/bencentra/centrarium">Centrarium</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>-->
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>-->
+
+<!-- thanks to http://www.bootcdn.cn/lightbox2/ -->
+<script src="//cdn.bootcss.com/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/lightbox2/2.8.2/js/lightbox.min.js"></script>
+<script>
+
+$(document).ready(function() {
+
+	// Syntax highlighting
+	hljs.initHighlightingOnLoad();
+
+	// Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+
+});
+
+
+</script>
+
+
+
+
+  </body>
+
+</html>
