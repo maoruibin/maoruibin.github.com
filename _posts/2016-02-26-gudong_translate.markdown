@@ -8,7 +8,7 @@ categories: Product
 tags: App Product
 ---
 
-咕咚翻译是自己最近开发的一个实现『划词翻译』功能的 Android 应用 ，可能是目前 Android 市场上翻译效率最高的翻译应用。
+咕咚翻译是自己最近开发的一个实现『划词翻译』功能的 Android 应用 ，可能是目前 Android 市场上翻译效率最高的一款应用。
 
 ## 下载
 如果想第一时间体验，可点击[下载链接](http://fir.im/gdTranslater)
