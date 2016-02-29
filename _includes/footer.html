@@ -166,3 +166,16 @@ $(document).ready(function() {
 
 </script>
 {% endif %}
+
+{% if site.bd_tracking_id %}
+<!-- Baidu Analytics -->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?{{ site.bd_tracking_id }}";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+{% endif %}

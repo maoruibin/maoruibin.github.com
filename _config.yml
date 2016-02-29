@@ -48,6 +48,9 @@ duoshuo_shortname: maoruibin
 # Google analytics
 # ga_tracking_id: "UA-64640288-1"
 
+# Baidu analytics
+bd_tracking_id: "de1df75db196971264bd87815c96f646"
+
 # Category descriptions (for archive pages)
 descriptions:
   - cat: jekyll

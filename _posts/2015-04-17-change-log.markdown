@@ -9,6 +9,10 @@ tags:	Jekyll
 ---
 这篇博文用于记录，自己在修改博客时具体的修改记录，如颜色设置、联系方式配置等信息，以便日后查看。
 
+### 2016/02/29
+隐藏了post 页面的 tag、category 点击相应，因为 jekyll archive 不支持 Github Page   
+使用了新的代码高亮样式 减小了 padding 值
+
 ### 2016/02/26
 指定引用图片的宽度大小，可通过如下方式
 
@@ -17,6 +21,8 @@ tags:	Jekyll
 ###2016/01/20
 
 修改代码块的主题样式在 _include/head.html 文件中修改
+    
+可以再 [bootcdn](http://www.bootcdn.cn/highlight.js/)下载    
     
         <!-- thanks to http://www.bootcdn.cn/lightbox2/      -->
         <!-- thanks to http://www.bootcdn.cn/highlight.js/   -->
