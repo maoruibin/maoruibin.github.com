@@ -41,6 +41,10 @@ permalink: /project/
 
 一篇关于咕咚翻译的介绍文章 [关于咕咚翻译](http://gudong.name/product/2016/02/26/gudong_translate.html)
 
+[Github项目主页](https://github.com/maoruibin/TranslateApp)
+
+[Fir主页](http://fir.im/gdTranslate)
+
 #### 技术栈
 
  `MVP` `Dagger2` `RxJava` `Retrofit2`  `WakeLock 启动 Service`  `开机自启动`  `WindowManager 的使用`  `监听粘贴板`
@@ -55,7 +59,7 @@ permalink: /project/
 
 [Github项目主页](https://github.com/maoruibin/GankDaily)
 
-[Fir主页](http://fir.im/gankdaily  )
+[Fir主页](http://fir.im/gankdaily)
 
 #### 技术栈
 
