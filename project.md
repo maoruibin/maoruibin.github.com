@@ -47,7 +47,7 @@ permalink: /project/
 
 #### 技术栈
 
- `MVP` `Dagger2` `RxJava` `Retrofit2`  `WakeLock 启动 Service`  `开机自启动`  `WindowManager 的使用`  `监听粘贴板`
+ `MVP` `Dagger2` `RxJava` `Retrofit2`  `WakeLock 启动 Service`  `开机自启动`  `WindowManager 的使用`  `监听粘贴板` `泛型`
 
 ## 2、GankDaily
 自己利用[干货集中营](http://gank.io/)对外开放的 [API](http://gank.io/api) 为干货集中营开发的一个手机客户端软件，客户端主要用于展现网站技术干货。
@@ -63,7 +63,7 @@ permalink: /project/
 
 #### 技术栈
 
- `MVP` `Dagger2` `RxJava` `Retrofit2`
+ `MVP` `Dagger2` `RxJava` `Retrofit2` `泛型`
 
 
 ## 3、AppPlus

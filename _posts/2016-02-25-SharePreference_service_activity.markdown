@@ -24,6 +24,8 @@ tags: SharePreference Bug Service
 
 这个功能具体就是通过启动后台服务，然后开启一个定时任务，每间隔一段时间，随机的显示出生词本中一个单词。
 
+更多关于咕咚翻译的介绍可参看前一篇文章，[关于咕咚翻译](/product/2016/02/26/gudong_translate.html)
+
 ## 问题
 上面已经简单介绍了咕咚翻译，如上所述，App 中可以设置提示弹框的显示间隔时间，可以设置每隔1分钟、3分钟、5分钟或10分钟显示一次生词，
 这个设置是在 MainActivity 中完成，代码如下。
@@ -86,9 +88,9 @@ tags: SharePreference Bug Service
 这样 Application 所在的进程就和 ListenClipboardService 处在了不同的进程，此时问题显而易见，在 Application 对应的进程中设置了一个值，
 另一个进程就不能及时获取到对应的值。
 
-                
+
 这个问题可以通过设置 SharedPreferences 的属性为 Context.MODE_MULTI_PROCESS 解决，关于这个数值  
-     
+
      SharedPreference loading flag: when set, the file on disk will be checked for modification even if the shared preferences instance is already loaded in this process. This behavior is sometimes desired in cases where the application has multiple processes, all writing to the same SharedPreferences file. Generally there are better forms of communication between processes, though.
      This was the legacy (but undocumented) behavior in and before Gingerbread (Android 2.3) and this flag is implied when targetting such releases. For applications targetting SDK versions greater than Android 2.3, this flag must be explicitly set if desired.
 
