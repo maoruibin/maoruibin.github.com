@@ -16,6 +16,7 @@ tags: Android Practice
 ### 接口文件
 
 ### 命名规范
+
 * id命名采用右侧格式 {view缩写}_{module_name}_{view的逻辑名称}
 <table>
     <tr>
@@ -143,4 +144,3 @@ tags: Android Practice
     * widget layout： {module_name}_widget_{名称} 例如：
 
         user_widget_shopping_detail.xml
-

@@ -8,11 +8,13 @@ tags: Function
 在Android设备上实现锁屏功能。
 
 ##最终结果
+
 点击主界面的锁屏按钮，实现立即锁屏
 
 ###准备阶段
+
 新建一个空的Android项目，并在主界面上拖放一个按钮。并在Button的布局文件中声明onClick事件。如下
-    
+
     <Button android:text="锁屏"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,11 +23,12 @@ tags: Function
 在MainActivity.java文件中实现lockScreen方法。
 
 ###实现步骤
+
 1、创建一个空的广播接受者AdminManageReceiver.java
-    
+
     import android.app.admin.DeviceAdminReceiver;
     public class AdminManageReceiver extends DeviceAdminReceiver {
-        
+
     }
 
 2、配置Manifest文件
@@ -41,11 +44,11 @@ tags: Function
                 <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
             </intent-filter>
         </receiver>
-    
+
 
 3、新建文件device_admin.xml
 AdminManageReceiver需要一个资源文件的支持，我们在res目录下面创建名为xml的文件夹，接着创建device_admin.xml文件，内容如下
-    
+
     <device-admin xmlns:android="http://schemas.android.com/apk/res/android">
         <uses-policies>
             <force-lock />
@@ -75,7 +78,7 @@ AdminManageReceiver需要一个资源文件的支持，我们在res目录下面�
                 mDPM.lockNow();
             }
         }
-        
+
         //激活设备管理器
         private void showAdminManagement(ComponentName mAdminName) {
             Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);

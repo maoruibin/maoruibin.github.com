@@ -79,15 +79,15 @@ github 本身没有这个功能，但是 github 从来也不缺有思想有执�
   比如 android-cn 团队的 [android-discuss](https://github.com/android-cn/android-discuss)  项目，
   你就可以 watching 它，这里面都是一些关于 Android 技术的交流，如果有任何新问题，你都可以收到通知，你可以查看别人的回答，
   你可以回答别人提出的问题，这是一个很好的学习成长方式。
-  
+
   其他值得watch的项目还有很多，比如 github 上很多的 Awesome 系列的项目,如[Awesome-MaterialDesign](https://github.com/lightSky/Awesome-MaterialDesign)等，你 watch 这些项目了，
   只要项目新增一些好玩好用的东西，你就会收到通知。
-  
+
   我在知乎上看到有人问这样的问题，说 github 上有哪些值得 watch 的项目，其实有很多，我自己也整理了一些，但是没放到 github ，
   有兴趣的同学可以联系，一起维护这样一个项目。
-  
+
   值得注意的是，如果 watch多了，你可能会被无休止的邮件通知烦死（邮件通知可设置），所以做好权衡，哈哈~
-   
+
 * 喜欢一个项目就 star 它吧~
 
 * 修改开源项目就使用fork，这样你就可以在原项目的基础上，对项目进行修改提交，现在你是这个项目的主人啦~
@@ -96,16 +96,13 @@ github 本身没有这个功能，但是 github 从来也不缺有思想有执�
 
   有些时候，你看到一个项目的 star 数有很多，你就想知道到底都有那些人 star 了这个项目，或者 fork 了这个项目，
   但是环顾一圈，你却找不到一个入口，后来自己不经意的发现，只要`点击 star 傍边的数字`，就可以查看有哪些人star了这个项目。
-  是不是有点意思，现在你就可以去试试，watch、fork上面的数字都是可以点击的，道理一样。 
-  
+  是不是有点意思，现在你就可以去试试，watch、fork上面的数字都是可以点击的，道理一样。
+
 ### 结语  
-  
+
   这里只说了关于这三个按钮的使用，github 肯定还有很多使用技巧，欢迎大家多多讨论，互相学习。另外我在 android-cn 的 android-discuss 下面和知乎上
   都分别提了类似的问题，大家感兴趣的可以关注下。
-  
-  Github [Github上都有哪些有意思、不为大家熟知的小功能？](https://github.com/android-cn/android-discuss/issues/283)
-    
-  知乎 [Github上都有哪些有用但不为大家熟知的小功能？](http://www.zhihu.com/question/36974348)
-  
-  
 
+  Github [Github上都有哪些有意思、不为大家熟知的小功能？](https://github.com/android-cn/android-discuss/issues/283)
+
+  知乎 [Github上都有哪些有用但不为大家熟知的小功能？](http://www.zhihu.com/question/36974348)

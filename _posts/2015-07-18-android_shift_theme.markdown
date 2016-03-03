@@ -15,13 +15,14 @@ tags:  Theme Android
 
 
 #1、主题使用
+
 其实，Android已经为我们提供了一套成型的主题，我们要做的就是在他的基础上个性化自己的主题样式，首先在项目目录的values/styles.xml建立一个Light主题，如下
 
     <style name="Theme_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        
+
         <!-- 主题对应主色调 -->
         <item name="colorPrimary">#673AB7</item>
-        
+
         <!-- 主题对应深色调 在Android 5.0上主要表现在StatusBar上-->
         <item name="colorPrimaryDark">#512DA8</item>
 
@@ -78,7 +79,7 @@ values/attrs.xml
         android:textColor="?title_text"/>
 
 此时只要在不同的主题中，指定不同的title_text颜色值，就可以做到view颜色的改变，如下
-    
+
     <!-- 亮色主题-->
     <style name="Theme_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="title_text">@android:color/black</item>

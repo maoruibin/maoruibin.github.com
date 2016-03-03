@@ -3,9 +3,11 @@ layout: post
 author: 咕咚
 title:  "用Support包显示MaterialDialog"
 description: ""
+cover: "zzz"
 categories: Technology
 tags: Android Theme Dialog
 ---
+
 如果自己做个人App项目，很可能在一些情况下用到Dialog,Android自己也提供了系统Dialog,但是在MaterialDesigner出现之前，样子确实很丑，这篇博客讲解如何使用Support包中
 的API来实现MD风格的Dialog。
 
@@ -45,15 +47,15 @@ Support V7包在22.1.0之前的任何一个版本，AlertDialog一直都是Andro
                     .show();
 
 注意：在导包时一定要选择android.support.v7.app.AlertDialog。否则Dialog将不会是Material样式。最终使用support包得AlertDialog显示的Dialog效果如下图所示：
-<br><br>
-![dialog](/assets/device-2015-09-11-dialog_theme_bug.png "dialog")
-<br><br>
+<br>
+<img src="/assets/device-2015-09-11-dialog_theme_bug.png" style="width: 50%;">
+<br>
 ``小发现``：support-v7:22.1.0版本的Dialog显示的拐角是直角，其实这不符合真正规范，并且Dialog的默认背景颜色也不是白色，但是如果使用support-v7:23.1.0，这个问题就没了。
 
 ####主题适配
 
 其实通过上面的操作，我们已经可以得到一个非常好看的MaterialDialog了，但是仔细看，发现按钮的文字颜色并不是项目的主色调 colorPrimary,所以这里需要对Dialog进行主题设置，这里先把最终的成功方案给出来，一睹为快.
-    
+
     <!-- 应用主题 -->    
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
             <item name="theme_color">@color/colorPrimary</item>
@@ -118,8 +120,9 @@ Support V7包在22.1.0之前的任何一个版本，AlertDialog一直都是Andro
     </LinearLayout>
 
 可以发现不同的Button具有不同的style name，这里如果想要改变那个按钮的颜色样式，只要修改对应的style即可。不过注意的是，不论是修改Dialog的样式还是按钮的样式，一定要主要对应的parent不能出错。否则你可能达不到自己的目的，从而修改主题失败。不过他们的parent通过源码都可以找到，这里细心点就好。
-<br><br>
-![dialog](/assets/device-2015-09-11-dialog_theme_bug_fix.png "dialog")
+<br>
+<img src="/assets/device-2015-09-11-dialog_theme_bug_fix.png" style="width: 50%;">
+<br>
 
 ####总结
 使用MaterialDialog很容易，但是要控制Dialog的显示样式(按钮文本颜色，Dialog背景颜色等等)，需要去自定义主题。
