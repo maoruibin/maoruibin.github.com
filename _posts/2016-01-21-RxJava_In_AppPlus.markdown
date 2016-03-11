@@ -4,7 +4,7 @@ author: 咕咚
 title: "RxJava 在 AppPlus 中的应用"
 description: ""
 cover: "zzz"
-categories: Technology
+categories: Advanced
 tags: Android RxJava  
 ---
 RxJava 已经出来很长一段时间了，国内也已经有很多公司在使用，与此同时，有不少优秀的开发者也不断的在开源社区分享自己对 RxJava
@@ -24,7 +24,7 @@ RxJava 已经出来很长一段时间了，国内也已经有很多公司在使�
 
 关于自己为什么要写这篇，主要是因为在看了别人的文章后，觉得有必要记录一下自己的理解，毕竟，别人的文章是别人的理解，是人家自己的学习记录以及思考。
 很多知识点只有经过自己的思考、应用、再思考、再理解才会变成自己的知识，
-当然不排除那种只看一遍就能领会 RxJava 核心思想的牛人，反正自己不是，纸上得来终觉浅，所以自己在读完了上面的文章后把 RxJava 应用到了自己的项目 
+当然不排除那种只看一遍就能领会 RxJava 核心思想的牛人，反正自己不是，纸上得来终觉浅，所以自己在读完了上面的文章后把 RxJava 应用到了自己的项目
 [AppPlus](https://github.com/maoruibin/AppPlus) 中，并且决定在这里记录一些自己对 RxJava 的一些理解，用于加深对 RxJava 的认识理解。
 
 ### 为什么要有 RxJava
@@ -82,11 +82,11 @@ RxJava 的核心在于 异步。他的出现主要方便简化原来复杂的异
                 imageCollectorView.addImage(bitmap);
             }
         });
-        
+
 使用 RxJava 后的好处是程序结构变的清晰了，整个实现逻辑是流式风格，特别适合阅读，可以显著的提升代码的阅读性。
 如果整个团队都使用 RxJava ,那么后续维护成本就会降低写，因为代码的阅读性得到了提高。
 
-有种面向过程编程的感觉啊~ 
+有种面向过程编程的感觉啊~
 
 ### RxJava 原理介绍
 
@@ -112,12 +112,12 @@ RxJava 的异步实现主要是通过一种可扩展的观察者模式得到的�
         public void onNext(List<AppEntity> appEntities) {
              setData(appEntities, mType);
         }
-    
+
         @Override
         public void onCompleted() {
             loadingFinish();
         }
-    
+
         @Override
         public void onError(Throwable throwable) {
             Log.d(tag, "Error!");
@@ -130,7 +130,7 @@ RxJava 的异步实现主要是通过一种可扩展的观察者模式得到的�
 那`被观察者`如何定义，如下所示
 
       Observable<List<AppEntity>> observable =  DataHelper.getRunningAppEntity(getActivity());
-       
+
       /**
          * get the running app list info
          * @param ctx
@@ -155,7 +155,7 @@ RxJava 的异步实现主要是通过一种可扩展的观察者模式得到的�
         }
 
 这里牵扯到另一个问题，如何让自己的异步方法返回一个 Observable 对象，具体查看另一篇不错的译文 [将数据库操作 RxJava 化的方法](http://www.devtf.cn/?p=734)
- 
+
 现在观察者与被观察者都已经建立好了，按照之前的说法，现在只需要要通过 observable 的 subscribe 方法就可以将两者关联起来，
 
     observable.subscribe(subscriber);
@@ -189,22 +189,7 @@ observeOn(): 指定 Subscriber 所运行在的线程。或者叫做事件消费�
         .observeOn(AndroidSchedulers.mainThread())
         // 观察者订阅数据获取这一事件
         .subscribe(subscriber);
-        
+
 关于 Schedulers 内置的那几个线程可选项可查看扔物线博客 线程控制 —— Scheduler (一) 那一章节。
-           
+
 到此为止，使用 RxJava 完成一个异步事件订阅就完成了。           
-
-
-        
-
-
-
- 
-
-
-
-
- 
-
-    
-    

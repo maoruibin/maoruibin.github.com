@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "Bitmap相关的知识点整理"
 description: ""
-categories: Technology
+categories: Foundation
 cover: "zzz"
 tags:   Bitmap Android
 ---
@@ -29,7 +29,7 @@ well as the ability to display transparent/translucent colors.`
 具体这四个值分别代表了色彩的不同存储方式。这四个值指定了每一个像素的所占数据的大小，每个像素点都是1byte整数倍的数据。
 
 * ALPHA_8代表每个像素点只占一个字节的大小，这个字节仅仅存储跟透明度相关的数据。
-* ARGB_4444 代表16位ARGB位图 
+* ARGB_4444 代表16位ARGB位图
 * ARGB_8888 代表32位ARGB位图，Android默认加载图片使用此种配置，所以每个像素占4字节。
 * RGB_565 代表8位RGB位图
 
@@ -64,12 +64,12 @@ well as the ability to display transparent/translucent colors.`
             final int height = options.outHeight;
             final int width = options.outWidth;
             int inSampleSize = 1;
-        
+
             if (height > reqHeight || width > reqWidth) {
-        
+
                 final int halfHeight = height / 2;
                 final int halfWidth = width / 2;
-        
+
                 // Calculate the largest inSampleSize value that is a power of 2 and keeps both
                 // height and width larger than the requested height and width.
                 while ((halfHeight / inSampleSize) > reqHeight
@@ -77,7 +77,7 @@ well as the ability to display transparent/translucent colors.`
                     inSampleSize *= 2;
                 }
             }
-        
+
             return inSampleSize;
         }
 
@@ -85,20 +85,20 @@ well as the ability to display transparent/translucent colors.`
 
         public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
                 int reqWidth, int reqHeight) {
-        
+
             // First decode with inJustDecodeBounds=true to check dimensions
             final BitmapFactory.Options options = new BitmapFactory.Options();
             options.inJustDecodeBounds = true;
             BitmapFactory.decodeResource(res, resId, options);
-        
+
             // Calculate inSampleSize
             options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
-        
+
             // Decode bitmap with inSampleSize set
             options.inJustDecodeBounds = false;
             return BitmapFactory.decodeResource(res, resId, options);
         }
-        
+
 上述方法只针对一般意义上的大图，对于像长微博这种超大图片加载，仅仅依靠上述的方法是不能达到目的的，此时需要借助其他的
 方法工具进行特殊处理,如局部加载等机制，这里不展开讨论，具体可参考下面的两个链接。
 

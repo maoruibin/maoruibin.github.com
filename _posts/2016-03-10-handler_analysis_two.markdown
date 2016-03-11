@@ -4,10 +4,14 @@ author: 咕咚
 title: "Handler 之 源码解析"
 description: ""
 cover:  "#5FAD9C"
-categories: Technology
+categories: Advanced
 tags: Android Hander SourceAnalysis
 ---
 上一篇博客[Handler 之 初识使用](/technology/2016/03/10/handler_analysis_one.html)中介绍了 Handler 的作用，以及 Handler 的基本用法，同时也详细介绍了为什么子线程不能更新 UI 的原因，但是因为篇幅原因，所以对 Handler 的内部机制并没有展开叙述。这篇文章就从 Handler 开始解析与之相关的源码，从而更好的理解 Handler 以及 Looper MessageQueue。
+
+## 有价值的参考文章
+
+[鸿洋_ - Android 异步消息处理机制 让你深入理解 Looper、Handler、Message三者关系](http://blog.csdn.net/lmj623565791/article/details/38377229)
 
 ## Handler 机制
 

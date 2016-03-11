@@ -4,8 +4,8 @@ author: 咕咚
 title: "Android 过度绘制介绍及优化 Tip"
 description: ""
 cover: "zzz"
-categories: Technology
-tags: Android Performance 
+categories: Advanced
+tags: Android Performance
 ---
 Android 中的过度绘制是指同一个像素被绘制多次，从绘制性能角度讲，同一像素点被绘制的次数当然越少越好，这样有利于减轻 GPU 的工作压力，事实上，在具体开发过程中
 ，不可避免的可能会出现过度绘制，这里，Android 系统本身在开发者选项里已经提供了一个选项开关 Debug GPU overdraw(调试 GPU 过度绘制)，用于检测 App 的过度绘制，
@@ -27,9 +27,9 @@ Android 中的过度绘制是指同一个像素被绘制多次，从绘制性能
 `This is wrong. Fix it.`
 
 下面是一副官方关于颜色说明的图片。
-    
+
 <img src="/assets/over_draw_color_1.png" style="width: 50%;margin: auto;"><br>
-    
+
 
 `Note:` 如果只被绘制了一次，那么不显示任何指示颜色，即透明。
 
@@ -47,9 +47,9 @@ Android 中的过度绘制是指同一个像素被绘制多次，从绘制性能
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context="me.gudong.overdrawdemo.MainActivity">
-    
+
     </LinearLayout>
-    
+
 然后打开 开发者选项的过度绘制选项，效果如下，
 
 <img src="/assets/over_draw_color_2.png" style="width: 50%;margin: auto;"><br>
@@ -59,18 +59,18 @@ Android 中的过度绘制是指同一个像素被绘制多次，从绘制性能
 此时试想一下，如果为根布局的 LinearLayout 设置背景色，
 
     android:background=“#f4f4f4"
-    
+
 此时的界面会是怎样
 
 <img src="/assets/over_draw_color_3.png" style="width: 50%;margin: auto;"><br>
 
 因为这个 Activity 默认已经用主题指定背景绘制了一次内容区域(DecorView)，此时在绘制 LinearLayout 时，因为指定 `android:background=“#f4f4f4"`的缘故，这片区域的
  像素点必然会被绘制两次，所以此时的内容区域就会显示为蓝色。
- 
+
 同样的道理，绿色、浅红色、暗红色都是根据同一像素点绘制次数的不同，而显示出来。
- 
+
 ### 为什么要研究过度绘制
- 
+
 对一个 App 来说，它运行时要不停的根据用户的操作去绘制不同的界面，绘制界面主要由 GPU 控制，如果一个界面过度绘制比较严重，大部分界面区域都被
 绘制了3、4次甚至更多，那么就会浪费掉 GPU 的很多性能，这对于一个追求有良好体验 App 的开发者肯定是不允许的。
 
@@ -93,28 +93,17 @@ Android 中的过度绘制是指同一个像素被绘制多次，从绘制性能
 <br>
 <p style="text-align:center">微博 VS Keep</p>
 <br>
- 
-### 避免过度绘制的 Tips 
+
+### 避免过度绘制的 Tips
 既然过度绘制是不好的，那么我们在开发中就应该尽量去减少过渡绘制，这里结合自己网上看到的一些优化 tip ,整理一下。
- 
+
 1、对于我们开发中的用到的 View ，如果对他设置背景颜色没有意义的，那么我们就应该不要随便去给他设置背景色。
 
 待补充...
-  
-    
+
+
 ### 参考文章
 
 [Debug GPU Overdraw Walkthrough](http://developer.android.com/intl/zh-cn/tools/performance/debug-gpu-overdraw/index.html)
 
 [Android性能优化之如何避免Overdraw](http://www.jianshu.com/p/145fc61011cd)
-    
-
-
-
-
-
-
- 
-
-    
-    

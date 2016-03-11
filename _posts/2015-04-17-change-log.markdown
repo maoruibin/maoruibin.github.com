@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "博客更新日志"
 description: "利用Github搭建博客后,我写的第一篇博客"
-categories: Private
+categories: Collections
 cover: "zzz"
 tags:	Jekyll
 ---
@@ -21,17 +21,17 @@ tags:	Jekyll
 ###2016/01/20
 
 修改代码块的主题样式在 _include/head.html 文件中修改
-    
+
 可以再 [bootcdn](http://www.bootcdn.cn/highlight.js/)下载    
-    
+
         <!-- thanks to http://www.bootcdn.cn/lightbox2/      -->
         <!-- thanks to http://www.bootcdn.cn/highlight.js/   -->
         <!-- thanks to https://highlightjs.org/static/demo/  -->
         <link  rel="stylesheet" href="//cdn.bootcss.com/highlight.js/8.5/styles/androidstudio.min.css">
         <link rel="stylesheet" href="//cdn.bootcss.com/lightbox2/2.8.2/css/lightbox.css">
-        
+
 修改代码块的padding font  在 _sass/_layout.scss
-        
+
         pre code.hljs {
         	font-size: modular-scale(0);
         	padding: 1.5em;
@@ -75,8 +75,8 @@ tags:	Jekyll
     publish: false
     tags: Android Animation
     ---
-    
-只要设置 publish 为 false ，那么这篇博文将不会出现在主页列表，不设置默认表示文章处于发布状态 
+
+只要设置 publish 为 false ，那么这篇博文将不会出现在主页列表，不设置默认表示文章处于发布状态
 
 ### 2015/10/27
 
@@ -95,20 +95,20 @@ tags:	Jekyll
 此时文章头部背景将会是一张大图
 
         style="background-image: url(/////);"
-  
+
 * 在博文中设置cover属性为以#开头的颜色值
 此时文章头部背景将会是纯色
-  
+
         style="background-color:#xxxxxx;"
-        
+
 * 在博文中设置cover属性为"zzz"
 此时文章头部背景将会是主题指色，这个颜色在config中指定
-  
+
         theme_color: "#607D8B"
 
 * 在博文中不设置cover属性
 此时文章头部将不会显示任何大背景色，只有一个分割线        
-    
+
 ### 2015/10/25
 
 当设置博客北京的conver属性后，如果没有设置图片，则会显示一个纯色的背景，这个纯色的背景的设置具体在/sass/layout.scss下面
@@ -123,7 +123,7 @@ tags:	Jekyll
           }
         }
       }
-  	
+
 $action-color在/sass/base/variables.scss下面
 
     // Font Colors
@@ -131,9 +131,7 @@ $action-color在/sass/base/variables.scss下面
     $base-font-color: $dark-gray;
     $action-color: $blue;
     $highlight-color: tint($action-color, 33%);
-    
+
 真心佩服作者这种清晰明了的设置方案。
 
 经验证 上面的方式有问题，background-color 必须为半透明颜色，还是改回来，换个颜色就行！
-  		 
-  

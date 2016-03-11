@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title:  "build.gradle最佳实践之buildConfigField"
 description:  "AndroidStudio中使用build.gradle的最佳实践"
-categories: Technology
+categories: Collections
 tags: Android Tool Practice Gradle
 ---
 使用AndroidStudio进行开发，其中很重要的一个文件就是build.gradle,他是整个项目的控制中心，这里收集一些日常会用到的语法或者使用技巧，以备后用。这篇博客主要说明
@@ -55,15 +55,3 @@ buildTypes节点下使用buildConfigField。
     }
 
 可以看到在build.gradle中设置的属性LOG_DEBUG，在这里可以直接通过BuildConfig这个类进行访问，此时就可以动态的控制Log的输出了，这里当然可以指定更多的关键字，自己根据项目需求发挥即可。
-
-
-
-
-
-
-
-
-
-
-
-

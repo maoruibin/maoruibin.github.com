@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title:  "Unsafe类介绍"
 description: "描述信息"
-categories: Technology
+categories: Advanced
 tags: 安全 Java
 ---
 这个类是用于执行低级别、不安全操作的方法集合。尽管这个类和所有的方法都是公开的（public），但是这个类的使用仍然受限，你无法在自己的java程序中直接使用该类，因为只有授信的代码才能获得该类的实例。
@@ -52,7 +52,7 @@ tags: 安全 Java
 这里我们看到最重要的一个类叫Unsafe
 
 [Unsafe的源码](http://www.docjar.com/html/api/sun/misc/Unsafe.java.html)
- 
+
 Unsafe源码中的描述如下：
 
     A collection of methods for performing low-level, unsafe operations. Although the class and all methods are public, use of this class is limited because only trusted code can obtain instances of it
@@ -104,15 +104,7 @@ Unsafe源码中的描述如下：
 这里可以举个例子来说明compareAndSet的作用，如支持并发的计数器，在进行计数的时候，首先读取当前的值，假设值为a，对当前值 + 1得到b，但是+1操作完以后，并不能直接修改原值为b，因为在进行+1操作的过程中，可能会有其它线程已经对原值进行了修改，所以在更新之前需要判断原值是不是等于a，如果不等于a，说明有其它线程修改了，需要重新读取原值进行操作，如果等于a，说明在+1的操作过程中，没有其它线程来修改值，我们就可以放心的更新原值了。
 
 Unsafe只有jdk库里的类才可以随意使用。对于我们一般是没法拿到实例的，但是要真要想拿到，也不是没有办法，比如用反射，至于他能做什么，看自己怎么用了
-    
+
     Field f = Unsafe.class.getDeclaredField("theUnsafe"); // Internal reference  
     f.setAccessible(true);  
-    Unsafe unsafe = (Unsafe) f.get(null); 
-
-
-
-
-
-
-
-
+    Unsafe unsafe = (Unsafe) f.get(null);

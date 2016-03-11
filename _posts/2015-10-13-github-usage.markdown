@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title:  "如何用好github中的watch、star、fork"
 description: ""
-categories: Technology
+categories: Skills
 tags: Github Usage
 cover:  "#3e4145"
 ---

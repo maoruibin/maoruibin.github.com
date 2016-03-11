@@ -4,7 +4,7 @@ author: 咕咚
 title:  "用Support包显示MaterialDialog"
 description: ""
 cover: "zzz"
-categories: Technology
+categories: Skills
 tags: Android Theme Dialog
 ---
 

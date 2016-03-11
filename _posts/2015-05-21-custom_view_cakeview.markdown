@@ -2,7 +2,7 @@
 layout: post
 author: 咕咚
 title: 自定义view之饼状图的实现
-categories: Technology
+categories: Advanced
 tags: View
 ---
 一个圆形饼状View的实现过程。
@@ -19,7 +19,7 @@ tags: View
 ![CakeView原理图](/assets/cakeview_principle_v2.png "CakeView原理图")
 
 上面已经很清楚的看到了具体的实现过程。核心操作均在onDraw方法，如下
-	
+
 	@Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -57,13 +57,12 @@ tags: View
 
 关于画扇形，这里推荐一篇国外的博客，写的很好，对carvas的drawArc方法解释的很详细。
 
-[Understanding Sweep angle in drawArc method of android](http://www.cumulations.com/blogs/5/Understanding-Sweep-angle-in-drawArc-method-of-android "Title") 
+[Understanding Sweep angle in drawArc method of android](http://www.cumulations.com/blogs/5/Understanding-Sweep-angle-in-drawArc-method-of-android "Title")
 
-此外。整个实现过程中，还发现canvas有一个特别好的方法**drawTextOnPath()** 
+此外。整个实现过程中，还发现canvas有一个特别好的方法**drawTextOnPath()**
 利用这个方法可以方便的文字的显示位置。
 
 update:上述的画饼状图的方式会存在过度绘制的问题，尽管问题看上去不大，其实如果只是画一个圆圈，没必要这么麻烦，可以直接
 画一个指定宽度的圆线就对了，自己的实现其实有点麻烦了。
 
 更新于 2016/01/16 00:30
-

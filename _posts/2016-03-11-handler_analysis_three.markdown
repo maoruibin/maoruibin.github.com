@@ -4,7 +4,7 @@ author: 咕咚
 title: "Handler 之 ThreadLocal 相关"
 description: ""
 cover:  "#5FAD9C"
-categories: Technology
+categories: Advanced
 tags: Android Hander ThreadLocal
 ---
 在上一篇文章[Handler 之 源码解析](/technology/2016/03/10/handler_analysis_two.html)中介绍 Handler 与 Looper 的关系时，半路出现了 ThreadLocal 这个类，他是什么呢，本想在 Handler 源码解析一文一起阐述了，
