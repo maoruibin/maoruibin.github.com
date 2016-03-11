@@ -27,7 +27,7 @@ Handler创建的时候必须使用当前线程的 Looper 来构造消息循环�
 
 是该抛出一个观点的时候了。
 
-我们在主线程创建一个 Handler，这个 Handler 就需要一个和主线程绑定的 Looper，如果实在一个子线程创建一个 Handler,
+我们在主线程创建一个 Handler，这个 Handler 就需要一个和主线程绑定的 Looper，如果是在一个子线程创建一个 Handler,
 那么我们就需要为这个 Handler 绑定一个与子线程绑定的 Lopper。
 
 至于原因，应该是这样的，主线程的 handler 发送消息后，应该是主线程的 Looper 去轮训与主线程相关的那个 MessageQueue，并且处理消息，子线程中创建的 Handler 对象在发送消息时，（不论他在什么地方发送），应该是该子线程对应的 Looper 去轮询相应的 MessageQueue，然后处理消息。
@@ -120,7 +120,7 @@ sThreadLocal.get() 一定是 null 的，所以会直接执行
 
 这里需要特别注意一点，仅仅在创建 handler 之前调用了 Looper.prepare() 并不能完事大吉，如果你想通过这个 handler 接受消息，你就一定需要在创建完毕 Handler ，立即执行 Looper.loop() 方法，让刚才创建的 Looper 立即工作起来。
 
-否则，后续你在子线程发送消息了，但是你却不能在子线程的 handler 中接受到消息，就出出现这样的问题。
+否则，后续你在子线程发送消息了，但是你却不能在子线程的 handler 中接受到消息，就会出现这样的问题。
 
 所以补全上面的代码，如下所示。
 

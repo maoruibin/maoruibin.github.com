@@ -15,7 +15,7 @@ permalink: /about/
 
 热爱开源，乐于分享，是一个忠实的 Github 用户。
 
-我的 Github [个人主页](https://github.com/maoruibin) 欢迎follow 咕咚。
+我的 Github [个人主页](https://github.com/maoruibin) 欢迎 follow 咕咚。
 
 喜欢倒腾，空闲时会开发点自己的应用。
 

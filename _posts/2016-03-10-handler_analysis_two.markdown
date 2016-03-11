@@ -17,7 +17,7 @@ tags: Android Hander SourceAnalysis
 
 ### Handler Looper MessageQueue 之间的关系
 
-Looper: 是一个消息轮训器，他有一个叫 loop() 的方法，用于启动一个死循环，不停的去轮训消息池。
+Looper: 是一个消息轮训器，他有一个叫 loop() 的方法，用于启动一个死循环，不停的去轮询消息池。
 
 MessageQueue: 就是上面说到的消息池
 
@@ -57,7 +57,7 @@ Looper，同时对应一个 MessageQueue 对象。这里给 MessageQueue 的赋�
 
     mQueue = mLooper.mQueue;
 
-这里直接使用 looper 的 mQueue 对象，将 Looper 的 mQueue 赋值给了 Hander 自己，现在 Looper 和 Handler 持有着同一个 MessageQueue 。
+这里直接使用 looper 的 mQueue 对象，将 looper 的 mQueue 赋值给了 Handler 自己，现在 Looper 和 Handler 持有着同一个 MessageQueue 。
 
 这里可以看到 Looper 的重要性，现在 Handler 中的 Looper 实例和 MessageQueue 实例都是通过 Looper 来完成设置的，那么下面我们具体看看 Looper 是怎么实例化的，以及他的 mQueue 是怎么来的。       
 
@@ -153,7 +153,7 @@ Looper，同时对应一个 MessageQueue 对象。这里给 MessageQueue 的赋�
     }
 
 
-这里，首先调用了 prepare() 执行完 prepare()，sThreadLocal 成功绑定了一个 new Looper() 对象，然后执行
+这里，首先调用了 prepare() 方法，执行完成后，sThreadLocal 成功绑定了一个 new Looper() 对象，然后执行
 
     sMainLooper = myLooper();
 
@@ -193,7 +193,7 @@ sMainLooper 的 get 方法将返回在程序启动时设置的 Looper，不会�
 
 现在，想一个简单的过程，我们创建了一个 App,什么也不做，就是一个 HelloWorld 的 Android 应用，
 此时，你启动程序，即使什么也不干，按照上面的代码，你应该知道的是，现在的程序中已经有一个 Looper 存在了。
-并且还启动了消息轮训。 Looper.loop();
+并且还启动了消息轮询。 Looper.loop();
 
 但是，目前来看，他们好像没什么用，只是存在而已。
 
@@ -363,18 +363,18 @@ Handler 有好多相关的发送消息的方法。但是追踪源码，发现他
 
 但是从上面的 dispatchMessage 方法我们也能看出，Handler 在处理消息时的顺序是什么？
 
-  public void dispatchMessage(Message msg) {
-      if (msg.callback != null) {
-          handleCallback(msg);
-      } else {
-          if (mCallback != null) {
-              if (mCallback.handleMessage(msg)) {
-                  return;
+      public void dispatchMessage(Message msg) {
+          if (msg.callback != null) {
+              handleCallback(msg);
+          } else {
+              if (mCallback != null) {
+                  if (mCallback.handleMessage(msg)) {
+                      return;
+                  }
               }
+              handleMessage(msg);
           }
-          handleMessage(msg);
       }
-  }
 
 他首先判断 Message 对象的 callback 对象是不是为空，如果不为空，就直接调用 handleCallback 方法，并把 msg 对象传递过去，这样消息就被处理了。
 

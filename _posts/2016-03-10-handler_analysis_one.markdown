@@ -7,7 +7,7 @@ cover:  "#5FAD9C"
 categories: Technology
 tags: Android Hander SourceAnalysis
 ---
-这篇文章主要讲解和记录自己对 Handler 的理解。因为一开始接触 Android 就接触到了 Handler，所以对 handler 的了解应该比较多，加上项目中在消息传递以及异步控制方面都要用到 Handler。自己也不知一遍的看过 Handler 源码，不过每次看的时候都能明白，但是时间久了，就很容易忘记。所以这次就有了这个 Handler 系列。从 Handler 的使用场景，到具体使用再到源码解析，自己重新再走一遍，同时通过博客记录下来，方便以后查阅。我想，这也是写博客的意义所在。
+这篇文章主要讲解和记录自己对 Handler 的理解。因为一开始接触 Android 就接触到了 Handler，所以对 handler 的了解应该比较多，加上项目中在消息传递以及异步控制方面都要用到 Handler。自己也不止一遍的看过 Handler 源码，不过每次看的时候都能明白，但是时间久了，就很容易忘记。所以这次就有了这个 Handler 系列。从 Handler 的使用场景，到具体使用再到源码解析，自己重新再走一遍，同时通过博客记录下来，方便以后查阅。我想，这也是写博客的意义所在。
 
 谈一个东西之前，首先说明白他为什么要存在。也就是它存在的意义。
 
@@ -21,7 +21,7 @@ tags: Android Hander SourceAnalysis
 
 试想，这个操作发生在主线程，由于线程同一时间只能执行一个操作，所以在请求网络图片的过程中，主线程不能做一些其他的更新 UI 相关的操作，所以我们现在能看到的就是，界面被卡住了，原因已经很清楚，主线程被耗时操作阻塞了。
 
-这种卡主的状态直到请求成功。
+这种卡住的状态直到请求成功。
 
 其实，如果这样也还好，卡就卡下吧，忍忍也就算了，但是不幸的是， Android 有一个规定，在主线程完成一个操作的时间不能超过5秒，否则 Android 系统就会给用户弹出一个 ANR 的奔溃对话框。
 
@@ -37,7 +37,7 @@ tags: Android Hander SourceAnalysis
 其实目前已经有很多方法可以做到这一点，用 Thread + Handler 的组合或者使用 AsyncTask，当然如果你知道 RxJava 的话，用 RxJava 也是相当
 不错的选择。上述三种方式都可实现。
 
-官方也已经提供了一个指南，用于介绍如果避免这种问题，他用到了 AsyncTask，原文 [Keeping Your App Responsive](http://developer.android.com/intl/ru/training/articles/perf-anr.html),可以一看。
+官方也已经提供了一个指南，用于介绍如何避免这种问题，他用到了 AsyncTask，原文 [Keeping Your App Responsive](http://developer.android.com/intl/ru/training/articles/perf-anr.html),可以一看。
 
 作为自己今天的研究，我主要说 Handler。
 
@@ -45,7 +45,7 @@ tags: Android Hander SourceAnalysis
 
 由于主线程不能做耗时操作，所以可以在主线程中建立一个子线程，把耗时操作放在子线程完成，这样不就能避开 Android 系统的 ANR 规则了吗？
 
-是的，所以我们可以在主线程 new 一个子线程，让他开启工作，想这下面样
+是的，所以我们可以在主线程 new 一个子线程，让它开启工作，像下面这样
 
     private void executeTask(){
       new Thread(new Runnable() {
@@ -63,13 +63,13 @@ tags: Android Hander SourceAnalysis
 
 如上所示，loadImg() 就是一个耗时操作，可以猜想的到，它里面都发生了什么。
 
-首先发送了网络请求 -> 获取到对应的图片数据 -> 然后还把数据解析成 Bitmap，恩恩，这是一个标准的网络请求操作。代码不贴了。
+首先发送了网络请求，接着获取到对应的图片数据，然后还把数据解析成 Bitmap，恩恩，这是一个标准的网络请求操作。代码不贴了。
 
 恩，回到正题，你不是很耗时吗？我把你放到一个子线程中去执行，随你怎么耗时，你都不会影响我主线程中的 UI 更新操作。
 
 但是问题来了，子线程 跨过山河大海，飘过远洋高山，终于气喘吁吁的回来了，手里还拿着 bitmap。
 
-此时，我们很容易的想到，赶紧把这个从服务端解析到 bitmap 通过 ImageView
+此时，我们很容易的想到，赶紧把这个从服务端解析到的 bitmap 通过 ImageView
 的 setImageBitmap() 方法设置到 ImageView 上啊，这样我们就可以看到图像了。
 
 此时当你调用上面的方法后，你的应用又崩了。因为此时的 setImageBitmap() 方法调用发生在子线程，同时，这个方法属于更新界面 UI
@@ -88,18 +88,16 @@ tags: Android Hander SourceAnalysis
 
     只有创建了这个 view 层次树的线程才可以去 touch(泛指操作)这个 View
 
-因为 Activity 的 view 层次树是在主线程完成的，所以对这个依附于主线程中创建的层次树的 view ,你要是后续想要 touch 她，就一定要在主线程中光明正大的 touch，不能挪到其他见不到光的子线程中去 touch，呵呵 ~
+因为 Activity 的 view 层次树是在主线程完成初始化的，所以对所有依附于这个层次树的 view ,你要是后续想要 touch 它，就一定要在主线程中 touch，不能挪到其他子线程中去 touch。
 
-关于上面说到的， View 层次树的创建是在主线程中完成这一点，一些人可能怀疑。
+关于上面说到的， View 层次树的创建以及初始化是在主线程中完成这一点，一些人可能怀疑。这里也不具体深挖代码，简单分析下。
 
 一般的，我们在 onCreate 中调用 setContent() 方法就可以完成布局的设置和加载，如下所示。
 
       setContentView(R.layout.activity_handler);
 
 很明显，setContent() 是在主线程中调用完成的，这里如果深究 setContent(),你会发现是 PhoneWindow 最终执行了相关的逻辑，而最终
-通过 Window 的一系列操作，这个 Activity 对应的 View 层次树也就创建成功。而这个 Activity 中的所有 View 都依附于这个 view 层次树。
-
-这里对具体的 view 层次树没做过多深究，有兴趣可以看看源码，
+通过 Window 的一系列操作，这个 Activity 对应的 View 层次树也就创建成功。同时，这个 Activity 中的所有 view 都将依附于这个层次树。
 
 所以现在在回过头来看看刚才的问题。
 
@@ -116,7 +114,7 @@ tags: Android Hander SourceAnalysis
 
 既然有问题，Android 就提供了一整套的解决方案。
 
-既然子线程不能更新 UI ，那么就只能去主线程更新，但是现在就在代码逻辑就在子线程中，我们要怎么才可以切换到主线程中去更新 UI ?
+既然子线程不能更新 UI ，那么就只能去主线程更新，但是现在的程序流正在子线程中，我们要怎么才可以把当前的代码逻辑切换到主线程中去?从而达到更新 UI 的目的。
 
 Handler 来了~
 
