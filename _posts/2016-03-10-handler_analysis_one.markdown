@@ -1,44 +1,51 @@
 ---
 layout: post
 author: 咕咚
-title: "Handler 解析"
+title: "Handler 之 初识使用"
 description: ""
 cover:  "#5FAD9C"
 categories: Technology
 tags: Android Hander SourceAnalysis
 ---
-这篇文章记录自己从源码角度看 Handler 的工作原理。之前已经看过很多次 Handler 的源码，每次看的时候都能明白，但是时间久了，就很容易忘记。
-这次打算记在博客里，方便以后查阅。这也是写博客的意义所在。
+这篇文章主要讲解和记录自己对 Handler 的理解。因为一开始接触 Android 就接触到了 Handler，所以对 handler 的了解应该比较多，加上项目中在消息传递以及异步控制方面都要用到 Handler。自己也不知一遍的看过 Handler 源码，不过每次看的时候都能明白，但是时间久了，就很容易忘记。所以这次就有了这个 Handler 系列。从 Handler 的使用场景，到具体使用再到源码解析，自己重新再走一遍，同时通过博客记录下来，方便以后查阅。我想，这也是写博客的意义所在。
 
 谈一个东西之前，首先说明白他为什么要存在。也就是它存在的意义。
 
-### 为什么要有 Handler
+## 为什么要有 Handler
 
 在 Android 中，默认所有的代码都执行在主线程，我们已经在 Activity 中 happy 的写了很久的代码，如设置一个 Button 的颜色、
-获取输入框内的文本、设置 ImageView 的图片属性等等，这些操作都很快，只要设置，我们可能就会马上看到效果，这就是我们常见的 UI 操作。完成
+获取输入框内的文本、设置 ImageView 的图片属性等等，这些操作执行起来都很快，只要设置，我们可能就会马上看到效果，这就是我们常见的 UI 操作。完成
 他们几乎都是瞬时的。
 
-但是，在 Android 中有一些操作是很耗费时间的，比如从网络加载一个大图片。因为要建立连接，请求服务端，解析数据等等的操作，所以完成这个操作不是一下两下就能完成的。
+但是，在 Android 中有一些操作是很耗费时间的，比如从网络加载一个大图片。因为要建立连接，请求服务端，解析数据等等的操作，所以完成这样的操作，就不是一下两下能做到的。
 
-试想，如果这个操作也发生在主线程，由于线程同一时间只能执行一个操作，所以在请求网络图片的过程中，主线程不能做一些其他的更新 UI 相关的操作，现在我们只会看到我们的界面卡住了，因为我们的主线程被耗时操作卡住了。
+试想，这个操作发生在主线程，由于线程同一时间只能执行一个操作，所以在请求网络图片的过程中，主线程不能做一些其他的更新 UI 相关的操作，所以我们现在能看到的就是，界面被卡住了，原因已经很清楚，主线程被耗时操作阻塞了。
 
-这种卡主的状态直到请求成功，如果这样也还好，卡就卡下吧，忍忍也就算了，但是不幸的是， Android 有一个规定，
+这种卡主的状态直到请求成功。
 
-    在主线程完成一个操作的时间不能超过5秒，否则 Android 系统就会给用户弹出一个 ANR 的奔溃对话框。
+其实，如果这样也还好，卡就卡下吧，忍忍也就算了，但是不幸的是， Android 有一个规定，在主线程完成一个操作的时间不能超过5秒，否则 Android 系统就会给用户弹出一个 ANR 的奔溃对话框。
 
+下面是从官方文章中摘抄的一段
+
+    In Android, application responsiveness is monitored by the Activity Manager and Window Manager system services. Android will display the ANR dialog for a particular application when it detects one of the following conditions:
+
+    No response to an input event (such as key press or screen touch events) within 5 seconds.
+    A BroadcastReceiver hasn't finished executing within 10 seconds.
 
 所以，作为开发者，你一定不希望这样的事发生在你的 App 里，所以我们一定要避免把一个耗时可能超过5秒的操作放在主线程。那我们怎么才能做到呢？
 
 其实目前已经有很多方法可以做到这一点，用 Thread + Handler 的组合或者使用 AsyncTask，当然如果你知道 RxJava 的话，用 RxJava 也是相当
 不错的选择。上述三种方式都可实现。
 
-作为自己今天的研究，我主要说 Handler 。
+官方也已经提供了一个指南，用于介绍如果避免这种问题，他用到了 AsyncTask，原文 [Keeping Your App Responsive](http://developer.android.com/intl/ru/training/articles/perf-anr.html),可以一看。
 
-### 使用
+作为自己今天的研究，我主要说 Handler。
+
+## 使用
 
 由于主线程不能做耗时操作，所以可以在主线程中建立一个子线程，把耗时操作放在子线程完成，这样不就能避开 Android 系统的 ANR 规则了吗？
 
-是的，所以我们可以在主线程 new 一个子线程，让他开启工作
+是的，所以我们可以在主线程 new 一个子线程，让他开启工作，想这下面样
 
     private void executeTask(){
       new Thread(new Runnable() {
@@ -56,30 +63,68 @@ tags: Android Hander SourceAnalysis
 
 如上所示，loadImg() 就是一个耗时操作，可以猜想的到，它里面都发生了什么。
 
-他肯定在里面发送了网络请求，获取到了对应的图片数据，然后还把数据解析成 Bitmap，这个就是一个标准的网络请求操作。
+首先发送了网络请求 -> 获取到对应的图片数据 -> 然后还把数据解析成 Bitmap，恩恩，这是一个标准的网络请求操作。代码不贴了。
 
-他们都发生在子线程，然后，子线程气喘吁吁的回来，带着 Bitmap 回来了，此时我们很容易的想到，赶紧把这个从服务端解析到 bitmap 通过 ImageView
-的 setImageResource() 方法设置到 ImageView 上啊，这样我们就可以看到图像了。
+恩，回到正题，你不是很耗时吗？我把你放到一个子线程中去执行，随你怎么耗时，你都不会影响我主线程中的 UI 更新操作。
 
-此时当你调用上面的方法后，你的应用又崩了。因为此时的 setImageResource() 方法调用发生在子线程，同时，这个方法属于更新界面 UI
+但是问题来了，子线程 跨过山河大海，飘过远洋高山，终于气喘吁吁的回来了，手里还拿着 bitmap。
+
+此时，我们很容易的想到，赶紧把这个从服务端解析到 bitmap 通过 ImageView
+的 setImageBitmap() 方法设置到 ImageView 上啊，这样我们就可以看到图像了。
+
+此时当你调用上面的方法后，你的应用又崩了。因为此时的 setImageBitmap() 方法调用发生在子线程，同时，这个方法属于更新界面 UI
 的操作，而 Android 系统不允许我们的代码在子线程中去更新 UI，更新 UI 的操作只能发生在主线程，so ~ 我们的代码执行到 setImageResource 这里的时候就崩溃了。
 
-你不禁想说，Android 也太麻烦了，这么多规则，但是正所谓『无规矩，不成方圆』。有规矩总是好的，况且他也不是只定规矩，不给 API。
+    Process: name.gudong.picassodemo, PID: 27044 android.view.ViewRootImpl$CalledFromWrongThreadException:
+
+           Only the original thread that created a view hierarchy can touch its views.
+
+           at android.view.ViewRootImpl.checkThread(ViewRootImpl.java:6581)
+           at android.view.ViewRootImpl.requestLayout(ViewRootImpl.java:924)
+
+奔溃提示如上所示，注意中间那句提示，说的很明白，简单翻译一下
+
+    Only the original thread that created a view hierarchy can touch its views.
+
+    只有创建了这个 view 层次树的线程才可以去 touch(泛指操作)这个 View
+
+因为 Activity 的 view 层次树是在主线程完成的，所以对这个依附于主线程中创建的层次树的 view ,你要是后续想要 touch 她，就一定要在主线程中光明正大的 touch，不能挪到其他见不到光的子线程中去 touch，呵呵 ~
+
+关于上面说到的， View 层次树的创建是在主线程中完成这一点，一些人可能怀疑。
+
+一般的，我们在 onCreate 中调用 setContent() 方法就可以完成布局的设置和加载，如下所示。
+
+      setContentView(R.layout.activity_handler);
+
+很明显，setContent() 是在主线程中调用完成的，这里如果深究 setContent(),你会发现是 PhoneWindow 最终执行了相关的逻辑，而最终
+通过 Window 的一系列操作，这个 Activity 对应的 View 层次树也就创建成功。而这个 Activity 中的所有 View 都依附于这个 view 层次树。
+
+这里对具体的 view 层次树没做过多深究，有兴趣可以看看源码，
+
+所以现在在回过头来看看刚才的问题。
+
+我们在线程中获取到一张 Bitmap 并直接调用 imageView 的 setImageBitmap 方法，报了如下的错误。
+
+    Only the original thread that created a view hierarchy can touch its views.       
+
+就是因为 这个 imageView 依附的层次树是在主线程中创建的。
+
+我们平时可能看过很多这样的结论，『Android 中不允许在子线程中更新 UI』,其实归根结底是这个原因。
+
+
+说道这里，你不禁想说，Android 也太麻烦了，这么多规则，但是正所谓『无规矩，不成方圆』。有规矩总是好的，况且他也不是只定规矩，不给 API。
 
 既然有问题，Android 就提供了一整套的解决方案。
 
-既然子线程不能更新 UI ，那么你就需要在 Android 规定的主线程中区更新 UI。但是此时我就在子线程，叫我怎么去主线程啊！
+既然子线程不能更新 UI ，那么就只能去主线程更新，但是现在就在代码逻辑就在子线程中，我们要怎么才可以切换到主线程中去更新 UI ?
 
 Handler 来了~
 
-### Handler 用法
+## Handler 用法
 
 `既然要在主线程中处理 UI ，那么你应该先在主线程里去定义好你的 Handler 。`
 
-为什么要这么做，后面会在 Handler 机制中讲解，你不信可以把 Handler 的实例化过程放在子线程中完成，你一定还会回来的！
-
 此时只要在子线程中去调用 handler 的 sendMessage(msg,obj) 方法，你就可以把自己的逻辑，或者程序流给甩到主线程(暂且让我们这么形容吧~)。
-
 
     private void executeTask(){
          new Thread(new Runnable() {
@@ -105,18 +150,23 @@ Handler 来了~
 通过 mHandler 的 sendMessage 方法，甩到了主线程，主线程中 mHandler 的 handMessage() 方法会处理被甩过来的 msg 对象；
 如下所示：
 
-    public void handleMessage(Message msg) {
-          super.handleMessage(msg);
-          switch (msg.what){
-              case 1:
-                  Bitmap bitmap = (Bitmap) msg.obj;
-                  imageView.setImageBitmap(bitmap);
-                  break;
-              case -1:
-                  Toast.makeText(MainActivity.this, "msg "+msg.obj.toString(), Toast.LENGTH_SHORT).show();
-                  break;
-          }
-      }
+    private Handler mHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case 1:
+                    Bitmap bitmap = (Bitmap) msg.obj;
+                    imageView.setImageBitmap(bitmap);
+                    break;
+                case -1:
+                    Toast.makeText(MainActivity.this, "msg "+msg.obj.toString(), Toast.LENGTH_SHORT).show();
+                    break;
+            }
+        }
+    };
+
+`注意，这里我把它定义成了一个 Activity 的成员变量，它是在主线程中创建完成的。`
 
 这里你可能就要问了，为什么在上面的子线程中调用了
 
@@ -136,6 +186,4 @@ Handler 来了~
 
 以备以后再次忘记，哈哈~
 
-### Handler 机制
-
-终于写完了上面的前言，下面我该再读一遍 Handler 的源码了，其实讲 Handler 内部机制的博客已经很多了，但是自己还是要在看一遍，源码是最好的资料。
+具体可以看下一遍文章 [Handler 之 源码解析](/technology/2016/03/10/handler_analysis_two.html)
