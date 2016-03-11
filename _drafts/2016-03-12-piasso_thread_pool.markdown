@@ -3,11 +3,11 @@ layout: post
 author: 咕咚
 title: "Handler 之 ThreadLocal 相关"
 description: ""
-cover:  "#007d65"
+cover:  "#5FAD9C"
 categories: Advanced
 tags: Android Hander ThreadLocal
 ---
-在上一篇文章[Handler 之 源码解析](/advanced/2016/03/10/handler_analysis_two.html)中介绍 Handler 与 Looper 的关系时，半路出现了 ThreadLocal 这个类，他是什么呢，本想在 Handler 源码解析一文一起阐述了，
+在上一篇文章[Handler 之 源码解析](/technology/2016/03/10/handler_analysis_two.html)中介绍 Handler 与 Looper 的关系时，半路出现了 ThreadLocal 这个类，他是什么呢，本想在 Handler 源码解析一文一起阐述了，
 但是觉得这样篇幅太长，不好，况且他又是一个相对独立的概念，这里就把它单独拿出来，结合任玉刚的[Android的消息机制之ThreadLocal的工作原理](http://blog.csdn.net/singwhatiwanna/article/details/48350919)博文，为自己总结归纳下 ThreadLocal 的用处，以及他在 Handler 和 Looper 中的巧妙用法。
 
 ### ThreadLocal

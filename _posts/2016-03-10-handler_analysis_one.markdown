@@ -1,9 +1,9 @@
 ---
 layout: post
 author: 咕咚
-title: "Handler 之 初识使用"
+title: "Handler 之 初识及简单应用"
 description: ""
-cover:  "#5FAD9C"
+cover:  "#007d65"
 categories: Foundation
 tags: Android Hander SourceAnalysis
 ---
@@ -31,6 +31,8 @@ tags: Android Hander SourceAnalysis
 
     No response to an input event (such as key press or screen touch events) within 5 seconds.
     A BroadcastReceiver hasn't finished executing within 10 seconds.
+
+这里需要说明的一点，其实在 Android 4.0 之后，系统已经不允许在 UI 线程访问网络了，以前只是 ANR，4.0 之后就直接FC了。
 
 所以，作为开发者，你一定不希望这样的事发生在你的 App 里，所以我们一定要避免把一个耗时可能超过5秒的操作放在主线程。那我们怎么才能做到呢？
 
@@ -184,4 +186,4 @@ Handler 来了~
 
 以备以后再次忘记，哈哈~
 
-具体可以看下一遍文章 [Handler 之 源码解析](/technology/2016/03/10/handler_analysis_two.html)
+具体可以看下一遍文章 [Handler 之 源码解析](/advanced/2016/03/10/handler_analysis_two.html)

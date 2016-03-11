@@ -3,15 +3,11 @@ layout: post
 author: 咕咚
 title: "Handler 之 源码解析"
 description: ""
-cover:  "#5FAD9C"
+cover:  "#007d65"
 categories: Advanced
 tags: Android Hander SourceAnalysis
 ---
-上一篇博客[Handler 之 初识使用](/technology/2016/03/10/handler_analysis_one.html)中介绍了 Handler 的作用，以及 Handler 的基本用法，同时也详细介绍了为什么子线程不能更新 UI 的原因，但是因为篇幅原因，所以对 Handler 的内部机制并没有展开叙述。这篇文章就从 Handler 开始解析与之相关的源码，从而更好的理解 Handler 以及 Looper MessageQueue。
-
-## 有价值的参考文章
-
-[鸿洋_ - Android 异步消息处理机制 让你深入理解 Looper、Handler、Message三者关系](http://blog.csdn.net/lmj623565791/article/details/38377229)
+上一篇博客[Handler 之 初识及简单应用](/foundation/2016/03/10/handler_analysis_one.html)中介绍了 Handler 的作用，以及 Handler 的基本用法，同时也详细介绍了为什么子线程不能更新 UI 的原因，但是因为篇幅原因，所以对 Handler 的内部机制并没有展开叙述。这篇文章就从 Handler 开始解析与之相关的源码，从而更好的理解 Handler 以及 Looper MessageQueue。
 
 ## Handler 机制
 
@@ -19,7 +15,7 @@ tags: Android Hander SourceAnalysis
 
 在具体看源码之前，有必要先理解一下 Handler、Looper、MessageQueue 以及 Message 他们的关系。
 
-### Handler Looper MessageQueue 之间的关系
+### 关系
 
 Looper: 是一个消息轮训器，他有一个叫 loop() 的方法，用于启动一个死循环，不停的去轮询消息池。
 
@@ -51,7 +47,7 @@ Message: 一个消息对象
 
 可以看到 Handler 本身定义了一个 MessageQueue 对象 mQueue，和一个 Looper 的对象 mLooper。
 
-不过，对 Handler 的这两个成员变量的初始化都是通过 Looper 才赋值的。
+不过，对 Handler 的这两个成员变量的初始化都是通过 Looper 来赋值的。
 
     mLooper = Looper.myLooper();
     mQueue = mLooper.mQueue;
@@ -79,11 +75,11 @@ Looper，同时对应一个 MessageQueue 对象。这里给 MessageQueue 的赋�
         return sThreadLocal.get();
     }
 
-`这里出现了一个平时不怎么看到的 ThreadLocal 类，关于这个类，推荐去阅读任玉刚的一篇文章 - Android的消息机制之ThreadLocal的工作原理,讲的很不错。另外自己也写了一篇文章，用于讲解 ThreadLocal 的用法，以及他在 Handler 和 Looper 中的巧妙意义`
+`这里出现了一个平时不怎么看到的 ThreadLocal 类，关于这个类，推荐去阅读任玉刚的一篇文章 - Android的消息机制之ThreadLocal的工作原理,讲的很不错。另外自己也写了一篇文章，用于讲解 ThreadLocal 的用法，以及他在 Handler 和 Looper 中的巧妙意义。`
 
-[任玉刚 Android的消息机制之ThreadLocal的工作原理](http://blog.csdn.net/singwhatiwanna/article/details/48350919)
+[任玉刚 - Android的消息机制之ThreadLocal的工作原理](http://blog.csdn.net/singwhatiwanna/article/details/48350919)
 
-[咕咚 Handler 之 ThreadLocal 相关](/Technology/handler_analysis_three.html)
+[咕咚 - Handler 之 ThreadLocal 相关](/advanced/2016/03/11/handler_analysis_three.html)
 
 
 这里他是通过 ThreadLocal 的 get 方法获得，很奇怪，之前我们没有在任何地方对 sThreadLocal 执行过 set 操作。
@@ -414,3 +410,7 @@ callback 是一个 Runnable 接口，那我们这怎么才能设置 Message 的 
 到这里，你应该明白了，在处理消息时，除了 Handler 自身的 handlerMessage() 方法设置处理，还可以直接在发消息时指定一个 runnable 对象用于处理消息。
 
 另外上面通过 dispatchMessage() 的代码已经看出来，处理消息有三种情形，第一种直接使用 Message 的 running 对象处理，如果不行使用第二种 用 Handler 的 mCallback 对象处理，最后才考虑使用 handlerMessage 处理，关于第二种情形，这里就不分析了，自己试着看代码应该能找到。Good luck ~
+
+## 参考文章
+
+[鸿洋_ - Android 异步消息处理机制 让你深入理解 Looper、Handler、Message三者关系](http://blog.csdn.net/lmj623565791/article/details/38377229)
