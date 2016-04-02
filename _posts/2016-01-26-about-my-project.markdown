@@ -1,7 +1,7 @@
 ---
 layout: post
 author: 咕咚
-title: "关于我做过的项目"
+title: "关于个人项目"
 description: ""
 cover: "zzz"
 catalog:    true

@@ -8,6 +8,7 @@ keyword: "咕咚 咕咚翻译 毛瑞斌 大侠咕咚 咕咚的博客 徐生梅�
 url: "http://gudong.name"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
+
 # SNS settings
 RSS: false
 twitter_username:   maoruibin9035
@@ -19,7 +20,7 @@ github_username:    maoruibin
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 highlighter: rouge
-permalink: pretty
+permalink: /:categories/:year/:month/:day/:title.html
 paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
