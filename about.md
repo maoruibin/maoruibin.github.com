@@ -28,7 +28,3 @@ permalink: /about/
 个人作品
 
 <a href="/project" target="_blank">链接</a><br><br>
-
-目前在考虑换一份工作，如果您有合适的工作，欢迎介绍，地点北京。Thanks in advance ~
-
-<a href="mailto:gudong.name@gmail.com">gudong.name@gmail.com</a>
