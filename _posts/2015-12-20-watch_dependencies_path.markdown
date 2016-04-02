@@ -5,7 +5,7 @@ title: "利用 Gradle Task 查看远程依赖库的本地存储路径"
 description: ""
 cover:  "#84BA40"
 publish: true
-categories: Skills
+catalog:    true
 tags: Gradle Task
 ---
 这篇文章主要分享一个主题，如何在 AndroidStudio 中利用 gradle 查看自己项目中引入的三方依赖库的本地缓存路径。相信一些同学会对这个

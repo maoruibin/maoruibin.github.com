@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "开源协议小风波"
 description: ""
-categories: Thinking
+catalog:    true
 tags: Licence
 ---
 
@@ -59,4 +59,3 @@ tags: Licence
 GankDaily [https://github.com/maoruibin/GankDaily](https://github.com/maoruibin/GankDaily)
 
 聊聊Apache开源协议[http://kymjs.com/manager/2015/11/21/01/](http://kymjs.com/manager/2015/11/21/01/)
-

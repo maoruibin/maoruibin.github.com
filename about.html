@@ -1,0 +1,170 @@
+---
+layout: page
+title: "关于"
+description: "hi 我是咕咚"
+header-img: "assets/header_image.jpg"
+---
+
+<!-- Language Selector -->
+<select onchange= "onLanChange(this.options[this.options.selectedIndex].value)" style="display:none;">
+    <option value="0" selected> 中文 Chinese </option>
+    <option value="1"> 英文 English </option>
+</select>
+
+<!-- Chinese Version -->
+<div class="zh post-container">
+
+    <!--copied from markdown -->
+    <blockquote><p>爱技术、爱生活。</p></blockquote>
+
+    <p>Hey，我是<strong>咕咚</strong>，Android 开发者 &amp; 独立开发者，<a href="http://www.imut.edu.cn/">内蒙古工业大学</a> · 计算机科学与技术 2009 级；<a href="http://www.mojichina.com/">墨迹天气</a> · 客户端开发组成员。</p>
+
+    <p>喜欢技术，热爱分享。</p>
+
+    <p>一些作品和开源项目，👉 戳 <a href="/portfolio">Portfolio</a> 与 <a href="http://github.com/maoruibin">Github</a></p>
+
+    <p>喜欢听歌，喜欢的国内歌手有 <strong>周杰伦</strong>&nbsp;<strong>王力宏</strong>&nbsp;<strong>羽泉</strong>&nbsp;<strong>许嵩</strong>。</p>
+
+    <p>喜欢运动，喜欢篮球，也喜欢户外，登山等等。</p>
+
+    <h5>2015 总结</h5>
+
+    <span>在 2015 年接触了不少新技术，也使用了很多，但是缺乏深入理解，一句话，有点浮躁。<span>
+
+    <span>在 2016 年，自己要改变努力改变这种状态。同时把 2016 年的方向写在这里，以此督促自己。</span>
+
+    <h5>2016 方向</h5>
+
+    <ul>
+      <li>夯实 Android 基础知识，多从源码角度理解、解决问题。</li>
+      <li>分析学习优秀的开源项目，从中学习一些好的思想。</li>
+      <li>注重 Android 相关的性能优化，包括网络优化、界面优化以及动画优化等。</li>
+    </ul>
+<!--
+    <h5>Talks</h5>
+
+    <ul>
+    <li><a href="http://huangxuan.me/2015/12/28/css-sucks-2015/">CSS Still Sucks 2015 · 2015</a></li>
+    <li><a href="http://huangxuan.me/2015/07/09/js-module-7day/">JavaScript 模块化七日谈 · 2015</a></li>
+    </ul>
+
+
+    <h5>Resumes</h5>
+
+    <ul>
+    <li><a href="/attach/2016_Hux_en_SE.pdf">2016_Hux_en_SE &amp; FE</a></li>
+    <li><a href="attach/2016_Hux_en_PD.pdf">2016_Hux_en_PD &amp; UX</a></li>
+    </ul> -->
+
+</div>
+
+<!-- English Version -->
+<div class="en post-container">
+    <blockquote><p>A Android Developer <br>
+    Life is meaningful</p></blockquote>
+
+    <p>My name is <strong>咕咚</strong>. I studied Computer science and technology in <a href="https://en.wikipedia.org/wiki/Inner_Mongolia_University_of_Technology">Inner Mongolia University Of Technology</a>.</p>
+
+</div>
+
+<!-- Handle Language Change -->
+<script type="text/javascript">
+    // get nodes
+    var $zh = document.querySelector(".zh");
+    var $en = document.querySelector(".en");
+    var $select = document.querySelector("select");
+
+    // bind hashchange event
+    window.addEventListener('hashchange', _render);
+
+    // handle render
+    function _render(){
+        var _hash = window.location.hash;
+        // en
+        if(_hash == "#en"){
+            $select.selectedIndex = 1;
+            $en.style.display = "block";
+            $zh.style.display = "none";
+        // zh by default
+        }else{
+            // not trigger onChange, otherwise cause a loop call.
+            $select.selectedIndex = 0;
+            $zh.style.display = "block";
+            $en.style.display = "none";
+        }
+    }
+
+    // handle select change
+    function onLanChange(index){
+        if(index == 0){
+            window.location.hash = "#zh"
+        }else{
+            window.location.hash = "#en"
+        }
+    }
+
+    // init
+    _render();
+</script>
+
+
+
+{% if site.duoshuo_username %}
+<!-- 多说评论框 start -->
+<div class="comment">
+    <div class="ds-thread"
+    {% if site.duoshuo_username == "huxblog" %}
+        data-thread-id="1187623191091085319"
+    {% else %}
+        data-thread-key="{{site.duoshuo_username}}/about"
+    {% endif %}
+
+    data-title="{{page.title}}"
+    data-url="{{site.url}}/about/"></div>
+</div>
+<!-- 多说评论框 end -->
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User hacking by Hux
+    var _user = '{{site.duoshuo_username}}';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+{% endif %}
+
+
+{% if site.disqus_username %}
+<!-- disqus 评论框 start -->
+<div class="comment">
+    <div id="disqus_thread" class="disqus-thread">
+
+    </div>
+</div>
+<!-- disqus 评论框 end -->
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "{{site.disqus_username}}";
+    var disqus_identifier = "{{site.disqus_username}}/{{page.url}}";
+    var disqus_url = "{{site.url}}{{page.url}}";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+{% endif %}

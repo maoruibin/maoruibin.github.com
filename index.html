@@ -1,125 +1,60 @@
 ---
-layout: default
+layout: page
+description: "2016 - Here I Am"
 ---
-<div class="home">
 
-<div class="site-header-container {% if site.cover %}has-cover{% endif %}" {% if site.cover %}style="background-image: url({{ site.cover | prepend: site.baseurl }});"{% endif %}>
-	<div class="scrim {% if site.cover %}has-cover{% endif %}">
-		<header class="site-header">
-		  <h1 class="title">{{ site.title }}</h1>
-		  {% if site.subtitle %}<p class="subtitle">{{ site.subtitle }}</p>{% endif %}
-		</header>
-	</div>
-</div>
+{% for post in paginator.posts %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+    </a>
+    <div class="post-content-preview">
+        {{ post.content | strip_html | truncate:200 }}
+    </div>
+    <p class="post-meta">
+        发表于 {{ post.date | date: "%Y-%m-%d" }}&nbsp;&nbsp;
 
-<div class="wrapper">
-<ul class="post-list">
-  {% for post in paginator.posts %}
-	  <!-- if the param of publish in post is false,the post will not appear in post list -->
-	  {% if post.publish != false%}
-			  <li>
-				<h2>
-				  <a class="post-link" href="{{ post.url | remove_first: '/' | prepend: site.baseurl }}">{{ post.title }}</a>
-				</h2>
-				<section class="post-excerpt" itemprop="description">
-				  <p>
-							<!--{{ post.content | strip_html | truncatewords: 50 }}-->
-							{{ post.excerpt }}
-						</p>
-				</section>
-				<section class="post-meta">
-					<!--<div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>-->
-					<!--<div class="post-date">{{ post.date | date: "%Y-%m-%d" }}</div>-->
-					<div class="post-date">
-						发表于 {{ post.date | date: "%Y-%m-%d" }}&nbsp;&nbsp;
-						<a href="{{ post.url | remove_first: '/' | prepend: site.baseurl }}#comments">
+        <a class="comment" href="{{ post.url | remove_first: '/' | prepend: site.baseurl }}#comments">
 							<span class="ds-thread-count" data-thread-key="{{ post.id }}"></span>
-						</a>
-					</div>
-					<!--  category 和 tag 不能喝 github page 共存-->
-					<div class="post-categories" style="display:none;">
-					{% if post.categories %}in {% for cat in post.categories %}
-					  {% if site.jekyll-archives %}
-						<a href="{{ site.baseurl }}category/{{ cat }}">{{ cat | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
-					  {% else %}
-					  <span>{{ cat | capitalize }}</span>{% if forloop.last == false %}, {% endif %}
-					  {% endif %}
-					{% endfor %}{% endif %}
-					</div>
-				</section>
-			  </li>
-			  {% if forloop.last == false %}
-			  <hr>
-			  {% endif %}
-	  {% endif %}
-  {% endfor %}
+				</a>
+
+    </p>
+</div>
+<hr>
+{% endfor %}
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    </li>
+    {% endif %}
 </ul>
+{% endif %}
 
-<nav class="pagination" role="navigation">
-	<p>
-
-		{% if paginator.previous_page %}
-
-				{% if paginator.page == 2 %}
-				<a class="newer-posts" href="{{ site.baseurl }}">
-								<span class="fa-stack fa-lg">
-									<i class="fa fa-square fa-stack-2x"></i>
-									<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
-								</span>
-				</a>
-				{% else %}
-				<a class="newer-posts" href="{{ site.baseurl }}page{{paginator.previous_page}}">
-								<span class="fa-stack fa-lg">
-									<i class="fa fa-square fa-stack-2x"></i>
-									<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
-								</span>
-				</a>
-				{% endif %}
-
-		{% else %}
-
-    <span class="fa-stack fa-lg">
-		  <i class="fa fa-square fa-stack-2x"></i>
-		  <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
-		</span>
-		{% endif %}
-
-    <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-
-		{% if paginator.next_page %}
-		<a class="newer-posts" href="{{ site.baseurl }}page{{paginator.next_page}}">
-	    <span class="fa-stack fa-lg">
-			  <i class="fa fa-square fa-stack-2x"></i>
-			  <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
-			</span>
-		</a>
-		{% else %}
-    <span class="fa-stack fa-lg">
-			<i class="fa fa-square fa-stack-2x"></i>
-			<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
-		</span>
-		{% endif %}
-	</p>
-  <p style="display:none;">
-    <a href="{{ site.baseurl }}posts">View All Posts by Category</a>
-  </p>
-</nav>
-<div>
-
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-		var duoshuoQuery = {short_name:"{{ site.duoshuo_shortname }}"};
-		(function() {
-				var ds = document.createElement('script');
-				ds.type = 'text/javascript';ds.async = true;
-				ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-				ds.charset = 'UTF-8';
-				(document.getElementsByTagName('head')[0]
-				 || document.getElementsByTagName('body')[0]).appendChild(ds);
-		})();
-	</script>
-
-
-</div>
-</div>
-</div>
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"{{ site.duoshuo_username }}"};
+  (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+       || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>

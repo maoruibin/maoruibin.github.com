@@ -4,7 +4,7 @@ author: 咕咚
 title: "为什么开发了 AppPlus"
 description: ""
 cover:  "#3F51B5"
-categories: Feeling
+catalog:    true
 tags: Android App
 ---
 AppPlus 是自己今年七月份开始做的一个小产品，它是一个主要用Android用户间传送Apk文件、管理手机应用的工具软件。

@@ -3,8 +3,8 @@ layout: post
 author: 咕咚
 title: "AtomicInteger 一个和高并发有关的工具类"
 description: "描述信息"
-categories: Advanced
-tags:  并发 Java
+catalog:    true
+tags:  并发 Java 线程
 ---
 AtomicInteger，一个提供原子操作的Integer的类。在Java语言中，++i和i++操作并不是线程安全的，在使用的时候，不可避免的会用到synchronized关键字。而AtomicInteger则通过一种线程安全的加减操作接口。
 

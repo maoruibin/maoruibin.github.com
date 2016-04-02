@@ -2,7 +2,7 @@
 layout: post
 author: 咕咚
 title: 自定义view之饼状图的实现
-categories: Advanced
+catalog:    true
 tags: View
 ---
 一个圆形饼状View的实现过程。

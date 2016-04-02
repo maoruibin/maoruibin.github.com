@@ -1,81 +1,66 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keyword"  content="{{ site.keyword }}">
+    <link rel="shortcut icon" href="{{ site.baseurl }}/img/favicon.ico">
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  {% if site.name %}
-  <meta name="author" content="{{ site.name }}">
-  <meta name="copyright" content="&copy; {{ site.name }} {{ site.time | date: '%Y' }}">
-  {% endif %}
+      <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+    <link rel="shortcut icon" href="{{ "assets/icons/favicon.ico" | prepend: site.baseurl }}" type="image/x-icon">
+    <link rel="icon" href="{{ "assets/icons/favicon.ico" | prepend: site.baseurl }}" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ "assets/icons/apple-icon-57x57.png" | prepend: site.baseurl }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ "assets/icons/apple-icon-60x60.png" | prepend: site.baseurl }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ "assets/icons/apple-icon-72x72.png" | prepend: site.baseurl }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ "assets/icons/apple-icon-76x76.png" | prepend: site.baseurl }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ "assets/icons/apple-icon-114x114.png" | prepend: site.baseurl }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ "assets/icons/apple-icon-120x120.png" | prepend: site.baseurl }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ "assets/icons/apple-icon-144x144.png" | prepend: site.baseurl }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ "assets/icons/apple-icon-152x152.png" | prepend: site.baseurl }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "assets/icons/apple-icon-180x180.png" | prepend: site.baseurl }}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{ "assets/icons/android-icon-192x192.png" | prepend: site.baseurl }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "assets/icons/favicon-32x32.png" | prepend: site.baseurl }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ "assets/icons/favicon-96x96.png" | prepend: site.baseurl }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "assets/icons/favicon-16x16.png" | prepend: site.baseurl }}">
+    <link rel="manifest" href="{{ "assets/icons/manifest.json" | prepend: site.baseurl }}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{ "assets/icons/ms-icon-144x144.png" | prepend: site.baseurl }}">
+    <meta name="theme-color" content="#ffffff">
 
-  <!-- External libraries -->
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/monokai_sublime.min.css">-->
-    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">-->
+    <title>{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}</title>
 
-    <!-- thanks to http://www.bootcdn.cn/lightbox2/      -->
-    <!-- thanks to http://www.bootcdn.cn/highlight.js/   -->
-    <!-- thanks to https://highlightjs.org/static/demo/  -->
-    <!-- depressed in 2016.2.29 -->
-    <!--<link  rel="stylesheet" href="//cdn.bootcss.com/highlight.js/8.5/styles/androidstudio.min.css">-->
-    <!--<link href="//cdn.bootcss.com/highlight.js/8.5/styles/foundation.min.css" rel="stylesheet">-->
-    <link href="//cdn.bootcss.com/highlight.js/8.5/styles/kimbie.light.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//cdn.bootcss.com/lightbox2/2.8.2/css/lightbox.css">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
     <!-- Bootstrap Core CSS -->
-    <!--<link rel="stylesheet" href="/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}">
 
-  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
-  <link rel="shortcut icon" href="{{ "assets/icons/favicon.ico" | prepend: site.baseurl }}" type="image/x-icon">
-	<link rel="icon" href="{{ "assets/icons/favicon.ico" | prepend: site.baseurl }}" type="image/x-icon">
-  <link rel="apple-touch-icon" sizes="57x57" href="{{ "assets/icons/apple-icon-57x57.png" | prepend: site.baseurl }}">
-	<link rel="apple-touch-icon" sizes="60x60" href="{{ "assets/icons/apple-icon-60x60.png" | prepend: site.baseurl }}">
-	<link rel="apple-touch-icon" sizes="72x72" href="{{ "assets/icons/apple-icon-72x72.png" | prepend: site.baseurl }}">
-	<link rel="apple-touch-icon" sizes="76x76" href="{{ "assets/icons/apple-icon-76x76.png" | prepend: site.baseurl }}">
-	<link rel="apple-touch-icon" sizes="114x114" href="{{ "assets/icons/apple-icon-114x114.png" | prepend: site.baseurl }}">
-	<link rel="apple-touch-icon" sizes="120x120" href="{{ "assets/icons/apple-icon-120x120.png" | prepend: site.baseurl }}">
-	<link rel="apple-touch-icon" sizes="144x144" href="{{ "assets/icons/apple-icon-144x144.png" | prepend: site.baseurl }}">
-	<link rel="apple-touch-icon" sizes="152x152" href="{{ "assets/icons/apple-icon-152x152.png" | prepend: site.baseurl }}">
-	<link rel="apple-touch-icon" sizes="180x180" href="{{ "assets/icons/apple-icon-180x180.png" | prepend: site.baseurl }}">
-	<link rel="icon" type="image/png" sizes="192x192"  href="{{ "assets/icons/android-icon-192x192.png" | prepend: site.baseurl }}">
-	<link rel="icon" type="image/png" sizes="32x32" href="{{ "assets/icons/favicon-32x32.png" | prepend: site.baseurl }}">
-	<link rel="icon" type="image/png" sizes="96x96" href="{{ "assets/icons/favicon-96x96.png" | prepend: site.baseurl }}">
-	<link rel="icon" type="image/png" sizes="16x16" href="{{ "assets/icons/favicon-16x16.png" | prepend: site.baseurl }}">
-	<link rel="manifest" href="{{ "assets/icons/manifest.json" | prepend: site.baseurl }}">
-	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-TileImage" content="{{ "assets/icons/ms-icon-144x144.png" | prepend: site.baseurl }}">
-	<meta name="theme-color" content="#ffffff">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ "/css/hux-blog.min.css" | prepend: site.baseurl }}">
 
-	<!-- Facebook OGP cards -->
-  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
-  <meta property="og:url" content="{{ site.url }}" />
-  <meta property="og:site_name" content="{{ site.title }}" />
-  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="{% if page.cover %}{{ page.cover | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.protocols.fb_image | prepend: site.baseurl | prepend: site.url }}{% endif %}" />
-  <meta property="og:image:type" content="{{ site.protocols.fb_image_type }}" />
-  <meta property="og:image:width" content="{{ site.protocols.fb_image_width }}" />
-  <meta property="og:image:height" content="{{ site.protocols.fb_image_height }}" />
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="{{ "/css/syntax.css" | prepend: site.baseurl }}">
 
-  <!-- Twitter: card tags -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="twitter:image" content="{% if page.cover %}{{ page.cover | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.protocols.fb_image | prepend: site.baseurl | prepend: site.url }}{% endif %}">
-  <meta name="twitter:url" content="{{ site.url }}">
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-  {% if protocols.os_repo and protocols.os_rcs_type and protocols.os_src %}
-  <!-- Open Source Protocol -->
-  <link rel="profile" href="http://osprotocol.com" />
-  <meta property="os:repo" content="{{ protocols.os_repo }}" />
-  <meta property="os:rcs_type" content="{{ protocols.os_rcs_type }}" />
-  <meta property="os:src" content="{{ protocols.os_src }}" />
-  {% endif %}
 
-	<!-- Site styles -->
-  <link rel="stylesheet" href="{{ "css/main.css" | prepend: site.baseurl }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400normal,700normal' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300normal,400normal,600normal,700normal,800normal,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
 </head>

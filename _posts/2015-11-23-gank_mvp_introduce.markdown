@@ -4,7 +4,8 @@ author: 咕咚
 title: " MVP 模式在 GankDaily 中的应用"
 description: ""
 cover:  "#8f4b2e"
-categories: Advanced
+catalog:    true
+categories: advanced
 tags: Android App
 ---
 最近完成了一个干货客户端 [GankDaily](https://github.com/maoruibin/GankDaily) ，

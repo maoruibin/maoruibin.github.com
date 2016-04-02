@@ -4,7 +4,8 @@ author: 咕咚
 title: "关于咕咚翻译"
 description: ""
 cover: "zzz"
-categories: Product
+categories: product
+catalog:    true
 tags: App Product
 ---
 

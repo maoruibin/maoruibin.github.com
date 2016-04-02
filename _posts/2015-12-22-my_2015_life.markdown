@@ -4,8 +4,8 @@ author: 咕咚
 title: "再见 2015 ，你好 2016 ~"
 description: ""
 cover:  "#d35400"
-categories: Feeling
-tags: 年终总结
+catalog:    true
+tags: 年终总结 Felling
 ---
 
 这篇文章是我的2015年终总结。去年就曾想过写一篇自己的2014年终总结，后来想过几天再写，然后一晃已经是2015年末了，

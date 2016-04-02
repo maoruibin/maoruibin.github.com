@@ -3,11 +3,17 @@ layout: post
 author: 咕咚
 title: "博客更新日志"
 description: "利用Github搭建博客后,我写的第一篇博客"
-categories: Collections
+catalog:    true
 cover: "zzz"
 tags:	Jekyll
 ---
 这篇博文用于记录，自己在修改博客时具体的修改记录，如颜色设置、联系方式配置等信息，以便日后查看。
+
+### 2016/03/27
+项目主颜色设置在 less 目录下的 variables.less
+
+### 2016/03/26
+今天已经修改自己博客的主题为另一个主题了
 
 ### 2016/02/29
 隐藏了post 页面的 tag、category 点击相应，因为 jekyll archive 不支持 Github Page   

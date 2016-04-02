@@ -1,37 +1,242 @@
 ---
 layout: default
 ---
-<div class="wrapper">
-<div class="page">
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-  </header>
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1 style="font-size:2.98598em;">{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+                    <!--<hr class="small">-->
+                    <span class="subheading">{{ page.description }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
-  {% include page_divider.html %}
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+        {% if site.sidebar == false %}
+<!-- NO SIDEBAR -->
+    <!-- PostList Container -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 postlist-container">
+                {{ content }}
+            </div>
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-  <article class="post-content">
-    {{ content }}
-  </article>
+                <!-- Featured Tags -->
+                {% if site.featured-tags %}
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+        				{% for tag in site.tags %}
+                            {% if tag[1].size > {{site.featured-condition-size}} %}
+                				<a href="{{ site.baseurl }}/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
+                                    {{ tag[0] }}
+                                </a>
+                            {% endif %}
+        				{% endfor %}
+        			</div>
+                </section>
+                {% endif %}
 
-	{% if site.duoshuo_shortname %}
+                <!-- Friends Blog -->
+                {% if site.friends %}
+                <hr>
+                <h5>朋友</h5>
+                <ul class="list-inline">
+                    {% for friend in site.friends %}
+                        <li><a href="{{friend.href}}">{{friend.title}}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        {% else %}
 
-	<div class="ds-thread" style="margin-top:9em;margin-bottom:2em;" data-thread-key="{{ page.title }}" data-title="{{ page.title | cgi_escape }}" data-url="{{ site.url | append: site.baseurl }}{{ page.id }}.html"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-		var duoshuoQuery = {short_name:"{{ site.duoshuo_shortname }}"};
-		(function() {
-				var ds = document.createElement('script');
-				ds.type = 'text/javascript';ds.async = true;
-				ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-				ds.charset = 'UTF-8';
-				(document.getElementsByTagName('head')[0]
-				 || document.getElementsByTagName('body')[0]).appendChild(ds);
-		})();
-	</script>
+<!-- USE SIDEBAR -->
+    <!-- PostList Container -->
+    		<div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                postlist-container
+            ">
+    			{{ content }}
+    		</div>
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
 
-	{% endif %}
+                <!-- Short About -->
+                <section class="visible-md visible-lg">
+                    <hr><h5><a href="{{'/about/' | prepend: site.baseurl }}">{{site.title}}</a></h5>
+                    <div class="short-about">
+                        {% if site.sidebar-avatar %}
+                            <img src="{{site.sidebar-avatar}}" />
+                        {% endif %}
+                        {% if site.sidebar-about-description %}
+                            <p>{{site.sidebar-about-description}}</p>
+                        {% endif %}
+                        <!-- SNS Link -->
+                        <ul class="list-inline">
+                            {% if site.RSS %}
+                            <li>
+                                <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            {% endif %}
 
+                            {% if site.weibo_username %}
+                            <li>
+                                <a target="_blank" href="http://weibo.com/{{ site.weibo_username }}">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            {% endif %}
+
+                            {% if site.github_username %}
+                            <li>
+                                <a target="_blank" href="https://github.com/{{ site.github_username }}">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            {% endif %}
+
+                            {% if site.zhihu_username %}
+                            <li>
+                                <a target="_blank" href="https://www.zhihu.com/people/{{ site.zhihu_username }}">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa  fa-stack-1x fa-inverse">知</i>
+                                    </span>
+                                </a>
+                            </li>
+                            {% endif %}
+
+                            {% if site.facebook_username %}
+                            <li>
+                                <a target="_blank" href="https://www.facebook.com/{{ site.facebook_username }}">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            {% endif %}
+
+                            {% if site.twitter_username %}
+                            <li>
+                                <a href="https://twitter.com/{{ site.twitter_username }}">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </section>
+                <!-- Last post -->
+                <hr>
+
+                <h5>最新文章</h5>
+                <ul class="list-inline">
+                {% for post in paginator.posts limit:4 %}
+                  <li>
+                    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                  </li>
+                {% endfor %}
+                </ul>
+
+                <!-- Last comment -->
+
+                <hr>
+
+                <h5>最新评论</h5>
+
+                <ul class="ds-recent-comments" style="padding-left:0px;"
+                    data-num-items="4"
+                    data-show-avatars="1"
+                    data-show-time="0"
+                    data-show-admin="0"
+                    data-show-title="0"
+                    data-excerpt-length="30">
+              </ul>
+
+                <!-- Featured Tags -->
+                {% if site.featured-tags %}
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="{{'/tags/' | prepend: site.baseurl }}">标签</a></h5>
+                    <div class="tags">
+                        {% for tag in site.tags %}
+                            {% if tag[1].size > {{site.featured-condition-size}} %}
+                                <a href="{{ site.baseurl }}/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
+                                    {{ tag[0] }}
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </section>
+                {% endif %}
+
+                <!-- Friends Blog -->
+                {% if site.friends %}
+                <hr>
+                <h5>友情链接</h5>
+                <ul class="list-inline">
+                    {% for friend in site.friends %}
+                        <li><a href="{{friend.href}}">{{friend.title}}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                <!--Begin Last Visitor -->
+                <hr>
+                <h5>最近来访</h5>
+                <ul class="ds-recent-visitors" data-num-items="20" style="padding-left:0px;"></ul>
+                <!--End Last Visitor -->
+
+    		</div>
+        {% endif %}
+	</div>
 </div>
-</div>
+
+<!--多说js加载开始，一个页面只需要加载一次 -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"{{site.duoshuo_username}}"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+<!--多说js加载结束，一个页面只需要加载一次 -->

@@ -4,10 +4,11 @@ author: 咕咚
 title: "Handler 之 源码解析"
 description: ""
 cover:  "#007d65"
-categories: Advanced
-tags: Android Hander SourceAnalysis
+header-mask: 0.3
+catalog:    true
+tags: Android Hander 源码分析
 ---
-上一篇博客[Handler 之 初识及简单应用](/foundation/2016/03/10/handler_analysis_one.html)中介绍了 Handler 的作用，以及 Handler 的基本用法，同时也详细介绍了为什么子线程不能更新 UI 的原因，但是因为篇幅原因，所以对 Handler 的内部机制并没有展开叙述。这篇文章就从 Handler 开始解析与之相关的源码，从而更好的理解 Handler 以及 Looper MessageQueue。
+上一篇博客[Handler 之 初识及简单应用](/2016/03/10/handler_analysis_one.html)中介绍了 Handler 的作用，以及 Handler 的基本用法，同时也详细介绍了为什么子线程不能更新 UI 的原因，但是因为篇幅原因，所以对 Handler 的内部机制并没有展开叙述。这篇文章就从 Handler 开始解析与之相关的源码，从而更好的理解 Handler 以及 Looper MessageQueue。
 
 ## Handler 机制
 
@@ -79,7 +80,7 @@ Looper，同时对应一个 MessageQueue 对象。这里给 MessageQueue 的赋�
 
 [任玉刚 - Android的消息机制之ThreadLocal的工作原理](http://blog.csdn.net/singwhatiwanna/article/details/48350919)
 
-[咕咚 - Handler 之 ThreadLocal 相关](/advanced/2016/03/11/handler_analysis_three.html)
+[咕咚 - Handler 之 ThreadLocal 相关](/2016/03/11/handler_analysis_three.html)
 
 
 这里他是通过 ThreadLocal 的 get 方法获得，很奇怪，之前我们没有在任何地方对 sThreadLocal 执行过 set 操作。

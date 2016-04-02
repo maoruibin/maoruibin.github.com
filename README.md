@@ -1,189 +1,307 @@
-# Centrarium [![Circle CI](https://circleci.com/gh/bencentra/centrarium/tree/master.svg?style=svg)](https://circleci.com/gh/bencentra/centrarium/tree/master)
+#Hux Blog
 
-A simple yet classy theme for your Jekyll website or blog. Customizable to fit your style or brand.
+###[View Live Hux Blog &rarr;](http://huxpro.github.io)
 
-Built with these awesome libraries: 
-* [Bourbon][bourbon] 
-* [Neat][neat]
-* [Bitters][bitters]
-* [Refills][refills]
-* [Font Awesome][fontawesome]
-* [HighlightJS][highlightjs]
-* [Lightbox][lightbox]
+![](http://huangxuan.me/img/blog-desktop.jpg)
 
-Here's a [demo](http://bencentra.com/centrarium). It also works on [GitHub Pages](http://bencentra.github.io/centrarium/). I also use it for [my own website][bencentra].
 
-Inspired by dirkfabisch's [Mediator](https://github.com/dirkfabisch/mediator) theme, which I previously used for my own blog, as well as [Type Theme](http://rohanchandra.github.io/type-theme/).
+### "Page Build Warning" email
 
-Cover image by Chris M. Morris ([flickr][cover]).
+These days, some of you must receive a "Page Build Warning" email from github after you commit happily. **Don't Worried!** It just that github changes its build environment.
+
+In this mail, github told us:
+
+> You are attempting to use the 'pygments' highlighter, which is currently unsupported on GitHub Pages. Your site will use 'rouge' for highlighting instead. To suppress this warning, change the 'highlighter' value to 'rouge' in your '_config.yml'.
+
+So, just edit `_config.yml`, find `highlighter: pygments`, change it to `highlighter: rouge` and the warning will be gone.
+
+
+## Boilerplate (beta)
+
+Want to clone a boilerplate instead of my buzz blog? Here comes this!  
+
+```
+$ git clone git@github.com:Huxpro/huxblog-boilerplate.git
+```
+
+**[View Boilerplate Here &rarr;](http://huangxuan.me/huxblog-boilerplate/)**
+
+
+## Translation
+
+ - ![cn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **Chinese (Simplified)**: 感谢 [@BrucZhaoR](https://github.com/BruceZhaoR) 的 [中文翻译 &rarr;](https://github.com/Huxpro/huxpro.github.io/blob/master/README.zh.md)
 
 ## Features
 
-This theme comes with a number of features, including:
-* Easily customizable fonts and colors
-* Cover images for your homepage and blog posts
-* Pagination enabled by default
-* Archiving of posts by categories and tags
-* Disqus integration for post comments
-* Lightbox for viewing full-screen photos and albums
-* Google Analytics with custom page name tracking
-* Social media integration (Twitter, Facebook, LinkedIn, GitHub, and more)
+##### New Feature (V1.5.2)
 
-## Installation
+- Annoyed to delete my blog post after clone or pull? **Boilerplate** comes to help you get started quickly and easily merge update.
+- `-apple-system` is added in font rule, which display beautiful new font **San Francisco** in iOS 9 by default.
+- Fixed [issue#15](https://github.com/Huxpro/huxpro.github.io/issues/15) about code wrap.
 
-If you're just getting started with Jekyll, you can use this repository as a starting point for your own site. Just [download this project](https://github.com/bencentra/centrarium/archive/master.zip) and add all the files to your project. Add your blog posts to the `posts/` directory, and create your pages with the proper Jekyll front matter (see `posts.html` for an example).
+##### New Feature (V1.5.1)
 
-If your site already uses Jekyll, follow these steps:
+- **[Comment](#comment)** support [**Disqus**](http://disqus.com) officially, thanks to @rpsh.
 
-1. Replace the files in the `_includes`, `_layouts`, and `_sass` directories with those from this project.  
-2. Replace your `index.html` with the one from this project, and copy over the `posts.html` file as well.  
-3. Copy the contents of the `_config.yml` from this project in to yours, and update the necessary information.  
+##### New Feature (V1.5)
 
-Don't forget to install Jekyll and other dependencies:
-```bash
-# cd into project directory
-cd centrarium
-# install Bundler if you don't have it already
-gem install bundler
-# install jekyll, jekyll-archives, and jekyll-sitemap
-bundle install
+- **[Comment](#comment)** and **[Analytics](#analytics)** is configurable now! We also add **Google Analytics support** and drop tencents. Both documents is updated.
+
+##### New Feature (V1.4)
+
+- **[Featured Tags](#featured-tags)** is now independent of [SideBar](#sidebar). Both documents is updated.
+- New **[SEO Title](#seo-title)** for SEO usage which is differ from the site title
+
+##### New Feature (V1.3.1)
+
+- Support **PingFang (苹方)**, the new Chinese font presented by [OS X El Capitan](http://www.apple.com/cn/osx/whats-new/)
+
+
+##### New Feature (V1.3)
+
+- Big Improvement to the **Navigation Menu** *(especially in Android)*:  Dropping the old, stuttering, low-performance [Bootstrap collapse.js](http://getbootstrap.com/javascript/#collapse),  replaced with an own wrote, [jank free](http://jankfree.org/) navbar menu in a pretty high-performance implementation of [Google Material Design](https://www.google.com/design/spec/material-design/introduction.html).
+
+<img src="http://huangxuan.me/img/blog-md-navbar.gif" width="320" />
+
+
+##### New Feature (V1.2)
+
+- Brand new **[Keynote Layout](#keynote-layout)** is provided for easily posting beautiful HTML presentations you have created with this blog
+
+
+##### New Feature (V1.1)
+
+- We now support a clean and gorgeous **[SideBar](#sidebar)** for displaying more info
+- **[Friends](#friends)** is also added as a common feature of blog help you do SEO
+
+##### V1.0
+
+- Full-feature **Tag** support
+- **Mobile first** user experience optimization
+- **Typographic optimization** for Chinese Fonts
+- **Network optimizaition** for China, dropping Google webfont, using local CDN
+- Using [Github Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/)
+- Using Baidu, Tencent/QQ analytics
+- Using [DuoShuo](http://duoshuo.com/) as the Disqus-like third party discussion system
+
+
+## Support
+
+- **Feel free to fork. I'll Appreciate it if you keep the Author & Github link at footer**
+- Give it a **Star** if you like, fork or just clone to use ;)
+- If any problem or requirement, just open an issue here and I will help you.
+
+
+## Document
+
+* Get Started
+	* [Environment](#environment)
+	* [Get Started](#get-started)
+	* [Write Posts](#write-posts)
+* Components
+	* [SideBar](#sidebar)
+	* [Mini About Me](#mini-about-me)
+	* [Featured Tags](#featured-tags)
+	* [Friends](#friends)
+	* [Keynote Layout](#keynote-layout)
+* Comment & Analysis
+	* [Comment](#comment)
+	* [Analytics](#analytics)
+* Advanced
+	* [Customization](#customization)
+	* [Header Image](#header-image)
+	* [SEO Title](#seo-title)
+
+#### Environment
+
+If you have jekyll installed, simply run `jekyll serve` in Command Line
+and preview the themes in your browser. You can use `jekyll serve --watch` to watch for changes in the source files as well.
+
+
+#### Get Started
+
+You can easily get started by modifying `_config.yml`:
+
+```
+# Site settings
+title: Hux Blog             # title of your website
+SEOTitle: Hux Blog			# check out docs for more detail
+description: "Cool Blog"    # ...
+
+# SNS settings      
+github_username: huxpro     # modify this account to yours
+weibo_username: huxpro      # the footer woule be auto-updated.
+
+# Build settings
+# paginate: 10              # nums of posts in one page
 ```
 
-## Updating Styles
+There are more options you can check out in the [Jekyll - Official Site](http://jekyllrb.com/), or you can directly dive into code to find more.
 
-If you want change the CSS of the theme, you'll probably want to check out these files in the `_sass/` directory:
 
-* `base/_variables.scss`: Common values found throughout the project, including base font size, font families, colors, and more.
-* `base/_typography.scss`: Base typography values for the site (see `typography.html` for a demonstration)
-* `_layout.scss`: The primary styles for the layout and design of the theme. 
+#### Write Posts
 
-### Important Variables
+Feel free to checkout Markdown files in the `_posts/`, you will quickly realized how to post your articles with magical markdown plus this nice theme.
 
-Here are the important variables from `base/_variables.scss` you can tweak to customize the theme to your liking:
+The **front-matter** of a post looks like that:
 
-* `$base-font-family`: The font-family of the body text. Make sure to `@import` any new fonts!
-* `$heading-font-family`: The font-family of the headers. Make sure to `@import` any new fonts!
-* `$base-font-size`: The base font-size. Defaults to $em-base from Bourbon (`bourbon/settings/_px-to-em.scss`).
-* `$base-font-color`: The color for the body text.
-* `$action-color`: The color for links in the body text. 
-* `$highlight-color`: The color for the footer and page headers (when no cover image provided).
+```
+---
+layout:     post
+title:      "Hello 2015"
+subtitle:   "Hello World, Hello Blog"
+date:       2015-01-29 12:00:00
+author:     "Hux"
+header-img: "img/post-bg-2015.jpg"
+tags:
+    - Life
+---
 
-## Configuration
-
-All configuration options can be found in `_config.yml`. 
-
-### Site Settings
-
-* __title:__ The title for your site. Displayed in the navigation menu, the `index.html` header, and the footer.
-* __subtitle:__ The subtitle of your site. Displayed in the `index.html` header.
-* __email:__ Your email address, displayed with the Contact info in the footer.
-* __name:__ Your name. _Currently unused._
-* __description:__ The description of your site. Used for search engine results and displayed in the footer.
-* __baseurl:__ The subpath of your site (e.g. /blog/).
-* __url:__ The base hostname and protocol for your site.
-* __cover:__ The relative path to your site's cover image.
-* __logo:__ The relative path to your site's logo. Used in the navigation menu instead of the title if provided.
-
-### Build Settings
-
-* __markdown:__ Markdown parsing engine. Default is kramdown.
-* __paginate:__ Number of posts to include on one page.
-* __paginate_path:__ URL structure for pages.
-
-### Archive Settings
-
-Although this theme comes with a combined, categorized archive (see `posts.html`), you can enable further archive creation thanks to [jekyll-archives][archives]. Support for category and tag archive pages is included, but you can also add your own archive pages for years, months, and days.
-
-To change archive settings, see the __jekyll-archives__ section of `_config.yml`:
-
-```yml
-jekyll-archives:
-  enabled: 
-    - categories
-    - tags
-  layout: 'archive'
-  permalinks:
-    category: '/category/:name/'
-    tag: '/tag/:name/'
 ```
 
-To fully disable the archive, remove the __jekyll-archives__ section AND remove it from the __gems__ list.
+#### SideBar
 
-__NOTE:__ the Jekyll Archive gem is NOT included with GitHub pages! Disable the archive feature if you intend to deploy your site to GitHub pages.
+![](http://huangxuan.me/img/blog-sidebar.jpg)
 
-A sitemap is also generated using [jekyll-sitemap][sitemap].
+Seeing more information may be necessary for you to display, from V1.1, a clean, gorgeous **SideBar** is added for you, which provide more area for displaying possible modules. You can enable *(it is default enable)* this feature by simply config:
 
-### Disqus Settings
-
-You can enable [Disqus][disqus] comments for you site by including one config option:
-
-* __disqus_shortname:__ Your Disqus username. If the property is set, Disqus comments will be included with your blog posts.
-
-If you want to disable Disqus for only a specific page, add __disqus_disabled: true__ to the page's front matter.
-
-### Google Analytics Settings
-
-You can enable basic [Google Analytics][ga] pageview tracking by including your site's tracking ID:
-
-* __ga_tracking_id__: The Tracking ID for your website. You can find it on your Google Analytics dashboard. If the property is set, Google Analytics will be added to the footer of each page.
-
-### Social Settings
-
-Your personal social network settings are combined with the social sharing options. In the __social__ seciton of `_config.yml`, include an entry for each network you want to include. For example:
-
-```yml
-social:
-  - name: Twitter                         # Name of the service
-    icon: twitter                         # Font Awesome icon to use (minus fa- prefix)
-    username: TheBenCentra                # (User) Name to display in the footer link
-    url: https://twitter.com/TheBenCentra # URL of your profile (leave blank to not display in footer)
-    desc: Follow me on Twitter            # Description to display as link title, etc
-    share: true                           # Include in the "Share" section of posts
+```
+# Sidebar settings
+sidebar: true
+sidebar-about-description: "your description here"
+sidebar-avatar: /img/avatar-hux.jpg     # use absolute URL.
 ```
 
-### Social Protocols
+We default support *[Featured Tags](#featured-tags)*, *[Mini About Me](#mini-about-me)* and *[Friends](#friends)* these three modules and you can add your own. The sidebar is naturally responsive and would be push to bottom in a small screen size (`<= 992px`, according to [Bootstarp Grid System](http://getbootstrap.com/css/#grid))  
+More details of these three separate modules are talking below.
 
-Using the Open Graph Protocol or Twitter Card metadata, you can automatically set the images and text used when people share your site on Twitter or Facebook. These take a bit of setup, but are well worth it. The relevant fields are at the end of the `_config.yml` file.
+#### Mini About Me
 
-Also there is another protocol, the Open Source protocol, for saying where your site is hosted if the source is open. This helps develops more easily see your code if they are interested, or if they have issues. For more, see http://osprotocol.com.
+Mini-About-Me module display all your SNS buttons also your avatar and the description if you set `sidebar-avatar` and `sidebar-about-description` which is very useful and common for a sidebar so it is default with your sidebar.
 
-### Category Descriptions
+It is really nice-looking and well-designed. It would be hidden in a small screen seeing the sidebar would be push to bottom and there is already a footer including SNS feature which is similar.
 
-You can enhance the `posts.html` archive page with descriptions of your post categories. See the __descriptions__ section of `_config.yml`:
+#### Featured Tags
 
-```yml
-# Category descriptions (for archive pages)
-descriptions:
-  - cat: jekyll
-    desc: "Posts describing Jekyll setup techniques."
+Considering the Featured-Tags feature in [Medium](http://medium.com) is pretty cool, so I add it in my blog theme also.   
+This module is independent of sidebar from V1.4, so it can definitely live without enable sidebar, which would be displayed in the bottom when `sidebar` set to false, and it is not only displayed in home page but also every post page bottom.
+
+
+```
+# Featured Tags
+featured-tags: true  
+featured-condition-size: 1     # A tag will be featured if the size of it is more than this condition value
+```
+
+The only one thing need to be paid attention to is the `featured-condition-size`: A tag will be featured if the size of it is more than this condition value.  
+Internally, a condition template `{% if tag[1].size > {{site.featured-condition-size}} %}` is used to do the filter.
+
+#### Friends
+
+Friends is a very common feature of a blog seeing the SEO, so I add it in V1.1 release to help that.   
+Friends can also live without enable sidebar, also be displayed in the bottom when sidebar unable, and be displayed in every post page bottom.
+
+
+You can just add your friends information in `_config.yml` with a familiar JSON syntax and everything is done, very easy:
+
+```
+# Friends
+friends: [
+    {
+        title: "Foo Blog",
+        href: "http://foo.github.io/"
+    },
+    {
+        title: "Bar Blog",
+        href: "http://bar.github.io"
+    }
+]
 ```
 
 
-## Contributing
+#### Keynote Layout
 
-Want to help make this theme even better? Contributions from the community are welcome!
+![](http://huangxuan.me/img/blog-keynote.jpg)
 
-Please follow these steps:
+There is a increasing tendency to use Open Web technology to create keynotes, presentations, like Reveal.js, Impress.js, Slides, Prezi etc. I consider a modern blog should have abilities to post these HTML based presentation easily also abilities to play it directly.
 
-1. Fork/clone this repository.
-2. Develop (and test!) your changes. 
-3. Open a pull request on GitHub. A description and/or screenshot of changes would be appreciated!
-4. I ([Ben Centra](https://github.com/bencentra)) will review and merge the pull request.
+Under the hood, a `iframe` is used to include webpage from outer source, so the only things left is to give a url in the **front-matter**:
 
-## License
+```
+---
+layout:     keynote
+iframe:     "http://huangxuan.me/js-module-7day/"
+---
+```
 
-MIT. See [LICENSE.MD](https://github.com/bencentra/centrarium/blob/master/LICENSE.md).
+The iframe will be automatically resized to adapt different form factors also the device orientation. A padding is left to imply user that there has more content below, also to ensure that there is a area for user to scroll down in mobile device seeing most of the keynote framework prevent the browser default scroll behavior.
 
-[bencentra]: http://bencentra.com
-[bourbon]: http://bourbon.io/
-[neat]: http://neat.bourbon.io/
-[bitters]: http://bitters.bourbon.io/
-[refills]: http://refills.bourbon.io/
-[fontawesome]: http://fortawesome.github.io/Font-Awesome/
-[highlightjs]: https://highlightjs.org/
-[lightbox]: http://lokeshdhakar.com/projects/lightbox2/
-[cover]: https://www.flickr.com/photos/79666107@N00/3796678503/in/photolist-6MuYfc-61Rtft-8XzPmY-a6Cozm-54eSMs-6oMJmk-aepZQq-9YkPHp-fiAEGE-dVP4Z5-oxPyJP-atKUFJ-9YHWA5-9YF2f2-9YF2gR-9YHVGN-9YHVvs-qZYYQ6-4JqP2i-a2peGy-9YHVUm-9YHVF7-9YHVCL-9YF3NK-cYteMo-aiPmb9-69dtAi-9YF21x-4aWpmn-7SLiUL-77pqVX-8vXbYv-4HGDSH-a2h5P1-8LsZrQ-9aj1ez-auPZ7q-9YHVMd-9YF2bi-9YF23D-8LpWpn-9an6KL-9YHVZL-dqZ3Cz-2GuvnX-9YHWUo-9YHVWd-p5Roh5-i1zTbv-6sYrUT
-[disqus]: https://disqus.com/
-[ga]: http://www.google.com/analytics/
-[archives]: https://github.com/jekyll/jekyll-archives
-[sitemap]: https://github.com/jekyll/jekyll-sitemap
+
+#### Comment
+
+This theme support both [Disqus](http://disqus.com) and [Duoshuo](http://duoshuo.com) as the third party discussion system.
+
+First, you need to sign up and get your own account. **Repeat, DO NOT use mine!** (I have set Trusted Domains) It is deathly simple to sign up and you will get the full power of management system. Please give it a try!
+
+Second, from V1.5, you can easily complete your comment configuration by just adding your **short name** into `_config.yml`:
+
+```
+duoshuo_username: _your_duoshuo_short_name_
+# OR
+disqus_username: _your_disqus_short_name_
+```
+
+**To the old version user**, it's better that you pull the new version, otherwise you have to replace code in `post.html`, `keynote.html` and `about.html` by yourselves.
+
+Furthermore, Duoshuo support Sharing. if you only wanna use Duoshuo comment without sharing, you can set `duoshuo_share: false`. You can use Duoshuo Sharing and Disqus Comments together also.
+
+
+
+#### Analytics
+
+From V1.5, we support Google Analytics and Baidu Tongji officially with a deathly simple config:
+
+```
+# Baidu Analytics
+ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
+
+# Google Analytics
+ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+ga_domain: huangxuan.me
+```
+
+Just checkout the code offered by Google/Baidu, and copy paste here, all the rest is already done for you.
+
+
+
+#### Customization
+
+If you wanna do more customization and change code yourself, a [Grunt](gruntjs.com) environment is also included. (Thanks to Clean Blog.)
+
+There are a number of tasks it performs like minification of the JavaScript, compiling of the LESS files, adding banners to keep the Apache 2.0 license intact, and watching for changes. Run the grunt default task by entering `grunt ` into your command line which will build the files. You can use `grunt watch` if you are working on the JavaScript or the LESS.
+
+**Try to understand code in `_include/` and `_layouts/`, then you can modify Jekyll [Liquid](https://github.com/Shopify/liquid/wiki) template directly to do more creative customization.**
+
+
+#### Header Image
+
+Change header images of any pages or any posts is pretty easy as mentioned above. But, thanks to [issue #6 (in Chinese)](https://github.com/Huxpro/huxpro.github.io/issues/6) asked, **how to make it looks great?**
+
+**Well...it is actually a design issue**, not a coding stuff. It is better that you have basic design knowledge, but not is ok, let me told you how to make it well-designed:
+
+Seeing the title text above image is **white**, the image should be **dark** to emphasize the contract. so we can easily add a **black overlay with fews of opacity**, which is depends on the brightness of the original images you used. you can process it in Photoshop, Sketch etc.
+
+In technical views, it can be done with CSS. However, the opacity of the black overlay is really hard to assigned, **every image has different brightness so the  degree it should be adjusted is different so it is impossible to hard code it.**
+
+
+#### SEO Title
+
+Before V1.4, site setting `title` is not only used for displayed in Home Page and Navbar, but also used to generate the `<title>` in HTML.
+It's possible that you want the two things different. For me, my site-title is **“Hux Blog”** but I want the title shows in search engine is **“黄玄的博客 | Hux Blog”** which is multi-language.
+
+So, the SEO Title is introduced to solve this problem, you can set `SEOTitle` different from `title`, and it would be only used to generate HTML `<title>` and setting DuoShuo Sharing.
+
+## Thanks
+
+This theme is forked from [IronSummitMedia/startbootstrap-clean-blog-jekyll](https://github.com/IronSummitMedia/startbootstrap-clean-blog-jekyll)  
+Thanks Jekyll and Github Pages!

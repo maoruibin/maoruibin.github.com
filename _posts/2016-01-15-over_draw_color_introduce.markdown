@@ -4,7 +4,7 @@ author: 咕咚
 title: "Android 过度绘制介绍及优化 Tip"
 description: ""
 cover: "zzz"
-categories: Advanced
+catalog:    true
 tags: Android Performance
 ---
 Android 中的过度绘制是指同一个像素被绘制多次，从绘制性能角度讲，同一像素点被绘制的次数当然越少越好，这样有利于减轻 GPU 的工作压力，事实上，在具体开发过程中
