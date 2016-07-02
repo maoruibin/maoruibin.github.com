@@ -17,7 +17,7 @@ header-img: "assets/header_image.jpg"
     <!--copied from markdown -->
     <blockquote><p>爱技术、爱生活。</p></blockquote>
 
-    <p>Hey，我是<strong>咕咚</strong>，Android 开发者 &amp; 独立开发者，<a href="http://www.imut.edu.cn/">内蒙古工业大学</a> · 计算机科学与技术 2009 级；<a href="http://www.mojichina.com/">墨迹天气</a> · 客户端开发组成员。</p>
+    <p>Hey，我是<strong>咕咚</strong>，Android 开发者 &amp; 独立开发者，<a href="http://www.imut.edu.cn/">内蒙古工业大学</a> · 计算机科学与技术 2009 级。</p>
 
     <p>喜欢技术，热爱分享。</p>
 
@@ -128,7 +128,6 @@ header-img: "assets/header_image.jpg"
 <script type="text/javascript">
     // dynamic User hacking by Hux
     var _user = '{{site.duoshuo_username}}';
-
     // duoshuo comment query.
     var duoshuoQuery = {short_name: _user };
     (function() {
@@ -141,30 +140,4 @@ header-img: "assets/header_image.jpg"
     })();
 </script>
 <!-- 多说公共JS代码 end -->
-{% endif %}
-
-
-{% if site.disqus_username %}
-<!-- disqus 评论框 start -->
-<div class="comment">
-    <div id="disqus_thread" class="disqus-thread">
-
-    </div>
-</div>
-<!-- disqus 评论框 end -->
-
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "{{site.disqus_username}}";
-    var disqus_identifier = "{{site.disqus_username}}/{{page.url}}";
-    var disqus_url = "{{site.url}}{{page.url}}";
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<!-- disqus 公共JS代码 end -->
 {% endif %}
