@@ -8,8 +8,7 @@ catalog:    true
 header-img: "assets/1024_programer.png"
 categories: Feeling 生活 
 tags:
-    - 生活
-    - Felling
+    - 随想
 ---
 
 > “生活不止眼前的苟且，还有诗和远方”

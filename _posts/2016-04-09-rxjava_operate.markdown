@@ -4,7 +4,7 @@ author: 咕咚
 title: "使用 RxJava 重构一段判断逻辑"
 description: ""
 catalog: false
-tags: Android RxJava
+tags: RxJava
 ---
 
 这么晚了我还在给咕咚翻译加在线发音功能！！还好有音乐作陪...

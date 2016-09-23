@@ -7,7 +7,7 @@ cover:  "#007d65"
 header-mask: 0.3
 categories: Foundation
 catalog:    true
-tags: Android Hander 使用教程
+tags: Handler Usage
 ---
 这篇文章主要讲解和记录自己对 Handler 的理解。因为一开始接触 Android 就接触到了 Handler，所以对 handler 的了解应该比较多，加上项目中在消息传递以及异步控制方面都要用到 Handler。自己也不止一遍的看过 Handler 源码，不过每次看的时候都能明白，但是时间久了，就很容易忘记。所以这次就有了这个 Handler 系列。从 Handler 的使用场景，到具体使用再到源码解析，自己重新再走一遍，同时通过博客记录下来，方便以后查阅。我想，这也是写博客的意义所在。
 

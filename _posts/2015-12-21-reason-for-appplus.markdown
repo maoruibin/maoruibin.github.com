@@ -5,7 +5,7 @@ title: "为什么开发了 AppPlus"
 description: ""
 cover:  "#3F51B5"
 catalog:    true
-tags: Android App
+tags: Product 随想
 ---
 AppPlus 是自己今年七月份开始做的一个小产品，它是一个主要用Android用户间传送Apk文件、管理手机应用的工具软件。
 

@@ -6,7 +6,7 @@ description: ""
 cover: "zzz"
 categories: product
 catalog:    true
-tags: App Product
+tags: Product
 ---
 
 咕咚翻译是自己最近开发的一个实现『划词翻译』功能的 Android 应用 ，可能是目前 Android 市场上翻译效率最高的一款应用。

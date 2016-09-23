@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: Android使用WebView加载中文时，乱码问题解决
 catalog:    true
-tags: WebView Encode
+tags: Experience
 ---
 在做App+这个项目时，使用了WebView来展示更新日志，但是在加载本地Html文件的时候，出现了乱码问题。这篇博客记录自己错误出现的原因
 、以及解决方法。

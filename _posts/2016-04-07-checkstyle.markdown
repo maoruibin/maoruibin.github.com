@@ -4,7 +4,7 @@ author: 咕咚
 title: "使用 CheckStyle 检查代码"
 description: ""
 catalog:    true
-tags: Android 代码规范
+tags: Tools
 ---
 
 ### 前言

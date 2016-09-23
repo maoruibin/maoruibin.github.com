@@ -5,7 +5,7 @@ date:   2015-10-20 04:43:59
 description: ""
 author: 咕咚
 catalog:    true
-tags: ClassLoader Java
+tags: Java
 cover:  "assets/instacode.png"
 ---
 

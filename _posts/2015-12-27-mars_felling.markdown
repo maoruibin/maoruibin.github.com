@@ -5,7 +5,7 @@ title: "《火星救援》有感"
 description: ""
 cover:  "assets/mars_felling_1.jpg"
 catalog:    true
-tags: 电影 Felling
+tags: 电影 随想
 ---
 忙里偷闲，在 [Acfun](http://www.acfun.tv/) 这个网站看了一部电影 - 火星救援，看之前，对这个电影没什么特别大的期待，
 不过因为主演是马特达蒙，所以今天就选择了这部电影。

@@ -5,7 +5,7 @@ title: "关于个人项目"
 description: ""
 cover: "zzz"
 catalog:    true
-tags: App Product Felling
+tags: 随想
 ---
 
 <img src="http://7xr9gx.com1.z0.glb.clouddn.com/marketingproject.jpg" style="width: 50%;margin: auto;"><br>
