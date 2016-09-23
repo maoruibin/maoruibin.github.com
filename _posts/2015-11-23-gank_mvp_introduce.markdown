@@ -13,10 +13,10 @@ tags: Product App
 自己使用 MVP 模式对项目进行重构，让代码结构进一步解耦，使业务逻辑和视图表现层相分离，从而让代码逻辑变得更简单，
 以下就整理了自己在重构项目过程中对 MVP 这种模式的理解以及项目中如何实施 MVP 的模式。
 
-###关于MVP
+### 关于MVP
 
-MVP 是 Module-Presenter-View的缩写，翻译过来就是模型-控制器-视图，是一种流行的开发架构模式。他主张让 Presenter 控制所有的业务逻辑，
-让 View 层做具体的界面更新，Module 专门负责数据获取等操作。
+MVP 是 Model-Presenter-View的缩写，翻译过来就是模型-控制器-视图，是一种流行的开发架构模式。他主张让 Presenter 控制所有的业务逻辑，
+让 View 层做具体的界面更新，Model 专门负责数据获取等操作。
 
 通常我们写惯了 Android 项目，一般一个 Activity 中可能对应很多数据交互，比如这个干货客户端首页，只要一进入首页，它需要获取当天的干货数据。
 滑动到底部需要加载更多数据，除此之外还可能有一些其他的业务逻辑比如检查版本信息等。一般的，这些操作全部放在 Activity 中没有任何问题的，
@@ -27,12 +27,12 @@ MVP 是 Module-Presenter-View的缩写，翻译过来就是模型-控制器-视�
 Too Young Too Simple .
 
 按照 MVP 的定义，我们应该把所有的业务逻辑操作都写在 Presenter 层，而 View 层(View 层一般由 Activity、Fragment充当)他们主要做一些更新界面、
-向 Presenter 层发送请求的操作。Module 层则主要负责具体的数据获取操作。他们的具体关系可以看下面这张图。
+向 Presenter 层发送请求的操作。Model 层则主要负责具体的数据获取操作。他们的具体关系可以看下面这张图。
 
 ![mvp](/assets/gank_mvp_1.jpg "mvp")
 
 由图可以清楚的看到，Presenter 处在一个中心位置，View 层向 Presenter 发送请求，Presenter 自己接受请求，但是自己不具体执行请求，而是将
-具体的事情交给 Module 去处理， 利用 Module 层请求完毕后，Presenter 再把具体的结果通过某种方式响应在 View 层。
+具体的事情交给 Model 去处理， 利用 Model 层请求完毕后，Presenter 再把具体的结果通过某种方式响应在 View 层。
 
 #### 一个例子
 
@@ -339,7 +339,7 @@ IMainView继承自IBaseView。
 
 此时 mView 调用 fillData()方法，应该已经清楚了吧。
 
-##总结
+## 总结
 
 至此，MVP 大概就说完了，可以看看项目接口，也许会看到更清楚一点。
 
