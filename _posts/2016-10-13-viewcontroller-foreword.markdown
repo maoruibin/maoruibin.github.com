@@ -66,3 +66,7 @@ Activity 两三千行？？这一点也不夸张。
 当你真的使用它之后，你会发现他带来的便利其实不仅仅实现了模块化。
 
 `特别感谢之前的 Leader 对 ViewController 这种思想给予最初的启发和引导。`
+
+### 关于开源
+
+暂时因为代码还没有整理好，包括文档，demo 也没有准备好，所以还不会立即开源。想要关注 ViewController 的最新动态，可以关注我的 [Github maoruibin \(咕咚\)](https://github.com/maoruibin) 或者 [大侠咕咚的微博](http://weibo.com/maoruibin)。
