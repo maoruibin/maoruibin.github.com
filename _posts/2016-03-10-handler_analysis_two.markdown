@@ -6,7 +6,7 @@ description: ""
 cover:  "#007d65"
 header-mask: 0.3
 catalog:    true
-tags: Handler Source
+tags: Handler
 ---
 上一篇博客[Handler 之 初识及简单应用](/2016/03/10/handler_analysis_one.html)中介绍了 Handler 的作用，以及 Handler 的基本用法，同时也详细介绍了为什么子线程不能更新 UI 的原因，但是因为篇幅原因，所以对 Handler 的内部机制并没有展开叙述。这篇文章就从 Handler 开始解析与之相关的源码，从而更好的理解 Handler 以及 Looper MessageQueue。
 

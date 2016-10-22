@@ -5,9 +5,32 @@ title: "博客更新日志"
 description: "利用Github搭建博客后,我写的第一篇博客"
 catalog:    true
 cover: "zzz"
-tags:	Jekyll
+tags: 随想
 ---
 这篇博文用于记录，自己在修改博客时具体的修改记录，如颜色设置、联系方式配置等信息，以便日后查看。
+
+
+
+### 2016/10/22
+
+今天回家了,火车没事干,想起自己的博客草稿箱还有好几篇文章已经放了好久,感觉可以趁这个空修理下,然后就把 [5.0 的元素共享](/2016/10/22/Android-transition.html)那篇博文更新了。
+
+今晚给 post 新增了一个属性 `conver` 用于控制头部背景颜色,如果不设置默认使用一张转为博客设计的背景图片,也很好看。
+
+```js
+background-image: url('{% if page.cover %}{% else %}{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img-post }}{% endif %}{% endif %}');
+background-color: {{ page.cover }};
+```
+
+修改 CSS 使用
+ 
+```css
+
+grunt watch
+
+```
+
+
 
 ### 2016/07/02
 不知不觉，已经放弃上一个博客主题好久了，现在福生还在使用我的主题[sunfusheng](http://sunfusheng.com/)

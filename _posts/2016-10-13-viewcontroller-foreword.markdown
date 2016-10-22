@@ -4,8 +4,8 @@ author: 咕咚
 title:  "Android 复杂界面开发实践之 ViewController: 前言"
 description: ""
 catalog:    true
-tags: ViewController
-cover:  "#3e4145"
+tags: 架构 Skills
+header-img: assets/header/header_image_arrow.jpg
 ---
 
 首先说明的是 ViewControler 并不是 Android 中存在的一个组件，而是在技术实践中总结创造出的一个开发理念，这是一种业务开发过程中的 UI 模块化思想的体现，依附于现成的 Activity 或者 Fragment 而存在。在特定的场景下使用 ViewControler ，会使你原本复杂的界面开发逻辑变得清晰明了,易于维护。下面进入正题。

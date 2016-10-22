@@ -5,7 +5,7 @@ title: "在Android 6.0 设备上动态获取权限"
 description: ""
 categories: 技术
 cover: "zzz"
-tags:  Permission
+tags:  Skills Usage
 ---
 众所周知，Android 6.0 相比之前的Android版本有一个很大的不同点，就是动态获取权限。今天自己在做拨号功能时，正巧遇到这个问题，
 顺手记录下在Android 6.0 上如何动态获取权限。

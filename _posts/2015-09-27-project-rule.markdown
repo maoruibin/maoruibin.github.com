@@ -4,7 +4,7 @@ author: 咕咚
 title:  "我的Android项目开发规范（不断更新）"
 description:  "AndroidStudio中使用build.gradle的最佳实践"
 catalog:    true
-tags: Practice
+tags: Collection
 ---
 代码永远写不完，但是写的时间久了，就应该形成自己的代码规范或者自己团队的规范，尽管一些规范已经形成于脑海，但是还是有必要记录下来。从现在开始，一点点积累开发规范。这里积累开发过程中所有的规范细节，尽可能详细。
 

@@ -4,7 +4,7 @@ author: 咕咚
 title: "ButterKnife 使用介绍"
 description: ""
 catalog:    false
-tags: ButterKnife Square
+tags: Usage
 ---
 首先说点关于这篇文章的题外话。
 

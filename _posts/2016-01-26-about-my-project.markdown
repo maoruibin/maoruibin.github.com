@@ -5,7 +5,7 @@ title: "关于个人项目"
 description: ""
 cover: "zzz"
 catalog:    true
-tags: 随想
+tags: 随想 App 
 ---
 
 <img src="http://7xr9gx.com1.z0.glb.clouddn.com/marketingproject.jpg" style="width: 50%;margin: auto;"><br>
