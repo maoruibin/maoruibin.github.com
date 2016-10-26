@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Android Developer 关注移动开发 独立开发者 篮球粉">
+    <meta name="keyword"  content="咕咚 咕咚翻译 毛瑞斌 大侠咕咚 咕咚的博客 徐生梅的男朋友 甘肃">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+      <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="assets/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>如何用好github中的watch、star、fork - 咕咚的个人站点</title>
+
+    <link rel="canonical" href="http://gudong.name/skills/2015/10/13/github-usage.html">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400normal,700normal' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300normal,400normal,600normal,700normal,800normal,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">咕咚</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">主页</a>
+                    </li>
+                    
+
+                      
+                    
+
+                      
+                        <li>
+                            <a href="/about">关于</a>
+                        </li>
+                      
+                    
+
+                      
+                    
+
+                      
+                        <li>
+                            <a href="/portfolio/">作品</a>
+                        </li>
+                      
+                    
+
+                      
+                    
+
+                      
+                        <li>
+                            <a href="/tags">标签</a>
+                        </li>
+                      
+                    
+
+                      
+                    
+
+                      
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from
+     * $toggle/$collapse will break global delegation.
+     *
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/assets/header_image.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/assets/header_image.jpg')
+    }
+
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+
+                    
+                    <h1>如何用好github中的watch、star、fork</h1>
+                    
+                    
+
+
+                    <h2 class="subheading"></h2>
+                    
+
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#Github" title="Github">Github</a>
+                        
+                        <a class="tag" href="/tags/#Usage" title="Usage">Usage</a>
+                        
+                    </div>
+
+
+                    <span class="meta">咕咚 发表于 2015-10-13</span>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<p>在每个 github 项目的右上角，都有三个按钮,分别是 watch、star、fork，但是有些刚开始使用 github 的同学，可能对这三个按钮的使用却不怎么了解，
+包括一开始使用 github 的我也是如此，这篇博客，结合自己的理解和使用，说说这三个按钮的用法以及一些个人见解。</p>
+
+<p>如下图所示这是我们经常看到的三个按钮。</p>
+
+<p><img src="/assets/github_usage_1.png" alt="usage" title="usage" /></p>
+
+<p>从左至右，依次是 watch star fork,下面分别说下他们的具体作用。</p>
+
+<h3 id="watch">watch</h3>
+<p>watch翻译过来可以称之为观察，点击watch可以看到如下的列表。</p>
+
+<p><img src="/assets/github_usage_2.png" alt="usage" title="usage" /></p>
+
+<p>默认每一个用户都是处于Not watching的状态，当你选择Watching，表示你以后会关注这个项目的所有动态，以后只要这个项目发生变动，如被别人提交了pull request、被别人发起了issue等等情况，
+你都会在自己的个人通知中心，收到一条通知消息，如果你设置了个人邮箱，那么你的邮箱也可能收到相应的邮件</p>
+
+<p>如下，我 watch 了开源项目 <a href="https://github.com/android-cn/android-discuss">android-cn/android-discuss</a> ，那么以后任何人只要在这个项目下提交了 issue 或者在 issue 下面有任何留言，
+我的通知中心就会通知我。如果你配置了邮箱，你还可能会因此不断的收到邮件。</p>
+
+<p><img src="/assets/github_usage_3.jpg" alt="usage" title="usage" /></p>
+
+<p>如果你不想接受这些通知，那么点击 Not Watching 即可。</p>
+
+<p>另外这里有一篇文章讲<a href="https://github.com/cssmagic/blog/issues/49">如何正确接收 GitHub 的消息邮件</a>，很不错的一篇文章，推荐大家看看。</p>
+
+<h3 id="star">star</h3>
+
+<p>star 翻译过来应该是星星，但是这个翻译没任何具体意义，这里解释为<code class="highlighter-rouge">关注</code>或者<code class="highlighter-rouge">点赞</code>更合适，当你点击 star,表示你喜欢这个项目或者通俗点，可以把他理解成朋友圈的点赞吧，表示对这个项目的支持。</p>
+
+<p>不过相比朋友圈的点赞，github 里面会有一个列表，专门收集了你所有 start 过的项目，
+点击 github 个人头像，可以看到 your star的条目，点击就可以查看你 star 过的所有项目了。如下图</p>
+
+<p><img src="/assets/github_usage_4.png" alt="usage" title="usage" /></p>
+
+<p>不过，在你的 star 列表很容易出现这样的问题。就是你可能 star 成百上千个项目怎么办。
+这时，如果 github 可以提供一个分类功能该多好，就像微博网页版的收藏，你在收藏的时候可以设置 tag，
+这样设置的好处是，以后再次查找项目时，可以根据归类查找，但是不知道 github 的产品经理是怎么想的，
+github 本身没有这个功能，但是 github 从来也不缺有思想有执行力的程序员，
+这不，前段时间就有人做了一个 Chrome 插件，这个插件可以对 github 中所有 star 的项目进行分类，
+如下所示，注意看图片右侧，多了一个 Filter by tag 列表。</p>
+
+<p><img src="/assets/github_usage_5.webp" alt="usage" title="usage" /></p>
+
+<p><a href="https://chrome.google.com/webstore/detail/github-stars-tagger/aaihhjepepgajmehjdmfkofegfddcabc">下载地址</a>.</p>
+
+<p>尽管这个插件已经很好了，但是还是有缺点，你只能 star完 项目了，去 star 列表后，才能对项目打 tag，这是很不方便的。</p>
+
+<p>真心希望，未来 github 可以自己支持对 star 的 tag 处理。憧憬…</p>
+
+<h3 id="fork">fork</h3>
+
+<p>当选择 fork，相当于你自己有了一份原项目的拷贝，当然这个拷贝只是针对当时的项目文件，如果后续原项目文件发生改变，你必须通过其他的方式去同步。</p>
+
+<p>一般来说，我们不需要使用 fork 这个功能，至少我一般不会用，除非有一些项目，可能存在 bug 或者可以继续优化的地方，你想帮助原项目作者去完善这个项目
+，那么你可以 fork 一份项目下来，然后自己对这个项目进行修改完善，当你觉得项目没问题了，你就可以尝试发起 push request给原项目作者了，
+然后就静静等待他的 merge。</p>
+
+<p>我看到很多人错误的在使用 fork。很多人把 fork 当成了收藏一样的功能，包括一开始使用 github 的我，每次看到一个好的项目就先 fork，
+因为这样，就可以我的 repository(仓库)列表下查看 fork 的项目了。其实你完全可以使用 star 来达到这个目的。</p>
+
+<h3 id="section">使用建议</h3>
+
+<ul>
+  <li>
+    <p>对于一些可能会经常发生变化的会不定期更新的好项目 多使用 watch.</p>
+
+    <p>比如 android-cn 团队的 <a href="https://github.com/android-cn/android-discuss">android-discuss</a>  项目，
+你就可以 watching 它，这里面都是一些关于 Android 技术的交流，如果有任何新问题，你都可以收到通知，你可以查看别人的回答，
+你可以回答别人提出的问题，这是一个很好的学习成长方式。</p>
+
+    <p>其他值得watch的项目还有很多，比如 github 上很多的 Awesome 系列的项目,如<a href="https://github.com/lightSky/Awesome-MaterialDesign">Awesome-MaterialDesign</a>等，你 watch 这些项目了，
+只要项目新增一些好玩好用的东西，你就会收到通知。</p>
+
+    <p>我在知乎上看到有人问这样的问题，说 github 上有哪些值得 watch 的项目，其实有很多，我自己也整理了一些，但是没放到 github ，
+有兴趣的同学可以联系，一起维护这样一个项目。</p>
+
+    <p>值得注意的是，如果 watch多了，你可能会被无休止的邮件通知烦死（邮件通知可设置），所以做好权衡，哈哈~</p>
+  </li>
+  <li>
+    <p>喜欢一个项目就 star 它吧~</p>
+  </li>
+  <li>
+    <p>修改开源项目就使用fork，这样你就可以在原项目的基础上，对项目进行修改提交，现在你是这个项目的主人啦~</p>
+  </li>
+</ul>
+
+<h3 id="section-1">小细节</h3>
+
+<p>有些时候，你看到一个项目的 star 数有很多，你就想知道到底都有那些人 star 了这个项目，或者 fork 了这个项目，
+  但是环顾一圈，你却找不到一个入口，后来自己不经意的发现，只要<code class="highlighter-rouge">点击 star 傍边的数字</code>，就可以查看有哪些人star了这个项目。
+  是不是有点意思，现在你就可以去试试，watch、fork上面的数字都是可以点击的，道理一样。</p>
+
+<h3 id="section-2">结语</h3>
+
+<p>这里只说了关于这三个按钮的使用，github 肯定还有很多使用技巧，欢迎大家多多讨论，互相学习。另外我在 android-cn 的 android-discuss 下面和知乎上
+  都分别提了类似的问题，大家感兴趣的可以关注下。</p>
+
+<p>Github <a href="https://github.com/android-cn/android-discuss/issues/283">Github上都有哪些有意思、不为大家熟知的小功能？</a></p>
+
+<p>知乎 <a href="http://www.zhihu.com/question/36974348">Github上都有哪些有用但不为大家熟知的小功能？</a></p>
+
+
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                </style>
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="/skills/2015/10/13/github-usage"
+                    data-title="如何用好github中的watch、star、fork"
+                    data-url="http://gudong.name/skills/2015/10/13/github-usage.html"
+                    data-images="http://gudong.name/assets/header_image.jpg"
+                    data-content="在每个 github 项目的右上角，都有三个按钮,分别是 watch、star、fork，但是有些刚开始使用 github 的同学，可能对这三个按钮的使用... | 咕咚的个人站点 " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2015/09/27/project-rule.html" data-toggle="tooltip" data-placement="top" title="我的Android项目开发规范（不断更新）">
+                        Previous<br>
+                        <span>我的Android项目开发规范（不断更新）</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2015/10/20/java-loader.html" data-toggle="tooltip" data-placement="top" title="Java类加载机制">
+                        Next<br>
+                        <span>Java类加载机制</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment" id="comments">
+                    <div class="ds-thread"
+                        data-thread-key="/skills/2015/10/13/github-usage"
+                        data-title="如何用好github中的watch、star、fork"
+                        data-url="http://gudong.name/skills/2015/10/13/github-usage.html" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#随想" title="随想" rel="8">
+                                          随想
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Skills" title="Skills" rel="2">
+                                          Skills
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#Collection" title="Collection" rel="2">
+                                          Collection
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Tools" title="Tools" rel="2">
+                                          Tools
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#Experience" title="Experience" rel="5">
+                                          Experience
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#Java" title="Java" rel="4">
+                                          Java
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#线程" title="线程" rel="2">
+                                          线程
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#Gradle" title="Gradle" rel="2">
+                                          Gradle
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Usage" title="Usage" rel="2">
+                                          Usage
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Product" title="Product" rel="3">
+                                          Product
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Performance" title="Performance" rel="2">
+                                          Performance
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#RxJava" title="RxJava" rel="2">
+                                          RxJava
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Handler" title="Handler" rel="3">
+                                          Handler
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#Source" title="Source" rel="2">
+                                          Source
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+              				
+              			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>朋友</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="http://drakeet.me">Drakeet</a></li>
+                    
+                        <li><a href="http://blog.daimajia.com">代码家</a></li>
+                    
+                        <li><a href="http://hujiaweibujidao.github.io/">五道口宅男</a></li>
+                    
+                        <li><a href="http://itangqi.me/">汤奇</a></li>
+                    
+                        <li><a href="http://wuxiaolong.me/">吴小龙同学</a></li>
+                    
+                        <li><a href="http://yifeiyuan.me/">程序亦非猿</a></li>
+                    
+                        <li><a href="http://www.easydone.cn/">Ailurus</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'maoruibin';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/maoruibin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/maoruibin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/maoruibin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li>
+                        <a href="https://twitter.com/maoruibin9035">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 咕咚 2016
+                    <br>
+                    Theme from © <a href="http://huangxuan.me">Hux</a> | Powered by <a href="http://jekyllcn.com/">Jekyll</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- Highlight.js -->
+<script>
+    async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+        hljs.initHighlightingOnLoad();
+    })
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#607D8B'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+<link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        // var $nav = document.querySelector("nav");
+        // if($nav) FastClick.attach($nav);
+
+        // global FastClick!!
+        FastClick.attach(document.body);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-64640288-1';
+    var _gaDomain = 'gudong.name';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'de1df75db196971264bd87815c96f646';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

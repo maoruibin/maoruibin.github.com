@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Android Developer 关注移动开发 独立开发者 篮球粉">
+    <meta name="keyword"  content="咕咚 咕咚翻译 毛瑞斌 大侠咕咚 咕咚的博客 徐生梅的男朋友 甘肃">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+      <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="assets/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>咕咚的个人站点</title>
+
+    <link rel="canonical" href="http://gudong.name/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400normal,700normal' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300normal,400normal,600normal,700normal,800normal,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">咕咚</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">主页</a>
+                    </li>
+                    
+
+                      
+                    
+
+                      
+                        <li>
+                            <a href="/about">关于</a>
+                        </li>
+                      
+                    
+
+                      
+                    
+
+                      
+                        <li>
+                            <a href="/portfolio/">作品</a>
+                        </li>
+                      
+                    
+
+                      
+                    
+
+                      
+                        <li>
+                            <a href="/tags">标签</a>
+                        </li>
+                      
+                    
+
+                      
+                    
+
+                      
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from
+     * $toggle/$collapse will break global delegation.
+     *
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/assets/header_image.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1 style="font-size:2.98598em;">咕咚</h1>
+                    <!--<hr class="small">-->
+                    <span class="subheading">2016 - Here I Am</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+        
+
+<!-- USE SIDEBAR -->
+    <!-- PostList Container -->
+    		<div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                postlist-container
+            ">
+    			
+<div class="post-preview">
+    <a href="/technology/2016/10/22/Android-transition.html">
+        <h2 class="post-title">
+            在Android5.0以上设备实现过渡动画
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        从Android5.0开始，系统提供一个很好看的Activity间的转场动画，具体就是共享两个界面中一些共有的View，让前后两个界面的跳转变得很流畅
+好看。
+
+###具体效果
+
+关于动画，还是看效果更直接一点。下面就是Android5.0设备上的转场动画示意图，这在 Google 自家的 App 里已经司空见惯。比如 Google Play
+中，从应用列表界面跳转到应用详情页，就可以看到很...
+    </div>
+    <p class="post-meta">
+        发表于 2016-10-22&nbsp;&nbsp;
+
+        <a class="comment" href="technology/2016/10/22/Android-transition.html#comments">
+							<span class="ds-thread-count" data-thread-key="/technology/2016/10/22/Android-transition"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2016/10/13/viewcontroller-foreword.html">
+        <h2 class="post-title">
+            Android 复杂界面开发实践之 ViewController: 前言
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        首先说明的是 ViewControler 并不是 Android 中存在的一个组件，而是在技术实践中总结创造出的一个开发理念，这是一种业务开发过程中的 UI 模块化思想的体现，依附于现成的 Activity 或者 Fragment 而存在。在特定的场景下使用 ViewControler ，会使你原本复杂的界面开发逻辑变得清晰明了,易于维护。下面进入正题。
+
+场景介绍
+先简单介绍一种常见的界面...
+    </div>
+    <p class="post-meta">
+        发表于 2016-10-13&nbsp;&nbsp;
+
+        <a class="comment" href="2016/10/13/viewcontroller-foreword.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2016/10/13/viewcontroller-foreword"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2016/07/02/my-blog-update-record.html">
+        <h2 class="post-title">
+            博客更新日志随想
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        今天终于有时间可以更新一下博客了。
+
+之前，一次偶然的机会，在网上看到黄玄的博客，也就是现在自己博客的风格，第一眼便喜欢上了这种风格，不论是大背景的 Header 还是侧边栏的设计，都是自己非常喜欢的设计，但是苦于自己前端能力薄弱，自从去年选择了一个 Jekyll 的主题后，能做的也只是一些简单的修建，如果要按照自己的想法去设计一些个性化的 feature 还是太难了。直到遇到这个博客风格，...
+    </div>
+    <p class="post-meta">
+        发表于 2016-07-02&nbsp;&nbsp;
+
+        <a class="comment" href="2016/07/02/my-blog-update-record.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2016/07/02/my-blog-update-record"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2016/04/15/butterknife_introduce.html">
+        <h2 class="post-title">
+            ButterKnife 使用介绍
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        首先说点关于这篇文章的题外话。
+
+公司项目重构，我建议老大使用 ButterKnife,因为自己使用了很久，而且自己跟周边的同事演示了一下 ButterKnife 的功能，都觉得很赞，所以就想自己要不彻底调研一次 ButterKnife，包括用法以及源码。
+
+最终我给组长的结果是 这东西可用，也没有什么太大的性能问题，但是最终还是被老大给 kill 掉了，后来也没有理论过老大，好吧，那就继续...
+    </div>
+    <p class="post-meta">
+        发表于 2016-04-15&nbsp;&nbsp;
+
+        <a class="comment" href="2016/04/15/butterknife_introduce.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2016/04/15/butterknife_introduce"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2016/04/09/rxjava_operate.html">
+        <h2 class="post-title">
+            使用 RxJava 重构一段判断逻辑
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        这么晚了我还在给咕咚翻译加在线发音功能！！还好有音乐作陪…
+
+其实实现发音很简单，金山的 API 支持单词发音。访问 http://dict-co.iciba.com/api/dictionary.php?type=json&amp;w=nice&amp;key=3BE8E8ACA43FDA088E52EC05FA8FA203
+
+即可在返回单词解释的同时，返回单词的发音 URL，如下所示，自...
+    </div>
+    <p class="post-meta">
+        发表于 2016-04-09&nbsp;&nbsp;
+
+        <a class="comment" href="2016/04/09/rxjava_operate.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2016/04/09/rxjava_operate"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2016/04/07/checkstyle.html">
+        <h2 class="post-title">
+            使用 CheckStyle 检查代码
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        前言
+
+最近在看廖祜秋的下拉刷新项目 android-Ultra-Pull-To-Refresh，就在今天做了一些精简操作后，准备加入项目准备使用时，发现 lib 根目录下有一个 checkstyle.xml 文件，很好奇它是干什么的，后来 Google 后，原来这东西可以用来检查代码，随即查询了一些资料，把它用了起来，下面简单记录下。
+
+用途
+
+先不说如何配置，先说它有什么用。
+
+Andr...
+    </div>
+    <p class="post-meta">
+        发表于 2016-04-07&nbsp;&nbsp;
+
+        <a class="comment" href="2016/04/07/checkstyle.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2016/04/07/checkstyle"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2016/03/11/handler_analysis_three.html">
+        <h2 class="post-title">
+            Handler 之 ThreadLocal 相关
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        在上一篇文章Handler 之 源码解析中介绍 Handler 与 Looper 的关系时，半路出现了 ThreadLocal 这个类，他是什么呢，本想在 Handler 源码解析一文一起阐述了，
+但是觉得这样篇幅太长，不好，况且他又是一个相对独立的概念，这里就把它单独拿出来，结合任玉刚的Android的消息机制之ThreadLocal的工作原理博文，为自己总结归纳下 ThreadLocal...
+    </div>
+    <p class="post-meta">
+        发表于 2016-03-11&nbsp;&nbsp;
+
+        <a class="comment" href="2016/03/11/handler_analysis_three.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2016/03/11/handler_analysis_three"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2016/03/10/handler_analysis_two.html">
+        <h2 class="post-title">
+            Handler 之 源码解析
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        上一篇博客Handler 之 初识及简单应用中介绍了 Handler 的作用，以及 Handler 的基本用法，同时也详细介绍了为什么子线程不能更新 UI 的原因，但是因为篇幅原因，所以对 Handler 的内部机制并没有展开叙述。这篇文章就从 Handler 开始解析与之相关的源码，从而更好的理解 Handler 以及 Looper MessageQueue。
+
+Handler 机制
+
+写...
+    </div>
+    <p class="post-meta">
+        发表于 2016-03-10&nbsp;&nbsp;
+
+        <a class="comment" href="2016/03/10/handler_analysis_two.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2016/03/10/handler_analysis_two"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/foundation/2016/03/10/handler_analysis_one.html">
+        <h2 class="post-title">
+            Handler 之 初识及简单应用
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        这篇文章主要讲解和记录自己对 Handler 的理解。因为一开始接触 Android 就接触到了 Handler，所以对 handler 的了解应该比较多，加上项目中在消息传递以及异步控制方面都要用到 Handler。自己也不止一遍的看过 Handler 源码，不过每次看的时候都能明白，但是时间久了，就很容易忘记。所以这次就有了这个 Handler 系列。从 Handler 的使用场景，到具...
+    </div>
+    <p class="post-meta">
+        发表于 2016-03-10&nbsp;&nbsp;
+
+        <a class="comment" href="foundation/2016/03/10/handler_analysis_one.html#comments">
+							<span class="ds-thread-count" data-thread-key="/foundation/2016/03/10/handler_analysis_one"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/product/2016/02/26/gudong_translate.html">
+        <h2 class="post-title">
+            关于咕咚翻译
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        咕咚翻译是自己最近开发的一个实现『划词翻译』功能的 Android 应用 ，可能是目前 Android 市场上翻译效率最高的一款应用。
+
+示意图
+
+
+
+项目地址
+目前咕咚翻译已经开源到了 Github ,咕咚翻译,欢迎 star ,如果有 bug 或者更好的意见可以提 issue.
+
+下载
+如果想第一时间体验，可点击下载链接
+
+缘起
+自己经常在手机上会阅读一些英文的技术 blog 或者文档，...
+    </div>
+    <p class="post-meta">
+        发表于 2016-02-26&nbsp;&nbsp;
+
+        <a class="comment" href="product/2016/02/26/gudong_translate.html#comments">
+							<span class="ds-thread-count" data-thread-key="/product/2016/02/26/gudong_translate"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2016/02/25/SharePreference_service_activity.html">
+        <h2 class="post-title">
+            跨进程数据共享问题及解决方案
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        最近在开发咕咚翻译时，在偏好设置的过程中，出现了一个莫名其妙的 bug，在 A 进程中设置偏好设置后，B 进程不能及时访问到 A 进程中设置的数据，今晚终于得到解决，随即做一次简单的记录。
+
+咕咚翻译
+这里先简单介绍下咕咚翻译这个 App，如名字所言，它主要的功能是翻译，不过相比其他的翻译软件，他的翻译效率更高。
+
+因为它实现了手机端的”划词翻译”，只要你在手机上复制了任何英文内容，他都会监...
+    </div>
+    <p class="post-meta">
+        发表于 2016-02-25&nbsp;&nbsp;
+
+        <a class="comment" href="2016/02/25/SharePreference_service_activity.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2016/02/25/SharePreference_service_activity"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2016/01/26/about-my-project.html">
+        <h2 class="post-title">
+            关于个人项目
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        
+
+作品展示画廊，有图有真相。链接
+
+关于个人项目
+
+从一开始工作，自己就是个比较爱动手的开发者，喜欢将自己的想法变(编)成(程)具体可以看见的东西，做东西的过程也是一个学习的过程。
+因为自己的作品可以随意加入各种最新的知识点，所以这也是一个很好的体验新技术的方法.
+
+并且自己做的东西，还可能帮助到别人，给别人带来便利，何乐而不为。
+
+尽管我知道，做一个好用的东西，其实还是挺不容易的，因为好...
+    </div>
+    <p class="post-meta">
+        发表于 2016-01-26&nbsp;&nbsp;
+
+        <a class="comment" href="2016/01/26/about-my-project.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2016/01/26/about-my-project"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2016/01/21/RxJava_In_AppPlus.html">
+        <h2 class="post-title">
+            RxJava 在 AppPlus 中的应用
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        RxJava 已经出来很长一段时间了，国内也已经有很多公司在使用，与此同时，有不少优秀的开发者也不断的在开源社区分享自己对 RxJava
+的使用理解，而且这个过程中也产出了不少优秀的 RxJava 资料。自己通过这些资料以及一些开源项目也在不断的学习 RxJava，
+从一开始的 GankDaily 项目中蹒跚学步，到 AppPlus 中的大量实战，自己对 RxJava 的应用也变得熟练了起来...
+    </div>
+    <p class="post-meta">
+        发表于 2016-01-21&nbsp;&nbsp;
+
+        <a class="comment" href="2016/01/21/RxJava_In_AppPlus.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2016/01/21/RxJava_In_AppPlus"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2016/01/15/over_draw_color_introduce.html">
+        <h2 class="post-title">
+            Android 过度绘制介绍及优化 Tip
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        Android 中的过度绘制是指同一个像素被绘制多次，从绘制性能角度讲，同一像素点被绘制的次数当然越少越好，这样有利于减轻 GPU 的工作压力，事实上，在具体开发过程中
+，不可避免的可能会出现过度绘制，这里，Android 系统本身在开发者选项里已经提供了一个选项开关 Debug GPU overdraw(调试 GPU 过度绘制)，用于检测 App 的过度绘制，
+只要打开这个开关，App 界...
+    </div>
+    <p class="post-meta">
+        发表于 2016-01-15&nbsp;&nbsp;
+
+        <a class="comment" href="2016/01/15/over_draw_color_introduce.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2016/01/15/over_draw_color_introduce"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2016/01/13/android-performance-patterns-first-note.html">
+        <h2 class="post-title">
+            Android性能优化典范 - 第1季 阅读笔记
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        该文章是自己在阅读 Android性能优化典范-第一季 时的读书笔记，Android性能优化典范主要讲了Android的渲染机制、内存和GC以及电量优化方面相关的内容，因为内容比较庞杂，加上一些知识点需要花心思去理解，所以在阅读的时候，顺便记录一下自己的阅读理解。
+
+原文 Android性能优化典范-第一季
+
+笔记条目
+
+1、Android 系统每隔 16ms 发出 VSYNC 信号，触发硬...
+    </div>
+    <p class="post-meta">
+        发表于 2016-01-13&nbsp;&nbsp;
+
+        <a class="comment" href="2016/01/13/android-performance-patterns-first-note.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2016/01/13/android-performance-patterns-first-note"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/12/27/mars_felling.html">
+        <h2 class="post-title">
+            《火星救援》有感
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        忙里偷闲，在 Acfun 这个网站看了一部电影 - 火星救援，看之前，对这个电影没什么特别大的期待，
+不过因为主演是马特达蒙，所以今天就选择了这部电影。
+
+第一次看他的电影是 谍影重重，自己也是从这部电影开始，喜欢上他。
+
+依旧记得大学时，连续三个周末，看完了谍影重重系列，每周一部，不敢贪多，当时只觉得两个小时太短了！
+
+当时因为太喜欢，特意还裁剪下其中的剧照（恩，当时应该用的是QQ影音自带...
+    </div>
+    <p class="post-meta">
+        发表于 2015-12-27&nbsp;&nbsp;
+
+        <a class="comment" href="2015/12/27/mars_felling.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/12/27/mars_felling"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/12/22/my_2015_life.html">
+        <h2 class="post-title">
+            再见 2015 ，你好 2016 ~
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        这篇文章是我的2015年终总结。去年就曾想过写一篇自己的2014年终总结，后来想过几天再写，然后一晃已经是2015年末了，
+时间就是这么快。我觉得今年一定要抽时间总结下，在梳理得与失的同时，也是对自己一年里，做的所有事的一个回忆和反思。
+
+这一年
+
+这一年发生了很多事，不论生活方面，还是工作方面，都经历了比去年更多的事。
+
+生活方面
+
+其实，这一年应该从媳妇跟我一起坐上来北京的列车开始。到北...
+    </div>
+    <p class="post-meta">
+        发表于 2015-12-22&nbsp;&nbsp;
+
+        <a class="comment" href="2015/12/22/my_2015_life.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/12/22/my_2015_life"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/12/21/reason-for-appplus.html">
+        <h2 class="post-title">
+            为什么开发了 AppPlus
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        AppPlus 是自己今年七月份开始做的一个小产品，它是一个主要用Android用户间传送Apk文件、管理手机应用的工具软件。
+
+目前已开源，开源地址
+
+##为什么要做这个软件
+
+###一、我想用最少的步骤打开最近运行的应用详情界面
+
+因为是开发者的缘故，我经常需要清理应用缓存数据，一般的做法时，找到系统设置-&gt;应用管理-&gt;找到对应的应用-&gt;打开应用详情界面，然后清理数据，...
+    </div>
+    <p class="post-meta">
+        发表于 2015-12-21&nbsp;&nbsp;
+
+        <a class="comment" href="2015/12/21/reason-for-appplus.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/12/21/reason-for-appplus"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/12/20/watch_dependencies_path.html">
+        <h2 class="post-title">
+            利用 Gradle Task 查看远程依赖库的本地存储路径
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        这篇文章主要分享一个主题，如何在 AndroidStudio 中利用 gradle 查看自己项目中引入的三方依赖库的本地缓存路径。相信一些同学会对这个
+话题感兴趣的。
+
+###问题
+
+自从使用 AndroidStudio + Gradle 开始项目开发，我们已经用到了很多 gradle 带来的特性，比如要在项目中使用三方 Lib ，
+我们再也不需要像 eclipse 时代，需要我们手动下载对...
+    </div>
+    <p class="post-meta">
+        发表于 2015-12-20&nbsp;&nbsp;
+
+        <a class="comment" href="2015/12/20/watch_dependencies_path.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/12/20/watch_dependencies_path"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/11/24/copy-right-meizhi.html">
+        <h2 class="post-title">
+            开源协议小风波
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        今天无意间在做项目的过程中，因为没有遵守开源协议，导致了一个小误会，尽管已经跟drakeet同学致歉，但后来还是觉得有必要把事情再梳理一遍，让更多的开发者注重一下开源协议。
+
+一开始在微博看到了@drakeet 同学开源了一个项目，叫 MeiZhi，一个干货集中营的 unofficial 客户端，客户端用于在手机端更好的显示技术干货信息，因为自己平时也比较关注技术干货，自己也就开始使用。
+
+...
+    </div>
+    <p class="post-meta">
+        发表于 2015-11-24&nbsp;&nbsp;
+
+        <a class="comment" href="2015/11/24/copy-right-meizhi.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/11/24/copy-right-meizhi"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+
+<!-- Pager -->
+
+<ul class="pager">
+    
+    
+    <li class="next">
+        <a href="/page2">Older Posts &rarr;</a>
+    </li>
+    
+</ul>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"maoruibin"};
+  (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+       || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+    		</div>
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
+
+                <!-- Short About -->
+                <section class="visible-md visible-lg">
+                    <hr><h5><a href="/about/">咕咚</a></h5>
+                    <div class="short-about">
+                        
+                            <img src="/assets/profile_head.png" />
+                        
+                        
+                            <p>Android Developer</p>
+                        
+                        <!-- SNS Link -->
+                        <ul class="list-inline">
+                            
+
+                            
+                            <li>
+                                <a target="_blank" href="http://weibo.com/maoruibin">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+
+                            
+                            <li>
+                                <a target="_blank" href="https://github.com/maoruibin">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+
+                            
+                            <li>
+                                <a target="_blank" href="https://www.zhihu.com/people/maoruibin">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa  fa-stack-1x fa-inverse">知</i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+
+                            
+
+                            
+                            <li>
+                                <a href="https://twitter.com/maoruibin9035">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </section>
+                <!-- Last post -->
+                <hr>
+
+                <h5>最新文章</h5>
+                <ul class="list-inline">
+                
+                  <li>
+                    <a href="/technology/2016/10/22/Android-transition.html">在Android5.0以上设备实现过渡动画</a>
+                  </li>
+                
+                  <li>
+                    <a href="/2016/10/13/viewcontroller-foreword.html">Android 复杂界面开发实践之 ViewController: 前言</a>
+                  </li>
+                
+                  <li>
+                    <a href="/2016/07/02/my-blog-update-record.html">博客更新日志随想</a>
+                  </li>
+                
+                  <li>
+                    <a href="/2016/04/15/butterknife_introduce.html">ButterKnife 使用介绍</a>
+                  </li>
+                
+                </ul>
+
+                <!-- Last comment -->
+
+                <hr>
+
+                <h5>最新评论</h5>
+
+                <ul class="ds-recent-comments" style="padding-left:0px;"
+                    data-num-items="4"
+                    data-show-avatars="1"
+                    data-show-time="0"
+                    data-show-admin="0"
+                    data-show-title="0"
+                    data-excerpt-length="30">
+              </ul>
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">标签</a></h5>
+                    <div class="tags">
+                        
+                            
+                        
+                            
+                                <a href="/tags/#随想" title="随想" rel="8">
+                                    随想
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#Skills" title="Skills" rel="2">
+                                    Skills
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#Collection" title="Collection" rel="2">
+                                    Collection
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#Tools" title="Tools" rel="2">
+                                    Tools
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#Experience" title="Experience" rel="5">
+                                    Experience
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#Java" title="Java" rel="4">
+                                    Java
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#线程" title="线程" rel="2">
+                                    线程
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#Gradle" title="Gradle" rel="2">
+                                    Gradle
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#Usage" title="Usage" rel="2">
+                                    Usage
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#Product" title="Product" rel="3">
+                                    Product
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#Performance" title="Performance" rel="2">
+                                    Performance
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#RxJava" title="RxJava" rel="2">
+                                    RxJava
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#Handler" title="Handler" rel="3">
+                                    Handler
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#Source" title="Source" rel="2">
+                                    Source
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>友情链接</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="http://drakeet.me">Drakeet</a></li>
+                    
+                        <li><a href="http://blog.daimajia.com">代码家</a></li>
+                    
+                        <li><a href="http://hujiaweibujidao.github.io/">五道口宅男</a></li>
+                    
+                        <li><a href="http://itangqi.me/">汤奇</a></li>
+                    
+                        <li><a href="http://wuxiaolong.me/">吴小龙同学</a></li>
+                    
+                        <li><a href="http://yifeiyuan.me/">程序亦非猿</a></li>
+                    
+                        <li><a href="http://www.easydone.cn/">Ailurus</a></li>
+                    
+                </ul>
+                
+
+                <!--Begin Last Visitor -->
+                <hr>
+                <h5>最近来访</h5>
+                <ul class="ds-recent-visitors" data-num-items="20" style="padding-left:0px;"></ul>
+                <!--End Last Visitor -->
+
+    		</div>
+        
+	</div>
+</div>
+
+<!--多说js加载开始，一个页面只需要加载一次 -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"maoruibin"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+<!--多说js加载结束，一个页面只需要加载一次 -->
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/maoruibin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/maoruibin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/maoruibin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li>
+                        <a href="https://twitter.com/maoruibin9035">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 咕咚 2016
+                    <br>
+                    Theme from © <a href="http://huangxuan.me">Hux</a> | Powered by <a href="http://jekyllcn.com/">Jekyll</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- Highlight.js -->
+<script>
+    async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+        hljs.initHighlightingOnLoad();
+    })
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#607D8B'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+<link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        // var $nav = document.querySelector("nav");
+        // if($nav) FastClick.attach($nav);
+
+        // global FastClick!!
+        FastClick.attach(document.body);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-64640288-1';
+    var _gaDomain = 'gudong.name';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'de1df75db196971264bd87815c96f646';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+<!-- Side Catalog -->
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

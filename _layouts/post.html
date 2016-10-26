@@ -13,7 +13,7 @@ layout: default
 
         background-image: url('{% if page.cover %}{% else %}{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img-post }}{% endif %}{% endif %}');
 
-        background-color: {{ page.cover }};
+        background-color: {% if {{page.cover}} contains 'zzz' %}{{ site.theme_color }}{% else %}{{ page.cover }}{% endif %};
     }
 
     {% if page.header-mask %}
@@ -33,7 +33,7 @@ layout: default
                 <div class="post-heading">
 
                     
-                    <h1>{{ page.title }}</h1>
+                    <h1 style="{% if {{page.titleColor}} %}color:{{page.titleColor}};{% else %}{% endif %}">{{ page.title }}</h1>
                     {% comment %}
                         always create a h2 for keeping the margin , Hux
                     {% endcomment %}

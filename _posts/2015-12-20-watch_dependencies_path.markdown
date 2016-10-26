@@ -11,7 +11,7 @@ tags: Gradle
 这篇文章主要分享一个主题，如何在 AndroidStudio 中利用 gradle 查看自己项目中引入的三方依赖库的本地缓存路径。相信一些同学会对这个
 话题感兴趣的。
 
-###问题
+### 问题
 
 自从使用 AndroidStudio + Gradle 开始项目开发，我们已经用到了很多 gradle 带来的特性，比如要在项目中使用三方 Lib ，
 我们再也不需要像 eclipse 时代，需要我们手动下载对应的 jar 包，从 gradle 开始，我们只要在build.gradle 加入三方lib的
@@ -27,7 +27,7 @@ dependencies 路径，然后同步，lib就自动下载到本地了。
 但是时间久了，我就愈发想知道，gradle到底把lib给存到什么地方了，
 今天搜了一圈，找到一个靠谱的方法，特意分享下，也不是什么技术点，只是解决我心中的一个疑问而已。
 
-### 答案
+###  答案
 
      dependencies{
          .....
@@ -46,7 +46,7 @@ dependencies 路径，然后同步，lib就自动下载到本地了。
 
 Note : 因为 gradle 文件顺序执行的特点，这个任务应该定义在`dependencies`节点之下。
 
-### 结果
+###  结果
 
     :app:showMeCache
     /Users/mao/workpace/person/AppPlus/app/libs/lite-orm-1.7.0.jar

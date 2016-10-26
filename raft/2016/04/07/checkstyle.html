@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Android Developer 关注移动开发 独立开发者 篮球粉">
+    <meta name="keyword"  content="咕咚 咕咚翻译 毛瑞斌 大侠咕咚 咕咚的博客 徐生梅的男朋友 甘肃">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+      <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="assets/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>使用 CheckStyle 检查代码 - 咕咚的个人站点</title>
+
+    <link rel="canonical" href="http://gudong.name/2016/04/07/checkstyle.html">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400normal,700normal' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300normal,400normal,600normal,700normal,800normal,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">咕咚</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">主页</a>
+                    </li>
+                    
+
+                      
+                    
+
+                      
+                        <li>
+                            <a href="/about">关于</a>
+                        </li>
+                      
+                    
+
+                      
+                    
+
+                      
+                        <li>
+                            <a href="/portfolio/">作品</a>
+                        </li>
+                      
+                    
+
+                      
+                    
+
+                      
+                        <li>
+                            <a href="/tags">标签</a>
+                        </li>
+                      
+                    
+
+                      
+                    
+
+                      
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from
+     * $toggle/$collapse will break global delegation.
+     *
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/assets/header_image.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/assets/header_image.jpg')
+    }
+
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+
+                    
+                    <h1>使用 CheckStyle 检查代码</h1>
+                    
+                    
+
+
+                    <h2 class="subheading"></h2>
+                    
+
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#Tools" title="Tools">Tools</a>
+                        
+                    </div>
+
+
+                    <span class="meta">咕咚 发表于 2016-04-07</span>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<h3 id="section">前言</h3>
+
+<p>最近在看廖祜秋的下拉刷新项目 <a href="https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh">android-Ultra-Pull-To-Refresh</a>，就在今天做了一些精简操作后，准备加入项目准备使用时，发现 lib 根目录下有一个 <code class="highlighter-rouge">checkstyle.xml</code> 文件，很好奇它是干什么的，后来 Google 后，原来这东西可以用来检查代码，随即查询了一些资料，把它用了起来，下面简单记录下。</p>
+
+<h3 id="section-1">用途</h3>
+
+<p>先不说如何配置，先说它有什么用。</p>
+
+<p>AndroidStudio 可以通过自己指定的 CheckStyle 去检查自己写的代码是不是符合规则，如果代码中有不合该规范的地方，都可以在控制台看到对应的提示信息。</p>
+
+<p>这里比较好的一点是，你可以自定义自己的 checkstyle ,可以根据自己的代码规范去一点点完善这个 checkstyle ,也可以使用一些大公司的 checkstyle ,这些 checkstyle  文件是可以搜到的。</p>
+
+<h3 id="section-2">最终效果</h3>
+
+<p>说了这么多，还是看最终效果比较来的直白一点。</p>
+
+<p>下图中使用 checkstyle 检查我的 MainActivity，我故意让一个成员变量的命名没有按照驼峰式去写，然后点击菜单键的 Check
+Current File 检查如下。</p>
+
+<p><img src="/assets/checkstyle_1.jpg" alt="one" /></p>
+
+<p>可以看到，显示提示 viewpager 命名不合规范，然后我改为 mViewPager 后，就不会再提示了。如下所示。</p>
+
+<p><img src="/assets/checkstyle_2.jpg" alt="one" /></p>
+
+<h3 id="section-3">配置</h3>
+
+<p>已经看到了具体效果，是不是跃跃欲试了，这时你可能试着点击了菜单右键，却发现没有<code class="highlighter-rouge">Check Current File</code> 这个选项。</p>
+
+<p>下面具体说下</p>
+
+<h4 id="section-4">安装插件</h4>
+
+<p>要使用 checkstyle 需要安装一个 AndroidStudio 插件 CheckStyle-IDEA,你可以通过在线安装插件的方式去安装，也可以通过本地安装，<a href="https://github.com/jshiell/checkstyle-idea">插件地址</a></p>
+
+<h4 id="checkstyle-">配置 checkstyle 文件</h4>
+
+<p>当安装好插件，打开 AndroidStudio 的设置页面 settings -&gt; Other Settings  你会发现多了一个 Checkstyle ,
+点击打开,如下图。
+<img src="/assets/checkstyle_3.jpg" alt="one" /></p>
+
+<p>你会看到有一个 <code class="highlighter-rouge">+</code> 按钮，点击即可添加自己的 checkstyle 文件，你可能第一次不会写这个文件，没关系，这里提供一个华为的 Checkstyle <a href="https://gist.github.com/ownwell/c32878440216f1866842">Gist 地址</a>。</p>
+
+<p>其实 AndroidStudio 已经默认提供了一个，你也可以使用默认的。</p>
+
+<p>记得添加时，不要忘了填写 description 。</p>
+
+<p><img src="/assets/checkstyle_4.jpg" alt="four" /></p>
+
+<p>这里关于 checkstyle 中的语法，有相应的文档，可以自己去搜索阅读具体语法，一般的，照猫画虎就够了。</p>
+
+<h4 id="checkstyle">现成的CheckStyle</h4>
+
+<p><a href="https://gist.github.com/ownwell/c32878440216f1866842">华为 CheckStyle 地址</a></p>
+
+<p><a href="https://github.com/square/picasso/blob/master/checkstyle.xml"> the checkstyle configuration used for Picasso by Square folks</a></p>
+
+<p><a href="http://checkstyle.sourceforge.net/google_style.html">Google’s Java Style Checkstyle Coverage</a></p>
+
+<h4 id="section-5">完毕</h4>
+
+<p>到此，基本的配置就完毕了。现在 AndroidStudio 的控制面板会多一个 CheckStyle，你可以在这里方便的进行代码检查。</p>
+
+<p>可以点击面板的左上角下拉框 Rule 去动态切换不同的 checkstyle。</p>
+
+<h3 id="section-6">总结</h3>
+
+<p>其实代码检查还有很多方式，这只是一种，有兴趣可以看看其他几种,如 Lint , <a href="http://findbugs.sourceforge.net/">Findbugs</a> 。</p>
+
+<h3 id="section-7">有用的超链接</h3>
+<p><a href="https://github.com/checkstyle/checkstyle">checkstyle 项目地址</a></p>
+
+<p><a href="http://checkstyle.sourceforge.net/checks.html">CheckStyle API 文档</a></p>
+
+<p><a href="http://tech.glowing.com/cn/dai-ma-gui-fan-he-androidxiang-mu-zhong-de-xie-ke-yong-gong-ju/">代码规范和Android项目中的一些可用工具</a></p>
+
+<p><a href="https://github.com/noveogroup/android-check">Static code analysis plugin for Android project</a></p>
+
+
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                </style>
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="/2016/04/07/checkstyle"
+                    data-title="使用 CheckStyle 检查代码"
+                    data-url="http://gudong.name/2016/04/07/checkstyle.html"
+                    data-images="http://gudong.name/assets/header_image.jpg"
+                    data-content="前言
+
+最近在看廖祜秋的下拉刷新项目 android-Ultra-Pull-To-Refresh，就在今天做了一些精简操作后，准备加入项目准备使用时，发现... | 咕咚的个人站点 " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2016/03/11/handler_analysis_three.html" data-toggle="tooltip" data-placement="top" title="Handler 之 ThreadLocal 相关">
+                        Previous<br>
+                        <span>Handler 之 ThreadLocal 相关</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2016/04/09/rxjava_operate.html" data-toggle="tooltip" data-placement="top" title="使用 RxJava 重构一段判断逻辑">
+                        Next<br>
+                        <span>使用 RxJava 重构一段判断逻辑</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment" id="comments">
+                    <div class="ds-thread"
+                        data-thread-key="/2016/04/07/checkstyle"
+                        data-title="使用 CheckStyle 检查代码"
+                        data-url="http://gudong.name/2016/04/07/checkstyle.html" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#随想" title="随想" rel="8">
+                                          随想
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Skills" title="Skills" rel="2">
+                                          Skills
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#Collection" title="Collection" rel="2">
+                                          Collection
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Tools" title="Tools" rel="2">
+                                          Tools
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#Experience" title="Experience" rel="5">
+                                          Experience
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#Java" title="Java" rel="4">
+                                          Java
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#线程" title="线程" rel="2">
+                                          线程
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#Gradle" title="Gradle" rel="2">
+                                          Gradle
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Usage" title="Usage" rel="2">
+                                          Usage
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Product" title="Product" rel="3">
+                                          Product
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Performance" title="Performance" rel="2">
+                                          Performance
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#RxJava" title="RxJava" rel="2">
+                                          RxJava
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Handler" title="Handler" rel="3">
+                                          Handler
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#Source" title="Source" rel="2">
+                                          Source
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+              				
+              			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>朋友</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="http://drakeet.me">Drakeet</a></li>
+                    
+                        <li><a href="http://blog.daimajia.com">代码家</a></li>
+                    
+                        <li><a href="http://hujiaweibujidao.github.io/">五道口宅男</a></li>
+                    
+                        <li><a href="http://itangqi.me/">汤奇</a></li>
+                    
+                        <li><a href="http://wuxiaolong.me/">吴小龙同学</a></li>
+                    
+                        <li><a href="http://yifeiyuan.me/">程序亦非猿</a></li>
+                    
+                        <li><a href="http://www.easydone.cn/">Ailurus</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'maoruibin';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/maoruibin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/maoruibin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/maoruibin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li>
+                        <a href="https://twitter.com/maoruibin9035">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 咕咚 2016
+                    <br>
+                    Theme from © <a href="http://huangxuan.me">Hux</a> | Powered by <a href="http://jekyllcn.com/">Jekyll</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- Highlight.js -->
+<script>
+    async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+        hljs.initHighlightingOnLoad();
+    })
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#607D8B'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+<link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        // var $nav = document.querySelector("nav");
+        // if($nav) FastClick.attach($nav);
+
+        // global FastClick!!
+        FastClick.attach(document.body);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-64640288-1';
+    var _gaDomain = 'gudong.name';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'de1df75db196971264bd87815c96f646';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

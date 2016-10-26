@@ -1,35 +1,249 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8a38b3df-3e45-427f-8c90-fe1fd9379381" name="Default" comment="tidy blog tag&#10;make a draft to blog&#10;move assert floder &#10;updae global config&#10;add new feature for custom header color">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_drafts/Android-transition.markdown" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/head_2015_life.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/header_bk_about.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/header_image.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/header_image_back.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/header_image_one.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/header_image_two.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    <list default="true" id="8a38b3df-3e45-427f-8c90-fe1fd9379381" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/head_2015_life.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_bk_about.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_image.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_image_2016_10_22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_image_back.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_image_line_arrow.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_image_lobal.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_image_mountin.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_image_post.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_image_road.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_image_two.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_image_x.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/1024_family.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/1024_food.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/1024_jekyll_fail.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/1024_keep.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/1024_old_theme.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/1024_programer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/1024_suc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/2015_summary_appplus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/2015_summary_basketball.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/QQ20150718-1@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/QQ20150718-2@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/QQ20150718-3@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/about_gd_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/about_gd_chance.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/about_gd_duang.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/about_gd_problem.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/about_gd_solve.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/android_m_install.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/android_m_permission.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/android_m_sms.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/appplus_about_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/appplus_about_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/appplus_about_detail.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/appplus_about_index.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/appplus_about_setting.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/appplus_about_theme.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/butterknife_onclick_method_image.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/cakeview_principle.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/cakeview_principle_v2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/cakeview_v2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/checkstyle_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/checkstyle_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/checkstyle_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/checkstyle_4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/class_loader_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/class_loader_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/class_loader_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dagger_mvp_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/device-2015-09-11-dialog_theme_bug.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/device-2015-09-11-dialog_theme_bug_fix.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dycc_01.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dycc_02.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dycc_03.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dycc_04.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dycc_05.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dycc_06.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dycc_07.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dycc_08.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dycc_09.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dycc_10.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/gank_mvp_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/gank_mvp_3.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/gank_mvp_introduce.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/github_usage_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/github_usage_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/github_usage_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/github_usage_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/github_usage_5.webp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/head_2015_life.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/header_bk_about.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/header_image.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/header_image_back.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/header_image_one.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/header_image_two.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/android-icon-144x144.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/android-icon-192x192.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/android-icon-36x36.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/android-icon-48x48.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/android-icon-72x72.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/android-icon-96x96.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon-114x114.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon-120x120.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon-144x144.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon-152x152.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon-180x180.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon-57x57.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon-60x60.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon-72x72.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon-76x76.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon-precomposed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/favicon-16x16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/favicon-32x32.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/favicon-96x96.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/ms-icon-144x144.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/ms-icon-150x150.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/ms-icon-310x310.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/ms-icon-70x70.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/instacode copy.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/instacode.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/licence_1.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/licence_2.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/licence_3.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/logo_01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/logo_02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/mars_felling_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/mars_felling_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/mars_felling_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/mars_felling_4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/mars_felling_5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/mars_felling_6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/mars_felling_7.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/mmb_index.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/over_draw_bad_one.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/over_draw_bad_two.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/over_draw_color_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/over_draw_color_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/over_draw_color_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/over_draw_good_one.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/over_draw_good_two.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/profile-placeholder.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/profile.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/profile_circle.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/profile_head.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/sublime_java.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/tanshan_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/tanshan_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/tanshan_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/tanshan_4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/tanshan_5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/tronsition_effect.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/tronsition_effect_2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/img/404-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/img/contact-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/img/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/img/icon_wechat.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/img/tag-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/fonts/huxico.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/fonts/huxico.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/fonts/huxico.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/images/logo-react.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/images/logo-vue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/images/profile_circle.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/images/work_appplus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/images/work_gd_translate.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_posts/2016-10-22-Android-transition.markdown" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/04/17/change-log.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/05/19/way.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/05/21/custom_view_cakeview.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/05/26/lock_screen.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/06/03/color_alaph.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/06/03/jekyll.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/06/29/mac_sublime_java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/07/18/android_popupMenu_icon.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/07/18/android_shift_theme.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/07/25/android_webview_chinese_encode.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/08/03/AtomicInteger_Introduce.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/08/03/AtomicInteger_Unsafe.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/08/03/java_important_word.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/09/10/alert_dialog_theme.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/09/13/gradlebuild-best-practice.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/09/27/project-rule.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/10/20/java-loader.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/10/27/bitmap-tip.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/11/24/copy-right-meizhi.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/12/20/watch_dependencies_path.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/12/21/reason-for-appplus.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/12/22/my_2015_life.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/12/27/mars_felling.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/01/13/android-performance-patterns-first-note.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/01/15/over_draw_color_introduce.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/01/21/RxJava_In_AppPlus.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/01/26/about-my-project.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/02/25/SharePreference_service_activity.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/03/10/handler_analysis_two.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/03/11/handler_analysis_three.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/04/07/checkstyle.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/04/09/rxjava_operate.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/04/15/butterknife_introduce.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/07/02/my-blog-update-record.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/10/13/viewcontroller-foreword.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/404.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/CNAME" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/about.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/advanced/2015/11/23/gank_mvp_introduce.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/browserconfig.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/manifest.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/css/hux-blog.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/css/hux-blog.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/css/syntax.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/feed.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/feeling/生活/2015/10/24/1024.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/foundation/2016/03/10/handler_analysis_one.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/js/animatescroll.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/js/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/js/hux-blog.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/js/hux-blog.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/js/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/js/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/js/jquery.nav.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/js/jquery.tagcloud.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/page2/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/page3/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/css/timeline.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/fonts/huxico.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/js/modernizr.custom.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/product/2016/02/26/gudong_translate.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/skills/2015/10/13/github-usage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/tags.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/technology/2016/10/22/Android-transition.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/技术/2015/11/10/android_m_permission.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_config.yml" afterPath="$PROJECT_DIR$/_config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/nav.html" afterPath="$PROJECT_DIR$/_includes/nav.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_layouts/post.html" afterPath="$PROJECT_DIR$/_layouts/post.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-04-17-change-log.markdown" afterPath="$PROJECT_DIR$/_posts/2015-04-17-change-log.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-09-27-project-rule.markdown" afterPath="$PROJECT_DIR$/_posts/2015-09-27-project-rule.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-10-13-github-usage.markdown" afterPath="$PROJECT_DIR$/_posts/2015-10-13-github-usage.markdown" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-05-21-custom_view_cakeview.markdown" afterPath="$PROJECT_DIR$/_posts/2015-05-21-custom_view_cakeview.markdown" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-05-26-lock_screen.markdown" afterPath="$PROJECT_DIR$/_posts/2015-05-26-lock_screen.markdown" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-06-29-mac_sublime_java.markdown" afterPath="$PROJECT_DIR$/_posts/2015-06-29-mac_sublime_java.markdown" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-07-18-android_popupMenu_icon.markdown" afterPath="$PROJECT_DIR$/_posts/2015-07-18-android_popupMenu_icon.markdown" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-07-18-android_shift_theme.markdown" afterPath="$PROJECT_DIR$/_posts/2015-07-18-android_shift_theme.markdown" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-10-27-bitmap-tip.markdown" afterPath="$PROJECT_DIR$/_posts/2015-10-27-bitmap-tip.markdown" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-11-10-android_m_permission.markdown" afterPath="$PROJECT_DIR$/_posts/2015-11-10-android_m_permission.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-11-23-gank_mvp_introduce.markdown" afterPath="$PROJECT_DIR$/_posts/2015-11-23-gank_mvp_introduce.markdown" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-12-20-watch_dependencies_path.markdown" afterPath="$PROJECT_DIR$/_posts/2015-12-20-watch_dependencies_path.markdown" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-12-21-reason-for-appplus.markdown" afterPath="$PROJECT_DIR$/_posts/2015-12-21-reason-for-appplus.markdown" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-12-27-mars_felling.markdown" afterPath="$PROJECT_DIR$/_posts/2015-12-27-mars_felling.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2016-01-21-RxJava_In_AppPlus.markdown" afterPath="$PROJECT_DIR$/_posts/2016-01-21-RxJava_In_AppPlus.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2016-01-26-about-my-project.markdown" afterPath="$PROJECT_DIR$/_posts/2016-01-26-about-my-project.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2016-02-26-gudong_translate.markdown" afterPath="$PROJECT_DIR$/_posts/2016-02-26-gudong_translate.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2016-03-10-handler_analysis_two.markdown" afterPath="$PROJECT_DIR$/_posts/2016-03-10-handler_analysis_two.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2016-03-11-handler_analysis_three.markdown" afterPath="$PROJECT_DIR$/_posts/2016-03-11-handler_analysis_three.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2016-04-09-rxjava_operate.markdown" afterPath="$PROJECT_DIR$/_posts/2016-04-09-rxjava_operate.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2016-04-15-butterknife_introduce.markdown" afterPath="$PROJECT_DIR$/_posts/2016-04-15-butterknife_introduce.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2016-10-13-viewcontroller-foreword.markdown" afterPath="$PROJECT_DIR$/_posts/2016-10-13-viewcontroller-foreword.markdown" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about.html" afterPath="$PROJECT_DIR$/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/less/hux-blog.less" afterPath="$PROJECT_DIR$/less/hux-blog.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags.html" afterPath="$PROJECT_DIR$/tags.html" />
     </list>
     <ignored path="maoruibin.github.com.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,60 +264,132 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="2015-04-17-change-log.markdown" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2015-04-17-change-log.markdown">
+      <file leaf-file-name="2015-07-18-android_popupMenu_icon.markdown" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2015-07-18-android_popupMenu_icon.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="-840">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2016-10-22-Android-transition.markdown" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2015-07-18-android_shift_theme.markdown" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2015-07-18-android_shift_theme.markdown">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2016-01-26-about-my-project.markdown" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2016-01-26-about-my-project.markdown">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2016-02-25-SharePreference_service_activity.markdown" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2016-02-25-SharePreference_service_activity.markdown">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2016-02-26-gudong_translate.markdown" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2016-02-26-gudong_translate.markdown">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2016-03-10-handler_analysis_one.markdown" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2016-03-10-handler_analysis_one.markdown">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2016-03-10-handler_analysis_two.markdown" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2016-03-10-handler_analysis_two.markdown">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2016-04-15-butterknife_introduce.markdown" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2016-04-15-butterknife_introduce.markdown">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2016-10-13-viewcontroller-foreword.markdown" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2016-10-13-viewcontroller-foreword.markdown">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2016-10-22-Android-transition.markdown" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2016-10-22-Android-transition.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state relative-caret-position="345">
+              <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/about.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="post.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_layouts/post.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding>
-                <marker date="1477162504000" expanded="true" signature="424:943" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -142,9 +428,21 @@
         <option value="$PROJECT_DIR$/_posts/2016-10-22-Android-transition.markdown" />
         <option value="$PROJECT_DIR$/_posts/2016-10-13-viewcontroller-foreword.markdown" />
         <option value="$PROJECT_DIR$/_config.yml" />
+        <option value="$PROJECT_DIR$/tags.html" />
+        <option value="$PROJECT_DIR$/_includes/nav.html" />
         <option value="$PROJECT_DIR$/_layouts/post.html" />
         <option value="$PROJECT_DIR$/about.html" />
+        <option value="$PROJECT_DIR$/_posts/2015-11-10-android_m_permission.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2015-05-21-custom_view_cakeview.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2015-07-18-android_popupMenu_icon.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2015-12-20-watch_dependencies_path.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2015-05-26-lock_screen.markdown" />
         <option value="$PROJECT_DIR$/_posts/2015-04-17-change-log.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2015-06-29-mac_sublime_java.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2015-10-27-bitmap-tip.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2015-12-21-reason-for-appplus.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2015-12-27-mars_felling.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2015-07-18-android_shift_theme.markdown" />
       </list>
     </option>
   </component>
@@ -209,6 +507,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="_posts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="maoruibin.github.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="maoruibin.github.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="maoruibin.github.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="maoruibin.github.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_includes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -478,11 +804,19 @@
       <option name="presentableId" value="Default" />
       <updated>1477141090457</updated>
     </task>
+    <task id="LOCAL-00001" summary="tidy blog tag&#10;make a draft to blog&#10;move assert floder &#10;updae global config&#10;add new feature for custom header color">
+      <created>1477163051561</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1477163051561</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="93" y="23" width="1347" height="873" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -493,11 +827,11 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43973508" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43973508" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22171946" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980132" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -523,80 +857,262 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/img/404-bg.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/contact-bg.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/favicon.ico">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/icon_wechat.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/tag-bg.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_layouts/page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/less/hux-blog.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5224">
-          <caret line="400" column="59" selection-start-line="400" selection-start-column="59" selection-end-line="400" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_layouts/post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <marker date="1477162504000" expanded="true" signature="424:943" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2016-10-13-viewcontroller-foreword.markdown">
+    <entry file="file://$PROJECT_DIR$/_posts/2016-03-11-handler_analysis_three.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+        <state relative-caret-position="149">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2016-04-07-checkstyle.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/2015/05/21/custom_view_cakeview.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="255" column="3" selection-start-line="255" selection-start-column="3" selection-end-line="255" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/2015/05/26/lock_screen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="253" column="3" selection-start-line="253" selection-start-column="3" selection-end-line="253" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/2015/07/18/android_popupMenu_icon.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="249" column="3" selection-start-line="249" selection-start-column="3" selection-end-line="249" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/2015/10/20/java-loader.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="430" column="3" selection-start-line="430" selection-start-column="3" selection-end-line="430" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/2015/10/27/bitmap-tip.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="249" column="3" selection-start-line="249" selection-start-column="3" selection-end-line="249" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/2015/12/20/watch_dependencies_path.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="250" column="3" selection-start-line="250" selection-start-column="3" selection-end-line="250" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/2015/12/21/reason-for-appplus.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="255" column="3" selection-start-line="255" selection-start-column="3" selection-end-line="255" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/2016/01/21/RxJava_In_AppPlus.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="423" column="3" selection-start-line="423" selection-start-column="3" selection-end-line="423" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/2016/10/25/2015-04-17-change-log.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="71" column="3" selection-start-line="71" selection-start-column="3" selection-end-line="71" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="676" column="0" selection-start-line="676" selection-start-column="0" selection-end-line="676" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/page2/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="259" column="0" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/page4/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="313" column="0" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/raft/2015/04/17/change-log.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="273" column="3" selection-start-line="273" selection-start-column="3" selection-end-line="273" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/raft/2015/05/21/custom_view_cakeview.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="257" column="3" selection-start-line="257" selection-start-column="3" selection-end-line="257" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/raft/2015/05/26/lock_screen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="255" column="3" selection-start-line="255" selection-start-column="3" selection-end-line="255" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/raft/2015/07/18/android_popupMenu_icon.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="251" column="3" selection-start-line="251" selection-start-column="3" selection-end-line="251" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/raft/2015/10/20/java-loader.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="432" column="3" selection-start-line="432" selection-start-column="3" selection-end-line="432" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/raft/2015/10/27/bitmap-tip.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="251" column="3" selection-start-line="251" selection-start-column="3" selection-end-line="251" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/raft/2015/12/20/watch_dependencies_path.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="252" column="3" selection-start-line="252" selection-start-column="3" selection-end-line="252" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/raft/2015/12/21/reason-for-appplus.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="257" column="3" selection-start-line="257" selection-start-column="3" selection-end-line="257" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/raft/2016/01/21/RxJava_In_AppPlus.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="423" column="3" selection-start-line="423" selection-start-column="3" selection-end-line="423" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/raft/feed.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/raft/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="234" column="0" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/raft/page2/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="264" column="0" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/raft/technology/2016/10/22/Android-transition.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="254" column="3" selection-start-line="254" selection-start-column="3" selection-end-line="254" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/raft/技术/2015/11/10/android_m_permission.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="254" column="3" selection-start-line="254" selection-start-column="3" selection-end-line="254" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/技术/2015/11/10/android_m_permission.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="254" column="3" selection-start-line="254" selection-start-column="3" selection-end-line="254" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/amdefine/README.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/ansi-styles/readme.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="37" column="29" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -606,8 +1122,184 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="149">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-05-26-lock_screen.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-06-29-mac_sublime_java.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-10-24-1024.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-10-27-bitmap-tip.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-11-23-gank_mvp_introduce.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-12-21-reason-for-appplus.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-12-22-my_2015_life.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-12-27-mars_felling.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2016-01-13-android-performance-patterns-first-note.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2016-01-26-about-my-project.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2016-02-25-SharePreference_service_activity.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2016-02-26-gudong_translate.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2016-03-10-handler_analysis_one.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2016-03-10-handler_analysis_two.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2016-04-15-butterknife_introduce.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2016-10-13-viewcontroller-foreword.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -617,8 +1309,30 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        <state relative-caret-position="345">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-07-18-android_popupMenu_icon.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-840">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-07-18-android_shift_theme.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
           <folding />
         </state>
       </provider>

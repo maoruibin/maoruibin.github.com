@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Android Developer 关注移动开发 独立开发者 篮球粉">
+    <meta name="keyword"  content="咕咚 咕咚翻译 毛瑞斌 大侠咕咚 咕咚的博客 徐生梅的男朋友 甘肃">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+      <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="assets/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>咕咚的个人站点</title>
+
+    <link rel="canonical" href="http://gudong.name/page2/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400normal,700normal' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300normal,400normal,600normal,700normal,800normal,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">咕咚</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">主页</a>
+                    </li>
+                    
+
+                      
+                    
+
+                      
+                        <li>
+                            <a href="/about">关于</a>
+                        </li>
+                      
+                    
+
+                      
+                    
+
+                      
+                        <li>
+                            <a href="/portfolio/">作品</a>
+                        </li>
+                      
+                    
+
+                      
+                    
+
+                      
+                        <li>
+                            <a href="/tags">标签</a>
+                        </li>
+                      
+                    
+
+                      
+                    
+
+                      
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from
+     * $toggle/$collapse will break global delegation.
+     *
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/assets/header_image.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1 style="font-size:2.98598em;">咕咚</h1>
+                    <!--<hr class="small">-->
+                    <span class="subheading">2016 - Here I Am</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+        
+
+<!-- USE SIDEBAR -->
+    <!-- PostList Container -->
+    		<div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                postlist-container
+            ">
+    			
+<div class="post-preview">
+    <a href="/advanced/2015/11/23/gank_mvp_introduce.html">
+        <h2 class="post-title">
+             MVP 模式在 GankDaily 中的应用
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        最近完成了一个干货客户端 GankDaily ，
+一个基于干货集中营的手机客户端，整个客户端借鉴 drakeet 的妹纸应用。但是在原项目的基础上，
+自己使用 MVP 模式对项目进行重构，让代码结构进一步解耦，使业务逻辑和视图表现层相分离，从而让代码逻辑变得更简单，
+以下就整理了自己在重构项目过程中对 MVP 这种模式的理解以及项目中如何实施 MVP 的模式。
+
+关于MVP
+
+MVP 是 M...
+    </div>
+    <p class="post-meta">
+        发表于 2015-11-23&nbsp;&nbsp;
+
+        <a class="comment" href="advanced/2015/11/23/gank_mvp_introduce.html#comments">
+							<span class="ds-thread-count" data-thread-key="/advanced/2015/11/23/gank_mvp_introduce"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/%E6%8A%80%E6%9C%AF/2015/11/10/android_m_permission.html">
+        <h2 class="post-title">
+            在Android 6.0 设备上动态获取权限
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        众所周知，Android 6.0 相比之前的Android版本有一个很大的不同点，就是动态获取权限。今天自己在做拨号功能时，正巧遇到这个问题，
+顺手记录下在Android 6.0 上如何动态获取权限。
+
+下面从自己一开始的问题入手
+
+###实现拨号功能
+
+说到拨号，一个 Intent 就搞定，代码如下，
+
+   private void callDirectly(String mobile)...
+    </div>
+    <p class="post-meta">
+        发表于 2015-11-10&nbsp;&nbsp;
+
+        <a class="comment" href="%E6%8A%80%E6%9C%AF/2015/11/10/android_m_permission.html#comments">
+							<span class="ds-thread-count" data-thread-key="/%E6%8A%80%E6%9C%AF/2015/11/10/android_m_permission"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/10/27/bitmap-tip.html">
+        <h2 class="post-title">
+            Bitmap相关的知识点整理
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        图片是Android应用常见的资源，在Android中，图片数据用Bitmap这个类封装。这篇文章整理跟他相关的一些知识点。
+
+###1、Bitmap.Config
+
+这是Bitmap的一个内部类(枚举)，是Bitmap关于色彩显示的配置，不同的配置对应不同的加载效果，下面是相应的文档介绍
+
+Possible bitmap configurations. A bitmap configura...
+    </div>
+    <p class="post-meta">
+        发表于 2015-10-27&nbsp;&nbsp;
+
+        <a class="comment" href="2015/10/27/bitmap-tip.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/10/27/bitmap-tip"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/feeling/%E7%94%9F%E6%B4%BB/2015/10/24/1024.html">
+        <h2 class="post-title">
+            我的 1024
+        </h2>
+        
+        <h3 class="post-subtitle">
+            
+        </h3>
+        
+    </a>
+    <div class="post-content-preview">
+        
+  “生活不止眼前的苟且，还有诗和远方”
+
+
+今天是10月24，也就是所谓的程序员节，很多程序员朋友今天都是关上电脑，挂着免战牌，或游戏、或聚会玩耍…恩，我是个例外。以下纯粹以流水账的形式记录了我的一天。
+如有雷同，纯属巧合。
+
+早晨
+9点起床，在洗漱的同时给自己做了个荷包蛋，因为上周买的老北京糖火烧还有三个没吃，所以2个荷包蛋+1个糖火烧就做了我的早餐，这配置还不错，哦，不对，应该是搭配...
+    </div>
+    <p class="post-meta">
+        发表于 2015-10-24&nbsp;&nbsp;
+
+        <a class="comment" href="feeling/%E7%94%9F%E6%B4%BB/2015/10/24/1024.html#comments">
+							<span class="ds-thread-count" data-thread-key="/feeling/%E7%94%9F%E6%B4%BB/2015/10/24/1024"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/10/20/java-loader.html">
+        <h2 class="post-title">
+            Java类加载机制
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        作为一个Java程序员，我们写过很多Java类，那他们具体是怎么运行起来的呢？
+一开始，我也没有去关心过这个问题，或者说是自己没有在这方面思考过，但是后来觉得，既然每天都在做这些事，为什么不深入了解下具体的原理逻辑呢。知其然还应该知其所以然，作为一个有追求程序员，我们应该对自己有更高的要求。博文是自己对Java类加载的一些认识，如有错误欠缺，欢迎指正补充。
+
+这里，我们在开始主题之前，先梳理...
+    </div>
+    <p class="post-meta">
+        发表于 2015-10-20&nbsp;&nbsp;
+
+        <a class="comment" href="2015/10/20/java-loader.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/10/20/java-loader"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/skills/2015/10/13/github-usage.html">
+        <h2 class="post-title">
+            如何用好github中的watch、star、fork
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        在每个 github 项目的右上角，都有三个按钮,分别是 watch、star、fork，但是有些刚开始使用 github 的同学，可能对这三个按钮的使用却不怎么了解，
+包括一开始使用 github 的我也是如此，这篇博客，结合自己的理解和使用，说说这三个按钮的用法以及一些个人见解。
+
+如下图所示这是我们经常看到的三个按钮。
+
+
+
+从左至右，依次是 watch star fork,下面分别说...
+    </div>
+    <p class="post-meta">
+        发表于 2015-10-13&nbsp;&nbsp;
+
+        <a class="comment" href="skills/2015/10/13/github-usage.html#comments">
+							<span class="ds-thread-count" data-thread-key="/skills/2015/10/13/github-usage"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/09/27/project-rule.html">
+        <h2 class="post-title">
+            我的Android项目开发规范（不断更新）
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        代码永远写不完，但是写的时间久了，就应该形成自己的代码规范或者自己团队的规范，尽管一些规范已经形成于脑海，但是还是有必要记录下来。从现在开始，一点点积累开发规范。这里积累开发过程中所有的规范细节，尽可能详细。
+
+类文件
+
+项目目录结构
+
+接口文件
+
+命名规范
+
+
+  id命名采用右侧格式 {view缩写}{module_name}{view的逻辑名称}
+
+
+    
+        空间
+ ...
+    </div>
+    <p class="post-meta">
+        发表于 2015-09-27&nbsp;&nbsp;
+
+        <a class="comment" href="2015/09/27/project-rule.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/09/27/project-rule"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/09/13/gradlebuild-best-practice.html">
+        <h2 class="post-title">
+            build.gradle最佳实践之buildConfigField
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        使用AndroidStudio进行开发，其中很重要的一个文件就是build.gradle,他是整个项目的控制中心，这里收集一些日常会用到的语法或者使用技巧，以备后用。这篇博客主要说明
+buildTypes节点下使用buildConfigField。
+
+下面是默认的buildTypes形式
+
+buildTypes {
+    release {
+        proguardFiles ge...
+    </div>
+    <p class="post-meta">
+        发表于 2015-09-13&nbsp;&nbsp;
+
+        <a class="comment" href="2015/09/13/gradlebuild-best-practice.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/09/13/gradlebuild-best-practice"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/09/10/alert_dialog_theme.html">
+        <h2 class="post-title">
+            用Support包显示MaterialDialog
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        如果自己做个人App项目，很可能在一些情况下用到Dialog,Android自己也提供了系统Dialog,但是在MaterialDesigner出现之前，样子确实很丑，这篇博客讲解如何使用Support包中
+的API来实现MD风格的Dialog。
+
+Support V7包在22.1.0之前的任何一个版本，AlertDialog一直都是Android4.0风格，直到Support-V7:22....
+    </div>
+    <p class="post-meta">
+        发表于 2015-09-10&nbsp;&nbsp;
+
+        <a class="comment" href="2015/09/10/alert_dialog_theme.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/09/10/alert_dialog_theme"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/08/03/java_important_word.html">
+        <h2 class="post-title">
+            Java关键字之volatile
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        Java有众多关键字，volatile作为一个和同步相关的关键字，很少在自己的项目中使用，今天在看Handler源码时无意看到，顺便便了解了下。
+记录以备后用。
+
+volatile关键字 可以被看作是一种 “程度较轻的 synchronized”；与 synchronized 块相比，volatile 变量所需的编码较少，并且运行时开销也较少，但是它所能实现的功能也仅是 synchroniz...
+    </div>
+    <p class="post-meta">
+        发表于 2015-08-03&nbsp;&nbsp;
+
+        <a class="comment" href="2015/08/03/java_important_word.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/08/03/java_important_word"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/08/03/AtomicInteger_Unsafe.html">
+        <h2 class="post-title">
+            Unsafe类介绍
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        这个类是用于执行低级别、不安全操作的方法集合。尽管这个类和所有的方法都是公开的（public），但是这个类的使用仍然受限，你无法在自己的java程序中直接使用该类，因为只有授信的代码才能获得该类的实例。
+从上面的描述，可以了解到该类是用来执行较低级别的操作的，比如获取某个属性在内存中的位置，(在AtomicInteger中就用到了)不过一般人很少会有这样的需求。
+
+今天在看AsynTask源...
+    </div>
+    <p class="post-meta">
+        发表于 2015-08-03&nbsp;&nbsp;
+
+        <a class="comment" href="2015/08/03/AtomicInteger_Unsafe.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/08/03/AtomicInteger_Unsafe"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/08/03/AtomicInteger_Introduce.html">
+        <h2 class="post-title">
+            AtomicInteger 一个和高并发有关的工具类
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        AtomicInteger，一个提供原子操作的Integer的类。在Java语言中，++i和i++操作并不是线程安全的，在使用的时候，不可避免的会用到synchronized关键字。而AtomicInteger则通过一种线程安全的加减操作接口。
+
+使用AtomicInteger是非常的安全的
+那么为什么不使用记数器自加呢，例如count++这样的，因为这种计数是线程不安全的，高并发访问时统计...
+    </div>
+    <p class="post-meta">
+        发表于 2015-08-03&nbsp;&nbsp;
+
+        <a class="comment" href="2015/08/03/AtomicInteger_Introduce.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/08/03/AtomicInteger_Introduce"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/07/25/android_webview_chinese_encode.html">
+        <h2 class="post-title">
+            Android使用WebView加载中文时，乱码问题解决
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        在做App+这个项目时，使用了WebView来展示更新日志，但是在加载本地Html文件的时候，出现了乱码问题。这篇博客记录自己错误出现的原因
+、以及解决方法。
+
+由于本地Html文件日志文件中包含中文，在加载时就出现了乱码，加载方式如下
+
+String formatLodString = buf.toString();
+webView.loadData(formatLodString, "t...
+    </div>
+    <p class="post-meta">
+        发表于 2015-07-25&nbsp;&nbsp;
+
+        <a class="comment" href="2015/07/25/android_webview_chinese_encode.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/07/25/android_webview_chinese_encode"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/07/18/android_shift_theme.html">
+        <h2 class="post-title">
+            App中主题Theme使用以及Theme切换
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        在众多Android应用中，尤其是阅读类App，为了给用户提供更好的使用体验，App设计者一般都会提供两套主题，最常见的就是Light Theme和Dark Theme,分别对应了日间模式和夜间模式。比如第三方微博客户端Smooth,知乎等等他们都有这样的实现。
+
+因为自己对这块一直也比较感兴趣，所以自己就先尝试着做了一次，目前只是简单的尝试了下，下面记录一下这个过程，如果能帮助到更多的人，...
+    </div>
+    <p class="post-meta">
+        发表于 2015-07-18&nbsp;&nbsp;
+
+        <a class="comment" href="2015/07/18/android_shift_theme.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/07/18/android_shift_theme"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/07/18/android_popupMenu_icon.html">
+        <h2 class="post-title">
+            在流式布局中使用PopupMenu，以及遇到的问题
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        在做 AppPlus 项目的过程中，因为每个 Item 上面都有一个 PopupMenu，但是当时在xml文件中设置icon后，却发现icon不生效，下面是这个问题的解决方案。
+
+###问题
+
+自从MaterialDesigner出现后，像下图所示的设置流式布局随处可见。
+
+
+
+其中每个Item上都有一个OverFlow(更多)的icon，点击会弹出一个菜单，实现方式很简单，首先在meun文...
+    </div>
+    <p class="post-meta">
+        发表于 2015-07-18&nbsp;&nbsp;
+
+        <a class="comment" href="2015/07/18/android_popupMenu_icon.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/07/18/android_popupMenu_icon"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/06/29/mac_sublime_java.html">
+        <h2 class="post-title">
+            MAC 系统如何使用 Sublime Text 3 直接编译运行java代码
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        在Mac下使用Sublime时，如果要编译java文件，直接使用command+B命令就可以达到编译的效果，此时会在java源文件的目录下生成对应的.class文件，但这显然不能够满足我们的需求。
+如何才能直接编译并运行java代码呢？
+
+我最终通过如下解决方案，达到了command+B 在Sublime控制台显示运行结果的效果
+
+##第一步
+
+打开Finder 应用程序-&gt; Subl...
+    </div>
+    <p class="post-meta">
+        发表于 2015-06-29&nbsp;&nbsp;
+
+        <a class="comment" href="2015/06/29/mac_sublime_java.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/06/29/mac_sublime_java"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/06/03/jekyll.html">
+        <h2 class="post-title">
+            和Jekyll相关的有用博客网址收集
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        在使用优化博客时，经常会去一些其他的博客学习别人的经验，或者一些技巧，这篇文章主要收集有用的和 Jekyll 相关的博文。
+
+jekyll 官网文档部分翻译
+
+Jekyll 语法简单笔记
+
+    </div>
+    <p class="post-meta">
+        发表于 2015-06-03&nbsp;&nbsp;
+
+        <a class="comment" href="2015/06/03/jekyll.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/06/03/jekyll"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/06/03/color_alaph.html">
+        <h2 class="post-title">
+            Android通过颜色设置背景透明度
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        在开发过程中，经常需要把一个View的背景设置为某个颜色的半透明状态。通常我们可以通过设置颜色值的前两位而达到效果，一般情况下也能满足基本需求，比如白色色值为#ffffff,那么他的半透明颜色值可以写成#88ffffff，这样设置背景后也可以出现半透明效果。其实颜色值的前两位就是控制颜色的半透明状态的。
+
+但是有时设计师可能会跟你提这样的要求，他需要你设置一个0.56等等很参数化的半透明颜色...
+    </div>
+    <p class="post-meta">
+        发表于 2015-06-03&nbsp;&nbsp;
+
+        <a class="comment" href="2015/06/03/color_alaph.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/06/03/color_alaph"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/05/26/lock_screen.html">
+        <h2 class="post-title">
+            Android设备上实现锁屏
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        在Android设备上实现锁屏功能。
+
+##最终结果
+
+点击主界面的锁屏按钮，实现立即锁屏
+
+###准备阶段
+
+新建一个空的Android项目，并在主界面上拖放一个按钮。并在Button的布局文件中声明onClick事件。如下
+
+&lt;Button android:text="锁屏"
+    android:layout_width="match_parent"
+    android:l...
+    </div>
+    <p class="post-meta">
+        发表于 2015-05-26&nbsp;&nbsp;
+
+        <a class="comment" href="2015/05/26/lock_screen.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/05/26/lock_screen"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/05/21/custom_view_cakeview.html">
+        <h2 class="post-title">
+            自定义view之饼状图的实现
+        </h2>
+        
+    </a>
+    <div class="post-content-preview">
+        一个圆形饼状View的实现过程。
+
+CakeView是一个通过自定义做的饼状图，如下图所示，会根据比例显示不同的占比。
+
+
+
+这个view会根据传入的两个数字参数 生成不同的占比大小。
+
+###实现原理###
+
+画出一个背景为红色的大圆圈，然后再画一个圆心跟红色圆圈一致的扇形。最后在中央画一个白色小圆，然后大概的样式就出来了，最后在中央写上文字内容即可。如下演示
+
+
+上面已经很清楚的看到了具...
+    </div>
+    <p class="post-meta">
+        发表于 2015-05-21&nbsp;&nbsp;
+
+        <a class="comment" href="2015/05/21/custom_view_cakeview.html#comments">
+							<span class="ds-thread-count" data-thread-key="/2015/05/21/custom_view_cakeview"></span>
+				</a>
+
+    </p>
+</div>
+<hr>
+
+
+<!-- Pager -->
+
+<ul class="pager">
+    
+    <li class="previous">
+        <a href="/">&larr; Newer Posts</a>
+    </li>
+    
+    
+    <li class="next">
+        <a href="/page3">Older Posts &rarr;</a>
+    </li>
+    
+</ul>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"maoruibin"};
+  (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+       || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+    		</div>
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
+
+                <!-- Short About -->
+                <section class="visible-md visible-lg">
+                    <hr><h5><a href="/about/">咕咚</a></h5>
+                    <div class="short-about">
+                        
+                            <img src="/assets/profile_head.png" />
+                        
+                        
+                            <p>Android Developer</p>
+                        
+                        <!-- SNS Link -->
+                        <ul class="list-inline">
+                            
+
+                            
+                            <li>
+                                <a target="_blank" href="http://weibo.com/maoruibin">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+
+                            
+                            <li>
+                                <a target="_blank" href="https://github.com/maoruibin">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+
+                            
+                            <li>
+                                <a target="_blank" href="https://www.zhihu.com/people/maoruibin">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa  fa-stack-1x fa-inverse">知</i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+
+                            
+
+                            
+                            <li>
+                                <a href="https://twitter.com/maoruibin9035">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </section>
+                <!-- Last post -->
+                <hr>
+
+                <h5>最新文章</h5>
+                <ul class="list-inline">
+                
+                  <li>
+                    <a href="/advanced/2015/11/23/gank_mvp_introduce.html"> MVP 模式在 GankDaily 中的应用</a>
+                  </li>
+                
+                  <li>
+                    <a href="/%E6%8A%80%E6%9C%AF/2015/11/10/android_m_permission.html">在Android 6.0 设备上动态获取权限</a>
+                  </li>
+                
+                  <li>
+                    <a href="/2015/10/27/bitmap-tip.html">Bitmap相关的知识点整理</a>
+                  </li>
+                
+                  <li>
+                    <a href="/feeling/%E7%94%9F%E6%B4%BB/2015/10/24/1024.html">我的 1024</a>
+                  </li>
+                
+                </ul>
+
+                <!-- Last comment -->
+
+                <hr>
+
+                <h5>最新评论</h5>
+
+                <ul class="ds-recent-comments" style="padding-left:0px;"
+                    data-num-items="4"
+                    data-show-avatars="1"
+                    data-show-time="0"
+                    data-show-admin="0"
+                    data-show-title="0"
+                    data-excerpt-length="30">
+              </ul>
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">标签</a></h5>
+                    <div class="tags">
+                        
+                            
+                        
+                            
+                                <a href="/tags/#随想" title="随想" rel="8">
+                                    随想
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#Skills" title="Skills" rel="2">
+                                    Skills
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#Collection" title="Collection" rel="2">
+                                    Collection
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#Tools" title="Tools" rel="2">
+                                    Tools
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#Experience" title="Experience" rel="5">
+                                    Experience
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#Java" title="Java" rel="4">
+                                    Java
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#线程" title="线程" rel="2">
+                                    线程
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#Gradle" title="Gradle" rel="2">
+                                    Gradle
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#Usage" title="Usage" rel="2">
+                                    Usage
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#Product" title="Product" rel="3">
+                                    Product
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#Performance" title="Performance" rel="2">
+                                    Performance
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#RxJava" title="RxJava" rel="2">
+                                    RxJava
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#Handler" title="Handler" rel="3">
+                                    Handler
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#Source" title="Source" rel="2">
+                                    Source
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>友情链接</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="http://drakeet.me">Drakeet</a></li>
+                    
+                        <li><a href="http://blog.daimajia.com">代码家</a></li>
+                    
+                        <li><a href="http://hujiaweibujidao.github.io/">五道口宅男</a></li>
+                    
+                        <li><a href="http://itangqi.me/">汤奇</a></li>
+                    
+                        <li><a href="http://wuxiaolong.me/">吴小龙同学</a></li>
+                    
+                        <li><a href="http://yifeiyuan.me/">程序亦非猿</a></li>
+                    
+                        <li><a href="http://www.easydone.cn/">Ailurus</a></li>
+                    
+                </ul>
+                
+
+                <!--Begin Last Visitor -->
+                <hr>
+                <h5>最近来访</h5>
+                <ul class="ds-recent-visitors" data-num-items="20" style="padding-left:0px;"></ul>
+                <!--End Last Visitor -->
+
+    		</div>
+        
+	</div>
+</div>
+
+<!--多说js加载开始，一个页面只需要加载一次 -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"maoruibin"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+<!--多说js加载结束，一个页面只需要加载一次 -->
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/maoruibin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/maoruibin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/maoruibin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li>
+                        <a href="https://twitter.com/maoruibin9035">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 咕咚 2016
+                    <br>
+                    Theme from © <a href="http://huangxuan.me">Hux</a> | Powered by <a href="http://jekyllcn.com/">Jekyll</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- Highlight.js -->
+<script>
+    async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+        hljs.initHighlightingOnLoad();
+    })
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#607D8B'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+<link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        // var $nav = document.querySelector("nav");
+        // if($nav) FastClick.attach($nav);
+
+        // global FastClick!!
+        FastClick.attach(document.body);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-64640288-1';
+    var _gaDomain = 'gudong.name';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'de1df75db196971264bd87815c96f646';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+<!-- Side Catalog -->
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

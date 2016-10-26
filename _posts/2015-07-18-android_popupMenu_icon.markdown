@@ -8,7 +8,7 @@ tags: Experience
 在做 AppPlus 项目的过程中，因为每个 Item 上面都有一个 PopupMenu，但是当时在xml文件中设置icon后，却发现icon不生效，下面是这个问题的解决方案。
 
 
-###问题
+### 问题
 
 自从MaterialDesigner出现后，像下图所示的设置流式布局随处可见。
 
@@ -62,7 +62,7 @@ src/main/res/menu/item_pop_menu.xml
 其中不显示的原因在于，popupMenu 本身是不能设置显示 icon的，控制 icon 的显示是 MenuPopupHelper 这个类要做的事，
 但是又不能直接通过 popupMenu 得到 MenuPopupHelper 的实例。
 
-### 解决方案
+###  解决方案
 
 这种场景下，我们自然而然的想到了用反射，如下所示，最终问题完美解决
 
@@ -98,6 +98,6 @@ src/main/res/menu/item_pop_menu.xml
 
 <img src="/assets/QQ20150718-3@2x.png" style="width: 50%;margin: auto;">  
 
-### 参考链接            
+###  参考链接            
 
 [stackOverFlow page](http://stackoverflow.com/questions/6805756/is-it-possible-to-display-icons-in-a-popupmenu/31490355#31490355)

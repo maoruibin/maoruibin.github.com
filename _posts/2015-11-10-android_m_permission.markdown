@@ -12,7 +12,7 @@ tags:  Skills Usage
 
 下面从自己一开始的问题入手
 
-###实现拨号功能
+### 实现拨号功能
 
 说到拨号，一个 Intent 就搞定，代码如下，
 
@@ -27,7 +27,7 @@ tags:  Skills Usage
 
        <uses-permission android:name="android.permission.CALL_PHONE" />
 
-###问题
+### 问题
 
 如果在 Android 6.0 以前的设备上，上面的代码都是没有问题的，但是如果是在 Android 6.0 设备上，并且项目的 targetSdkVersion 你设置的是23，那么
 当你执行上面的拨号代码时，程序将会奔溃掉。
@@ -39,7 +39,7 @@ tags:  Skills Usage
 关于动态分配权限，一些同学可能不是很清楚。这里稍稍提一下 Android 6.0 的[权限动态分配](#permission)。
 如果你只对最终的解决方案感兴趣，可以跳过下面这节，直接去看[解决方案](#answer)
 
-###<a name="permission">权限动态分配</a> ###
+### <a name="permission">权限动态分配</a> ### 
 
 在 Android6.0 之前，下载好一个应用程序，点击安装我们看到的大都是像这样的界面。
 
@@ -71,7 +71,7 @@ not need to grant permissions when they install or update the app. It also gives
  the app's functionality; for example, a user could choose to give a camera app access to the camera but not
  to the device location. The user can revoke the permissions at any time, by going to the app's Settings screen.`
 
-###<a name="answer">解决方案</a> ###
+### <a name="answer">解决方案</a> ### 
 
 其实上面已经说了一种取巧的方案，将 targetSdkVersion 设为小于23的值，程序将不会奔溃，
 但是在Android 6.0 上你的应用程序依旧拨不了电话，这是真的。所以要想兼容6.0版本，必须通过下面的方式进行代码层面的兼容。
@@ -126,7 +126,7 @@ not need to grant permissions when they install or update the app. It also gives
 
 这里会对提供了一个对用户点击做判断的入口，开发者可以根据 grantResults[0] 的类型，来判断用户点击的是允许还是拒绝，接着就可以执行相应的逻辑了。
 
-### 有用的链接
+###  有用的链接
 
 关于AndroidM上权限的动态获取，这里只给出了一个最简单的示例，如果你还没有尽兴，那么下面这篇国外的博文，一定会让你满足。
 

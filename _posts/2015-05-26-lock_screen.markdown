@@ -7,11 +7,11 @@ tags: Skills
 ---
 在Android设备上实现锁屏功能。
 
-##最终结果
+## 最终结果
 
 点击主界面的锁屏按钮，实现立即锁屏
 
-###准备阶段
+### 准备阶段
 
 新建一个空的Android项目，并在主界面上拖放一个按钮。并在Button的布局文件中声明onClick事件。如下
 
@@ -22,7 +22,7 @@ tags: Skills
 
 在MainActivity.java文件中实现lockScreen方法。
 
-###实现步骤
+### 实现步骤
 
 1、创建一个空的广播接受者AdminManageReceiver.java
 

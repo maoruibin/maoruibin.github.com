@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Android Developer 关注移动开发 独立开发者 篮球粉">
+    <meta name="keyword"  content="咕咚 咕咚翻译 毛瑞斌 大侠咕咚 咕咚的博客 徐生梅的男朋友 甘肃">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+      <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="assets/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>博客更新日志随想 - 咕咚的个人站点</title>
+
+    <link rel="canonical" href="http://gudong.name/2016/07/02/my-blog-update-record.html">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400normal,700normal' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300normal,400normal,600normal,700normal,800normal,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">咕咚</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">主页</a>
+                    </li>
+                    
+
+                      
+                    
+
+                      
+                        <li>
+                            <a href="/about">关于</a>
+                        </li>
+                      
+                    
+
+                      
+                    
+
+                      
+                        <li>
+                            <a href="/portfolio/">作品</a>
+                        </li>
+                      
+                    
+
+                      
+                    
+
+                      
+                        <li>
+                            <a href="/tags">标签</a>
+                        </li>
+                      
+                    
+
+                      
+                    
+
+                      
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from
+     * $toggle/$collapse will break global delegation.
+     *
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/assets/header_image.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/assets/header_image.jpg')
+    }
+
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+
+                    
+                    <h1>博客更新日志随想</h1>
+                    
+                    
+
+
+                    <h2 class="subheading"></h2>
+                    
+
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#随想" title="随想">随想</a>
+                        
+                    </div>
+
+
+                    <span class="meta">咕咚 发表于 2016-07-02</span>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<p>今天终于有时间可以更新一下博客了。</p>
+
+<p>之前，一次偶然的机会，在网上看到<a href="http://huangxuan.me/">黄玄的博客</a>，也就是现在自己博客的风格，第一眼便喜欢上了这种风格，不论是大背景的 Header 还是侧边栏的设计，都是自己非常喜欢的设计，但是苦于自己前端能力薄弱，自从去年选择了一个 Jekyll 的主题后，能做的也只是一些简单的修建，如果要按照自己的想法去设计一些个性化的 feature 还是太难了。直到遇到这个博客风格，一见如故，所以在今年 3、4 月份的时候，就果断换了。这里顺便放一张上一版博客的旧照。</p>
+
+<p><img src="http://7xr9gx.com1.z0.glb.clouddn.com/gd.gif" style="width: 50%;" /></p>
+
+<p>整个切换过程还是挺顺利的，无非是一些配置、图片资源的替换，没有花费太多时间就搞定了，中间遇到了一些前端的<a href="https://github.com/Huxpro/huxpro.github.io/issues/57">问题</a>，最终也通过作者同学的热情解答很顺利的解决了。</p>
+
+<p>但是，后来博客上线一段时间后，一个同学跟我反映，多说评论系统的发送按钮背景有问题，默认是白色的，这样会让很多人找不到按钮，就会导致别人无法评论。</p>
+
+<p>后来我看了也确实是，但是从那时开始，自己已经忙的要死要活，根本没时间去改这个问题了，这同时也导致博客的留言从此一落千丈，到现在为止，也只有两个同学的留言，<a href="http://weibo.com/u/2030683111">达达</a>，<a href="http://weibo.com/androidmalin?refer_flag=1005055013_">androidmalin</a>,这可以从博客首页的最近留言中看到，真不知道你俩是怎么找到【发表】按钮的，对你们执着点赞，很多好友估计因为找不到发表按钮，根本不会多看两眼就离开了，对此，自己也很抱歉，这么久了，博客的小 bug 一直也没有改！</p>
+
+<p>直到今天，自己也终于可以坐在客厅，悠闲的拿起本本，做点工作之外，生活之外的事了，所以第一件事就是把那个 发表 按钮颜色给恢复回来。</p>
+
+<p>其实方法很简单，改 css 而已，不过这个博客使用了 Less ，所以需要借助 Grunt 才能让 css 更改生效，这在 那个 issue 中也提到了，总之更改很顺利。</p>
+
+<p>想想过去的这段时间，自己感触还是挺多的。</p>
+
+<p>加班.加班.加班.加班.加班.加班……</p>
+
+<p>从三月初来了新东家后后，正好赶上项目重构，no 应该是重写，自己便进入了新项目的重写状态，从老代码找接口，然后写新项目。</p>
+
+<p>后来自己不知不觉就给自己挖了几个大坑，让后后知后觉的跳了下去，从此代码写的不亦乐乎，但是在重写代码，重新架构也让自己最终的交付出了很多问题，UI 的bug、功能上的 bug … 测试的妹子都为我着急，自己的 bug 数量也一直名列前茅。</p>
+
+<p>后来我只能这样安慰自己，做的越多，错的的越多啊 ！</p>
+
+<p>其实这和写代码一个道理，一个函数代码写的越少，出错的可能性也就越小。同样是做事，做的越多，出错的可能性也就越大。</p>
+
+<p>不过总归来说，这段时间的工作还是收获不小，知道了自己的薄弱点，以及一些缺陷，这也是未来需要加强的部分。相信以后会越来越好。</p>
+
+<p>上面的都是工作，生活中，这段时间也是没少折腾！</p>
+
+<p>生活不止眼前的苟且，还有诗和远方。</p>
+
+<p>诗和远方…</p>
+
+<p>远方…</p>
+
+
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                </style>
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="/2016/07/02/my-blog-update-record"
+                    data-title="博客更新日志随想"
+                    data-url="http://gudong.name/2016/07/02/my-blog-update-record.html"
+                    data-images="http://gudong.name/assets/header_image.jpg"
+                    data-content="今天终于有时间可以更新一下博客了。
+
+之前，一次偶然的机会，在网上看到黄玄的博客，也就是现在自己博客的风格，第一眼便喜欢上了这种风格，不论是大背景的 He... | 咕咚的个人站点 " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2016/04/15/butterknife_introduce.html" data-toggle="tooltip" data-placement="top" title="ButterKnife 使用介绍">
+                        Previous<br>
+                        <span>ButterKnife 使用介绍</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2016/10/13/viewcontroller-foreword.html" data-toggle="tooltip" data-placement="top" title="Android 复杂界面开发实践之 ViewController: 前言">
+                        Next<br>
+                        <span>Android 复杂界面开发实践之 ViewController: 前言</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment" id="comments">
+                    <div class="ds-thread"
+                        data-thread-key="/2016/07/02/my-blog-update-record"
+                        data-title="博客更新日志随想"
+                        data-url="http://gudong.name/2016/07/02/my-blog-update-record.html" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>
+
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#随想" title="随想" rel="8">
+                                          随想
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Skills" title="Skills" rel="2">
+                                          Skills
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#Collection" title="Collection" rel="2">
+                                          Collection
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Tools" title="Tools" rel="2">
+                                          Tools
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#Experience" title="Experience" rel="5">
+                                          Experience
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#Java" title="Java" rel="4">
+                                          Java
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#线程" title="线程" rel="2">
+                                          线程
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#Gradle" title="Gradle" rel="2">
+                                          Gradle
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Usage" title="Usage" rel="2">
+                                          Usage
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Product" title="Product" rel="3">
+                                          Product
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Performance" title="Performance" rel="2">
+                                          Performance
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#RxJava" title="RxJava" rel="2">
+                                          RxJava
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Handler" title="Handler" rel="3">
+                                          Handler
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#Source" title="Source" rel="2">
+                                          Source
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+              				
+              			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>朋友</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="http://drakeet.me">Drakeet</a></li>
+                    
+                        <li><a href="http://blog.daimajia.com">代码家</a></li>
+                    
+                        <li><a href="http://hujiaweibujidao.github.io/">五道口宅男</a></li>
+                    
+                        <li><a href="http://itangqi.me/">汤奇</a></li>
+                    
+                        <li><a href="http://wuxiaolong.me/">吴小龙同学</a></li>
+                    
+                        <li><a href="http://yifeiyuan.me/">程序亦非猿</a></li>
+                    
+                        <li><a href="http://www.easydone.cn/">Ailurus</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'maoruibin';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/maoruibin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/maoruibin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/maoruibin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li>
+                        <a href="https://twitter.com/maoruibin9035">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 咕咚 2016
+                    <br>
+                    Theme from © <a href="http://huangxuan.me">Hux</a> | Powered by <a href="http://jekyllcn.com/">Jekyll</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- Highlight.js -->
+<script>
+    async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+        hljs.initHighlightingOnLoad();
+    })
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#607D8B'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+<link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        // var $nav = document.querySelector("nav");
+        // if($nav) FastClick.attach($nav);
+
+        // global FastClick!!
+        FastClick.attach(document.body);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-64640288-1';
+    var _gaDomain = 'gudong.name';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'de1df75db196971264bd87815c96f646';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+<!-- Side Catalog -->
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

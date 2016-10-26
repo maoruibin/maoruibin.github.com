@@ -9,7 +9,7 @@ tags: Collection
 ---
 图片是Android应用常见的资源，在Android中，图片数据用Bitmap这个类封装。这篇文章整理跟他相关的一些知识点。
 
-###1、Bitmap.Config
+### 1、Bitmap.Config
 
 这是Bitmap的一个内部类(枚举)，是Bitmap关于色彩显示的配置，不同的配置对应不同的加载效果，下面是相应的文档介绍
 
@@ -35,7 +35,7 @@ well as the ability to display transparent/translucent colors.`
 
 当然像素点占用的字节越多，他所存储的信息也就越多，图像也就越逼真，同时占用的内存也就越大。
 
-###2、大图缩放处理
+### 2、大图缩放处理
 
 设想一下自己手机拍了一张图片 大小为3120 * 4204，默认使用ARGB_8888的色彩存储方式，当把它加载到内存时，他的
 大小会是3120 * 4204 * 4 = 52465920字节 除以1024 * 1024 等于 50兆，通常的手机给每一个应用分配的内存大小，小点的也就16、32 兆左右，
@@ -46,7 +46,7 @@ well as the ability to display transparent/translucent colors.`
 
 加上我们实际需要显示的尺寸比真实图片尺寸小很多，所以，通常我们都会在图片显示时，对图片进行压缩处理，方法大都一样
 
-###1、计算图片实际宽高
+### 1、计算图片实际宽高
 
         BitmapFactory.Options options = new BitmapFactory.Options();
         //只加载图片边界信息到内存
@@ -56,7 +56,7 @@ well as the ability to display transparent/translucent colors.`
         int imageHeight = options.outHeight;
         int imageWidth = options.outWidth;
 
-###2、根据给定尺寸，计算缩放比
+### 2、根据给定尺寸，计算缩放比
 
         public static int calculateInSampleSize(
                     BitmapFactory.Options options, int reqWidth, int reqHeight) {
@@ -81,7 +81,7 @@ well as the ability to display transparent/translucent colors.`
             return inSampleSize;
         }
 
-###3、根据计算出的缩放比，对图片执行缩放处理
+### 3、根据计算出的缩放比，对图片执行缩放处理
 
         public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
                 int reqWidth, int reqHeight) {
@@ -107,7 +107,7 @@ well as the ability to display transparent/translucent colors.`
 [WorldMap](https://github.com/johnnylambada/WorldMap)
 
 
-##参考资料
+## 参考资料
 
 [Bitmap那些事之内存占用计算和加载注意事项](http://www.androidchina.net/2194.html)
 

@@ -1,0 +1,1774 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>咕咚</title>
+    <description>Android Developer 关注移动开发 独立开发者 篮球粉</description>
+    <link>http://gudong.name/</link>
+    <atom:link href="http://gudong.name/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sat, 22 Oct 2016 19:47:00 +0800</pubDate>
+    <lastBuildDate>Sat, 22 Oct 2016 19:47:00 +0800</lastBuildDate>
+    <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>在Android5.0以上设备实现过渡动画</title>
+        <description>&lt;p&gt;从Android5.0开始，系统提供一个很好看的Activity间的转场动画，具体就是共享两个界面中一些共有的View，让前后两个界面的跳转变得很流畅
+好看。&lt;/p&gt;
+
+&lt;p&gt;###具体效果&lt;/p&gt;
+
+&lt;p&gt;关于动画，还是看效果更直接一点。下面就是Android5.0设备上的转场动画示意图，这在 Google 自家的 App 里已经司空见惯。比如 Google Play
+中，从应用列表界面跳转到应用详情页，就可以看到很细腻的动画。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/tronsition_effect.gif&quot; alt=&quot;tronsition_effect&quot; title=&quot;tronsition_effect&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;###实现方法&lt;/p&gt;
+
+&lt;p&gt;现在有两个 Activity 分别为 MainActivity 和 DetailActivity ，如下所示。&lt;/p&gt;
+
+&lt;p&gt;MainActivity中是一些动物的列表展示，每个 Item包含一个动物图片和动物名称。点击 Item 需要跳转到对应动物的详情介绍页。&lt;/p&gt;
+
+&lt;p&gt;详情介绍页，会显示动物的大图，名称以及这个动物的详细介绍。因为两个界面有一些共有的View元素，所以比较适合用转场动画来
+优化交互逻辑，现在点击 MainActivity 的 Item，需要产生一个转场动画来到达详情页。下面就是具体实现方式。&lt;/p&gt;
+
+&lt;p&gt;####1、在DetailActivity中设置常量&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// View name of the header image. Used for activity scene transitions
+public static final String VIEW_NAME_HEADER_IMAGE = &quot;detail:header:image&quot;;
+
+// View name of the header title. Used for activity scene transitions
+public static final String VIEW_NAME_HEADER_TITLE = &quot;detail:header:title&quot;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;####2、点击Item时，构造一个Intent&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Construct an Intent as normal
+Intent intent = new Intent(this, DetailActivity.class);
+intent.putExtra(DetailActivity.EXTRA_PARAM_ID, item.getId());
+
+// BEGIN_INCLUDE(start_activity)
+/**
+ * 通过ActivityOptionsCompat的工厂方法创建一个ActivityOptions实例
+ */
+ActivityOptionsCompat activityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(
+        this,
+        // Now we provide a list of Pair items which contain the view we can transitioning
+        // from, and the name of the view it is transitioning to, in the launched activity
+        new Pair&amp;lt;View, String&amp;gt;(view.findViewById(R.id.imageview_item),
+                DetailActivity.VIEW_NAME_HEADER_IMAGE),
+        new Pair&amp;lt;View, String&amp;gt;(view.findViewById(R.id.textview_name),
+                DetailActivity.VIEW_NAME_HEADER_TITLE));
+
+// Now we can start the Activity, providing the activity options as a bundle
+ActivityCompat.startActivity(this, intent, activityOptions.toBundle());
+// END_INCLUDE(start_activity)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;####3、在DetailActivity的onCreate方法中接受并处理&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    mHeaderImageView = (ImageView) findViewById(R.id.imageview_header);
+    mHeaderTitle = (TextView) findViewById(R.id.textview_title);
+
+    // BEGIN_INCLUDE(detail_set_view_name)
+    /**
+     * Set the name of the view&#39;s which will be transition to, using the static values above.
+     * This could be done in the layout XML, but exposing it via static variables allows easy
+     * querying from other Activities
+     */
+    ViewCompat.setTransitionName(mHeaderImageView, VIEW_NAME_HEADER_IMAGE);
+    ViewCompat.setTransitionName(mHeaderTitle, VIEW_NAME_HEADER_TITLE);
+    // END_INCLUDE(detail_set_view_name)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;###总结&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 22 Oct 2016 00:00:00 +0800</pubDate>
+        <link>http://gudong.name/technology/2016/10/22/Android-transition.html</link>
+        <guid isPermaLink="true">http://gudong.name/technology/2016/10/22/Android-transition.html</guid>
+        
+        <category>Android</category>
+        
+        <category>Animation</category>
+        
+        
+        <category>Technology</category>
+        
+      </item>
+    
+      <item>
+        <title>Android 复杂界面开发实践之 ViewController: 前言</title>
+        <description>&lt;p&gt;首先说明的是 ViewControler 并不是 Android 中存在的一个组件，而是在技术实践中总结创造出的一个开发理念，这是一种业务开发过程中的 UI 模块化思想的体现，依附于现成的 Activity 或者 Fragment 而存在。在特定的场景下使用 ViewControler ，会使你原本复杂的界面开发逻辑变得清晰明了,易于维护。下面进入正题。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;场景介绍&lt;/h2&gt;
+&lt;p&gt;先简单介绍一种常见的界面开发情形。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;示例&lt;/h2&gt;
+&lt;p&gt;在我们日常 Android 开发过程中经常会看到类似下面这样的 UI 界面。如下，这是一个普通的房屋详情页面。
+&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/588640-4622841b96a84fc9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;viewontroller-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;一个简单的房屋详情示意界面
+在实际的开发中，这种看上去长长的详情界面比比皆是，上面只是自己简单用画图板画的一个房屋详情示意界面。&lt;/p&gt;
+
+&lt;p&gt;简单介绍下这个界面。如图所示，最上面是一个用于展示房屋图片的画廊区域，下面是房屋基本信息展示块，下面是房屋最近几月的价格走势图，下面是房屋评论，实际开发中，下面可能还会有各种各样的功能模块，如户型区域之类的。&lt;/p&gt;
+
+&lt;p&gt;总之，一般的详情页大都很长，而且页面里可能会有各种各样的 View 元素，上面的示意图还好，整体就是四个 View 块，还不算太多，但是实际开发中，我们拿到的设计图可能比这长多了。&lt;/p&gt;
+
+&lt;p&gt;从产品角度详情页就是这样，大而全，用户就是要看到最详尽的信息展示，但是具体到编码实现时，我不知道大家遇到这样的页面后会怎么编码实现。&lt;/p&gt;
+
+&lt;p&gt;其实在写这篇文章时，我特别想知道大家在实际开发这样的长页面时会采用什么样的方式去开发，如果你有自己独特的实践方法，欢迎在评论区评论。
+一般做法
+通常，按照一般的想法，尽管这个页面比较长，但它依旧是一个普通的不能再普通的 Activity 或者 Fragment，具体要开发这样的界面，先写好 Layout 文件，然后在 Activity 中初始化 View、接着处理业务逻辑。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;问题&lt;/h2&gt;
+&lt;p&gt;对于上面说到的一般做法，应对实际开发中 80% 的界面开发都没有特别大什么问题，但是，如果是上面提到的详情界面开发，就会有如下的问题。&lt;/p&gt;
+
+&lt;p&gt;由于这个界面比较长，我们在写 layout 时可能就会发现一个问题，layout文件太复杂了，如果界面布局比较简单还好，但是只要复杂点，这个layout 就会变得异常复杂，相信对大多数开发人员都有过类似的体验，当 layout 变得复杂，后续的 UI 调试或者需求变更，都会变得很痛苦，你需要在 layout 文件内定位到合适的位置，然后调试或者修改。&lt;/p&gt;
+
+&lt;p&gt;当然，说到这里。你可能会说用 include 后者 merge标签啊，当然可以，假设你使用了 include 标签已经解决了 layout 文件过于复杂的问题，那我们接着讨论业务逻辑代码的问题。&lt;/p&gt;
+
+&lt;p&gt;气喘吁吁的写完了 layout，终于可以写会业务代码了，我们开心的切换文件到具体的 activity，准备进行具体的业务代码开发，但面对这样的长页面，单单申明 View成员变量，就需要申明一大串，接着你要处理各中 View 的初始化以及更新，还可能要处理数据变化等等逻辑，详情页的逻辑会变得越来越复杂。对于这样的详情页面，可以预见的是，代码会超级多。&lt;/p&gt;
+
+&lt;p&gt;面对这样的页面，如果你是一个新人，后续需要你负责开发迭代，不得不说是一件很痛苦的事，自己也经历过，当你为一个复杂页面增加新功能，或者修改 bug，你往往先需要理解一下整个页面逻辑，接着才可以修改。没有人会喜欢阅读动不动就两三千行的 Activity 代码的。&lt;/p&gt;
+
+&lt;p&gt;Activity 两三千行？？这一点也不夸张。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;思考&lt;/h2&gt;
+
+&lt;p&gt;到这里，面对这种稍微复杂的页面开发，你已经发现用这种最原始的开发方式暴露出的问题了，代码堆积问题，维护问题。现在不仅 layout 文件管理起来麻烦，更重要的是 Acticvity 里的代码也变得难以维护。&lt;/p&gt;
+
+&lt;p&gt;一般的，我们遇到这种问题可能会持有两种态度。一：既然别人能开发的出来，我就可以维护，就是稍微费劲点，多读几遍代码，还是能看懂的，加班加点还是可以开发完的，只要完成，以后爱谁开发谁开发，我再也不碰了。典型的得过且过心态。另一种：&lt;/p&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;灵机一动&lt;/h2&gt;
+
+&lt;p&gt;上 MVP，MVP 为解耦而生，是时候祭出 MVP 了。&lt;/p&gt;
+
+&lt;p&gt;嗯，现在的情形，使用 MVP 确实可以解决  Activity 臃肿的问题，使用 MVP 后可以把 DetailActivity 中的业务逻辑代码都移到对应的 Presenter 中去，Activity 中剩下的只有 view 操作方法或者监听方法。这样 Activity 确实瘦了不少。但是这不是解决问题的根本，Layout 文件依旧很复杂，同时 Activity 中虽然把业务逻辑代码成功迁移到了 Presenter 中，但是很多 view 的操作逻辑代码还是在Activity。&lt;/p&gt;
+
+&lt;p&gt;那说了这么多，到底有什讲么办法可以解决上面提到的问题！&lt;/p&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;终极大招&lt;/h2&gt;
+
+&lt;p&gt;模块化 — 将一个大的复杂界面拆分为若干子界面模块，这里需要通过一种恰当的代码组织方式去帮助我们实现一个子界面模块，这种所谓的恰当的模式就叫 ViewController ，通过 ViewController 我们可以把一个布局和业务逻辑封装为一个模块，Activity 只需要拿到这个模块的实例，就可以操作这个模块。&lt;/p&gt;
+
+&lt;p&gt;在 ViewController 的帮助下，我们面对这种复杂页面，只要做好模块划分，那么每一个模块对应一个 ViewController 实例，Activity 或 Fragment 只要持有他们的集合，就可以方便的操作控制他们。有木有很灵活，很轻量。&lt;/p&gt;
+
+&lt;p&gt;当你真的使用它之后，你会发现他带来的便利其实不仅仅实现了模块化。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;特别感谢之前的 Leader 对 ViewController 这种思想给予最初的启发和引导。&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;关于开源&lt;/h3&gt;
+
+&lt;p&gt;暂时因为代码还没有整理好，包括文档，demo 也没有准备好，所以还不会立即开源。想要关注 ViewController 的最新动态，可以关注我的 &lt;a href=&quot;https://github.com/maoruibin&quot;&gt;Github maoruibin (咕咚)&lt;/a&gt; 或者 &lt;a href=&quot;http://weibo.com/maoruibin&quot;&gt;大侠咕咚的微博&lt;/a&gt;。&lt;/p&gt;
+</description>
+        <pubDate>Thu, 13 Oct 2016 00:00:00 +0800</pubDate>
+        <link>http://gudong.name/2016/10/13/viewcontroller-foreword.html</link>
+        <guid isPermaLink="true">http://gudong.name/2016/10/13/viewcontroller-foreword.html</guid>
+        
+        <category>ViewController</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>博客更新日志随想</title>
+        <description>&lt;p&gt;今天终于有时间可以更新一下博客了。&lt;/p&gt;
+
+&lt;p&gt;之前，一次偶然的机会，在网上看到&lt;a href=&quot;http://huangxuan.me/&quot;&gt;黄玄的博客&lt;/a&gt;，也就是现在自己博客的风格，第一眼便喜欢上了这种风格，不论是大背景的 Header 还是侧边栏的设计，都是自己非常喜欢的设计，但是苦于自己前端能力薄弱，自从去年选择了一个 Jekyll 的主题后，能做的也只是一些简单的修建，如果要按照自己的想法去设计一些个性化的 feature 还是太难了。直到遇到这个博客风格，一见如故，所以在今年 3、4 月份的时候，就果断换了。这里顺便放一张上一版博客的旧照。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://7xr9gx.com1.z0.glb.clouddn.com/gd.gif&quot; style=&quot;width: 50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;整个切换过程还是挺顺利的，无非是一些配置、图片资源的替换，没有花费太多时间就搞定了，中间遇到了一些前端的&lt;a href=&quot;https://github.com/Huxpro/huxpro.github.io/issues/57&quot;&gt;问题&lt;/a&gt;，最终也通过作者同学的热情解答很顺利的解决了。&lt;/p&gt;
+
+&lt;p&gt;但是，后来博客上线一段时间后，一个同学跟我反映，多说评论系统的发送按钮背景有问题，默认是白色的，这样会让很多人找不到按钮，就会导致别人无法评论。&lt;/p&gt;
+
+&lt;p&gt;后来我看了也确实是，但是从那时开始，自己已经忙的要死要活，根本没时间去改这个问题了，这同时也导致博客的留言从此一落千丈，到现在为止，也只有两个同学的留言，&lt;a href=&quot;http://weibo.com/u/2030683111&quot;&gt;达达&lt;/a&gt;，&lt;a href=&quot;http://weibo.com/androidmalin?refer_flag=1005055013_&quot;&gt;androidmalin&lt;/a&gt;,这可以从博客首页的最近留言中看到，真不知道你俩是怎么找到【发表】按钮的，对你们执着点赞，很多好友估计因为找不到发表按钮，根本不会多看两眼就离开了，对此，自己也很抱歉，这么久了，博客的小 bug 一直也没有改！&lt;/p&gt;
+
+&lt;p&gt;直到今天，自己也终于可以坐在客厅，悠闲的拿起本本，做点工作之外，生活之外的事了，所以第一件事就是把那个 发表 按钮颜色给恢复回来。&lt;/p&gt;
+
+&lt;p&gt;其实方法很简单，改 css 而已，不过这个博客使用了 Less ，所以需要借助 Grunt 才能让 css 更改生效，这在 那个 issue 中也提到了，总之更改很顺利。&lt;/p&gt;
+
+&lt;p&gt;想想过去的这段时间，自己感触还是挺多的。&lt;/p&gt;
+
+&lt;p&gt;加班.加班.加班.加班.加班.加班……&lt;/p&gt;
+
+&lt;p&gt;从三月初来了新东家后后，正好赶上项目重构，no 应该是重写，自己便进入了新项目的重写状态，从老代码找接口，然后写新项目。&lt;/p&gt;
+
+&lt;p&gt;后来自己不知不觉就给自己挖了几个大坑，让后后知后觉的跳了下去，从此代码写的不亦乐乎，但是在重写代码，重新架构也让自己最终的交付出了很多问题，UI 的bug、功能上的 bug … 测试的妹子都为我着急，自己的 bug 数量也一直名列前茅。&lt;/p&gt;
+
+&lt;p&gt;后来我只能这样安慰自己，做的越多，错的的越多啊 ！&lt;/p&gt;
+
+&lt;p&gt;其实这和写代码一个道理，一个函数代码写的越少，出错的可能性也就越小。同样是做事，做的越多，出错的可能性也就越大。&lt;/p&gt;
+
+&lt;p&gt;不过总归来说，这段时间的工作还是收获不小，知道了自己的薄弱点，以及一些缺陷，这也是未来需要加强的部分。相信以后会越来越好。&lt;/p&gt;
+
+&lt;p&gt;上面的都是工作，生活中，这段时间也是没少折腾！&lt;/p&gt;
+
+&lt;p&gt;生活不止眼前的苟且，还有诗和远方。&lt;/p&gt;
+
+&lt;p&gt;诗和远方…&lt;/p&gt;
+
+&lt;p&gt;远方…&lt;/p&gt;
+</description>
+        <pubDate>Sat, 02 Jul 2016 00:00:00 +0800</pubDate>
+        <link>http://gudong.name/2016/07/02/my-blog-update-record.html</link>
+        <guid isPermaLink="true">http://gudong.name/2016/07/02/my-blog-update-record.html</guid>
+        
+        <category>随想</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>ButterKnife 使用介绍</title>
+        <description>&lt;p&gt;首先说点关于这篇文章的题外话。&lt;/p&gt;
+
+&lt;p&gt;公司项目重构，我建议老大使用 ButterKnife,因为自己使用了很久，而且自己跟周边的同事演示了一下 ButterKnife 的功能，都觉得很赞，所以就想自己要不彻底调研一次 ButterKnife，包括用法以及源码。&lt;/p&gt;
+
+&lt;p&gt;最终我给组长的结果是 这东西可用，也没有什么太大的性能问题，但是最终还是被老大给 kill 掉了，后来也没有理论过老大，好吧，那就继续 findViewById 吧。&lt;/p&gt;
+
+&lt;p&gt;但是作为自己当时的记录，这里还是把写在内部博客系统的文章发出来，没有什么技术含量，但也不想一直就搁置在哪里。&lt;/p&gt;
+
+&lt;p&gt;好了，进入正题。&lt;/p&gt;
+
+&lt;h1 id=&quot;butterknife&quot;&gt;ButterKnife&lt;/h1&gt;
+
+&lt;p&gt;项目源地址：&lt;a href=&quot;https://github.com/JakeWharton/butterknife&quot;&gt;https://github.com/JakeWharton/butterknife&lt;/a&gt; 具体介绍也可查看&lt;a href=&quot;https://github.com/JakeWharton/butterknife&quot;&gt;项目主页&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;介绍&lt;/h2&gt;
+
+&lt;p&gt;ButterKnife 是什么，下面是 Github 上的原文介绍&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Field and method binding for Android views which uses annotation processing to generate boilerplate code for you.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;翻译过来就是说&lt;/p&gt;
+
+&lt;p&gt;用注解处理器为程序在编译期生成一些样板代码，用于把一些属性字段和回调方法绑定到 Android 的 View。&lt;/p&gt;
+
+&lt;p&gt;描述可能不好理解，但是只要一看例子，相信一眼就能看懂他是干什么的。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;1、实例&lt;/h2&gt;
+
+&lt;p&gt;现在需要做一个登录页面，页面很简单，两个输入框，一个登录按钮，点击登录、获取输入框数据，然后执行登录逻辑。&lt;/p&gt;
+
+&lt;p&gt;布局代码如下：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;LinearLayout
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:padding=&quot;16dp&quot;
+    android:orientation=&quot;vertical&quot;&amp;gt;
+
+    &amp;lt;EditText
+        android:id=&quot;@+id/editText&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:hint=&quot;用户名&quot; /&amp;gt;
+
+
+    &amp;lt;EditText
+        android:id=&quot;@+id/editText2&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:ems=&quot;10&quot;
+        android:hint=&quot;密码&quot;
+        android:inputType=&quot;textPassword&quot; /&amp;gt;
+
+
+    &amp;lt;Button
+        android:id=&quot;@+id/button_confirm&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;登录&quot; /&amp;gt;
+
+&amp;lt;/LinearLayout&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;然后在 LoginActivity 我们通常会这样写代码，如下所示。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
+
+    EditText mEtUserName;
+    EditText mEtPassword;
+
+    String mErrorInfo;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mErrorInfo = getString(R.string.error_info);
+
+        //初始化 View
+        mEtUserName = (EditText) findViewById(R.id.editText);
+        mEtPassword = (EditText) findViewById(R.id.editText2);
+        Button loginButton = (Button) findViewById(R.id.button_confirm);
+
+        //设置按钮监听
+        loginButton.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View v){
+        switch(v.getId()){
+           case R.id.button_confirm:
+             String username = mEtUserName.getText().toString();
+             String password = mEtPassword.getText().toString();
+             login(username,password);
+             break;
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;上面的代码没有任何问题，但是如果遇到一个布局界面中有很多 View 的情况时，你可能需要写一大段的 findViewById()，另外，如果有很多按钮的点击事件需要处理，那么你也需要写一大堆的 setOnClickListener() ,如下所示。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;title = (TextView) view.findViewById(R.id.tv_title);
+bannerIcon = (RecycledNotImageView) view.findViewById(R.id.iv_banner);
+contentTitle = (TextView) view.findViewById(R.id.tv_content_title);
+contentDesc = (TextView) view.findViewById(R.id.tv_content_desc);
+perPraiseCount = (TextView) view.findViewById(R.id.tv_vote_agree_percent);
+unPerPraiseCount = (TextView) view.findViewById(R.id.tv_vote_not_agree_percent);
+praiseBtn = (RecycledNotImageView) view.findViewById(R.id.iv_vote_agree);
+unPraiseBtn = (RecycledNotImageView) view.findViewById(R.id.iv_vote_not_agree);
+wordLeft = (TextView) view.findViewById(R.id.tv_vote_agree);
+wordRight = (TextView) view.findViewById(R.id.tv_vote_not_agree);
+wordMid = (TextView) view.findViewById(R.id.tv_vote_num);
+animationLine = (VoteView) view.findViewById(R.id.vv_vote);
+mRlVoteResult = (RelativeLayout) view.findViewById(R.id.rl_vote_result);
+mLlVoteAgree = (LinearLayout) view.findViewById(R.id.ll_vote_agree);
+mLlVoteNotAgree = (LinearLayout) view.findViewById(R.id.ll_vote_not_agree);
+
+mSkinSelectorBack.setOnClickListener(this);
+mLocalRbtn.setOnClickListener(this);
+mOnlineRbtn.setOnClickListener(this);
+mDiscoverRbtn.setOnClickListener(this);
+mViewPager.setOnPageChangeListener(this);
+perPraiseCount.setOnClickListener(this);
+contentDesc.setOnClickListener(this);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;其实，如果快捷键用得好，写这些代码倒也挺快的，用 Ctrl + D 的快捷键可以方便的快速复制 ,不过你在享受了 Ctrl + D 的高效后，蛋疼的事就接踵而至，你可能还需要在快速复制后 一个个的修改强转的类型，相信有过同样经验的你，一定知道我的意思。&lt;/p&gt;
+
+&lt;p&gt;但是时间久了，你有时可能回想，有没有办法可以简化这些操作啊，毕竟他们的重复性太强了。&lt;/p&gt;
+
+&lt;p&gt;好，ButterKnife 该登场了，看看使用 ButterKnife 后的 LoginActivity 是什么样子。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class LoginActivity extends Activity {
+  @Bind(R.id.user) EditText username;
+  @Bind(R.id.pass) EditText password;
+
+  @BindString(R.string.login_error)
+  String loginErrorMessage;
+
+  @OnClick(R.id.submit) void submit() {
+    // TODO call server...
+  }
+
+  @Override public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.simple_activity);
+    ButterKnife.bind(this);
+    // TODO Use fields...
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;现在，可以翻回去看看原来的 LoginActivity 是怎么写的，对比后，你会知道 ButterKnife 都做了什么。&lt;/p&gt;
+
+&lt;p&gt;现在的 LoginActivity，已经完全不存在 findViewById 了，取而代之的是一个注解 @Bind&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;username = (EditText) findViewById(R.id.editText);
+---&amp;gt;
+@Bind(R.id.user) EditText username;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;也找不到 setOnClickListener ,以及对应的 onClick 回调， 取而代之的是一个简单的 @OnCLick 注解&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; loginButton.setOnClickListener(this);
+ @Override
+ public void onClick(View v){
+    switch(v.getId()){
+       case R.id.button_confirm:
+         String username = mEtUserName.getText().toString();
+         String password = mEtPassword.getText().toString();
+         login(username,password);
+         break;
+    }
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;—&amp;gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; @OnClick(R.id.submit) void submit() {
+    // TODO call server...
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;当然，上面只是列举了最常用的两个场景。&lt;/p&gt;
+
+&lt;p&gt;可以看到，使用 ButterKnife 后，代码量少了不少。而且使用注解的方式，也很形象。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  @Bind(R.id.user) EditText username;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;就是把 R.id.user 这个 id 绑定到了 username 这个对象。理解起来也很好理解。&lt;/p&gt;
+
+&lt;p&gt;上面的实例只是列举了 ButterKnife 最常用的两种情形，下面详细列举一些具体的使用场景&lt;/p&gt;
+
+&lt;h2 id=&quot;butterknife-1&quot;&gt;2、ButterKnife用法/使用场景&lt;/h2&gt;
+
+&lt;h3 id=&quot;activity--view&quot;&gt;1、绑定 Activity 中的 View&lt;/h3&gt;
+
+&lt;p&gt;如上所示。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  class LoginActivity extends Activity {
+    @Bind(R.id.user) EditText username;
+    @Bind(R.id.pass) EditText password;
+
+    @Override public void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      setContentView(R.layout.simple_activity);
+      ButterKnife.bind(this);
+    }
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;注意，这里需要在 Activity 的 onCreate 中手动调用 ButterKnife.bind(this); 这个方法，注解才能生效。另外，这句代码，一定要在 setContentView 之后调用，否则 Activity 中的 layout 都没有加载到内存中来 ，你叫人家那里去找 layout 中的 view，皮之不存，毛将焉附。只要记清楚这点，就没什么问题。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;2、绑定点击事件&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@OnClick(R.id.submit)
+public void submit(View view) {
+  // TODO submit data to server...
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这里的方法名没有任何限制，只要你指定了@OnClick后面的 id ,就表示下面的方法体会在这个 id 对应的 View 被点击时调用。所以这里的方法名你可以任意起，想怎么写怎么写，另外方法的参数是可选的，你可以不填。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@OnClick(R.id.submit)
+public void submit() {
+  // TODO submit data to server...
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;当然，这里也可以指定具体的 View 类型&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  @OnClick(R.id.submit)
+  public void sayHi(Button button) {
+    button.setText(&quot;Hello!&quot;);
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;但是，既然要指定，就最好把类型写正确了，否则会报错。&lt;/p&gt;
+
+&lt;p&gt;这里还可以为多个 id 同时指定点击事件。如下所示&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@OnClick({ R.id.door1, R.id.door2, R.id.door3 })
+public void pickDoor(DoorView door) {
+  if (door.hasPrizeBehind()) {
+    Toast.makeText(this, &quot;You win!&quot;, LENGTH_SHORT).show();
+  } else {
+    Toast.makeText(this, &quot;Try again&quot;, LENGTH_SHORT).show();
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这个用法还真没怎么用过，可以看到上面是为用一个类型的三个 View 指定了点击事件处理，然后根据不同 View 的属性去做了不同的判断。
+当然这里应该可以使用 switch 判断，对 id 进行判断然后做具体的点击处理，比较灵活。&lt;/p&gt;
+
+&lt;p&gt;ButterKnife 也可以为自定义 View 绑定点击监听。直接在 View 内部实现，如下所示。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  public class FancyButton extends Button {
+    @OnClick
+    public void onClick() {
+      // TODO do something!
+    }
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;说道这里，我们只看到了点击事件的绑定，那么 ButterKnife 支持其他事件绑定吗？比如onCheckChangeListener，onLongClickListener 以及 ListView 的 onItemClickListener，当然可以,具体支持哪些，可以从源码包结构对注解的定义可以看出。如下图所示。
+&lt;img src=&quot;/assets/butterknife_onclick_method_image.png&quot; alt=&quot;methods&quot; title=&quot;knife&quot; /&gt; 可以看到，一般的，我们能用到的事件，大都囊括其中了。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;不错的链接&lt;/h2&gt;
+
+&lt;p&gt;ButterKnife使用详谈&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/p/b6fe647e368b&quot;&gt;http://www.jianshu.com/p/b6fe647e368b&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 15 Apr 2016 00:00:00 +0800</pubDate>
+        <link>http://gudong.name/2016/04/15/butterknife_introduce.html</link>
+        <guid isPermaLink="true">http://gudong.name/2016/04/15/butterknife_introduce.html</guid>
+        
+        <category>ButterKnife</category>
+        
+        <category>Square</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>使用 RxJava 重构一段判断逻辑</title>
+        <description>&lt;p&gt;这么晚了我还在给咕咚翻译加在线发音功能！！还好有音乐作陪…&lt;/p&gt;
+
+&lt;p&gt;其实实现发音很简单，金山的 API 支持单词发音。访问 &lt;a href=&quot;http://dict-co.iciba.com/api/dictionary.php?type=json&amp;amp;w=nice&amp;amp;key=3BE8E8ACA43FDA088E52EC05FA8FA203&quot;&gt;http://dict-co.iciba.com/api/dictionary.php?type=json&amp;amp;w=nice&amp;amp;key=3BE8E8ACA43FDA088E52EC05FA8FA203&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;即可在返回单词解释的同时，返回单词的发音 URL，如下所示，自己使用了三家翻译 API ，只有金山支持发音，也算是良心，给金山翻译 API 点个赞。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ph_en:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;naɪs&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ph_am&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;naɪs&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ph_other&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ph_en_mp3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;http://res.iciba.com/resource/amp3/oxford/0/24/8a/248a2aa9259a98ecb7a1ff677a0feed2.mp3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ph_am_mp3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;http://res.iciba.com/resource/amp3/1/0/7c/64/7c6483ddcd99eb112c060ecbe0543e86.mp3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ph_tts_mp3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;http://res-tts.iciba.com/7/c/6/7c6483ddcd99eb112c060ecbe0543e86.mp3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在已经知道发音 MP3 路径的条件下，其实做发音功能很简单。MediaPlayer 支持播放 url&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;String url = &quot;http://........&quot;; // your URL here
+MediaPlayer mediaPlayer = new MediaPlayer();
+mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+mediaPlayer.setDataSource(url);
+mediaPlayer.prepare(); // might take long! (for buffering, etc)
+mediaPlayer.start();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;使用上面的代码块，传递一个 url 进去就可以播放单词发音。&lt;/p&gt;
+
+&lt;p&gt;但是个人觉得，尽管发音文件很小，但是每次都去做网络请求，也未免太暴力了，所以自己想每次请求发音时，先去本地缓存找，有没有缓存的音频文件，如果有，就直接使用，没有再去网络下载，下载完成后播放，顺便把文件缓存在本地，所以就有了下面的下载、播放、缓存逻辑。&lt;/p&gt;
+
+&lt;p&gt;其实这个逻辑写完整了还是挺长的，如下所示，首先要拿到数据实体，然后做各种判断，还要多 url 做解析判断，最终执行网络请求等等一系列操作。真是『一会儿排成个人字，一会儿排成个一字』 具体代码如下所示。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  //判断实体是否为空
+  if (entity == null) {
+       return;
+   }
+
+   //拿到 entity 中的 result
+   Result result = entity.getResult();
+   if (result == null) {
+       return;
+   }
+
+   //获得发音 URL
+   String amMp3Url = result.getEnMp3();
+   if (TextUtils.isEmpty(amMp3Url)) {
+       return;
+   }
+
+   //判断 URL 是否合法
+   if (!amMp3Url.startsWith(DownloadService.KEY_URL)) {
+       return;
+   }
+
+   //解析包装 URL
+   String url = amMp3Url.replace(DownloadService.KEY_URL + &quot;resource/amp3/&quot;, &quot;&quot;);
+   String[] param = url.split(&quot;/&quot;);
+   if (param.length != 5) {
+       return;
+   }
+
+   //去本地查询
+   File cacheFile = mFileManager.getChacheFileByUrl(mActivity,amMp3Url);
+   if(cacheFile != null &amp;amp;&amp;amp; cacheFile.exists()){
+       playSound(cacheFile);
+       return;
+   }
+
+  // 封装网络请求
+   Call&amp;lt;ResponseBody&amp;gt; call = mDownloadService.downloadFileWithDynamicUrlSync(param[0], param[1], param[2], param[3], param[4]);
+
+   //发动网络请求
+   call.enqueue(new Callback&amp;lt;ResponseBody&amp;gt;() {
+       @Override
+       public void onResponse(Response&amp;lt;ResponseBody&amp;gt; response, Retrofit retrofit) {
+           if (response.isSuccess()) {
+               try {
+                  //执行本地存储
+                   cacheAndPlaySound(mActivity,amMp3Url,response.body().bytes());
+               } catch (IOException e) {
+                   e.printStackTrace();
+               }
+           }
+       }
+
+       @Override
+       public void onFailure(Throwable t) {
+           Logger.e(t.getMessage());
+           t.printStackTrace();
+       }
+   });     
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;使用 RxJava 后&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Observable.just(entity)
+           .filter(new Func1&amp;lt;AbsResult, Boolean&amp;gt;() {
+               @Override
+               public Boolean call(AbsResult absResult) {
+                   return absResult != null;
+               }
+           })
+           .map(new Func1&amp;lt;AbsResult, Result&amp;gt;() {
+               @Override
+               public Result call(AbsResult absResult) {
+                   return absResult.getResult();
+               }
+           })
+           .filter(new Func1&amp;lt;Result, Boolean&amp;gt;() {
+               @Override
+               public Boolean call(Result result) {
+                   return result != null;
+               }
+           })
+           .map(new Func1&amp;lt;Result, String&amp;gt;() {
+               @Override
+               public String call(Result result) {
+                   return result.getEnMp3();
+               }
+           })
+           .filter(new Func1&amp;lt;String, Boolean&amp;gt;() {
+               @Override
+               public Boolean call(String s) {
+                   return !TextUtils.isEmpty(s) &amp;amp;&amp;amp; s.startsWith(DownloadService.KEY_URL);
+               }
+           })
+           .map(new Func1&amp;lt;String, String&amp;gt;() {
+               @Override
+               public String call(String s) {
+                   return s.replace(DownloadService.KEY_URL + &quot;resource/amp3/&quot;, &quot;&quot;);
+               }
+           })
+           .map(new Func1&amp;lt;String, String[]&amp;gt;() {
+               @Override
+               public String[] call(String s) {
+                   return s.split(&quot;/&quot;);
+               }
+           })
+           .filter(new Func1&amp;lt;String[], Boolean&amp;gt;() {
+               @Override
+               public Boolean call(String[] strings) {
+                   return strings.length == 5;
+               }
+           })
+           .subscribe(new Subscriber&amp;lt;String[]&amp;gt;() {
+               @Override
+               public void onCompleted() {
+
+               }
+
+               @Override
+               public void onError(Throwable e) {
+
+               }
+
+               @Override
+               public void onNext(String[] param) {
+                   File cacheFile = mFileManager.getChacheFileByUrl(mActivity, entity.getResult().getEnMp3());
+                   if (cacheFile != null &amp;amp;&amp;amp; cacheFile.exists()) {
+                       playSound(cacheFile);
+                       return;
+                   }
+
+                   Call&amp;lt;ResponseBody&amp;gt; call = mDownloadService.downloadFileWithDynamicUrlSync(param[0], param[1], param[2], param[3], param[4]);
+                   call.enqueue(new Callback&amp;lt;ResponseBody&amp;gt;() {
+                       @Override
+                       public void onResponse(Response&amp;lt;ResponseBody&amp;gt; response, Retrofit retrofit) {
+                           if (response.isSuccess()) {
+                               try {
+                                   cacheAndPlaySound(mActivity, entity.getResult().getEnMp3(), response.body().bytes());
+                               } catch (IOException e) {
+                                   e.printStackTrace();
+                               }
+                           }
+                       }
+
+                       @Override
+                       public void onFailure(Throwable t) {
+                           Logger.e(t.getMessage());
+                           t.printStackTrace();
+                       }
+                   });
+
+               }
+           });
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;从表面看到的是，代码一下子公正了很多，再看逻辑，很清晰有木有！&lt;/p&gt;
+</description>
+        <pubDate>Sat, 09 Apr 2016 00:00:00 +0800</pubDate>
+        <link>http://gudong.name/2016/04/09/rxjava_operate.html</link>
+        <guid isPermaLink="true">http://gudong.name/2016/04/09/rxjava_operate.html</guid>
+        
+        <category>RxJava</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>使用 CheckStyle 检查代码</title>
+        <description>&lt;h3 id=&quot;section&quot;&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;最近在看廖祜秋的下拉刷新项目 &lt;a href=&quot;https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh&quot;&gt;android-Ultra-Pull-To-Refresh&lt;/a&gt;，就在今天做了一些精简操作后，准备加入项目准备使用时，发现 lib 根目录下有一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;checkstyle.xml&lt;/code&gt; 文件，很好奇它是干什么的，后来 Google 后，原来这东西可以用来检查代码，随即查询了一些资料，把它用了起来，下面简单记录下。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;用途&lt;/h3&gt;
+
+&lt;p&gt;先不说如何配置，先说它有什么用。&lt;/p&gt;
+
+&lt;p&gt;AndroidStudio 可以通过自己指定的 CheckStyle 去检查自己写的代码是不是符合规则，如果代码中有不合该规范的地方，都可以在控制台看到对应的提示信息。&lt;/p&gt;
+
+&lt;p&gt;这里比较好的一点是，你可以自定义自己的 checkstyle ,可以根据自己的代码规范去一点点完善这个 checkstyle ,也可以使用一些大公司的 checkstyle ,这些 checkstyle  文件是可以搜到的。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;最终效果&lt;/h3&gt;
+
+&lt;p&gt;说了这么多，还是看最终效果比较来的直白一点。&lt;/p&gt;
+
+&lt;p&gt;下图中使用 checkstyle 检查我的 MainActivity，我故意让一个成员变量的命名没有按照驼峰式去写，然后点击菜单键的 Check
+Current File 检查如下。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/checkstyle_1.jpg&quot; alt=&quot;one&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;可以看到，显示提示 viewpager 命名不合规范，然后我改为 mViewPager 后，就不会再提示了。如下所示。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/checkstyle_2.jpg&quot; alt=&quot;one&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;配置&lt;/h3&gt;
+
+&lt;p&gt;已经看到了具体效果，是不是跃跃欲试了，这时你可能试着点击了菜单右键，却发现没有&lt;code class=&quot;highlighter-rouge&quot;&gt;Check Current File&lt;/code&gt; 这个选项。&lt;/p&gt;
+
+&lt;p&gt;下面具体说下&lt;/p&gt;
+
+&lt;h4 id=&quot;section-4&quot;&gt;安装插件&lt;/h4&gt;
+
+&lt;p&gt;要使用 checkstyle 需要安装一个 AndroidStudio 插件 CheckStyle-IDEA,你可以通过在线安装插件的方式去安装，也可以通过本地安装，&lt;a href=&quot;https://github.com/jshiell/checkstyle-idea&quot;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;checkstyle-&quot;&gt;配置 checkstyle 文件&lt;/h4&gt;
+
+&lt;p&gt;当安装好插件，打开 AndroidStudio 的设置页面 settings -&amp;gt; Other Settings  你会发现多了一个 Checkstyle ,
+点击打开,如下图。
+&lt;img src=&quot;/assets/checkstyle_3.jpg&quot; alt=&quot;one&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;你会看到有一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; 按钮，点击即可添加自己的 checkstyle 文件，你可能第一次不会写这个文件，没关系，这里提供一个华为的 Checkstyle &lt;a href=&quot;https://gist.github.com/ownwell/c32878440216f1866842&quot;&gt;Gist 地址&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;其实 AndroidStudio 已经默认提供了一个，你也可以使用默认的。&lt;/p&gt;
+
+&lt;p&gt;记得添加时，不要忘了填写 description 。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/checkstyle_4.jpg&quot; alt=&quot;four&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这里关于 checkstyle 中的语法，有相应的文档，可以自己去搜索阅读具体语法，一般的，照猫画虎就够了。&lt;/p&gt;
+
+&lt;h4 id=&quot;checkstyle&quot;&gt;现成的CheckStyle&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://gist.github.com/ownwell/c32878440216f1866842&quot;&gt;华为 CheckStyle 地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/square/picasso/blob/master/checkstyle.xml&quot;&gt; the checkstyle configuration used for Picasso by Square folks&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://checkstyle.sourceforge.net/google_style.html&quot;&gt;Google’s Java Style Checkstyle Coverage&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-5&quot;&gt;完毕&lt;/h4&gt;
+
+&lt;p&gt;到此，基本的配置就完毕了。现在 AndroidStudio 的控制面板会多一个 CheckStyle，你可以在这里方便的进行代码检查。&lt;/p&gt;
+
+&lt;p&gt;可以点击面板的左上角下拉框 Rule 去动态切换不同的 checkstyle。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;总结&lt;/h3&gt;
+
+&lt;p&gt;其实代码检查还有很多方式，这只是一种，有兴趣可以看看其他几种,如 Lint , &lt;a href=&quot;http://findbugs.sourceforge.net/&quot;&gt;Findbugs&lt;/a&gt; 。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-7&quot;&gt;有用的超链接&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/checkstyle/checkstyle&quot;&gt;checkstyle 项目地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://checkstyle.sourceforge.net/checks.html&quot;&gt;CheckStyle API 文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tech.glowing.com/cn/dai-ma-gui-fan-he-androidxiang-mu-zhong-de-xie-ke-yong-gong-ju/&quot;&gt;代码规范和Android项目中的一些可用工具&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/noveogroup/android-check&quot;&gt;Static code analysis plugin for Android project&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 07 Apr 2016 00:00:00 +0800</pubDate>
+        <link>http://gudong.name/2016/04/07/checkstyle.html</link>
+        <guid isPermaLink="true">http://gudong.name/2016/04/07/checkstyle.html</guid>
+        
+        <category>Tools</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Handler 之 ThreadLocal 相关</title>
+        <description>&lt;p&gt;在上一篇文章&lt;a href=&quot;/2016/03/10/handler_analysis_two.html&quot;&gt;Handler 之 源码解析&lt;/a&gt;中介绍 Handler 与 Looper 的关系时，半路出现了 ThreadLocal 这个类，他是什么呢，本想在 Handler 源码解析一文一起阐述了，
+但是觉得这样篇幅太长，不好，况且他又是一个相对独立的概念，这里就把它单独拿出来，结合任玉刚的&lt;a href=&quot;http://blog.csdn.net/singwhatiwanna/article/details/48350919&quot;&gt;Android的消息机制之ThreadLocal的工作原理&lt;/a&gt;博文，为自己总结归纳下 ThreadLocal 的用处，以及他在 Handler 和 Looper 中的巧妙用法。&lt;/p&gt;
+
+&lt;h3 id=&quot;threadlocal&quot;&gt;ThreadLocal&lt;/h3&gt;
+
+&lt;p&gt;其实在Handler 之 源码分析一文中，关于 Handler 有一点一直没说到。&lt;/p&gt;
+
+&lt;p&gt;Handler 在创建的时候必须使用当前线程的 Looper 来构造消息循环，而自己手动创建的子线程默认是没有 Looper 的，
+如果在一个子线程中创建 Handler ，就必须为这个子线程创建相应的消息轮训器，否则我们就会看到一个常见的异常&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Can&#39;t create handler inside thread that has not called Looper.prepare()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;那我们如何在子线程中创建一个 Looper 呢？&lt;/p&gt;
+
+&lt;p&gt;其实从上面的异常信息，我们已经知道了，在子线程中调用 Looper.prepare() 方法就可以为这个子线程创建一个 Looper 对象。&lt;/p&gt;
+
+&lt;p&gt;是抛出一个观点的时候了。&lt;/p&gt;
+
+&lt;p&gt;我们在主线程创建一个 Handler，这个 Handler 就需要一个和主线程绑定的消息轮询器(Looper)，如果是在一个子线程创建一个 Handler,
+那么我们就需要为这个 Handler 绑定一个与子线程绑定的消息轮询器(Looper).&lt;/p&gt;
+
+&lt;p&gt;至于原因，应该是这样的，主线程的 handler 发送消息后，应该是主线程的 Looper 去轮询与主线程相关的那个 MessageQueue，并且处理消息，子线程中创建的 Handler 对象在发送消息时，（不论他在什么地方发送），应该是通过子线程对应的消息轮询器去轮询相应的 MessageQueue，然后处理消息。&lt;/p&gt;
+
+&lt;p&gt;但是现在有一个问题，如何控制 Looper 的 myLooper() 方法返回的对象是当前线程对应的 Looper 呢?&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public static @Nullable Looper myLooper() {
+   return sThreadLocal.get();
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这就是 ThreadLocal 妙用之所在，ThreadLocal 可以在不同的线程之中互不干扰地存储并提供数据，这句话的意思很清楚。&lt;/p&gt;
+
+&lt;p&gt;就是说，在不同的线程中会存储不同的数据，他们互不干扰。&lt;/p&gt;
+
+&lt;p&gt;下面这行，摘抄自任玉刚的博客&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ThreadLocal是一个线程内部的数据存储类，通过它可以在指定的线程中存储数据，数据存储以后，只有在指定线程中可以获取到存储的数据，对于其它线程来说无法获取到数据。&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这个特性正好满足 Handler、Looper 在线程方法的特性，可以确保在主线程中调用 sThreadLocal.get(); 得到的是主线程对用的 Looper 对象，在子线程中调用得到的是子线程中对应的Looper。&lt;/p&gt;
+
+&lt;p&gt;上面也说了，如果我们在子线程中去实例化 Handler，必须先调用 Looper.prepare() 方法。通过这个方法，为所在的子线程绑定一个 Looper,这个
+Lopper 将会在子线程中 new Handler() 时自动绑定到这个 Handler，解析来我们看看，这一切在子线程中是怎么发生的。&lt;/p&gt;
+
+&lt;p&gt;首先分析出错的情形，也就是直接在子线程中 new Handler() 时报错，是怎么发生的。先在子线程中创建一个 Handler&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;new Thread(new Runnable() {
+    @Override
+    public void run() {
+
+        Handler innerHandler = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+            }
+        };
+
+    }
+}).start();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;接着看 Handler 的构造方法。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public Handler(Callback callback, boolean async) {
+      mLooper = Looper.myLooper();
+      if (mLooper == null) {
+          throw new RuntimeException(
+              &quot;Can&#39;t create handler inside thread that has not called Looper.prepare()&quot;);
+      }
+      mQueue = mLooper.mQueue;
+      mCallback = callback;
+      mAsynchronous = async;
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;当执行到 myLooper()&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public static @Nullable Looper myLooper() {
+     return sThreadLocal.get();
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;此时的 sThreadLocal 是一个线程数据存储类，但是因为是在子线程中访问，所以它对应者子线程中的资源。&lt;/p&gt;
+
+&lt;p&gt;由于我们在这个子线程中没有事先对 sThreadLocal 做任何处理，没有设置任何 Looper 对象，所以此时的 myLooper() 返回值一定是 null。&lt;/p&gt;
+
+&lt;p&gt;接下来，我们就会看到那个一开始学 Handler 时经常看到的错误日志了。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Can&#39;t create handler inside thread that has not called Looper.prepare()&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;然后，此时出错了，按照以前的做法。根据提示，在创建 handler 之前，调用Looper.prepare() 方法，这样错误就没有了，但是先在从代码的角度观察一遍为什么这里调用一次 Looper.prepare() 就不报错了。&lt;/p&gt;
+
+&lt;p&gt;prepare() 源码&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public static void prepare() {
+    prepare(true);
+}
+
+private static void prepare(boolean quitAllowed) {
+    if (sThreadLocal.get() != null) {
+        throw new RuntimeException(&quot;Only one Looper may be created per thread&quot;);
+    }
+    sThreadLocal.set(new Looper(quitAllowed));
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;此时在方法中，首先判断 sThreadLocal.get() != null ，因为现在的调用发生在子线程，而且没有为 sThreadLocal 设置过 Looper 对象，所以此时
+sThreadLocal.get() 一定是 null 的，所以会直接执行&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sThreadLocal.set(new Looper(quitAllowed));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;我们看到，最终通过 prepare() 方法设置了在子线程中 sThreadLocal 的值为一个新的 Looper 对象。&lt;/p&gt;
+
+&lt;p&gt;那么只要设置过了 Looper 对象，下一次在 sThreadLocal 执行 get 操作时就会得到已经设置好的 Looper,这个 Looper 最终会被绑定到子线程中创建的 Handler 上面。&lt;/p&gt;
+
+&lt;p&gt;这里需要特别注意一点，仅仅在创建 handler 之前调用了 Looper.prepare() 并不能完事大吉，如果你想通过这个 handler 接受消息，你就一定需要在创建完毕 Handler ，执行 Looper.loop() 方法，让刚才创建的 Looper 工作起来。&lt;/p&gt;
+
+&lt;p&gt;否则，后续你在子线程发送消息了，但是你却在子线程的 handler 中接受不到消息，就会出现这样的问题。&lt;/p&gt;
+
+&lt;p&gt;所以补全上面的代码，如下所示。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;new Thread(new Runnable() {
+    @Override
+    public void run() {
+        Looper.prepare();
+        Handler innerHandler = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                Log.i(&quot;msg&quot;,&quot;content is &quot;+msg.what);
+            }
+        };
+        Looper.loop();
+    }
+}).start();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这里不禁就要问了，在子线程中是这样创建 Handler 的，需要手动调用 Looper.prepare(); 以及 Looper.loop();那为什么在主线程中定义 Handler 不需要这些操作呢？&lt;/p&gt;
+
+&lt;p&gt;因为主线程，也就是我们经常提到的主线程，也叫UI线程，其实就是 ActivityThread，ActivityThread 被创建时就已经初始化过 Looper 了，代码如下&lt;/p&gt;
+
+&lt;p&gt;public static void main(String[] args) {&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  //............. 无关代码...............
+
+  Looper.prepareMainLooper();
+
+  Looper.loop();
+
+  throw new RuntimeException(&quot;Main thread loop unexpectedly exited&quot;);   }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;所以在主线程中创建 handler 时，是不需要手动去创建 Looper 的，因为他们早已创建好了。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 Mar 2016 00:00:00 +0800</pubDate>
+        <link>http://gudong.name/2016/03/11/handler_analysis_three.html</link>
+        <guid isPermaLink="true">http://gudong.name/2016/03/11/handler_analysis_three.html</guid>
+        
+        <category>Handler</category>
+        
+        <category>Source</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Handler 之 源码解析</title>
+        <description>&lt;p&gt;上一篇博客&lt;a href=&quot;/2016/03/10/handler_analysis_one.html&quot;&gt;Handler 之 初识及简单应用&lt;/a&gt;中介绍了 Handler 的作用，以及 Handler 的基本用法，同时也详细介绍了为什么子线程不能更新 UI 的原因，但是因为篇幅原因，所以对 Handler 的内部机制并没有展开叙述。这篇文章就从 Handler 开始解析与之相关的源码，从而更好的理解 Handler 以及 Looper MessageQueue。&lt;/p&gt;
+
+&lt;h2 id=&quot;handler-&quot;&gt;Handler 机制&lt;/h2&gt;
+
+&lt;p&gt;写完上一篇文章，下面我该再读一遍 Handler 的源码了，其实讲 Handler 内部机制的博客已经很多了，但是自己还是要在看一遍，源码是最好的资料。&lt;/p&gt;
+
+&lt;p&gt;在具体看源码之前，有必要先理解一下 Handler、Looper、MessageQueue 以及 Message 他们的关系。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;关系&lt;/h3&gt;
+
+&lt;p&gt;Looper: 是一个消息轮训器，他有一个叫 loop() 的方法，用于启动一个死循环，不停的去轮询消息池。&lt;/p&gt;
+
+&lt;p&gt;MessageQueue: 就是上面说到的消息池&lt;/p&gt;
+
+&lt;p&gt;Handler: 用于发送消息，和处理消息&lt;/p&gt;
+
+&lt;p&gt;Message: 一个消息对象&lt;/p&gt;
+
+&lt;p&gt;现在要问了，他们是怎么关联起来的？&lt;/p&gt;
+
+&lt;p&gt;一切都要从 Handler 的构造方法开始。如下所示&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;final MessageQueue mQueue;
+final Looper mLooper;
+final Callback mCallback;
+final boolean mAsynchronous;
+
+public Handler(Callback callback, boolean async) {
+    mLooper = Looper.myLooper();
+    if (mLooper == null) {
+        throw new RuntimeException(
+            &quot;Can&#39;t create handler inside thread that has not called Looper.prepare()&quot;);
+    }
+    mQueue = mLooper.mQueue;
+    mCallback = callback;
+    mAsynchronous = async;
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;可以看到 Handler 本身定义了一个 MessageQueue 对象 mQueue，和一个 Looper 的对象 mLooper。&lt;/p&gt;
+
+&lt;p&gt;不过，对 Handler 的这两个成员变量的初始化都是通过 Looper 来赋值的。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mLooper = Looper.myLooper();
+mQueue = mLooper.mQueue;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;现在，我们新建的 Handler 就和 Looper、MessageQueue 关联了起来，而且他们是一对一的关系，一个 Handler 对应一个
+Looper，同时对应一个 MessageQueue 对象。这里给 MessageQueue 的赋值比较特殊，&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mQueue = mLooper.mQueue;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这里直接使用 looper 的 mQueue 对象，将 looper 的 mQueue 赋值给了 Handler 自己，现在 Looper 和 Handler 持有着同一个 MessageQueue 。&lt;/p&gt;
+
+&lt;p&gt;这里可以看到 Looper 的重要性，现在 Handler 中的 Looper 实例和 MessageQueue 实例都是通过 Looper 来完成设置的，那么下面我们具体看看 Looper 是怎么实例化的，以及他的 mQueue 是怎么来的。&lt;/p&gt;
+
+&lt;h4 id=&quot;looper&quot;&gt;Looper&lt;/h4&gt;
+
+&lt;p&gt;从上面 Handler 的构造方法中可以看到，Handler 的 mLooper 是这样被赋值的。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mLooper = Looper.myLooper();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;接着看 myLooper() 的实现。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;static final ThreadLocal&amp;lt;Looper&amp;gt; sThreadLocal = new ThreadLocal&amp;lt;Looper&amp;gt;();
+
+public static @Nullable Looper myLooper() {
+    return sThreadLocal.get();
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;这里出现了一个平时不怎么看到的 ThreadLocal 类，关于这个类，推荐去阅读任玉刚的一篇文章 - Android的消息机制之ThreadLocal的工作原理,讲的很不错。另外自己也写了一篇文章，用于讲解 ThreadLocal 的用法，以及他在 Handler 和 Looper 中的巧妙意义。&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/singwhatiwanna/article/details/48350919&quot;&gt;任玉刚 - Android的消息机制之ThreadLocal的工作原理&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/2016/03/11/handler_analysis_three.html&quot;&gt;咕咚 - Handler 之 ThreadLocal 相关&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;这里他是通过 ThreadLocal 的 get 方法获得，很奇怪，之前我们没有在任何地方对 sThreadLocal 执行过 set 操作。
+这里却直接执行 get 操作，返回的结果必然为空啊！&lt;/p&gt;
+
+&lt;p&gt;但是如果现在为空，我们在 new Handler() 时，程序就已经挂掉了啊，因为在 Handler 的构造方法中，如果执行 Looper.myLooper() 的返回结果为空。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mLooper = Looper.myLooper();
+if (mLooper == null) {
+   throw new RuntimeException(
+       &quot;Can&#39;t create handler inside thread that has not called Looper.prepare()&quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;但是，我们的程序没有挂掉，这意味着，我们在执行 myLooper() 方法时，他返回的结果不为空。&lt;/p&gt;
+
+&lt;p&gt;为什么呢？那我们在 Looper 中看看，哪里有对应的 set 方法，如下所示,我们找到了一个全局静态方法 prepare&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public static void prepare() {
+    prepare(true);
+}
+
+private static void prepare(boolean quitAllowed) {
+    if (sThreadLocal.get() != null) {
+        throw new RuntimeException(&quot;Only one Looper may be created per thread&quot;);
+    }
+    sThreadLocal.set(new Looper(quitAllowed));
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;我们看到，在最后一行这里，执行了对应的 set 操作，这里把一个 new 出来的 Looper 直接 set 到 sThreadLocal 中。&lt;/p&gt;
+
+&lt;p&gt;但是我们不知道，到底什么时候，是谁调用了 prepare() 方法，从而给 sThreadLocal 设置了一个 Looper 对象。&lt;/p&gt;
+
+&lt;p&gt;后来在网上经过搜索，找到了答案，我们的 Android 应用在启动时，会执行到 ActivityThread 类的 main 方法，就和我们以前写的 java 控制台程序一样，其实 ActivityThread 的 main 方法就是一个应用启动的入口。&lt;/p&gt;
+
+&lt;p&gt;在这个入口里，会做很多初始化的操作。其中就有 Looper 相关的设置，代码如下&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public static void main(String[] args) {
+
+    //............. 无关代码...............
+
+    Looper.prepareMainLooper();
+
+    Looper.loop();
+
+    throw new RuntimeException(&quot;Main thread loop unexpectedly exited&quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在这里，我们很清楚的看到，程序启动时，首先执行 Looper.prepareMainLooper() 方法，接着执行了 loop() 方法。&lt;/p&gt;
+
+&lt;p&gt;先看看 prepareMainLooper 方法。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public static void prepareMainLooper() {
+    prepare(false);
+    synchronized (Looper.class) {
+        if (sMainLooper != null) {
+            throw new IllegalStateException(&quot;The main Looper has already been prepared.&quot;);
+        }
+        sMainLooper = myLooper();
+    }
+}
+
+public static @Nullable Looper myLooper() {
+    return sThreadLocal.get();
+}
+
+private static void prepare(boolean quitAllowed) {
+  if (sThreadLocal.get() != null) {
+      throw new RuntimeException(&quot;Only one Looper may be created per thread&quot;);
+  }
+  sThreadLocal.set(new Looper(quitAllowed));
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这里，首先调用了 prepare() 方法，执行完成后，sThreadLocal 成功绑定了一个 new Looper() 对象，然后执行&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sMainLooper = myLooper();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;可以看看 sMainLooper 的定义，以及 myLooper() 方法；&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;private static Looper sMainLooper;  // guarded by Looper.class    
+
+public static @Nullable Looper myLooper() {
+    return sThreadLocal.get();
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;现在的 sMainLooper 就有值了，也就是说，只要我们的 App 启动，sMainLooper 中就已经设置了一个 Looper 对象。以后调用
+sMainLooper 的 get 方法将返回在程序启动时设置的 Looper，不会为空的。&lt;/p&gt;
+
+&lt;p&gt;下面在看 main 方法中的 调用的 Looper.loop() 方法。 已经把一些无关代码删了，否则太长了，&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public static void loop() {
+
+    //获得一个 Looper 对象
+    final Looper me = myLooper();
+
+    // 拿到 looper 对应的 mQueue 对象
+    final MessageQueue queue = me.mQueue;
+
+    //死循环监听(如果没有消息变化，他不会工作的) 不断轮训 queue 中的 Message
+    for (;;) {
+        // 通过 queue 的 next 方法拿到一个 Message
+        Message msg = queue.next(); // might block
+        //空判断
+        if (msg == null)return;
+        //消息分发   
+        msg.target.dispatchMessage(msg);
+        //回收操作  
+        msg.recycleUnchecked();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;现在，想一个简单的过程，我们创建了一个 App,什么也不做，就是一个 HelloWorld 的 Android 应用，
+此时，你启动程序，即使什么也不干，按照上面的代码，你应该知道的是，现在的程序中已经有一个 Looper 存在了。
+并且还启动了消息轮询。 Looper.loop();&lt;/p&gt;
+
+&lt;p&gt;但是，目前来看，他们好像没什么用，只是存在而已。&lt;/p&gt;
+
+&lt;p&gt;此时你的项目如果使用了 Handler,你在主线程 new 这个 Handler 时，执行构造方法&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public Handler(Callback callback, boolean async) {
+    mLooper = Looper.myLooper();
+    if (mLooper == null) {
+        throw new RuntimeException(
+            &quot;Can&#39;t create handler inside thread that has not called Looper.prepare()&quot;);
+    }
+    mQueue = mLooper.mQueue;
+    mCallback = callback;
+    mAsynchronous = async;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;此时的 myLooper() 返回的 Looper 就是应用启动时的那个 Looper 对象，我们从 Looper 的构造方法得知，在 new Looper 时，会新建一个对应
+的消息池对象 MessageQueue&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;private Looper(boolean quitAllowed) {
+       mQueue = new MessageQueue(quitAllowed);
+       mThread = Thread.currentThread();
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;那么在 Handler 的构造方法中，那个 mQueue 其实也是在应用启动时就已经创建好了。&lt;/p&gt;
+
+&lt;p&gt;现在再来回顾一下 Handler 的构造方法，在构造方法中，他为自己的 mQuery 和 mLooper 分别赋值，而这两个值其实在应用启动时，就已经初始化好了。&lt;/p&gt;
+
+&lt;p&gt;并且，现在已经启动了一个消息轮训，在监听 mQuery 中是不是有新的 Message !&lt;/p&gt;
+
+&lt;p&gt;现在这个轮训器已经好了，我们看发送消息的过程。&lt;/p&gt;
+
+&lt;h3 id=&quot;sendmessage&quot;&gt;SendMessage&lt;/h3&gt;
+
+&lt;p&gt;我们使用 Handler 发送消息&lt;/p&gt;
+
+&lt;p&gt;mHandler.sendMessage(msg);&lt;/p&gt;
+
+&lt;p&gt;Handler 有好多相关的发送消息的方法。但是追踪源码，发现他们最终都来到了 Handler 的这个方法 sendMessageAtTime&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public boolean sendMessageAtTime(Message msg, long uptimeMillis) {
+    MessageQueue queue = mQueue;
+    if (queue == null) {
+        RuntimeException e = new RuntimeException(
+                this + &quot; sendMessageAtTime() called with no mQueue&quot;);
+        Log.w(&quot;Looper&quot;, e.getMessage(), e);
+        return false;
+    }
+    return enqueueMessage(queue, msg, uptimeMillis);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;接着看 enqueueMessage() 方法体&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;private boolean enqueueMessage(MessageQueue queue, Message msg, long uptimeMillis) {
+      msg.target = this;
+      // 使用默认的 handler 构造方法时，mAsynchronous 为 false。
+      if (mAsynchronous) {
+          msg.setAsynchronous(true);
+      }
+      return queue.enqueueMessage(msg, uptimeMillis);
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这里有一句至关重要的代码&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;msg.target = this;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;我们看看 msg 的 target 是怎么声明的&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Handler target;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;意思就是每个 Message 都有一个类型为 Handler 的 target 对象，这里在 handler 发送消息的时候，最终执行到
+上面的方法 enqueueMessage() 时,会自动把当前执行 sendMessage() 的 handler对象，赋值给 Message 的 target。&lt;/p&gt;
+
+&lt;p&gt;也就是说，Handler 发送了 Message，并且这个 Message 的 target 就是这个 Handler。&lt;/p&gt;
+
+&lt;p&gt;想想为什么要这么做？&lt;/p&gt;
+
+&lt;p&gt;这里再说一下，Handler 的作用，&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;发送消息&lt;/li&gt;
+  &lt;li&gt;处理消息&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;先不看代码，我们可以想想，handler 发送了 message ,最终这个 message 会被发送到 MessageQueue 这个消息队列。
+那么最终，谁会去处理这个消息。&lt;/p&gt;
+
+&lt;p&gt;在这里消息发送和处理遵循『谁发送，谁处理』的原则。&lt;/p&gt;
+
+&lt;p&gt;现在问题来了，就按照上面说的，谁发送，谁处理，那现在应该是 handler 自己处理了，但是他在哪里处理呢？到现在我们也没看到啊。&lt;/p&gt;
+
+&lt;p&gt;慢慢来，接下来继续看消息的传递。&lt;/p&gt;
+
+&lt;p&gt;现在，我们只要发送了消息，那么消息池 mQuery 就会增加一个消息，Looper 就会开始工作，之前已经说了，在应用启动的时候，
+已经启动了 Looper 的 loop() 方法，这个方法会不断的去轮训 mQuery 消息池，只要有消息，它就会取出消息，并处理，那他是怎么处理的呢？看一下 loop() 的代码再说。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public static void loop() {
+
+    //获得一个 Looper 对象
+    final Looper me = myLooper();
+
+    // 拿到 looper 对应的 mQueue 对象
+    final MessageQueue queue = me.mQueue;
+
+    //死循环监听(如果没有消息变化，他不会工作的) 不断轮训 queue 中的 Message
+    for (;;) {
+        // 通过 queue 的 next 方法拿到一个 Message
+        Message msg = queue.next(); // might block
+        //空判断
+        if (msg == null)return;
+        //消息分发   
+        msg.target.dispatchMessage(msg);
+        //回收操作  
+        msg.recycleUnchecked();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;看 for()循环，他在拿到消息后，发现 msg 不为空，接着就会执行下面这句非常重要的代码&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;msg.target.dispatchMessage(msg);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这里执行了 msg.target 的方法 dispatchMessage，上面已经在 sendMessage 时看到了，我们在发送消息时，会把 msg 的 target
+设置为 handler 本身，也就是说，handler 发送了消息，最终自己处理了自己刚刚分发的消息。恩恩，答案就在这里，『谁发送，谁处理』的
+道理在这里终于得到了体现。&lt;/p&gt;
+
+&lt;p&gt;那么他是怎么处理消息的？看看 Handler 的 dispatchMessage() 是怎么实现的。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public void dispatchMessage(Message msg) {
+    if (msg.callback != null) {
+        handleCallback(msg);
+    } else {
+        if (mCallback != null) {
+            if (mCallback.handleMessage(msg)) {
+                return;
+            }
+        }
+        handleMessage(msg);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;我们看到，我们没有给 msg 设置 callback 也没有给 handler 的 mCallback 设置过值，所以此时，会执行 handleMessage() 方法；&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public void handleMessage(Message msg) {
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;发现这是一个空方法，所以自己的新建 Handler 时，只要复写了这个方法，我们就可以接受到从子线程中发送过来的消息了 。&lt;/p&gt;
+
+&lt;p&gt;在看一遍自己定义 Handler 时，如何定义的，如何复写 handlerMessage&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;private Handler mHandler = new Handler(){
+     @Override
+     public void handleMessage(Message msg) {
+         super.handleMessage(msg);
+         switch (msg.what){
+             case 1:
+                 Bitmap bitmap = (Bitmap) msg.obj;
+                 imageView.setImageBitmap(bitmap);
+                 break;
+             case -1:
+                 Toast.makeText(MainActivity.this, &quot;msg &quot;+msg.obj.toString(), Toast.LENGTH_SHORT).show();
+                 break;
+         }
+     }
+ };
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在这里，我们处理了自己发送的消息，到此 Handler 的内部机制大体就分析完了。&lt;/p&gt;
+
+&lt;p&gt;但是从上面的 dispatchMessage 方法我们也能看出，Handler 在处理消息时的顺序是什么？&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  public void dispatchMessage(Message msg) {
+      if (msg.callback != null) {
+          handleCallback(msg);
+      } else {
+          if (mCallback != null) {
+              if (mCallback.handleMessage(msg)) {
+                  return;
+              }
+          }
+          handleMessage(msg);
+      }
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;他首先判断 Message 对象的 callback 对象是不是为空，如果不为空，就直接调用 handleCallback 方法，并把 msg 对象传递过去，这样消息就被处理了。&lt;/p&gt;
+
+&lt;p&gt;如果在发送消息时，我们没有给 Message 设置 callback 对象，那么程序会执行到 else 语句块，此时首先判断 Handler 的 mCallBack 对象是不是空的，如果不为空，直接调用 mCallback 的 handleMessage 方法进行消息处理。&lt;/p&gt;
+
+&lt;p&gt;最终，只有当 Handler 的 mCallback 对象为空，才会执行自己的 handleMessage 方法。&lt;/p&gt;
+
+&lt;p&gt;这是整个处理消息的流程。&lt;/p&gt;
+
+&lt;p&gt;现在就会想了，在处理消息时，什么时候才能执行到第一种情况呢，也就是通过 Message 的 callback 对象处理。&lt;/p&gt;
+
+&lt;p&gt;其实简单，查看源码发现&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/*package*/ Runnable callback;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;callback 是一个 Runnable 接口，那我们这怎么才能设置 Message 的 callback 的参数呢？最后观察发现，Handler 发送消息时，除了使用 sendMessage 方法，还可以使用一个叫 post 的方法，而他的形参正好就是 Runnable,我们赶紧拔出他的源码看看。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public final boolean post(Runnable r)
+{
+   return  sendMessageDelayed(getPostMessage(r), 0);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;接着看 getPostMessage() 这个方法。&lt;/p&gt;
+
+&lt;p&gt;private static Message getPostMessage(Runnable r) {
+      Message m = Message.obtain();
+      m.callback = r;
+      return m;
+  }&lt;/p&gt;
+
+&lt;p&gt;代码看到这里，已经很清楚了，getPostMessage() 返回了一个 Message 对象，这个对象中设置了刚才传递过来的 runnable 对象。&lt;/p&gt;
+
+&lt;p&gt;到这里，你应该明白了，在处理消息时，除了 Handler 自身的 handlerMessage() 方法设置处理，还可以直接在发消息时指定一个 runnable 对象用于处理消息。&lt;/p&gt;
+
+&lt;p&gt;另外上面通过 dispatchMessage() 的代码已经看出来，处理消息有三种情形，第一种直接使用 Message 的 running 对象处理，如果不行使用第二种 用 Handler 的 mCallback 对象处理，最后才考虑使用 handlerMessage 处理，关于第二种情形，这里就不分析了，自己试着看代码应该能找到。Good luck ~&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;参考文章&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/lmj623565791/article/details/38377229&quot;&gt;鸿洋_ - Android 异步消息处理机制 让你深入理解 Looper、Handler、Message三者关系&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 10 Mar 2016 00:00:00 +0800</pubDate>
+        <link>http://gudong.name/2016/03/10/handler_analysis_two.html</link>
+        <guid isPermaLink="true">http://gudong.name/2016/03/10/handler_analysis_two.html</guid>
+        
+        <category>Handler</category>
+        
+        <category>Source</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Handler 之 初识及简单应用</title>
+        <description>&lt;p&gt;这篇文章主要讲解和记录自己对 Handler 的理解。因为一开始接触 Android 就接触到了 Handler，所以对 handler 的了解应该比较多，加上项目中在消息传递以及异步控制方面都要用到 Handler。自己也不止一遍的看过 Handler 源码，不过每次看的时候都能明白，但是时间久了，就很容易忘记。所以这次就有了这个 Handler 系列。从 Handler 的使用场景，到具体使用再到源码解析，自己重新再走一遍，同时通过博客记录下来，方便以后查阅。我想，这也是写博客的意义所在。&lt;/p&gt;
+
+&lt;p&gt;谈一个东西之前，首先说明白他为什么要存在。也就是它存在的意义。&lt;/p&gt;
+
+&lt;h2 id=&quot;handler&quot;&gt;为什么要有 Handler&lt;/h2&gt;
+
+&lt;p&gt;在 Android 中，默认所有的代码都执行在主线程，我们已经在 Activity 中 happy 的写了很久的代码，如设置一个 Button 的颜色、
+获取输入框内的文本、设置 ImageView 的图片属性等等，这些操作执行起来都很快，只要设置，我们可能就会马上看到效果，这就是我们常见的 UI 操作。完成
+他们几乎都是瞬时的。&lt;/p&gt;
+
+&lt;p&gt;但是，在 Android 中有一些操作是很耗费时间的，比如从网络加载一个大图片。因为要建立连接，请求服务端，解析数据等等的操作，所以完成这样的操作，就不是一下两下能做到的。&lt;/p&gt;
+
+&lt;p&gt;试想，这个操作发生在主线程，由于线程同一时间只能执行一个操作，所以在请求网络图片的过程中，主线程不能做一些其他的更新 UI 相关的操作，所以我们现在能看到的就是，界面被卡住了，原因已经很清楚，主线程被耗时操作阻塞了。&lt;/p&gt;
+
+&lt;p&gt;这种卡住的状态直到请求成功。&lt;/p&gt;
+
+&lt;p&gt;其实，如果这样也还好，卡就卡下吧，忍忍也就算了，但是不幸的是， Android 有一个规定，在主线程完成一个操作的时间不能超过5秒，否则 Android 系统就会给用户弹出一个 ANR 的奔溃对话框。&lt;/p&gt;
+
+&lt;p&gt;下面是从官方文章中摘抄的一段&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;In Android, application responsiveness is monitored by the Activity Manager and Window Manager system services. Android will display the ANR dialog for a particular application when it detects one of the following conditions:
+
+No response to an input event (such as key press or screen touch events) within 5 seconds.
+A BroadcastReceiver hasn&#39;t finished executing within 10 seconds.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这里需要说明的一点，其实在 Android 4.0 之后，系统已经不允许在 UI 线程访问网络了，以前只是 ANR，4.0 之后就直接FC了。&lt;/p&gt;
+
+&lt;p&gt;所以，作为开发者，你一定不希望这样的事发生在你的 App 里，所以我们一定要避免把一个耗时可能超过5秒的操作放在主线程。那我们怎么才能做到呢？&lt;/p&gt;
+
+&lt;p&gt;其实目前已经有很多方法可以做到这一点，用 Thread + Handler 的组合或者使用 AsyncTask，当然如果你知道 RxJava 的话，用 RxJava 也是相当
+不错的选择。上述三种方式都可实现。&lt;/p&gt;
+
+&lt;p&gt;官方也已经提供了一个指南，用于介绍如何避免这种问题，他用到了 AsyncTask，原文 &lt;a href=&quot;http://developer.android.com/intl/ru/training/articles/perf-anr.html&quot;&gt;Keeping Your App Responsive&lt;/a&gt;,可以一看。&lt;/p&gt;
+
+&lt;p&gt;作为自己今天的研究，我主要说 Handler。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;使用&lt;/h2&gt;
+
+&lt;p&gt;由于主线程不能做耗时操作，所以可以在主线程中建立一个子线程，把耗时操作放在子线程完成，这样不就能避开 Android 系统的 ANR 规则了吗？&lt;/p&gt;
+
+&lt;p&gt;是的，所以我们可以在主线程 new 一个子线程，让它开启工作，像下面这样&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;private void executeTask(){
+  new Thread(new Runnable() {
+      @Override
+      public void run() {
+          try {
+              Bitmap bitmap = loadImg(&quot;http://blog.happyhls.me/wp-content/uploads/2015/12/fresco-og-image-1024x362.png&quot;);
+          } catch (IOException e) {
+              e.printStackTrace();
+              mHandler.sendMessage(mHandler.obtainMessage(-1,e.getMessage()));
+          }
+      }
+  }).start();
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;如上所示，loadImg() 就是一个耗时操作，可以猜想的到，它里面都发生了什么。&lt;/p&gt;
+
+&lt;p&gt;首先发送了网络请求，接着获取到对应的图片数据，然后还把数据解析成 Bitmap，恩恩，这是一个标准的网络请求操作。代码不贴了。&lt;/p&gt;
+
+&lt;p&gt;恩，回到正题，你不是很耗时吗？我把你放到一个子线程中去执行，随你怎么耗时，你都不会影响我主线程中的 UI 更新操作。&lt;/p&gt;
+
+&lt;p&gt;但是问题来了，子线程 跨过山河大海，飘过远洋高山，终于气喘吁吁的回来了，手里还拿着 bitmap。&lt;/p&gt;
+
+&lt;p&gt;此时，我们很容易的想到，赶紧把这个从服务端解析到的 bitmap 通过 ImageView
+的 setImageBitmap() 方法设置到 ImageView 上啊，这样我们就可以看到图像了。&lt;/p&gt;
+
+&lt;p&gt;此时当你调用上面的方法后，你的应用又崩了。因为此时的 setImageBitmap() 方法调用发生在子线程，同时，这个方法属于更新界面 UI
+的操作，而 Android 系统不允许我们的代码在子线程中去更新 UI，更新 UI 的操作只能发生在主线程，so ~ 我们的代码执行到 setImageResource 这里的时候就崩溃了。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Process: name.gudong.picassodemo, PID: 27044 android.view.ViewRootImpl$CalledFromWrongThreadException:
+
+       Only the original thread that created a view hierarchy can touch its views.
+
+       at android.view.ViewRootImpl.checkThread(ViewRootImpl.java:6581)
+       at android.view.ViewRootImpl.requestLayout(ViewRootImpl.java:924)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;奔溃提示如上所示，注意中间那句提示，说的很明白，简单翻译一下&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Only the original thread that created a view hierarchy can touch its views.
+
+只有创建了这个 view 层次树的线程才可以去 touch(泛指操作)这个 View
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;因为 Activity 的 view 层次树是在主线程完成初始化的，所以对所有依附于这个层次树的 view ,你要是后续想要 touch 它，就一定要在主线程中 touch，不能挪到其他子线程中去 touch。&lt;/p&gt;
+
+&lt;p&gt;关于上面说到的， View 层次树的创建以及初始化是在主线程中完成这一点，一些人可能怀疑。这里也不具体深挖代码，简单分析下。&lt;/p&gt;
+
+&lt;p&gt;一般的，我们在 onCreate 中调用 setContent() 方法就可以完成布局的设置和加载，如下所示。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  setContentView(R.layout.activity_handler);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;很明显，setContent() 是在主线程中调用完成的，这里如果深究 setContent(),你会发现是 PhoneWindow 最终执行了相关的逻辑，而最终
+通过 Window 的一系列操作，这个 Activity 对应的 View 层次树也就创建成功。同时，这个 Activity 中的所有 view 都将依附于这个层次树。&lt;/p&gt;
+
+&lt;p&gt;所以现在在回过头来看看刚才的问题。&lt;/p&gt;
+
+&lt;p&gt;我们在线程中获取到一张 Bitmap 并直接调用 imageView 的 setImageBitmap 方法，报了如下的错误。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Only the original thread that created a view hierarchy can touch its views.       
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;就是因为 这个 imageView 依附的层次树是在主线程中创建的。&lt;/p&gt;
+
+&lt;p&gt;我们平时可能看过很多这样的结论，『Android 中不允许在子线程中更新 UI』,其实归根结底是这个原因。&lt;/p&gt;
+
+&lt;p&gt;说道这里，你不禁想说，Android 也太麻烦了，这么多规则，但是正所谓『无规矩，不成方圆』。有规矩总是好的，况且他也不是只定规矩，不给 API。&lt;/p&gt;
+
+&lt;p&gt;既然有问题，Android 就提供了一整套的解决方案。&lt;/p&gt;
+
+&lt;p&gt;既然子线程不能更新 UI ，那么就只能去主线程更新，但是现在的程序流正在子线程中，我们要怎么才可以把当前的代码逻辑切换到主线程中去?从而达到更新 UI 的目的。&lt;/p&gt;
+
+&lt;p&gt;Handler 来了~&lt;/p&gt;
+
+&lt;h2 id=&quot;handler-&quot;&gt;Handler 用法&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;既然要在主线程中处理 UI ，那么你应该先在主线程里去定义好你的 Handler 。&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;此时只要在子线程中去调用 handler 的 sendMessage(msg,obj) 方法，你就可以把自己的逻辑，或者程序流给甩到主线程(暂且让我们这么形容吧~)。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;private void executeTask(){
+     new Thread(new Runnable() {
+         @Override
+         public void run() {
+              // 子线程
+
+              //............. 耗时操作 ................... //
+
+              Bitmap bitmap = loadImg(&quot;http://i.imgur.com/DvpvklR.png&quot;);
+
+              //............. 耗时操作 ................... //
+
+              Message msg = new Message();
+              msg.what = 1;
+              msg.obj = bitmap;
+              mHandler.sendMessage(msg);
+         }
+     }).start();
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;上面可以看到，在子线程里，在执行完耗时操作，得到 bitmap 后，我们简单封装了一个 msg 对象，我们就把这个 msg
+通过 mHandler 的 sendMessage 方法，甩到了主线程，主线程中 mHandler 的 handMessage() 方法会处理被甩过来的 msg 对象；
+如下所示：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;private Handler mHandler = new Handler(){
+    @Override
+    public void handleMessage(Message msg) {
+        super.handleMessage(msg);
+        switch (msg.what){
+            case 1:
+                Bitmap bitmap = (Bitmap) msg.obj;
+                imageView.setImageBitmap(bitmap);
+                break;
+            case -1:
+                Toast.makeText(MainActivity.this, &quot;msg &quot;+msg.obj.toString(), Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;注意，这里我把它定义成了一个 Activity 的成员变量，它是在主线程中创建完成的。&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这里你可能就要问了，为什么在上面的子线程中调用了&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mHandler.sendMessage(msg);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;后，msg 就能被甩到主线程中去呢，你说能就能吗？证据在哪里？&lt;/p&gt;
+
+&lt;p&gt;其实通过运行代码，我们发现这样确实没问题了，我们在上面的 handlerMessage 方法中的 case 1 中获得了 对应 bitmap,而且
+通过调用 setImageBitmap() 方法，我们确实也看到了实际的图片效果。&lt;/p&gt;
+
+&lt;p&gt;这就是证据啊，有图有真相，msg 就是被甩到主线程了，否则你怎么看到的图像。&lt;/p&gt;
+
+&lt;p&gt;话虽这样说，现象也确实证明了上面说的，但是为什么简单调用了 sendMessage() 方法后，msg 就到了 主线程中呢？背后的具体逻辑到底
+是什么呢？&lt;/p&gt;
+
+&lt;p&gt;下面具体带你进入 Handler 的背后。其实不是带你进入，同时也是带我进入，我虽然看过好多次，但是老是忘记，这次就通过博客的方式记录下。&lt;/p&gt;
+
+&lt;p&gt;以备以后再次忘记，哈哈~&lt;/p&gt;
+
+&lt;p&gt;具体可以看下一遍文章 &lt;a href=&quot;/2016/03/10/handler_analysis_two.html&quot;&gt;Handler 之 源码解析&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 10 Mar 2016 00:00:00 +0800</pubDate>
+        <link>http://gudong.name/foundation/2016/03/10/handler_analysis_one.html</link>
+        <guid isPermaLink="true">http://gudong.name/foundation/2016/03/10/handler_analysis_one.html</guid>
+        
+        <category>Handler</category>
+        
+        <category>Usage</category>
+        
+        
+        <category>Foundation</category>
+        
+      </item>
+    
+      <item>
+        <title>关于咕咚翻译</title>
+        <description>&lt;p&gt;咕咚翻译是自己最近开发的一个实现『划词翻译』功能的 Android 应用 ，可能是目前 Android 市场上翻译效率最高的一款应用。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;示意图&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://7xr9gx.com1.z0.glb.clouddn.com/gd.gif&quot; style=&quot;width: 50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;项目地址&lt;/h2&gt;
+&lt;p&gt;目前咕咚翻译已经开源到了 Github ,&lt;a href=&quot;https://github.com/maoruibin/TranslateApp&quot;&gt;咕咚翻译&lt;/a&gt;,欢迎 star ,如果有 bug 或者更好的意见可以提 issue.&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;下载&lt;/h2&gt;
+&lt;p&gt;如果想第一时间体验，可点击&lt;a href=&quot;http://fir.im/gdTranslater&quot;&gt;下载链接&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;缘起&lt;/h2&gt;
+&lt;p&gt;自己经常在手机上会阅读一些英文的技术 blog 或者文档，经常会遇到陌生的单词，
+想必大家都有类似的经历，一般的，如果是上班期间，我可能会打开谷歌翻译，然后查词，但是当你不在电脑旁，
+就只能通过手机上的翻译软件来翻译生词，这里我们具体思考一下整个操作过程。&lt;/p&gt;
+
+&lt;p&gt;通常遇到生词我们会这样操作，&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1、长按生词&lt;/li&gt;
+  &lt;li&gt;2、选择复制&lt;/li&gt;
+  &lt;li&gt;3、点击 Home 键&lt;/li&gt;
+  &lt;li&gt;4、找到翻译 App,有道翻译或者谷歌翻译之类的&lt;/li&gt;
+  &lt;li&gt;5、长按输入框&lt;/li&gt;
+  &lt;li&gt;6、选择粘贴，&lt;/li&gt;
+  &lt;li&gt;7、翻译&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;可以看到，经过上面漫长的7个步骤后，我们才可以查到一个单词的意思。试想，如果连续碰到几个不认识的单词，然后每次都想上面一样操作几次，呃呃 ~此刻的心情~&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/about_gd_1.jpg&quot; style=&quot;width: 30%;margin: auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;其实整个过程是一个非常考验用户耐性的事，我曾经做过一次记录，记录自己完成上面一连串操作所花费的时间，我对手机的操作相对比较熟练，但是也花了15秒的时间，这15秒对于一个沉浸在阅读中的用户来讲是十分不友好的，因为他会很大几率的打断用户的阅读连贯性。&lt;/p&gt;
+
+&lt;p&gt;所以，我就想，我能不能做一个稍微友好一点的翻译 App,能不能让上面的步骤变得少点，因为自己一直有这个需求，所以自己就有了做这个 App 想法，而且我一直认为技术应该是用来解决问题的。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/about_gd_duang.jpg&quot; style=&quot;width: 30%;margin: auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;咕咚来了&lt;/h2&gt;
+
+&lt;p&gt;最终,咕咚翻译仅仅只通过两步就实现了翻译的目的，长按单词、复制翻译。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/about_gd_solve.jpg&quot; style=&quot;width: 30%;margin: auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;就是这么简单，此时单词的释义就会出现在手机屏幕，如下所示&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://7xr9gx.com1.z0.glb.clouddn.com/marketing1.pic_hd.jpg&quot; style=&quot;width: 50%;margin: auto;&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;同时还支持收藏功能，既然是用户要翻译的词语，那应该很可能就是陌生单词，此时可以加入收藏到你的生词本。方便日后查阅。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;优点&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1、高效翻译，及时展现释义在手机界面。&lt;/li&gt;
+  &lt;li&gt;2、支持多个翻译引擎切换，目前支持百度、有道、金山。&lt;/li&gt;
+  &lt;li&gt;3、方便快捷加入生词本&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-6&quot;&gt;不足&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1、目前不支持单词发音&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-7&quot;&gt;关于作者&lt;/h2&gt;
+
+&lt;p&gt;咕咚，爱折腾、爱新鲜…&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://gudong.name/&quot;&gt;个人站点&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/maoruibin&quot;&gt;github&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://weibo.com/u/1874136301&quot;&gt;微博&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 26 Feb 2016 00:00:00 +0800</pubDate>
+        <link>http://gudong.name/product/2016/02/26/gudong_translate.html</link>
+        <guid isPermaLink="true">http://gudong.name/product/2016/02/26/gudong_translate.html</guid>
+        
+        <category>Product</category>
+        
+        
+        <category>product</category>
+        
+      </item>
+    
+  </channel>
+</rss>

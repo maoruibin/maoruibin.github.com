@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Android Developer 关注移动开发 独立开发者 篮球粉">
+    <meta name="keyword"  content="咕咚 咕咚翻译 毛瑞斌 大侠咕咚 咕咚的博客 徐生梅的男朋友 甘肃">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+      <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="assets/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Handler 之 源码解析 - 咕咚的个人站点</title>
+
+    <link rel="canonical" href="http://gudong.name/2016/03/10/handler_analysis_two.html">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400normal,700normal' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300normal,400normal,600normal,700normal,800normal,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">咕咚</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">主页</a>
+                    </li>
+                    
+
+                      
+                    
+
+                      
+                        <li>
+                            <a href="/about">关于</a>
+                        </li>
+                      
+                    
+
+                      
+                    
+
+                      
+                        <li>
+                            <a href="/portfolio/">作品</a>
+                        </li>
+                      
+                    
+
+                      
+                    
+
+                      
+                        <li>
+                            <a href="/tags">标签</a>
+                        </li>
+                      
+                    
+
+                      
+                    
+
+                      
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from
+     * $toggle/$collapse will break global delegation.
+     *
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/assets/header_image.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/assets/header_image.jpg')
+    }
+
+    
+    header.intro-header .header-mask{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(0,0,0, 0.3);
+    }
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+
+                    
+                    <h1>Handler 之 源码解析</h1>
+                    
+                    
+
+
+                    <h2 class="subheading"></h2>
+                    
+
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#Handler" title="Handler">Handler</a>
+                        
+                        <a class="tag" href="/tags/#Source" title="Source">Source</a>
+                        
+                    </div>
+
+
+                    <span class="meta">咕咚 发表于 2016-03-10</span>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<p>上一篇博客<a href="/2016/03/10/handler_analysis_one.html">Handler 之 初识及简单应用</a>中介绍了 Handler 的作用，以及 Handler 的基本用法，同时也详细介绍了为什么子线程不能更新 UI 的原因，但是因为篇幅原因，所以对 Handler 的内部机制并没有展开叙述。这篇文章就从 Handler 开始解析与之相关的源码，从而更好的理解 Handler 以及 Looper MessageQueue。</p>
+
+<h2 id="handler-">Handler 机制</h2>
+
+<p>写完上一篇文章，下面我该再读一遍 Handler 的源码了，其实讲 Handler 内部机制的博客已经很多了，但是自己还是要在看一遍，源码是最好的资料。</p>
+
+<p>在具体看源码之前，有必要先理解一下 Handler、Looper、MessageQueue 以及 Message 他们的关系。</p>
+
+<h3 id="section">关系</h3>
+
+<p>Looper: 是一个消息轮训器，他有一个叫 loop() 的方法，用于启动一个死循环，不停的去轮询消息池。</p>
+
+<p>MessageQueue: 就是上面说到的消息池</p>
+
+<p>Handler: 用于发送消息，和处理消息</p>
+
+<p>Message: 一个消息对象</p>
+
+<p>现在要问了，他们是怎么关联起来的？</p>
+
+<p>一切都要从 Handler 的构造方法开始。如下所示</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>final MessageQueue mQueue;
+final Looper mLooper;
+final Callback mCallback;
+final boolean mAsynchronous;
+
+public Handler(Callback callback, boolean async) {
+    mLooper = Looper.myLooper();
+    if (mLooper == null) {
+        throw new RuntimeException(
+            "Can't create handler inside thread that has not called Looper.prepare()");
+    }
+    mQueue = mLooper.mQueue;
+    mCallback = callback;
+    mAsynchronous = async;
+  }
+</code></pre>
+</div>
+
+<p>可以看到 Handler 本身定义了一个 MessageQueue 对象 mQueue，和一个 Looper 的对象 mLooper。</p>
+
+<p>不过，对 Handler 的这两个成员变量的初始化都是通过 Looper 来赋值的。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mLooper = Looper.myLooper();
+mQueue = mLooper.mQueue;
+</code></pre>
+</div>
+
+<p>现在，我们新建的 Handler 就和 Looper、MessageQueue 关联了起来，而且他们是一对一的关系，一个 Handler 对应一个
+Looper，同时对应一个 MessageQueue 对象。这里给 MessageQueue 的赋值比较特殊，</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mQueue = mLooper.mQueue;
+</code></pre>
+</div>
+
+<p>这里直接使用 looper 的 mQueue 对象，将 looper 的 mQueue 赋值给了 Handler 自己，现在 Looper 和 Handler 持有着同一个 MessageQueue 。</p>
+
+<p>这里可以看到 Looper 的重要性，现在 Handler 中的 Looper 实例和 MessageQueue 实例都是通过 Looper 来完成设置的，那么下面我们具体看看 Looper 是怎么实例化的，以及他的 mQueue 是怎么来的。</p>
+
+<h4 id="looper">Looper</h4>
+
+<p>从上面 Handler 的构造方法中可以看到，Handler 的 mLooper 是这样被赋值的。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mLooper = Looper.myLooper();
+</code></pre>
+</div>
+
+<p>接着看 myLooper() 的实现。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>static final ThreadLocal&lt;Looper&gt; sThreadLocal = new ThreadLocal&lt;Looper&gt;();
+
+public static @Nullable Looper myLooper() {
+    return sThreadLocal.get();
+}
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">这里出现了一个平时不怎么看到的 ThreadLocal 类，关于这个类，推荐去阅读任玉刚的一篇文章 - Android的消息机制之ThreadLocal的工作原理,讲的很不错。另外自己也写了一篇文章，用于讲解 ThreadLocal 的用法，以及他在 Handler 和 Looper 中的巧妙意义。</code></p>
+
+<p><a href="http://blog.csdn.net/singwhatiwanna/article/details/48350919">任玉刚 - Android的消息机制之ThreadLocal的工作原理</a></p>
+
+<p><a href="/2016/03/11/handler_analysis_three.html">咕咚 - Handler 之 ThreadLocal 相关</a></p>
+
+<p>这里他是通过 ThreadLocal 的 get 方法获得，很奇怪，之前我们没有在任何地方对 sThreadLocal 执行过 set 操作。
+这里却直接执行 get 操作，返回的结果必然为空啊！</p>
+
+<p>但是如果现在为空，我们在 new Handler() 时，程序就已经挂掉了啊，因为在 Handler 的构造方法中，如果执行 Looper.myLooper() 的返回结果为空。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mLooper = Looper.myLooper();
+if (mLooper == null) {
+   throw new RuntimeException(
+       "Can't create handler inside thread that has not called Looper.prepare()");
+}
+</code></pre>
+</div>
+
+<p>但是，我们的程序没有挂掉，这意味着，我们在执行 myLooper() 方法时，他返回的结果不为空。</p>
+
+<p>为什么呢？那我们在 Looper 中看看，哪里有对应的 set 方法，如下所示,我们找到了一个全局静态方法 prepare</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public static void prepare() {
+    prepare(true);
+}
+
+private static void prepare(boolean quitAllowed) {
+    if (sThreadLocal.get() != null) {
+        throw new RuntimeException("Only one Looper may be created per thread");
+    }
+    sThreadLocal.set(new Looper(quitAllowed));
+}
+</code></pre>
+</div>
+
+<p>我们看到，在最后一行这里，执行了对应的 set 操作，这里把一个 new 出来的 Looper 直接 set 到 sThreadLocal 中。</p>
+
+<p>但是我们不知道，到底什么时候，是谁调用了 prepare() 方法，从而给 sThreadLocal 设置了一个 Looper 对象。</p>
+
+<p>后来在网上经过搜索，找到了答案，我们的 Android 应用在启动时，会执行到 ActivityThread 类的 main 方法，就和我们以前写的 java 控制台程序一样，其实 ActivityThread 的 main 方法就是一个应用启动的入口。</p>
+
+<p>在这个入口里，会做很多初始化的操作。其中就有 Looper 相关的设置，代码如下</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public static void main(String[] args) {
+
+    //............. 无关代码...............
+
+    Looper.prepareMainLooper();
+
+    Looper.loop();
+
+    throw new RuntimeException("Main thread loop unexpectedly exited");
+}
+</code></pre>
+</div>
+
+<p>在这里，我们很清楚的看到，程序启动时，首先执行 Looper.prepareMainLooper() 方法，接着执行了 loop() 方法。</p>
+
+<p>先看看 prepareMainLooper 方法。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public static void prepareMainLooper() {
+    prepare(false);
+    synchronized (Looper.class) {
+        if (sMainLooper != null) {
+            throw new IllegalStateException("The main Looper has already been prepared.");
+        }
+        sMainLooper = myLooper();
+    }
+}
+
+public static @Nullable Looper myLooper() {
+    return sThreadLocal.get();
+}
+
+private static void prepare(boolean quitAllowed) {
+  if (sThreadLocal.get() != null) {
+      throw new RuntimeException("Only one Looper may be created per thread");
+  }
+  sThreadLocal.set(new Looper(quitAllowed));
+}
+</code></pre>
+</div>
+
+<p>这里，首先调用了 prepare() 方法，执行完成后，sThreadLocal 成功绑定了一个 new Looper() 对象，然后执行</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sMainLooper = myLooper();
+</code></pre>
+</div>
+
+<p>可以看看 sMainLooper 的定义，以及 myLooper() 方法；</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>private static Looper sMainLooper;  // guarded by Looper.class    
+
+public static @Nullable Looper myLooper() {
+    return sThreadLocal.get();
+}
+</code></pre>
+</div>
+
+<p>现在的 sMainLooper 就有值了，也就是说，只要我们的 App 启动，sMainLooper 中就已经设置了一个 Looper 对象。以后调用
+sMainLooper 的 get 方法将返回在程序启动时设置的 Looper，不会为空的。</p>
+
+<p>下面在看 main 方法中的 调用的 Looper.loop() 方法。 已经把一些无关代码删了，否则太长了，</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public static void loop() {
+
+    //获得一个 Looper 对象
+    final Looper me = myLooper();
+
+    // 拿到 looper 对应的 mQueue 对象
+    final MessageQueue queue = me.mQueue;
+
+    //死循环监听(如果没有消息变化，他不会工作的) 不断轮训 queue 中的 Message
+    for (;;) {
+        // 通过 queue 的 next 方法拿到一个 Message
+        Message msg = queue.next(); // might block
+        //空判断
+        if (msg == null)return;
+        //消息分发   
+        msg.target.dispatchMessage(msg);
+        //回收操作  
+        msg.recycleUnchecked();
+    }
+}
+</code></pre>
+</div>
+
+<p>现在，想一个简单的过程，我们创建了一个 App,什么也不做，就是一个 HelloWorld 的 Android 应用，
+此时，你启动程序，即使什么也不干，按照上面的代码，你应该知道的是，现在的程序中已经有一个 Looper 存在了。
+并且还启动了消息轮询。 Looper.loop();</p>
+
+<p>但是，目前来看，他们好像没什么用，只是存在而已。</p>
+
+<p>此时你的项目如果使用了 Handler,你在主线程 new 这个 Handler 时，执行构造方法</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public Handler(Callback callback, boolean async) {
+    mLooper = Looper.myLooper();
+    if (mLooper == null) {
+        throw new RuntimeException(
+            "Can't create handler inside thread that has not called Looper.prepare()");
+    }
+    mQueue = mLooper.mQueue;
+    mCallback = callback;
+    mAsynchronous = async;
+}
+</code></pre>
+</div>
+
+<p>此时的 myLooper() 返回的 Looper 就是应用启动时的那个 Looper 对象，我们从 Looper 的构造方法得知，在 new Looper 时，会新建一个对应
+的消息池对象 MessageQueue</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>private Looper(boolean quitAllowed) {
+       mQueue = new MessageQueue(quitAllowed);
+       mThread = Thread.currentThread();
+}
+</code></pre>
+</div>
+
+<p>那么在 Handler 的构造方法中，那个 mQueue 其实也是在应用启动时就已经创建好了。</p>
+
+<p>现在再来回顾一下 Handler 的构造方法，在构造方法中，他为自己的 mQuery 和 mLooper 分别赋值，而这两个值其实在应用启动时，就已经初始化好了。</p>
+
+<p>并且，现在已经启动了一个消息轮训，在监听 mQuery 中是不是有新的 Message !</p>
+
+<p>现在这个轮训器已经好了，我们看发送消息的过程。</p>
+
+<h3 id="sendmessage">SendMessage</h3>
+
+<p>我们使用 Handler 发送消息</p>
+
+<p>mHandler.sendMessage(msg);</p>
+
+<p>Handler 有好多相关的发送消息的方法。但是追踪源码，发现他们最终都来到了 Handler 的这个方法 sendMessageAtTime</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public boolean sendMessageAtTime(Message msg, long uptimeMillis) {
+    MessageQueue queue = mQueue;
+    if (queue == null) {
+        RuntimeException e = new RuntimeException(
+                this + " sendMessageAtTime() called with no mQueue");
+        Log.w("Looper", e.getMessage(), e);
+        return false;
+    }
+    return enqueueMessage(queue, msg, uptimeMillis);
+}
+</code></pre>
+</div>
+
+<p>接着看 enqueueMessage() 方法体</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>private boolean enqueueMessage(MessageQueue queue, Message msg, long uptimeMillis) {
+      msg.target = this;
+      // 使用默认的 handler 构造方法时，mAsynchronous 为 false。
+      if (mAsynchronous) {
+          msg.setAsynchronous(true);
+      }
+      return queue.enqueueMessage(msg, uptimeMillis);
+    }
+</code></pre>
+</div>
+
+<p>这里有一句至关重要的代码</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>msg.target = this;
+</code></pre>
+</div>
+
+<p>我们看看 msg 的 target 是怎么声明的</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Handler target;
+</code></pre>
+</div>
+
+<p>意思就是每个 Message 都有一个类型为 Handler 的 target 对象，这里在 handler 发送消息的时候，最终执行到
+上面的方法 enqueueMessage() 时,会自动把当前执行 sendMessage() 的 handler对象，赋值给 Message 的 target。</p>
+
+<p>也就是说，Handler 发送了 Message，并且这个 Message 的 target 就是这个 Handler。</p>
+
+<p>想想为什么要这么做？</p>
+
+<p>这里再说一下，Handler 的作用，</p>
+
+<ul>
+  <li>发送消息</li>
+  <li>处理消息</li>
+</ul>
+
+<p>先不看代码，我们可以想想，handler 发送了 message ,最终这个 message 会被发送到 MessageQueue 这个消息队列。
+那么最终，谁会去处理这个消息。</p>
+
+<p>在这里消息发送和处理遵循『谁发送，谁处理』的原则。</p>
+
+<p>现在问题来了，就按照上面说的，谁发送，谁处理，那现在应该是 handler 自己处理了，但是他在哪里处理呢？到现在我们也没看到啊。</p>
+
+<p>慢慢来，接下来继续看消息的传递。</p>
+
+<p>现在，我们只要发送了消息，那么消息池 mQuery 就会增加一个消息，Looper 就会开始工作，之前已经说了，在应用启动的时候，
+已经启动了 Looper 的 loop() 方法，这个方法会不断的去轮训 mQuery 消息池，只要有消息，它就会取出消息，并处理，那他是怎么处理的呢？看一下 loop() 的代码再说。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public static void loop() {
+
+    //获得一个 Looper 对象
+    final Looper me = myLooper();
+
+    // 拿到 looper 对应的 mQueue 对象
+    final MessageQueue queue = me.mQueue;
+
+    //死循环监听(如果没有消息变化，他不会工作的) 不断轮训 queue 中的 Message
+    for (;;) {
+        // 通过 queue 的 next 方法拿到一个 Message
+        Message msg = queue.next(); // might block
+        //空判断
+        if (msg == null)return;
+        //消息分发   
+        msg.target.dispatchMessage(msg);
+        //回收操作  
+        msg.recycleUnchecked();
+    }
+}
+</code></pre>
+</div>
+
+<p>看 for()循环，他在拿到消息后，发现 msg 不为空，接着就会执行下面这句非常重要的代码</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>msg.target.dispatchMessage(msg);
+</code></pre>
+</div>
+
+<p>这里执行了 msg.target 的方法 dispatchMessage，上面已经在 sendMessage 时看到了，我们在发送消息时，会把 msg 的 target
+设置为 handler 本身，也就是说，handler 发送了消息，最终自己处理了自己刚刚分发的消息。恩恩，答案就在这里，『谁发送，谁处理』的
+道理在这里终于得到了体现。</p>
+
+<p>那么他是怎么处理消息的？看看 Handler 的 dispatchMessage() 是怎么实现的。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public void dispatchMessage(Message msg) {
+    if (msg.callback != null) {
+        handleCallback(msg);
+    } else {
+        if (mCallback != null) {
+            if (mCallback.handleMessage(msg)) {
+                return;
+            }
+        }
+        handleMessage(msg);
+    }
+}
+</code></pre>
+</div>
+
+<p>我们看到，我们没有给 msg 设置 callback 也没有给 handler 的 mCallback 设置过值，所以此时，会执行 handleMessage() 方法；</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public void handleMessage(Message msg) {
+
+}
+</code></pre>
+</div>
+
+<p>发现这是一个空方法，所以自己的新建 Handler 时，只要复写了这个方法，我们就可以接受到从子线程中发送过来的消息了 。</p>
+
+<p>在看一遍自己定义 Handler 时，如何定义的，如何复写 handlerMessage</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>private Handler mHandler = new Handler(){
+     @Override
+     public void handleMessage(Message msg) {
+         super.handleMessage(msg);
+         switch (msg.what){
+             case 1:
+                 Bitmap bitmap = (Bitmap) msg.obj;
+                 imageView.setImageBitmap(bitmap);
+                 break;
+             case -1:
+                 Toast.makeText(MainActivity.this, "msg "+msg.obj.toString(), Toast.LENGTH_SHORT).show();
+                 break;
+         }
+     }
+ };
+</code></pre>
+</div>
+
+<p>在这里，我们处理了自己发送的消息，到此 Handler 的内部机制大体就分析完了。</p>
+
+<p>但是从上面的 dispatchMessage 方法我们也能看出，Handler 在处理消息时的顺序是什么？</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  public void dispatchMessage(Message msg) {
+      if (msg.callback != null) {
+          handleCallback(msg);
+      } else {
+          if (mCallback != null) {
+              if (mCallback.handleMessage(msg)) {
+                  return;
+              }
+          }
+          handleMessage(msg);
+      }
+  }
+</code></pre>
+</div>
+
+<p>他首先判断 Message 对象的 callback 对象是不是为空，如果不为空，就直接调用 handleCallback 方法，并把 msg 对象传递过去，这样消息就被处理了。</p>
+
+<p>如果在发送消息时，我们没有给 Message 设置 callback 对象，那么程序会执行到 else 语句块，此时首先判断 Handler 的 mCallBack 对象是不是空的，如果不为空，直接调用 mCallback 的 handleMessage 方法进行消息处理。</p>
+
+<p>最终，只有当 Handler 的 mCallback 对象为空，才会执行自己的 handleMessage 方法。</p>
+
+<p>这是整个处理消息的流程。</p>
+
+<p>现在就会想了，在处理消息时，什么时候才能执行到第一种情况呢，也就是通过 Message 的 callback 对象处理。</p>
+
+<p>其实简单，查看源码发现</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/*package*/ Runnable callback;
+</code></pre>
+</div>
+
+<p>callback 是一个 Runnable 接口，那我们这怎么才能设置 Message 的 callback 的参数呢？最后观察发现，Handler 发送消息时，除了使用 sendMessage 方法，还可以使用一个叫 post 的方法，而他的形参正好就是 Runnable,我们赶紧拔出他的源码看看。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public final boolean post(Runnable r)
+{
+   return  sendMessageDelayed(getPostMessage(r), 0);
+}
+</code></pre>
+</div>
+
+<p>接着看 getPostMessage() 这个方法。</p>
+
+<p>private static Message getPostMessage(Runnable r) {
+      Message m = Message.obtain();
+      m.callback = r;
+      return m;
+  }</p>
+
+<p>代码看到这里，已经很清楚了，getPostMessage() 返回了一个 Message 对象，这个对象中设置了刚才传递过来的 runnable 对象。</p>
+
+<p>到这里，你应该明白了，在处理消息时，除了 Handler 自身的 handlerMessage() 方法设置处理，还可以直接在发消息时指定一个 runnable 对象用于处理消息。</p>
+
+<p>另外上面通过 dispatchMessage() 的代码已经看出来，处理消息有三种情形，第一种直接使用 Message 的 running 对象处理，如果不行使用第二种 用 Handler 的 mCallback 对象处理，最后才考虑使用 handlerMessage 处理，关于第二种情形，这里就不分析了，自己试着看代码应该能找到。Good luck ~</p>
+
+<h2 id="section-1">参考文章</h2>
+
+<p><a href="http://blog.csdn.net/lmj623565791/article/details/38377229">鸿洋_ - Android 异步消息处理机制 让你深入理解 Looper、Handler、Message三者关系</a></p>
+
+
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                </style>
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="/2016/03/10/handler_analysis_two"
+                    data-title="Handler 之 源码解析"
+                    data-url="http://gudong.name/2016/03/10/handler_analysis_two.html"
+                    data-images="http://gudong.name/assets/header_image.jpg"
+                    data-content="上一篇博客Handler 之 初识及简单应用中介绍了 Handler 的作用，以及 Handler 的基本用法，同时也详细介绍了为什么子线程不能更新 UI... | 咕咚的个人站点 " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/foundation/2016/03/10/handler_analysis_one.html" data-toggle="tooltip" data-placement="top" title="Handler 之 初识及简单应用">
+                        Previous<br>
+                        <span>Handler 之 初识及简单应用</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2016/03/11/handler_analysis_three.html" data-toggle="tooltip" data-placement="top" title="Handler 之 ThreadLocal 相关">
+                        Next<br>
+                        <span>Handler 之 ThreadLocal 相关</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment" id="comments">
+                    <div class="ds-thread"
+                        data-thread-key="/2016/03/10/handler_analysis_two"
+                        data-title="Handler 之 源码解析"
+                        data-url="http://gudong.name/2016/03/10/handler_analysis_two.html" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#随想" title="随想" rel="8">
+                                          随想
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Skills" title="Skills" rel="2">
+                                          Skills
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#Collection" title="Collection" rel="2">
+                                          Collection
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Tools" title="Tools" rel="2">
+                                          Tools
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#Experience" title="Experience" rel="5">
+                                          Experience
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#Java" title="Java" rel="4">
+                                          Java
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#线程" title="线程" rel="2">
+                                          线程
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#Gradle" title="Gradle" rel="2">
+                                          Gradle
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Usage" title="Usage" rel="2">
+                                          Usage
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Product" title="Product" rel="3">
+                                          Product
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Performance" title="Performance" rel="2">
+                                          Performance
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#RxJava" title="RxJava" rel="2">
+                                          RxJava
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+                      				<a href="/tags/#Handler" title="Handler" rel="3">
+                                          Handler
+                                      </a>
+                                  
+              				
+                                  
+                      				<a href="/tags/#Source" title="Source" rel="2">
+                                          Source
+                                      </a>
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+              				
+                                  
+              				
+              			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>朋友</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="http://drakeet.me">Drakeet</a></li>
+                    
+                        <li><a href="http://blog.daimajia.com">代码家</a></li>
+                    
+                        <li><a href="http://hujiaweibujidao.github.io/">五道口宅男</a></li>
+                    
+                        <li><a href="http://itangqi.me/">汤奇</a></li>
+                    
+                        <li><a href="http://wuxiaolong.me/">吴小龙同学</a></li>
+                    
+                        <li><a href="http://yifeiyuan.me/">程序亦非猿</a></li>
+                    
+                        <li><a href="http://www.easydone.cn/">Ailurus</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'maoruibin';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/maoruibin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/maoruibin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/maoruibin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li>
+                        <a href="https://twitter.com/maoruibin9035">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 咕咚 2016
+                    <br>
+                    Theme from © <a href="http://huangxuan.me">Hux</a> | Powered by <a href="http://jekyllcn.com/">Jekyll</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- Highlight.js -->
+<script>
+    async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+        hljs.initHighlightingOnLoad();
+    })
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#607D8B'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+<link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        // var $nav = document.querySelector("nav");
+        // if($nav) FastClick.attach($nav);
+
+        // global FastClick!!
+        FastClick.attach(document.body);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-64640288-1';
+    var _gaDomain = 'gudong.name';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'de1df75db196971264bd87815c96f646';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

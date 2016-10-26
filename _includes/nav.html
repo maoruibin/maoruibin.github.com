@@ -20,13 +20,15 @@
                         <a href="{{ site.baseurl }}/">主页</a>
                     </li>
                     {% for page in site.pages %}
-
                       {% if page.title %}
                         <li>
                             <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
                         </li>
                       {% endif %}
                     {% endfor %}
+                    <li>
+                        <a href="{{ site.baseurl }}/2015/04/17/change-log.html">日志</a>
+                    </li>
                 </ul>
             </div>
         </div>
