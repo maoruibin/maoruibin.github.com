@@ -2,248 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a38b3df-3e45-427f-8c90-fe1fd9379381" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/head_2015_life.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_bk_about.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_image.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_image_2016_10_22.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_image_back.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_image_line_arrow.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_image_lobal.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_image_mountin.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_image_post.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_image_road.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_image_two.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/header/header_image_x.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/1024_family.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/1024_food.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/1024_jekyll_fail.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/1024_keep.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/1024_old_theme.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/1024_programer.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/1024_suc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/2015_summary_appplus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/2015_summary_basketball.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/QQ20150718-1@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/QQ20150718-2@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/QQ20150718-3@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/about_gd_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/about_gd_chance.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/about_gd_duang.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/about_gd_problem.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/about_gd_solve.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/android_m_install.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/android_m_permission.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/android_m_sms.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/appplus_about_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/appplus_about_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/appplus_about_detail.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/appplus_about_index.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/appplus_about_setting.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/appplus_about_theme.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/butterknife_onclick_method_image.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/cakeview_principle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/cakeview_principle_v2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/cakeview_v2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/checkstyle_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/checkstyle_2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/checkstyle_3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/checkstyle_4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/class_loader_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/class_loader_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/class_loader_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dagger_mvp_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/device-2015-09-11-dialog_theme_bug.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/device-2015-09-11-dialog_theme_bug_fix.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dycc_01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dycc_02.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dycc_03.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dycc_04.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dycc_05.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dycc_06.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dycc_07.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dycc_08.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dycc_09.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/dycc_10.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/gank_mvp_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/gank_mvp_3.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/gank_mvp_introduce.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/github_usage_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/github_usage_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/github_usage_3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/github_usage_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/github_usage_5.webp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/head_2015_life.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/header_bk_about.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/header_image.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/header_image_back.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/header_image_one.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/header_image_two.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/android-icon-144x144.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/android-icon-192x192.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/android-icon-36x36.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/android-icon-48x48.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/android-icon-72x72.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/android-icon-96x96.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon-114x114.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon-120x120.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon-144x144.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon-152x152.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon-180x180.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon-57x57.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon-60x60.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon-72x72.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon-76x76.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon-precomposed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/apple-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/favicon-16x16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/favicon-32x32.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/favicon-96x96.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/ms-icon-144x144.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/ms-icon-150x150.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/ms-icon-310x310.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/ms-icon-70x70.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/instacode copy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/instacode.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/licence_1.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/licence_2.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/licence_3.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/logo_01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/logo_02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/mars_felling_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/mars_felling_2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/mars_felling_3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/mars_felling_4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/mars_felling_5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/mars_felling_6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/mars_felling_7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/mmb_index.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/over_draw_bad_one.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/over_draw_bad_two.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/over_draw_color_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/over_draw_color_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/over_draw_color_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/over_draw_good_one.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/over_draw_good_two.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/profile-placeholder.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/profile.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/profile_circle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/profile_head.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/sublime_java.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/tanshan_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/tanshan_2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/tanshan_3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/tanshan_4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/tanshan_5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/tronsition_effect.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/tronsition_effect_2.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/img/404-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/img/contact-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/img/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/img/icon_wechat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/img/tag-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/fonts/huxico.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/fonts/huxico.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/fonts/huxico.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/images/logo-react.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/images/logo-vue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/images/profile_circle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/images/work_appplus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/images/work_gd_translate.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_posts/2016-10-22-Android-transition.markdown" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/04/17/change-log.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/05/19/way.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/05/21/custom_view_cakeview.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/05/26/lock_screen.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/06/03/color_alaph.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/06/03/jekyll.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/06/29/mac_sublime_java.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/07/18/android_popupMenu_icon.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/07/18/android_shift_theme.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/07/25/android_webview_chinese_encode.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/08/03/AtomicInteger_Introduce.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/08/03/AtomicInteger_Unsafe.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/08/03/java_important_word.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/09/10/alert_dialog_theme.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/09/13/gradlebuild-best-practice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/09/27/project-rule.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/10/20/java-loader.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/10/27/bitmap-tip.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/11/24/copy-right-meizhi.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/12/20/watch_dependencies_path.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/12/21/reason-for-appplus.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/12/22/my_2015_life.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2015/12/27/mars_felling.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/01/13/android-performance-patterns-first-note.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/01/15/over_draw_color_introduce.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/01/21/RxJava_In_AppPlus.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/01/26/about-my-project.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/02/25/SharePreference_service_activity.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/03/10/handler_analysis_two.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/03/11/handler_analysis_three.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/04/07/checkstyle.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/04/09/rxjava_operate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/04/15/butterknife_introduce.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/07/02/my-blog-update-record.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/2016/10/13/viewcontroller-foreword.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/404.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/CNAME" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/about.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/advanced/2015/11/23/gank_mvp_introduce.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/browserconfig.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/assets/icons/manifest.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/css/hux-blog.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/css/hux-blog.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/css/syntax.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/feed.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/feeling/生活/2015/10/24/1024.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/foundation/2016/03/10/handler_analysis_one.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/js/animatescroll.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/js/hux-blog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/js/hux-blog.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/js/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/js/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/js/jquery.nav.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/js/jquery.tagcloud.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/page2/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/page3/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/css/timeline.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/fonts/huxico.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/portfolio/js/modernizr.custom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/product/2016/02/26/gudong_translate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/skills/2015/10/13/github-usage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/tags.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/technology/2016/10/22/Android-transition.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raft/技术/2015/11/10/android_m_permission.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_config.yml" afterPath="$PROJECT_DIR$/_config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/nav.html" afterPath="$PROJECT_DIR$/_includes/nav.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_layouts/post.html" afterPath="$PROJECT_DIR$/_layouts/post.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-04-17-change-log.markdown" afterPath="$PROJECT_DIR$/_posts/2015-04-17-change-log.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-05-21-custom_view_cakeview.markdown" afterPath="$PROJECT_DIR$/_posts/2015-05-21-custom_view_cakeview.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-05-26-lock_screen.markdown" afterPath="$PROJECT_DIR$/_posts/2015-05-26-lock_screen.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-06-29-mac_sublime_java.markdown" afterPath="$PROJECT_DIR$/_posts/2015-06-29-mac_sublime_java.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-07-18-android_popupMenu_icon.markdown" afterPath="$PROJECT_DIR$/_posts/2015-07-18-android_popupMenu_icon.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-07-18-android_shift_theme.markdown" afterPath="$PROJECT_DIR$/_posts/2015-07-18-android_shift_theme.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-10-27-bitmap-tip.markdown" afterPath="$PROJECT_DIR$/_posts/2015-10-27-bitmap-tip.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-11-10-android_m_permission.markdown" afterPath="$PROJECT_DIR$/_posts/2015-11-10-android_m_permission.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-12-20-watch_dependencies_path.markdown" afterPath="$PROJECT_DIR$/_posts/2015-12-20-watch_dependencies_path.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-12-21-reason-for-appplus.markdown" afterPath="$PROJECT_DIR$/_posts/2015-12-21-reason-for-appplus.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2015-12-27-mars_felling.markdown" afterPath="$PROJECT_DIR$/_posts/2015-12-27-mars_felling.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about.html" afterPath="$PROJECT_DIR$/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags.html" afterPath="$PROJECT_DIR$/tags.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="maoruibin.github.com.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -264,6 +23,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-248">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="2015-07-18-android_popupMenu_icon.markdown" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2015-07-18-android_popupMenu_icon.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
@@ -277,7 +46,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015-07-18-android_shift_theme.markdown" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2015-07-18-android_shift_theme.markdown" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2015-07-18-android_shift_theme.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
@@ -285,19 +54,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="310">
               <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2016-01-26-about-my-project.markdown" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2016-01-26-about-my-project.markdown">
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -493,20 +249,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="maoruibin.github.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="maoruibin.github.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="maoruibin.github.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_posts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -857,17 +599,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_posts/2016-03-11-handler_analysis_three.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2016-04-07-checkstyle.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
@@ -1333,6 +1064,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-248">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
