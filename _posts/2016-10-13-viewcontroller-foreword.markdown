@@ -8,6 +8,9 @@ tags: 架构 Skills
 header-img: assets/header/header_image_arrow.jpg
 ---
 
+|本人博客地址 [http://gudong.name](http://gudong.name)
+|本文简书地址:[http://www.jianshu.com/p/e3f86d5a4474](http://www.jianshu.com/p/e3f86d5a4474)
+
 首先说明的是 ViewControler 并不是 Android 中存在的一个组件，而是在技术实践中总结创造出的一个开发理念，这是一种业务开发过程中的 UI 模块化思想的体现，依附于现成的 Activity 或者 Fragment 而存在。在特定的场景下使用 ViewControler ，会使你原本复杂的界面开发逻辑变得清晰明了,易于维护。下面进入正题。
 
 ## 场景介绍
@@ -69,4 +72,4 @@ Activity 两三千行？？这一点也不夸张。
 
 ### 关于开源
 
-暂时因为代码还没有整理好，包括文档，demo 也没有准备好，所以还不会立即开源。想要关注 ViewController 的最新动态，可以关注我的 [Github maoruibin \(咕咚\)](https://github.com/maoruibin) 或者 [大侠咕咚的微博](http://weibo.com/maoruibin)。
+目前代码已开源，[项目地址](https://github.com/maoruibin/ViewControler)。
