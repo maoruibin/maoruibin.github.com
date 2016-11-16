@@ -5,7 +5,6 @@ title:  "Android 复杂界面开发实践之 ViewController: 前言"
 description: ""
 catalog:    true
 tags: 架构 Skills
-header-img: assets/header/header_image_arrow.jpg
 ---
 
 |本人博客地址 [http://gudong.name](http://gudong.name)
