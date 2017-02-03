@@ -9,6 +9,19 @@ tags: 随想
 ---
 这篇博文用于记录，自己在修改博客时具体的修改记录，如颜色设置、联系方式配置等信息，以便日后查看。
 
+## 2017/02/03
+不知不觉已经 17 了，我的 2017 会不一样一点。
+
+今天终于把 G 键的映射通过一个映射软件修改了。
+
+### 运行草稿
+
+```
+jekyll server --drafts
+
+To preview your site with drafts, simply run jekyll serve or jekyll build with the --drafts switch. 
+```
+
 ## 2016/11/28
 今天还是把去年特别喜欢的一个背景图上传作为了我的博客背景。
 
