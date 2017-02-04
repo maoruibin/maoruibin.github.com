@@ -18,10 +18,13 @@ tags: Skills
 
  类似这样的设置界面在一个应用中都会或多或少的存在。对于开发者而言，如何快速开发这样的设置界面呢？
 
-对一个开发者而言，如果他对 Android 提供的设置 API 不了解，可能会自然而然的想到使用 layout 去画出来。然后在Activity 中实例化每个 item 对应的view，接着处理对应的 click、check 等事件。但是看到这里你应该已经知道 Android 已经提供了设置相关的 API，可以方便开发者快速开发设置 UI 。
+如果他对 Android 提供的设置 API 不了解，可能会自然而然的想到使用 layout 去画出来。然后在Activity 中实例化每个 item 对应的 view，接着处理对应的 click、check 等事件。但是这样有很多不足和麻烦。
+
+你需要自己编写布局文件，设置样式，还需要处理设置数据的本地存储逻辑。
+
+其实，Android 早就提供了相应的设置 API 可以方便开发者快速开发设置 UI 。
 
 这就是现在要说的 PreferenceActivity / PreferenceFragment 。
-
 
 
 更多关于设置相关的官方介绍可通过 [Setting](https://developer.android.com/guide/topics/ui/settings.html) 查阅。
@@ -29,17 +32,18 @@ tags: Skills
 > 建议直接看官方文档，比这里更加全面。
 
 
-
 ## 主要API 介绍
 
-见名知意，
+见名知意
 
 * [PreferenceActivity](https://developer.android.com/reference/android/preference/PreferenceActivity.html)  偏好设置 Activity 
 * [PreferenceFragment](https://developer.android.com/reference/android/preference/PreferenceFragment.html)  偏好设置 Fragment
 
-这俩是 Android 系统提供的两个跟设置相关的 API 组件，使用他们就可以方便快捷的开发出具有统一体验的设置UI。鉴于灵活性，大多数时候个人使用 ·PreferenceFragment  较多。
+这俩是 Android 系统提供的两个跟设置相关的 API 组件，使用他们就可以方便快捷的开发出具有统一体验的设置UI。鉴于灵活性，大多数时候个人使用 ·PreferenceFragment 较多，官方也推荐使用 Fragment。
 
 ## 开发指南
+
+这部分建议直接看官方文档，很清晰。下面罗列自己简单总结的一些点。
 
 ### 几个要点
 
