@@ -9,6 +9,12 @@ tags: 随想
 ---
 这篇博文用于记录，自己在修改博客时具体的修改记录，如颜色设置、联系方式配置等信息，以便日后查看。
 
+## 2017/02/04
+
+适配了 Chrome tab
+
+thanks [https://teaink.com/archives/270.html](https://teaink.com/archives/270.html)
+
 ## 2017/02/03
 不知不觉已经 17 了，我的 2017 会不一样一点。
 
