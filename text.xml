@@ -1,0 +1,10 @@
+<activity
+    android:name=".ui.activitys.ProcessTextActivity"
+    android:label="咕咚翻译"  <!-- 显示在文本操作栏的文本 -->
+    android:theme="@style/myTransparent"> <!-- 自定义的 Activity 主题，自己发挥-->
+    <intent-filter>
+        <action android:name="android.intent.action.PROCESS_TEXT" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <data android:mimeType="text/plain" />
+    </intent-filter>
+</activity>
