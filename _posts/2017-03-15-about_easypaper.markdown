@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "关于易剪 - 手机端的剪报助手"
 description: ""
-cover: "zzz"
+cover: "#FF5722"
 categories: product
 catalog:    true
 tags: App 
