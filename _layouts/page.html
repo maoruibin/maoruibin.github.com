@@ -176,18 +176,11 @@ layout: default
 
                 <!-- Last comment -->
 
-                <hr>
+                <!-- hot post -->    
 
-                <h5>最新评论</h5>
 
-                <ul class="ds-recent-comments" style="padding-left:0px;"
-                    data-num-items="4"
-                    data-show-avatars="1"
-                    data-show-time="0"
-                    data-show-admin="0"
-                    data-show-title="0"
-                    data-excerpt-length="30">
-              </ul>
+                <!-- hot post -->    
+
 
                 <!-- Featured Tags -->
                 {% if site.featured-tags %}
@@ -217,26 +210,8 @@ layout: default
                 </ul>
                 {% endif %}
 
-                <!--Begin Last Visitor -->
-                <hr>
-                <h5>最近来访</h5>
-                <ul class="ds-recent-visitors" data-num-items="20" style="padding-left:0px;"></ul>
-                <!--End Last Visitor -->
-
     		</div>
         {% endif %}
 	</div>
 </div>
 
-<!--多说js加载开始，一个页面只需要加载一次 -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"{{site.duoshuo_username}}"};
-(function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = 'http://static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-})();
-</script>
-<!--多说js加载结束，一个页面只需要加载一次 -->

@@ -20,7 +20,7 @@ layout: default
 				<h1>咕咚</h1>
 				<p>Android Developer</p>
 			</header>
-			<div class="main">
+			<div class="main" style="margin:auto;padding:0;width:50%;">
 				<ul class="cbp_tmtimeline">
 					<li>
 						<div class="cbp_tmlabel">
@@ -212,6 +212,21 @@ layout: default
 		    })();
 		</script>
 		<!-- 多说公共JS代码 end -->
+		{% endif %}
+
+		{% if site.gentie_key %}
+		    <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"  style="margin:auto;padding:0;width:50%;"></div>
+		    <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+		    <script>
+		    var cloudTieConfig = {
+		      url: "{{site.url}}/portfolio/", 
+		      sourceId: "{{site.duoshuo_username}}/portfolio/",
+		      productKey: "{{site.gentie_key}}",
+		      target: "cloud-tie-wrapper"
+		    };
+		    var yunManualLoad = true;
+		    Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+		    </script>
 		{% endif %}
 	</body>
 </html>

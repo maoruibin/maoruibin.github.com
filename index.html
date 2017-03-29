@@ -19,12 +19,7 @@ description: "因为热爱"
         {{ post.content | strip_html | truncate:200 }}
     </div>
     <p class="post-meta">
-        发表于 {{ post.date | date: "%Y-%m-%d" }}&nbsp;&nbsp;
-
-        <a class="comment" href="{{ post.url | remove_first: '/' | prepend: site.baseurl }}#comments">
-							<span class="ds-thread-count" data-thread-key="{{ post.id }}"></span>
-				</a>
-
+        发表于 {{ post.date | date: "%Y-%m-%d" }}
     </p>
 </div>
 <hr>
@@ -46,15 +41,3 @@ description: "因为热爱"
 </ul>
 {% endif %}
 
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-  var duoshuoQuery = {short_name:"{{ site.duoshuo_username }}"};
-  (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-       || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-</script>
