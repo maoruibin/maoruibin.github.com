@@ -105,5 +105,5 @@ pressed.mutate();
 * 目前不支持不可点击状态
 * 不支持颜色背景（当然你可以通过 shape 曲线救国）
 
-最后，如果你发现还有什么问题，欢迎在 [issue](https://github.com/maoruibin/StateBackgroundUtil/issues) 或者评论去指出，也欢迎你把更好的方案 PR 上来。
+最后，如果你发现还有什么问题，欢迎在 [issue](https://github.com/maoruibin/StateBackgroundUtil/issues) 或者评论区指出，也欢迎你把更好的方案 PR 上来。
 
