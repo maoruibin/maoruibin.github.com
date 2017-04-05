@@ -11,7 +11,7 @@ tags: Skills Tools
 该篇文章主要介绍，如何使用一张资源图片为 View 设置具有按下效果的 background drawable.
 
 
-![demo](http://7xr9gx.com1.z0.glb.clouddn.com/statebackground.gif)
+![demo](http://7xr9gx.com1.z0.glb.clouddn.com/statebackgroundv2.gif)
 
 
 ## 缘起
@@ -103,7 +103,6 @@ pressed.mutate();
 
 ## 不足
 * 目前不支持不可点击状态
-* 不支持颜色背景（当然你可以通过 shape 曲线救国）
 
 最后，如果你发现还有什么问题，欢迎在 [issue](https://github.com/maoruibin/StateBackgroundUtil/issues) 或者评论区指出，也欢迎你把更好的方案 PR 上来。
 
