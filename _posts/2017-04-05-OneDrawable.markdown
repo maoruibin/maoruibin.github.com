@@ -1,7 +1,7 @@
 ---
 layout: post
 author: 咕咚
-title:  "OneDrawable - 仅使用一张资源图片为 View 设置具有按下效果的背景"
+title:  "仅使用一张资源图片为 View 设置具有按下效果的背景 - OneDrawable"
 description: ""
 catalog:    true
 cover:  "#464547"
@@ -10,6 +10,8 @@ tags: Skills Tools
 该篇文章主要分享介绍，如何使用一张资源图片为 View 设置具有按下效果的 Background Drawable.
 
 ![OneDrawable](http://7xr9gx.com1.z0.glb.clouddn.com/slogin.gif)
+
+开源地址 [OneDrawable](https://github.com/maoruibin/OneDrawable)
 
 ## 缘起
 
@@ -75,8 +77,6 @@ private static void setPressedStateDrawable(@StatePressedMode.Mode int mode, @Fl
 }
 ```
 
-目前该方案的实现已经放在了 GitHub，[OneDrawable](https://github.com/maoruibin/OneDrawable)，欢迎观摩支持。
-
 下图为 demo 截图
 
 ![demo](http://7xr9gx.com1.z0.glb.clouddn.com/statebackgroundv2.gif)
@@ -100,7 +100,7 @@ pressed.mutate();
 > This is especially useful when you need to modify properties of drawables loaded from resources. By default, all drawables instances loaded from the same resource share a common state;
 
 
-注意：由于 View 的按下效果只有在设置了 clickable 为 true 时才可以看到效果，所以当你使用 OneDrawable 为 View 设置背景后却发现没有按下效果，你应该知道怎么办。
+另外需要注意的是，由于 View 的按下效果只有在设置了 clickable 为 true 时才可以看到效果，所以当你使用 OneDrawable 为 View 设置背景后却发现没有按下效果，你应该知道怎么办。
 
 ## 不足
 * 目前不支持不可点击状态
