@@ -7,12 +7,9 @@ catalog:    true
 cover:  "#464547"
 tags: Skills Tools 
 ---
+该篇文章主要分享介绍，如何使用一张资源图片为 View 设置具有按下效果的 Background Drawable.
 
-该篇文章主要介绍，如何使用一张资源图片为 View 设置具有按下效果的 background drawable.
-
-
-![demo](http://7xr9gx.com1.z0.glb.clouddn.com/statebackgroundv2.gif)
-
+![OneDrawable](http://7xr9gx.com1.z0.glb.clouddn.com/slogin.gif)
 
 ## 缘起
 
@@ -78,7 +75,11 @@ private static void setPressedStateDrawable(@StatePressedMode.Mode int mode, @Fl
 }
 ```
 
-目前该方案的实现已经放在了 GitHub，[StateBackgroundUtil](https://github.com/maoruibin/StateBackgroundUtil)，欢迎观摩支持。
+目前该方案的实现已经放在了 GitHub，[OneDrawable](https://github.com/maoruibin/OneDrawable)，欢迎观摩支持。
+
+下图为 demo 截图
+
+![demo](http://7xr9gx.com1.z0.glb.clouddn.com/statebackgroundv2.gif)
 
 ## 一些细节
 在设置按下状态的 drawable 时，
@@ -99,10 +100,9 @@ pressed.mutate();
 > This is especially useful when you need to modify properties of drawables loaded from resources. By default, all drawables instances loaded from the same resource share a common state;
 
 
-注意：由于 View 的按下效果只有在设置了 clickable 为 true 时才可以看到效果，所以当你使用 StateBackgroundUtil 为 View 设置背景后却发现没有按下效果，你应该知道怎么办。
+注意：由于 View 的按下效果只有在设置了 clickable 为 true 时才可以看到效果，所以当你使用 OneDrawable 为 View 设置背景后却发现没有按下效果，你应该知道怎么办。
 
 ## 不足
 * 目前不支持不可点击状态
 
-最后，如果你发现还有什么问题，欢迎在 [issue](https://github.com/maoruibin/StateBackgroundUtil/issues) 或者评论区指出，也欢迎你把更好的方案 PR 上来。
-
+最后，如果你发现还有什么问题，欢迎在 [issue](https://github.com/maoruibin/OneDrawable/issues) 或者评论区指出，也欢迎你把更好的方案 PR 上来。
