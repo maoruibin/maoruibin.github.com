@@ -81,6 +81,27 @@ private static void setPressedStateDrawable(@StatePressedMode.Mode int mode, @Fl
 
 ![demo](http://7xr9gx.com1.z0.glb.clouddn.com/statebackgroundv2.gif)
 
+## 兼容问题
+
+后来有网友反馈在 4.4 的机型下按下效果实效，后来发现是因为 Drawable 的 setColorFilter 方法在 4.4 的手机上失效，后来采用了 BitmapDrawable 的方式解决，具体可以看代码实现，这里贴出最重要的一段代码。
+```java
+    private static Drawable kitkatDrawable(Context context, @NonNull Drawable pressed, @PressedMode.Mode int mode, @FloatRange(from = 0.0f, to = 1.0f) float alpha) {
+        Bitmap bitmap = Bitmap.createBitmap(pressed.getIntrinsicWidth(), pressed.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas myCanvas = new Canvas(bitmap);
+        switch (mode) {
+            case PressedMode.ALPHA:
+                pressed.setAlpha(convertAlphaToInt(alpha));
+                break;
+            case PressedMode.DARK:
+                pressed.setColorFilter(alphaColor(Color.BLACK, convertAlphaToInt(alpha)), PorterDuff.Mode.SRC_ATOP);
+                break;
+        }
+        pressed.setBounds(0, 0, pressed.getIntrinsicWidth(), pressed.getIntrinsicHeight());
+        pressed.draw(myCanvas);
+        return new BitmapDrawable(context.getResources(), bitmap);
+    }
+```
+
 ## 一些细节
 在设置按下状态的 drawable 时，
 
