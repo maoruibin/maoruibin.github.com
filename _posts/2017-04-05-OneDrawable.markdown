@@ -123,7 +123,5 @@ pressed.mutate();
 
 另外需要注意的是，由于 View 的按下效果只有在设置了 clickable 为 true 时才可以看到效果，所以当你使用 OneDrawable 为 View 设置背景后却发现没有按下效果，你应该知道怎么办。
 
-## 不足
-* 目前不支持不可点击状态
 
 最后，如果你发现还有什么问题，欢迎在 [issue](https://github.com/maoruibin/OneDrawable/issues) 或者评论区指出，也欢迎你把更好的方案 PR 上来。
