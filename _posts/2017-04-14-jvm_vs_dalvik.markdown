@@ -67,3 +67,4 @@ Dalvik 其实可以理解为一个专为移动设备优化过的 JVM，它的大
 ## 参考链接
 [目前主流的 Java 虚拟机有哪些?](https://zhihu.com/question/29265430/answer/43818804)
 [Dalvik虚拟机和JVM的区别。Java里面的，Android里面的区别](https://zhidao.baidu.com/question/1238373007717632179.html)
+[Java 虚拟机与 Dalvik 虚拟机(简书)](http://www.jianshu.com/p/a8cc7a92137c)
