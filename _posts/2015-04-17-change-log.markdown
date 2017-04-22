@@ -9,9 +9,16 @@ tags: 随想
 ---
 这篇博文用于记录，自己在修改博客时具体的修改记录，如颜色设置、联系方式配置等信息，以便日后查看。
 
-## TODO
+## 2017/04/24
 
-- [ ] 增加一个栏目用于收集一些非常有用的查询网址
+最近这段时间做了不少好玩的东西。
+
+先做了一个 App [易剪](http://gudong.name/product/2017/03/15/about_easypaper.html),本打算开源，后来赖的没做。然后倒是开源了 [OneDrawable](https://github.com/maoruibin/OneDrawable) 这一按钮按下效果处理方案，当然这个方案对一般 MD 设计没太大用处，基本做给 iOS 设计的 UI 效果。
+
+最近在看 Java 虚拟机。感觉比以前理解的深入多了。
+
+
+## 有用的查询网址
 
 * [企业注册信息查询](http://www.tianyancha.com/)
 

@@ -8,6 +8,7 @@ categories: Skills
 tags: Usage Skills 
 cover:  "#3e4145"
 ---
+
 在每个 github 项目的右上角，都有三个按钮,分别是 watch、star、fork，但是有些刚开始使用 github 的同学，可能对这三个按钮的使用却不怎么了解，包括一开始使用 github 的我也是如此。这篇博客，结合自己的理解和使用，说说这三个按钮的用法以及一些个人见解。
 
 如下图所示这是我们经常看到的三个按钮。
@@ -68,7 +69,7 @@ star 翻译过来是星，但这个翻译没任何具体意义，这里解释为
 
 一般来说，我们不需要使用 fork 这个功能，除非有一些项目，可能存在 bug 或者可以继续优化的地方，你想帮助原项目作者去完善这个项目或者单纯的想在原来项目基础上己维护一个属于自己项目（比如我 fork 的 [AndroidWeekly 客户端](https://github.com/maoruibin/AndroidWeekly)），那么你可以 fork 一份项目下来，然后自己对这个项目进行修改完善，当你觉得项目没问题了，你就可以尝试发起 pull request给原项目作者了。
 
-然后就静静等待他的 merge 通知了。
+然后就静静等待他的 merge 邮件通知了。
 
 我看到很多人错误的在使用 fork。很多人把 fork 当成了收藏一样的功能，包括一开始使用 github 的我，每次看到一个好的项目就先 fork，
 
@@ -107,3 +108,9 @@ star 翻译过来是星，但这个翻译没任何具体意义，这里解释为
   Github [Github上都有哪些有意思、不为大家熟知的小功能？](https://github.com/android-cn/android-discuss/issues/283)
 
   知乎 [Github上都有哪些有用但不为大家熟知的小功能？](http://www.zhihu.com/question/36974348)
+
+## 链接
+
+简书地址:[http://www.jianshu.com/p/6c366b53ea41](http://www.jianshu.com/p/6c366b53ea41)
+
+微博地址:[http://weibo.com/1874136301/Dc8nWqBeJ?type=repost](http://weibo.com/1874136301/Dc8nWqBeJ?type=repost)
