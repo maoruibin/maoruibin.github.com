@@ -7,6 +7,7 @@ catalog:    true
 tags: Java JVM
 ---
 > 作者博客地址: [http://gudong.name](http://gudong.name/)
+> 
 > 本文博客地址: [http://gudong.name/2017/04/18/jvm_memery_area.html](http://gudong.name/2017/04/18/jvm_memery_area.html)
 
 Java虚拟机在执行Java程序的过程中，会把它所管理的内存划分为若干个不同的数据区域。这些区域都有各自的用途，以及创建、销毁的时间，有的区域空间随着虚拟机进程的启动而分配，有些区域则是依赖用户线程，他们随着线程的启动和结束而建立和销毁。

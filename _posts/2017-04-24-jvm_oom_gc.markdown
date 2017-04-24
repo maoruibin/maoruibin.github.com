@@ -1,7 +1,7 @@
 ---
 layout: post
 author: 咕咚
-title:  "JVM  内存分代、垃圾回收漫谈"
+title:  "JVM 内存分代、垃圾回收漫谈"
 description: ""
 catalog:    true
 tags: Java JVM
@@ -10,7 +10,7 @@ tags: Java JVM
 
 ## JVM 内存区域
 
-都知道 JVM 的内存区域分为5个部分，如果有疑惑，可以参看之前的一篇文章 - [JVM 内存区域介绍](http://www.jianshu.com/p/c0349601a75c)。
+都知道 JVM 的内存区域分为5个部分，如果有疑惑，可以参看之前的一篇文章 - [JVM 内存区域介绍](http://gudong.name/2017/04/18/jvm_memery_area.html)。
 
 这里也简单罗列一下 JVM 的五部分
 
