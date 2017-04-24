@@ -7,7 +7,7 @@ cover:  "#3F51B5"
 catalog:    true
 tags: 随想 App
 ---
-AppPlus 是自己今年七月份开始做的一个小产品，它是一个主要用Android用户间传送Apk文件、管理手机应用的工具软件。
+AppPlus 是自己2015年七月份开始做的一个小产品，它是一个主要用Android用户间传送Apk文件、管理手机应用的工具软件。
 
 目前已开源，[开源地址](https://github.com/maoruibin/AppPlus)
 
@@ -59,7 +59,7 @@ AppPlus 是自己今年七月份开始做的一个小产品，它是一个主要
 
  导出成功后会『友好』的弹出一个 Toast ，提示安装包已导出，顺便在 Toast 中指明导出的路径，如下所示
 
- <img src="/assets/appplus_about_1.png" style="width: 50%;margin: auto;">
+![](http://7xr9gx.com1.z0.glb.clouddn.com/appplus_about_1.png)
 
  但是因为 Toast 的弹出时间太短了，以至于我一次很难记住安装包到底被导出到那个路径下了，所以一般你需要再次导出一次，然后
  特意去注意 Toast 上提示的路径，你才可以记住导出的路径。It's too bad !
