@@ -180,9 +180,10 @@ layout: default
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 sidebar-container">
+  
 
                 <!-- Featured Tags -->
-                {% if site.featured-tags %}
+                {% if site.featured-tags == null %}
                 <section>
                     <hr class="hidden-sm hidden-xs">
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
@@ -199,7 +200,7 @@ layout: default
                 {% endif %}
 
                 <!-- Friends Blog -->
-                {% if site.friends %}
+                {% if site.friends == null %}
                 <hr>
                 <h5>朋友</h5>
                 <ul class="list-inline">
@@ -208,6 +209,14 @@ layout: default
                     {% endfor %}
                 </ul>
                 {% endif %}
+                  <section class="visible-md visible-lg">
+                    <hr>
+                    <h5>公众号</h5>
+                    <div class="short-about" >
+                        <img src="http://7xr9gx.com1.z0.glb.clouddn.com/qrcode_for_gh_58ac6be237a4_430.jpg" style="width: 50%;margin: auto;text-align:center" />
+                        <p style="text-align:center">大侠咕咚<br>分享自己的技术动态，扫码关注。</p>
+                    </div>
+                </section> 
             </div>
         </div>
     </div>
