@@ -19,7 +19,11 @@ tags: App
 目前咕咚翻译已经开源到了 Github ,[咕咚翻译](https://github.com/maoruibin/TranslateApp),欢迎 star ,如果有 bug 或者更好的意见可以提 issue.  
 
 ## 下载
-如果想第一时间体验，可点击[下载链接](http://fir.im/gdTranslater)
+如果想第一时间体验，可通过以下方式下载。
+
+* [酷安市场](http://www.coolapk.com/apk/name.gudong.translate)
+* [Fir](http://fir.im/gdTranslater)
+
 
 ## 缘起
 自己经常在手机上会阅读一些英文的技术 blog 或者文档，经常会遇到陌生的单词，
