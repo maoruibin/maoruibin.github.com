@@ -19,7 +19,9 @@ cover:  "assets/instacode.png"
 
 比如，现在需要我们编写一个Java类Person，他有一个包名比如说com.gudong.demo,然后这个类会有一个修饰符 public，具体代码就应该是下面的样子，
 
-    package com.gudong.demo
+```java
+package com.gudong.demo
+```
 
     public class Person{
 
@@ -100,17 +102,17 @@ javac全称应该叫做java compile 如果没猜错的话。
     public class Test{
         //主方法
         public static void main(String[]args){
-
+    
              Person p1 = new Person();
              p1.name = “大虾”;
-
+    
               System.out.println(“p1 name is “+p1.name);
-
+    
              Person p2 = new Person();
              p2.name = “咕咚”;
-
+    
              System.out.println(“p2 name is “+p2.name);
-
+    
              System.out.println(“p1 max age “+Person.MAX_AGE);
         }
     }
