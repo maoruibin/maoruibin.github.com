@@ -181,6 +181,7 @@ butterknife 是 JW 主导开发的一个 View 注入工具。它使用注解简�
 - [AndroidPerformanceMonitor](https://github.com/markzhai/AndroidPerformanceMonitor)
 - [BlockCanaryEx](https://github.com/lqcandqq13/BlockCanaryEx)
 - [Battery-historian](https://github.com/google/battery-historian)
+这里也有一篇国外的文章介绍了目前 Android 中比较有用的一些开发工具，具体可以查看[Android Development Useful Tools](https://blog.mindorks.com/android-development-useful-tools-fd73283e82e3)
 
 ### SharePreference
 
