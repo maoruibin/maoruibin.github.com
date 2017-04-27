@@ -4,7 +4,7 @@ author: 咕咚
 title:  "如何打造一个鲁棒的多状态加载 Layout"
 description: ""
 catalog:    true
-qrcode_mp:    false
+qrcode_mp:  false
 cover:  "#121a2a"
 tags: Experience Skills 架构 Android 
 ---
