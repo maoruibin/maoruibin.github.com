@@ -209,7 +209,8 @@ layout: default
                     {% endfor %}
                 </ul>
                 {% endif %}
-                  <section class="visible-md visible-lg">
+                {% if !page.qrcode_mp %}
+                <section class="visible-md visible-lg">
                     <hr>
                     <h5>公众号</h5>
                     <div class="short-about" >
@@ -217,6 +218,7 @@ layout: default
                         <p style="text-align:center">大侠咕咚<br>分享自己的技术动态，扫码关注。</p>
                     </div>
                 </section> 
+                {% endif %}
             </div>
         </div>
     </div>

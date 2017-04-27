@@ -4,6 +4,7 @@ author: 咕咚
 title:  "如何打造一个鲁棒的多状态加载 Layout"
 description: ""
 catalog:    true
+qrcode_mp:    false
 cover:  "#121a2a"
 tags: Experience Skills 架构 Android 
 ---
@@ -132,6 +133,9 @@ showErrorView(new StatusViewConfig.StatusViewBuild(getContext())
 ## 总结
 
 要说的就这么多，欢迎留言。
+
+> 本文原创发布于公众号 大侠咕咚，欢迎扫码关注更多原创文章。
+![大侠咕咚](http://upload-images.jianshu.io/upload_images/588640-20fdcda8075edb5d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 
