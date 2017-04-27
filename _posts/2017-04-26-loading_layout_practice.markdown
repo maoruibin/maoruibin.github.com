@@ -11,21 +11,23 @@ tags: Experience Skills 架构 Android
 对于大多数 App 而言，都有多状态加载这种需求，对应到开发中，我们就需要开发一个对应的 layout 用于根据页面不同的状态来显示不同的提示 view，如：
 
 * 数据加载时显示一个 loading 样式的页面
-
-
 * 网络异常时需要显示网络相关的异常提示页面
 * 页面数据为空时需要显示一个数据为空的提示页面
 * 等等
 
+![demo](http://7xr9gx.com1.z0.glb.clouddn.com/loading_status.png)
+
 在项目中，我们大多会在开发初期就把这套 layout 框架写好，然后其他人的自己的开发过程中直接使用即可。
 
-这篇文章不讨论如何去实现这样的自定义 loading layout，Github 上这样的 layout 太多了，这里主要思考总结在实际开发中开发这样的自定义 Layout 需要注意那些地方。为了后文描述方便，这里把这个自定义 ViewGroup 先称为 MultipleStatusLayout 。
+这篇文章不讨论如何去实现这样的自定义 loading layout，Github 上这样的 layout 太多了，这里主要思考、总结在实际开发中开发这样的自定义 Layout 时应该注意那些地方。
 
-不过说之前还是要简单说下自己的实现方案。多说一句，这里的实现方案可能有很多，这里只挑选一种说明。MultipleStatusView
+为了后文描述方便，这里把这个自定义 ViewGroup 先称为 MultipleStatusLayout。
+
+不过说之前还是要简单说下自己的实现方案。多说一句，这里的实现方案可能有很多，这里只挑选一种说明。
 
 ## 实现方案
 
-一般的，我们在实现 MultipleStatusLayout  时选择继承一个 ViewGroup 作为自己的父类，默认把内部的第一个子 View 作为 ContentView，其余各种情形下的 layout view，根据不同的加载状态，在 MultipleStatusLayout  中动态 addView 去控制对应 layout 的加载显示，也可以通过 ViewStub 把不同情形的 layout 懒加载。然后对外提供不同的方法，方便外部调用、控制不同状态下的 layout 显示。
+在实现 MultipleStatusLayout  时，首先选择继承一个 ViewGroup 作为自己的父类，然后在使用过程中，默认把内部的第一个子 View 作为 ContentView，其余各种情形下的 layout view，根据不同的加载状态，在 MultipleStatusLayout 中通过动态 addView 去控制对应 layout 的加载显示，也可以通过 ViewStub 把不同情形的 layout 进行懒加载，然后对外提供不同的方法，方便外部调用、控制不同状态下的 layout 显示。
 
 嗯，简单说来就是这样，原理很简单，实现起来也没什么技术难度，对于一般的开发人员只要一开始明白具体的产品逻辑和实现思路，相信花不了多少时间就可以完成这样的 MultipleStatusLayout。具体这种方式的实现可以参看一个[开源项目](https://github.com/qyxxjd/MultipleStatusView/blob/master/multiple-status-view/src/main/java/com/classic/common/MultipleStatusView.java) 的实现。
 
@@ -41,23 +43,25 @@ tags: Experience Skills 架构 Android
 
 首先 FrameLayout、RelativeLayout、LinearLayout 都可以作为 MultipleStatusLayout  的父类，抛开现在的应用场景不谈，都知道 RelativeLayout 在 layout 时需要 measure 两次，所以对于一个未来要在很多页面中使用的 Layout ，把 RelativeLayout 作为父类这个方案首先 pass 掉。
 
-但是因为 MultipleStatusLayout  中显示的 view 大都需要局中显示，所以使用 RelativeLayout 相对比较容易控制局中位置，这可能是很多人选择 RelativeLayout  作为父类的初衷。这里自己可以做一下权衡。
+但是因为 MultipleStatusLayout 中显示的 view 大都需要居中显示，所以使用 RelativeLayout 相对比较容易控制居中位置，这可能是很多人选择 RelativeLayout  作为父类的初衷。这里自己可以做一下权衡。
 
 关于 LinearLayout 和 FrameLayout，如果按照上一节提到的实现方案，其实都可以采用，不过考虑到该类 Layout 的应用场景，建议选择 FrameLayout。
 
 因为MultipleStatusLayout 未来在大多数情况下是作为页面父容器存在的，既然是父容器，内容可能会有各种变化，这时使用 LinearLayout  这种线性布局就会在布局时显得特别局限，比如一些页面可能需要在 MultipleStatusLayout 之上显示一个 FloatActionButton 或者其他的 view，这时使用 FrameLayout 就会好做很多也会灵活很多。
 
-### 选择最优的加载 View方式 
+### 选择最优的加载 View 方式 
 
 如何控制这些多状态对应的 View ? 对于一般的情形，至少有两种 View 类型，一种是加载中的 loading 样式 view，一种是异常状态的 layout view，当然还可能有更多具体的情形。
 
-不同的样式对应一个不同的布局，为了简便我们可以一次性的把所有状态对应的布局都写在一个 layout 布局里，然后可以通过控制隐藏、显示来根据不同的状态来展示不同 view。这是最直接的想法。
+不同的样式对应一个不同的布局，为了简便我们可以一次性的把所有状态对应的布局都写在一个 layout 布局里，然后可以通过控制隐藏、显示来根据不同的状态来展示不同 view，这是最直接的想法。
 
 但是，只要多思考一步，就会发现这种方式非常不可取。因为很多时候，MultipleStatusLayout 作为一个父容器只关心自己的 ContentView，异常页面和加载页面甚至可能没有机会出现，但是现在这样做就表示，这个页面不论有没有异常或者加载逻辑，你的布局里都会存在对应的 layout 布局代码。这样在界面绘制时就会白白耗掉多余的时间。
 
-而且这个 Layout 后续会在项目很多页面用到，所以这里的布局耗时问题能减少就减少。
+而且这个 Layout 后续会在项目很多页面用到，所以这里的布局耗时问题放大后就显得很严重。
 
 鉴于此，取而代之的更好的做法应该是动态去 addView，只有这个页面第一次调用 loading 或者 showError 这样的方法，我才去把对应布局加载进来，当然这里使用 ViewStub 也是一样的效果。
+
+这里也就是说，只有调用了相应的方法，才去加载对应的 layout.
 
 ### 资源命名
 

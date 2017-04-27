@@ -8,13 +8,15 @@ categories: product
 catalog:    true
 tags: App 
 ---
-易剪是自己最近开发的一个工具 App。
+易剪是自己为了解决个人在手机上阅读文章时而开发的一个收集笔记内容的 Android 工具 App，核心功能就是帮助用户在移动设备上快速剪贴自己感兴趣的文章片段。
 
-它的唯一功能就是帮助用户快速剪贴自己感兴趣的文章片段。
+## 下载
 
-怎么理解呢？
+Fir [下载地址]( https://fir.im/pl7r)
 
-## 缘由
+酷安市场-[易剪](http://www.coolapk.com/apk/name.gudong.easypaper) 
+
+## 开发缘由
 
 当我们在手机上阅读文章时，对于自己感兴趣的片段，我们可能会想粘贴到便签或者印象笔记作为自己的笔记，方便日后查阅。
 
@@ -35,13 +37,6 @@ tags: App
 ![DAB37CD0AC8BA5B650DC8A420C3283CA.jpg](http://upload-images.jianshu.io/upload_images/588640-f5dab307d0af6a9b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 在这里你可以对剪报做二次加工，发送到印象笔记或者删除无用段落，你都可以在这里完成。
-
-
-## 下载体验
-
-[Fir 下载地址]( https://fir.im/pl7r)
-
-[酷安-易剪]( http://www.coolapk.com/apk/name.gudong.easypaper)
 
 
 ## Note
