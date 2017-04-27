@@ -1,7 +1,7 @@
 ---
 layout: post
 author: 咕咚
-title:  "如何打造一个鲁棒的多状态加载 Layout"
+title:  "多条件加载布局开发 tip 一二"
 description: ""
 catalog:    true
 qrcode_mp:  false
@@ -14,17 +14,28 @@ tags: Experience Skills 架构 Android
 * 数据加载时显示一个 loading 样式的页面
 * 网络异常时需要显示网络相关的异常提示页面
 * 页面数据为空时需要显示一个数据为空的提示页面
-* 等等
+* 等等如下图所示
 
 ![demo](http://7xr9gx.com1.z0.glb.clouddn.com/loading_status.png)
 
-在项目中，我们大多会在开发初期就把这套 layout 框架写好，然后其他人的自己的开发过程中直接使用即可。
+在项目中，我们大多会在开发初期就把这套 layout 框架写好，然后其他人的自己的开发过程中直接使用即可。如下所示：
+
+```java
+<name.gudong.MJMultipleStatusLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:id="@+id/lv_activity_center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</name.gudong.MJMultipleStatusLayout>
+```
 
 这篇文章不讨论如何去实现这样的自定义 loading layout，Github 上这样的 layout 太多了，这里主要思考、总结在实际开发中开发这样的自定义 Layout 时应该注意那些地方。
 
 为了后文描述方便，这里把这个自定义 ViewGroup 先称为 MultipleStatusLayout。
-
-不过说之前还是要简单说下自己的实现方案。多说一句，这里的实现方案可能有很多，这里只挑选一种说明。
 
 ## 实现方案
 
@@ -68,9 +79,7 @@ tags: Experience Skills 架构 Android
 
 其实这个问题是自己开发公用 Api 普遍面临的问题，由于开发 MultipleStatusLayout 可能会定义一些颜色资源或者背景资源，这里建议所有资源开头使用一个固定的开头，这样可以防止跟主版本中的资源重名。进而早成一些奇怪的 UI 问题或者编译问题。比如按钮的背景你可以定义为 msl_btn_normal 而不是 btn_normal，文字的颜色你可以定义为 msl_text_white 而不是 text_white。这样就可以有效避免一些资源冲突。
 
-更多关于如何开发一个第三方库，可以查看[天之界线]([https://github.com/tianzhijiexian](https://github.com/tianzhijiexian/Android-Best-Practices)
-
-)的[开发第三方库最佳实践](http://www.jianshu.com/p/0aacd419cb7e)
+更多关于如何开发一个第三方库，可以查看[天之界线](https://github.com/tianzhijiexian/)的[开发第三方库最佳实践](http://www.jianshu.com/p/0aacd419cb7e)
 
 ### 提供友好的方法调用方式
 
@@ -135,7 +144,7 @@ showErrorView(new StatusViewConfig.StatusViewBuild(getContext())
 要说的就这么多，欢迎留言。
 
 > 本文原创发布于公众号 大侠咕咚，欢迎扫码关注更多原创文章。
-![大侠咕咚](http://upload-images.jianshu.io/upload_images/588640-20fdcda8075edb5d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![大侠咕咚](http://upload-images.jianshu.io/upload_images/588640-20fdcda8075edb5d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 
