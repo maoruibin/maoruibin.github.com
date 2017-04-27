@@ -15,7 +15,10 @@ tags: 随想
 
 <img src="http://7xr9gx.com1.z0.glb.clouddn.com/IMG_20170427_111732.jpg" style="width: 50%"/>  
 
+
+
 ## 2017/04/25(博客增加了公众号)
+
 突然心血来潮，看到[小黑屋](http://droidyue.com/)的公众号后，自己终于把申请了好久的公众号再次打扮了一下，并且在博客中放置了二维码。
 
 <img src="http://7xr9gx.com1.z0.glb.clouddn.com/qrcode_for_gh_58ac6be237a4_430.jpg" style="width: 50%"/>  
@@ -131,7 +134,7 @@ background-color: {{ page.cover }};
 ```
 
 修改 CSS 使用
- 
+
 ```css
 
 grunt watch
@@ -235,22 +238,22 @@ grunt watch
 四种设置分别对应下面的四种表现    
 
 * 在博文中设置cover属性为assert下面的图片，必须是assets下面
-此时文章头部背景将会是一张大图
+  此时文章头部背景将会是一张大图
 
         style="background-image: url(/////);"
 
 * 在博文中设置cover属性为以#开头的颜色值
-此时文章头部背景将会是纯色
+  此时文章头部背景将会是纯色
 
         style="background-color:#xxxxxx;"
 
 * 在博文中设置cover属性为"zzz"
-此时文章头部背景将会是主题指色，这个颜色在config中指定
+  此时文章头部背景将会是主题指色，这个颜色在config中指定
 
         theme_color: "#607D8B"
 
 * 在博文中不设置cover属性
-此时文章头部将不会显示任何大背景色，只有一个分割线        
+  此时文章头部将不会显示任何大背景色，只有一个分割线        
 
 ## 2015/10/25
 
