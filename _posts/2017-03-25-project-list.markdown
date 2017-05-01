@@ -135,6 +135,14 @@ butterknife 是 JW 主导开发的一个 View 注入工具。它使用注解简�
 
 ## 开源框架
 
+选择合适的开源框架可以有效的避免自己重复创建轮子，所以项目中针对一个应用场景恰当的使用一些开源的大家比较任何的开源项目可以让开发事半功倍。
+
+其实关于开源框架的选型，GitHub 上已经有很多项目做了总结，并且总结的很全面
+
+* [UltimateAndroidReference](https://github.com/aritraroy/UltimateAndroidReference)
+
+下面是自己整理出来的开源框架选型指导。
+
 ### 网络
 
 - OkHttp
@@ -176,12 +184,20 @@ butterknife 是 JW 主导开发的一个 View 注入工具。它使用注解简�
 ### 调试
 
 - [stetho](https://github.com/facebook/stetho)
+
 - [Chuck](https://github.com/jgilfelt/chuck)
+
 - [TinyDancer](https://github.com/friendlyrobotnyc/TinyDancer)
+
 - [AndroidPerformanceMonitor](https://github.com/markzhai/AndroidPerformanceMonitor)
+
 - [BlockCanaryEx](https://github.com/lqcandqq13/BlockCanaryEx)
-- [Battery-historian](https://github.com/google/battery-historian)
-这里也有一篇国外的文章介绍了目前 Android 中比较有用的一些开发工具，具体可以查看[Android Development Useful Tools](https://blog.mindorks.com/android-development-useful-tools-fd73283e82e3)
+
+- [Battery-historian](https://github.com/google/battery-historian)]
+
+- [Recovery](https://github.com/Sunzxyong/Recovery)(a crash recovery framework.)
+
+  这里也有一篇国外的文章介绍了目前 Android 中比较有用的一些开发工具，具体可以查看[Android Development Useful Tools](https://blog.mindorks.com/android-development-useful-tools-fd73283e82e3)
 
 ### SharePreference
 

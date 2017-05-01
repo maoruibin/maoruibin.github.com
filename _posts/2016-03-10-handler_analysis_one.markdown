@@ -21,27 +21,22 @@ tags: Handler Usage
 
 但是，在 Android 中有一些操作是很耗费时间的，比如从网络加载一个大图片。因为要建立连接，请求服务端，解析数据等等的操作，所以完成这样的操作，就不是一下两下能做到的。
 
-试想，这个操作发生在主线程，由于线程同一时间只能执行一个操作，所以在请求网络图片的过程中，主线程不能做一些其他的更新 UI 相关的操作，所以我们现在能看到的就是，界面被卡住了，原因已经很清楚，主线程被耗时操作阻塞了。
+试想，这个操作发生在主线程，由于线程同一时间只能执行一个操作，所以在请求网络图片的过程中，主线程不能做一些其他的更新 UI 相关的操作，所以我们现在能看到的就是，界面被卡住了，原因已经很清楚，主线程被耗时操作阻塞了。这种卡住的状态直到请求成功。
 
-这种卡住的状态直到请求成功。
-
-其实，如果这样也还好，卡就卡下吧，忍忍也就算了，但是不幸的是， Android 有一个规定，在主线程完成一个操作的时间不能超过5秒，否则 Android 系统就会给用户弹出一个 ANR 的奔溃对话框。
+这里，卡主状态首先不是一种好的用户体验，与此同时， Android 也有一个相关的规定，在主线程完成一个操作的时间不能超过5秒，否则 Android 系统就会给用户弹出一个 ANR 的奔溃对话框。
 
 下面是从官方文章中摘抄的一段
 
     In Android, application responsiveness is monitored by the Activity Manager and Window Manager system services. Android will display the ANR dialog for a particular application when it detects one of the following conditions:
-
     No response to an input event (such as key press or screen touch events) within 5 seconds.
     A BroadcastReceiver hasn't finished executing within 10 seconds.
+这里需要说明的一点，在 Android 4.0 之后，系统已经不允许在 UI 线程访问网络了，以前只是 ANR，4.0 之后就直接 FC 了。
 
-这里需要说明的一点，其实在 Android 4.0 之后，系统已经不允许在 UI 线程访问网络了，以前只是 ANR，4.0 之后就直接FC了。
+所以，作为开发者，你一定不希望这样的事发生在你的 App 里，所以我们一定要避免把一个耗时可能超过5秒的操作放在主线程，那怎么才能做到呢？
 
-所以，作为开发者，你一定不希望这样的事发生在你的 App 里，所以我们一定要避免把一个耗时可能超过5秒的操作放在主线程。那我们怎么才能做到呢？
+其实目前已经有很多方法可以做到这一点，用 Thread + Handler 的组合或者使用 AsyncTask，当然如果你知道 RxJava 的话，用 RxJava 也是相当不错的选择。上述三种方式都可实现。
 
-其实目前已经有很多方法可以做到这一点，用 Thread + Handler 的组合或者使用 AsyncTask，当然如果你知道 RxJava 的话，用 RxJava 也是相当
-不错的选择。上述三种方式都可实现。
-
-官方也已经提供了一个指南，用于介绍如何避免这种问题，他用到了 AsyncTask，原文 [Keeping Your App Responsive](http://developer.android.com/intl/ru/training/articles/perf-anr.html),可以一看。
+官方也已经提供了一个指南，用于介绍如何避免这种问题，他用到了 AsyncTask，原文 [Keeping Your App Responsive](http://developer.android.com/intl/ru/training/articles/perf-anr.html)，可以一看。
 
 作为自己今天的研究，我主要说 Handler。
 
@@ -51,19 +46,21 @@ tags: Handler Usage
 
 是的，所以我们可以在主线程 new 一个子线程，让它开启工作，像下面这样
 
-    private void executeTask(){
-      new Thread(new Runnable() {
-          @Override
-          public void run() {
-              try {
-                  Bitmap bitmap = loadImg("http://blog.happyhls.me/wp-content/uploads/2015/12/fresco-og-image-1024x362.png");
-              } catch (IOException e) {
-                  e.printStackTrace();
-                  mHandler.sendMessage(mHandler.obtainMessage(-1,e.getMessage()));
-              }
+```java
+private void executeTask(){
+  new Thread(new Runnable() {
+      @Override
+      public void run() {
+          try {
+              Bitmap bitmap = loadImg("http://blog.happyhls.me/wp-content/uploads/2015/12/fresco-og-image-1024x362.png");
+          } catch (IOException e) {
+              e.printStackTrace();
+              mHandler.sendMessage(mHandler.obtainMessage(-1,e.getMessage()));
           }
-      }).start();
-    }
+      }
+  }).start();
+}
+```
 
 如上所示，loadImg() 就是一个耗时操作，可以猜想的到，它里面都发生了什么。
 
@@ -76,21 +73,16 @@ tags: Handler Usage
 此时，我们很容易的想到，赶紧把这个从服务端解析到的 bitmap 通过 ImageView
 的 setImageBitmap() 方法设置到 ImageView 上啊，这样我们就可以看到图像了。
 
-此时当你调用上面的方法后，你的应用又崩了。因为此时的 setImageBitmap() 方法调用发生在子线程，同时，这个方法属于更新界面 UI
-的操作，而 Android 系统不允许我们的代码在子线程中去更新 UI，更新 UI 的操作只能发生在主线程，so ~ 我们的代码执行到 setImageResource 这里的时候就崩溃了。
+此时当你调用上面的方法后，你的应用又崩了。因为此时的 setImageBitmap() 方法调用发生在子线程，同时，这个方法属于更新界面 UI 的操作，而 Android 系统不允许我们的代码在子线程中去更新 UI，更新 UI 的操作只能发生在主线程，so ~ 我们的代码执行到 setImageResource 这里的时候就崩溃了。
 
-    Process: name.gudong.picassodemo, PID: 27044 android.view.ViewRootImpl$CalledFromWrongThreadException:
-
-           Only the original thread that created a view hierarchy can touch its views.
-
-           at android.view.ViewRootImpl.checkThread(ViewRootImpl.java:6581)
-           at android.view.ViewRootImpl.requestLayout(ViewRootImpl.java:924)
-
+    Only the original thread that created a view hierarchy can touch its views.
+    at android.view.ViewRootImpl.checkThread(ViewRootImpl.java:6581)
+    at android.view.ViewRootImpl.requestLayout(ViewRootImpl.java:924)
 奔溃提示如上所示，注意中间那句提示，说的很明白，简单翻译一下
 
     Only the original thread that created a view hierarchy can touch its views.
 
-    只有创建了这个 view 层次树的线程才可以去 touch(泛指操作)这个 View
+    只有创建了这个 view 树的线程才可以去 touch(泛指操作)这个 View
 
 因为 Activity 的 view 层次树是在主线程完成初始化的，所以对所有依附于这个层次树的 view ,你要是后续想要 touch 它，就一定要在主线程中 touch，不能挪到其他子线程中去 touch。
 
@@ -100,16 +92,7 @@ tags: Handler Usage
 
       setContentView(R.layout.activity_handler);
 
-很明显，setContent() 是在主线程中调用完成的，这里如果深究 setContent(),你会发现是 PhoneWindow 最终执行了相关的逻辑，而最终
-通过 Window 的一系列操作，这个 Activity 对应的 View 层次树也就创建成功。同时，这个 Activity 中的所有 view 都将依附于这个层次树。
-
-所以现在在回过头来看看刚才的问题。
-
-我们在线程中获取到一张 Bitmap 并直接调用 imageView 的 setImageBitmap 方法，报了如下的错误。
-
-    Only the original thread that created a view hierarchy can touch its views.       
-
-就是因为 这个 imageView 依附的层次树是在主线程中创建的。
+很明显，setContent() 是在主线程中调用完成的，这里如果深究 setContent(),你会发现是 PhoneWindow 最终执行了相关的逻辑，而最终通过 Window 的一系列操作，这个 Activity 对应的 View 层次树也就创建成功。同时，这个 Activity 中的所有 view 都将依附于这个层次树。
 
 我们平时可能看过很多这样的结论，『Android 中不允许在子线程中更新 UI』,其实归根结底是这个原因。
 
@@ -128,45 +111,48 @@ Handler 来了~
 
 此时只要在子线程中去调用 handler 的 sendMessage(msg,obj) 方法，你就可以把自己的逻辑，或者程序流给甩到主线程(暂且让我们这么形容吧~)。
 
-    private void executeTask(){
-         new Thread(new Runnable() {
-             @Override
-             public void run() {
-                  // 子线程
+```java
+private void executeTask(){
+     new Thread(new Runnable() {
+         @Override
+         public void run() {
+              // 子线程
 
-                  //............. 耗时操作 ................... //
+              //............. 耗时操作 ................... //
 
-                  Bitmap bitmap = loadImg("http://i.imgur.com/DvpvklR.png");
+              Bitmap bitmap = loadImg("http://i.imgur.com/DvpvklR.png");
 
-                  //............. 耗时操作 ................... //
+              //............. 耗时操作 ................... //
 
-                  Message msg = new Message();
-                  msg.what = 1;
-                  msg.obj = bitmap;
-                  mHandler.sendMessage(msg);
-             }
-         }).start();
-     }
+              Message msg = new Message();
+              msg.what = 1;
+              msg.obj = bitmap;
+              mHandler.sendMessage(msg);
+         }
+     }).start();
+ }
+```
 
-上面可以看到，在子线程里，在执行完耗时操作，得到 bitmap 后，我们简单封装了一个 msg 对象，我们就把这个 msg
-通过 mHandler 的 sendMessage 方法，甩到了主线程，主线程中 mHandler 的 handMessage() 方法会处理被甩过来的 msg 对象；
+上面可以看到，在子线程里，在执行完耗时操作，得到 bitmap 后，我们简单封装了一个 msg 对象，我们就把这个 msg 通过 mHandler 的 sendMessage 方法，甩到了主线程，主线程中 mHandler 的 handMessage() 方法会处理被甩过来的 msg 对象；
 如下所示：
 
-    private Handler mHandler = new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            switch (msg.what){
-                case 1:
-                    Bitmap bitmap = (Bitmap) msg.obj;
-                    imageView.setImageBitmap(bitmap);
-                    break;
-                case -1:
-                    Toast.makeText(MainActivity.this, "msg "+msg.obj.toString(), Toast.LENGTH_SHORT).show();
-                    break;
-            }
+```java
+private Handler mHandler = new Handler(){
+    @Override
+    public void handleMessage(Message msg) {
+        super.handleMessage(msg);
+        switch (msg.what){
+            case 1:
+                Bitmap bitmap = (Bitmap) msg.obj;
+                imageView.setImageBitmap(bitmap);
+                break;
+            case -1:
+                Toast.makeText(MainActivity.this, "msg "+msg.obj.toString(), Toast.LENGTH_SHORT).show();
+                break;
         }
-    };
+    }
+};
+```
 
 `注意，这里我把它定义成了一个 Activity 的成员变量，它是在主线程中创建完成的。`
 
@@ -181,8 +167,7 @@ Handler 来了~
 
 这就是证据啊，有图有真相，msg 就是被甩到主线程了，否则你怎么看到的图像。
 
-话虽这样说，现象也确实证明了上面说的，但是为什么简单调用了 sendMessage() 方法后，msg 就到了 主线程中呢？背后的具体逻辑到底
-是什么呢？
+话虽这样说，现象也确实证明了上面说的，但是为什么简单调用了 sendMessage() 方法后，msg 就到了 主线程中呢？背后的具体逻辑到底是什么呢？
 
 下面具体带你进入 Handler 的背后。其实不是带你进入，同时也是带我进入，我虽然看过好多次，但是老是忘记，这次就通过博客的方式记录下。
 
