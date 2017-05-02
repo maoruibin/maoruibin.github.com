@@ -1,7 +1,7 @@
 ---
 layout: post
 author: 咕咚
-title:  "多状态加载布局开发 tip 一二"
+title:  "多状态加载布局开发 Tips"
 description: ""
 catalog:    true
 qrcode_mp:  false
