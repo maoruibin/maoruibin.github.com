@@ -1,7 +1,7 @@
 ---
 layout: post
 author: 咕咚
-title:  "多状态加载布局开发 Tips"
+title:  "Android 多状态加载布局的开发 Tips"
 description: ""
 catalog:    true
 qrcode_mp:  false
@@ -9,7 +9,7 @@ cover:  "#121a2a"
 tags: Experience Skills 架构 Android 
 ---
 
-该篇文章结合之前自己的项目开发实践，简单分享一下关于多状态 Layout 的开发 tip。
+本文将结合自己的项目开发实践，简单分享一下关于多状态 Layout 的开发实践 Tips。
 
 ## 什么是多状态 Layout
 
