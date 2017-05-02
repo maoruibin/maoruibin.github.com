@@ -1,7 +1,7 @@
 ---
 layout: post
 author: 咕咚
-title:  "多条件加载布局开发 tip 一二"
+title:  "多状态加载布局开发 tip 一二"
 description: ""
 catalog:    true
 qrcode_mp:  false
@@ -9,14 +9,15 @@ cover:  "#121a2a"
 tags: Experience Skills 架构 Android 
 ---
 
-对于大多数 App 而言，都有多状态加载这种需求，对应到开发中，我们就需要开发一个对应的 layout 用于根据页面不同的状态来显示不同的提示 view，如：
+该篇文章结合之前自己的项目开发实践，简单分享一下关于多状态 Layout 的开发 tip。
 
-* 数据加载时显示一个 loading 样式的页面
-* 网络异常时需要显示网络相关的异常提示页面
-* 页面数据为空时需要显示一个数据为空的提示页面
-* 等等如下图所示
+## 什么是多状态 Layout
+
+对于大多数 App 而言，项目中都有多状态加载 View 这种需求，如下图所示。
 
 ![demo](http://7xr9gx.com1.z0.glb.clouddn.com/loading_status.png)
+
+对应到开发中，我们通常会开发一个对应的自定义 layout 用于根据页面不同的状态来显示不同的提示 view。
 
 在项目中，我们大多会在开发初期就把这套 layout 框架写好，然后其他人的自己的开发过程中直接使用即可。如下所示：
 
@@ -33,19 +34,21 @@ tags: Experience Skills 架构 Android
 </name.gudong.MJMultipleStatusLayout>
 ```
 
-这篇文章不讨论如何去实现这样的自定义 loading layout，Github 上这样的 layout 太多了，这里主要思考、总结在实际开发中开发这样的自定义 Layout 时应该注意那些地方。
+这篇文章不讨论如何去实现这样的自定义 loading layout，Github 上[这样的 layout ](#开源方案)太多了，这里主要思考、总结在实际开发中开发这样的自定义 Layout 时应该注意那些地方。
 
-为了后文描述方便，这里把这个自定义 ViewGroup 先称为 MultipleStatusLayout。
+但是为了说明方便，这里还是采用的方案简单叙述一下。
+
+>为了后文描述方便，这里把这个多状态自定义 Layout 先称为 MultipleStatusLayout。
 
 ## 实现方案
 
-在实现 MultipleStatusLayout  时，首先选择继承一个 ViewGroup 作为自己的父类，然后在使用过程中，默认把内部的第一个子 View 作为 ContentView，其余各种情形下的 layout view，根据不同的加载状态，在 MultipleStatusLayout 中通过动态 addView 去控制对应 layout 的加载显示，也可以通过 ViewStub 把不同情形的 layout 进行懒加载，然后对外提供不同的方法，方便外部调用、控制不同状态下的 layout 显示。
+在实现 MultipleStatusLayout  时，首先选择继承一个 ViewGroup 作为自己的父类，然后默认把内部的第一个子 View 作为 ContentView，其它各种情形下对应要显示的 layout view，根据不同的加载状态，在 MultipleStatusLayout 中通过动态 addView 去控制对应 layout 的加载显示，也可以通过 ViewStub 把不同情形的 layout 进行懒加载，然后对外提供不同的方法，方便外部调用、控制不同状态下的 layout 显示。
 
 嗯，简单说来就是这样，原理很简单，实现起来也没什么技术难度，对于一般的开发人员只要一开始明白具体的产品逻辑和实现思路，相信花不了多少时间就可以完成这样的 MultipleStatusLayout。具体这种方式的实现可以参看一个[开源项目](https://github.com/qyxxjd/MultipleStatusView/blob/master/multiple-status-view/src/main/java/com/classic/common/MultipleStatusView.java) 的实现。
 
 下面着重列举一下开发 MultipleStatusLayout 过程中的注意点或者要点。
 
-## 要点指南 
+## Tips 
 
 考虑到 MultipleStatusLayout  开发完成后，会在项目中的很多页面中应用，而且很多时候是作为页面顶级父容器而存在，所以开发过程中一定要注意其性能还有稳定性，否则一旦出现问题，整个项目中应用到该 MultipleStatusLayout  的页面都会随之出现问题。
 
@@ -141,7 +144,7 @@ showErrorView(new StatusViewConfig.StatusViewBuild(getContext())
 
 ## 总结
 
-要说的就这么多，欢迎留言。
+同样功能的 Layout 可能在不同的业务场景下实现方式也会有很大的区别，所以不论哪种实现方式，无所谓好坏，只要适合就好。但是开发此类 Layout 要遵循的基本准则、以及要注意的点应该大都相同，希望此文可以给你一些启示帮助。
 
 > 本文原创发布于公众号 大侠咕咚，欢迎扫码关注更多原创文章。
 > ![大侠咕咚](http://upload-images.jianshu.io/upload_images/588640-20fdcda8075edb5d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
