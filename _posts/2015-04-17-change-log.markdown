@@ -9,6 +9,18 @@ tags: 随想
 ---
 这篇博文用于记录，自己在修改博客时具体的修改记录，如颜色设置、联系方式配置等信息，以便日后查看。
 
+
+## 2017/05/08(优化首页博客描述文案显示逻辑)
+
+jekyll if else语法以及 字符串空判断
+
+```xml
+      {% if post.description and post.description != empty %}
+          {{ post.description }}
+      {% else %}
+          {{ post.content | strip_html | truncate:200 }}
+      {% endif %}
+```
 ## 2017/04/28(完善个人作品展示)
 
 增加了全国空气质量展示

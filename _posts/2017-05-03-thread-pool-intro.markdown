@@ -1,12 +1,23 @@
 ---
 layout: post
 author: 咕咚
-title:  "线程池执行原则及参数详解"
-description: ""
+title:  "关于线程池的执行原则及配置参数详解"
+subtitle: 『线程池的构造参数怎么可以这么多？』
+description: "池是一种非常优秀的设计思想，通过建立池可以有效的利用系统资源，节约系统性能。Java 中的线程池就是一种非常好的实现，从 JDK 1.5 开始 Java 提供了一个线程工厂 Executors 用来生成线程池，通过 Executors 可以方便的生成不同类型的线程池。但是要更好的理解使用线程池，就需要了解线程池的配置参数意义以及线程池的具体工作机制。"
 catalog:    true
 tags: Skills Thread Java 
 ---
-本文介绍关于线程池的执行原则以及构造方法的参数详解。
+
+
+> 作者博客地址: [http://gudong.name](http://gudong.name/)
+>
+> 本文博客地址: [http://gudong.name/2017/05/03/thread-pool-intro.html](http://gudong.name/2017/05/03/thread-pool-intro.html)
+
+
+
+池是一种非常优秀的设计思想，通过建立池可以有效的利用系统资源，节约系统性能。Java 中的线程池就是一种非常好的实现，从 JDK 1.5 开始 Java 提供了一个线程工厂 Executors 用来生成线程池，通过 Executors 可以方便的生成不同类型的线程池。但是要更好的理解使用线程池，就需要了解线程池的配置参数意义以及线程池的具体工作机制。
+
+下面先介绍一下线程池的好处以及创建方式，接着会着重介绍关于线程池的执行原则以及构造方法的参数详解。
 
 ## 线程池的好处
 
@@ -20,7 +31,6 @@ tags: Skills Thread Java
 
 ```java
 //参数初始化
-
 private static final int CPU_COUNT = Runtime.getRuntime().availableProcessors();
 //核心线程数量大小
 private static final int corePoolSize = Math.max(2, Math.min(CPU_COUNT - 1, 4));
@@ -32,7 +42,7 @@ private static final int keepAliveTime = 30;
 //任务过多后，存储任务的一个阻塞队列
 BlockingQueue<Runnable>  workQueue = new SynchronousQueue<>();
 
-//创建线程的工厂
+//线程的创建工厂
 ThreadFactory threadFactory = new ThreadFactory() {
     private final AtomicInteger mCount = new AtomicInteger(1);
 
