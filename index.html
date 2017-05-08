@@ -4,6 +4,8 @@ description: "因为热爱"
 ---
 
 {% for post in paginator.posts %}
+<!-- 控制文章是不是显示在主页中 -->
+{% if post.hide != true %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">
@@ -19,7 +21,6 @@ description: "因为热爱"
         {% if post.description and post.description != empty %}
             {{ post.description }}
         {% else %}
-
             {{ post.content | strip_html | truncate:200 }}
         {% endif %}
         
@@ -29,6 +30,8 @@ description: "因为热爱"
     </p>
 </div>
 <hr>
+{% endif %}
+
 {% endfor %}
 
 <!-- Pager -->
