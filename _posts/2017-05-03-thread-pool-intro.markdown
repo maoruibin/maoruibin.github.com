@@ -5,6 +5,7 @@ title:  "关于线程池的执行原则及配置参数详解"
 subtitle: 『线程池的构造参数怎么可以这么多？』
 description: "池是一种非常优秀的设计思想，通过建立池可以有效的利用系统资源，节约系统性能。Java 中的线程池就是一种非常好的实现，从 JDK 1.5 开始 Java 提供了一个线程工厂 Executors 用来生成线程池，通过 Executors 可以方便的生成不同类型的线程池。但是要更好的理解使用线程池，就需要了解线程池的配置参数意义以及线程池的具体工作机制。"
 catalog:    true
+qrcode_mp:  false
 tags: Skills Thread Java 
 ---
 
@@ -132,3 +133,6 @@ ThreadPoolExecutor mExecute = new ThreadPoolExecutor(
 - [聊聊并发（三）Java线程池的分析和使用](http://ifeve.com/java-threadpool/)
 - [Android线程池(二)——ThreadPoolExecutor及其拒绝策略RejectedExecutionHandler使用示例](http://blog.csdn.net/lfdfhl/article/details/40739093)
 - [多线程 线程池ThreadPoolExecutor介绍](http://blog.csdn.net/u014099894/article/details/50900689)
+
+> 本文原创发布于公众号 大侠咕咚，欢迎扫码关注更多原创文章。
+> ![大侠咕咚](http://upload-images.jianshu.io/upload_images/588640-20fdcda8075edb5d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
