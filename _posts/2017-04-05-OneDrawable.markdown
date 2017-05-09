@@ -83,7 +83,7 @@ private static void setPressedStateDrawable(@StatePressedMode.Mode int mode, @Fl
 
 ## 兼容问题
 
-后来有网友反馈在 4.4 的机型下按下效果实效，后来发现是因为 Drawable 的 setColorFilter 方法在 4.4 的手机上失效，后来采用了 BitmapDrawable 的方式解决，具体可以看代码实现，这里贴出最重要的一段代码。
+后来有网友反馈在 4.4 的机型下按下效果失效，后来发现是因为 Drawable 的 setColorFilter 方法在 4.4 的手机上失效，后来采用了 BitmapDrawable 的方式解决，具体可以看代码实现，这里贴出最重要的一段代码。
 ```java
     private static Drawable kitkatDrawable(Context context, @NonNull Drawable pressed, @PressedMode.Mode int mode, @FloatRange(from = 0.0f, to = 1.0f) float alpha) {
         Bitmap bitmap = Bitmap.createBitmap(pressed.getIntrinsicWidth(), pressed.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);

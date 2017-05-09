@@ -19,13 +19,16 @@ cover:  "#3e4145"
 # 个人信息
 
 - 毛瑞斌 / 男 / 1990
+- 身高：183cm
+- 爱好：篮球、Coding、App 制作
 - 本科 / 内蒙古工业大学计算机系
 - 工作年限：4年
 - 微博：[@大侠咕咚](http://weibo.com/maoruibin)
 - 技术博客：[http://gudong.name](http://gudong.name) 
-- GitHub: [https://github.com/maoruibin](https://github.com/maoruibin) 
+- GitHub： [https://github.com/maoruibin](https://github.com/maoruibin) 
 - 简书：[@大侠咕咚](http://www.jianshu.com/u/203065de3ced)
-- 期望职位：Android高级程序员，Android Leader
+- 在线作品展示：[链接](http://gudong.name/portfolio/)
+- 期望职位：Android 高级开发工程师，Android Leader
 - 期望薪资：25k~30k
 - 期望城市：北京
 
@@ -44,7 +47,7 @@ cover:  "#3e4145"
 * 负责网络模块，并对其进行优化重构。重构后的网络模块具有更高的灵活性，支持自由切换网络请求引擎，可以兼容服务端由于历史原因造成的具有差异化的数据格式，并对请求响应过程中的所有异常进行分发，同时配置开发者模式，方便在开发阶段尽快暴露网络请求中的异常问题。
 * 负责项目中一个重要的二级页面 - 空气质量页面，采用 UI 模块化开发方式([ViewController](https://github.com/maoruibin/ViewController))，提高开发效率，降低维护成本，后来天气主页也采用同样的方式开发。另外在此页面完成了高质量的[复杂自定义曲线 View(已开源)](https://github.com/maoruibin/TrendChartView) 。
 * 负责项目中各个页面的启动加载速度优化。
-* 负责项目中页面布局以及一些自定义 View 的绘制优化。
+* 负责项目中页面布局以及自定义 View 的绘制优化。
 * 负责项目中的全局配置信息管理，如 Share Key、多版本差异性控制等。
 * 负责 Android 组内的私有代码仓库搭建、管理。
 * 负责开发维护项目中的 TitleBar、Dialog、Loading 等 UI 基础组件。
@@ -125,7 +128,7 @@ cover:  "#3e4145"
 
 # 个人介绍
 
-* 爱运动
+* 爱运动，爱篮球。
 * 学习能力强，自我驱动。
 * 有重构过大型模块的实践经验。
 * 有独立开发完成 App 项目的实践经验。
