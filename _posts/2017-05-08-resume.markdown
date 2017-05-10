@@ -5,8 +5,7 @@ title:  "我的个人在线简历"
 description: ""
 catalog:    true
 hide:    true
-categories: Skills
-tags: Usage Skills 
+tags: Interview
 cover:  "#3e4145"
 ---
 
