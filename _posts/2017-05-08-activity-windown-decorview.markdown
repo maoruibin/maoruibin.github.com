@@ -164,8 +164,6 @@ public boolean superDispatchTouchEvent(MotionEvent event) {
 
 不过这里还是从大体上简单概括一下 Activity 启动后 Window 与 View 是怎么跟 Activity 关联起来的。
 
-> 每一个 Activity 都对应一个类型为 PhoneWindow 的 mWindow 对象，
-
 Activity 的启动代码具体位于 ActivityThread 的 performLaunchActivity 方法中，如下所示：
 
 ActivityThread#performLaunchActivity
@@ -230,7 +228,7 @@ void makeVisible() {
 
 这里可能会想，难道 Activity Window 都是傀儡吗？为什么上面的分析中，他们接受到命令后都是一个劲的外抛，自己不处理呢？他们没作用吗？我想其实这里应该是一种特意的设计策略。
 
-作为一个 Activity，它承载了很多功能和使命，它不仅仅是为 View 操作而服务的，所以他把 View 相关的操作交给 DecorView 去完成，通过这种 "外包" 的方式使得自己不用关心 View 操作的细节，嗯嗯，其实有点管理中经常说的 "授权" 的意思。
+作为一个 Activity，它承载了很多功能和使命，它不仅仅是为 View 操作而服务的，所以它把 View 相关的操作交给 DecorView 去完成，通过这种 “外包” 的方式使得自己不用关心 View 操作的细节，到最后其实有点管理中经常说的 “授权” 的意思。
 
 
 
