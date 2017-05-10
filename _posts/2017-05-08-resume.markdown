@@ -1,14 +1,3 @@
----
-layout: post
-author: 咕咚
-title:  "我的个人简历"
-description: ""
-catalog:    true
-hide:    true
-tags: Interview 
-cover:  "#3e4145"
----
-
 # 联系方式
 - 手机：182 0108 2548
 - Email：gudong.name@gmail.com
@@ -27,7 +16,7 @@ cover:  "#3e4145"
 - 简书：[@大侠咕咚](http://www.jianshu.com/u/203065de3ced)
 - 在线作品展示：[链接](http://gudong.name/portfolio/)
 - 期望职位：Android 高级开发工程师，Android Leader
-- 期望薪资：25k~30k
+- 期望薪资：25k~35k
 - 期望城市：北京
 
 ---
