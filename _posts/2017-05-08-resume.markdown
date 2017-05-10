@@ -1,3 +1,15 @@
+---
+layout: post
+author: 咕咚
+title:  "我的个人在线简历"
+description: ""
+catalog:    true
+hide:    true
+categories: Skills
+tags: Usage Skills 
+cover:  "#3e4145"
+---
+
 # 联系方式
 - 手机：182 0108 2548
 - Email：gudong.name@gmail.com

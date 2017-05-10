@@ -9,6 +9,13 @@ tags: Experience Skills Android View
 
 墨迹天气是一款免费的天气信息查询软件，由于要展示各种各样的数据信息，所以项目中有大量的涉及到图表相关的自定义 View，如展示 24 小时的温度曲线图、潮汐图等等。这里就简单分享一些自己在开发空气质量页面时，开发逐小时预报曲线的一些经验。
 
+> 版权声明：本文为 **咕咚** 原创文章，可以随意转载，但必须在明确位置注明出处。
+> 
+> 作者博客地址: [http://gudong.name](http://gudong.name/)
+>
+> 本文博客地址: [http://gudong.name/2017/04/28/custom-preference-view.html](http://gudong.name/2017/04/28/custom-preference-view.html)
+
+
 目前该 View 的实现已开源在 GitHub，[TrendChartView](https://github.com/maoruibin/TrendChartView)，如果觉得不错，就 star 支持下。
 
 如下是最终的效果示意图。

@@ -10,12 +10,13 @@ cover:  "#121a2a"
 tags: Experience Skills 架构 Android 
 ---
 
+本文将结合自己的项目开发实践，简单分享一下关于多状态 Layout 的开发实践 Tips。
+
+> 版权声明：本文为 **咕咚** 原创文章，可以随意转载，但必须在明确位置注明出处。
+> 
 > 作者博客地址: [http://gudong.name](http://gudong.name/)
 >
 > 本文博客地址: [http://gudong.name/2017/04/26/loading_layout_practice.html](http://gudong.name/2017/04/26/loading_layout_practice.html)
-
-
-本文将结合自己的项目开发实践，简单分享一下关于多状态 Layout 的开发实践 Tips。
 
 ## 什么是多状态 Layout
 
