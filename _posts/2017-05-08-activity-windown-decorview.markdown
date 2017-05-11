@@ -9,12 +9,12 @@ tags: Skills View Android Activity
 
 ---
 
-该篇文章主要探究 Android 中 Activity 与 Window、PhoneWindow、DecorView 之间的关系。Activity 的概念都比较熟悉，但是 Window、PhoneWindow、DecorView 这几个类并不常用，所以很多时候就忽略了它们的具体作用。其实在 Activity 的背后，它们都发挥着非常重要的作用，比如下文即将要说到的 setContentView()  原理、事件分发源头都可以看到这几个概念。
+该文主要探究 Android 中 Activity 与 Window、PhoneWindow、DecorView 之间的关系。Activity 的概念都比较熟悉，但是 Window、PhoneWindow、DecorView 这几个类并不常用，所以很多时候容易忽略了它们。其实在 Activity 的背后，它们都发挥着很重要的作用，比如下文即将要说到的 setContentView()  原理以及事件分发源头都可以看到他们。
 
 
 
 > 版权声明：本文为 **咕咚** 原创文章，可以随意转载，但必须在明确位置注明出处。
-> 
+>
 > 作者博客地址: [http://gudong.name](http://gudong.name/)
 >
 > 本文博客地址: [http://gudong.name/2017/05/08/activity-windown-decorview.html](http://gudong.name/2017/05/08/activity-windown-decorview.html)
@@ -117,9 +117,9 @@ public void setContentView(int layoutResID) {
 
 ## 事件分发与 DecorView
 
-都知道在一个界面中，如果发生触摸点击事件，事件分发的源头在 Activity 的 `dispatchTouchEvent`方法中，事件会从这里开发向下分发，然后分发到页面中具体布局 View 中，不断递归调用 ViewGroup/View 的 dispatchTouchEvent 方法，如果在递归过程中，和事件分发相关的三个方法 dispatchTouchEvent、onInterceptTouchEvent、onTouchEvent 都返回了 false 那么事件最终会执行到 Activity 的 onTouchEvent 方法中，那么表示一次事件分发结束。如果根据这个流程画出一个流程图，就可以看到一个 U 形图。关于事件分发的细节有很多，这里不展开了，具体可以参考我收集的[最佳文章](https://github.com/maoruibin/GreatArticles)。
+都知道在一个界面中，如果发生触摸点击事件，事件分发的源头在 Activity 的 `dispatchTouchEvent`方法中，事件会从这里开发向下分发，然后分发到页面中具体布局 View 中，不断递归调用 ViewGroup / View 的 dispatchTouchEvent 方法，如果在递归过程中，和事件分发相关的三个方法 dispatchTouchEvent、onInterceptTouchEvent、onTouchEvent 都返回了 false 那么事件最终会执行到 Activity 的 onTouchEvent 方法中，那么表示一次事件分发结束。如果根据这个流程画出一个流程图，就可以看到一个 U 形图。关于事件分发的细节有很多，这里不展开了，具体可以参考我收集的[最佳文章](https://github.com/maoruibin/GreatArticles)。
 
-但是 Activity 如何能把触摸事件从 Activity 中分发到具体的 ViewGroup / View 呢？跟上面的 setContentView 原理类似，Activity 在接受到上层派发来的事件后，会把事件传递到自己的 dispatchTouchEvent 方法中，然后Activity 会把触摸\点击事件传递给自己的 mWindow 对象，最终传递给 decorView 的 dispatchTouchEvent 方法。追踪代码如下所示
+但是 Activity 如何能把触摸事件从 Activity 中分发到具体的 ViewGroup / View 呢？跟上面的 setContentView 原理类似，Activity 在接受到上层派发来的事件后，会把事件传递到自己的 dispatchTouchEvent 方法中，然后Activity 会把触摸、点击事件传递给自己的 mWindow 对象，最终传递给 decorView 的 dispatchTouchEvent 方法。追踪代码如下所示
 
 Activity
 
@@ -157,6 +157,8 @@ public boolean superDispatchTouchEvent(MotionEvent event) {
 ```
 
 可以看到 DecorView 直接调用了 super 的 `dispatchTouchEvent`方法，也就是最终走了 ViewGroup 的 dispatchTouchEvent 方法。
+
+从这里就可以知道了，都说 Activity 的 dispatchTouchEvent 方法是事件传递的源头（其实如果向上追应该还能追踪源头），但是不断传递事件，最终 Activity 接受到的事件还是到达了 Activity 对饮的 DecorView 中，而 DecorView 是一个 FrameLayout，所以接下来的分发规就是正常的 ViewGroup 分发逻辑了。
 
 ## 补充
 
