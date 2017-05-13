@@ -224,9 +224,12 @@ layout: default
                 <h5>最新文章</h5>
                 <ul class="list-inline">
                 {% for post in paginator.posts limit:4 %}
-                  <li>
-                    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                  </li>
+                    {% if post.hide != true %}
+                        <li>
+                            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                        </li>      
+                    {% endif %}
+                  
                 {% endfor %}
                 </ul>
 
