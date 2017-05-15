@@ -18,9 +18,9 @@ cover:  "#3e4145"
 
 # 个人信息
 
-- 毛瑞斌 / 男 / 1990
+- 毛瑞斌 / 男 / 1990 
 - 本科 / 内蒙古工业大学计算机系
-- 工作年限：4年
+- 工作年限：4年 / 目前在职
 - 技术博客：[http://gudong.name](http://gudong.name) 
 - GitHub   ：[https://github.com/maoruibin](https://github.com/maoruibin) 
 - 微博主页：[@大侠咕咚](http://weibo.com/maoruibin)
