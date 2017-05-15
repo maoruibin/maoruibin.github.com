@@ -1,0 +1,25 @@
+---
+layout: post
+author: 咕咚
+title:  "Demo"
+description: ""
+catalog:    true
+qrcode_mp:  false
+tags: Skills View Android Activity 
+
+---
+
+
+> 版权声明：本文为 **咕咚** 原创文章，可以随意转载，但必须在明确位置注明出处。
+>
+> 作者博客地址: [http://gudong.name](http://gudong.name/)
+>
+> 本文博客地址: [http://gudong.name/2017/05/08/activity-windown-decorview.html](http://gudong.name/2017/05/08/activity-windown-decorview.html)
+
+
+
+> 本文原创发布于公众号 大侠咕咚，欢迎扫码关注更多原创文章。
+> ![大侠咕咚](http://upload-images.jianshu.io/upload_images/588640-20fdcda8075edb5d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
