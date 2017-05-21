@@ -98,6 +98,10 @@
                 <p class="copyright text-muted">
                     Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
                     <br>
+                    <span id="busuanzi_container_site_uv">
+                      本站总访客数<span id="busuanzi_value_site_uv"></span>人次
+                    </span>
+                    <br>
                     Theme from © <a href="http://huangxuan.me">Hux</a> | Powered by <a href="http://jekyllcn.com/">Jekyll</a>
                 </p>
             </div>
@@ -114,6 +118,8 @@
 <!-- Custom Theme JavaScript -->
 <script src="{{ "/js/hux-blog.min.js " | prepend: site.baseurl }}"></script>
 
+<!-- -->
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <!-- async load function -->
 <script>
@@ -238,4 +244,5 @@
         });
     });
 </script>
+
 {% endif %}

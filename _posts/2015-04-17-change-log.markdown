@@ -9,6 +9,28 @@ tags: 随想
 ---
 这篇博文用于记录，自己在修改博客时具体的修改记录，如颜色设置、联系方式配置等信息，以便日后查看。
 
+## 2017/05/21(添加访问次数)
+最近一直在忙面试，今天看到一微博私信要互加友链，发现对方有一篇文章分享[如何给 jekyll 主题的博客加访问统计](http://linglinyp.com/2017/05/17/busuanzi.html)，随即就加了，毕竟惦记这个功能很久了。
+
+
+//网站倒计时运行代码
+
+```javascript
+<script>
+   window.setInterval('counter()',1000);
+   function counter(){
+     var date=new Date();
+     var startDate=new Date(2016,11,07,0,0,0);
+     var time=(date-startDate)/1000;
+     var day=Math.floor(time/(24*60*60));
+     var hour=Math.floor(time%(24*60*60)/(60*60));
+     var minute=Math.floor(time%(24*60*60)%(60*60)/60);
+     var second=Math.floor(time%(24*60*60)%(60*60)%60);
+     var str="我的博客已默默运行了" + day + "天" + hour +"时" + minute + "分" + second + "秒";
+     document.getElementById('count').innerHTML=str;
+   }
+</script>
+```
 
 ## 2017/05/08(优化首页博客描述文案显示逻辑)
 

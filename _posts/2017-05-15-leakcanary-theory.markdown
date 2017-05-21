@@ -32,7 +32,7 @@ public void watchActivities() {
   // Make sure you don't get installed twice.
   stopWatchingActivities();
   //注册 Activity 生命周期监听
-  application.registerActivityLifecycleCallbacks(lifecycleCallbacks);
+      application.registerActivityLifecycleCallbacks(lifecycleCallbacks);
 }
 ```
 
