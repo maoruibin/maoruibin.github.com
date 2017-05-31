@@ -25,7 +25,7 @@ tags: Skills Thread Java
 引用自 [http://ifeve.com/java-threadpool/](http://ifeve.com/java-threadpool/) 的说明：
 
 - 降低资源消耗。通过重复利用已创建的线程降低线程创建和销毁造成的消耗。
-- 提高响应速度。当任务到达时，任务可以不需要的等到线程创建就能立即执行。
+- 提高响应速度。当任务到达时，任务可以不需要等到线程创建就能立即执行。
 - 提高线程的可管理性。线程是稀缺资源，如果无限制的创建，不仅会消耗系统资源，还会降低系统的稳定性，使用线程池可以进行统一的分配，调优和监控。
 
 ## 创建线程池
@@ -100,8 +100,8 @@ ThreadPoolExecutor mExecute = new ThreadPoolExecutor(
 ## 线程池工作原则
 
 - 1、当线程池中线程数量小于 corePoolSize 则创建线程，并处理请求。
-- 2、当线程池中线程数量大于等于 corePoolSize 时，则把请求放入 workQueue 中,随着线程池中的核心线程们不断执行任务，只要线程池中有空闲的核心线程，线程池就从workQueue 中取任务并处理。
-- 3 、当 taskQueue 已存满，放不下新任务时则新建非核心线程入池，并处理请求直到线程数目达到 maximumPoolSize（最大线程数量设置值）。
+- 2、当线程池中线程数量大于等于 corePoolSize 时，则把请求放入 workQueue 中,随着线程池中的核心线程们不断执行任务，只要线程池中有空闲的核心线程，线程池就从 workQueue 中取任务并处理。
+- 3 、当 workQueue 已存满，放不下新任务时则新建非核心线程入池，并处理请求直到线程数目达到 maximumPoolSize（最大线程数量设置值）。
 - 4、如果线程池中线程数大于 maximumPoolSize 则使用 RejectedExecutionHandler 来进行任务拒绝处理。
 
 ## 任务队列 BlockingQueue

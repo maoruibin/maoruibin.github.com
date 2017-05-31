@@ -1,14 +1,3 @@
----
-layout: post
-author: 咕咚
-title:  "我的个人在线简历"
-description: ""
-catalog:    true
-hide:    true
-tags: Interview
-cover:  "#3e4145"
----
-
 # 联系方式
 - 手机：182 0108 2548
 - Email：gudong.name@gmail.com
@@ -33,7 +22,7 @@ cover:  "#3e4145"
 
 - 熟练了解 Java 的语言特性、内存管理机制以及 JVM 基本原理。有良好的编码风格，追求代码执行效率。
 - 熟练掌握多线程、线程同步以及线程池相关的知识。
-- 熟练了解 Android 中的消息机制、View 事件分发原理。
+- 熟练了解 Android 中的消息处理机制。
 - 熟练掌握自定义 View，能完成非常复杂的 View 曲线并保持绘制效率。
 - 熟练掌握对地图，定位相关操作，有一定的实践优化经验。
 - 掌握常见的 UI 优化、启动速度优化，包大小优化等，有一定的性能问题解决实践经验。

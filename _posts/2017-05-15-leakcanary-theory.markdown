@@ -88,13 +88,13 @@ public void watch(Object watchedReference, String referenceName) {
 }
 ```
 
-这里会把检测到的 activity 实例关联包装为一个自定义的弱引用（KeyedWeakReference），但是这里在指定弱引用时，LeakCanary 同时还为这个弱引用指定了一个 ReferenceQuery 队列。
+这里会把检测到的 activity 实例关联包装为一个自定义的弱引用（KeyedWeakReference），但是这里在指定弱引用时，LeakCanary 同时还为这个弱引用指定了一个 ReferenceQueue 队列。
 
-这个队列很重要，它是 WeakReference 的第二个构造参数，下面是 ReferenceQuery 的文档介绍
+这个队列很重要，它是 WeakReference 的第二个构造参数，下面是 ReferenceQueue 的文档介绍
 
 > Reference queues, to which registered reference objects are appended by the garbage collector after the appropriate reachability changes are detected.
 
-该队列的具体作用就是当发生 GC 后，WeakReference 所持有的对象如果被回收就会进入该队列，所以只要在 activity onDestory 时，把 Activity 对象绑定在 WeakReference 中，然后手动执行一次 GC，然后观察 ReferenceQuery 中是不是包含对应的 Activity 对象，如果不包含，说明 Activity 被强引用，也就是发生了内存泄漏。
+该队列的具体作用就是当发生 GC 后，WeakReference 所持有的对象如果被回收就会进入该队列，所以只要在 activity onDestory 时，把 Activity 对象绑定在 WeakReference 中，然后手动执行一次 GC，然后观察 ReferenceQueue 中是不是包含对应的 Activity 对象，如果不包含，说明 Activity 被强引用，也就是发生了内存泄漏。
 
 接着 LeakCanary 会使用 Square 开源库 [haha](https://github.com/square/haha) 来分析Android heap dump文件，并把最终结果通过通知的方式显示在通知栏。
 
