@@ -20,6 +20,10 @@ weibo_username:     maoruibin
 zhihu_username:     maoruibin
 jianshu_username:     203065de3ced
 github_username:    maoruibin
+
+# link
+ssr_link: https://user.shadowsocksr.hk/aff.php?aff=648
+
 # facebook_username:
 
 # Build settings
