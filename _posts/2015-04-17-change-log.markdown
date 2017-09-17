@@ -18,9 +18,6 @@ https://chrome.google.com/webstore/detail/enpemcpghfpenphpefmocgpdiipgkkjd/publi
 
 不早了，睡觉去了。
 
-
-https://chrome.google.com/webstore/detail/enpemcpghfpenphpefmocgpdiipgkkjd/publish-accepted?utm_source=chrome-ntp-icon&authuser=1
-
 ## 2017/06/13(尴尬的一个时间段)
 上周五打球崴脚了，当时正在篮下进行拼抢，不幸在落地时落在了别人的脚面上，我听到了『咔』的一声，我很清楚这是从右脚踝传来的，然后就到底了。
 
