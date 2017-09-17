@@ -9,6 +9,18 @@ tags: 随想
 ---
 这篇博文用于记录，自己在修改博客时具体的修改记录，如颜色设置、联系方式配置等信息，以便日后查看。
 
+## 2017/09/18(时间好快)
+
+不知不觉已经找完工作在新公司工作了快三个月了。自从到了新公司现在很少打理博客了，甚至连一篇文章都没有。其实又准备过一篇关于 Drawable 的，这段时间对 Drawable 有了更多的了解，写写还是可以写出一些有意思的东西的，不过好几次动笔都没写完，先搁着吧。
+
+前段时间玩了玩 Chrome 插件，拿咕咚翻译做了个实验，顺便练练 Html Css，今晚发布了 1.1，于以往做的 APP 不同，这次自己用 sketch 设计了界面，尽管界面很简单，不过还是体验到了 sketch 的专业，使用 sketch 可以方便的做一些平面图，挺好的，包括简单的图标，不说了，我的咕咚翻译 插件地址
+https://chrome.google.com/webstore/detail/enpemcpghfpenphpefmocgpdiipgkkjd/publish-accepted?utm_source=chrome-ntp-icon&authuser=1
+
+不早了，睡觉去了。
+
+
+https://chrome.google.com/webstore/detail/enpemcpghfpenphpefmocgpdiipgkkjd/publish-accepted?utm_source=chrome-ntp-icon&authuser=1
+
 ## 2017/06/13(尴尬的一个时间段)
 上周五打球崴脚了，当时正在篮下进行拼抢，不幸在落地时落在了别人的脚面上，我听到了『咔』的一声，我很清楚这是从右脚踝传来的，然后就到底了。
 
