@@ -64,6 +64,9 @@ duoshuo_share: false                     # set to false if you want to use Comme
 # yun gentie 
 gentie_key: 47fefdc903004d5b8fc2d6ff98127fe6
 
+# laibili
+laibili_uid: MTAyMC8zMDkzMy83NDgy
+
 # Analytics settings
 # Baidu Analytics
 ba_track_id: de1df75db196971264bd87815c96f646
