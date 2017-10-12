@@ -20,7 +20,7 @@ layout: default
 <!-- Main Content -->
 <div class="container">
 	<div class="row">
-        {% if site.sidebar == false %}
+        {% if page.sidebar == false %}
 <!-- NO SIDEBAR -->
     <!-- PostList Container -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 postlist-container">
@@ -60,7 +60,7 @@ layout: default
                 </ul>
                 {% endif %}
             </div>
-        {% else %}
+    {% else %}
 
 <!-- USE SIDEBAR -->
     <!-- PostList Container -->
@@ -82,112 +82,117 @@ layout: default
                 sidebar-container
             ">
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="{{'/about/' | prepend: site.baseurl }}">关注我</a></h5>
-                    <div class="short-about">
-                        {% if site.sidebar-avatar == null %}
-                            <img src="{{site.sidebar-avatar}}" />
-                        {% endif %}
-                        {% if site.sidebar-about-description == null %}
-                            <p>{{site.sidebar-about-description}}</p>
-                        {% endif %}
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            {% if site.weibo_username %}
-                            <li>
-                                <a target="_blank" href="http://weibo.com/{{ site.weibo_username }}">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
+                {% if page.hideContact == true %}
+                
+                {% else %}
+                    <!-- Short About -->
+                    <section class="visible-md visible-lg">
+                        <hr><h5><a href="{{'/about/' | prepend: site.baseurl }}">关注我</a></h5>
+                        <div class="short-about">
+                            {% if site.sidebar-avatar == null %}
+                                <img src="{{site.sidebar-avatar}}" />
                             {% endif %}
+                            {% if site.sidebar-about-description == null %}
+                                <p>{{site.sidebar-about-description}}</p>
+                            {% endif %}
+                            <!-- SNS Link -->
+                            <ul class="list-inline">
+                                {% if site.weibo_username %}
+                                <li>
+                                    <a target="_blank" href="http://weibo.com/{{ site.weibo_username }}">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                {% endif %}
 
-                            {% if site.github_username %}
-                            <li>
-                                <a target="_blank" href="https://github.com/{{ site.github_username }}">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            {% endif %}
+                                {% if site.github_username %}
+                                <li>
+                                    <a target="_blank" href="https://github.com/{{ site.github_username }}">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                {% endif %}
 
-                            {% if site.zhihu_username %}
-                            <li>
-                                <a target="_blank" href="https://www.zhihu.com/people/{{ site.zhihu_username }}">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                    </span>
-                                </a>
-                            </li>
-                            {% endif %}
+                                {% if site.zhihu_username %}
+                                <li>
+                                    <a target="_blank" href="https://www.zhihu.com/people/{{ site.zhihu_username }}">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
+                                        </span>
+                                    </a>
+                                </li>
+                                {% endif %}
 
-                            {% if site.jianshu_username %}
-                            <li>
-                                <a target="_blank" href="http://www.jianshu.com/u/{{ site.jianshu_username }}">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa  fa-stack-1x fa-inverse">简</i>
-                                    </span>
-                                </a>
-                            </li>
-                            {% endif %}
+                                {% if site.jianshu_username %}
+                                <li>
+                                    <a target="_blank" href="http://www.jianshu.com/u/{{ site.jianshu_username }}">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa  fa-stack-1x fa-inverse">简</i>
+                                        </span>
+                                    </a>
+                                </li>
+                                {% endif %}
 
-                            {% if site.facebook_username %}
-                            <li>
-                                <a target="_blank" href="https://www.facebook.com/{{ site.facebook_username }}">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            {% endif %}
+                                {% if site.facebook_username %}
+                                <li>
+                                    <a target="_blank" href="https://www.facebook.com/{{ site.facebook_username }}">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                {% endif %}
 
-                            {% if site.twitter_username %}
-                            <li>
-                                <a href="https://twitter.com/{{ site.twitter_username }}">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            {% endif %}
+                                {% if site.twitter_username %}
+                                <li>
+                                    <a href="https://twitter.com/{{ site.twitter_username }}">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                {% endif %}
 
-                            {% if site.email %}
-                            <li>
-                                <a target="_blank" href="mailto:{{ site.email }}">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            {% endif %}
+                                {% if site.email %}
+                                <li>
+                                    <a target="_blank" href="mailto:{{ site.email }}">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                {% endif %}
 
-                            {% if site.RSS %}
-                            <li>
-                                <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            {% endif %}
-                        </ul>
-                    </div>
-                </section>
+                                {% if site.RSS %}
+                                <li>
+                                    <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </section>
+                {% endif %}
+                
                 
                 <section class="visible-md visible-lg">
                     <hr>
-                    <h5>关注我的公众号</h5>
+                    <h5>我的公众号</h5>
                     <div class="short-about">
                         <img src="http://7xr9gx.com1.z0.glb.clouddn.com/qrcode_for_gh_58ac6be237a4_430.jpg"/>
                         <p style="display: none;">分享自己的技术动态，扫码关注。</p>
@@ -196,81 +201,117 @@ layout: default
 
 
                 <hr>
-                <!-- hot post -->    
-                <h5>最热文章</h5>
-                <ul class="list-inline">
+
+                {% if page.hideHot == true %}
                 
-                  <li>
-                    <a href="http://gudong.name/2017/04/26/loading_layout_practice.html">Android 多状态加载布局的开发 Tips</a>
-                  </li>
+                {% else %}
+                    <!-- hot post -->    
+                    <h5 style="display: none;">最热文章</h5>
+                    <ul class="list-inline" style="display: none;">
+                    
+                      <li>
+                        <a href="http://gudong.name/2017/04/26/loading_layout_practice.html">Android 多状态加载布局的开发 Tips</a>
+                      </li>
 
-                  <li>
-                    <a href="http://gudong.name/skills/2017/04/22/github_usage.html">如何用好 github 中的 watch、star、fork</a>
-                  </li>
-                   
-                  <li>
-                    <a href="http://gudong.name/2017/04/05/OneDrawable.html">仅使用一张资源图片为 View 设置具有按下效果的背景</a>
-                  </li>
+                      <li>
+                        <a href="http://gudong.name/skills/2017/04/22/github_usage.html">如何用好 github 中的 watch、star、fork</a>
+                      </li>
+                       
+                      <li>
+                        <a href="http://gudong.name/2017/04/05/OneDrawable.html">仅使用一张资源图片为 View 设置具有按下效果的背景</a>
+                      </li>
 
-                  <li>
-                    <a href="http://gudong.name/product/2016/02/26/gudong_translate.html">关于咕咚翻译</a>
-                  </li>
-                
-                </ul>
+                      <li>
+                        <a href="http://gudong.name/product/2016/02/26/gudong_translate.html">关于咕咚翻译</a>
+                      </li>
+                    
+                    </ul>
 
-                <!-- hot post -->    
+                    <!-- hot post -->    
 
 
-                <h5>最新文章</h5>
-                <ul class="list-inline">
-                {% for post in paginator.posts limit:4 %}
-                    {% if post.hide != true %}
-                        <li>
-                            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                        </li>      
-                    {% endif %}
-                  
-                {% endfor %}
-                </ul>
-
-                <!-- tizi tag -->
-                <section class="visible-md visible-lg">
-                    <hr>
-                    <h5>梯子推荐（个人在用的梯子）</h5>
-                    <div class="short-about">
-                        <a href="{{site.ssr_link}}" target="_blank">
-                            <img src="http://7xr9gx.com1.z0.glb.clouddn.com/ssr.jpg" style="cursor:pointer;"/>
-                        </a>
-                    </div>
-                </section>          
-
-                <!-- Featured Tags -->
-                {% if site.featured-tags %}
-                <section>
-                    <hr class="hidden-sm hidden-xs">
-                    <h5><a href="{{'/tags/' | prepend: site.baseurl }}">标签</a></h5>
-                    <div class="tags">
-                        {% for tag in site.tags %}
-                            {% if tag[1].size > {{site.featured-condition-size}} %}
-                                <a href="{{ site.baseurl }}/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
-                                    {{ tag[0] }}
-                                </a>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </section>
                 {% endif %}
 
-                <!-- Friends Blog -->
-                {% if site.friends %}
-                <hr>
-                <h5>友情链接</h5>
-                <ul class="list-inline">
-                    {% for friend in site.friends %}
-                        <li><a href="{{friend.href}}">{{friend.title}}</a></li>
+                <!-- last post -->  
+
+                {% if page.hideLast == true %}
+                
+                {% else %}
+
+                    <h5>最新文章</h5>
+                    <ul class="list-inline">
+                    {% for post in paginator.posts limit:4 %}
+                        {% if post.hide != true %}
+                            <li>
+                                <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                            </li>      
+                        {% endif %}
+                      
                     {% endfor %}
-                </ul>
+                    </ul>
                 {% endif %}
+
+
+                {% if page.hideTizi == true %}
+                
+                {% else %}
+
+                    <!-- tizi tag -->
+                    <section class="visible-md visible-lg">
+                        <hr>
+                        <h5>梯子推荐</h5>
+                        <div class="short-about">
+                            <a href="{{site.ssr_link}}" target="_blank">
+                                <img src="http://7xr9gx.com1.z0.glb.clouddn.com/ssr.jpg" style="cursor:pointer;"/>
+                            </a>
+                        </div>
+                    </section>          
+
+                {% endif %}
+                
+
+                {% if page.hideTag == true %}
+                
+                {% else %}
+
+                    <!-- Featured Tags -->
+                    {% if site.featured-tags %}
+                    <section>
+                        <hr class="hidden-sm hidden-xs">
+                        <h5><a href="{{'/tags/' | prepend: site.baseurl }}">标签</a></h5>
+                        <div class="tags">
+                            {% for tag in site.tags %}
+                                {% if tag[1].size > {{site.featured-condition-size}} %}
+                                    <a href="{{ site.baseurl }}/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
+                                        {{ tag[0] }}
+                                    </a>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </section>
+                    {% endif %}
+
+                {% endif %}
+
+                
+
+                {% if page.hideFriend == true %}
+                
+                {% else %}
+                    <!-- Friends Blog -->
+                    {% if site.friends %}
+                    <hr>
+                    <h5>友情链接</h5>
+                    <ul class="list-inline">
+                        {% for friend in site.friends %}
+                            <li><a href="{{friend.href}}">{{friend.title}}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+
+                {% endif %}
+
+                
                 
     		</div>
         {% endif %}

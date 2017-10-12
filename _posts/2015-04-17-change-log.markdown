@@ -23,7 +23,25 @@ tags: 随想
 
 推荐 [SM](https://sm.ms/)
 
+### 开关
 
+* hideLast
+* hideHot
+* hideTizi
+* hideFriend
+* hideTag
+
+### if 或 于
+
+```xml
+  {% if user.name == 'tobi' or user.name == 'bob' %}
+    Hello tobi or bob
+  {% endif %}
+
+  {% if user.name == 'bob' and user.age > 45 %}
+    Hello old bob
+  {% endif %}
+```
 
 ## 2017/10/02(回家)
 在家里呆了5天，老家天气很好，8号回京
