@@ -55,3 +55,14 @@ buildTypes节点下使用buildConfigField。
     }
 
 可以看到在build.gradle中设置的属性LOG_DEBUG，在这里可以直接通过BuildConfig这个类进行访问，此时就可以动态的控制Log的输出了，这里当然可以指定更多的关键字，自己根据项目需求发挥即可。
+
+## 
+
+为 Mainfest 文件设置动态变量
+```gradle
+    manifestPlaceholders = [
+            appId:"com.sina.android.ota.debug"
+    ]
+```
+
+[官方文档地址](https://developer.android.com/studio/build/manifest-build-variables.html)
