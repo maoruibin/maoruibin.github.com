@@ -1,7 +1,7 @@
 ---
 layout: post
 author: 咕咚
-title:  "ImageView  scaleType 对比介绍"
+title:  "ImageView 中不同 scaleType 的对比介绍"
 description: "在使用 ImageView 的时候，经常需要设置它的 scaleType，但是一些时候对他们的区别总是很难把握，这次通过示例完整的了解一下不同的 scaleType 对一个 ImageView 的展示到底会有什么样的区别。"
 catalog:    true
 qrcode_mp:  true
@@ -12,9 +12,9 @@ tags: Skills View Android
 
 > 版权声明：本文为 **咕咚** 原创文章，可以随意转载，但必须在明确位置注明出处。
 >
-> 作者博客地址: [http://gudong.name](http://gudong.name/)
+> 个人主页: [http://gudong.name](http://gudong.name/)
 >
-> 本文博客地址: [http://gudong.name/2017/12/01/imageview-scaletype.html](http://gudong.name/2017/12/01/imageview-scaletype.html)
+> 文章地址: [http://gudong.name/2017/12/01/imageview-scaletype.html](http://gudong.name/2017/12/01/imageview-scaletype.html)
 
 ## 介绍
 在使用 ImageView 的时候，经常需要设置它的 scaleType，但是一些时候对他们的区别总是很难把握，这次通过示例完整的了解一下不同的 scaleType 对一个 ImageView 的展示到底会有什么样的区别。
