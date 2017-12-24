@@ -206,6 +206,22 @@ layout: default
                     {% endfor %}
                 </ul>
                 {% endif %}
+
+                <!-- 打赏按钮 -->
+                {% if page.shang != false %}
+                
+                <section class="visible-md visible-lg">
+                    <hr>
+                    <div class="shang">
+
+                        <p style="text-align:center">
+                            <a href="{{ site.baseurl}}/vdonate/" style="background-color: #22AB38;border-radius: 4px;padding:6px;">打赏支持</a>                        
+                        </p>
+                    </div>
+                </section> 
+                {% endif %}
+
+                <!-- 微信公众号 -->
                 {% if page.qrcode_mp != false %}
                 <section class="visible-md visible-lg">
                     <hr>
@@ -216,6 +232,7 @@ layout: default
                     </div>
                 </section> 
                 {% endif %}
+
             </div>
         </div>
     </div>

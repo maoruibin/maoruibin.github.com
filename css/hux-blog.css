@@ -28,6 +28,14 @@
 .sidebar-container a:active {
   color: #607d8b !important;
 }
+.sidebar-container .shang a {
+  color: #ffffff;
+}
+.sidebar-container .shang a:hover,
+.sidebar-container .shang a:active {
+  color: #607d8b;
+}
+
 .sidebar-container .tags a {
   border-color: #bfbfbf;
 }
