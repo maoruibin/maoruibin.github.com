@@ -11,8 +11,10 @@ tags: 随想
 
 
 ## 2017/12/24
-- 增加打赏页面(CSS 有点问题)
+- 增加打赏页面(CSS 有点问题) 通过 shang 这个标志进行控制
 - 增加了一篇文章
+
+grunt watch -> https://github.com/Huxpro/huxpro.github.io/issues/57
 
 ## 2017/12/19
 
