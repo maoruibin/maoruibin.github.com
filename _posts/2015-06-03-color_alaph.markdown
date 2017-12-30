@@ -32,3 +32,5 @@ tags: Skills
 
 
 [代码原地址](https://github.com/cesarferreira/colorize)
+
+[半透明对应的 value · Issue \#34 · maoruibin/maoruibin\.github\.com](https://github.com/maoruibin/maoruibin.github.com/issues/34)
