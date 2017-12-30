@@ -27,8 +27,8 @@
             },
             {
                 "startDate":"1997,9",
-                "headline":"上小学了",
-                "text":"童年就像一份花卷",
+                "headline":"上小学了,童年就像一份花卷",
+                "text":"",
                 "asset":
                 {
                     "media":"",
@@ -38,8 +38,8 @@
             },
             {
                 "startDate":"2002,9",
-                "headline":"上初中",
-                "text":"学校住宿，每周骑自行车来回于学校和家里",
+                "headline":"上初中,学校住宿，每周骑自行车来回于学校和家里",
+                "text":"",
                 "asset":
                 {
                     "media":"",
@@ -49,8 +49,8 @@
             },
             {
                 "startDate":"2005,9",
-                "headline":"上高中",
-                "text":"永昌四中",
+                "headline":"上高中，永昌四中",
+                "text":"",
                 "asset":
                 {
                     "media":"https://ws2.sinaimg.cn/large/006tNc79ly1fmyyi8r3fpj31430u0adh.jpg",
@@ -71,13 +71,13 @@
             },
             {
                 "startDate":"2012,9",
-                "headline":"来北京",
-                "text":"刚来北京很辛苦，但是很快乐很充实，那个冬天很冷",
+                "headline":"来北京了",
+                "text":"",
                 "asset":
                 {
                     "media":"https://ws1.sinaimg.cn/large/006tNc79ly1fmyym49b9hj31hc0u077t.jpg",
                     "credit":"<a href='http://dribbble.com/shots/401334-Sidebar'>咕咚</a>",
-                    "caption":""
+                    "caption":"刚来北京很辛苦，但是很快乐很充实，那个冬天很冷"
                 }
             },
             {

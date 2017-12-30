@@ -1,4 +1,4 @@
-movielist.jpg---
+---
 layout: post
 author: 咕咚
 title: "日志"
