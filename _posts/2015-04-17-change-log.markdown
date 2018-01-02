@@ -3,12 +3,19 @@ layout: post
 author: 咕咚
 title: "日志"
 catalog: true
-titleColor: "#404040"
-header-img: assets/header/header_image_road.jpg
-tags: 随想
+header-img: assets/header/beautiful_mounting.jpg
+tags: 碎碎念
 ---
+
 这篇博文用于记录，自己在修改博客时具体的修改记录，如颜色设置、联系方式配置等信息，以便日后查看。
 
+## 2018/01/02
+- 2018 年第一个工作日
+
+## 2017/12/31
+- 替换首页背景图以及日志页面的背景
+
+![](https://ws2.sinaimg.cn/large/006tNc79ly1fn00r9y6tdj31kw0i31kx.jpg)
 
 ## 2017/12/24
 - 增加打赏页面(CSS 有点问题) 通过 shang 这个标志进行控制
@@ -34,7 +41,7 @@ grunt watch -> https://github.com/Huxpro/huxpro.github.io/issues/57
 
 晚上吃了徽菜，老板娘比较有意思，很霸气，一点不在乎我们的态度。
 
-嗯嗯 休息，明天怕黄山。
+嗯嗯 休息，明天爬黄山。
 
 
 ## 2017/10/25
