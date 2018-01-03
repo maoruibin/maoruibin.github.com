@@ -3,6 +3,7 @@
 @import "sidebar.less";
 @import "side-catalog.less";
 
+
 // Global Components
 
 body {
@@ -56,8 +57,8 @@ article{
 	overflow-x : hidden;
 }
 blockquote {
-	color: @gray;
-	font-style: italic;
+	color: gray;
+	font-style: normal;
 	font-size: 0.95em;
 	margin: 20px 0 20px;
 	p{
@@ -79,16 +80,21 @@ img.shadow{
 }
 // Utils Style End
 
-@media screen and (max-width: 768px){
-	select{
-		-webkit-appearance:none;
-		margin-top:15px;
-		color:#337ab7;
-		border-color:#337ab7;
-		padding: 0em 0.4em;
-		background: white;
+// Select 
+select{
+	-webkit-appearance:none;
+	margin-top:15px;
+	color:#337ab7;
+	border-color:#337ab7;
+	padding: 0em 0.4em;
+	background: white;
+	&.sel-lang{
+		min-height: 28px;
+		font-size:14px;
 	}
 }
+
+
 // override table style in bootstrap
 .table th, .table td{
 	border: 1px solid #eee !important;
@@ -119,7 +125,9 @@ pre code{
 
 // In the post.
 .post-container{
-	a{
+	a{	
+		// display: inline-block;
+		// safari has bugs on word-break on inline elements.
 		color:#337ab7;
 		// different to @brand-primary
 		&:hover,
@@ -205,7 +213,7 @@ pre code{
 	 * which would cover tags. A absolute positioning make a new layer.
 	 */
 	.navbar-default .navbar-collapse{
-		position: absolute;
+		position: absolute; 
      	right: 0;
 		border: none;
 		background: white;
@@ -218,7 +226,7 @@ pre code{
 	 * Animation
 	 * HuxBlog-Navbar using genuine Material Design Animation
 	 */
-	#huxblog_navbar{
+	#huxblog_navbar{ 	
 		/**
 		 * Sharable code and 'out' function
 		 */
@@ -395,11 +403,10 @@ pre code{
 	background: no-repeat center center;
 	background-color: @gray;
 	background-attachment: scroll;
-	height: 450px;
 	.background-cover;
 	// NOTE: Background images are set within the HTML using inline CSS!
 	margin-bottom: 0px;  /* 0 on mobile, modify by Hux */
-	@media only screen and (min-width: 768px;min-height: 480px;) {
+	@media only screen and (min-width: 768px) {
 		margin-bottom: 20px;  /* response on desktop */
 	}
 	.site-heading,
@@ -461,8 +468,8 @@ pre code{
 			.serif;
 			font-style: normal;
 			font-weight: 300;
-			font-size: 12px;
-			margin-top: 25px;
+			font-size: 18px;
+			margin-top: 15px;
 			a {
 				color: white;
 			}
@@ -475,7 +482,7 @@ pre code{
 				font-size: 30px;
 			}
 			.meta {
-				font-size: 12px;
+				font-size: 14px;
 			}
 		}
 	}
@@ -507,17 +514,17 @@ pre code{
 	}
 	> .post-meta {
 		.serif;
-		color: @gray-white;
+		color: @home-list-text-primary;
 		font-size: 16px;
 		font-style: normal;
 		margin-top: 0;
 		> a {
 			text-decoration: none;
-			color: @gray-white;
+			color: @gray-dark;
 			&:hover,
 			&:focus {
 				color: @brand-primary;
-				text-decoration: none;
+				text-decoration: underline;
 			}
 		}
 	}
@@ -533,7 +540,7 @@ pre code{
 			}
 		}
 		.post-meta{
-			font-size: 13px;
+			font-size: 14px;
 		}
 	}
 }
@@ -542,9 +549,9 @@ pre code{
 .post-content-preview{
     font-size: 13px;
     font-style: normal;
-    color:@gray-white;
+    color:@home-list-text-primary;
     &:hover{
-        color: @gray-white;
+        color: @home-list-text-primary;
     }
     @media only screen and (min-width: 768px) {
         font-size:14px;
@@ -799,7 +806,7 @@ img::-moz-selection {
 		margin-bottom: 8px;
 		background: #D6D6D6;
 		&:hover, &:active{
-			background-color: #607D8B !important;
+			background-color: #0085a1 !important;
 		}
 	}
 	@media only screen and (min-width: 768px) {
@@ -824,7 +831,7 @@ img::-moz-selection {
 	}
 }
 .listing-seperator{
-	color:#607D8B;
+	color:#0085a1;
 	font-size: 21px !important;
 	&::before{
 		margin-right: 5px;
@@ -958,10 +965,10 @@ img::-moz-selection {
 			}
 			//v1.6 flatten button
 			.ds-post-button{
-				//background: white;
+				background: white;
 				box-shadow: none;
 				&:hover{
-					background: @comment-dark;
+					background: @gray-light;
 				}
 			}
 		}
@@ -970,6 +977,7 @@ img::-moz-selection {
 #ds-smilies-tooltip ul.ds-smilies-tabs li a {
 	background: white !important;
 }
+
 
 // Hux fullscreen mode in 404.html
 

@@ -26,22 +26,21 @@
 }
 .sidebar-container a:hover,
 .sidebar-container a:active {
-  color: #607d8b !important;
+  color: #3498db !important;
 }
 .sidebar-container .shang a {
   color: #ffffff;
 }
 .sidebar-container .shang a:hover,
 .sidebar-container .shang a:active {
-  color: #607d8b;
+  color: #3498db;
 }
-
 .sidebar-container .tags a {
   border-color: #bfbfbf;
 }
 .sidebar-container .tags a:hover,
 .sidebar-container .tags a:active {
-  border-color: #607d8b;
+  border-color: #3498db;
 }
 .sidebar-container .short-about img {
   width: 80%;
@@ -174,7 +173,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #607d8b;
+  color: #3498db;
 }
 a img:hover,
 a img:focus {
@@ -184,8 +183,8 @@ article {
   overflow-x: hidden;
 }
 blockquote {
-  color: #808080;
-  font-style: italic;
+  color: gray;
+  font-style: normal;
   font-size: 0.95em;
   margin: 20px 0 20px;
 }
@@ -203,15 +202,17 @@ br + small.img-hint {
 img.shadow {
   box-shadow: rgba(0, 0, 0, 0.258824) 0px 2px 5px 0px;
 }
-@media screen and (max-width: 768px) {
-  select {
-    -webkit-appearance: none;
-    margin-top: 15px;
-    color: #337ab7;
-    border-color: #337ab7;
-    padding: 0em 0.4em;
-    background: white;
-  }
+select {
+  -webkit-appearance: none;
+  margin-top: 15px;
+  color: #337ab7;
+  border-color: #337ab7;
+  padding: 0em 0.4em;
+  background: white;
+}
+select.sel-lang {
+  min-height: 28px;
+  font-size: 14px;
 }
 .table th,
 .table td {
@@ -241,7 +242,7 @@ pre code {
 }
 .post-container a:hover,
 .post-container a:focus {
-  color: #607d8b;
+  color: #3498db;
 }
 .post-container h1,
 .post-container h2,
@@ -483,14 +484,14 @@ pre code {
   }
   .navbar-custom.is-fixed .navbar-brand:hover,
   .navbar-custom.is-fixed .navbar-brand:focus {
-    color: #607d8b;
+    color: #3498db;
   }
   .navbar-custom.is-fixed .nav li a {
     color: #404040;
   }
   .navbar-custom.is-fixed .nav li a:hover,
   .navbar-custom.is-fixed .nav li a:focus {
-    color: #607d8b;
+    color: #3498db;
   }
   .navbar-custom.is-visible {
     /* if the user changes the scrolling direction, we show the header */
@@ -594,8 +595,8 @@ pre code {
   font-family: 'Lora', 'Times New Roman', serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 12px;
-  margin-top: 25px;
+  font-size: 18px;
+  margin-top: 15px;
 }
 .intro-header .post-heading .meta a {
   color: white;
@@ -608,7 +609,7 @@ pre code {
     font-size: 30px;
   }
   .intro-header .post-heading .meta {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 .post-preview > a {
@@ -617,7 +618,7 @@ pre code {
 .post-preview > a:hover,
 .post-preview > a:focus {
   text-decoration: none;
-  color: #607d8b;
+  color: #3498db;
 }
 .post-preview > a > .post-title {
   font-size: 21px;
@@ -641,12 +642,12 @@ pre code {
 }
 .post-preview > .post-meta > a {
   text-decoration: none;
-  color: #a3a3a3;
+  color: #404040;
 }
 .post-preview > .post-meta > a:hover,
 .post-preview > .post-meta > a:focus {
-  color: #607d8b;
-  text-decoration: none;
+  color: #3498db;
+  text-decoration: underline;
 }
 @media only screen and (min-width: 768px) {
   .post-preview > a > .post-title {
@@ -658,7 +659,7 @@ pre code {
     font-size: 16px;
   }
   .post-preview .post-meta {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 .post-content-preview {
@@ -707,7 +708,7 @@ footer .copyright a {
 }
 footer .copyright a:hover,
 footer .copyright a:focus {
-  color: #607d8b;
+  color: #3498db;
 }
 .floating-label-form-group {
   font-size: 14px;
@@ -754,7 +755,7 @@ footer .copyright a:focus {
   opacity: 1;
 }
 .floating-label-form-group-with-focus label {
-  color: #607d8b;
+  color: #3498db;
 }
 form .row:first-child .floating-label-form-group {
   border-top: 1px solid #eeeeee;
@@ -779,8 +780,8 @@ form .row:first-child .floating-label-form-group {
 }
 .btn-default:hover,
 .btn-default:focus {
-  background-color: #607d8b;
-  border: 1px solid #607d8b;
+  background-color: #3498db;
+  border: 1px solid #3498db;
   color: white;
 }
 .pager {
@@ -816,8 +817,8 @@ form .row:first-child .floating-label-form-group {
 .pager li > a:hover,
 .pager li > a:focus {
   color: white;
-  background-color: #607d8b;
-  border: 1px solid #607d8b;
+  background-color: #3498db;
+  border: 1px solid #3498db;
 }
 .pager li > a:hover > span,
 .pager li > a:focus > span {
@@ -834,12 +835,12 @@ form .row:first-child .floating-label-form-group {
 ::-moz-selection {
   color: white;
   text-shadow: none;
-  background: #607d8b;
+  background: #3498db;
 }
 ::selection {
   color: white;
   text-shadow: none;
-  background: #607d8b;
+  background: #3498db;
 }
 img::selection {
   color: white;
@@ -905,7 +906,7 @@ img::-moz-selection {
 #tag_cloud .tag:hover,
 #tag_cloud a:active,
 #tag_cloud .tag:active {
-  background-color: #607D8B !important;
+  background-color: #0085a1 !important;
 }
 @media only screen and (min-width: 768px) {
   #tag_cloud {
@@ -924,7 +925,7 @@ img::-moz-selection {
   margin-top: 0px;
 }
 .listing-seperator {
-  color: #607D8B;
+  color: #0085a1;
   font-size: 21px !important;
 }
 .listing-seperator::before {
@@ -1043,10 +1044,11 @@ img::-moz-selection {
   border-bottom: 1px solid #ccc;
 }
 .comment #ds-thread #ds-reset .ds-post-button {
+  background: white;
   box-shadow: none;
 }
 .comment #ds-thread #ds-reset .ds-post-button:hover {
-  background: #017fa1;
+  background: #eeeeee;
 }
 #ds-smilies-tooltip ul.ds-smilies-tabs li a {
   background: white !important;
