@@ -26,21 +26,27 @@
 }
 .sidebar-container a:hover,
 .sidebar-container a:active {
-  color: #3498db !important;
-}
-.sidebar-container .shang a {
-  color: #ffffff;
-}
-.sidebar-container .shang a:hover,
-.sidebar-container .shang a:active {
-  color: #3498db;
+  color: #0085a1 !important;
 }
 .sidebar-container .tags a {
   border-color: #bfbfbf;
 }
 .sidebar-container .tags a:hover,
 .sidebar-container .tags a:active {
-  border-color: #3498db;
+  border-color: #0085a1;
+}
+.sidebar-container .tags p a {
+  background-color: #22AB38;
+  border-radius: 4px;
+  padding: 8px 16px 8px 16px;
+  width: 130px;
+  font-size: 14px;
+  color: white !important;
+  text-decoration: none;
+}
+.sidebar-container .tags p a:hover,
+.sidebar-container .tags p a:active {
+  background-color: #1c8c2e;
 }
 .sidebar-container .short-about img {
   width: 80%;
@@ -173,7 +179,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #3498db;
+  color: #0085a1;
 }
 a img:hover,
 a img:focus {
@@ -242,7 +248,7 @@ pre code {
 }
 .post-container a:hover,
 .post-container a:focus {
-  color: #3498db;
+  color: #0085a1;
 }
 .post-container h1,
 .post-container h2,
@@ -484,14 +490,14 @@ pre code {
   }
   .navbar-custom.is-fixed .navbar-brand:hover,
   .navbar-custom.is-fixed .navbar-brand:focus {
-    color: #3498db;
+    color: #0085a1;
   }
   .navbar-custom.is-fixed .nav li a {
     color: #404040;
   }
   .navbar-custom.is-fixed .nav li a:hover,
   .navbar-custom.is-fixed .nav li a:focus {
-    color: #3498db;
+    color: #0085a1;
   }
   .navbar-custom.is-visible {
     /* if the user changes the scrolling direction, we show the header */
@@ -612,13 +618,27 @@ pre code {
     font-size: 14px;
   }
 }
+.shang > a {
+  color: #000000;
+}
+.shang > a:hover,
+.shang > a:focus {
+  text-decoration: none;
+  color: #ffffff;
+}
+.shang > p {
+  width: 120px;
+  background-color: #22AB38;
+  border-radius: 4px;
+  padding: 6px;
+}
 .post-preview > a {
-  color: #404040;
+  color: #0596b5;
 }
 .post-preview > a:hover,
 .post-preview > a:focus {
   text-decoration: none;
-  color: #3498db;
+  color: #0085a1;
 }
 .post-preview > a > .post-title {
   font-size: 21px;
@@ -646,7 +666,7 @@ pre code {
 }
 .post-preview > .post-meta > a:hover,
 .post-preview > .post-meta > a:focus {
-  color: #3498db;
+  color: #0085a1;
   text-decoration: underline;
 }
 @media only screen and (min-width: 768px) {
@@ -708,7 +728,7 @@ footer .copyright a {
 }
 footer .copyright a:hover,
 footer .copyright a:focus {
-  color: #3498db;
+  color: #0085a1;
 }
 .floating-label-form-group {
   font-size: 14px;
@@ -755,7 +775,7 @@ footer .copyright a:focus {
   opacity: 1;
 }
 .floating-label-form-group-with-focus label {
-  color: #3498db;
+  color: #0085a1;
 }
 form .row:first-child .floating-label-form-group {
   border-top: 1px solid #eeeeee;
@@ -780,8 +800,8 @@ form .row:first-child .floating-label-form-group {
 }
 .btn-default:hover,
 .btn-default:focus {
-  background-color: #3498db;
-  border: 1px solid #3498db;
+  background-color: #0085a1;
+  border: 1px solid #0085a1;
   color: white;
 }
 .pager {
@@ -817,8 +837,8 @@ form .row:first-child .floating-label-form-group {
 .pager li > a:hover,
 .pager li > a:focus {
   color: white;
-  background-color: #3498db;
-  border: 1px solid #3498db;
+  background-color: #0085a1;
+  border: 1px solid #0085a1;
 }
 .pager li > a:hover > span,
 .pager li > a:focus > span {
@@ -835,12 +855,12 @@ form .row:first-child .floating-label-form-group {
 ::-moz-selection {
   color: white;
   text-shadow: none;
-  background: #3498db;
+  background: #0085a1;
 }
 ::selection {
   color: white;
   text-shadow: none;
-  background: #3498db;
+  background: #0085a1;
 }
 img::selection {
   color: white;

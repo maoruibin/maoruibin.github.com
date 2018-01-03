@@ -490,9 +490,27 @@ pre code{
 
 // Post Preview Pages (Home Page)
 
+.shang{
+
+	> a {
+		color: #000000;
+		&:hover,
+		&:focus {
+			text-decoration: none;
+			color: #ffffff;
+		}
+	}
+	> p{
+		 width: 120px;
+		 background-color: #22AB38;
+		 border-radius: 4px;
+		 padding:6px;
+	}
+}
+
 .post-preview {
 	> a {
-		color: @gray-dark;
+		color: @brand-primary-shadow;
 		&:hover,
 		&:focus {
 			text-decoration: none;

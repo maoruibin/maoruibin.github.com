@@ -1,7 +1,7 @@
 require('./app.scss');
 
 const defaults = {
-  title: '如果觉得我的文章对您有用，请随意打赏。<br>您的支持将鼓励我继续创作!',
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!',
   btnText: '打赏支持'
 };
 
@@ -38,10 +38,12 @@ class Donate {
             <i class="donate-quote-right"></i>
           </p>
           <div class="donate-tab">
-            <a href="javascript:;" class="donate-wechat active" data-index="0">微信</a>
-            <a href="javascript:;" class="donate-alipay" data-index="1">支付宝</a>
-            <img src="${this.options.wechatImage}" alt="wechat" class="donate-image active">
-            <img src="${this.options.alipayImage}" alt="alipay" class="donate-image">
+            
+            <a href="javascript:;" class="donate-alipay active" data-index="0">支付宝</a>
+            <a href="javascript:;" class="donate-wechat" data-index="1">微信</a>
+            <img src="${this.options.alipayImage}" alt="alipay" class="donate-image active">
+            <img src="${this.options.wechatImage}" alt="wechat" class="donate-image ">
+            
           </div>
         </div>
       </div>

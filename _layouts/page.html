@@ -32,33 +32,49 @@ layout: default
                 col-md-10 col-md-offset-1
                 sidebar-container">
 
+                <!-- 隐藏标签 -->
+                {% if page.hideTag == true %}
+                
+                {% else %}
+
                 <!-- Featured Tags -->
                 {% if site.featured-tags %}
                 <section>
                     <!-- no hr -->
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <h5><a href="/tags/">标签</a></h5>
                     <div class="tags">
-        				{% for tag in site.tags %}
+                        {% for tag in site.tags %}
                             {% if tag[1].size > {{site.featured-condition-size}} %}
-                				<a href="{{ site.baseurl }}/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
+                                <a href="{{ site.baseurl }}/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
                                     {{ tag[0] }}
                                 </a>
                             {% endif %}
-        				{% endfor %}
-        			</div>
+                        {% endfor %}
+                    </div>
                 </section>
+                {% endif %}                
+
                 {% endif %}
 
-                <!-- Friends Blog -->
-                {% if site.friends %}
-                <hr>
-                <h5>朋友</h5>
-                <ul class="list-inline">
-                    {% for friend in site.friends %}
-                        <li><a href="{{friend.href}}">{{friend.title}}</a></li>
-                    {% endfor %}
-                </ul>
+
+                {% if page.hideFriend == true %}
+
+                {% else %}
+
+                    <!-- Friends Blog -->
+                    {% if site.friends %}
+                    <hr>
+                    <h5>朋友</h5>
+                    <ul class="list-inline">
+                        {% for friend in site.friends %}
+                            <li><a href="{{friend.href}}">{{friend.title}}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+
                 {% endif %}
+
+
             </div>
     {% else %}
 

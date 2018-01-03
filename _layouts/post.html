@@ -16,6 +16,10 @@ layout: default
         background-color: {% if {{page.cover}} contains 'zzz' %}{{ site.theme_color }}{% else %}{{ page.cover }}{% endif %};
     }
 
+    #btn_shang{
+
+    }
+
     {% if page.header-mask %}
     header.intro-header .header-mask{
         width: 100%;
@@ -23,6 +27,7 @@ layout: default
         position: absolute;
         background: rgba(0,0,0, {{ page.header-mask }});
     }
+
     {% endif %}
 </style>
 <header class="intro-header" >
@@ -178,23 +183,30 @@ layout: default
                 col-md-10 col-md-offset-1
                 sidebar-container">
   
+                <!-- 打赏按钮 -->
+                {% if page.hideTag == true %}
 
-                <!-- Featured Tags -->
-                {% if site.featured-tags == null %}
-                <section>
-                    <hr class="hidden-sm hidden-xs">
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-                    <div class="tags">
-              				{% for tag in site.tags %}
-                                  {% if tag[1].size > {{site.featured-condition-size}} %}
-                      				<a href="/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
-                                          {{ tag[0] }}
-                                      </a>
-                                  {% endif %}
-              				{% endfor %}
-              			</div>
-                </section>
+                {% else %}
+
+                    <!-- Featured Tags -->
+                    {% if site.featured-tags == null %}
+                    <section>
+                        <hr class="hidden-sm hidden-xs">
+                        <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                        <div class="tags">
+                                {% for tag in site.tags %}
+                                      {% if tag[1].size > {{site.featured-condition-size}} %}
+                                        <a href="/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
+                                              {{ tag[0] }}
+                                          </a>
+                                      {% endif %}
+                                {% endfor %}
+                            </div>
+                    </section>
+                    {% endif %}
+
                 {% endif %}
+                
 
                 <!-- Friends Blog -->
                 {% if site.friends == null %}
@@ -208,17 +220,19 @@ layout: default
                 {% endif %}
 
                 <!-- 打赏按钮 -->
-                {% if page.shang != false %}
+                {% if page.shang == true %}
                 
-                <section class="visible-md visible-lg">
+                <section >
                     <hr>
-                    <div class="shang">
+                    <div class="tags">
 
-                        <p style="text-align:center">
-                            <a href="{{ site.baseurl}}/vdonate/" style="background-color: #22AB38;border-radius: 4px;padding:6px;">打赏支持</a>                        
+                        <p style="text-align:center;">
+                            <a id="btn_shang" href="{{ site.baseurl}}/vdonate/">前往打赏</a>                        
                         </p>
                     </div>
                 </section> 
+
+
                 {% endif %}
 
                 <!-- 微信公众号 -->

@@ -26,27 +26,36 @@
             text-decoration: none;
         }
     }
+     
+
     a{
         color: @gray-l !important;
         &:hover, &:active{
             color: @brand-primary !important;
         }
-    }
 
-    .shang{
-        a{
-            color: #ffffff;
-            &:hover, &:active{
-                color: @brand-primary;
-            }
-        }
     }
 
     .tags{
+
         a{
             border-color: @gray-l;
             &:hover, &:active{
                 border-color: @brand-primary;
+            }
+        }
+        p{
+            a{
+                background-color: #22AB38;
+                border-radius: 4px;
+                padding:8px 16px 8px 16px;
+                width: 130px;
+                font-size: 14px;
+                color:white !important;
+                text-decoration:none;
+                &:hover, &:active{
+                    background-color: #1c8c2e;
+                }
             }
         }
     }
@@ -66,6 +75,7 @@
         .list-inline>li{
             padding-left: 0px;
         }
+       
     }
 
 }

@@ -4,6 +4,7 @@ author: 咕咚
 title:  "Android 6.0 设备上自定义文本操作栏"
 description: ""
 catalog:    true
+shang    :  true
 tags: Skills
 ---
 该篇文章主要讲解 Android 6.0 设备上自定义文本操作栏。
