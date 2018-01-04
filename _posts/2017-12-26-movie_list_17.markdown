@@ -2,7 +2,7 @@
 layout: post
 author: 咕咚
 title: "2017 Movie List"
-catalog: true
+catalog: false
 qrcode_mp:  false
 shang    :  false
 header-img: assets/post_bg/movielist.jpg
