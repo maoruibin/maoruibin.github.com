@@ -186,16 +186,21 @@ pre code{
 		}
 	}
 	// V1.6 Hux display title by default.
+	// 文本过长后显示省略号
 	.pager li{
 		width: 48%;
-		&.next{ float: right};
-		&.previous{ float: left};
+		&.next{ float: left};
+		&.previous{ float: right};
 		> a {
 			width: 100%;
+			overflow:hidden;
 			> span{
 				color: @gray;
 				font-weight: normal;
 				letter-spacing: 0.5px;
+				text-overflow:ellipsis; 
+				-o-text-overflow:ellipsis;
+				white-space:nowrap;
 			}
 		}
 	}

@@ -44,8 +44,8 @@ hideContact:  true
 
     <b>联系我</b>
     <ul>
-        <li>可通过微博直接<a href="https://weibo.com/1874136301" target="_blank">私信我</a></li>
-        <li>或者发邮件给我( gudong.name@gmail.com )</li>
+        <li>可通过微博<a href="https://weibo.com/1874136301" target="_blank">私信我</a></li>
+        <li>或者在评论区留言给我</li>
     </ul>
     
     <br>
@@ -69,4 +69,24 @@ hideContact:  true
 
 
 </div>
+
+ <!-- 畅言评论 -->
+{% if site.changyan_appid%}
+    <div id="SOHUCS"  ></div> 
+{% endif %}
+
+
+
+<!-- 畅言评论 -->
+{% if site.changyan_appid%}
+<script type="text/javascript"> 
+(function(){ 
+var appid = '{{site.changyan_appid}}'; 
+var conf = 'prod_b7bb621c5992b181d4d2eff1bad65eb3'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+{% endif %}
+
 

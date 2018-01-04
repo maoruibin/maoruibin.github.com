@@ -313,18 +313,22 @@ pre code {
   width: 48%;
 }
 .post-container .pager li.next {
-  float: right;
+  float: left;
 }
 .post-container .pager li.previous {
-  float: left;
+  float: right;
 }
 .post-container .pager li > a {
   width: 100%;
+  overflow: hidden;
 }
 .post-container .pager li > a > span {
   color: #808080;
   font-weight: normal;
   letter-spacing: 0.5px;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
 }
 @media only screen and (max-width: 767px) {
   /**
