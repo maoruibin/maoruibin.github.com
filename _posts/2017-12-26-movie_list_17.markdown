@@ -7,7 +7,7 @@ qrcode_mp:  false
 shang    :  false
 header-img: assets/post_bg/movielist.jpg
 description: "记录一下这一年看过的电影，貌似今年看了比以前更多的电影"
-tags: 随想
+tags: 电影
 ---
 
 - 记忆大师
