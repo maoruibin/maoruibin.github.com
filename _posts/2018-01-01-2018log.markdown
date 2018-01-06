@@ -1,0 +1,37 @@
+---
+layout: post
+author: 咕咚
+title: "日志-2018"
+catalog: true
+hide: true
+cover-url: https://ws1.sinaimg.cn/large/6fb50cedly1fn75lypogyj21440u0q8z.jpg
+tags: 日志
+---
+
+> Day by Day
+
+
+## 2018/01/06
+* 优化博客文章背景选项，并梳理到 [Readme](./README.md)
+* 去掉 RSS twitter 以及简书联系方式
+* 龙猫很好看，这可是1988年的电影了
+
+
+## 2018/01/03
+- 替换了博客的主题颜色以及首页背景
+- 修复了打赏按钮的 css 问题
+- 上线了 2017 年终总结
+
+## 2018/01/02
+- 2018 年第一个工作日
+- 修改了首页 slogan 【重要的事只有一件】
+
+```
+每一年、每一月，每一天，每一小时，最重要的事只有一件，专心做好一件事。
+也只有聚焦才会把一件事做好。
+```
+
+## Log Archive
+- [2017]({{site.baseurl}}/2017/01/01/2017log.html)
+- [2016]({{site.baseurl}}/2016/01/01/2016log.html)
+- [2015]({{site.baseurl}}/2015/01/01/2015log.html)
