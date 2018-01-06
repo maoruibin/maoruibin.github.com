@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "关于咕咚翻译"
 description: ""
-cover: "zzz"
+cover-color: "zzz"
 categories: product
 catalog:    true
 shang    :  true

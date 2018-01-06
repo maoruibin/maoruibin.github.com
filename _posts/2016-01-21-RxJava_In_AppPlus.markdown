@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "RxJava 在 AppPlus 中的应用"
 description: ""
-cover: "zzz"
+cover-color: "zzz"
 catalog:    true
 tags: RxJava App 
 ---

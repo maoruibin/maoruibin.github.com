@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "Android性能优化典范 - 第1季 阅读笔记"
 description: ""
-cover: "zzz"
+cover-color: "zzz"
 catalog:    true
 tags: Performance Note
 ---

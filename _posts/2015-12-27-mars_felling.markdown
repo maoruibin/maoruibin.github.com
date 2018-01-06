@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "《火星救援》有感"
 description: ""
-cover:  "assets/mars_felling_1.jpg"
+header-img:  "assets/mars_felling_1.jpg"
 catalog:    true
 tags: 随想
 ---
@@ -16,7 +16,7 @@ tags: 随想
 
 当时因为太喜欢，特意还裁剪下其中的剧照（恩，当时应该用的是QQ影音自带的截图工具截的图），不过当时自己还没有的博客，所以现在我觉得，有必要把当时的截屏都放在这里了。
 
-## 追忆谍影重重
+## 谍影重重
 
 截下的每个画面，都是自己觉得特别有意义的镜头。
 

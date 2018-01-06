@@ -7,7 +7,7 @@ catalog:    true
 shang    :  true
 categories: Skills
 tags: Usage Skills 
-cover:  "#3e4145"
+cover-color:  "#3e4145"
 ---
 
 在每个 github 项目的右上角，都有三个按钮,分别是 watch、star、fork，但是有些刚开始使用 github 的同学，可能对这三个按钮的使用却不怎么了解，包括一开始使用 github 的我也是如此。这篇博客，结合自己的理解和使用，说说这三个按钮的用法以及一些个人见解。

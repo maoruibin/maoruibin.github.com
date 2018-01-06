@@ -14,11 +14,11 @@ baseurl: ""                             # for example, '/blog' if your blog host
 
 
 # SNS settings
-RSS: true
-twitter_username:   maoruibin9035
+RSS: false
+twitter_username:   
 weibo_username:     maoruibin
 zhihu_username:     maoruibin
-jianshu_username:     203065de3ced
+jianshu_username:     
 github_username:    maoruibin
 
 # link

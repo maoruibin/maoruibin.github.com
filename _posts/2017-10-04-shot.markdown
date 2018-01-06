@@ -5,6 +5,7 @@ title:  "蓝天白云 - 甚好"
 description: ""
 catalog:    false
 qrcode_mp:  false
+cover-url:	"https://i.loli.net/2017/10/04/59d42c4549f81.jpg"
 tags: Thinking
 
 

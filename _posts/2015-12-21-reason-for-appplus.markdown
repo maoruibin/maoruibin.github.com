@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "为什么开发了 AppPlus"
 description: ""
-cover:  "#3F51B5"
+cover-color:  "#3F51B5"
 catalog:    true
 tags: 随想 App
 ---

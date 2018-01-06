@@ -6,7 +6,7 @@ subtitle:  "『多状态布局开发的点点滴滴』"
 description: "本文将结合自己的项目开发实践，简单分享一下关于多状态 Layout 的开发实践 Tips。"
 catalog:    true
 qrcode_mp:  false
-cover:  "#121a2a"
+cover-color:  "#121a2a"
 tags: Experience Skills 架构 Android 
 ---
 

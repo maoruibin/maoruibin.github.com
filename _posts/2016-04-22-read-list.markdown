@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "读书清单"
 description: ""
-cover: "#804000"
+cover-color: "#804000"
 catalog:    true
 tags: 随想 
 ---

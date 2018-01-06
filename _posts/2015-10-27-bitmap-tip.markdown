@@ -4,7 +4,7 @@ author: 咕咚
 title: "Bitmap相关的知识点整理"
 description: ""
 catalog:    true
-cover: "zzz"
+cover-color: "zzz"
 tags: Collection
 ---
 图片是Android应用常见的资源，在Android中，图片数据用Bitmap这个类封装。这篇文章整理跟他相关的一些知识点。

@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "Handler 之 初识及简单应用"
 description: ""
-cover:  "#007d65"
+cover-color:  "#007d65"
 header-mask: 0.3
 categories: Foundation
 catalog:    true

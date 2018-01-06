@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "跨进程数据共享问题及解决方案"
 description: ""
-cover: "zzz"
+cover-color: "zzz"
 catalog:    true
 tags: SharePreference
 ---

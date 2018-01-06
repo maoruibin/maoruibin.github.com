@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "Handler 之 ThreadLocal 相关"
 description: ""
-cover:  "#007d65"
+cover-color:  "#007d65"
 catalog:    true
 tags: Handler
 ---

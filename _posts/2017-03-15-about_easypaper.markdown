@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "关于易剪 - 手机端的剪报助手"
 description: ""
-cover: "#FF5722"
+cover-color: "#34495e"
 categories: product
 shang    :  true
 catalog:    true

@@ -11,10 +11,34 @@ layout: default
     header.intro-header{
         position: relative;
 
-        background-image: url('{% if page.cover %}{% else %}{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img-post }}{% endif %}{% endif %}');
+        {% if {{page.cover-color}} %}
 
-        background-color: {% if {{page.cover}} contains 'zzz' %}{{ site.theme_color }}{% else %}{{ page.cover }}{% endif %};
-    }
+            background-color: 
+                {% if page.cover-color contains 'zzz' %}
+
+                    {{ site.theme_color }}
+
+                {% else %}
+
+                    {{ page.cover-color }}
+
+                {% endif %};                    
+
+        {% else %}
+
+            background-image: url(
+                {% if {{page.cover-url}} %}
+                    {{page.cover-url}}
+                {% else %}
+                    {{ site.baseurl}}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img-post }}{% endif %}
+                {% endif %});
+
+        {% endif %};
+
+
+
+            
+    
 
     {% if page.header-mask %}
     header.intro-header .header-mask{

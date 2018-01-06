@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "关于个人项目"
 description: ""
-cover: "zzz"
+cover-color: "zzz"
 catalog:    true
 tags: 随想 App 
 ---

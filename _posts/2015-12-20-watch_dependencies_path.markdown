@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "利用 Gradle Task 查看远程依赖库的本地存储路径"
 description: ""
-cover:  "#84BA40"
+cover-color:  "#84BA40"
 publish: true
 catalog:    true
 tags: Gradle

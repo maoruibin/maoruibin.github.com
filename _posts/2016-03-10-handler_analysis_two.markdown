@@ -3,8 +3,8 @@ layout: post
 author: 咕咚
 title: "Handler 之 源码解析"
 description: ""
-cover:  "#007d65"
-header-mask: 0.3
+cover-color:  "#007d65"
+header-mask: 255
 catalog:    true
 tags: Handler
 ---

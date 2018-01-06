@@ -6,6 +6,7 @@ description: ""
 catalog:    true
 qrcode_mp: false
 tags:	list 
+shang:	true 
 ---
 从16年开始，陆续有很多好友对咕咚翻译进行了数量不等的捐赠，这里再次谢过你们对咕咚翻译的支持。
 
@@ -57,7 +58,3 @@ tags:	list
 | 叶***       | 10.00 | 穷学生请你喝可乐             |
 | 鸡蛋***扬     | 3.00  | 加油                   |
 | 流***       | 2.00  | 小小的支持一下下             |
-
-支付宝二维码打赏
-
-<img src="http://7xr9gx.com1.z0.glb.clouddn.com/alipay_code.png" style="width:50%;">

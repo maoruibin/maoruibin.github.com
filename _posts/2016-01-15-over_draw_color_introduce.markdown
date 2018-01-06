@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "Android 过度绘制介绍及优化 Tip"
 description: ""
-cover: "zzz"
+cover-color: "zzz"
 catalog:    true
 tags: Performance
 ---
