@@ -2,6 +2,7 @@
 layout: post
 author: 咕咚
 title: "有谁是单纯地喜欢编程吗？"
+qrcode_mp:  true
 cover-url: https://ws1.sinaimg.cn/large/6fb50cedly1fn7akxqwo5j20u014gq6w.jpg
 tags: 知乎
 ---
@@ -58,3 +59,5 @@ tags: 知乎
 到后来，毕业后来到北京，加入浩浩荡荡的 IT 大军。
 
 每个人有每个人的故事，编程不是一个体力活，编程是一个富有创造力的工作，我喜欢创造的感觉，就像小时候喜欢做的凿子、弓箭。
+
+![](https://b-ssl.duitang.com/uploads/item/201402/07/20140207211400_LctxW.jpeg)
