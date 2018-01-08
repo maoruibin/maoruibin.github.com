@@ -4,7 +4,7 @@ author: 咕咚
 title:  "ImageView 中不同 scaleType 的对比介绍"
 description: "在使用 ImageView 的时候，经常需要设置它的 scaleType，但是一些时候对他们的区别总是很难把握，这次通过示例完整的了解一下不同的 scaleType 对一个 ImageView 的展示到底会有什么样的区别。"
 catalog:    true
-qrcode_mp:  false
+qrcode_mp:  true
 shang    :  true
 tags: Skills View Android 
 
