@@ -2,13 +2,13 @@
 title: 咕咚
 SEOTitle: 咕咚的个人站点
 slogin: 因为热爱
-header-img: assets/header/beautiful_mounting.jpg
+header-img: assets/header/2018_bk_blog.jpg
 # default post header image
 header-img-post: assets/header/header_image_post.jpg
 theme_color: "#0085A1"
 email: gudong.name@gmail.com
 description: "Android Developer 关注移动开发 独立开发者 篮球粉"
-keyword: "咕咚 咕咚翻译 毛瑞斌 大侠咕咚 咕咚的博客 徐生梅的男朋友 甘肃"
+keyword: "咕咚 咕咚翻译 大侠咕咚 咕咚的博客"
 url: "http://gudong.name"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -72,9 +72,11 @@ changyan_appid: cytoKaD52
 # Analytics settings
 # Baidu Analytics
 ba_track_id: de1df75db196971264bd87815c96f646
-# Google Analytics
-ga_track_id: 'UA-64640288-1'            # Format: UA-xxxxxx-xx
-ga_domain: gudong.name
+
+# Google Analytics enable false 2018-01-08
+
+# ga_track_id: 'UA-64640288-1'         
+# ga_domain: gudong.name
 
 
 

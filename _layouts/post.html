@@ -57,6 +57,11 @@ layout: default
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
 
+                    <div class="tags">
+                        {% for tag in page.tags %}
+                        <a class="tag" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
                     
                     <h1 style="{% if {{page.titleColor}} %}color:{{page.titleColor}};{% else %}{% endif %}">{{ page.title }}</h1>
                     {% comment %}
@@ -68,18 +73,27 @@ layout: default
                     <h2 class="subheading">{{ page.subtitle }}</h2>
                     {% comment %} endif {% endcomment %}
 
-                    <div class="tags">
-                        {% for tag in page.tags %}
-                        <a class="tag" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
-                        {% endfor %}
-                    </div>
+                    
 
 
-                    <span class="meta">{% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} 发表于 {{ page.date | date: "%Y-%m-%d" }}</span>
-                     <span class="meta" id="busuanzi_container_page_pv">
-                         阅读次数 <span id="busuanzi_value_page_pv"></span>
+                    <span class="meta">
+                    <i class="fa fa-user" aria-hidden="true"></i>&nbsp;    
+                    {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} 
+                    &nbsp;&nbsp;
+
+                    <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;
+                    {{ page.date | date: "%Y-%m-%d" }}
+                    &nbsp;&nbsp;
+
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;
+                    {{content | strip_html | strip_newlines | split: "" | size}} words
+                    &nbsp;&nbsp;
+
+                    <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;
+                    <span id="busuanzi_value_page_pv"></span> views
+                    &nbsp;
+                    
                     </span>
-
 
                 </div>
             </div>
