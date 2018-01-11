@@ -1,11 +1,11 @@
 ---
 layout: post
 author: 咕咚
-title: "开发 Intellij 插件（如AndroidStudio 插件）时如何在本地保存一些状态值"
+title: "开发 Intellij 插件（如AndroidStudio 插件）时如何在本地保存状态值"
 catalog: true
-cover-color: "#ea5276"
-shang:true
-qrcode_mp:  true
+cover-color: "#5e73cf"
+shang: true
+qrcode_mp: true
 tags: Skills
 ---
 
