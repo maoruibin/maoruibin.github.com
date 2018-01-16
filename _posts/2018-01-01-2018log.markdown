@@ -10,6 +10,14 @@ tags: 日志
 
 > Day by Day
 
+## 01/16
+
+一月份各种破财，好衰~~~ 
+
+碎屏、维修。。。
+
+小心翼翼的活着... For what ???
+
 ## 01/08 优化博客文章 Title 部分布局，参考（[Ling](http://linglinyp.com/)） 
 
 - 使用了[字数统计](http://linglinyp.com/jekyll/2017/06/06/jekyll-number-of-words.html)
