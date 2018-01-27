@@ -54,7 +54,7 @@ btnView.setOnClickListener { view ->
 
 
 
-### 接口中有多个接口方法需要实现
+### Kotlin 接口中有多个接口方法需要实现
 
 如下有一个接口
 
@@ -207,7 +207,7 @@ key = keyStore.getKey(KEY_STORE_ALIAS, null) as SecretKey
 
 
 
-## 联系我
+## 关于作者
 
 > - 邮箱 - <gudong.name@gmail.com>
 > - 微博 - [大侠咕咚](https://weibo.com/maoruibin)
