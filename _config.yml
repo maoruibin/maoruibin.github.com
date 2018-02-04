@@ -38,6 +38,8 @@ anchorjs: false                          # if you want to customize anchor. chec
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
+# if error -> Dependency Error: Yikes! It looks like you don't have jekyll-paginate or one of its dependencies ins 
+# exec gem install jekyll-paginate
 gems: [jekyll-paginate]
 
 
