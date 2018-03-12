@@ -10,6 +10,15 @@ tags: 日志
 
 > Day by Day
 
+## 03/12
+
+好快，怎么已经三月了，还有很多事在等着做呢，最近都做了啥
+
+* 发布了今年过年时的一个微记录 [2018 回家记录 \- 月牙湖 \- 咕咚\_腾讯视频](https://v.qq.com/x/page/b0602j5jspg.html)
+* 顺便做了一个微名片
+
+![about](https://ws1.sinaimg.cn/large/6fb50cedly1fp9taiqa9vj20p00dwabk.jpg)
+
 ## 01/27
 - 最近在开发微博中除夕节投放的功能，胆战心惊的
 - 回家的票
