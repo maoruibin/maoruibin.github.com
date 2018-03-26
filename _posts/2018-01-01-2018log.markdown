@@ -10,6 +10,14 @@ tags: 日志
 
 > Day by Day
 
+## 03/26
+记录昨天的一个 bug
+![](https://ws1.sinaimg.cn/large/6fb50cedly1fpq7kokyv8j20u01hcqdl.jpg)
+![下次出现问题后的样子](https://ws1.sinaimg.cn/large/6fb50cedly1fpq7ld5aogj20f00qoq4v.jpg)
+
+> 线下 crash 很刺激，问题原因很蛋疼。
+
+另外最近体验了一段时间的 Web 开发，用了用 VUE 还有 React，作为初学者，个人感觉 Vue 的使用体验更好。
 
 ## 03/12
 
