@@ -10,6 +10,15 @@ tags: 日志
 
 > Day by Day
 
+## 03/31
+一个普通的生日
+![沙河](https://ws1.sinaimg.cn/large/6fb50cedly1fpwbkt3pa7j23402bsnpd.jpg)
+
+## 03/29
+用 LeanCloud 云引擎开发了一个简单的网页 - [歪说](http://waishuo.leanapp.cn/waishuos)。
+
+这是之前的一个小想法，正好拿 LeanCloud 玩玩，顺便再次了解学习一下前端相关的技能。
+
 ## 03/26
 记录昨天的一个 bug
 ![](https://ws1.sinaimg.cn/large/6fb50cedly1fpq7kokyv8j20u01hcqdl.jpg)
