@@ -203,7 +203,24 @@ key = keyStore.getKey(KEY_STORE_ALIAS, null) as SecretKey
 
 
 
-// Updating 
+### Kotlin 设置静态变量提供给其他类使用
+
+Java 中这样
+```java
+public static final int buttonGravity = 120;
+```
+
+```kotlin
+class Test{
+    companion object {
+        val buttonGravity = 120
+    }
+}
+```
+使用
+```kotlin
+var value = Test.buttonGravity
+```
 
 
 
