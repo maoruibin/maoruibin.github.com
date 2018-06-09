@@ -66,9 +66,10 @@ duoshuo_share: false                     # set to false if you want to use Comme
 # yun gentie 
 # gentie_key: 47fefdc903004d5b8fc2d6ff98127fe6
 # 畅言 id
-# changyan_appid: cytoKaD52
+changyan_appid: cytoKaD52
 
-gitment_id: a0c6ffc74019f9a43100
+# gitment_id: a0c6ffc74019f9a43100
+gitment_id: 
 gitment_secret: 6a42638ae237f5a5673934d0abccd354bd90d1a6
 # laibili
 # laibili_uid: MTAyMC8zMDkzMy83NDgy
