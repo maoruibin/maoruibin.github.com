@@ -10,6 +10,42 @@ tags: 日志
 
 > Day by Day
 
+## 04/01
+
+Vue+LeanCloud+Flask+GithubPage 做了一个网页 Todo 还在完善中，有意思的实践。
+
+[maoruibin/TodayTodo: todo is funny](https://github.com/maoruibin/TodayTodo)
+
+随手给博客换了个评论系统 [imsun/gitment: A comment system based on GitHub Issues\.](https://github.com/imsun/gitment)
+
+
+## 03/31
+一个普通的生日
+![沙河](https://ws1.sinaimg.cn/large/6fb50cedly1fpwbkt3pa7j23402bsnpd.jpg)
+
+## 03/29
+用 LeanCloud 云引擎开发了一个简单的网页 - [歪说](http://waishuo.leanapp.cn/waishuos)。
+
+这是之前的一个小想法，正好拿 LeanCloud 玩玩，顺便再次了解学习一下前端相关的技能。
+
+## 03/26
+记录昨天的一个 bug
+![](https://ws1.sinaimg.cn/large/6fb50cedly1fpq7kokyv8j20u01hcqdl.jpg)
+![下次出现问题后的样子](https://ws1.sinaimg.cn/large/6fb50cedly1fpq7ld5aogj20f00qoq4v.jpg)
+
+> 线下 crash 很刺激，问题原因很蛋疼。
+
+另外最近体验了一段时间的 Web 开发，用了用 VUE 还有 React，作为初学者，个人感觉 Vue 的使用体验更好。
+
+## 03/12
+
+好快，怎么已经三月了，还有很多事在等着做呢，最近都做了啥
+
+* 发布了今年过年时的一个微记录 [2018 回家记录 \- 月牙湖 \- 咕咚\_腾讯视频](https://v.qq.com/x/page/b0602j5jspg.html)
+* 顺便做了一个微名片
+
+![about](https://ws1.sinaimg.cn/large/6fb50cedly1fp9taiqa9vj20p00dwabk.jpg)
+
 ## 02/27
 
 一转眼已经过完年回到北京了，像梦一样。
@@ -33,6 +69,7 @@ tags: 日志
 ## 02/04
 - 看了阿米尔汗的《神秘巨星》 阿米尔汗就像是印度鲁迅，用电影在解放印度女性的心灵
 - 最近听到一首不错的歌，好听 Time - MKJ
+
 
 ## 01/27
 - 最近在开发微博中除夕节投放的功能，胆战心惊的

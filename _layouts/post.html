@@ -196,6 +196,28 @@ layout: default
                 <!-- disqus 评论框 end -->
                 {% endif %}
 
+
+                <!-- gitment 评论-->
+                {% if site.gitment_id%}
+
+                    <div id="container"></div>
+                    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+                    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+                    <script>
+                    var gitment = new Gitment({
+                      id: '{{page.url}}', // 可选。默认为 location.href
+                      owner: 'maoruibin',
+                      repo: 'https://github.com/maoruibin/awesome-background-music',
+                      oauth: {
+                        client_id: '{{site.gitment_id}}',
+                        client_secret: '{{site.gitment_secret}}',
+                      },
+                    })
+                    gitment.render('container')
+                    </script>
+
+                {% endif %}
+
             </div>
 
     <!-- Side Catalog Container -->
@@ -310,6 +332,7 @@ layout: default
 </script>
 <!-- 多说公共JS代码 end -->
 {% endif %}
+
 
 
 <!-- 畅言评论 -->
