@@ -284,11 +284,13 @@ layout: default
                 
                 <section >
                     <hr>
-                    <div class="tags">
+                    <div class="tags" style="text-align:center;">
 
-                        <p style="text-align:center;">
-                            <a id="btn_shang" href="{{ site.baseurl}}/vdonate/" target="blank">前往打赏</a>                        
-                        </p>
+                        
+                            <!-- <a id="btn_shang" href="{{ site.baseurl}}/vdonate/" target="blank">前往打赏</a>                         -->
+                            <div id="cyReward" role="cylabs" data-use="reward"></div>
+
+                        
                     </div>
                 </section> 
 
@@ -347,6 +349,10 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
 {% endif %}
 
+{% if page.shang == true %}
+<script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cytoKaD52"></script>
+{% endif %}
 
 {% if site.anchorjs %}
 <!-- async load function -->

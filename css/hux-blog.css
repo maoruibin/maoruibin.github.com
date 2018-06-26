@@ -12,6 +12,31 @@
 .sidebar-container {
   color: #bfbfbf;
   font-size: 14px;
+  /*
+    .tags{
+
+        a{
+            border-color: @gray-l;
+            &:hover, &:active{
+                border-color: @brand-primary;
+            }
+        }
+        p{
+            a{
+                background-color: #22AB38;
+                border-radius: 4px;
+                padding:8px;
+                width: 100px;
+                font-size: 14px;
+                color:white !important;
+                text-decoration:none;
+                &:hover, &:active{
+                    background-color: #1c8c2e;
+                }
+            }
+        }
+    }
+    */
 }
 .sidebar-container h5 {
   color: #808080;
@@ -27,26 +52,6 @@
 .sidebar-container a:hover,
 .sidebar-container a:active {
   color: #0085a1 !important;
-}
-.sidebar-container .tags a {
-  border-color: #bfbfbf;
-}
-.sidebar-container .tags a:hover,
-.sidebar-container .tags a:active {
-  border-color: #0085a1;
-}
-.sidebar-container .tags p a {
-  background-color: #22AB38;
-  border-radius: 4px;
-  padding: 8px;
-  width: 100px;
-  font-size: 14px;
-  color: white !important;
-  text-decoration: none;
-}
-.sidebar-container .tags p a:hover,
-.sidebar-container .tags p a:active {
-  background-color: #1c8c2e;
 }
 .sidebar-container .short-about img {
   width: 80%;
