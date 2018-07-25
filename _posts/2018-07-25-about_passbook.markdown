@@ -10,7 +10,7 @@ shang    :  true
 tags: App 
 ---
 
-![](https://ws1.sinaimg.cn/large/006tNc79ly1ftlgejsi7rj31bk0rc41d.jpg)
+![](https://ws3.sinaimg.cn/large/006tKfTcly1ftlx47dqr2j31bm0qc0tb.jpg)
 
 Passbook 是自己开发的一个用于存储账号密码的 App.
 
