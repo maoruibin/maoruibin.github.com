@@ -10,6 +10,55 @@ tags: 日志
 
 > Day by Day
 
+## 09/09
+
+今天在公司加班，昨天在家休息，不过也没闲着。昨天完成了一件想了很久的事，重新设计了柳叶清单的后台 API，在 Apizza 上重新梳理完毕，并最终开放了部分 API，最终 api 的介绍信息放在了 github 的 issue 中，后续可能会有地址的变动。
+
+[https://github.com/maoruibin/maoruibin.github.com/issues/77](https://github.com/maoruibin/maoruibin.github.com/issues/77)
+
+重新设计 api 时主要从以下几方面入手：
+
+* 统一响应数据的输出格式
+* 支持 https 
+* api 请求地址优化，更加具有可读性
+
+具体的响应格式为如下形式：
+
+```json
+{
+    "code": 100,
+    "desc": "delete group success",
+    "msg": "删除失败", 
+    "data": {
+     }
+}
+```
+
+说真的，我很喜欢这种形式的输出。
+
+https 其实挺简单，因为 leancloud 支持，所以就是一句代码的事。
+
+请求访问地址的优化主要参考了 [我所认为的RESTful API最佳实践 · ScienJus's Blog](https://www.scienjus.com/my-restful-api-best-practices/) 哥们的文章写得很好，从中学到不少经验。
+
+不过在使用 Flask 的蓝图时遇到了点问题，就是关于 urlPath 的设置，后来还是解决了。
+
+优化完 api 地址后，不得不对柳叶 web 代码进行改造，因为 path 跟数据响应格式都变了，所以通过全局搜索的方式最终把应用内的地址都改了一遍。其实 web 应用里应该做一个工厂统一处理 url,指不定以后还会变动呢。
+
+另外，前天买了 leancloud 的付费服务，之前一直在用体验版，导致柳叶清单会经常性的下线，自己使用也很无语，这次全天在线。
+
+使用了付费服务后，为了价值最大化，顺便开发了两个定时云函数，利用爬虫每天间隔两小时自动爬取 EOS 的价格，然后邮件给我，挺好，不过邮件目前被网易定为垃圾邮件了，总是系统退信，有点伤神。
+
+终归这些折腾都挺有意思，好玩，后续还会继续挖掘可玩的东西。
+
+嗯嗯， Leancloud 的云函数 是个不错的东西。
+
+## 09/06
+北京的秋天是个美丽的季节，温度适宜，秋高气爽，很舒服。
+
+![](https://ws1.sinaimg.cn/large/6fb50cedly1fv3347b973j23402bsx5n.jpg)
+
+最近在学习纠正自己的投篮动作，很有成效，投篮比以前好多了。
+
 ## 08/16
 
 最近打球比较多，每周大概会打两三次球，主要是发现了一群新的球友，还有那个新的篮球场。
@@ -28,6 +77,7 @@ tags: 日志
 ![](https://ws1.sinaimg.cn/large/0069RVTdly1fubzpddzz7j31kw16ke6z.jpg)
 
 已经是初秋了，天气渐渐凉了，这个季节很舒服。
+
 
 ## 08/04
 他喜欢水枪，我们就陪他玩。
