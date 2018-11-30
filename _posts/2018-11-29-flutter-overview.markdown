@@ -13,7 +13,7 @@ tags: Skills Dart Flutter
 
 ## Flutter
 
-[Flutter](https://flutter.io/) 是 Google 开发并开源的一套**跨平台移动开发框架**，Flutter 框架使用 [Dart](http://dart.goodev.org/guides/language) 语言进行应用层的开发，一套代码可编译出 iOS、Android 双平台的应用包。
+[Flutter](https://flutter.io/) 是 Google 开发并开源的一套**跨平台移动开发框架**，它使用 [Dart](http://dart.goodev.org/guides/language) 语言进行应用层的开发，一套代码可编译出 iOS、Android 双平台的应用包。
 
 Flutter 拥有出众的开发体验，支持热重载。同时提供了一整套丰富、灵活、有表现力的 UI 组件。Flutter 使用 Native 引擎进行视图渲染，小组件提供完整的原生性能。
 
