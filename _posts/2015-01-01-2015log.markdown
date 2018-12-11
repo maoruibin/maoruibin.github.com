@@ -5,7 +5,10 @@ title: "日志-2015"
 catalog: true
 hide: true
 cover-color: "#8c531b"
-tags: 日志
+date: 2015-01-01 22:48
+category: blog
+tag: 
+- 日志
 ---
 
 ![year](https://ws1.sinaimg.cn/large/6fb50cedly1fn775g79x8j217g17ge81.jpg)

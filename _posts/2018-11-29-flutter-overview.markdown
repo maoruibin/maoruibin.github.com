@@ -7,7 +7,13 @@ catalog: true
 cover-color: "#60caf6"
 shang: true
 qrcode_mp: true
-tags: Skills Dart Flutter
+date: 2018-11-29
+category: blog
+tag: 
+- Skills
+- Dart
+- Dart
+
 ---
 
 

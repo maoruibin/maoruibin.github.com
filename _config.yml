@@ -1,128 +1,112 @@
-# Site settings
-title: 咕咚
-SEOTitle: 咕咚的个人站点
-slogin: 因为热爱
-header-img: assets/header/2018_bk_blog.jpg
-# default post header image
-header-img-post: assets/header/header_image_post.jpg
-theme_color: "#0085A1"
-email: gudong.name@gmail.com
-description: "Android Developer 关注移动开发 独立开发者 篮球粉"
-keyword: "咕咚 咕咚翻译 大侠咕咚 咕咚的博客"
-url: "http://gudong.name"              # your host, for absolute URL
-baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+# main text of home
+name: 咕咚
+bio: A Man who travels the world eating noodles
 
+# twitter summary info
+description: A blog about technology and stuff related
 
-# SNS settings
-RSS: false
-twitter_username:   
-weibo_username:     maoruibin
-zhihu_username:     maoruibin
-jianshu_username:     
-github_username:    maoruibin
+# if it's an external image, update below for true
+# better with square images
+external-image: false
+picture: assets/images/github_profile.png
 
-# link
-ssr_link: https://user.shadowsocksr.hk/aff.php?aff=648
+# If you want to include your resume, set to true
+# and specify source (external or local).
+resume: true
+resume-external: true
+resume-url: https://google.com/?q=my+resume
 
-# facebook_username:
+url: https://koppl.in/indigo
+# your url: http://USERNAME.github.io
 
-# Build settings
-# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
-highlighter: rouge
-permalink: /:categories/:year/:month/:day/:title.html
-paginate: 20
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
-anchorjs: false                          # if you want to customize anchor. check out line:181 of `post.html`
+permalink: /:title/
 
+# To enable google analytics, supply your token below
+# analytics-google: 'UA-MYANALYTICS'
 
+# To enable piwik tracking, supply your url & site ID below
+# analytics-piwik-url: 'piwik.my-host.com'
+# analytics-piwik-id: 1
 
-# Gems
-# from PR#40, to support local preview for Jekyll 3.0
-# if error -> Dependency Error: Yikes! It looks like you don't have jekyll-paginate or one of its dependencies ins 
-# exec gem install jekyll-paginate
-gems: [jekyll-paginate]
+# if you don't want comments in your posts, leave categories empty
+disqus:
+  shortname: mydisqus # enter this from your disqus account
+  categories: [blog, project] # only show disqus for posts that have these categories
 
+# if you don't have any of social below, comment the line
+facebook: myfacebook
+twitter: mytwitter
+# google: mygoogle
+# instagram: myinstagram
+# pinterest: mypinterest
+# linkedin: mylinkedin
+# youtube: myyoutube
+# spotify: myspotify
+github: mygithub
+# gitlab: mygitlab
+# lastfm: mylastfm
+# stackoverflow: 7044681/mystackoverflow
+# quora: userquora
+# reddit: username
+medium: medium
+# vimeo: myvimeo
+# lanyrd: mylanyrd
+email: myemail@gmail.com
 
+authors:
+    johndoe:
+        name: John Doe
+        bio: A Man who travels the world eating noodles
+        external-image: false
+        picture: assets/images/profile.jpg
+        twitter: johndoe
+    jamesfoster:
+        name: James Foster
+        bio: A Man who develops software with coffee
+        external-image: false
+        picture: assets/images/james.jpg
+        twitter: jamesfoster
 
-# Markdown settings
-# replace redcarpet to kramdown,
-# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
-# document: http://jekyllrb.com/docs/configuration/#kramdown
-markdown: kramdown
-kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
+# do you want a larger site? change the option below
+# options: [normal, large] | default: normal
+# normal = 560px / large = 810px
+width: normal
 
+# if you don't need pagination, comment the *paginate* configs below
+# paginate: 5
+# paginate_path: "blog/:num/"
 
+# if you don't need projects, comment the *projects* configs below
+projects: true
 
-# Disqus settings
-#disqus_username: _your_disqus_short_name_
+# if you don't need "about" or "blog", comment them out below
+about: true
+blog: true
 
-# Duoshuo settings
-duoshuo_username: 
-# Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: false                     # set to false if you want to use Comment without Sharing
+# do you want to show the "read time" of the posts?
+read-time: true
 
+# do you want to show the "tags" inside the posts?
+show-tags: true
 
-# yun gentie 
-# gentie_key: 47fefdc903004d5b8fc2d6ff98127fe6
-# 畅言 id
-changyan_appid: cytoKaD52
+# related posts inside a post?
+related: true
 
-# gitment_id: a0c6ffc74019f9a43100
-gitment_id: 
-gitment_secret: 6a42638ae237f5a5673934d0abccd354bd90d1a6
-# laibili
-# laibili_uid: MTAyMC8zMDkzMy83NDgy
+# Display links for next and previous posts for the specified categories
+post-advance-links: [blog]
 
-# Analytics settings
-# Baidu Analytics
-ba_track_id: de1df75db196971264bd87815c96f646
+# show author block at the end of a post ?
+show-author: true
 
-# Google Analytics enable false 2018-01-08
+# do you want some animations?
+animation: true
 
-# ga_track_id: 'UA-64640288-1'         
-# ga_domain: gudong.name
+plugins:
+  - jekyll-seo-tag
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-admin
 
-
-
-# Sidebar settings
-sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Android Developer"
-sidebar-avatar: /assets/profile_head.png      # use absolute URL, seeing it's used in both `/` and `/about/`
-
-
-
-# Featured Tags
-featured-tags: true                     # whether or not using Feature-Tags
-featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
-
-
-
-# Friends
-friends: [
-    {
-        title: "技术小黑屋",
-        href: "http://droidyue.com/"
-    },{
-        title: "Drakeet",
-        href: "http://drakeet.me"
-    },{
-        title: "代码家",
-        href: "http://blog.daimajia.com"
-    },{
-        title: "五道口宅男",
-        href: "http://hujiaweibujidao.github.io/"
-    },{
-        title: "吴小龙同学",
-        href: "http://wuxiaolong.me/"
-    },{
-        title: "程序亦非猿",
-        href: "http://yifeiyuan.me/"
-    },{
-        title: "Ailurus",
-        href: "http://www.easydone.cn/"
-    },{
-        title: "Ling",
-        href: "http://linglinyp.com/"
-    }
-]
+jekyll-mentions:
+    base_url: https://github.com

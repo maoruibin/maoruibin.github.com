@@ -1,391 +1,49 @@
 ---
-layout: default
+layout: page
 ---
 
-<!-- Image to hack wechat -->
-<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
-<!--{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}-->
-<!-- Post Header -->
-<style type="text/css">
-    header.intro-header{
-        position: relative;
+{% if page.image and page.headerImage %}
+    <img class="title-image" src="{{ page.image }}" alt="{{ page.title }}">
+{% endif %}
 
-        {% if {{page.cover-color}} %}
+<h1 class="title">{{ page.title }}</h1>
 
-            background-color: 
-                {% if page.cover-color contains 'zzz' %}
+<span class="date">
+    <time datetime="{{ page.date | date:"%d-%m-%Y" }}">{{ page.date | date: "%A. %B %d, %Y" }}</time>
+    {% if site.read-time %} - {% include read-time.html %}{% endif %}
+</span>
 
-                    {{ site.theme_color }}
+{% if site.show-tags %}
+    <div class="post-tags">
+        {% for tag in page.tags %}
+            <a class="item" href="{{ site.url }}/tags/#{{ tag | slugify }}">{{ tag }}</a>
+        {% endfor %}
+    </div>
+{% endif %}
 
-                {% else %}
+{{content}}
 
-                    {{ page.cover-color }}
-
-                {% endif %};                    
-
+{% if site.post-advance-links contains page.category %}
+    <div class="blog-navigation">
+        {% if page.previous.url %}
+            <a class="prev" href="{{ site.url }}{{ page.previous.url }}">&laquo; {{ page.previous.title }}</a>
         {% else %}
-
-            background-image: url(
-                {% if {{page.cover-url}} %}
-                    {{page.cover-url}}
-                {% else %}
-                    {{ site.baseurl}}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img-post }}{% endif %}
-                {% endif %});
-
-        {% endif %};
-
-
-
-            
-    
-
-    {% if page.header-mask %}
-    header.intro-header .header-mask{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background: rgba(0,0,0, {{ page.header-mask }});
-    }
-
-    {% endif %}
-</style>
-<header class="intro-header" >
-    <div class="header-mask"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-
-                    <div class="tags">
-                        {% for tag in page.tags %}
-                        <a class="tag" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
-                        {% endfor %}
-                    </div>
-                    
-                    <h1 style="{% if {{page.titleColor}} %}color:{{page.titleColor}};{% else %}{% endif %}">{{ page.title }}</h1>
-                    {% comment %}
-                        always create a h2 for keeping the margin , Hux
-                    {% endcomment %}
-                    {% comment %} if page.subtitle {% endcomment %}
-
-
-                    <h2 class="subheading">{{ page.subtitle }}</h2>
-                    {% comment %} endif {% endcomment %}
-
-                    
-
-
-                    <span class="meta">
-                    <i class="fa fa-user" aria-hidden="true"></i>&nbsp;    
-                    {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} 
-                    &nbsp;&nbsp;
-
-                    <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;
-                    {{ page.date | date: "%Y-%m-%d" }}
-                    &nbsp;&nbsp;
-
-                    <i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;
-                    {{content | strip_html | strip_newlines | split: "" | size}} words
-                    &nbsp;&nbsp;
-
-                    <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;
-                    <span id="busuanzi_value_page_pv"></span> views
-                    &nbsp;
-                    
-                    </span>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-
-    <!-- Post Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
-
-				{{ content }}
-
-                <hr>
-
-                {% if site.duoshuo_share && site.duoshuo_username %}
-                <!-- 多说 Share start -->
-                </style>
-                <div class="ds-share"
-                    style="text-align: right"
-                    data-thread-key="{{page.id}}"
-                    data-title="{{page.title}}"
-                    data-url="{{site.url}}{{site.baseurl}}{{page.url}}"
-                    data-images="{{ site.url }}{{site.baseurl}}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}"
-                    data-content="{{ content | strip_html | truncate:80 }} | {{ site.SEOTitle }} " >
-                    <div class="ds-share-inline">
-                      <ul  class="ds-share-icons-16">
-                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
-                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
-                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
-                      </ul>
-                      <div class="ds-share-icons-more">
-                      </div>
-                    </div>
-                <hr>
-                </div>
-                <!-- 多说 Share end-->
-                {% endif %}
-
-                <!-- 畅言评论 -->
-                {% if site.changyan_appid%}
-                    <div id="SOHUCS"  ></div> 
-                {% endif %}
-
-                <ul class="pager">
-                    {% if page.previous.url %}
-                    <li class="previous">
-                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
-                        Previous<br>
-                        <span>{{page.previous.title}}</span>
-                        </a>
-                    </li>
-                    {% endif %}
-                    {% if page.next.url %}
-                    <li class="next">
-                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
-                        Next<br>
-                        <span>{{page.next.title}}</span>
-                        </a>
-                    </li>
-                    {% endif %}
-                </ul>
-
-
-                {% if site.laibili_uid%}
-                    <!-- 来必力City版安装代码 -->
-                    <div id="lv-container" data-id="city" data-uid="{{site.laibili_uid}}">
-                        <script type="text/javascript">
-                       (function(d, s) {
-                           var j, e = d.getElementsByTagName(s)[0];
-
-                           if (typeof LivereTower === 'function') { return; }
-
-                           j = d.createElement(s);
-                           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                           j.async = true;
-
-                           e.parentNode.insertBefore(j, e);
-                       })(document, 'script');
-                        </script>
-                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-                    </div>
-                    <!-- City版安装代码已完成 -->
-                {% endif %}
-                
-
-                {% if site.disqus_username %}
-                <!-- disqus 评论框 start -->
-                <div class="comment">
-                    <div id="disqus_thread" class="disqus-thread"></div>
-                </div>
-                <!-- disqus 评论框 end -->
-                {% endif %}
-
-
-                <!-- gitment 评论-->
-                {% if site.gitment_id%}
-
-                    <div id="container"></div>
-                    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-                    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-                    <script>
-                    var gitment = new Gitment({
-                      id: '{{page.url}}', // 可选。默认为 location.href
-                      owner: 'maoruibin',
-                      repo: 'https://github.com/maoruibin/awesome-background-music',
-                      oauth: {
-                        client_id: '{{site.gitment_id}}',
-                        client_secret: '{{site.gitment_secret}}',
-                      },
-                    })
-                    gitment.render('container')
-                    </script>
-
-                {% endif %}
-
-            </div>
-
-    <!-- Side Catalog Container -->
-        {% if page.catalog %}
-            <div class="
-                col-lg-2 col-lg-offset-0
-                visible-lg-block
-                sidebar-container
-                catalog-container">
-                <div class="side-catalog">
-                    <hr class="hidden-sm hidden-xs">
-                    <h5>
-                        <a class="catalog-toggle" href="#">CATALOG</a>
-                    </h5>
-                    <ul class="catalog-body"></ul>
-                </div>
-            </div>
+            <a class="prev"></a>
         {% endif %}
-
-    <!-- Sidebar Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-  
-                
-                {% if page.hideTag == true %}
-
-                {% else %}
-
-                    <!-- Featured Tags -->
-                    {% if site.featured-tags == null %}
-                    <section>
-                        <hr class="hidden-sm hidden-xs">
-                        <h5><a href="/tags/">FEATURED TAGS</a></h5>
-                        <div class="tags">
-                                {% for tag in site.tags %}
-                                      {% if tag[1].size > {{site.featured-condition-size}} %}
-                                        <a href="/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
-                                              {{ tag[0] }}
-                                          </a>
-                                      {% endif %}
-                                {% endfor %}
-                            </div>
-                    </section>
-                    {% endif %}
-
-                {% endif %}
-                
-
-                <!-- Friends Blog -->
-                {% if site.friends == null %}
-                <hr>
-                <h5>朋友</h5>
-                <ul class="list-inline">
-                    {% for friend in site.friends %}
-                        <li><a href="{{friend.href}}">{{friend.title}}</a></li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-
-                <!-- 打赏按钮 -->
-                {% if page.shang == true %}
-                
-                <section >
-                    <hr>
-                    <div class="tags" style="text-align:center;">
-
-                        
-                            <!-- <a id="btn_shang" href="{{ site.baseurl}}/vdonate/" target="blank">前往打赏</a>                         -->
-                            <div id="cyReward" role="cylabs" data-use="reward"></div>
-
-                        
-                    </div>
-                </section> 
-
-
-                {% endif %}
-
-                <!-- 微信公众号 -->
-                {% if page.qrcode_mp != false %}
-                <section class="visible-md visible-lg">
-                    <hr>
-                    <h5>公众号</h5>
-                    <div class="short-about" >
-                        <img src="https://ws4.sinaimg.cn/large/006tNbRwly1fw6zr3dz9lj3076076q30.jpg" style="width: 50%;margin: auto;text-align:center" />
-                        <p style="text-align:center">大侠咕咚<br>分享个人动态，扫码关注。</p>
-                    </div>
-                </section> 
-                {% endif %}
-
-            </div>
-        </div>
+        {% if page.next.url %}
+            <a class="next" href="{{ site.url }}{{ page.next.url }}">{{ page.next.title }} &raquo;</a>
+        {% endif %}
     </div>
-</article>
-
-
-{% if site.duoshuo_username %}
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    // dynamic User by Hux
-    var _user = '{{site.duoshuo_username}}';
-
-    // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-</script>
-<!-- 多说公共JS代码 end -->
 {% endif %}
 
-
-
-<!-- 畅言评论 -->
-{% if site.changyan_appid%}
-<script type="text/javascript"> 
-(function(){ 
-var appid = '{{site.changyan_appid}}'; 
-var conf = 'prod_b7bb621c5992b181d4d2eff1bad65eb3'; 
-var width = window.innerWidth || document.documentElement.clientWidth; 
-if (width < 960) { 
-window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
-
+{% if site.related %}
+    {% include related.html %}
 {% endif %}
 
-{% if page.shang == true %}
-<script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cytoKaD52"></script>
+{% if site.show-author %}
+    {% include author.html %}
 {% endif %}
 
-{% if site.anchorjs %}
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script>
-    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
-        anchors.options = {
-          visible: 'always',
-          placement: 'right',
-          icon: '#'
-        };
-        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-    })
-</script>
-<style>
-    /* place left on bigger screen */
-    @media all and (min-width: 800px) {
-        .anchorjs-link{
-            position: absolute;
-            left: -0.75em;
-            font-size: 1.1em;
-            margin-top : -0.1em;
-        }
-    }
-</style>
+{% if site.disqus.categories contains page.category %}
+    {% include disqus.html %}
 {% endif %}

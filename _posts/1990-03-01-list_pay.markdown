@@ -1,13 +1,25 @@
 ---
 layout: post
 author: 咕咚
+date: 1990-02-24 22:48
 title: "咕咚翻译捐赠名单"
 description: ""
 catalog:    true
 qrcode_mp: false
-tags:	list 
+
 shang:	true 
+
+description: Markdown summary with different options
+tag:
+- markdown
+- components
+- extra
+category: blog
+
 ---
+
+
+
 从16年开始，陆续有很多好友对咕咚翻译进行了数量不等的捐赠，这里再次谢过你们对咕咚翻译的支持。
 
 为表谢意，这里将列出所有捐赠者名单以及数额：
