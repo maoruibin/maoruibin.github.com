@@ -10,7 +10,9 @@ title: Blog
 	{% elsif site.paginate %}
 		{% for post in paginator.posts %}
 			{% if post.layout == 'post' %}
-				{% include blog-post.html %}
+				{% if post.hidden != true %}
+					{% include blog-post.html %}
+				{% endif %}
 			{% endif %}
 		{% endfor %}
 
@@ -18,7 +20,9 @@ title: Blog
 	{% else %}
 		{% for post in site.posts %}
 			{% if post.layout == 'post' %}
-				{% include blog-post.html %}
+				{% if post.hidden != true %}
+					{% include blog-post.html %}
+				{% endif %}
 			{% endif %}
 		{% endfor %}
 	{% endif %}

@@ -1,0 +1,288 @@
+---
+layout: post
+author: 咕咚
+title: "日志-2017"
+catalog: true
+hide: true
+cover-color: "#33a3dc" 
+tags: 日志
+hidden: true
+categories: log
+---
+
+![](https://ws1.sinaimg.cn/large/6fb50cedly1fn76x7detsj217g17gnpd.jpg)
+
+
+## 2017/12/31
+- 替换首页背景图以及日志页面的背景
+
+![](https://ws2.sinaimg.cn/large/006tNc79ly1fn00r9y6tdj31kw0i31kx.jpg)
+
+## 2017/12/24
+- 增加打赏页面(CSS 有点问题) 通过 shang 这个标志进行控制
+- 增加了一篇文章
+
+grunt watch -> https://github.com/Huxpro/huxpro.github.io/issues/57
+
+## 2017/12/19
+
+有段时间没在这里写东西了。这段时间都干啥了呢
+
+- 公司内部的篮球赛结束了，很尴尬的连季军都没有拿到，但是在三个月期间的10多场比赛中认识了不少微博的朋友，很值得。
+- 开始思考一些问题
+
+
+## 2017/10/26
+
+早晨再一次经体验了早高峰，看到沙河的长队我还是选择了摩拜去高教园坐车，事后证明这是一个正确的选择。
+
+1小时候 到北京南站，然后乘坐高铁开始了我的第一次南下之旅，很激动。
+
+下午到达黄山北，先来到了老街。我一直比较喜欢古街，旁边还有一条水很清澈的河流 新安河， 夕阳西下，风景不错，后续再补图。
+
+晚上吃了徽菜，老板娘比较有意思，很霸气，一点不在乎我们的态度。
+
+嗯嗯 休息，明天爬黄山。
+
+
+## 2017/10/25
+
+明天就要去黄山。第一次南下，小激动
+
+另外，今天在内部发布了开发的 AndroidStudio 插件，反响不错。
+
+中午去公园投篮，感觉不错，三分也是可以有的。
+
+公园旁边就是西山一号院，北京豪宅就是这个样子。
+
+![IMG_20171025_131447.jpg](https://ooo.0o0.ooo/2017/10/25/59f09a86d8588.jpg)
+
+
+## 2017/10/17
+公园里的秋天是一个美丽的季节
+![shot](https://wx4.sinaimg.cn/mw690/6fb50cedly1fkl62nd10sj20zn0qogsn.jpg)
+
+另外，明天 NBA 要开赛了，不错不错。
+
+
+## 2017/10/13
+
+中午去小公园偶遇网易的几个哥们在打球，然后加入他们打了一中午球，打的很过瘾。
+其中有一个篮下强起砸框进球，感觉就像是扣篮，特别棒，终于知道扣篮是会上瘾的，尤其是前面还有一个人站在那里。
+
+晚上参加了公司内部比赛，输了，但是很开心，打的很轻松，跑完了整场。
+
+
+## 2017/10/12（内部 AndroidStudio 插件开发基本完成）
+
+放假前就开始开发一个 AndroidStudio 插件，[Wei-studio-tools](https://plugins.jetbrains.com/plugin/10055-wei-studio-tools)
+
+这是专为微博 Android 项目开发的用户修改 gradle 配置以及上传 apk 到内部仓库。后期打算把 ADB 那个工具开放出来，其他 Android 项目也就可以用了。
+
+主要是之前受够了在浏览器中上传时的麻烦，不过开始想的简单，功能很快就做完了，但是自己是个追求细节完美的人，所以在很多交互细节上又花了很多功夫，还在回家的路上用 sketch 设计了界面，总体现在还是比较满意的，除了有一个比较难缠的 bug, 目前已经在 feed 项目组使用，准备在完善下，把几个严重的 bug 修复了在跟架构组推荐下。
+
+![shot](https://i.loli.net/2017/10/10/59dc63c596f76.png)
+
+另外很感谢 SM 的图床 很好用啊 
+
+推荐 [SM](https://sm.ms/)
+
+### 开关
+
+* hideLast
+* hideHot
+* hideTizi
+* hideFriend
+* hideTag
+
+### if 或 于
+
+```xml
+  {% if user.name == 'tobi' or user.name == 'bob' %}
+    Hello tobi or bob
+  {% endif %}
+
+  {% if user.name == 'bob' and user.age > 45 %}
+    Hello old bob
+  {% endif %}
+```
+
+## 2017/10/02(回家)
+在家里呆了5天，老家天气很好，8号回京
+![IMG_20171004_080439.jpg](https://i.loli.net/2017/10/04/59d42c4d97a8e.jpg)
+
+
+## 2017/09/26
+
+> 永远不要害怕问题
+
+![mmexport1506420079841.jpg](https://wx1.sinaimg.cn/mw690/6fb50cedly1fjx4j3k3quj21kw0oltcl.jpg)
+
+顶部消息提示 impl 
+
+
+## 2017/09/22
+
+![mmexport1506420234675.jpg](https://i.loli.net/2017/09/26/59ca26120345f.jpg)
+
+很久没有赢球了。happy ~
+
+
+## 2017/09/19（使用来比利评论系统）
+
+还是更换了一个评论系统，
+
+[来必力](https://livere.com/)
+
+优点
+- 可以评论设置提醒
+
+
+## 2017/09/18(时间好快)
+
+不知不觉已经找完工作在新公司工作了快三个月了。自从到了新公司现在很少打理博客了，甚至连一篇文章都没有。其实又准备过一篇关于 Drawable 的，这段时间对 Drawable 有了更多的了解，写写还是可以写出一些有意思的东西的，不过好几次动笔都没写完，先搁着吧。
+
+前段时间玩了玩 Chrome 插件，拿咕咚翻译做了个实验，顺便练练 Html CSS，今晚发布了 1.1，于以往做的 APP 不同，这次自己用 sketch 设计了界面，尽管界面很简单，不过还是体验到了 sketch 的专业，使用 sketch 可以方便的做一些平面图，挺好的，包括简单的图标，不说了，我的咕咚翻译 [插件地址](https://chrome.google.com/webstore/detail/enpemcpghfpenphpefmocgpdiipgkkjd/publish-accepted?utm_source=chrome-ntp-icon&authuser=1)
+
+不早了，睡觉去了。
+
+## 2017/09/15
+
+晚上跟同事打球，左脚又扭了一次，吓死我了，脆弱的脚踝，以后是不是应该去外线打球呢。。。
+
+## 2017/09/08(补图)
+公司附近是百望山，中午时我会自己去溜一圈，很喜欢户外的感觉，哪怕是一会儿
+
+![59bf3de331efd.jpg](https://ooo.0o0.ooo/2017/09/18/59bf3de331efd.jpg)
+
+## 2017/08/24(新浪微博)
+
+![59bf3de331efd.jpg](https://i.loli.net/2017/09/18/59bf40816b616.jpg)
+
+here is new start
+
+
+## 2017/06/13(尴尬的一个时间段)
+上周五打球崴脚了，当时正在篮下进行拼抢，不幸在落地时落在了别人的脚面上，我听到了『咔』的一声，我很清楚这是从右脚踝传来的，然后就到底了。
+
+从高中开始打球到现在，尽管我一直擅长打篮下，篮板也很不错，但是从来没有在篮下崴过脚，终究还是来了。
+
+短暂休息的过程中，我用微信搜了搜一般的处理方法，然后叫同事去帮我买了一袋冰块进行冰敷，效果不错。
+
+周末在家休息了两天，第一天不能很方便的走路，在跟媳妇商量后我最终买了拐，后来到第二天就发现这是个错误，因为第二天行走已经没有什么大碍。
+
+然后今天已经基本好了，今天下午还有公司的篮球赛，不过我一定不会去了。
+
+崴脚的经历告诉我以后打球风格可能要改变啦，而且确实应该在打球时记得保护自己。 
+
+## 2017/05/31(放假回来)
+
+从家里回来上班，在家里的几天每天过的都很快，农村很漂亮，我喜欢那些绿色，可以在田野里大口的呼吸，感觉好极了。
+
+回家的途中火车真的很拥挤！
+
+[我的在线简历（2017-墨迹天气）](http://gudong.name/2017/05/08/resume.html)
+
+## 2017/05/21(添加访问次数)
+最近一直在忙面试，今天看到一微博私信要互加友链，发现对方有一篇文章分享[如何给 jekyll 主题的博客加访问统计](http://linglinyp.com/2017/05/17/busuanzi.html)，随即就加了，毕竟惦记这个功能很久了。
+
+
+//网站倒计时运行代码
+
+```javascript
+<script>
+   window.setInterval('counter()',1000);
+   function counter(){
+     var date=new Date();
+     var startDate=new Date(2016,11,07,0,0,0);
+     var time=(date-startDate)/1000;
+     var day=Math.floor(time/(24*60*60));
+     var hour=Math.floor(time%(24*60*60)/(60*60));
+     var minute=Math.floor(time%(24*60*60)%(60*60)/60);
+     var second=Math.floor(time%(24*60*60)%(60*60)%60);
+     var str="我的博客已默默运行了" + day + "天" + hour +"时" + minute + "分" + second + "秒";
+     document.getElementById('count').innerHTML=str;
+   }
+</script>
+```
+
+## 2017/05/08(优化首页博客描述文案显示逻辑)
+
+### 隐藏文章显示在首页
+
+> 设置文章的 hide 属性为 false
+
+jekyll if else语法以及 字符串空判断
+
+```xml
+      {% if post.description and post.description != empty %}
+          {{ post.description }}
+      {% else %}
+          {{ post.content | strip_html | truncate:200 }}
+      {% endif %}
+```
+## 2017/04/28(完善个人作品展示)
+
+增加了全国空气质量展示
+
+手动设置主页背景高度，通过修改 ./css/hux-blog-min.css
+
+```css
+intro-header .page-heading{text-align:center;height: 450px;}
+```
+
+## 2017/04/27(公众号二维码增加开关)
+
+>qrcode_mp 新增的一个 page 属性 用于控制页面底部是不是显示公众号二维码
+
+<img src="http://7xr9gx.com1.z0.glb.clouddn.com/IMG_20170427_111732.jpg" style="width: 50%"/>  
+
+
+
+## 2017/04/25(博客增加了公众号)
+
+突然心血来潮，看到[小黑屋](http://droidyue.com/)的公众号后，自己终于把申请了好久的公众号再次打扮了一下，并且在博客中放置了二维码。
+
+<img src="http://7xr9gx.com1.z0.glb.clouddn.com/qrcode_for_gh_58ac6be237a4_430.jpg" style="width: 50%"/>  
+
+昨晚添加了自定义菜单，并且编辑了四篇文章。尽管还有很多问题，但是公众号总算是跑起来了。
+
+接下来要认真学习，写一写技术文章。
+
+如果你看到这里了，不妨关注下公众号？ \*_\*
+
+## 2017/04/24
+
+最近这段时间做了不少好玩的东西。
+
+先做了一个 App [易剪](http://gudong.name/product/2017/03/15/about_easypaper.html),本打算开源，后来赖的没做。然后倒是开源了 [OneDrawable](https://github.com/maoruibin/OneDrawable) 这一按钮按下效果处理方案，当然这个方案对一般 MD 设计没太大用处，基本做给 iOS 设计的 UI 效果。
+
+最近在看 Java 虚拟机。感觉比以前理解的深入多了。
+
+
+## 有用的查询网址
+
+* [企业注册信息查询](http://www.tianyancha.com/)
+
+## 2017/02/15
+今天更新了 Android 6.0 自定义文本操作的一篇[文章](http://www.jianshu.com/p/40e84359d683)，并且投稿给了鸿洋，第一次投稿，看看效果！
+
+## 2017/02/04
+
+适配了 Chrome tab
+
+thanks [https://teaink.com/archives/270.html](https://teaink.com/archives/270.html)
+
+## 2017/02/03
+不知不觉已经 17 了，我的 2017 会不一样一点。
+
+今天终于把 G 键的映射通过一个映射软件修改了。
+
+### 运行草稿
+
+```
+jekyll server --drafts
+
+To preview your site with drafts, simply run jekyll serve or jekyll build with the --drafts switch. 
+```
+

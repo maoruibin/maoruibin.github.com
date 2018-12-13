@@ -2,8 +2,8 @@
 layout: page
 ---
 
-{% if page.image and page.headerImage %}
-    <img class="title-image" src="{{ page.image }}" alt="{{ page.title }}">
+{% if page.header-img %}
+    <img class="title-image" src="{{ site.url}}/{{ page.header-img}}" alt="{{ page.title }}">
 {% endif %}
 
 <h1 class="title">{{ page.title }}</h1>

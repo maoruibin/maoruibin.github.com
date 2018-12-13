@@ -1,6 +1,7 @@
 # main text of home
 name: 咕咚
-bio: 愿你走出半生，归来仍是少年。
+bio: Less is more
+bio-url: http://www.sohu.com/a/245629404_559589
 
 # twitter summary info
 description: A blog about technology and stuff related
@@ -12,9 +13,9 @@ picture: assets/images/github_profile.png
 
 # If you want to include your resume, set to true
 # and specify source (external or local).
-resume: true
+resume: false
 resume-external: true
-resume-url: https://google.com/?q=my+resume
+resume-url: https://gudong.name/2017/05/08/resume.html
 
 url: https://gudong.name
 # your url: http://USERNAME.github.io
@@ -36,7 +37,8 @@ disqus:
 
 # if you don't have any of social below, comment the line
 weibo: maoruibin
-facebook: 
+jianshu: 203065de3ced
+# facebook: 
 twitter: dxgudong
 # google: mygoogle
 # instagram: myinstagram
@@ -50,7 +52,7 @@ github: maoruibin
 # stackoverflow: 7044681/mystackoverflow
 # quora: userquora
 # reddit: username
-medium: gudong.name
+# medium: gudong.name
 # vimeo: myvimeo
 # lanyrd: mylanyrd
 email: gudong.name@gmail.com

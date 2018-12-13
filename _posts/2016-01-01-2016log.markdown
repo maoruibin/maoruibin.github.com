@@ -1,0 +1,158 @@
+---
+layout: post
+author: 咕咚
+title: "日志-2016"
+catalog: true
+hide: true
+cover-color: "#281f1d" 
+tags: 日志
+hidden: true
+categories: log
+---
+ 
+![](https://ws1.sinaimg.cn/large/6fb50cedly1fn76jmiz48j217g17gnpd.jpg)
+
+## 2016/11/28
+今天还是把去年特别喜欢的一个背景图上传作为了我的博客背景。
+
+一年的时间，经历了太多，人生就是不断认识自己的过程，自己会对以前的一些决定进行思考，大多数时候，自己不会去太深刻的思考那些已经发生的事，但是这一年发生的一系列事，不由得让你去重新审视自己。
+
+幼稚、人心、生活。。。。。
+
+##  2016/11/07
+
+今天新增了一篇介绍 [ReView](https://github.com/maoruibin/ReView) 的文章，昨天就想写，但是净忙着写 [ViewControler](https://github.com/maoruibin/ViewControler/) 的文章了，就没有顾上，今天即使再晚也要补上。
+
+另外，今天因为自己的原因（一行 log 引发的惨案），公司项目日志数据上传异常，日志数据成倍增长，着实吓我一跳，自己确实需要对上千万的用户负责啊，你的一个小错误，到用户那里累计起来的影响太大了。好在并没有造成什么大面积事故，以后要小心。
+
+##  2016/10/25
+昨天是 1024 程序员节,依旧记得去年是一个人过的,那天是周日,我一人宅在家里宅了一天,还写了一篇长长的日志,记得特别清楚,那天为自己换了一个 jekyll 主题,很喜欢的主题。不过现在已经被我换了,哈哈。黄玄的这个主题确实没法拒绝,太多特性是自己期待了很久的东西。
+
+很快,今年的 1024 这么快已经到了,到今天已经过去一天了,但是昨天的事却历历在目,今年的 1024,我不在是程序员,而是作为一个人民群众去所在地派出所办理户口、身份证相关手续。
+
+整整一天,我从早晨 6.30 起床,到晚上8点多坐车回永昌,终于将整个其实只需要半小时就能办完的手续办完了。我目睹了地方机构办事效率的地下,以及鸡毛当令箭使得形式主义作风。
+
+终归办完了,思考良多,一方面这种办事机构有问题,另一方面地方群众的素质也是一个问题,不想展开说了!
+
+### 字符串包含判断
+
+还是记录下 一个 Liquid 语法问题,检查一个字符串是不是包含一个字符串
+
+```js
+//定义一个全局 site 常量
+theme_color: "#607D8B"
+
+//判断 双括号
+{page.cover} contains 'zzz'
+```
+
+### 自定义背景
+
+至此,我的博客背景支持了自定义纯色背这个特性,默认使用一张箭头背景图片,如果不喜欢,可以为 post 设变量 `cover` 这个属性用于设置文章头部背景颜色
+
+```js
+//使用自定义颜色
+cover: "#f78789"
+//表示使用博客主题颜色
+cover: "zzz"
+//使用指定图片作为背景图
+header-img: assets/header/header_image_road.jpg
+```
+
+### 自定义 Title color
+
+因为一些背景是亮色背景,但是默认所有 title 都是白色,所以在一些文章中,如果选用了浅色的背景,标题就会不清晰,所以今天加了一个新特性,可以用来设置 title 颜色,如下所示,
+直接在 post 使用 titleColor 属性即可。
+
+```js
+titleColor: "#404040"
+```
+
+
+
+##  2016/10/22
+
+今天回家了,火车没事干,想起自己的博客草稿箱还有好几篇文章已经放了好久,感觉可以趁这个空修理下,然后就把 [5.0 的元素共享](/2016/10/22/Android-transition.html)那篇博文更新了。
+
+今晚给 post 新增了一个属性 `conver` 用于控制头部背景颜色,如果不设置默认使用一张转为博客设计的背景图片,也很好看。
+
+```js
+background-image: url('{% if page.cover %}{% else %}{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img-post }}{% endif %}{% endif %}');
+background-color: {{ page.cover }};
+```
+
+修改 CSS 使用
+
+```css
+
+grunt watch
+
+```
+
+
+
+## 2016/07/02
+不知不觉，已经放弃上一个博客主题好久了，现在福生还在使用我的主题[sunfusheng](http://sunfusheng.com/)
+
+今天，终于有时间可以搞下博客了，这段时间都太忙了。
+
+
+## 2016/03/27
+项目主颜色设置在 less 目录下的 variables.less
+
+## 2016/03/26
+今天已经修改自己博客的主题为另一个主题了
+
+## 2016/02/29
+隐藏了post 页面的 tag、category 点击相应，因为 jekyll archive 不支持 Github Page   
+使用了新的代码高亮样式 减小了 padding 值
+
+## 2016/02/26
+指定引用图片的宽度大小，可通过如下方式
+
+    <img src="/assets/over_draw_color_2.png" style="width: 50%;margin: auto;"><br>
+
+##2016/01/20
+
+修改代码块的主题样式在 _include/head.html 文件中修改
+
+可以再 [bootcdn](http://www.bootcdn.cn/highlight.js/)下载    
+
+        <!-- thanks to http://www.bootcdn.cn/lightbox2/      -->
+        <!-- thanks to http://www.bootcdn.cn/highlight.js/   -->
+        <!-- thanks to https://highlightjs.org/static/demo/  -->
+        <link  rel="stylesheet" href="//cdn.bootcss.com/highlight.js/8.5/styles/androidstudio.min.css">
+        <link rel="stylesheet" href="//cdn.bootcss.com/lightbox2/2.8.2/css/lightbox.css">
+
+修改代码块的padding font  在 _sass/_layout.scss
+
+        pre code.hljs {
+        	font-size: modular-scale(0);
+        	padding: 1.5em;
+        }
+
+
+##2016/01/12
+
+修改底部四个按钮大小 在 footer.html
+
+    .fa-lg{
+            font-size: 1.5em;
+        }
+
+设置顶部 Title(咕咚)的高度
+
+      .logo {
+        float: left;
+        height: 4em;
+        border:0px solid #000;
+        padding-top: 0.6em;
+        @include media ($tablet) {
+        	padding-left: $em-base;
+        }
+
+设置底部的按分类查看为隐藏
+
+      <p style="display:none;">
+        <a href="{{ site.baseurl }}posts">View All Posts by Category</a>
+      </p>
