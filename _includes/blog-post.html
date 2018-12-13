@@ -1,7 +1,7 @@
 <div class="item {% if post.star %}star{% endif %}">
     <a class="url" href="{{ site.url }}{{ post.url }}">
         <aside class="date">
-        	<time datetime="{{ page.date | date:"%d-%m-%Y" }}">
+        	<time datetime="{{ post.date | date:"%d-%m-%Y" }}">
         		{{ post.date | date: "%b %d %Y" }}
         	</time>
         </aside>

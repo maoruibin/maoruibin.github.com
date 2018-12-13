@@ -1,4 +1,11 @@
 <div class="social-links">
+    
+    {% if site.weibo %}
+        <a class="link" data-title="weibo.com/{{ site.weibo }}" href="http://weibo.com/{{ site.weibo }}" target="_blank">
+            <svg class="icon icon-weibo"><use xlink:href="#icon-weibo"></use></svg>
+        </a>
+    {% endif %}
+
     {% if site.facebook %}
         <a class="link" data-title="facebook.com/{{ site.facebook }}" href="http://facebook.com/{{ site.facebook }}" target="_blank">
             <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
