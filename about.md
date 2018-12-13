@@ -4,43 +4,37 @@ layout: page
 ---
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+ <b>喜欢的东西</b><br>
+    <ul>
+        <li>喜欢打篮球。篮球就像挚友，这么多年，不离不弃，带给我无尽的快乐与回忆。</li>
+        <li>喜欢设计实现一些可以节约时间，提高效率的工具。尽管自己是工程师，但是对产品有自己的理解，喜欢极致的产品体验与细节，自己也开发设计过不少工具、产品（类似<a href="https://github.com/maoruibin/TranslateApp" target="_blank">咕咚翻译</a>、<a href="http://gudong.name/product/2018/07/25/about_passbook.html" target="_blank">Passbook</a>等<a href="/portfolio" target="_blank">小工具</a>）</li>
+        <li>听歌唱歌。现在唱的少，听得也少。</li>
+        <li>喜欢山</li>
+        <li>最喜欢的动物：应该是牛，他们坚韧、踏实，我童年的伙伴。</li>
+    </ul>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <b>性格上</b><br>
+    <ul>
+        <li>一个随性的人，容易相处。</li>
+        <li>善良</li>
+        <li>爱折腾</li>
+        <li>踏实</li>
+    </ul>
 
-<h2>Skills</h2>
+    <b>简单的背景</b><br>
+    <ul>
+        <li>90年生，甘肃-金昌</li>
+        <li>13年毕业于内蒙古工业大学</li>
+        <li>目前就职于新浪微博</li>    
+    </ul>
 
-<ul class="skill-list">
-	<li>HTML - Jade - Haml - Erb</li>
-	<li>Responsive (Mobile First)</li>
-	<li>CSS (Stylus, Sass, Less)</li>
-	<li>Css Frameworks (Bootstrap, Foundation)</li>
-	<li>Javascript (Design Patterns, Testes)</li>
-	<li>NodeJS</li>
-	<li>AngularJS - ReactJS</li>
-	<li>Grunt - Gulp - Yeoman</li>
-	<li>Git</li>
-	<li>PHP</li>
-	<li>Python</li>
-	<li>MySQL - MongoDB</li>
-	<li>Scrum and Kanban</li>
-	<li>TDD e Continuous Integration</li>
-</ul>
+    <b>联系我</b>
+    <ul>
+        <li>可通过微博<a href="https://weibo.com/1874136301" target="_blank">私信我</a></li>
+        <li>或者在评论区留言给我</li>
+    </ul>
+    
+    <br>
+   
 
-<h2>Projects</h2>
 
-<ul>
-	<li><a href="https://github.com/">Lorem Lorem</a></li>
-	<li><a href="https://github.com/">Ipsum Dolor</a></li>
-	<li><a href="https://github.com/">Dolor Lorem</a></li>
-</ul>

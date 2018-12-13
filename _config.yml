@@ -1,6 +1,6 @@
 # main text of home
 name: 咕咚
-bio: A Man who travels the world eating noodles
+bio: 愿你走出半生，归来仍是少年。
 
 # twitter summary info
 description: A blog about technology and stuff related
@@ -16,10 +16,11 @@ resume: true
 resume-external: true
 resume-url: https://google.com/?q=my+resume
 
-url: https://koppl.in/indigo
+url: https://gudong.name
 # your url: http://USERNAME.github.io
 
-permalink: /:title/
+# permalink: /:title/
+permalink: /:categories/:year/:month/:day/:title.html
 
 # To enable google analytics, supply your token below
 # analytics-google: 'UA-MYANALYTICS'
@@ -42,7 +43,7 @@ twitter: mytwitter
 # linkedin: mylinkedin
 # youtube: myyoutube
 # spotify: myspotify
-github: mygithub
+github: maoruibin
 # gitlab: mygitlab
 # lastfm: mylastfm
 # stackoverflow: 7044681/mystackoverflow
@@ -51,7 +52,7 @@ github: mygithub
 medium: medium
 # vimeo: myvimeo
 # lanyrd: mylanyrd
-email: myemail@gmail.com
+email: gudong.name@gmail.com
 
 authors:
     johndoe:
@@ -69,7 +70,7 @@ authors:
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
-# normal = 560px / large = 810px
+# normal = 720px / large = 810px
 width: normal
 
 # if you don't need pagination, comment the *paginate* configs below
@@ -110,3 +111,8 @@ plugins:
 
 jekyll-mentions:
     base_url: https://github.com
+
+markdown: kramdown
+kramdown:
+    input: GFM
+highlighter: rouge 
