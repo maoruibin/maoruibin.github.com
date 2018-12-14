@@ -21,11 +21,21 @@
                 {{ site.name }}
             </a>
         </h1>
-        <h2 class="description">
+        
+        <h2 id="type-it" class="description">
             <a style="text-decoration:none;color:black;" target="_blank" title="{{ site.bio }}" href="{{ site.bio-url}}">
                 {{ site.bio }}
             </a>
         </h2>
+
+        <script type="text/javascript">
+            new TypeIt('#type-it', {
+                speed: 100,
+                startDelay: 500,
+                loop: true
+            });
+        </script>
+
 
         {% include social-links.html %}
     </header>
