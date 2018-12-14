@@ -22,15 +22,23 @@
             </a>
         </h1>
         
-        <h2 id="type-it" class="description">
-            <a style="text-decoration:none;color:black;" target="_blank" title="{{ site.bio }}" href="{{ site.bio-url}}">
-                {{ site.bio }}
+        
+        <h2 class="description">
+            <a style="text-decoration:none;color:black;" 
+            target="_blank" 
+            title="{{ site.bio }}" 
+            href="{{ site.bio-url}}">
+
+            <span id="type-it" >{{ site.bio }}</span>
+            
             </a>
         </h2>
+    
+        
 
         <script type="text/javascript">
             new TypeIt('#type-it', {
-                speed: 100,
+                speed: 150,
                 startDelay: 500,
                 loop: true
             });
