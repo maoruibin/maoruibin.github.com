@@ -24,11 +24,11 @@ url: https://gudong.name
 permalink: /:categories/:year/:month/:day/:title.html
 
 # To enable google analytics, supply your token below
-# analytics-google: 'UA-MYANALYTICS'
+analytics-google: 'UA-64640288-1'
 
 # To enable piwik tracking, supply your url & site ID below
-# analytics-piwik-url: 'piwik.my-host.com'
-# analytics-piwik-id: 1
+analytics-piwik-url: 'gudong.name'
+analytics-piwik-id: 1
 
 # if you don't want comments in your posts, leave categories empty
 disqus:
@@ -94,7 +94,7 @@ related: true
 post-advance-links: [blog]
 
 # show author block at the end of a post ?
-show-author: true
+show-author: false
 
 # do you want some animations?
 animation: true
