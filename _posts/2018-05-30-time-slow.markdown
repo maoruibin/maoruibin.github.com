@@ -8,6 +8,7 @@ qrcode_mp:  true
 cover-color: "#4e947c"
 tags: 随想
 categories: blog
+author: gudong
 
 ---
 

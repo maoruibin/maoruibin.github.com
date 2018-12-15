@@ -7,6 +7,7 @@ cover-color: "#32b2a7"
 categories: product blog
 catalog:    true
 shang    :  true
+author: gudong
 tags: App 
 ---
 

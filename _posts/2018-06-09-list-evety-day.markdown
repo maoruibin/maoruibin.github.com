@@ -7,6 +7,7 @@ catalog:    false
 qrcode_mp:  true
 cover-color: "#4e947c"
 shang    :  true
+author: gudong
 tags: App 效率
 categories: product
 

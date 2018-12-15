@@ -4,6 +4,7 @@ author: 咕咚
 title: "《泰森自传》读后感"
 description: "最近一段时间一直在读泰森的自传《永不后退》，今天终于读完了。读完后有很多感悟，其实很多感悟在读的时候更加深刻，但是这里我还是想简单记录一下。"
 tags: 读书 
+author: gudong
 categories: blog
 ---
 
