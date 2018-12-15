@@ -7,8 +7,8 @@ catalog:    false
 qrcode_mp:  true
 cover-color: "#4e947c"
 shang    :  true
-tags: App 碎碎念
-
+tags: App 效率
+categories: product
 
 ---
 

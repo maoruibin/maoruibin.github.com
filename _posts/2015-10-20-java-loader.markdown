@@ -7,6 +7,7 @@ author: 咕咚
 catalog:    true
 tags: Java
 header-img:  "assets/instacode.png"
+categories: blog 
 ---
 
 作为一个Java程序员，我们写过很多Java类，那他们具体是怎么运行起来的呢？

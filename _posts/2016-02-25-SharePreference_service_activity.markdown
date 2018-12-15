@@ -6,6 +6,7 @@ description: ""
 cover-color: "zzz"
 catalog:    true
 tags: SharePreference
+categories: blog 
 ---
 
 最近在开发咕咚翻译时，在偏好设置的过程中，出现了一个莫名其妙的 bug，在 A 进程中设置偏好设置后，B 进程不能及时访问到 A 进程中设置的数据，今晚终于得到解决，随即做一次简单的记录。

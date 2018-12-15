@@ -7,8 +7,7 @@ catalog:    false
 qrcode_mp:  false
 hide:  true
 tags: memory
-
-
+categories: blog 
 ---
 不经意间，十一已经过完了，从大学开始，每年的十一都有不一样的主题，不知为什么自己对十一影响也很深。
 

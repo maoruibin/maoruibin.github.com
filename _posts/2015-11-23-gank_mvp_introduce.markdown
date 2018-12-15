@@ -5,8 +5,8 @@ title: " MVP 模式在 GankDaily 中的应用"
 description: ""
 cover-color:  "#8f4b2e"
 catalog:    true
-categories: advanced
-tags: Product App 架构
+categories: blog
+tags: Product App 架构 
 ---
 最近完成了一个干货客户端 [GankDaily](https://github.com/maoruibin/GankDaily) ，
 一个基于[干货集中营](http://gank.io)的手机客户端，整个客户端借鉴 drakeet 的[妹纸](https://github.com/drakeet/Meizhi)应用。但是在原项目的基础上，

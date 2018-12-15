@@ -5,6 +5,7 @@ title: "开源协议小风波"
 description: ""
 catalog:    true
 tags: 随想
+categories: blog 
 ---
 
 

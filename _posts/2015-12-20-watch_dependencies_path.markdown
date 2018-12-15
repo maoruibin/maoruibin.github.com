@@ -6,7 +6,8 @@ description: ""
 cover-color:  "#84BA40"
 publish: true
 catalog:    true
-tags: Gradle
+tags: Gradle Tools
+categories: blog 
 ---
 这篇文章主要分享一个主题，如何在 AndroidStudio 中利用 gradle 查看自己项目中引入的三方依赖库的本地缓存路径。相信一些同学会对这个
 话题感兴趣的。

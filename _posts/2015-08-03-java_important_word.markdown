@@ -1,10 +1,11 @@
 ---
 layout: post
 author: 咕咚
-title:  "Java关键字之volatile"
+title:  "Java关键字之 volatile"
 description:  "描述信息"
 catalog:    true
-tags:  Java
+tags:  Java volatile
+categories: blog 
 ---
 Java有众多关键字，volatile作为一个和同步相关的关键字，很少在自己的项目中使用，今天在看Handler源码时无意看到，顺便便了解了下。
 记录以备后用。

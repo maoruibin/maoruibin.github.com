@@ -5,7 +5,8 @@ title: "读书清单"
 description: ""
 cover-color: "#804000"
 catalog:    true
-tags: 随想 
+tags: 随想 Book
+categories: blog 
 ---
 该篇博客用于记录自己读过的书。
 

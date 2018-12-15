@@ -6,7 +6,8 @@ description: "最近参加了一个打卡社团，自己坚持每天俯卧撑打
 catalog:    false
 qrcode_mp:  true
 cover-color: "#4e947c"
-tags: 碎碎念 随想
+tags: 随想
+categories: blog
 
 ---
 

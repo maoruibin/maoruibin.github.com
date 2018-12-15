@@ -4,6 +4,7 @@ author: 咕咚
 title: "博客更新日志随想"
 description: ""
 tags: 随想
+categories: blog 
 ---
 
 今天终于有时间可以更新一下博客了。

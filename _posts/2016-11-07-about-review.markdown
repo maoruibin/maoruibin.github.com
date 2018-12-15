@@ -4,7 +4,8 @@ author: 咕咚
 title:  "ReView 一个辅助设计师方便 review UI 的 view 组件集合"
 description: ""
 catalog:    true
-tags: Skills
+tags: 效率 Android UI 
+categories: blog 
 ---
 
 ReView 是一个用于帮助程序员、设计师方便查看字体大小以及颜色等属性的 View 组件集合，

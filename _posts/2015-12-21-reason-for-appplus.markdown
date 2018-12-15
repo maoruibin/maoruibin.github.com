@@ -5,8 +5,8 @@ title: "为什么开发了 AppPlus"
 description: ""
 cover-color:  "#3F51B5"
 catalog:    true
-tags: 随想 App
-categories: product
+tags: 随想 App 效率 Android
+categories: product blog
 ---
 AppPlus 是自己2015年七月份开始做的一个小产品，它是一个主要用Android用户间传送Apk文件、管理手机应用的工具软件。
 

@@ -6,7 +6,7 @@ date:       2015-10-24 08:30:00
 author:     "咕咚"
 catalog:    true
 header-img: "assets/1024_programer.png"
-categories: Feeling 生活 
+categories: blog 
 tags:
     - 随想
 ---

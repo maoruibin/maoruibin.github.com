@@ -8,6 +8,7 @@ shang    :  true
 catalog:    true
 hide:    false
 tags: Api 
+categories: blog
 ---
 
 ## 介绍

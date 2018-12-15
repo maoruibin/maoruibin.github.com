@@ -5,7 +5,8 @@ title:  "Android 复杂界面开发实践之 ViewController: 介绍"
 description: ""
 catalog:    true
 shang    :  true
-tags: 架构 Skills
+tags: 架构 ViewControl
+categories: blog 
 ---
 
 

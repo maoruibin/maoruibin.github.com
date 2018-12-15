@@ -1,11 +1,12 @@
 ---
 layout: post
 author: 咕咚
-title:  "用Support包显示MaterialDialog"
+title:  "用 Support 包显示 MaterialDialog"
 description: ""
 cover-color: "zzz"
 catalog:    true
 tags: Experience
+categories: blog 
 ---
 
 如果自己做个人App项目，很可能在一些情况下用到Dialog,Android自己也提供了系统Dialog,但是在MaterialDesigner出现之前，样子确实很丑，这篇博客讲解如何使用Support包中

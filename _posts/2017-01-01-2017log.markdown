@@ -5,7 +5,7 @@ title: "日志-2017"
 catalog: true
 hide: true
 cover-color: "#33a3dc" 
-tags: 日志
+tags: 日志 总结
 hidden: true
 categories: log
 ---

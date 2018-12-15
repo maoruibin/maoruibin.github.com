@@ -4,7 +4,8 @@ author: 咕咚
 title: "使用 CheckStyle 检查代码"
 description: ""
 catalog:    true
-tags: Tools
+tags: Tools CheckStyle
+categories: blog 
 ---
 
 ### 前言

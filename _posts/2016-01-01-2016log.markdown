@@ -5,9 +5,10 @@ title: "日志-2016"
 catalog: true
 hide: true
 cover-color: "#281f1d" 
-tags: 日志
+tags: 日志 
 hidden: true
-categories: log
+categories: log blog
+
 ---
  
 ![](https://ws1.sinaimg.cn/large/6fb50cedly1fn76jmiz48j217g17gnpd.jpg)

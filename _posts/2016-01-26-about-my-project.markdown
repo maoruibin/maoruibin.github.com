@@ -6,6 +6,7 @@ description: ""
 cover-color: "zzz"
 catalog:    true
 tags: 随想 App 
+categories: blog 
 ---
 
 <img src="http://7xr9gx.com1.z0.glb.clouddn.com/marketingproject.jpg" style="width: 50%;margin: auto;"><br>

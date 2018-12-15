@@ -12,6 +12,13 @@ categories: log
 
 > Day by Day
 
+## 12/15
+折腾一下 Https 域名
+
+重新梳理自己的学习重点
+
+https://blog.csdn.net/Cowry5/article/details/80310052
+
 ## 12/13 
 > less is more
 

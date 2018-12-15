@@ -6,8 +6,8 @@ description: "在使用 ImageView 的时候，经常需要设置它的 scaleType
 catalog:    true
 qrcode_mp:  true
 shang    :  true
-tags: Skills View Android 
-
+tags: Skills ImageView Android
+categories: blog
 
 ---
 

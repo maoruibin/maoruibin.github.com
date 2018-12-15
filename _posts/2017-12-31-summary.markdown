@@ -8,8 +8,7 @@ qrcode_mp:  true
 cover-url:	"https://ws1.sinaimg.cn/large/6fb50cedly1fn6tnnt7dfj21440u0n2r.jpg"
 shang    :  true
 tags: 年终总结
-
-
+categories: blog 
 ---
 
 最近一直整理这一年散落在各处的文章、笔记，毕竟一年了，也是该整理整理了，平时我会在印象笔记、[简书](https://www.jianshu.com/u/203065de3ced)、[Github](https://github.com/maoruibin)、[掘金](https://juejin.im/user/55f6e9de00b0d7b2c13a8526)、[知乎专栏](https://zhuanlan.zhihu.com/gudong) 等不同的地方记录一些技术或者个人感悟，也会在 [Trello](https://trello.com)、[Wunderlist](https://www.wunderlist.com/zh/) 中记录一些一闪而过的点子。

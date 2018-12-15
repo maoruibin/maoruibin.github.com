@@ -8,6 +8,7 @@ catalog:    true
 qrcode_mp:  false
 shang    :  true
 tags: Skills Thread Java 
+categories: blog 
 ---
 
 在软件开发中，池一直都是一种非常优秀的设计思想，通过建立池可以有效的利用系统资源，节约系统性能。Java 中的线程池就是一种非常好的实现，从 JDK 1.5 开始 Java 提供了一个线程工厂 Executors 用来生成线程池，通过 Executors 可以方便的生成不同类型的线程池。但是要更好的理解使用线程池，就需要了解线程池的配置参数意义以及线程池的具体工作机制。

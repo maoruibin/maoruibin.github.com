@@ -8,6 +8,7 @@ catalog:    true
 qrcode_mp:  false
 cover-color:  "#121a2a"
 tags: Experience Skills 架构 Android 
+categories: blog 
 ---
 
 本文将结合自己的项目开发实践，简单分享一下关于多状态 Layout 的开发实践 Tips。

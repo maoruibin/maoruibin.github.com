@@ -7,6 +7,7 @@ catalog:    true
 shang    :  true
 cover-color:  "zzz"
 tags: Skills Tools 
+categories: blog 
 ---
 该篇文章主要分享介绍，如何使用一张资源图片为 View 设置具有按下效果的 Background Drawable.
 

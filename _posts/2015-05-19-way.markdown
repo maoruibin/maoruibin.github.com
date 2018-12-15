@@ -4,7 +4,8 @@ author: 咕咚
 title: "我的开发之路"
 description: "利用Github搭建博客后,我写的第一篇博客"
 catalog:    true
-tags:	碎碎念 
+tags: 随想
+categories: blog 
 ---
 对于自己做开发工作到现在，有时想想，也许是命运的安排。
 

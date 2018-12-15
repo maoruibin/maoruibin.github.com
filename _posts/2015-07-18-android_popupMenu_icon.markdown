@@ -3,7 +3,8 @@ layout: post
 author: 咕咚
 title: 在流式布局中使用PopupMenu，以及遇到的问题
 catalog:    true
-tags: Experience
+tags: Popup Question
+categories: blog 
 ---
 在做 AppPlus 项目的过程中，因为每个 Item 上面都有一个 PopupMenu，但是当时在xml文件中设置icon后，却发现icon不生效，下面是这个问题的解决方案。
 

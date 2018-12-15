@@ -4,7 +4,8 @@ author: 咕咚
 title: "有谁是单纯地喜欢编程吗？"
 qrcode_mp:  true
 cover-url: https://ws1.sinaimg.cn/large/6fb50cedly1fn7akxqwo5j20u014gq6w.jpg
-tags: 知乎
+tags: 知乎 编程
+categories: blog 
 ---
 
 在知乎看到了上面的问题 - 有谁是单纯地喜欢编程吗？
