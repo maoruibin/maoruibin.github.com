@@ -15,13 +15,13 @@ picture: assets/images/github_profile.png
 # and specify source (external or local).
 resume: false
 resume-external: true
-resume-url: https://gudong.name/2017/05/08/resume.html
+resume-url: http://gudong.name/2017/05/08/resume.html
 
-url: https://gudong.name
+url: http://gudong.name
 # your url: http://USERNAME.github.io
 
 # permalink: /:title/
-permalink: /:categories/:year/:month/:day/:title.html
+permalink: /:year/:month/:day/:title.html
 
 # To enable google analytics, supply your token below
 analytics-google: 'UA-64640288-1'
