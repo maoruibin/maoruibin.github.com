@@ -4,7 +4,7 @@ bio: Less is more
 bio-url: http://www.sohu.com/a/245629404_559589
 
 # twitter summary info
-description: A blog about gudong.name 咕咚
+description: A blog about maoruibin.github.io 咕咚
 
 # if it's an external image, update below for true
 # better with square images
@@ -15,9 +15,9 @@ picture: assets/images/github_profile.png
 # and specify source (external or local).
 resume: false
 resume-external: true
-resume-url: http://gudong.name/2017/05/08/resume.html
+resume-url: https://maoruibin.github.io/2017/05/08/resume.html
 
-url: https://gudong.name
+url: https://maoruibin.github.io
 # your url: http://USERNAME.github.io
 
 # permalink: /:title/
