@@ -1,0 +1,14 @@
+---
+layout: post
+author: 咕咚
+title: "日志-2019"
+catalog: true
+hide: true
+cover-url: https://ws1.sinaimg.cn/large/0069RVTdly1fubzx37ambj31kw16k1kx.jpg
+tags: 日志 memory
+hidden: true
+categories: log
+author: gudong
+---
+
+> Less is more
