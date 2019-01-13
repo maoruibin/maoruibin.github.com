@@ -13,6 +13,36 @@ author: gudong
 
 > Less is more
 
+## 01/13
+![](https://ws1.sinaimg.cn/large/0079McHKly1fz5d27vddlj33402bsb29.jpg)
+<figcaption class="caption">光熙路跟媳妇一起去家乐福</figcaption>
+
+早晨去参加了李世忠的结婚酒席，吃的**杨家火锅**，还挺不错的。
+
+忠哥结完婚，我们 12 年来北京的同学大部分都已经结婚了，后续这种结婚聚会的机会也会很少了，这意味着大家见面的机会也会越来越少，现在大部分人开启了另一个人生阶段。
+
+吃过饭去了家乐福超市，由于之前公司发的福利卡只能在家乐福消费，这次积累了 200 多，可以一次性消费完，所以早超市里开始大肆购物，200 多块钱如果买日用品还是可以买不少的。后来便买了不少肉还有一些吃的、玩具等...
+
+晚上回来吃糖醋鱼、还有炸鸡块，由于太久不做了，我炸的不好，火候有点大，鸡块没有炸熟，第二次才炸好。
+
+![](https://i.loli.net/2019/01/13/5c3b576c35056.jpg)
+
+<figcaption class="caption">糖醋鱼和炸鸡块</figcaption>
+
+轩轩貌似很喜欢糖醋鱼的味道，下次还是吃鲤鱼啊。还要买个小的。
+
+晚上抽空把[我的奶奶](https://mp.weixin.qq.com/s/iyXQk0JtTARTmuIOBWHDxA)发表在了公众号。
+
+## 01/10
+
+早晨妈妈做的炸糕，很好吃。妈妈现在很喜欢网上找食物教程，这个炸糕也是看的教程后做的，我该买点豆沙了。
+
+![](https://i.loli.net/2019/01/13/5c3b58e300491.jpg)
+
+带孩子去了沙河，他很喜欢向水里丢石头。
+
+![](https://ws1.sinaimg.cn/large/0079McHKly1fz5dkrwm88j32bs3407nv.jpg)
+
 ## 01/04
 微博工程模式快捷入口完成，昨天还在 AndroidStudio 插件中集成了，感觉很不错。
 
@@ -31,3 +61,4 @@ author: gudong
 
 ![](https://ws1.sinaimg.cn/large/0079McHKly1fyrb2q2xi6j32bs3401hm.jpg)
 <figcaption class="caption">最喜欢的飞机</figcaption>
+
