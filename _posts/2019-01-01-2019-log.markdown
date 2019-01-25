@@ -13,6 +13,8 @@ author: gudong
 
 > Less is more
 
+[记日记](https://github.com/maoruibin/maoruibin.github.com/edit/master/_posts/2019-01-01-2019-log.markdown)
+
 ## 01/13
 ![](https://ws1.sinaimg.cn/large/0079McHKly1fz5d27vddlj33402bsb29.jpg)
 <figcaption class="caption">光熙路跟媳妇一起去家乐福</figcaption>
