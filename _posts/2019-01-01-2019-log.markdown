@@ -15,6 +15,9 @@ author: gudong
 
 [记日记](https://github.com/maoruibin/maoruibin.github.com/edit/master/_posts/2019-01-01-2019-log.markdown)
 
+## 02/03
+工作日的最后一天，写了一篇文章进行总结 [写在 2019 春节前的最后一个工作日](https://gudong.name/2019/02/03/last-work-day.html)
+
 ## 01/30
 晚上去室内球场打球，但是打球前却发现球鞋忘在昨天的大巴车了，所以今天我还是去打了，穿着牛仔鞋，发挥的不错，勾手进了不少球，感觉很好。
 
