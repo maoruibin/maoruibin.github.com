@@ -4,9 +4,18 @@ author: 咕咚
 title: "Weekly-01"
 author: gudong
 categories: weekly 
+shang: true
+qrcode_mp: true
 ---
 
 ![](https://images.pexels.com/photos/539681/pexels-photo-539681.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
+## 目录
+* 02/18  如何自律
+* 02/19 系统性学习的重要性
+* 02/20 选就选好的
+* 02/21 掌控每一天
+* 02/22 股票大涨了
 
 
 ## 02/18  如何自律
