@@ -8,7 +8,22 @@ shang: true
 qrcode_mp: true
 ---
 
-![](https://images.pexels.com/photos/539681/pexels-photo-539681.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+![Weekly-01](https://upload-images.jianshu.io/upload_images/588640-965248f81005e40f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+打算工作日的每一天都去围绕一些看到的或者经历的事情，去写一点感悟、思考短文，然后每周末整理出来。
+
+通过这种方式强制自己做一些稍微深入的思考和记录，同时与朋友更好的分享交流。
+
+### 实践
+每日晚上会发表短文在这个仓库的 issue 中，每一周为一个 issue, 每一天的短文会记录在 issue 下面的评论中，周末进行整理发布。
+
+### 订阅
+* 个人博客：[Weekly](https://gudong.name/weekly)
+* Github Weekly Issues： [地址](https://github.com/maoruibin/Weekly/issues)
+* 公众号：咕喱咕咚
+
+
+# Weekly 01
 
 ## 目录
 * 02/18  如何自律
@@ -54,7 +69,7 @@ https://www.zhihu.com/question/284206141/answer/490039014
 
 ## 02/20 选就选好的
 今天收到了公司的测试机，一加6T 。
-![](https://ws2.sinaimg.cn/large/006tKfTcly1g0dajk1ykhj30rs0p00yj.jpg)
+![image](http://upload-images.jianshu.io/upload_images/588640-3eb8e8f5f703f702.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 这是一款功能强劲的手机，目前到手体验了几个小时，感觉很不错，只是有点大，这跟我之前一直用小米6有关。
 
 接着说说测试机。我们组内十多个人，这次只下来了两部，其中一部就是我的这部，所以下午看到这个 6T 格外开心。
@@ -110,5 +125,3 @@ https://www.zhihu.com/question/284206141/answer/490039014
 3、在市场里，每一个投资的人目的都是赚钱、盈利，但是和赚钱同样重要的还有一点，在市场里找到自己的投资节奏风格，建立自己对自己的投资方式的信心。往往其实后者更难。
 
 针对这样的市场，理性投资，不断学习。
-
-
