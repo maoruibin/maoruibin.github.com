@@ -3,8 +3,8 @@ layout: post
 author: 咕咚
 title: "《基金：从0开始学基金投资》"
 author: gudong
-tags: 知乎专栏 专栏学习
-categories: blog 
+tag: 知乎专栏
+categories: note 
 ---
 
 ### 关于基金

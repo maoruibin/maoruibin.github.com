@@ -1,10 +1,10 @@
 ---
 layout: post
 author: 咕咚
-title: "咕咚翻译-Android 设备上翻译效率神器"
+title: "咕咚翻译：Android 设备上翻译效率神器"
 description: ""
 cover-color: "zzz"
-categories: product blog
+categories: product
 catalog:    true
 shang    :  true
 tags: App 效率

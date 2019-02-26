@@ -14,10 +14,25 @@
             {% endif %}
         {% endif %}
 
+        {% if site.note == true %}
+            {% if page.title != "Note" %}
+                <li class="item">
+                    <a class="link" href="{{ site.url }}/note">Note</a>
+                </li>
+            {% endif %}
+        {% endif %}
+
         {% if site.weekly == true %}
             {% if page.title != "Weekly" %}
                 <li class="item">
                     <a class="link" href="{{ site.url }}/weekly">Weekly</a>
+                </li>
+            {% endif %}
+        {% endif %}
+        {% if site.product == true %}
+            {% if page.title != "Product" %}
+                <li class="item">
+                    <a class="link" href="{{ site.url }}/product">Product</a>
                 </li>
             {% endif %}
         {% endif %}

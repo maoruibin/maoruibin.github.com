@@ -76,10 +76,19 @@ width: normal
 
 # if you don't need projects, comment the *projects* configs below
 projects: false
+
+#note
+note: true
+
+#every week think
 weekly: true
+
+# personal product
+product: true
 
 # if you don't need "about" or "blog", comment them out below
 about: false
+
 blog: true
 
 # do you want to show the "read time" of the posts?

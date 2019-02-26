@@ -3,9 +3,12 @@ layout: post
 author: 咕咚
 title: "《为什么要学习股票投资？》"
 author: gudong
-tag: 知乎专栏 专栏学习
-categories: blog learning 
+tag: 知乎专栏
+categories: note 
 ---
+
+![](https://i.loli.net/2019/02/26/5c747802713ad.png)
+> from 百度脑图
 
 ## 股票投资可使财富增值
 

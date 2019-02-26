@@ -1,10 +1,10 @@
 ---
 layout: post
 author: 咕咚
-title: "Passbook - 我心目中的账号密码存储应用"
+title: "Passbook：我心目中的账号密码存储应用"
 description: "Passbook 是一个用 Kotlin 开发的用于存储密码数据的 Android 应用，自己曾经在 2013 年开发过一次相似的应用密码本，但是后来被自己下架了，因为加密问题以及忘记登录密码的问题难以解决。这次一开始是自己为了练习 Kotlin 才开发的这个项目，目前已经算是一个比较完整的应用，但是考虑的安全，我还是没有彻底的公开，现在这里公开的只是一个有 3 天体验时间的体验版。"
 cover-color: "#32b2a7"
-categories: product blog
+categories: product
 catalog:    true
 shang    :  true
 author: gudong

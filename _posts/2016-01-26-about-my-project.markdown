@@ -50,9 +50,6 @@ categories: blog
 
 [Fir主页](http://fir.im/gdTranslate)
 
-#### 技术栈
-
- `MVP` `Dagger2` `RxJava` `Retrofit2`  `WakeLock 启动 Service`  `开机自启动`  `WindowManager 的使用`  `监听粘贴板` `泛型`
 
 ## 2、GankDaily
 自己利用[干货集中营](http://gank.io/)对外开放的 [API](http://gank.io/api) 为干货集中营开发的一个手机客户端软件，客户端主要用于展现网站技术干货。
@@ -66,10 +63,6 @@ categories: blog
 
 [Fir主页](http://fir.im/gankdaily)
 
-#### 技术栈
-
- `MVP` `Dagger2` `RxJava` `Retrofit2` `泛型`
-
 
 ## 3、AppPlus
 
@@ -79,35 +72,14 @@ App+是一个MD风格的用于传送、提取APK文件的开源工具软件。
 
 [Fir主页](http://fir.im/appplus  )
 
-#### 技术栈
-
- `Material Designer 组件包使用` `Vector 应用` `RecycleView Animator` `最近运行进程获取` `使用 RxBus 跨界面数据更新` `导出 APK ` `文件快速复制`
-
 ## 4、PowerKey
 
 模仿 MIUI6 长按电源键的关机App
 
 [Github项目主页](https://github.com/maoruibin/PowerKey)
 
-#### 技术栈
-
- `使用 DevicePolicyManager 锁屏``WindowManager 添加全局悬浮框` `属性动画使用` `关机、重启`
 
 ## 5、PassBook
 用于存储日常生活中用到的密码。目前已经在市场下架，不过自己仍然在使用。
 
 这个项目暂时没有展示链接了，等以后再补充吧！
-
-#### 技术栈
-
-`SlideMenu 使用` `数据库使用` `数据加密备份`
-
-## 6、美丽屋
-
-这是目前所做的公司项目,一个房屋交易平台。
-
-[美丽屋](http://bj.meiliwu.com/)
-
-#### 技术栈
-
-`MVP框架` `动态代理` `AOP编程思想`
