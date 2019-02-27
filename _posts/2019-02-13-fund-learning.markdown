@@ -7,6 +7,16 @@ tag: 知乎专栏
 categories: note 
 ---
 
+
+>地址：[《基金：从0开始学基金投资》](https://zhuanlan.zhihu.com/fundslearning)
+>
+>作者：[羊陪家](https://www.zhihu.com/people/yangpeijia)
+
+
+![从0开始学基金投资.png](https://i.loli.net/2019/02/27/5c75d73139f8a.png)
+
+> by 百度脑图
+
 ### 关于基金
 
 #### 股票

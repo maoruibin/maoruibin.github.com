@@ -7,8 +7,14 @@ tag: 知乎专栏
 categories: note 
 ---
 
+
+>地址：[《股票学习：从0开始学股票投资》](https://zhuanlan.zhihu.com/stocklearning)
+>
+>作者：[羊陪家](https://www.zhihu.com/people/yangpeijia)
+
+
 ![](https://i.loli.net/2019/02/26/5c747802713ad.png)
-> from 百度脑图
+> by 百度脑图
 
 ## 股票投资可使财富增值
 
