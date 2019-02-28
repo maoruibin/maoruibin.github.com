@@ -26,6 +26,15 @@ layout: page
     <li>目前就职于新浪微博</li>    
 </ul>
 
+<br>
+<b>工作记录</b>
+<ul>
+    <li><a href="./2019/02/28/weibo-work-record.html" target="_blank">微博记录</a></li>
+</ul>
+
+
+
+<br>
 <b>联系我</b>
 <ul>
     <li>可通过微博<a href="https://weibo.com/1874136301" target="_blank">私信我</a></li>

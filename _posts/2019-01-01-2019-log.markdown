@@ -15,6 +15,11 @@ author: gudong
 
 [记日记](https://github.com/maoruibin/maoruibin.github.com/edit/master/_posts/2019-01-01-2019-log.markdown)
 
+## 02/28
+博文增加工作内容记录，主要记录工作中大的项目，以及开发过程中学习到的东西、思考，
+
+[微博工作记录](https://gudong.name/2019/02/28/weibo-work-record.html)
+
 ## 02/24
 这周决定使用 [Weekly](https://github.com/maoruibin/Weekly) 的形式强制自己去做深度思考和持续输出，试行了一周，坚持的不错，发现压力也不是很多，300 多字的感悟很容易写，也比较容易发挥。
 
