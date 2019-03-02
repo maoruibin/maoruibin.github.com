@@ -9,27 +9,26 @@ qrcode_mp: true
 
 ![Weekly-01](https://upload-images.jianshu.io/upload_images/588640-965248f81005e40f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-打算工作日的每一天都去围绕一些看到的或者经历的事情，去写一点感悟、思考短文，然后每周末整理出来。
 
-通过这种方式强制自己做一些稍微深入的思考和记录，同时与朋友更好的分享交流。
+工作日的每一天都围绕一些看到、想到的事去写一篇感悟、思考短文，然后周末整理出来发表。
 
-### 实践
-每日晚上会发表短文在这个仓库的 issue 中，每一周为一个 issue, 每一天的短文会记录在 issue 下面的评论中，周末进行整理发布。
+通过这种方式强制自己做一些比较深入的思考和记录，同时与朋友更好的交流分享。
 
-### 订阅
-* 个人博客：[Weekly](https://gudong.name/weekly)
-* Github Weekly Issues： [地址](https://github.com/maoruibin/Weekly/issues)
-* 公众号：咕喱咕咚
+**如何订阅**
+
+- Github Weekly: [https://github.com/maoruibin/Weekly](https://github.com/maoruibin/Weekly)
+- 个人博客：[https://gudong.name/weekly](https://gudong.name/weekly)
+- 公众号：咕喱咕咚
+
+![](https://ws3.sinaimg.cn/large/006tNbRwgy1fykl72khq0j305g05g0sq.jpg)
 
 
-# Weekly 01
-
-## 目录
-* 02/18  如何自律
-* 02/19 系统性学习的重要性
-* 02/20 选就选好的
-* 02/21 掌控每一天
-* 02/22 股票大涨了
+## 本期目录
+* [02/18 如何自律](#02/18-如何自律)
+* [02/19 系统性学习的重要性](#02/19-系统性学习的重要性)
+* [02/20 选就选好的](#02/20-选就选好的)
+* [02/21 掌控每一天](#02/21-掌控每一天)
+* [02/22 股票大涨了](#02/22-股票大涨了)
 
 
 ## 02/18  如何自律
