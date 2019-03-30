@@ -7,9 +7,9 @@ categories: weekly
 qrcode_mp: true
 ---
 
-![](https://i.loli.net/2019/03/23/5c95f9ddde4fe.jpg)
+![](https://images.unsplash.com/photo-1465352609784-461df6a5b768?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80)
 
-> 题图：拍于沙河水库，2019-03-23
+> 题图：Photo by Banter Snaps on Unsplash
 
 工作日的每一天都围绕一些看到、想到的事去写一篇感悟、思考短文，然后周末整理出来发表。
 
@@ -17,9 +17,9 @@ qrcode_mp: true
 
 **如何订阅**
 
-- Github Weekly: [https://github.com/maoruibin/Weekly](https://github.com/maoruibin/Weekly)
-- 个人博客：[https://gudong.name/weekly](https://gudong.name/weekly)
-- 语雀：[https://www.yuque.com/gudong-osksb/weekly](https://www.yuque.com/gudong-osksb/weekly)
+- [博客](https://gudong.name/weekly)
+- [语雀](https://www.yuque.com/gudong-osksb/weekly)
+- [Github Weekly](https://github.com/maoruibin/Weekly)
 - 公众号：咕喱咕咚
 
 ![](https://ws3.sinaimg.cn/large/006tNbRwgy1fykl72khq0j305g05g0sq.jpg)
@@ -85,4 +85,4 @@ qrcode_mp: true
 
 上述还有一个关键点，就是大家都乐于分享球，我爱抓篮板，但不代表我只爱抓板，我还喜欢传球，转移球，当然也喜欢投篮，喜欢得分的感觉，只是外线不稳定。进攻时，只要队友有更好的机会被我发现了，哪怕那人投篮不准，一般都会传，而不是拿球就单干。
 
-我的篮球理念是开心，大家一起开心，甚至赢球与否都不是最重要的，赢球只是一个结果，开心却是一个过程。所以跟很多人不一样，我不怎么喜欢打正规的 5V5 比赛，这样的比赛总是充满着丑陋的身体接触，小动作，尤其是大家水平都是业余水平的情况下，比赛场上大部分是个人进攻，单打，而高质量的挡拆、配合都比较少，打比赛时大家都紧绷着，都想的是赢，这个过程很难让人感到愉快。当然对于实力悬殊的比赛，我觉得打的就挺好玩了，大家都轻松，或者轻松赢球，或者轻松输球，开心就好，哈哈~ 
+我的篮球理念是开心，甚至赢球与否都不是最重要的，赢球只是一个结果，开心却是一个过程。所以跟很多人不一样，我不怎么喜欢打正规的 5V5 比赛，这样的比赛总是充满着丑陋的身体接触，小动作，尤其是大家水平都是业余水平的情况下，比赛场上大部分是个人进攻，单打，而高质量的挡拆、配合都比较少，打比赛时大家都紧绷着，都想的是赢，这个过程很难让人感到愉快。当然对于实力悬殊的比赛，我觉得打的就挺好玩了，大家都轻松，或者轻松赢球，或者轻松输球，开心就好，哈哈~ 
