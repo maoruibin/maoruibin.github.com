@@ -24,6 +24,8 @@ qrcode_mp: true
 * 这周每日习惯执行的不好，尤其是早起，当然最主要的原因还是不能早睡。
 * 去简书参加了日更的挑战记录，跟我的日计划正好契合，所以参与了。
 * 每天不追求写的多，而在于写的深入、有思考，通畅。
+* 基于 wechat-format 做了自定义，定制了自己公众号文章的样式，也就是现在这篇的样式，地址[maoruibin/wechat\-format: 微信公众号排版编辑器，转换 Markdown 到微信特制的 HTML](https://github.com/maoruibin/wechat-format/)
+
 
 ## 本期目录
 
