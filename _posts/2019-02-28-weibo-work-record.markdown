@@ -9,6 +9,14 @@ categories: work
 
 > 按时间顺序，记录入职微博后，自己负责开发过的大功能。主要记录核心内容以及开发过程中的问题，思考。
 
+## 投票发布器
+微博发布器增加投票功能，开发时就是开发一个发布器附件，这里面包括投票 View，数据，以及复杂的发布器互斥。
+![](https://ws1.sinaimg.cn/large/006tKfTcly1g1nxcbgjlwj30ou0nqwhx.jpg)
+
+**输出**
+* [提供语义化 API 用来创建 Shape Drawable](https://gist.github.com/maoruibin/4293314f0b7c277c2a635efa858a3e6e)
+* [EditText View 限制输入字符数，并倒计还能输入多少字符，兼容中英文字符](https://gist.github.com/maoruibin/0c7bca8d024c0e5718fa8b029850bca0)
+
 ## 微博详情页重构
 抽取转评赞模块。
 

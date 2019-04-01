@@ -30,6 +30,8 @@ layout: page
 <b>工作记录</b>
 <ul>
     <li><a href="./2019/02/28/weibo-work-record.html" target="_blank">微博记录</a></li>
+    <li><a href="./2019/04/02/mouth-review.html" target="_blank">Mouth Review</a></li>
+    <li><a href="./2019/02/28/weibo-work-record.html" target="_blank">ToWrite 个人周边主力 2019</a></li>
 </ul>
 
 
