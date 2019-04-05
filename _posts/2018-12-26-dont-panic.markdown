@@ -5,7 +5,7 @@ title: "不要慌"
 description: ""
 qrcode_mp: true
 author: gudong
-categories: blog
+categories: think
 tags: 随想
 ---
 

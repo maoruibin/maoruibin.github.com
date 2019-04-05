@@ -6,7 +6,7 @@ description: ""
 author: gudong
 tags: 随想 碎碎念 
 qrcode_mp: true
-categories: blog
+categories: think
 ---
 
 ![屋后山坡](http://upload-images.jianshu.io/upload_images/588640-b7e64b549c64ea74.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

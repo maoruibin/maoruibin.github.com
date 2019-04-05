@@ -4,7 +4,7 @@ author: 咕咚
 title: "写在 2019 春节前的最后一个工作日"
 author: gudong
 tags: 随想
-categories: blog 
+categories: think
 ---
 
 ![今天的西二旗地铁早高峰](https://upload-images.jianshu.io/upload_images/588640-c4e3d11b2fd505a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
