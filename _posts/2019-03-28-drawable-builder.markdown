@@ -12,22 +12,27 @@ so, DrawableBuilder is comming...
 
 该 Builder 类主要提供语义化的 API 进行快捷的 Shape 创建操作。
 
-比如我们要对一个 View 设置一个线条背景，给定的效果如下所示：
+通过语义化的 API 创建 shape drawable。
+
+## 代码地址
+
+https://gist.github.com/maoruibin/4293314f0b7c277c2a635efa858a3e6e
+
+
+如下，几行代码就生成了一个线条背景 drawable。
+
+```Java
+Drawable drawable = new DrawableBuilder()
+  .line()
+  .build();
+tvName.setBackground(drawable);
+```
+
+效果：
 
 ![](https://ws3.sinaimg.cn/large/006tKfTcly1g1eumuk7isj30dg03mmwx.jpg)
 
-首先写好 TextView 布局，代码如下所示：
-
-```xml
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="6dp"
-        android:gravity="center"
-        android:text="咕咚来了"/>
-```
-接着用 xml 编写线条背景 drawable，代码如下所示：
+而之前，我们大都是像如下方式来构造线条 shape。
 
 ```xml
 <shape xmlns:android="http://schemas.android.com/apk/res/android" 
@@ -46,9 +51,9 @@ tvName.setBackgroundResource(R.drawable.bk_line_drawable);
 
 ![](https://ws3.sinaimg.cn/large/006tKfTcly1g1eumuk7isj30dg03mmwx.jpg)
 
-以上是传统的设置方式，在写好布局文件后，都需要去 res 目录下再创建 drawable 文件，然后再切换回 Activity 或者布局文件进行背景设置，这就免不了我们跳来跳去的切换目录，很麻烦。
+可以看到，两种方式效果一致，但是使用体验却更好。在写好布局文件后，都需要去 res 目录下再创建 drawable 文件，然后再切换回 Activity 或者布局文件进行背景设置，这就免不了我们跳来跳去的切换目录，很麻烦。
 
-现在通过 DrawableBuilder 通过 java api 直接构造线条 drawable，如下所示：
+相比而言，语义化 API 就显得非常友好易用，如下所示：
 
 ```java
 Drawable drawable = new DrawableBuilder()
