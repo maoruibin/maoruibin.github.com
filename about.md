@@ -32,7 +32,7 @@ layout: page
     <li><a href="./2019/02/28/weibo-work-record.html" target="_blank">微博记录</a></li>
     <li><a href="./2019/04/02/mouth-review.html" target="_blank">Mouth Review</a></li>
     <li><a href="./think" target="_blank">Think</a></li>
-    <li><a href="./2019/04/05/2019-tools.html" target="_blank">ToWrite 个人周边主力 2019</a></li>
+    <li><a href="./2019/04/05/2019-tools.html" target="_blank">周边主力 2019</a></li>
 </ul>
 
 
