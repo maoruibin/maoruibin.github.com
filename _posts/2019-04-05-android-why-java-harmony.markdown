@@ -10,12 +10,14 @@ categories: blog
 
 **全文重点罗列**
 
-* Java 是 Sun 公司开发的一门语言，它是一个开放的平台。
-* Sun 公司为 JVM 发布了 JVM 规范，任何公司都可以按照此规范开发 JVM 语言，如 Kotlin、Scala 等。
+* Java 是 Sun 公司开发的一门语言，同时 Java 也是一个开放平台。
+* Sun 公司为 JVM 发布了 JVM 规范，任何公司都可以按照此规范开发 JVM 语言，如现在的 Kotlin、Scala 等。
 * JVM 语言必须要通过 JCP(Java Community Process)对其拥有的TCK(Technology Compatibility Kit)测试。
-* Harmony 是 Apache 2005 年开发的一个开源的，免费的 Java 实现，只是没有完全通过 Sun 公司的 TCK 测试，按照 Apache 协议发布。
-* Open JDK 是 Sun 公司在 2009 发布的完全自由，开放源码的 Java平台标准版（Java SE）免费开源实现。按照 GPL 协议发布。
-* Android 一开始使用的 Java 实现是基于 Apache 协议发布的 Harmony，后来由于 Harmony 本身的限制以及 Oracle 公司的起诉，在 Android 7.0 开始使用 Open JDK。
+* Harmony 是 Apache 2005 年开发的一个开源的，免费的 Java 实现，只是**没有完全通过 Sun 公司的 TCK 测试**，按照 **Apache 协议**发布。
+* Open JDK 是 Sun 公司在 2009 发布的完全自由，开放源码的 Java平台标准版（Java SE）免费开源实现，按照 **GPL 协议**发布。
+* Android 一开始使用的 Java 实现是基于 Apache 协议发布的 Harmony，后来由于 Harmony 本身的限制以及 Oracle 公司的起诉，从 Android N 开始, Google 开始用 Open JDK来替换 Harmony。
+
+>PS：其实知道这些就够了。。。
 
 ---
 
