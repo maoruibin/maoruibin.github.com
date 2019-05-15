@@ -15,6 +15,24 @@ author: gudong
 
 [记日记](https://github.com/maoruibin/maoruibin.github.com/edit/master/_posts/2019-01-01-2019-log.markdown)
 
+## 05/14
+成功把歪说后端进行了代码部署。后续只要写完业务，直接 push 到 github, 就会自动部署服务到生产环境，非常爽。
+
+最近把自己的各个小 APP 都打理了一下，感觉不错。
+
+利用 leancloud 做了一个[云收藏](http://waishuo.leanapp.cn/news/favorite)，目前提供了简陋的 api
+* 收藏
+* 取消收藏
+* 收藏列表
+
+老爹在内蒙古打工，今天发过来的照片。
+
+![](https://i.loli.net/2019/05/15/5cdbf66c9484472300.jpg)
+
+是一个原始森林。
+
+![](https://i.loli.net/2019/05/15/5cdbf6bb8038033171.jpg)
+
 ## 05/13
 ```
 周末
