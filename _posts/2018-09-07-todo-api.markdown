@@ -14,7 +14,7 @@ categories: blog
 
 ## 介绍
 
-柳叶清单是自己开发的一个清单 Web 应用，目前网页版已经上线运行，地址如下：
+柳叶清单是自己开发的一个 Web 清单应用，目前网页版已经上线运行，地址如下：
 
 [http://gudong.name/list](http://gudong.name/list)
 
@@ -37,11 +37,12 @@ categories: blog
 
 下面是目前开放出来的所有数据操作相关的 API，包括用户登录、注册，以及事项（Todo）、分组（Group）、项目（Project）数据的操作，如下所示：
 
+-----
+
 ## 用户信息
 
------
 ### 登录
->  https://waishuo.leanapp.cn/users/api/v1.0/login
+>  https://waishuo.leanapp.cn/api/v1.0/users/login
 
 请求方式：POST 
 
@@ -53,7 +54,7 @@ categories: blog
 ![](https://ws1.sinaimg.cn/large/006tNbRwly1fv249o3de2j31dw0pu0uv.jpg)
 
 ### 注册
-> https://waishuo.leanapp.cn/users/api/v1.0/register
+> https://waishuo.leanapp.cn/api/v1.0/users/register
 
 请求方式：POST 
 
@@ -75,14 +76,12 @@ categories: blog
 无
 
 
-
 响应结果：
 ![](https://ws4.sinaimg.cn/large/006tNbRwly1fv24s4zezxj31di0fgjsg.jpg)
 
-====
-
-## Todo 
 -----
+## Todo 
+
 ### 创建 todo
 > https://waishuo.leanapp.cn/api/v1.0/todos
 
@@ -140,10 +139,10 @@ categories: blog
 ![](https://ws2.sinaimg.cn/large/006tNbRwly1fv2aemqnszj31ea0hqwfp.jpg)
 
 
-====
+-----
 
 ## 分组 API
------
+
 ### 创建分组
 > https://waishuo.leanapp.cn/api/v1.0/groups
 
@@ -200,12 +199,9 @@ categories: blog
 
 ![](https://ws1.sinaimg.cn/large/006tNbRwly1fv2axmd09bj31e005m3yi.jpg)
 
-
-====
+-----
 
 ## Project 相关 api
-
------
 
 ### 创建项目
 > https://waishuo.leanapp.cn/api/v1.0/project
