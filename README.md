@@ -47,6 +47,10 @@ If you want to test locally on your machine, do the following steps also:
 6. Test your app with `bundle exec htmlproofer ./_site`
 7. Do you want to use the [jekyll-admin](https://jekyll.github.io/jekyll-admin/) plugin to edit your posts? Go to the admin panel: `http://localhost:4000/admin`. The admin panel will not work on GitHub Pages, [only locally](https://github.com/jekyll/jekyll-admin/issues/341#issuecomment-292739469).
 
+编辑器
+> http://127.0.0.1:4000/admin
+
+
 ## Settings
 
 You must fill some informations on `_config.yml` to customize your site.
