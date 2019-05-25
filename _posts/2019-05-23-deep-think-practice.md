@@ -24,3 +24,10 @@ categories: think
 > [你有什么道理后悔没有早点知道？ - 风墟的回答 - 知乎](https://www.zhihu.com/question/23819007/answer/131276556)
 >
 > Less is more
+
+> [90后李叫兽给我们3条启示](https://mp.weixin.qq.com/s/RgNtYhJjdjKoyNE7H6G-mg)
+> 轻松给自己一个答案，是最大的懒惰，
+> 不要糊弄自己，让所有的思考，决定尽可能的清晰
+> 深挖问题本质
+
+`成长`
