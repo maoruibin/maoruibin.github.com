@@ -5,6 +5,51 @@ title: "Mouth Review"
 author: gudong 
 categories: log
 ---
+# 五月总结
+
+看球赛，精彩纷呈的季后赛，超级英雄莱昂纳德。
+![](https://i.loli.net/2019/06/13/5d026fca8ea4155110.jpg)
+
+重新发现了语雀，让它成为我的知识管理中心，目前良好[罗盘 · 语雀](https://www.yuque.com/gudong-osksb/mszxuc)
+
+**稍后阅读**
+
+专注于学习一个技术点，吃透读懂
+
+## 生活
+媳妇找了一个月工作，很辛苦，但是没结果，今年工作普遍不好找，还需要加强自身水平。
+轩轩越来越爱说话了，很活波，淘气。教育孩子并不容易。
+6.1 带孩子去了公司，很喜欢玩。
+季后赛看到很过瘾，早晨很多时间都花在看直播了，周末跟老妈、媳妇看到了四加时，精彩。
+
+印象最深的还是莱昂纳德，今年他要拿总冠军了，我一定要买一个他的衣服，很喜欢他，今年路转粉。
+
+![](https://wx1.sinaimg.cn/mw690/6fb50cedgy1g3enca1vrhj20go0b475h.jpg)
+![](https://wx1.sinaimg.cn/mw690/7d940fcfgy1g2zge15iawj20ko0kkdkx.jpg)
+
+这个绝杀是自己在大巴上看的，感觉这球要绝杀，投出去的时候很像，但是一直在颠，后来看到球从网子里出来了，太厉害了。
+
+自己烤的土豆片超好吃。
+
+![](https://wx3.sinaimg.cn/mw690/6fb50cedly1g3gb0zeicuj23k02o07wl.jpg)
+
+
+## 开发
+有一段时间空闲时间不少，我开始继续折腾 leanclode 云，很好玩，我用玩 android 和 Gank 的搜索 API 做了 Gogo 搜索，[Gogo](http://waishuo.leanapp.cn/gogo)，在搜索技术文章时非常有用。
+
+学习技术点。
+
+最重要的，我做了 **稍后阅读** ，早就有了这个想法，那几天收到 Darkeet 鼓舞，下午花了点时间便把 APP 雏形完成了。
+
+这个雏形框架用到了之前外包项目的代码。
+
+重新走查了一遍柳叶清单开放 API，然后发布了，还在 玩 android 推了一下。[maoruibin/liuye: 柳叶清单开放 API 文档](https://github.com/maoruibin/liuye)  
+自己算是满足了自己的小愿望，成功开发了 API，尽管目前貌似还没什么人用。
+
+## 工作
+开发抽奖功能、补充完成投票功能，不容易呢。
+
+发布器自动存草稿
 
 
 # 四月总结
