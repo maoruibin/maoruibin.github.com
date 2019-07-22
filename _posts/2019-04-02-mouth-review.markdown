@@ -6,6 +6,8 @@ author: gudong
 categories: log
 ---
 
+* 每次 mouth review 时给轩轩写信
+
 # 七月规划
 * 数据结构学习
 * 购房资格调查（已经快五年了）
