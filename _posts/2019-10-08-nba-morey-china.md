@@ -9,6 +9,7 @@ categories: blog
 ---
 
 前几天莫雷发表了一条和香港有关的 twitter ，随后发觉不妥，随即删除，接着引发了更大的舆论风暴。
+![](https://i.loli.net/2019/10/09/EWOwIr7Heyoh6PY.jpg)
 
 后续莫雷没有任何明确的致歉，然后国内与其合作的厂商纷纷宣布取消与火箭队的合作。
 
@@ -17,6 +18,8 @@ categories: blog
 现在央视已经宣布不在播出 NBA 比赛，腾讯也停止播放 nba 所有的季前赛。
 
 nba 凉凉在即…
+
+![](https://i.loli.net/2019/10/09/tFuoaSmg79brYpZ.jpg)
 
 这个事件展现出了很多东西。
 
