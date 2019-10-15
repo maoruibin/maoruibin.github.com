@@ -2,7 +2,7 @@
 title: About
 layout: page
 ---
-![Profile Image]({{ site.url }}/{{ site.picture }})
+![Profile Image]({{ site.url }}/{{ site.profile_bk }})
 
 <b>喜欢的东西</b><br>
 <ul>

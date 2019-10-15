@@ -3,8 +3,11 @@ layout: post
 author: 咕咚
 title: "追寻 Unix/Linux 的源头，那些改变世界的人们..."
 shang: true
-qrcode_mp: true
+qrcode_mp: false
 tags: 操作系统  
+image: https://tva1.sinaimg.cn/large/006y8mN6ly1g6xx9axo6ij313w0u04qp.jpg
+
+headerImage: true
 categories: blog 
 ---
 昨天看文章时发现自己对 linux 操作系统不够了解，还记得 17 年时听过老师的一些课，对 linux 的历史有一点了解，不过当时并没有记录笔记，现在已经忘的差不多了。

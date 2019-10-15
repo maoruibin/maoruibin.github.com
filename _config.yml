@@ -10,6 +10,7 @@ description: A blog about gudong.name 咕咚
 # better with square images
 external-image: false
 picture: assets/images/github_profile.png
+profile_bk: assets/profile/profile_bk_2019.jpg
 
 # If you want to include your resume, set to true
 # and specify source (external or local).
