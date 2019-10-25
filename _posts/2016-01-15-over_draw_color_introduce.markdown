@@ -1,7 +1,7 @@
 ---
 layout: post
 author: 咕咚
-title: "    "
+title: "Android 过度绘制介绍"
 description: ""
 cover-color: "zzz"
 catalog:    true
