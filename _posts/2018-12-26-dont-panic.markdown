@@ -2,7 +2,7 @@
 layout: post
 author: 咕咚
 title: "不要慌"
-description: ""
+description: 遇事不慌，才可以更好的处理。
 qrcode_mp: true
 author: gudong
 categories: think

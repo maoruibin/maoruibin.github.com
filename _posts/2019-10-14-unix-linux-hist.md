@@ -3,6 +3,7 @@ layout: post
 author: 咕咚
 title: "追寻 Unix/Linux 的源头，那些改变世界的人们..."
 shang: true
+description: 昨天看文章时发现自己对 linux 操作系统不够了解，还记得 17 年时听过老师的一些课，对 linux 的历史有一点了解，不过当时并没有记录笔记，现在已经忘的差不多了。这次从网上找资料，又重新看了一遍，同时做了一些笔记。
 qrcode_mp: false
 tags: 操作系统  
 image: https://tva1.sinaimg.cn/large/006y8mN6ly1g6xx9axo6ij313w0u04qp.jpg
@@ -10,9 +11,7 @@ image: https://tva1.sinaimg.cn/large/006y8mN6ly1g6xx9axo6ij313w0u04qp.jpg
 headerImage: true
 categories: blog 
 ---
-昨天看文章时发现自己对 linux 操作系统不够了解，还记得 17 年时听过老师的一些课，对 linux 的历史有一点了解，不过当时并没有记录笔记，现在已经忘的差不多了。
-
-这次从网上找资料，又重新看了一遍，同时做了一些笔记。
+昨天看文章时发现自己对 linux 操作系统不够了解，还记得 17 年时听过老师的一些课，对 linux 的历史有一点了解，不过当时并没有记录笔记，现在已经忘的差不多了。这次从网上找资料，又重新看了一遍，同时做了一些笔记。
 
 这次看的是[鸟哥的文章](http://cn.linux.vbird.org/linux_basic/0110whatislinux.php#whatislinux_unix#)，他把 unix linux 的起源历史讲的相当细致，读起来非常有意思，而且本来他们的历史也是一个非常复杂曲折的过程，认真读一读也是收货颇多。
 

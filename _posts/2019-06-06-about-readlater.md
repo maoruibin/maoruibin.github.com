@@ -1,8 +1,8 @@
 ---
 layout: post
 author: 咕咚
-title: "什么是稍后阅读"
-description: ""
+title: "稍后阅读：一种高效阅读方式的探索"
+description: "信息大爆炸后，我们可能需要更高效的阅读方式。"
 categories: product
 catalog:    true
 shang    :  true

@@ -50,6 +50,8 @@ If you want to test locally on your machine, do the following steps also:
 编辑器
 > http://127.0.0.1:4000/admin
 
+### Scss 编译
+通过步骤三  
 
 ## Settings
 

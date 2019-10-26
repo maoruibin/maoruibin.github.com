@@ -2,6 +2,7 @@
 layout: post
 author: 咕咚
 title: "老妈的饭越来越好吃"
+description: 老妈喜欢给我做饭，而且到北京后，做的饭越来越好吃，不过肚子不争气，消化不是很好，偶尔就会肚子不舒服。
 author: gudong
 tag: thinking
 categories: blog 

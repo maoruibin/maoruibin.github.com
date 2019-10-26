@@ -67,8 +67,8 @@ authors:
         name: 咕咚
         bio: software developer
         external-image: false
-        picture: assets/images/github_profile.png
-        twitter: maoruibin9035
+        picture: assets/profile/github_profile.png
+        twitter: FZ64pAZK2h8aP4r
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
@@ -86,7 +86,7 @@ projects: false
 note: true
 
 #every week think
-weekly: true
+weekly: false
 
 # personal product
 product: true

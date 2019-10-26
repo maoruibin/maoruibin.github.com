@@ -2,6 +2,7 @@
 layout: post
 author: 咕咚
 title: "Mouth Review"
+description: 每月的回顾记录，以及下一月的展望规划。
 author: gudong 
 categories: log
 ---

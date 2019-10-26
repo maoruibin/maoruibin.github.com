@@ -3,6 +3,7 @@ layout: post
 author: 咕咚
 title: "Weekly 003"
 author: gudong
+description: 第三周
 categories: weekly 
 qrcode_mp: true
 ---

@@ -2,6 +2,7 @@
 layout: post
 author: 咕咚
 title: "Sun 公司的 Java 跟 Android 使用的 Java 库有什么关系？"
+description: 研究 Java 的发展历史，以及后来被 Oracle 收购后与 Google 的一些纠纷。
 shang: true
 qrcode_mp: true
 tags: Java Android

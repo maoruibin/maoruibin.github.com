@@ -2,6 +2,7 @@
 layout: post
 author: 咕咚
 title: "用 Xml 写 Shape Drawable 还是挺让人烦的..."
+description: 在项目开发过程中，经常用 xml 文件写 drawable，但是写多了实在麻烦，对于一些简单的 drawable 样式，完全可以用 Drawable 提供的 API 进行创建，这里对 API 进行简单包装，以便更好的使用。
 shang: true
 qrcode_mp: true
 tags: Android Drawable

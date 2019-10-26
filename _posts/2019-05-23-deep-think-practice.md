@@ -2,6 +2,7 @@
 layout: post
 author: 咕咚
 title: "值得深入思考并实践的指南"
+description: 记录那些网上看到的，非常有实践性的文章，应该经常翻出来阅读。
 categories: think 
 ---
 

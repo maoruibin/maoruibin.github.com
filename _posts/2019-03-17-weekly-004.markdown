@@ -4,6 +4,7 @@ author: 咕咚
 title: "Weekly 004"
 author: gudong
 categories: weekly 
+description: 第四周
 qrcode_mp: true
 ---
 

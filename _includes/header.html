@@ -23,7 +23,11 @@
         {% endif %}
 
         <h1 class="title">
-            {{ site.name }}
+                {% if page.title == "Home"%}
+                    {{ site.name }}
+                {% else %}
+                    {{page.title}}
+                {% endif %}
         </h1>
         
         
@@ -33,7 +37,15 @@
             title="{{ site.bio }}" 
             href="{{ site.bio-url}}">
 
-            <span id="type-it" >{{ site.bio }}</span>
+            <span id="type-it" >
+                {% if page.title == "Home"%}
+                    {{ site.bio }}
+                {% else %}
+                    {{ page.bio }}
+                {% endif %}
+
+                
+            </span>
             
             </a>
         </h2>

@@ -2,6 +2,7 @@
 layout: post
 author: 咕咚
 title: "货币基金及其风险"
+description: 日常学习基金投资时的一些记录。
 author: gudong
 tag: 知乎
 categories: note 

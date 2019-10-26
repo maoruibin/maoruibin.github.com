@@ -1,19 +1,27 @@
 ---
 layout: page
-title: Weekly
+title: Note
+bio: 系统的知识框架学习，是提高效率，节省学习成本的有效方法。
 ---
 
 <section class="list">
+    
     {% for post in site.posts %}
         
         <!-- categories: note -->
         {% if post.categories contains 'note' %}
+            
             <div class="item {% if post.star %}star{% endif %}">
-                <a class="url" href="{% if post.externalLink %}{{ post.externalLink }}{% else %}{{ site.url }}{{ post.url }}{% endif %}">
-                    <aside><time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
-                    <h5 class="title">{{ post.title }}</h5>
-                </a>
-            </div>
+                    <a class="url" href="{{ post.url }}">
+                            <h2 class="title" style="font-size: 1.5em">{{ post.title }}</h2>
+                    </a>
+                    
+                    <time datetime="{{ post.date | date:"%d-%m-%Y" }}" >
+                            {{ post.date | date: "%b %d %Y" }}
+                    </time>
+                    <p class="description">{{ post.description}}</p>            
+                    <a class="url" href="{{ post.url }}">more...</a>
+            </div>                
         {% endif %}
     {% endfor %}
 </section>

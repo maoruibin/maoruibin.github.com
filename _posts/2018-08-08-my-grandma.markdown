@@ -2,7 +2,7 @@
 layout: post
 author: 咕咚
 title: "我的奶奶"
-description: ""
+description: 关于奶奶的一些回忆、思考。
 author: gudong
 tags: 随想 碎碎念 
 qrcode_mp: true

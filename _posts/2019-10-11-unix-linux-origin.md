@@ -2,6 +2,7 @@
 layout: post
 author: 咕咚
 title: "Unix 与 Linux 操作系统的源头历史"
+description: 本文是自己看[鸟哥的 Linux 私房菜 \-\- Linux是什么？从Linux的历史谈起 ](http://cn.linux.vbird.org/linux_basic/0110whatislinux.php#whatislinux_unix#)的摘录，对原文做了部分摘录，并加以自己的注释。感谢鸟哥的文章。
 author: gudong
 tag: 操作系统
 qrcode_mp: true

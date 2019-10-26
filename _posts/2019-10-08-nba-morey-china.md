@@ -2,12 +2,12 @@
 layout: post
 author: 咕咚
 title: "NBA 凉凉"
+description: 莫雷一条 Twitter 引发的舆论风暴。
 shang: true
 qrcode_mp: true
 tags: think 
 categories: blog 
 ---
-
 
 前几天莫雷发表了一条和香港有关的 twitter ，随后发觉不妥，随即删除，接着引发了更大的舆论风暴。
 

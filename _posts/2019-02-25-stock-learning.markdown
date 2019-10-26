@@ -3,6 +3,7 @@ layout: post
 author: 咕咚
 title: "《为什么要学习股票投资？》"
 author: gudong
+description: 羊陪家同学的股票系列教材，对于小白非常适用，股票交易有很多东西要了解，当然最好的方式就是直接去实践，但是磨刀不误砍柴工，系统了解下一定是好事。
 tag: 知乎专栏
 categories: note 
 ---

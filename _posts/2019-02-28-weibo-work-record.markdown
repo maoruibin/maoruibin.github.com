@@ -2,9 +2,10 @@
 layout: post
 author: 咕咚
 title: "微博工作记录"
+description: 大需求记录
 author: gudong
 tag: 记录
-categories: work 
+categories: think 
 ---
 
 > 按时间顺序，记录入职微博后，自己负责开发过的大功能。主要记录核心内容以及开发过程中的问题，思考。

@@ -6,6 +6,7 @@ catalog: true
 hide: true
 cover-url: https://ws1.sinaimg.cn/large/0069RVTdly1fubzx37ambj31kw16k1kx.jpg
 tags: 日志 memory
+description: 那些平凡的日志
 hidden: true
 categories: log
 author: gudong

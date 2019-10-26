@@ -1,18 +1,24 @@
 ---
 layout: page
 title: Projects
+bio: project
 ---
 <section class="list">
     {% for post in site.posts %}
         
         <!-- categories: product -->
         {% if post.categories contains 'product' %}
-            <div class="item {% if post.star %}star{% endif %}">
-                <a class="url" href="{% if post.externalLink %}{{ post.externalLink }}{% else %}{{ site.url }}{{ post.url }}{% endif %}">
-                    <aside><time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
-                    <h5 class="title">{{ post.title }}</h5>
+        <div class="item {% if post.star %}star{% endif %}">
+                <a class="url" href="{{ post.url }}">
+                        <h2 class="title" style="font-size: 1.5em">{{ post.title }}</h2>
                 </a>
-            </div>
+                
+                <time datetime="{{ post.date | date:"%d-%m-%Y" }}" >
+                        {{ post.date | date: "%b %d %Y" }}
+                </time>
+                <p class="description">{{ post.description}}</p>            
+                <a class="url" href="{{ post.url }}">more...</a>
+        </div>                
         {% endif %}
     {% endfor %}
 </section>
