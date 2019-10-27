@@ -30,9 +30,8 @@ bio: all post by years
     {% assign nyear = post.next.date | date: '%Y' %}
         {% if year != nyear %}
             <h2 class="title" style="font-size: 1.5em">## {{ post.date | date: '%Y' }}（{{ counts[i]}}）</h2>
+            {% assign i = i | plus: 1 %}
         {% endif %}
-        <!-- {{ post.date | date: '%m-%d' }} &raquo; [{{ post.title }}]({{ post.url }} "{{ post.title }}")<br> -->
-
         <div class="item">  
             <a class="url" href="{{ post.url }}">
                 <p class="title">{{ post.date | date: '%m-%d' }} &raquo; {{ post.title }}</p>
