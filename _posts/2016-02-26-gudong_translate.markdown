@@ -2,7 +2,7 @@
 layout: post
 author: 咕咚
 title: "咕咚翻译：Android 设备上翻译效率神器"
-description: ""
+description: "咕咚翻译是自己最近开发的一个实现『划词翻译』功能的 Android 应用 ，可能是目前 Android 市场上翻译效率最高的一款应用。"
 cover-color: "zzz"
 categories: product
 catalog:    true
@@ -14,7 +14,7 @@ tags: App 效率
 
 ## 示意图
 
-<img src="http://7xr9gx.com1.z0.glb.clouddn.com/gd.gif" style="width: 50%;">
+<img src="https://upload-images.jianshu.io/upload_images/588640-bb21211def7c14a3.gif?imageMogr2/auto-orient/strip|imageView2/2/w/393/format/webp" style="width: 50%;">
 
 ## 项目地址
 目前咕咚翻译已经开源到了 Github ,[咕咚翻译](https://github.com/maoruibin/TranslateApp),欢迎 star ,如果有 bug 或者更好的意见可以提 issue.  
@@ -61,7 +61,7 @@ tags: App 效率
 
 就是这么简单，此时单词的释义就会出现在手机屏幕，如下所示
 
-<img src="http://7xr9gx.com1.z0.glb.clouddn.com/marketing1.pic_hd.jpg" style="width: 50%;margin: auto;"><br>
+<img src="https://upload-images.jianshu.io/upload_images/588640-958e1b75817f53c5.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/540/format/webp" style="width: 50%;margin: auto;"><br>
 
 同时还支持收藏功能，既然是用户要翻译的词语，那应该很可能就是陌生单词，此时可以加入收藏到你的生词本。方便日后查阅。
 

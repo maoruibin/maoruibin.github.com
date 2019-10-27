@@ -32,6 +32,7 @@ layout: page
     <li><a href="./2019/02/28/weibo-work-record.html" target="_blank">微博记录</a></li>
     <li><a href="./2019/04/02/mouth-review.html" target="_blank">Mouth Review</a></li>
     <li><a href="./think" target="_blank">Think - 个人记录区域</a></li>
+    <li><a href="./archive" target="_blank">Archive - 归档</a></li>
     <li><a href="./weekly" target="_blank">Weekly - 18 年的每日记录</a></li>
     <li><a href="./2019/04/05/2019-tools.html" target="_blank">周边主力 2019</a></li>
     <li><a href="./2019/05/23/deep-think-practice.html" target="_blank">值得深入思考并实践的指南</a></li>

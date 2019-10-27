@@ -2,14 +2,14 @@
 layout: post
 author: 咕咚
 title: "易剪：手机端的剪报助手"
-description: ""
+description: "为了解决个人在手机上阅读文章时而开发的一个收集笔记内容的 Android 工具 App，核心功能就是帮助用户在移动设备上快速剪贴自己感兴趣的文章片段。"
 cover-color: "#34495e"
 categories: product
 shang    :  true
 catalog:    true
 tags: App 
 ---
-易剪是自己为了解决个人在手机上阅读文章时而开发的一个收集笔记内容的 Android 工具 App，核心功能就是帮助用户在移动设备上快速剪贴自己感兴趣的文章片段。
+易剪是自己为了解决在手机上阅读文章时而开发的一个收集笔记内容的 Android 工具 App，核心功能就是帮助用户在移动设备上快速剪贴自己感兴趣的文章片段。
 
 ## 下载
 
