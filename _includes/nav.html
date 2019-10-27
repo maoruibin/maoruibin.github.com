@@ -52,6 +52,12 @@
                 </li>
             {% endif %}
         {% endif %}
+        
+        {% if page.title != "Home" and page.title != "Archive" %}
+        <li class="item">
+            <a class="link" href="{{ site.url }}/archive">Archive</a>
+        </li>
+        {% endif %}
 
         {% if site.resume == true %}
             <li class="item">
