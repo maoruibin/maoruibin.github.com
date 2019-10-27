@@ -7,21 +7,9 @@ bio: 系统的知识框架学习，是提高效率，节省学习成本的有效
 <section class="list">
     
     {% for post in site.posts %}
-        
         <!-- categories: note -->
         {% if post.categories contains 'note' %}
-            
-            <div class="item {% if post.star %}star{% endif %}">
-                    <a class="url" href="{{ post.url }}">
-                            <h2 class="title" style="font-size: 1.5em">{{ post.title }}</h2>
-                    </a>
-                    
-                    <time datetime="{{ post.date | date:"%d-%m-%Y" }}" >
-                            {{ post.date | date: "%b %d %Y" }}
-                    </time>
-                    <p class="description">{{ post.description}}</p>            
-                    <a class="url" href="{{ post.url }}">more...</a>
-            </div>                
+            {% include blog-post.html %}         
         {% endif %}
     {% endfor %}
 </section>
