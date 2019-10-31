@@ -2,7 +2,6 @@
 layout: post
 author: 咕咚
 title:  "Java关键字之 volatile"
-description:  "描述信息"
 catalog:    true
 tags:  Java volatile
 categories: blog 

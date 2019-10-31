@@ -6,6 +6,12 @@
     <time datetime="{{ post.date | date:"%d-%m-%Y" }}" >
             {{ post.date | date: "%b %d %Y" }}
     </time>
-    <p class="description">{{ post.description}}</p>            
+    <p class="description">
+                {% if post.description == ‘’ or post.description == "" %}
+                {{ post.content | strip_html | truncate:100 }}
+                {% else %}
+                 {{post.description}}
+                {% endif %}
+    </p>            
     <a class="url" href="{{ post.url }}">more...</a>
 </div>

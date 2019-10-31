@@ -2,7 +2,6 @@
 layout: post
 author: 咕咚
 title:  "Unsafe 类介绍"
-description: "描述信息"
 catalog:    true
 tags: Java 线程
 categories: blog 

@@ -2,7 +2,6 @@
 layout: post
 author: 咕咚
 title: "AtomicInteger 一个和高并发有关的工具类"
-description: "描述信息"
 catalog:    true
 tags:  Java 线程
 categories: blog 
