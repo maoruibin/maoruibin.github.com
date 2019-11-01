@@ -7,7 +7,7 @@ hide: true
 cover-color: "#8c531b"
 tags: 日志
 hidden: true
-categories: log blog
+categories: log
 ---
 
 ![year](https://ws1.sinaimg.cn/large/6fb50cedly1fn775g79x8j217g17ge81.jpg)

@@ -7,7 +7,7 @@ hide: true
 cover-color: "#281f1d" 
 tags: 日志 
 hidden: true
-categories: log blog
+categories: log
 
 ---
  

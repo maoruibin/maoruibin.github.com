@@ -6,7 +6,7 @@ description: "我甚至记得大学每一个十一"
 catalog:    false
 qrcode_mp:  false
 hide:  false
-tags: memory
+tags: 记录
 categories: think 
 ---
 不经意间，十一已经过完了，从大学开始，每年的十一都有不一样的主题，不知为什么自己对十一影响也很深。

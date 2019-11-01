@@ -4,7 +4,7 @@ author: 咕咚
 title: "2019 春节7天 北京"
 description: 春节 7 天，还是挺丰富的。
 author: gudong
-tags: 日志 memory
+tags: 记录
 categories: think 
 ---
 

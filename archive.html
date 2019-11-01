@@ -26,17 +26,21 @@ bio: all post by years
     {% assign i = 0 %}    
 
     {% for post in site.posts %}
-    {% assign year = post.date | date: '%Y' %}
-    {% assign nyear = post.next.date | date: '%Y' %}
+        {% assign year = post.date | date: '%Y' %}
+        {% assign nyear = post.next.date | date: '%Y' %}
+
         {% if year != nyear %}
             <h2 class="title" style="font-size: 1.5em">## {{ post.date | date: '%Y' }}（{{ counts[i]}}）</h2>
             {% assign i = i | plus: 1 %}
         {% endif %}
-        <div class="item">  
-            <a class="url" href="{{ post.url }}">
-                <p class="title">{{ post.date | date: '%m-%d' }} &raquo; {{ post.title }}</p>
-            </a>
-        </div>
+        {% if post.hidden != true %}
+            <div class="item">  
+                <a class="url" href="{{ post.url }}">
+                    <p class="title">{{ post.date | date: '%m-%d' }} &raquo; {{ post.title }}</p>
+                </a>
+            </div>
+        {% endif %}
+
 
     {% endfor %}
 

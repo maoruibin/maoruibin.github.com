@@ -30,14 +30,16 @@ bio: 标签集合
     <ul class="list">
         {% assign pages_list = tag[1] %}
         {% for post in pages_list reversed %}
-            {% if post.title != null %}
+            {% if post.title != null and post.hidden != true%}
                 {% if group == null or group == post.group %}
+                    
                     <li class="item">
                         <a class="url" href="{{ site.url }}{{ post.url }}">
                             <aside class="date"><time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
                             <h3 class="title">{{ post.title }}</h3>
                         </a>
                     </li>
+                    
                 {% endif %}
             {% endif %}
         {% endfor %}
