@@ -5,7 +5,7 @@ title: "《火星救援》有感"
 description: ""
 header-img:  "assets/mars_felling_1.jpg"
 catalog:    true
-tags: 电影 随想
+tags: 电影
 categories: blog 
 ---
 忙里偷闲，在 [Acfun](http://www.acfun.tv/) 这个网站看了一部电影 - 火星救援，看之前，对这个电影没什么特别大的期待，
@@ -23,31 +23,22 @@ categories: blog
 
 ![dycc](/assets/dycc_01.jpg)
 <p style="text-align:center">很喜欢这种大场景拍摄，法国凯旋门</p>
-
 ![dycc](/assets/dycc_02.jpg)
 <p style="text-align:center">跟女主角被迫分开</p>
-
 ![dycc](/assets/dycc_03.jpg)
 <p style="text-align:center">离别总是那么纠结</p>
-
 ![dycc](/assets/dycc_04.jpg)
 <p style="text-align:center">超喜欢大场景，应该是谍影2了</p>
-
 ![dycc](/assets/dycc_05.jpg)
 <p style="text-align:center">好美</p>
-
 ![dycc](/assets/dycc_06.jpg)
 <p style="text-align:center">俄罗斯火车站</p>
-
 ![dycc](/assets/dycc_07.jpg)
 <p style="text-align:center">忘了，这是什么场景了</p>
-
 ![dycc](/assets/dycc_08.jpg)
 <p style="text-align:center">"踩石" 老巢</p>
-
 ![dycc](/assets/dycc_09.jpg)
 <p style="text-align:center">女主角被追杀了，伯恩好难过</p>
-
 容我稍许回味下当时的感觉，恩，那年我大二，那年我记得看了好多电影。《未知死亡》《窃听风暴》都挺不错的。那是一个美好的一年。
 
 关于火星救援，一开始看了剧照，只看到主演一个人穿着宇航服，行走在火星表面。觉得电影应该比较平淡无常，但事实上，这部电影好几次都戳中泪点，让人为之动容。
@@ -65,7 +56,6 @@ categories: blog
 
 ![土豆](/assets/mars_felling_2.jpg)
 <p style="text-align:center">Mark 在火星种土豆</p>
-
 电影中他为自己多了很多事，所有一切都是为了生命，看着他不停的奔波劳作，让我想到，一个深陷如此孤独的世界中的人，在没有丧失自己
 存活的希望后，还能如此的为自己明天而不断折腾，是多么不容易的一件事。
 
@@ -91,16 +81,13 @@ categories: blog
 
 ![thinking](/assets/mars_felling_4.jpg)
 <p style="text-align:center">Mark 在思考对火星车说点什么</p>
-
 在描述告别的这段剧情时，导演特意用了整部电影中少有的比较抒情的音乐作为背景音乐，很感人的情景，突然觉得在火星呆了这么久，居然对这里的一切
 有点恋恋不舍了。
 
 ![say-goodbye](/assets/mars_felling_3.jpg)
 <p style="text-align:center">Mark 跟自己的火星车告别</p>
-
 ![thinking](/assets/mars_felling_5.jpg)
 <p style="text-align:center">Mark 离开火星车</p>
-
 当他拥抱到队长时，这是他经过了所有的努力后，得到的应有的回报。
 
 ![success](/assets/mars_felling_6.jpg)

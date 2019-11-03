@@ -11,6 +11,14 @@ tags: log free
 
 [记日记](https://github.com/maoruibin/maoruibin.github.com/edit/master/_posts/1990-03-31-2019-log.markdown)
 
+## 11/03
+
+昨天去看了《少年的你》，被易烊千玺的表演惊喜到了，表演的很棒，另外剧情也不错，故事性很强，昨晚就写了部分影评，今天趁着孩子午睡把文章写完了。
+
+这周开始每周一篇技术文章，一遍思考记录类文章。
+
+![](https://i.loli.net/2019/11/03/6sOT1WhNbSxu2qm.jpg)
+
 ## 10/27
 
 这两天更新了 Blog，优化了列表展示，丰富了展示元素，模仿了 [DongSuo\-徐晓飞的个人博客](https://blog.islasher.com/)，另外，今天突发奇想，博客一直缺少一个展示每年发表了多少博客的页面，也就是经常说的归档页面，今天给补上了，挺不错，[Blog \| 咕咚](http://localhost:4000/blog/)

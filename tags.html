@@ -30,7 +30,7 @@ bio: 标签集合
     <ul class="list">
         {% assign pages_list = tag[1] %}
         {% for post in pages_list reversed %}
-            {% if post.title != null and post.hidden != true%}
+            {% if post.title != null and post.hidden != true %}
                 {% if group == null or group == post.group %}
                     
                     <li class="item">
