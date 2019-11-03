@@ -4,6 +4,7 @@ author: 咕咚
 title: "少年的你"
 description: 周末看了《少年的你》，感触颇多，电影故事性很强，值得一看，好几幕让人非常动容，另外易烊千玺跟周冬雨演技都好棒，易烊千玺太帅了。
 tags: 电影  
+qrcode_mp: true
 categories: blog 
 ---
 
