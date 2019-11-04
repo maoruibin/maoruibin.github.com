@@ -71,6 +71,12 @@ and lot of other options, like width, projects, pages, read-time, tags, related 
 published: false
 ```
 
+## 加目录
+* 根目录增加文件
+* 在 _sass/pages/home-blog-projects.sass 增加 css
+* header.xml 增加判断
+* nav 中增加判断
+
 ## How To?
 
 Check the [FAQ](./FAQ.md) if you have any doubt or problem.
@@ -78,3 +84,5 @@ Check the [FAQ](./FAQ.md) if you have any doubt or problem.
 ---
 
 [MIT](http://kopplin.mit-license.org/) License © Sérgio Kopplin
+
+
