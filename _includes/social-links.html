@@ -119,10 +119,15 @@
             <svg class="icon icon-microphone"><use xlink:href="#icon-microphone"></use></svg>
         </a>
     {% endif %}
-
+<!-- 
     {% if site.email %}
         <a class="link" data-title="Email" href="mailto:{{ site.email }}">
             <svg class="icon icon-mail"><use xlink:href="#icon-mail"></use></svg>
         </a>
-    {% endif %}
+    {% endif %} -->
+    {% if site.rss %}
+        <a class="link" data-title="Feed" href="https://{{ site.url }}/feed.xml" target="_blank">
+            <svg class="icon icon-rss"><use xlink:href="#icon-rss"></use></svg>
+        </a>
+    {% endif %}    
 </div>
