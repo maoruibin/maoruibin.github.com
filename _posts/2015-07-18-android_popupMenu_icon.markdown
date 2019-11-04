@@ -6,7 +6,7 @@ catalog:    true
 tags: Popup Question
 categories: blog 
 ---
-在做 AppPlus 项目的过程中，因为每个 Item 上面都有一个 PopupMenu，但是当时在xml文件中设置icon后，却发现icon不生效，下面是这个问题的解决方案。
+在做 AppPlus 项目的过程中，因为每个 Item 上面都有一个 PopupMenu，但是当时在xml文件中设置icon后，却发现icon不生效，下面是这个问题的解决方案。#Android
 
 
 ### 问题
@@ -82,7 +82,7 @@ src/main/res/menu/item_pop_menu.xml
                 }
             });
         }
-
+    
         //通过反射获取MenuPopupHelper实例，然后设置setForceShowIcon为true
         try {
             Field mFieldPopup=popupMenu.getClass().getDeclaredField("mPopup");
@@ -90,9 +90,9 @@ src/main/res/menu/item_pop_menu.xml
             MenuPopupHelper mPopup = (MenuPopupHelper) mFieldPopup.get(popupMenu);
             mPopup.setForceShowIcon(true);
         } catch (Exception e) {
-
+    
         }
-
+    
         //显示弹出式菜单
         popupMenu.show();
 
