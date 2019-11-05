@@ -39,5 +39,12 @@ layout: page
 
 <br>
 
+<b>博客历史</b>
+<ul>
+    <li>2019/11/06: 评论系统替换为 <a href="https://valine.js.org" target="_blank">valine</a>，并启用阅读数。</li>
+    <li>2018/12/13: 更改博客主题为极简模式的主题<a href="https://github.com/sergiokopplin/indigo" target="_blank">indigo</a></li>
+    <li>2015/05/19: 使用 Github+Jekyll 搭建博客</li>
+</ul>
+<br>
 
 

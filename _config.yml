@@ -35,9 +35,21 @@ analytics-piwik-url: 'gudong.name'
 analytics-piwik-id: 1
 
 # if you don't want comments in your posts, leave categories empty
+enable_disque: false
+
 disqus:
   shortname: gudong-name # enter this from your disqus account
-  categories: [blog, note, product] # only show disqus for posts that have these categories
+  categories: [blog, note, product] # only show disqus for posts that have these categories  
+
+# if you don't want comments in your posts, leave categories empty
+enable_valine: true
+
+valine:
+  shortname: gudong-name # enter this from your disqus account
+  categories: [blog, note, product] # only show disqus for posts that have these categories  
+  appId: 'q5V4aOUPHhbRT8jxCyNV2T7R-gzGzoHsz'
+  appKey: 'VRukIh8OADQLSmXKBcXM52bM'
+  visitors: true
 
 # if you don't have any of social below, comment the line
 weibo: maoruibin

@@ -11,7 +11,19 @@ layout: page
 <span class="date">
     <time datetime="{{ page.date | date:"%d-%m-%Y" }}">{{ page.date | date: "%A. %m %d, %Y" }}</time>
     {% if site.read-time %} - {% include read-time.html %}{% endif %}
+
+    {% if site.valine.visitors %}
+    <!-- id 将作为查询条件 -->
+    <span id="{{ page.url }}" class="leancloud_visitors" data-flag-title="Your Article Title">
+        <em class="post-meta-item-text">阅读量 </em>
+        <i class="leancloud-visitors-count">0</i>
+    </span>
+
+    {% endif %}
+
 </span>
+
+
 
 {% if site.show-tags %}
     <div class="post-tags">
@@ -55,6 +67,33 @@ layout: page
     {% include author.html %}
 {% endif %}
 
-{% if page.categories contains "blog" %}
+<!-- 
+{% if site.enable_disqus and site.disqus.categories contains page.categories %}
     {% include disqus.html %}
 {% endif %}
+-->
+
+{% if 
+    page.categories contains "blog" or 
+    page.categories contains "note" or 
+    page.categories contains "product" 
+%}
+    {% include valine.html %}    
+{% endif %}
+
+<script> 
+        new Valine({
+            el: '#vcomments', 
+            appId: '{{ site.valine.appId}}',
+            appKey: '{{ site.valine.appKey}}',
+            avatar: 'robohash', 
+            placeholder:'写评论', 
+            pageSize: 20, 
+            highlight: true, 
+            notify: false, 
+            visitor: true, 
+            avatarForce: true, 
+            meta: ['nick','mail','link'] 
+        });
+     </script>
+
