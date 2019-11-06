@@ -9,14 +9,16 @@ layout: page
 <h1 class="title">{{ page.title }}</h1>
 
 <span class="date">
-    <time datetime="{{ page.date | date:"%d-%m-%Y" }}">{{ page.date | date: "%A. %m %d, %Y" }}</time>
+    发表于
+    <time datetime="{{ page.date | date:"%d-%m-%Y" }}">{{ page.date | date: "%Y-%m-%d" }}</time>
     {% if site.read-time %} - {% include read-time.html %}{% endif %}
 
     {% if site.valine.visitors %}
+    &nbsp; | &nbsp;
     <!-- id 将作为查询条件 -->
     <span id="{{ page.url }}" class="leancloud_visitors" data-flag-title="Your Article Title">
-        <i class="leancloud-visitors-count">0</i>
-        <em class="post-meta-item-text"> visits</em>
+        <span class="leancloud-visitors-count">--</span>
+        <span class="post-meta-item-text"> 次访问</span>
     </span>
 
     {% endif %}
