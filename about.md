@@ -4,7 +4,7 @@ layout: page
 ---
 ![Profile Image]({{ site.url }}/{{ site.profile_bk }})
 
-<b>喜欢的东西</b><br>
+<b>喜欢什么</b><br>
 <ul>
     <li>篮球。就像挚友，带给我无尽的快乐与回忆。</li>
     <li>设计实现效率工具。尽管自己是工程师，但对产品有自己的理解，喜欢极致的产品体验与细节，自己也开发设计过不少工具、产品（类似<a href="https://github.com/maoruibin/TranslateApp" target="_blank">咕咚翻译</a>、<a href="http://gudong.name/product/2018/07/25/about_passbook.html" target="_blank">Passbook</a>等<a href="/product" target="_blank">小工具</a>）</li>
@@ -16,15 +16,20 @@ layout: page
 <b>性格</b><br>
 <ul>
     <li>随性、友好</li>
-    <li>踏实善良</li>
-    <li>遇事优柔寡断，不好。</li>
+    <li>乐于助人，有很强的分享意识，喜欢把自己知道的东西分享给周围的人。</li>
+    <li>遇事有些优柔寡断，不好。</li>
 </ul>
 
 <b>简单的背景</b><br>
 <ul>
-    <li>90年生，甘肃-凉州（今金昌）</li>
+    <li>90年生，甘肃-金昌（古凉州）</li>
     <li>13年毕业于内蒙古工业大学</li>
     <li>目前就职于新浪微博，主要负责微博发布器相关的工作。</li>    
+</ul>
+
+<b>其他</b><br>
+<ul>
+    <li>我的周边<a href="/2019/04/05/2019-tools.html" target="_blank">生产力工具</a></li>  
 </ul>
 
 

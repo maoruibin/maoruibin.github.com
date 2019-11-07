@@ -4,7 +4,7 @@ author: 咕咚
 title: "货币基金及其风险"
 description: 日常学习基金投资时的一些记录。
 author: gudong
-tag: 知乎
+tags: 投资 note 
 categories: note 
 ---
 
@@ -69,4 +69,5 @@ categories: note
 与此同时，也要堤防的货币基金的风险因素，上面也说到了，如果自己察觉到市场上有不稳定因素，应该及时拿出来。
 
 **说明**
+
 > 文中大部分内容援引自知乎的一篇文章  [货币基金零风险吗？ \- 知乎](https://www.zhihu.com/question/22592196)，特此说明

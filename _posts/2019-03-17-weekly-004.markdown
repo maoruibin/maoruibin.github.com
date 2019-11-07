@@ -3,6 +3,7 @@ layout: post
 author: 咕咚
 title: "Weekly 004"
 author: gudong
+tags: weekly
 categories: weekly 
 description: 第四周
 qrcode_mp: true

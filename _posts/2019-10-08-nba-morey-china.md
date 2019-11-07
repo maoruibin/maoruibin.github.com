@@ -5,7 +5,7 @@ title: "NBA 凉凉"
 description: 莫雷一条 Twitter 引发的舆论风暴。
 shang: true
 qrcode_mp: true
-tags: think 
+tags: 篮球 NBA
 categories: blog 
 ---
 

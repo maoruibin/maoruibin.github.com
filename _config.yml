@@ -1,6 +1,7 @@
 # main text of home
 name: 咕咚
 bio: Less is more
+bio-blog: 求知求真，拥抱体系。
 bio-url: http://www.sohu.com/a/245629404_559589
 
 # twitter summary info
@@ -11,6 +12,7 @@ description: A blog about gudong.name 咕咚
 external-image: false
 picture: assets/profile/github_profile.png
 profile_bk: assets/profile/profile_bk_2017.jpg
+author: 咕咚
 
 # If you want to include your resume, set to true
 # and specify source (external or local).
@@ -78,7 +80,7 @@ rss: true
 authors:
     gudong:
         name: 咕咚
-        bio: software developer
+        bio: 求知求真，拥抱体系。
         external-image: false
         picture: assets/profile/github_profile.png
         twitter: FZ64pAZK2h8aP4r
@@ -96,7 +98,7 @@ width: normal
 projects: false
 
 #note
-note: true
+note: false
 
 #every week think
 weekly: false
@@ -122,7 +124,7 @@ related: true
 post-advance-links: [blog]
 
 # show author block at the end of a post ?
-show-author: false
+show-author: true
 
 # do you want some animations?
 animation: true

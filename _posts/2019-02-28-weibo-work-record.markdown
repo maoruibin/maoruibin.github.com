@@ -4,7 +4,7 @@ author: 咕咚
 title: "微博工作记录"
 description: 大需求记录
 author: gudong
-tag: 记录
+tags: 工作
 categories: think 
 ---
 

@@ -3,9 +3,9 @@ layout: post
 author: 咕咚
 title: "说说总决赛"
 description: 2019 年的 NBA 总决赛，非常精彩，好喜欢莱昂纳德，喜欢他打球的方式。
-categories: blog
+categor [2019-06-06-about-readlater.md](2019-06-06-about-readlater.md) ies: blog
 author: gudong
-tags: blog 
+tags: NBA  篮球 
 ---
 
 
