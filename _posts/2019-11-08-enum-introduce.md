@@ -61,7 +61,7 @@ void draw(Color color){
 
 ```java
 public abstract class Enum<E extends Enum<E>> implements Comparable<E>, Serializable {
-    private final String name;
+  private final String name;
 	private final int ordinal;
 }	
 ```
@@ -86,9 +86,9 @@ enum Color{
 
 ```java
 void draw(Color color){
-	   prepareDraw();
-		 paint(color.mValue);
-     finishDraw();
+			prepareDraw();
+			paint(color.mValue);
+			finishDraw();
 }
 ```
 
