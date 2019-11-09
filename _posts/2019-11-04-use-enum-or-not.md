@@ -13,7 +13,7 @@ categories: blog
 
 > Enums often require more than twice as much memory as static constants. You should strictly avoid using enums on Android.
 
-意思是说在 Android 平台上**避免使用枚举 **，因为枚举类比一般的静态常量多占用两倍的空间。
+意思是说在 Android 平台上**避免使用枚举**，因为枚举类比一般的静态常量多占用两倍的空间。
 
 > 如果你还不了解枚举，参看文章 [枚举介绍以及枚举的本质](../../../2019/11/08/enum-introduce.html)。
 
@@ -33,7 +33,6 @@ categories: blog
 
 > ProGuard turns them back into ints anyway.
 
-> https://dim.red/2019/01/28/proguard_exploration/
 
 他的意思是 Android 中，在开启 ProGuard 优化的情况下，枚举会被转为 int 类型，所以内存占用问题是可以忽略的。具体可参看 ProGuard 的优化列表页面 [Optimizations Page](http://proguard.sourceforge.net/manual/optimizations.html)，其中就有 enum 默认被优化的一项，如下所示：
 
@@ -57,8 +56,13 @@ enum Color{
 
 ```java
 enum Date {
-  Sunday("星期日"), Monday("星期一"), Tuesday("星期二"), Wednesday("星期三"), Thursday(
-    "星期四"), Friday("星期五"), Saturday("星期六");
+  Sunday("星期日"), 
+  Monday("星期一"), 
+  Tuesday("星期二"), 
+  Wednesday("星期三"), 
+  Thursday("星期四"), 
+  Friday("星期五"), 
+  Saturday("星期六");
 
   public String value;
 
