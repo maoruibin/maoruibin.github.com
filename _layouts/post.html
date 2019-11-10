@@ -14,13 +14,7 @@ layout: page
     {% if site.read-time %} - {% include read-time.html %}{% endif %}
 
     {% if site.valine.visitors %}
-    &nbsp; | &nbsp;
-    <!-- id 将作为查询条件 -->
-    <span id="{{ page.url }}" class="leancloud_visitors" data-flag-title="Your Article Title">
-        <span class="leancloud-visitors-count">--</span>
-        <span class="post-meta-item-text">次访问</span>
-    </span>
-
+    &nbsp; | &nbsp;{% include visitor.html %}
     {% endif %}
 
 </span>
@@ -78,24 +72,10 @@ layout: page
 {% if 
     page.categories contains "blog" or 
     page.categories contains "note" or 
+    page.categories contains "think" or 
     page.categories contains "product" 
 %}
     {% include valine.html %}    
 {% endif %}
 
-<script> 
-        new Valine({
-            el: '#vcomments', 
-            appId: '{{ site.valine.appId}}',
-            appKey: '{{ site.valine.appKey}}',
-            avatar: 'robohash', 
-            placeholder:'写评论', 
-            pageSize: 20, 
-            highlight: true, 
-            notify: false, 
-            visitor: true, 
-            avatarForce: true, 
-            meta: ['nick','mail','link'] 
-        });
-     </script>
 

@@ -3,6 +3,7 @@ title: About
 layout: page
 ---
 ![Profile Image]({{ site.url }}/{{ site.profile_bk }})
+<figcaption class="caption">求真求知，拥抱体系。</figcaption>
 
 <b>喜欢什么</b><br>
 <ul>
@@ -52,4 +53,10 @@ layout: page
 </ul>
 <br>
 
+<p style="color:#aaa;font-size: 1.0rem;font-weight: 300;">最近更新于2019/11/10，
+    {% include visitor.html %}
+</p>
+<br>
+
+{% include valine.html %}    
 

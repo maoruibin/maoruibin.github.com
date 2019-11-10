@@ -3,7 +3,6 @@
 # https://jekyllrb.com/docs/pagination/
 layout: page
 title: Blog
-bio: 求知、求真，拥抱体系。
 ---
 <section class="list">
 	{% if site.posts.size == 0 %}
@@ -28,3 +27,6 @@ bio: 求知、求真，拥抱体系。
 		{% endfor %}
 	{% endif %}
 </section>
+<p hidden>
+	{% include visitor.html %}
+</p>
