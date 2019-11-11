@@ -82,7 +82,7 @@ enum Date {
 6. 在代码中调用静态方法 valueOf 方法。
 7. 定义可以外部访问的方法。
 
-> 参考自：[ProGuard 初探 · dim's blog](https://dim.red/2019/01/28/proguard_exploration/)
+> 参考自：[ProGuard 初探 · dim's blog](https://dim.red/2019/01/28/proguard_exploration/)，另外，上面的这七种情况，我并没有找到官方的说明，如果有哪位读者知道，请在评论区里留下链接，谢谢啦~ 
 
 所以现在再次解答 Android 是否应该用枚举这一问题，我们就应该结合自己使用枚举的场景，去具体的分析这个问题。
 

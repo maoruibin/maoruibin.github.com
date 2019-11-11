@@ -11,6 +11,15 @@ tags: log free
 
 [记日记](https://github.com/maoruibin/maoruibin.github.com/edit/master/_posts/1990-03-31-2019-log.markdown)
 
+## 11/11
+
+双十一，剁手节，剁了 1000 多
+
+### 工作
+
+* 修复了 alpha 期间报出的问题，一个是多线程操作 List 导致的索引异常问题，一个是 activity 已经销毁了，但是加载图片的问题
+* 发布器菜单增加描述信息需求测试通过，代码提交 gerit.
+
 ## 11/07 篮球鸡腿激励
 
 顺利完成日志的问题，加密还有问题，明天解决。
