@@ -4,7 +4,7 @@
     </a>
     
     <time datetime="{{ post.date | date:"%d-%m-%Y" }}" >
-            {{ post.date | date: "%b %d %Y" }}
+            {{ post.date | date: "%Y-%m-%d" }}
     </time>
     <p class="description">
                 {% if post.description == ‘’ or post.description == "" %}
