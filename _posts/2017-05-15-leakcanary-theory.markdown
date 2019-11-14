@@ -6,7 +6,7 @@ description: "LeakCanary 是 Square 公司为 Android 开发者提供的用于�
 catalog:    true
 qrcode_mp:  false
 tags: Skills View Android Activity 
-categories: blog 
+categories: tech 
 ---
 
 > 版权声明：本文为 **咕咚** 原创文章，可以随意转载，但必须在明确位置注明出处。

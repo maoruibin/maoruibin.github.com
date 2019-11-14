@@ -5,7 +5,7 @@ title: "Android通过颜色设置背景透明度"
 description: "Android通过颜色设置背景透明度"
 catalog:    true
 tags: Skills
-categories: blog 
+categories: tech 
 ---
 在开发过程中，经常需要把一个View的背景设置为某个颜色的半透明状态。通常我们可以通过设置颜色值的前两位而达到效果，一般情况下也能满足基本需求，比如白色色值为#ffffff,那么他的半透明颜色值可以写成#88ffffff，这样设置背景后也可以出现半透明效果。其实颜色值的前两位就是控制颜色的半透明状态的。
 

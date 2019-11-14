@@ -6,7 +6,7 @@ description: ""
 catalog:    true
 shang    :  true
 tags: Skills
-categories: blog 
+categories: tech 
 ---
 该篇文章主要讲解 Android 6.0 设备上自定义文本操作栏。
 

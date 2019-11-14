@@ -5,7 +5,7 @@ title: "存在即合理？"
 description: 独立思考，针对每天发生的事，试着从不同的角度去分析，争取找到不一定的观点，因为通用的观点知道的人太多了，多你一个，你只是分母。
 author: gudong
 tags: 思考
-categories: think 
+categories: daily 
 ---
 **存在即合理**，这是流传很久的一句话。但事实上并不能应用于所有事。
 

@@ -6,7 +6,7 @@ description: ""
 catalog:    true
 shang    :  true
 tags: Experience Skills Android View
-categories: blog 
+categories: tech 
 ---
 
 墨迹天气是一款免费的天气信息查询软件，由于要展示各种各样的数据信息，所以项目中有大量的涉及到图表相关的自定义 View，如展示 24 小时的温度曲线图、潮汐图等等。这里就简单分享一些自己在开发空气质量页面时，开发逐小时预报曲线的一些经验。

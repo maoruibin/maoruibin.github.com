@@ -5,7 +5,7 @@ title: "不要慌"
 description: 遇事不慌，才可以更好的处理。
 qrcode_mp: true
 author: gudong
-categories: think
+categories: daily
 tags: 随想
 ---
 

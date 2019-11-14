@@ -102,6 +102,9 @@ note: false
 #every week think
 weekly: false
 
+tech: true
+daily: true
+
 # personal product
 product: true
 

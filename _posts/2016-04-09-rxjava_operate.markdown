@@ -5,7 +5,7 @@ title: "使用 RxJava 重构一段判断逻辑"
 description: ""
 catalog: false
 tags: RxJava App 
-categories: blog 
+categories: tech 
 ---
 
 这么晚了我还在给咕咚翻译加在线发音功能！！还好有音乐作陪...

@@ -5,7 +5,7 @@ title: "使用 CheckStyle 检查代码"
 description: ""
 catalog:    true
 tags: Tools CheckStyle
-categories: blog 
+categories: tech 
 ---
 
 ### 前言

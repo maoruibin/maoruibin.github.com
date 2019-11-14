@@ -4,7 +4,7 @@ author: 咕咚
 title: Android设备上实现锁屏
 catalog:    true
 tags: Skills
-categories: blog 
+categories: tech 
 ---
 在Android设备上实现锁屏功能。
 

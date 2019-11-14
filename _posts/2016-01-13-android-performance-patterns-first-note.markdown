@@ -6,6 +6,7 @@ description: "该文章是自己在阅读 Android性能优化典范-第一季 �
 cover-color: "zzz"
 catalog:    true
 tags: Performance Note
+categories: note 
 ---
 该文章是自己在阅读 Android性能优化典范-第一季 时的读书笔记，Android性能优化典范主要讲了Android的渲染机制、内存和GC以及电量优化方面相关的内容，因为内容比较庞杂，加上一些知识点需要花心思去理解，所以在阅读的时候，顺便记录一下自己的阅读理解。
 

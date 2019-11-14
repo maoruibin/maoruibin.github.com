@@ -5,7 +5,7 @@ title: "Weekly 006"
 description: 第六周
 author: gudong
 tags: weekly
-categories: weekly 
+categories: daily 
 qrcode_mp: true
 ---
 

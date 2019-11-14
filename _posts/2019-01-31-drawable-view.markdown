@@ -6,7 +6,7 @@ description: Drawable 用的很多，值得好好学习一下，之前看过很�
 shang: true
 qrcode_mp: true
 tags: Android Drawable
-categories: blog 
+categories: tech 
 ---
 
 ![Photo by Patrick Tomasso on Unsplash](http://upload-images.jianshu.io/upload_images/588640-f3c7beeead2d22c8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

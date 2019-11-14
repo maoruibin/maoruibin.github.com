@@ -5,6 +5,7 @@ title:  "使用 Android 原生 API 开发设置界面"
 description: ""
 catalog:    true
 tags: Skills
+categories: tech 
 ---
 算是 17 年第一篇文章，初衷就是简单介绍下用 xml 配置设置界面，为自定义设置界面 UI 做一个铺垫。
 

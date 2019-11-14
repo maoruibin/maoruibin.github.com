@@ -5,6 +5,7 @@ title:  "JVM 内存区域介绍"
 description: ""
 catalog:    true
 tags: Java JVM
+categories: tech 
 ---
 > 作者博客地址: [http://gudong.name](http://gudong.name/)
 >

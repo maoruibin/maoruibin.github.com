@@ -6,7 +6,7 @@ description: ""
 catalog:    true
 cover-color: "zzz"
 tags: Collection
-categories: blog 
+categories: tech 
 ---
 图片是Android应用常见的资源，在Android中，图片数据用Bitmap这个类封装。这篇文章整理跟他相关的一些知识点。
 

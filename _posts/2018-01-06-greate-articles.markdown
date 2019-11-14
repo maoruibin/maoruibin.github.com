@@ -5,6 +5,7 @@ title: "日常收集的精品技术文章"
 catalog: true
 hide: false
 cover-color: "#24292E"
+categories: tech 
 tags: Collection
 ---
 # **GreatArticles**

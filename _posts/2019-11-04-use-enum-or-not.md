@@ -5,7 +5,7 @@ title: "Android 开发中是否应该使用枚举？"
 description: 在 Android 开发过程中，这个问题被很多次的提起，不少文章分析枚举的内存占用情况，后来在 Android 官方的内存优化文档中提出，不建议使用枚举，但是现在的官方文档却已将次建议删除，这背后都有哪些值得关心的东西呢？一起看看... 
 qrcode_mp: true
 tags: Optimize Android Enum
-categories: blog 
+categories: tech 
 ---
 
 > 本文由咕咚发布在[个人博客](gudong.name/blog)，转载请注明出处。

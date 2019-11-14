@@ -5,7 +5,7 @@ title:  "JVM、Dalvik、ART 介绍"
 description: ""
 catalog:    true
 tags: Skills Java Android JVM ART
-categories: blog 
+categories: tech 
 ---
 
 该篇文章主要分享记录一下自己对 Java 虚拟机这个概念以及 Dalvik 虚拟机的理解，同时也会对他们做一个简单的对比。对于 Java 虚拟机自己也在不断学习认识中，如果有什么描述有误的地方，欢迎指正。

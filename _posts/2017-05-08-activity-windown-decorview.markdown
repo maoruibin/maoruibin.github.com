@@ -7,7 +7,7 @@ catalog:    true
 qrcode_mp:  false
 shang    :  true
 tags: Skills View Android Activity 
-categories: blog 
+categories: tech 
 ---
 
 该文主要探究 Android 中 Activity 与 Window、PhoneWindow、DecorView 之间的关系。Activity 的概念都比较熟悉，但是 Window、PhoneWindow、DecorView 这几个类并不常用，所以很多时候容易忽略了它们。其实在 Activity 的背后，它们都发挥着很重要的作用，比如下文即将要说到的 setContentView()  原理以及事件分发源头都可以看到他们。

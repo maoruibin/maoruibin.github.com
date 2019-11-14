@@ -6,6 +6,7 @@ description: ""
 cover-color: "zzz"
 catalog:    true
 tags: RxJava App 
+categories: tech 
 ---
 RxJava 已经出来很长一段时间了，国内也已经有很多公司在使用，与此同时，有不少优秀的开发者也不断的在开源社区分享自己对 RxJava
 的使用理解，而且这个过程中也产出了不少优秀的 RxJava 资料。自己通过这些资料以及一些开源项目也在不断的学习 RxJava，

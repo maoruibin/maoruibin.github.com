@@ -4,8 +4,8 @@ author: 咕咚
 title:  "Android 项目开发清单"
 description: ""
 catalog:    true
-tags: Skills 架构
-categories: blog 
+tags: 架构
+categories: tech 
 ---
 
 良好的开始是成功的一半，对于一个 Android 项目更是，一个好的项目基础架构可以对项目的后续发展有至关重要的作用。所以我们在项目开发之初，应该花费一些时间去调研、设计符合自己项目的基础架构。而且从项目长远的发展来看，这些时间花的非常值得。

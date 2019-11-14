@@ -6,6 +6,7 @@ catalog: true
 cover-color: "#5e73cf"
 shang: true
 qrcode_mp: true
+categories: tech 
 tags: Skills
 ---
 

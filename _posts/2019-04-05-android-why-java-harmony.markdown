@@ -6,7 +6,7 @@ description: 研究 Java 的发展历史，以及后来被 Oracle 收购后与 G
 shang: true
 qrcode_mp: true
 tags: Java Android
-categories: blog 
+categories: tech 
 ---
 
 **全文重点罗列**

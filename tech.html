@@ -1,0 +1,13 @@
+---
+layout: page
+title: Tech
+bio: record tech
+---
+
+<section class="list">
+    {% for post in site.posts %}
+        {% if post.categories contains 'tech' %}
+        {% include blog-post.html %}               
+        {% endif %}
+    {% endfor %}
+</section>

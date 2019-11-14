@@ -7,7 +7,7 @@ catalog:    true
 qrcode_mp:  true
 shang    :  true
 tags: Skills ImageView Android
-categories: blog
+categories: tech
 
 ---
 

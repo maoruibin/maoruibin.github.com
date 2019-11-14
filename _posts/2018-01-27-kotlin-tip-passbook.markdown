@@ -8,7 +8,7 @@ cover-color: "#e5893a"
 shang: true
 qrcode_mp: true
 tags: Kotlin 
-categories: blog 
+categories: tech 
 ---
 
 最近在开发一个小应用密码本，开发的目的是自己确实有存储密码的需要，同时还有更重要的目的便是学习使用 `Kotlin`。

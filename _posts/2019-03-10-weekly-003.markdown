@@ -5,7 +5,7 @@ title: "Weekly 003"
 author: gudong
 tags: weekly
 description: 第三周
-categories: weekly 
+categories: daily 
 qrcode_mp: true
 ---
 

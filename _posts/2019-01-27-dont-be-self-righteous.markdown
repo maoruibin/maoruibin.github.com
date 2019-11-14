@@ -5,7 +5,7 @@ title: "不要拿自己的标准去衡量别人"
 description: 换位思考，说起来容易做起来难。
 author: gudong
 tags: 随想
-categories: think 
+categories: daily 
 ---
 
 快过年了，昨天跟媳妇一起去了朱辛庄附近的一个批发市场，去准备购置年货。

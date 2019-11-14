@@ -6,7 +6,7 @@ description: 运行时是一个通用概念，不同的语言可能都需要一�
 shang: true
 qrcode_mp: true
 tags: Java Runtime
-categories: blog 
+categories: tech 
 ---
 
 任何语言要运行都需要自己的运行时，Java 程序的运行时叫 Java Runtime，Android 程序的运行时叫 Android Runtime，而具体 Runtime 是个什么东西呢，就是说一个程序要在一个硬件或者平台上跑，就必须要有一个中间层用来把程序语言转换为机器能听懂的机器语言。

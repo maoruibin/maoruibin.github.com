@@ -29,6 +29,23 @@
                 </li>
             {% endif %}
         {% endif %}
+
+        {% if site.tech == true %}
+            {% if page.title != "Tech" %}
+                <li class="item">
+                    <a class="link" href="{{ site.url }}/tech">Tech</a>
+                </li>
+            {% endif %}
+        {% endif %}
+
+        {% if site.daily == true %}
+            {% if page.title != "Daily" %}
+                <li class="item">
+                    <a class="link" href="{{ site.url }}/daily">Daily</a>
+                </li>
+            {% endif %}
+        {% endif %}
+
         {% if site.product == true %}
             {% if page.title != "Product" %}
                 <li class="item">

@@ -5,7 +5,7 @@ title: "Weekly 001"
 description: 第一周
 author: gudong
 tags: weekly
-categories: weekly 
+categories: daily 
 qrcode_mp: true
 ---
 

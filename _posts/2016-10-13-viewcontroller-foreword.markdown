@@ -6,7 +6,7 @@ description: ""
 catalog:    true
 shang    :  true
 tags: 架构 ViewControl
-categories: blog 
+categories: tech 
 ---
 
 |本人博客地址 [http://gudong.name](http://gudong.name)

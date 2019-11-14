@@ -6,7 +6,7 @@ description: 在项目开发过程中，经常用 xml 文件写 drawable，但�
 shang: true
 qrcode_mp: true
 tags: Android Drawable
-categories: blog 
+categories: daily 
 ---
 
 so, DrawableBuilder is comming...

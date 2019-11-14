@@ -5,7 +5,7 @@ title: " MVP 模式在 GankDaily 中的应用"
 description: ""
 cover-color:  "#8f4b2e"
 catalog:    true
-categories: blog
+categories: tech
 tags: Product App 架构 
 ---
 最近完成了一个干货客户端 [GankDaily](https://github.com/maoruibin/GankDaily) ，

@@ -1,0 +1,15 @@
+---
+layout: page
+title: Daily
+bio: The best way to learn is to practice
+---
+
+<section class="list">
+    {% for post in site.posts %}
+        
+        <!-- categories: product -->
+        {% if post.categories contains 'daily' %}
+        {% include blog-post.html %}               
+        {% endif %}
+    {% endfor %}
+</section>

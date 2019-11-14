@@ -8,7 +8,7 @@ cover-color: "#60caf6"
 shang: true
 qrcode_mp: true
 author: gudong
-categories: blog
+categories: tech
 tags: Skills Dart Flutter
 ---
 
