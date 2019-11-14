@@ -1,7 +1,7 @@
 ---
 layout: post
 author: 咕咚
-title: "与番茄钟的一次不期而遇..."
+title: "Daily11/13 - 与番茄钟的一次不期而遇..."
 author: gudong
 tags: 效率
 categories: daily
