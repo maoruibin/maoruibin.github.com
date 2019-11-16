@@ -46,6 +46,10 @@ layout: page
     </div>
 {% endif %}
 
+{% if page.categories contains "daily" %}
+    {% include daily-intro.html %}
+{% endif %}
+
 {% if site.related %}
     {% include related.html %}
 {% endif %}

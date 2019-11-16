@@ -6,7 +6,6 @@ author: gudong
 tags: 效率
 categories: daily
 description: 与番茄钟的一次不期而遇..
-qrcode_mp: true
 ---
 
 ![](https://images.unsplash.com/photo-1522199670076-2852f80289c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2552&q=80)
