@@ -1,7 +1,5 @@
 {% if page.title == "Home"
    or page.title == "Blog"
-   or page.title == "Projects"
-   or page.title == "Weekly"
    or page.title == "Note"
    or page.title == "Contents"
    or page.title == "Think"
@@ -42,7 +40,13 @@
             href="{{ site.bio-url}}">
 
             <span id="type-it" >
-                    {{ site.bio }}                
+                    {% if page.bio %}
+                        {{ page.bio }}
+                    {% else %}
+                        {{ site.bio }}    
+                    {% endif %}
+                    
+                                
             </span>
             </a>
         </h2>
@@ -53,7 +57,7 @@
             new TypeIt('#type-it', {
                 speed: 130,
                 startDelay: 500,
-                loop: true
+                loop: {{ page.bioLoop }}
             });
         </script>
 

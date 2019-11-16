@@ -39,7 +39,7 @@ layout: page
 <ul>
     <li>微博 <a href="https://weibo.com/1874136301" target="_blank">大侠咕咚</a></li>
     <li>Rss <a href="https://gudong.name/feed.xml" target="_blank">订阅</a></li>
-    <li>公众号：咕喱咕咚</li>
+    <li>公众号：咕咚两下</li>
 </ul>
 <img style="width:150px;height:150px;" src="https://ws3.sinaimg.cn/large/006tNbRwgy1fykl72khq0j305g05g0sq.jpg"  />
 
@@ -47,6 +47,7 @@ layout: page
 
 <b>博客历史</b>
 <ul>
+    <li>2019/11/14: 增加 Daily、Tech 分类，把日记跟技术文章进行单独分类。</li>
     <li>2019/11/06: 评论系统替换为 <a href="https://valine.js.org" target="_blank">valine</a>，并启用阅读数。</li>
     <li>2018/12/13: 更改博客主题为极简模式的主题<a href="https://github.com/sergiokopplin/indigo" target="_blank">indigo</a></li>
     <li>2015/05/19: 使用 Github+Jekyll 搭建博客</li>

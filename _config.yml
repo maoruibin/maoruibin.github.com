@@ -93,14 +93,8 @@ width: normal
 # paginate: 5
 # paginate_path: "blog/:num/"
 
-# if you don't need projects, comment the *projects* configs below
-projects: false
-
 #note
 note: false
-
-#every week think
-weekly: false
 
 tech: true
 daily: true
