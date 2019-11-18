@@ -10,6 +10,8 @@ author: gudong
 tags: App 
 ---
 
+> update：稍后阅读已发布到酷安市场：https://www.coolapk.com/apk/name.gudong.read
+
 ## 需求背景
 
 当下手机内各种资讯信息爆炸，我们可以通过不同的 APP 去阅读，比如阅读微信公众号的推送，掘金社区的文章或者简书的文章，有时我们会在同一时间看到好几篇高质量的博文，但是当下却并没有充裕的时间去消化。

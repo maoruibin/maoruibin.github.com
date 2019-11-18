@@ -11,6 +11,11 @@ tags: log free
 
 [记日记](https://github.com/maoruibin/maoruibin.github.com/edit/master/_posts/1990-03-31-2019-log.markdown)
 
+## 11/18
+
+* 修复完毕所有的半屏发布器 UI 问题，提交代码到 gerrit.
+* 修复 release 期间，SendPoint 潜在的序列化问题，并提交 release。
+
 ## 11/14
 
 番茄工作法挺好，昨天已经说了，所以昨晚我已经规划好了第二天的事项。但是就是这么巧，昨晚马上要睡觉了，微信群里开始报 bug，然后开始查 bug、找原因，最终在同事的帮助下，查到半夜两点钟找到的问题原因以及解决方案。今天大半部分的时间都是在解决这个问题，从而原本今天的番茄计划也就泡汤了...
