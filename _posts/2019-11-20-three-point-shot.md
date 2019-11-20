@@ -1,14 +1,14 @@
 ---
 layout: post
 author: 咕咚
-title: "Daily11/20  - 进了一个三分"
+title: "Daily11/20  - 又进了一个三分"
 author: gudong
 tags:  篮球 product
 categories: daily
 description: 开发一下三分技术？
 ---
 
-![](https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1967&q=80)
+![](https://upload-images.jianshu.io/upload_images/588640-a64658be1afce68c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 中午去打球，天气还可以，没风，跟经常打球的朋友玩了一小时。大家战斗欲不强，不过我倒是玩的很开心，今天再次命中了一个三分，这算是自己这么多年来的第二记三分，影响深刻，😭😭😭。
 
@@ -20,11 +20,14 @@ description: 开发一下三分技术？
 
 这两年我经常在手机上写东西，很喜欢 Markdown，简单易用高效，一套格式走天下，但是在手机码字时，经常需要插入图片，而 Markdown 要求必须是远程图片，所以如何在手机上快速传图到图床一直是个问题（Mac 电脑上有 iPic 这个神器）。
 
-今年初，自己模仿一个安卓软件—图床猫，给自己开发了一个手机传图工具。毕竟记录日志时，很多图片都是在手机里，所以手机中快速传图到图床对我很有用，我博客的很多图片，都是通过这个手机软件上传的。具体如下图所示，可以在系统相册的分享找到传图入口，然后点击一键上传，也可以在 APP 中选择图片，不常用。
+今年初，自己模仿一个安卓软件—图床猫，给自己开发了一个手机传图工具。毕竟记录日志时，很多图片都是在手机里，所以手机中快速传图到图床对我很有用，我博客的很多图片，都是通过这个手机软件上传的。使用是可以在系统相册的分享找到传图入口，如下图所示：
 
-![](https://i.loli.net/2019/11/20/ZQEXIb7r19WmjYx.jpg)
+![选择上传](https://upload-images.jianshu.io/upload_images/588640-3457bacf0c907069.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![](https://i.loli.net/2019/11/20/ztkM1eg7P9oKLET.jpg)
+
+然后点击上传到图片图标，一键上传，稍等片刻，图片就可上传成功，如下所示：
+
+![上传成功](https://upload-images.jianshu.io/upload_images/588640-03c7a0bf1e2f1e00.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 上传时会自动压缩原图，以便图片保持较小的质量，方便使用。同时，上传成功后自动把图片链接格式化为 Markdown，复制粘贴到文章中即可，另外如果是电脑端要使用，则用微信或者 qq 发送即可，非常方便。
 
