@@ -11,6 +11,11 @@ tags: log free
 
 [记日记](https://github.com/maoruibin/maoruibin.github.com/edit/master/_posts/1990-03-31-2019-log.markdown)
 
+## 11/20
+
+* 图片预上传加密测试通过，代码提交进版
+* 补充 测试
+
 ## 11/18
 
 * 修复完毕所有的半屏发布器 UI 问题，提交代码到 gerrit.
