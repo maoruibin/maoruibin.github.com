@@ -9,7 +9,11 @@ tags: log free
 
 > Less is more
 
-[记日记](https://github.com/maoruibin/maoruibin.github.com/edit/master/_posts/1990-03-31-2019-log.markdown)
+## 11/21
+
+* 成功完成了激活码的生成和获取机制，LeanCloud 大法好啊。
+* 继续补充测试 case
+* release 期间草稿箱打点补充
 
 ## 11/20
 
