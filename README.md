@@ -77,6 +77,15 @@ published: false
 * header.xml 增加判断
 * nav 中增加判断
 
+## todo
+```
+本文标题： 深入理解Android事件分发机制
+本文作者： maoqitian
+发布时间： 2019-01-30
+本文链接： https://www.maoqitian.com/2019/01/30/深入理解Android事件分发机制/ 
+版权声明： 本博客所有文章除特别声明外，均采用 CC BY-NC-ND 4.0 许可协议。转载请注明出处！
+```
+
 ## How To?
 
 Check the [FAQ](./FAQ.md) if you have any doubt or problem.
