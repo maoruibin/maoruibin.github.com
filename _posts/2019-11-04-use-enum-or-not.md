@@ -18,13 +18,11 @@ categories: tech
 
 > Enums often require more than twice as much memory as static constants. You should strictly avoid using enums on Android.
 
-意思是说在 Android 平台上 **avoid** 使用枚举，因为枚举类比一般的静态常量多占用两倍的空间。
-
-> 如果你还不了解枚举，参看文章 [枚举介绍以及枚举的本质](../../../2019/11/08/enum-introduce.html)。
+意思是说在 Android 平台上 **avoid** 使用枚举，因为枚举类比一般的静态常量多占用两倍的空间（如果你还不了解枚举，参看文章 [枚举介绍以及枚举的本质](../../../2019/11/08/enum-introduce.html)。）
 
 由于枚举最终的实现原理还是类，在编译完成后，最终为每一种类型生成一个静态对象，而在内存申请方面，对象需要的内存空间远大于普通的静态常量，而且分析枚举对象的成员变量可知，每一个对象中默认都会有一个字符数组空间的申请，计算下来，枚举需要的空间远大于普通的静态变量。具体分析可见[这篇文章](https://www.liaohuqiu.net/cn/posts/android-enum-memory-usage/)。
 
-所以，照此来看，在 Android 这样对内存寸土必争的平台上，如果只是使用枚举来标记类型，那使用静态常量确实更优，但是现在翻看官方文档发现，这个建议已经被删除了。（
+所以，照此来看，在 Android 这样对内存寸土必争的平台上，如果只是使用枚举来标记类型，那使用静态常量确实更优，但是现在翻看官方文档发现，这个建议已经被删除了。
 
 为什么官方会删除？难道是之前的建议有错误吗，或者描述的不够精确？
 
