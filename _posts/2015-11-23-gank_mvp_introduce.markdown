@@ -6,7 +6,7 @@ description: ""
 cover-color:  "#8f4b2e"
 catalog:    true
 categories: tech
-tags: Product App 架构 
+tags: Product App 架构  MVP
 ---
 最近完成了一个干货客户端 [GankDaily](https://github.com/maoruibin/GankDaily) ，
 一个基于[干货集中营](http://gank.io)的手机客户端，整个客户端借鉴 drakeet 的[妹纸](https://github.com/drakeet/Meizhi)应用。但是在原项目的基础上，
@@ -87,11 +87,11 @@ M(左手)知道 P 需要钱，所以就慷慨的给钱,谁叫他是老大呢，�
                             // after get data complete, need put off time one day
                             mCurrentDate = new Date(date.getTime()-DAY_OF_MILLISECOND);
                         }
-
+    
                         @Override
                         public void onError(Throwable e) {
                         }
-
+    
                         @Override
                         public void onNext(List<Gank> list) {
                             // some day the data will be return empty like sunday, so we need get after day data
@@ -105,7 +105,7 @@ M(左手)知道 P 需要钱，所以就慷慨的给钱,谁叫他是老大呢，�
                         }
                     });
         }
-
+    
         public void checkAutoUpdateByUmeng() {
             if(mContext.getIntent().getSerializableExtra("BUNDLE_GANK") == null){
                 UmengUpdateAgent.setUpdateCheckConfig(BuildConfig.DEBUG);
@@ -114,7 +114,7 @@ M(左手)知道 P 需要钱，所以就慷慨的给钱,谁叫他是老大呢，�
                 UmengUpdateAgent.update(mContext);
             }
         }
-
+    
         //check version info ,if the version info has changed,we need pop a dialog to show change log info
         public void checkVersionInfo() {
             String currentVersion = AndroidUtils.getAppVersion(mContext);
@@ -166,11 +166,11 @@ M(左手)知道 P 需要钱，所以就慷慨的给钱,谁叫他是老大呢，�
                             // 获取数据完毕，将日期推迟到下一天 为获取更多数据做准备
                             mCurrentDate = new Date(date.getTime()-DAY_OF_MILLISECOND);
                         }
-
+    
                         @Override
                         public void onError(Throwable e) {
                         }
-
+    
                         @Override
                         public void onNext(List<Gank> list) {
                             // 如果有一天数据为空，则继续获取下一天的数据
@@ -210,19 +210,19 @@ M(左手)知道 P 需要钱，所以就慷慨的给钱,谁叫他是老大呢，�
          * @param data
          */
         void fillData(List<T> data);
-
+    
         /**
          * append data to history list(load more)
          * @param data
          */
         void appendMoreDataToView(List<T> data);
-
+    
         /**
          * no more data for show and this condition is hard to appear,it need you scroll main view long time
          * I think it has no body do it like this ,even though，I deal this condition also, In case someone does it.
          */
         void hasNoMoreData();
-
+    
         /**
          * show change log info in a dialog
          * @param assetFileName the name of local html file like "changelog.html"
@@ -257,12 +257,12 @@ Activity 必须有一个 Presenter ,所以我在 BaseActivity 中已经事先定
          * the presenter of this Activity
          */
         protected P mPresenter;
-
+    
         /**
          * TODO use Dagger2 instance Presenter
          */
         protected abstract void initPresenter();
-
+    
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -272,7 +272,7 @@ Activity 必须有一个 Presenter ,所以我在 BaseActivity 中已经事先定
             checkPresenterIsNull();
             initToolBar();
         }
-
+    
         private void checkPresenterIsNull(){
            if(mPresenter == null){
                throw new IllegalStateException("please init mPresenter in initPresenter() method ");
@@ -304,13 +304,13 @@ MainActivity中 initPresenter
 它直接调用自己父类 BasePresenter 的构造方法，这里可以看看 BasePresenter 类，很简单。
 
     public class BasePresenter<GV extends IBaseView> {
-
+    
         protected GV mView;
-
+    
         protected Activity mContext;
-
+    
         public static final GuDong mGuDong = MainFactory.getGuDongInstance();
-
+    
         public BasePresenter(Activity context, GV view) {
             mContext = context;
             mView = view;
