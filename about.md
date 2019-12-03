@@ -7,25 +7,25 @@ layout: page
 
 <b>喜欢什么</b><br>
 <ul>
-    <li>篮球。就像挚友，带给我无尽的快乐与回忆。</li>
-    <li>设计实现效率工具。尽管自己是工程师，但对产品有自己的理解，喜欢极致的产品体验与细节，自己也开发设计过不少工具、产品（类似<a href="https://github.com/maoruibin/TranslateApp" target="_blank">咕咚翻译</a>、<a href="./2018/07/25/about_passbook.html" target="_blank">Passbook</a>等<a href="/product" target="_blank">小工具</a>）</li>
-    <li>听歌唱歌。</li>
+    <li>户外运动，<a href="https://gudong.name/tags#%E7%AF%AE%E7%90%83" target="_blank">最爱篮球。</a</li>
+    <li>效率工具。自己开发设计过不少工具、产品（类似<a href="https://github.com/maoruibin/TranslateApp" target="_blank">咕咚翻译</a>、<a href="./2018/07/25/about_passbook.html" target="_blank">Passbook</a>等<a href="/product" target="_blank">小工具</a>）</li>
+    <li>听歌</li>
     <li>爬山</li>
-    <li>动物：牛</li>
+    <li>最喜欢的动物：小牛</li>
 </ul>
 
 <b>性格</b><br>
 <ul>
     <li>随性、友好</li>
-    <li>乐于助人，有很强的分享意识，喜欢把自己知道的东西分享给周围的人。</li>
-    <li>遇事有些优柔寡断，不好。</li>
+    <li>乐于助人，乐于分享，分享使我快乐</li>
+    <li>有些优柔寡断</li>
 </ul>
 
 <b>简单的背景</b><br>
 <ul>
-    <li>90年生，甘肃-金昌（古凉州）</li>
+    <li>90年生，甘肃-凉州</li>
     <li>13年毕业于内蒙古工业大学</li>
-    <li>目前就职于新浪微博，主要负责微博发布器相关的工作。</li>    
+    <li>目前就职于新浪微博，曾负责开发维护微博信息流相关业务，目前主要负责微博发布相关工作。</li>    
 </ul>
 
 <b>其他</b><br>
@@ -39,7 +39,7 @@ layout: page
 <ul>
     <li>微博 <a href="https://weibo.com/1874136301" target="_blank">大侠咕咚</a></li>
     <li>Rss <a href="https://gudong.name/feed.xml" target="_blank">订阅</a></li>
-    <li>公众号：咕咚两下</li>
+    <li>公众号：咕咚同学 来关注哦~</li>
 </ul>
 <img style="width:150px;height:150px;" src="https://ws3.sinaimg.cn/large/006tNbRwgy1fykl72khq0j305g05g0sq.jpg"  />
 
