@@ -7,8 +7,8 @@ layout: page
 
 <b>喜欢什么</b><br>
 <ul>
-    <li>户外运动，<a href="https://gudong.name/tags#%E7%AF%AE%E7%90%83" target="_blank">最爱篮球。</a> </li>
-    <li>效率工具。自己开发设计过不少工具、产品（类似<a href="https://github.com/maoruibin/TranslateApp" target="_blank">咕咚翻译</a>、<a href="./2018/07/25/about_passbook.html" target="_blank">Passbook</a>等<a href="/product" target="_blank">小工具</a>）</li>
+    <li>户外运动，<a href="https://gudong.name/tags#%E7%AF%AE%E7%90%83" target="_blank">最爱篮球</a>。</li>
+    <li>效率工具。自己开发设计过不少工具、产品（类似<a href="https://github.com/maoruibin/TranslateApp" target="_blank">咕咚翻译</a>、<a href="./2018/07/25/about_passbook.html" target="_blank">Passbook</a>等<a href="/product" target="_blank">小工具</a>。）</li>
     <li>听歌</li>
     <li>爬山</li>
     <li>最喜欢的动物：小牛</li>
