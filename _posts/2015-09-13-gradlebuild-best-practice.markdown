@@ -4,7 +4,7 @@ author: 咕咚
 title:  "build.gradle最佳实践之buildConfigField"
 description:  "AndroidStudio中使用build.gradle的最佳实践"
 catalog:    true
-tags: Experience Gradle Collection
+tags: Gradle Collection
 categories: tech
 ---
 使用 AndroidStudio 进行开发，其中很重要的一个文件就是 build.gradle，它是整个项目编译打包的控制中心，这里收集一些日常会用到的语法或者使用技巧，以备后用。
