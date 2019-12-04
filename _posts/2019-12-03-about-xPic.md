@@ -38,7 +38,7 @@ tags: App
 
 ### 通过咕咚云图 APP 传图
 
-打开引用，点击中间 icon，然后选择图片上传，如下所示：
+打开应用，点击中间 icon，然后选择图片上传，如下所示：
 
 ![](https://tva1.sinaimg.cn/large/006tNbRwly1g9kxe3dyaej30kz0bggmv.jpg)
 
