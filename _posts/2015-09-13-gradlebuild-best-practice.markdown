@@ -1,7 +1,7 @@
 ---
 layout: post
 author: 咕咚
-title:  "build.gradle最佳实践之buildConfigField"
+title:  "build.gradle 最佳实践集合"
 description:  "AndroidStudio中使用build.gradle的最佳实践"
 catalog:    true
 tags: Gradle Collection
