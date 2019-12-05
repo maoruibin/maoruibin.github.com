@@ -7,9 +7,9 @@ layout: page
 
 <b>喜欢什么</b><br>
 <ul>
-    <li>户外运动，<a href="https://gudong.name/tags#%E7%AF%AE%E7%90%83" target="_blank">最爱篮球</a>。</li>
-    <li>App 开发，主要是效率工具 app，自己开发设计过<a href="https://github.com/maoruibin/TranslateApp" target="_blank">咕咚翻译</a>、<a href="./2018/07/25/about_passbook.html" target="_blank">Passbook</a>等<a href="/product" target="_blank">工具</a>。</li>
-    <li>听歌</li>
+    <li>户外运动，<a href="https://gudong.name/tags#%E7%AF%AE%E7%90%83" target="_blank">尤其喜欢篮球</a>。</li>
+    <li>个人 App 开发，曾开发设计过<a href="https://github.com/maoruibin/TranslateApp" target="_blank">咕咚翻译</a>、<a href="./2018/07/25/about_passbook.html" target="_blank">Passbook</a>等<a href="/product" target="_blank">工具</a>。</li>
+    <li>写东西（公众号「咕咚同学」每日感悟，每日更新，最下方可扫码）</li>
     <li>爬山</li>
     <li>喜欢的动物：牛</li>
 </ul>
@@ -18,7 +18,6 @@ layout: page
 <ul>
     <li>随性、友好</li>
     <li>乐于助人，乐于分享</li>
-    <li>有些优柔寡断</li>
 </ul>
 
 <b>简单的背景</b><br>
@@ -53,7 +52,7 @@ layout: page
 </ul>
 <br>
 
-<p style="color:#aaa;font-size: 1.0rem;font-weight: 300;">最近更新于2019/11/10，
+<p style="color:#aaa;font-size: 1.0rem;font-weight: 300;">最近更新于2019/12/05，
     {% include visitor.html %}
 </p>
 <br>
