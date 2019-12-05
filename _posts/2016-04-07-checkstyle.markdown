@@ -8,24 +8,21 @@ tags: Tools CheckStyle
 categories: tech 
 ---
 
+> 本文最后修改于：2019/12/05 调整、删减部分语句
+
 ### 前言
 
 最近在看廖祜秋的下拉刷新项目 [android-Ultra-Pull-To-Refresh](https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh)，就在今天做了一些精简操作后，准备加入项目准备使用时，发现 lib 根目录下有一个 `checkstyle.xml` 文件，很好奇它是干什么的，后来 Google 后，原来这东西可以用来检查代码，随即查询了一些资料，把它用了起来，下面简单记录下。
 
 ### 用途
 
-先不说如何配置，先说它有什么用。
+AndroidStudio 支持在项目中通过指定 CheckStyle 规则去检查代码写的是不是规范，如果代码中有不合该规范的地方，可以在控制台看到对应的提示信息。
 
-AndroidStudio 可以通过自己指定的 CheckStyle 去检查自己写的代码是不是符合规则，如果代码中有不合该规范的地方，都可以在控制台看到对应的提示信息。
+这里比较好的一点是，你可以自定义 checkstyle ，所以可以根据自己的代码规范去一点点完善这个 checkstyle，也可以使用一些大公司的 checkstyle ，并且这些 checkstyle  文件大都可以被搜到。
 
-这里比较好的一点是，你可以自定义自己的 checkstyle ,可以根据自己的代码规范去一点点完善这个 checkstyle ,也可以使用一些大公司的 checkstyle ,这些 checkstyle  文件是可以搜到的。
+### 效果
 
-### 最终效果
-
-说了这么多，还是看最终效果比较来的直白一点。
-
-下图中使用 checkstyle 检查我的 MainActivity，我故意让一个成员变量的命名没有按照驼峰式去写，然后点击菜单键的 Check
-Current File 检查如下。
+下图中使用 checkstyle 检查我的 MainActivity，其中我故意让一个成员变量的命名没有按照驼峰式去写，然后点击菜单列表中的 Check Current File 选项，具体如下。
 
 ![one](/assets/checkstyle_1.jpg)
 
@@ -35,13 +32,11 @@ Current File 检查如下。
 
 ### 配置
 
-已经看到了具体效果，是不是跃跃欲试了，这时你可能试着点击了菜单右键，却发现没有`Check Current File` 这个选项。
-
-下面具体说下
+已经看到了具体效果，是不是跃跃欲试了，这时你可能试着点击了菜单右键，却没有发现`Check Current File` 这个选项，因为你还没有安装 CheckStyle-IDEA 插件，如何安装，具体如下：
 
 #### 安装插件
 
-要使用 checkstyle 需要安装一个 AndroidStudio 插件 CheckStyle-IDEA,你可以通过在线安装插件的方式去安装，也可以通过本地安装，[插件地址](https://github.com/jshiell/checkstyle-idea)
+打开 AndroidStudio 的插件市场，便可通过在线安装的方式进行安装，也可以通过本地安装，[插件地址](https://github.com/jshiell/checkstyle-idea)
 
 #### 配置 checkstyle 文件
 
@@ -69,19 +64,17 @@ Current File 检查如下。
 
 #### 完毕
 
-到此，基本的配置就完毕了。现在 AndroidStudio 的控制面板会多一个 CheckStyle，你可以在这里方便的进行代码检查。
-
-可以点击面板的左上角下拉框 Rule 去动态切换不同的 checkstyle。
+到此，基本的配置就完毕了。现在 AndroidStudio 的控制面板会多一个 CheckStyle，你可以在这里方便的进行代码检查。可以点击面板的左上角下拉框 Rule 去动态切换不同的 checkstyle。
 
 ### 总结
 
-其实代码检查还有很多方式，这只是一种，有兴趣可以看看其他几种,如 Lint , [Findbugs](http://findbugs.sourceforge.net/) 。
+其实代码检查还有很多方式，这只是一种，有兴趣可以看看其他几种，如 Lint 、 [Findbugs](http://findbugs.sourceforge.net/) 。
 
-### 有用的超链接
-[checkstyle 项目地址](https://github.com/checkstyle/checkstyle)
+### 有用的链接
+* [checkstyle 项目地址](https://github.com/checkstyle/checkstyle)
 
-[CheckStyle API 文档](http://checkstyle.sourceforge.net/checks.html)
+* [CheckStyle API 文档](http://checkstyle.sourceforge.net/checks.html)
 
-[代码规范和Android项目中的一些可用工具](http://tech.glowing.com/cn/dai-ma-gui-fan-he-androidxiang-mu-zhong-de-xie-ke-yong-gong-ju/)
+* [代码规范和Android项目中的一些可用工具](http://tech.glowing.com/cn/dai-ma-gui-fan-he-androidxiang-mu-zhong-de-xie-ke-yong-gong-ju/)
 
-[Static code analysis plugin for Android project](https://github.com/noveogroup/android-check)
+* [Static code analysis plugin for Android project](https://github.com/noveogroup/android-check)
