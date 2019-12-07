@@ -4,9 +4,9 @@ layout: page
 
 <!-- 文章详情展示模板 -->
 
-{% if page.header-img %}
+<!-- {% if page.header-img %}
     <img class="title-image" src="{{ site.url}}/{{ page.header-img}}" alt="{{ page.title }}">
-{% endif %}
+{% endif %} -->
 
 <h1 class="title">{{ page.title }}</h1>
 
@@ -29,6 +29,11 @@ layout: page
             <a class="item" href="{{ site.url }}/tags#{{ tag | slugify }}">{{ tag }}</a>
         {% endfor %}
     </div>
+{% endif %}
+
+
+{% if page.header-img %} 
+    {% include post-header.html %}
 {% endif %}
 
 {{content}}

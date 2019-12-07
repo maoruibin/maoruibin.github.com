@@ -5,11 +5,10 @@ title: "一个微信小号的实验 | Daily 12/05"
 author: gudong
 tags:  think
 categories: daily
+header-img: "https://upload-images.jianshu.io/upload_images/588640-2d517bc0659e59ff.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+header-desc: "我想静静"
 description: 微信太吵，我想静静。
 ---
-
-![我想静静](https://upload-images.jianshu.io/upload_images/588640-2d517bc0659e59ff.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
 
 就在不久前，自己买了一个手机号，特意用来注册微信小号，注册小号后，马上就把自己不重要的微信群都转移了过去，这样做的目的是
 **减少群消息对自己注意力的消耗。**

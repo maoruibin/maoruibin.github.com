@@ -6,8 +6,11 @@ author: gudong
 tags:  篮球 
 categories: daily
 description: 篮球让我快乐
+header-img: "https://i.loli.net/2019/12/01/jgEklRoMBpw2VzZ.jpg"
+header-desc: "第一场雪"
+header-desc: "我想静静"
+
 ---
-![](https://i.loli.net/2019/12/01/jgEklRoMBpw2VzZ.jpg)
 
 下雪了，今年冬天的第一场雪，很好看。尽管之前有预报下雪，但今天还是忘记带伞了，不过下雪比下雨有一点好，就是下雪时，即使忘记带伞也可以毫不犹豫的回家，下雨的话，你可能就要想想了。
 

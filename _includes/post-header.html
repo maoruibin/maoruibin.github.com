@@ -1,0 +1,14 @@
+<div style="text-align: center;margin-top: -2.5em;margin-bottom: 2.2em;">
+    
+    {% if page.header-img contains "assets" %} 
+        <img src="{{ site.url }}/{{ page.header-img }}" alt="{{ page.title }}">
+    {% else %}    
+        <img src="{{ page.header-img}}" alt="{{ page.title }}"> 
+    {% endif %}
+
+    
+    {% if page.header-desc %} 
+        <figcaption class="caption">{{page.header-desc}}</figcaption>
+    {% endif %}
+        
+</div>  
