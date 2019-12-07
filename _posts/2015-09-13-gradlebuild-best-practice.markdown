@@ -9,6 +9,16 @@ categories: tech
 ---
 使用 AndroidStudio 进行开发，其中很重要的一个文件就是 build.gradle，它是整个项目编译打包的控制中心，这里收集一些日常会用到的语法或者使用技巧，以备后用。
 
+## 排除依赖包中的 support 依赖
+
+```groovy
+implementation ('com.github.anzewei:parallaxbacklayout:1.1.9'){
+     exclude group: "com.android.support"
+}
+```
+
+通过 exclude 排除掉依赖包中的 support 依赖，这样可以解决跟主工程的冲突问题，其他的重复也可通过类似的方式解决。
+
 ## 指定签名信息
 
 签名信息比较隐私，不应该直接出现在项目中，可以把密钥文件、密码、账号，存储在本地的文件夹，然后把这个信息定义在 lcoal.properties 文件中，并且让该文件不受 git 版本控制，通过 .gitignore 文件过滤。

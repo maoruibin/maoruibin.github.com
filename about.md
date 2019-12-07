@@ -11,7 +11,6 @@ layout: page
     <li>个人 App 开发，曾开发设计过<a href="https://github.com/maoruibin/TranslateApp" target="_blank">咕咚翻译</a>、<a href="./2018/07/25/about_passbook.html" target="_blank">Passbook</a>等<a href="/product" target="_blank">工具</a>。</li>
     <li>写东西（公众号「咕咚同学」每日感悟，每日更新，最下方可扫码）</li>
     <li>爬山</li>
-    <li>喜欢的动物：牛</li>
 </ul>
 
 <b>性格</b><br>
