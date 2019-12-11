@@ -26,9 +26,16 @@ layout: page
     <li>目前就职于新浪微博，曾负责开发维护微博信息流相关业务，目前主要负责微博发布相关工作。</li>    
 </ul>
 
-<b>其他</b><br>
+<b>一些文章</b><br>
 <ul>
-    <li>我的周边<a href="/2019/04/05/2019-tools.html" target="_blank">生产力工具</a></li>  
+    <li><a href="/2017/04/26/loading_layout_practice.html" target="_blank">Android 多状态加载布局的开发 Tips</a></li>  
+    <li><a href="/2016/02/26/gudong_translate.html" target="_blank">咕咚翻译：Android 设备上翻译效率神器</a></li>  
+    <li><a href="/2019/12/01/oop.html" target="_blank">工程师的基本修养 — 面向对象六大原则介绍</a></li>  
+    <li><a href="/2018/12/31/2018-summary.html" target="_blank">2018 年终总结</a></li>  
+    <li><a href="/2017/12/27/why-programe-zhihu.html" target="_blank">有谁是单纯地喜欢编程吗？</a></li>  
+    <li><a href="/2015/10/24/1024.html" target="_blank">我的 1024</a></li>  
+    <li><a href="/2017/04/22/github_usage.html" target="_blank">如何用好 github 中的 watch、star、fork</a></li>  
+    <li><a href="/2019/04/05/2019-tools.html" target="_blank">生产力工具</a></li>  
 </ul>
 
 <br>
