@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "长按二维码关注我 | Daily 12/13"
 author: gudong
-tags:  think 微信
+tags:  think 微信 产品
 categories: daily
 description: 脑洞一个
 ---

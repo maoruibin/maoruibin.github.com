@@ -3,7 +3,7 @@ layout: post
 author: 咕咚
 title: "为什么微信没有这个功能？ | Daily 12/09"
 author: gudong
-tags:  think 微信
+tags:  think 微信 产品
 categories: daily
 description: 产品定位
 ---
