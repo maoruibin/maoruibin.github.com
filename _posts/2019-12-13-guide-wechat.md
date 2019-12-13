@@ -5,9 +5,7 @@ title: "长按二维码关注我 | Daily 12/13"
 author: gudong
 tags:  think 微信 产品
 categories: daily
-description: 脑洞一个
 ---
-
 
 无意标题党，但这篇说的确实是二维码关注引导问题。
 
