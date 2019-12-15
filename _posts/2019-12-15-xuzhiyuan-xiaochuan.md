@@ -6,7 +6,7 @@ author: gudong
 tags:  think
 categories: daily
 header-img: "https://wx1.sinaimg.cn/mw690/6fb50cedly1g9xpzs8pdfj21400u0qar.jpg"
-header-desc: "拍于北沙河"
+header-desc: "北沙河-2019/12/15"
 description: 带着偏见看世界
 ---
 
