@@ -10,7 +10,7 @@ header-desc: "拍于北沙河"
 description: 带着偏见看世界
 ---
 
-![小桥](https://wx3.sinaimg.cn/mw690/6fb50cedly1g9xot0vkk2j21400u0dmr.jpg)
+
 
 我第一次看许知远的《十三邀》是去年看的，当时因为采访的对象的李诞，而自己刚看过《吐槽大会》，对李诞这个人挺感兴趣，所以就看了这个节目。
 
