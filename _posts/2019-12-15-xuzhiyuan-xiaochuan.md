@@ -5,7 +5,7 @@ title: "我喜欢这个节目 | Daily 12/15"
 author: gudong
 tags:  think
 categories: daily
-header-img: "https://wx3.sinaimg.cn/mw690/6fb50cedly1g9xot0vkk2j21400u0dmr.jpg"
+header-img: "https://wx1.sinaimg.cn/mw690/6fb50cedly1g9xpzs8pdfj21400u0qar.jpg"
 header-desc: "拍于北沙河"
 description: 带着偏见看世界
 ---
