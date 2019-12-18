@@ -1,12 +1,10 @@
 ---
 layout: post
 author: 咕咚
-title: "F微信适配了夜间模式 | Daily 12/18"
+title: "微信适配了夜间模式 | Daily 12/18"
 author: gudong
 tags:  微信
 categories: daily
-header-img: "https://pic4.zhimg.com/v2-51821e6925cd86e5774ccaf8f842c735_1200x500.jpg"
-header-desc: "夜间模式-微信"
 ---
 
 
