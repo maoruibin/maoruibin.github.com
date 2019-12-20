@@ -11,7 +11,13 @@ categories: think
 长期基金定投介绍，购买中证 500 与 沪深 300 指数基金，每年均衡。
 ```
 
+[投资被动型指数基金正在造成下一次金融泡沫？ \- GeekPlux](https://geekplux.com/2019/12/17/passive-investing-stock-market-bubble-etf/)
+> 了解指数投资的一些内在要点，结合之前的次贷危机。
+
 `投资`
+
+
+
 
  [你是怎么变自律的？ - 高冷冷的回答 - 知乎](https://www.zhihu.com/question/284206141/answer/490039014)
 ```
