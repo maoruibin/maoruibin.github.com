@@ -49,7 +49,7 @@ Fir [下载地址]( https://fir.im/pl7r)
 
 咕咚，Android 开发者，咕咚翻译作者。
 
-* 个人站点 [gudong.name](http://gudong.name/)
+* 个人站点 [gudong.site](http://gudong.site/)
 
 * github [maoruibin](https://github.com/maoruibin)
 

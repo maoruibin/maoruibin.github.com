@@ -4,7 +4,7 @@ bio: Less is more
 bio-url: http://www.sohu.com/a/245629404_559589
 
 # twitter summary info
-description: A blog about gudong.name 咕咚
+description: A blog about gudong.site 咕咚
 
 # if it's an external image, update below for true
 # better with square images
@@ -17,9 +17,9 @@ author: 咕咚
 # and specify source (external or local).
 resume: false
 resume-external: true
-resume-url: https://gudong.name/2017/05/08/resume.html
+resume-url: https://gudong.site/2017/05/08/resume.html
 
-url: https://gudong.name
+url: https://gudong.site
 # your url: http://USERNAME.github.io
 
 # permalink: /:title/
@@ -32,7 +32,7 @@ analytics-baidu: 'de1df75db196971264bd87815c96f646'
 
 
 # To enable piwik tracking, supply your url & site ID below
-analytics-piwik-url: 'gudong.name'
+analytics-piwik-url: 'gudong.site'
 analytics-piwik-id: 1
 
 # if you don't want comments in your posts, leave categories empty
@@ -70,17 +70,17 @@ github: maoruibin
 # stackoverflow: 7044681/mystackoverflow
 # quora: userquora
 # reddit: username
-# medium: gudong.name
+# medium: gudong.site
 # vimeo: myvimeo
 # lanyrd: mylanyrd
-# email: gudong.name#gmail.com
+# email: gudong.site#gmail.com
 rss: true
 
 authors:
     gudong:
         name: 咕咚
         bio: 求知求真，拥抱体系。
-        about: https://gudong.name/about
+        about: https://gudong.site/about
         external-image: false
         picture: assets/profile/github_profile.png
         twitter: FZ64pAZK2h8aP4r
@@ -134,7 +134,7 @@ plugins:
   - jekyll-admin
 
 jekyll-mentions:
-    base_url: https://gudong.name
+    base_url: https://gudong.site
 
 markdown: kramdown
 kramdown:

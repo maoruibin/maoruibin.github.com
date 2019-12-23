@@ -21,7 +21,7 @@ tags: Collection
 >
 >
 > * 文章地址: [https://github.com/maoruibin/GreatArticles](https://github.com/maoruibin/GreatArticles)
-> * 个人主页: [http://gudong.name](http://gudong.name/)
+> * 个人主页: [http://gudong.site](http://gudong.site/)
 
 ## 系列文章
 - [Android 性能优化](http://hukai.me/blog/categories/android-performance/)
@@ -218,7 +218,7 @@ tags: Collection
 
 你可以通过下面的方式联系到我，欢迎关注。
 
-* [个人博客主页](http://gudong.name/)
+* [个人博客主页](http://gudong.site/)
 
 * [Github 主页](https://github.com/maoruibin)
 

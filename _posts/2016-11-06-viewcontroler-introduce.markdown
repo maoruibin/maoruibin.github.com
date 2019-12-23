@@ -10,7 +10,7 @@ categories: tech
 ---
 
 
-|本人博客地址 [http://gudong.name](http://gudong.name)
+|本人博客地址 [http://gudong.site](http://gudong.site)
 |本文简书地址:[http://www.jianshu.com/p/e70c1478cd9e](http://www.jianshu.com/p/e70c1478cd9e)
 
 [ViewController](https://github.com/maoruibin/ViewController) 是一种界面开发组件化的实现方式,利用它可以将一些复杂的 UI 界面开发组件化, 从而更好的组织代码结构,从而提高开发效率,降低维护成本。
@@ -59,6 +59,6 @@ categories: tech
 
 ## 作者
 
-[个人主页：咕咚](http://gudong.name)
+[个人主页：咕咚](http://gudong.site)
 
 [新浪微博：大侠咕咚](https://github.com/maoruibin)

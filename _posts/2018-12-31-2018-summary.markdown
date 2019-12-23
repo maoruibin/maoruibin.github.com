@@ -25,7 +25,7 @@ categories: blog
 
 ### 开发柳叶清单
 
-柳叶清单-[https://gudong.name/list](https://gudong.name/list/#/)
+柳叶清单-[https://gudong.site/list](https://gudong.site/list/#/)
 
 在学完 vue 还有 webpack 后，我终于可以把自己长久的一个想法实现了- ** 一个类似 Trello 网页清单程序 ** 。利用 Vue 技术做 UI 很轻松，但是没有后端数据库等支持，所以自己找了 [Leancloud](https://leancloud.cn/) ，它提供[云函数](https://leancloud.cn/docs/leanengine_webhosting_guide-python.html)机制，所以我可以很方便的去用它做后端的事，它极大的简化了柳叶清单的后端工作。
 
@@ -41,7 +41,7 @@ categories: blog
 
 在开发完柳叶清单，后来梳理了所有 API ，并把它们整理，然后把 API 开放了处理，尽管现在还没人用我写的清单 API。
 
-[柳叶清单开放 Api \| 咕咚](https://gudong.name/2018/09/07/todo-api.html)
+[柳叶清单开放 Api \| 咕咚](https://gudong.site/2018/09/07/todo-api.html)
 
 leancloud 还支持定时函数，所以开发在开发清单时，我想每天把清单的用户、最新数据都给自己用邮件的形式定时发给自己，就用了定时函数干了这个事。甚至自己还做了一个定时监控程序，用于监控 EOS 的价格，以便自己做波段操作，后来也是被自己玩废了，短线伤不起。
 
@@ -114,7 +114,7 @@ leancloud 还支持定时函数，所以开发在开发清单时，我想每天�
 
 - 拳王泰森自传《永不后退》
 
-> 一个真实的人，[《泰森自传》读后感](https://gudong.name/2018/09/28/taisen-book.html)
+> 一个真实的人，[《泰森自传》读后感](https://gudong.site/2018/09/28/taisen-book.html)
 
 - 道德经
 
@@ -136,7 +136,7 @@ leancloud 还支持定时函数，所以开发在开发清单时，我想每天�
 
 * 阳光灿烂的日子
 
-> 姜文，真实的人有魅力，喜欢他，今年还特意去了内务部街的胡同两次，[姜文这个导演 \| 咕咚](https://gudong.name/2018/07/28/jiangwen.html)
+> 姜文，真实的人有魅力，喜欢他，今年还特意去了内务部街的胡同两次，[姜文这个导演 \| 咕咚](https://gudong.site/2018/07/28/jiangwen.html)
 
 * 我不是药神
 

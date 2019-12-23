@@ -48,13 +48,13 @@ categories: product
 
 ## 定制新应用
 
-所以，我开发了一个适合自己使用习惯的 清单+看板 网页应用，名字暂定为 [柳叶清单](http://gudong.name/list/)。
+所以，我开发了一个适合自己使用习惯的 清单+看板 网页应用，名字暂定为 [柳叶清单](http://gudong.site/list/)。
 
 ![清单主页](http://upload-images.jianshu.io/upload_images/588640-d4a3c070d71457f0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 目前功能比较基础，但是主要的功能都有了，包括**任务添加、任务分组，任务拖拽排序、添加子任务**等，另外还有一个比较有特色的功能，就是**每晚邮件提醒当天的任务完成情况**。
 
-这是应用的网址 [http://gudong.name/list/](http://gudong.name/list/)，点击即可访问，目前没有适配手机小屏幕，所以更适合在电脑上查看使用，欢迎使用。
+这是应用的网址 [http://gudong.site/list/](http://gudong.site/list/)，点击即可访问，目前没有适配手机小屏幕，所以更适合在电脑上查看使用，欢迎使用。
 
 如果使用过程有任何问题建议，欢迎留言，也可以去这里进行[吐槽](http://support.qq.com/products/30228)。
 

@@ -15,7 +15,7 @@ published: false
 
 # 联系方式
 - 手机：182 **** 2548
-- Email：gudong.name@gmail.com
+- Email：gudong.site@gmail.com
 - QQ / 微信号：125---8410 / bxm---768410
 
 ---
@@ -25,10 +25,10 @@ published: false
 - 毛瑞斌 / 男 / 1990 
 - 本科 / 内蒙古工业大学计算机系
 - 工作年限：4年 / 目前在职
-- 技术博客：[http://gudong.name](http://gudong.name) 
+- 技术博客：[http://gudong.site](http://gudong.site) 
 - GitHub   ：[https://github.com/maoruibin](https://github.com/maoruibin) 
 - 微博主页：[@大侠咕咚](http://weibo.com/maoruibin)
-- 在线作品：[链接](http://gudong.name/portfolio/)
+- 在线作品：[链接](http://gudong.site/portfolio/)
 - 期望职位：Android 高级开发工程师
 
 ---
@@ -62,7 +62,7 @@ published: false
 * 使用 Gradle 配置项目信息，包括如 Share Key、多版本差异性控制等。
 * 负责 Android 组内的私有代码仓库搭建、管理。
 * 负责开发维护项目中的 TitleBar、Dialog、Loading 等 UI 基础组件。
-* 负责项目中的[多状态 Layout 布局开发](http://gudong.name/2017/04/26/loading_layout_practice.html)，统一所有页面的异常提示 UI 以及 loading 样式。
+* 负责项目中的[多状态 Layout 布局开发](http://gudong.site/2017/04/26/loading_layout_practice.html)，统一所有页面的异常提示 UI 以及 loading 样式。
 * 负责所有设置页面的 UI 以及逻辑开发，通过自定义 Preference 方式，使用 xml 文件的配置设置相关 UI。
 * 开发应用在 Debug 模式下的开发者控制台页面，方便在开发期的快速调试。
 
@@ -75,7 +75,7 @@ published: false
 * 开发基于 MVP 的 AndroidStudio 文件模板，批量生成 MVP 相关的模板文件。
 * 开发了一套 Loading 页面的快速开发框架。
 
-关于项目结构搭建，自己写过一篇文章进行总结整理，具体请查看文章 - [Android 项目开发清单](http://gudong.name/2017/03/25/project-list.html)。
+关于项目结构搭建，自己写过一篇文章进行总结整理，具体请查看文章 - [Android 项目开发清单](http://gudong.site/2017/03/25/project-list.html)。
 
 ---
 
@@ -120,9 +120,9 @@ published: false
 - 更多请看 GitHub 主页 [https://github.com/maoruibin](https://github.com/maoruibin)
 
 ## 技术文章
-- [Android 多状态加载布局的开发 Tips](http://gudong.name/2017/04/26/loading_layout_practice.html)
-- [Android 项目开发清单](http://gudong.name/2017/03/25/project-list.html) 
-- 更多请查看[个人博客主页](http://gudong.name/)
+- [Android 多状态加载布局的开发 Tips](http://gudong.site/2017/04/26/loading_layout_practice.html)
+- [Android 项目开发清单](http://gudong.site/2017/03/25/project-list.html) 
+- 更多请查看[个人博客主页](http://gudong.site/)
 
 ---
 

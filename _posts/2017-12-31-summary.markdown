@@ -145,9 +145,9 @@ categories: blog
 
 > 相比往年，今年并没有很多精力去维护一些开源的东西。
 >
-> [咕咚翻译](https://github.com/maoruibin/TranslateApp)从16年3月发布后连续迭代了几个版本后后来进入了长期的缓慢迭代过程，还在墨迹天气的时候曾抽出时间加过一些小功能，但是到17年，我几乎没有怎么去完善，没有那么多时间和精力，但是一直有用户断断续续的打赏，真的很[感谢他们](http://gudong.name/1990/03/01/list_pay.html)，期间也有[部分开源爱好者](https://github.com/maoruibin/TranslateApp/graphs/contributors)很热情的为咕咚翻译增加了一些特性，很有意思。
+> [咕咚翻译](https://github.com/maoruibin/TranslateApp)从16年3月发布后连续迭代了几个版本后后来进入了长期的缓慢迭代过程，还在墨迹天气的时候曾抽出时间加过一些小功能，但是到17年，我几乎没有怎么去完善，没有那么多时间和精力，但是一直有用户断断续续的打赏，真的很[感谢他们](http://gudong.site/1990/03/01/list_pay.html)，期间也有[部分开源爱好者](https://github.com/maoruibin/TranslateApp/graphs/contributors)很热情的为咕咚翻译增加了一些特性，很有意思。
 >
-> 今年在找工作之前也开源过一个比较有意思的东西，[OneDrawable](https://github.com/maoruibin/OneDrawable) - 仅使用一张资源图片为 View 设置具有按下效果的背景，关于 OneDrawable 更多说明可以查看[文档](http://gudong.name/2017/04/05/OneDrawable.html)， 这是当时在墨迹工作时自己开发的一个辅助组件，在内部使用没问题后，后来便开源了出来。
+> 今年在找工作之前也开源过一个比较有意思的东西，[OneDrawable](https://github.com/maoruibin/OneDrawable) - 仅使用一张资源图片为 View 设置具有按下效果的背景，关于 OneDrawable 更多说明可以查看[文档](http://gudong.site/2017/04/05/OneDrawable.html)， 这是当时在墨迹工作时自己开发的一个辅助组件，在内部使用没问题后，后来便开源了出来。
 >
 > 直到后来入职微博，继续开源了几个小组件，[FlowerLoading: Android 中转菊花效果实现方案.](https://github.com/maoruibin/FlowerLoading)  以及 [ActionButton:给 TextView 设置 left icon  可任意定制](https://github.com/maoruibin/ActionButton) ，这两个都是平时工作过程中抽取出来的小组件，都比较小巧，第一个转菊花 View 目前已经在微博中使用，目前微博中大部分转菊花 View 都是 FlowerLoading 的实现方案，第二个是自己纯粹开发玩的，当时看到项目中的 Button 设计特别臃肿，所以自己就试着设计了相对比较轻量的 View。
 >
@@ -159,7 +159,7 @@ categories: blog
 
 > 从接触编程开始，自己就是那种非常喜欢动手的开发者，我喜欢完美解决一个需求的感觉，喜欢参与一个东西从无到有过程。平时如果有什么好点子，我会尽快把他记录在自己的点子库里，今年要说做完整的东西有两个。
 >
-> - [易剪](http://gudong.name/product/2017/03/15/about_easypaper.html)：这是一个手机上收集文章片段的工具，一般人好像不怎么使用。当时找工作期间，每天都会在手机上花很多时间去阅读一些文字，看到一些好的片段就像把它摘录下来，当时试着用了各种便签都不方便，所以自己就想自己做一个好用的，我想到了 Android 6.0 中支持自定义文本 Action，所以就用这个新特性做了这个 APP，效果如下所示：
+> - [易剪](http://gudong.site/product/2017/03/15/about_easypaper.html)：这是一个手机上收集文章片段的工具，一般人好像不怎么使用。当时找工作期间，每天都会在手机上花很多时间去阅读一些文字，看到一些好的片段就像把它摘录下来，当时试着用了各种便签都不方便，所以自己就想自己做一个好用的，我想到了 Android 6.0 中支持自定义文本 Action，所以就用这个新特性做了这个 APP，效果如下所示：
 >
 > ![](http://upload-images.jianshu.io/upload_images/588640-38f85015e2d782b2.gif?imageMogr2/auto-orient/strip)
 >

@@ -9,7 +9,7 @@ tags: 架构 ViewControl
 categories: tech 
 ---
 
-|本人博客地址 [http://gudong.name](http://gudong.name)
+|本人博客地址 [http://gudong.site](http://gudong.site)
 |本文简书地址:[http://www.jianshu.com/p/e3f86d5a4474](http://www.jianshu.com/p/e3f86d5a4474)
 
 首先说明的是 ViewControler 并不是 Android 中存在的一个组件，而是在技术实践中总结创造出的一个开发理念，这是一种业务开发过程中的 UI 模块化思想的体现，依附于现成的 Activity 或者 Fragment 而存在。在特定的场景下使用 ViewControler ，会使你原本复杂的界面开发逻辑变得清晰明了,易于维护。下面进入正题。

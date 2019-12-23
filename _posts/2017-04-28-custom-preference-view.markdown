@@ -13,9 +13,9 @@ categories: tech
 
 > 版权声明：本文为 **咕咚** 原创文章，可以随意转载，但必须在明确位置注明出处。
 > 
-> 作者博客地址: [http://gudong.name](http://gudong.name/)
+> 作者博客地址: [http://gudong.site](http://gudong.site/)
 >
-> 本文博客地址: [http://gudong.name/2017/04/28/custom-preference-view.html](http://gudong.name/2017/04/28/custom-preference-view.html)
+> 本文博客地址: [http://gudong.site/2017/04/28/custom-preference-view.html](http://gudong.site/2017/04/28/custom-preference-view.html)
 
 
 目前该 View 的实现已开源在 GitHub，[TrendChartView](https://github.com/maoruibin/TrendChartView)，如果觉得不错，就 star 支持下。

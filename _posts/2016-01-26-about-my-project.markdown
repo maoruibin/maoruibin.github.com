@@ -44,7 +44,7 @@ categories: blog
 
 目前项目已经开源在 Github []项目地址](https://github.com/maoruibin/TranslateApp)
 
-一篇关于咕咚翻译的介绍文章 [关于咕咚翻译](http://gudong.name/product/2016/02/26/gudong_translate.html)
+一篇关于咕咚翻译的介绍文章 [关于咕咚翻译](http://gudong.site/product/2016/02/26/gudong_translate.html)
 
 [Github项目主页](https://github.com/maoruibin/TranslateApp)
 

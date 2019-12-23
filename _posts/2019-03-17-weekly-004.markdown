@@ -19,7 +19,7 @@ qrcode_mp: true
 **如何订阅**
 
 - Github Weekly: [https://github.com/maoruibin/Weekly](https://github.com/maoruibin/Weekly)
-- 个人博客：[https://gudong.name/weekly](https://gudong.name/weekly)
+- 个人博客：[https://gudong.site/weekly](https://gudong.site/weekly)
 - 语雀：[https://www.yuque.com/gudong-osksb/weekly](https://www.yuque.com/gudong-osksb/weekly)
 - 公众号：咕喱咕咚
 
@@ -53,7 +53,7 @@ qrcode_mp: true
 
 除了这两大类外，平时也吃米饭，我挺爱吃，但是貌似米饭吃了饿的快，不像面条，所以一个月也就才吃一次，除此之外还有一些小众不怎么经常吃的花样，比如稠饭，菜汤、窝窝饭（比较麻烦）、垫卷子、扁豆饭等等。
 
-更多内容请查看[老妈的饭越来越好吃](https://gudong.name/2019/03/12/mother-food.html)
+更多内容请查看[老妈的饭越来越好吃](https://gudong.site/2019/03/12/mother-food.html)
 
 ## 03/13 让人烦恼的噪音
 在公司通勤的大巴上，旁边座位有一男一女一直在聊天，我可以很清楚的听到，周围的人也应该能听到。

@@ -181,7 +181,7 @@ here is new start
 
 回家的途中火车真的很拥挤！
 
-[我的在线简历（2017-墨迹天气）](http://gudong.name/2017/05/08/resume.html)
+[我的在线简历（2017-墨迹天气）](http://gudong.site/2017/05/08/resume.html)
 
 ## 2017/05/21(添加访问次数)
 最近一直在忙面试，今天看到一微博私信要互加友链，发现对方有一篇文章分享[如何给 jekyll 主题的博客加访问统计](http://linglinyp.com/2017/05/17/busuanzi.html)，随即就加了，毕竟惦记这个功能很久了。
@@ -255,7 +255,7 @@ intro-header .page-heading{text-align:center;height: 450px;}
 
 最近这段时间做了不少好玩的东西。
 
-先做了一个 App [易剪](http://gudong.name/product/2017/03/15/about_easypaper.html),本打算开源，后来赖的没做。然后倒是开源了 [OneDrawable](https://github.com/maoruibin/OneDrawable) 这一按钮按下效果处理方案，当然这个方案对一般 MD 设计没太大用处，基本做给 iOS 设计的 UI 效果。
+先做了一个 App [易剪](http://gudong.site/product/2017/03/15/about_easypaper.html),本打算开源，后来赖的没做。然后倒是开源了 [OneDrawable](https://github.com/maoruibin/OneDrawable) 这一按钮按下效果处理方案，当然这个方案对一般 MD 设计没太大用处，基本做给 iOS 设计的 UI 效果。
 
 最近在看 Java 虚拟机。感觉比以前理解的深入多了。
 

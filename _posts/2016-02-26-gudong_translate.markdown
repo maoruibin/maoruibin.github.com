@@ -79,7 +79,7 @@ tags: App 效率
 
 咕咚，爱折腾、爱新鲜...
 
-[个人站点](http://gudong.name/)
+[个人站点](http://gudong.site/)
 
 [github](https://github.com/maoruibin)
 

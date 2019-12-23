@@ -145,17 +145,17 @@ public class Test{
 
 在执行完成类加载的第一步初时，会在内存中 (具体是在堆内存) 中生存一个代表该类的 Class 对象，针对 Person 类，此时虚拟机会在堆内存空间，开辟一块空间 用于存储 Person.class 这个对象，如下图所示
 
-![usage](https://gudong.name/assets/class_loader_1.png)
+![usage](https://gudong.site/assets/class_loader_1.png)
 
 接着如果这个类有类属性，如我们定义在 Person 中的 MAX_AGE，那么他在类准备阶段，虚拟机也会在在类对象所在的内存块，给她分配一段空间，最终在类初始化完成时，类对象的状态如下。
 
-![usage](https://gudong.name/assets/class_loader_2.png)
+![usage](https://gudong.site/assets/class_loader_2.png)
 
 此时类加载完毕，现在需要去实例化 Person p1 , 此时虚拟机会利用已经加载到内存中的 Person.class, 来生成一个 p1 的实例，此时 p1 这边变量处于栈空间，具体的对象位于堆空间，
 
 继续向下执行，需要实例化 p2 了，因为虚拟机检查到 Person.class 已存在于内从，此时直接执行实例化过程，最终的内存分配情况如下图所示
 
-![usage](https://gudong.name/assets/class_loader_3.png)
+![usage](https://gudong.site/assets/class_loader_3.png)
 
 到这里就可以看到为什么有类加载这个过程了。
 

@@ -103,4 +103,4 @@ tags: App
 
 一名软件工程师，爱打球，爱分享，爱开发。
 
-你也可以关注我的公众号「咕咚同学」订阅我，我会在哪里每天更新一些自己的日志，也可以通过我博客中的 Daily 频道订阅 [gudong.name/daily](https://gudong.name/daily)。
+你也可以关注我的公众号「咕咚同学」订阅我，我会在哪里每天更新一些自己的日志，也可以通过我博客中的 Daily 频道订阅 [gudong.site/daily](https://gudong.site/daily)。

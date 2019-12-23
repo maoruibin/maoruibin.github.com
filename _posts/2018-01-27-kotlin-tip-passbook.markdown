@@ -228,7 +228,7 @@ var value = Test.buttonGravity
 
 ## 关于作者
 
-> - 邮箱 - <gudong.name@gmail.com>
+> - 邮箱 - <gudong.site@gmail.com>
 > - 微博 - [大侠咕咚](https://weibo.com/maoruibin)
 > - 知乎 - [咕咚](https://www.zhihu.com/people/maoruibin/activities)
 > - Github - [咕咚](https://github.com/maoruibin)

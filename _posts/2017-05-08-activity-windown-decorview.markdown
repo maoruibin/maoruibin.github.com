@@ -16,9 +16,9 @@ categories: tech
 
 > 版权声明：本文为 **咕咚** 原创文章，可以随意转载，但必须在明确位置注明出处。
 >
-> 作者博客地址: [http://gudong.name](http://gudong.name/)
+> 作者博客地址: [http://gudong.site](http://gudong.site/)
 >
-> 本文博客地址: [http://gudong.name/2017/05/08/activity-windown-decorview.html](http://gudong.name/2017/05/08/activity-windown-decorview.html)
+> 本文博客地址: [http://gudong.site/2017/05/08/activity-windown-decorview.html](http://gudong.site/2017/05/08/activity-windown-decorview.html)
 
 
 

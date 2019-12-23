@@ -14,9 +14,9 @@ categories: tech
 
 > 版权声明：本文为 **咕咚** 原创文章，可以随意转载，但必须在明确位置注明出处。
 > 
-> 作者博客地址: [http://gudong.name](http://gudong.name/)
+> 作者博客地址: [http://gudong.site](http://gudong.site/)
 > 
-> 本文博客地址: [http://gudong.name/2017/05/03/thread-pool-intro.html](http://gudong.name/2017/05/03/thread-pool-intro.html)
+> 本文博客地址: [http://gudong.site/2017/05/03/thread-pool-intro.html](http://gudong.site/2017/05/03/thread-pool-intro.html)
 
 
 下面先介绍一下线程池的好处以及创建方式，接着会着重介绍关于线程池的执行原则以及构造方法的参数详解。

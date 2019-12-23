@@ -13,9 +13,9 @@ categories: tech
 
 > 版权声明：本文为 **咕咚** 原创文章，可以随意转载，但必须在明确位置注明出处。
 >
-> 个人主页: [http://gudong.name](http://gudong.name/)
+> 个人主页: [http://gudong.site](http://gudong.site/)
 >
-> 文章地址: [http://gudong.name/2017/04/24/jvm_oom_gc.html](http://gudong.name/2017/04/24/jvm_oom_gc.html)
+> 文章地址: [http://gudong.site/2017/04/24/jvm_oom_gc.html](http://gudong.site/2017/04/24/jvm_oom_gc.html)
 
 关于 JVM 内存模型以及垃圾回收的文章网上很多，自己以前也看过很多，但是却从来也没有系统的去了解学习过，这次正巧再看周志明老师的《深入理解 Java 虚拟机》，内容非常棒，所以自己就花了点时间，认真系统的学习了一遍。
 

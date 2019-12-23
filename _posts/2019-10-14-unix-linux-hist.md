@@ -78,6 +78,6 @@ Richard Stallman 是一个自由软件的追求者，同时是一个即刻，他
 
 ## 关于作者
 
-咕咚，Android 工程师，个人博客 [gudong.name](gudong.name)，公众号：咕喱咕咚
+咕咚，Android 工程师，个人博客 [gudong.site](gudong.site)，公众号：咕喱咕咚
 
 ![公众号:咕喱咕咚](https://ws3.sinaimg.cn/large/006tNbRwgy1fykl72khq0j305g05g0sq.jpg)

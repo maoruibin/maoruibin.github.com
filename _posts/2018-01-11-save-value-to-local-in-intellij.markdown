@@ -25,7 +25,7 @@ PropertiesComponent.getInstance().setValue("key","valuw");
 String value = PropertiesComponent.getInstance().getValue("key");
 ```
 
-Source frmo [咕咚的个人站点](http://gudong.name/)
+Source frmo [咕咚的个人站点](http://gudong.site/)
 
 ## 参考链接
 [Persisting State of Components](https://www.jetbrains.org/intellij/sdk/docs/basics/persisting_state_of_components.html?search=Serialization)

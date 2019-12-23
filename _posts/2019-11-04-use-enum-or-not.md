@@ -8,9 +8,9 @@ tags: Optimize Android Enum
 categories: tech 
 ---
 
-> 本文由咕咚发布在[个人博客](gudong.name/blog)，转载请注明出处。
+> 本文由咕咚发布在[个人博客](gudong.site/blog)，转载请注明出处。
 >
-> 本文永久地址：[https://gudong.name/2019/11/04/use-enum-or-not.html](https://gudong.name/2019/11/04/use-enum-or-not.html)
+> 本文永久地址：[https://gudong.site/2019/11/04/use-enum-or-not.html](https://gudong.site/2019/11/04/use-enum-or-not.html)
 
 ---
 

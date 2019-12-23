@@ -11,9 +11,9 @@ categories: tech
 
 > 版权声明：本文为 **咕咚** 原创文章，可以随意转载，但必须在明确位置注明出处。
 >
-> 作者博客地址: [http://gudong.name](http://gudong.name/)
+> 作者博客地址: [http://gudong.site](http://gudong.site/)
 >
-> 本文博客地址: [http://gudong.name/2017/05/15/leakcanary-theory.html](http://gudong.name/2017/05/15/leakcanary-theory.html)
+> 本文博客地址: [http://gudong.site/2017/05/15/leakcanary-theory.html](http://gudong.site/2017/05/15/leakcanary-theory.html)
 
 LeakCanary 是 Square 公司为 Android 开发者提供的用于在开发期检测内存泄漏的神器，本文简单分析一下LeakCanary 具体的检测原理。通过本文你将会收获：
 

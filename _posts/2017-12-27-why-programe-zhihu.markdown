@@ -13,7 +13,7 @@ categories: blog
 自己结合自己的情况写了一个答案，现在简单整理到这里。
 
 > 知乎回答地址：[https://www.zhihu.com/question/264288696/answer/284162359](https://www.zhihu.com/question/264288696/answer/284162359)
-> 博客文章地址：[http://gudong.name/2017/12/27/why-programe-zhihu.html](http://gudong.name/2017/12/27/why-programe-zhihu.html)
+> 博客文章地址：[http://gudong.site/2017/12/27/why-programe-zhihu.html](http://gudong.site/2017/12/27/why-programe-zhihu.html)
 
 ---
 

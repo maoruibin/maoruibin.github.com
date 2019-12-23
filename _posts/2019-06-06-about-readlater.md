@@ -44,7 +44,7 @@ tags: App
 
 欢迎给 稍后阅读 提意见，你可以通过下面方式找到我。
 
-* mail: gudong.name#gmail.com
+* mail: gudong.site#gmail.com
 * 微博：[大侠咕咚](http://weibo.com/maoruibin)
-* 主页：[咕咚](https://gudong.name/)
+* 主页：[咕咚](https://gudong.site/)
 

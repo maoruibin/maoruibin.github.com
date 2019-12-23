@@ -77,7 +77,7 @@ Harmony 的目标：
 
 下面是常见开源协议之间的关系区别
 
-![](https://gudong.name/assets/licence_3.jpeg)
+![](https://gudong.site/assets/licence_3.jpeg)
 
 可以看到
 

@@ -7,7 +7,7 @@ layout: page
 
 <b>喜欢什么</b><br>
 <ul>
-    <li>户外运动，<a href="https://gudong.name/tags#%E7%AF%AE%E7%90%83" target="_blank">尤其喜欢篮球</a>。</li>
+    <li>户外运动，<a href="https://gudong.site/tags#%E7%AF%AE%E7%90%83" target="_blank">尤其喜欢篮球</a>。</li>
     <li>个人 App 开发，曾开发设计过<a href="https://github.com/maoruibin/TranslateApp" target="_blank">咕咚翻译</a>、<a href="./2018/07/25/about_passbook.html" target="_blank">Passbook</a>等<a href="/product" target="_blank">工具</a>。</li>
     <li>写东西（公众号「咕咚同学」每日感悟，每日更新，最下方可扫码）</li>
     <li>爬山</li>
@@ -42,7 +42,7 @@ layout: page
 <b>关注我</b>
 <ul>
     <li>微博 <a href="https://weibo.com/1874136301" target="_blank">大侠咕咚</a></li>
-    <li>Rss <a href="https://gudong.name/feed.xml" target="_blank">订阅</a></li>
+    <li>Rss <a href="https://gudong.site/feed.xml" target="_blank">订阅</a></li>
     <li>公众号：「咕咚同学」  欢迎关注，每日更新。</li>
 </ul>
 <img style="width:150px;height:150px;" src="https://ws3.sinaimg.cn/large/006tNbRwgy1fykl72khq0j305g05g0sq.jpg"  />
