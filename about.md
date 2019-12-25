@@ -7,9 +7,9 @@ layout: page
 
 <b>喜欢什么</b><br>
 <ul>
-    <li>户外运动，<a href="https://gudong.site/tags#%E7%AF%AE%E7%90%83" target="_blank">尤其喜欢篮球</a>。</li>
+    <li>户外运动，<a href="https://gudong.site/tags#%E7%AF%AE%E7%90%83" target="_blank">篮球</a>、健步听书。</li>
     <li>个人 App 开发，曾开发设计过<a href="https://github.com/maoruibin/TranslateApp" target="_blank">咕咚翻译</a>、<a href="./2018/07/25/about_passbook.html" target="_blank">Passbook</a>等<a href="/product" target="_blank">工具</a>。</li>
-    <li>写东西（公众号「咕咚同学」每日感悟，每日更新，最下方可扫码）</li>
+    <li>写东西（公众号「咕咚同学」每日更新，最下方可扫码）</li>
     <li>爬山</li>
 </ul>
 
@@ -21,7 +21,7 @@ layout: page
 
 <b>简单的背景</b><br>
 <ul>
-    <li>90年生，甘肃-凉州</li>
+    <li>90年生，甘肃-金昌（古凉州）</li>
     <li>13年毕业于内蒙古工业大学</li>
     <li>目前就职于新浪微博，曾负责开发维护微博信息流相关业务，目前主要负责微博发布相关工作。</li>    
 </ul>
