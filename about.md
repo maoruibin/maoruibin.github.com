@@ -51,6 +51,7 @@ layout: page
 
 <b>博客历史</b>
 <ul>
+    <li>2019/12/23: 更换域名为 gudong.site。</li>
     <li>2019/11/14: 增加 Daily、Tech 分类，把日记跟技术文章进行单独分类。</li>
     <li>2019/11/06: 评论系统替换为 <a href="https://valine.js.org" target="_blank">valine</a>，并启用阅读数。</li>
     <li>2018/12/13: 更改博客主题为极简模式的主题<a href="https://github.com/sergiokopplin/indigo" target="_blank">indigo</a></li>
