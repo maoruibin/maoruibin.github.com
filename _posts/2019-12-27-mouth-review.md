@@ -10,7 +10,6 @@ header-desc: "早晨 2019/12/27"
 description: 该写年终总结了
 ---
 
-![早晨 2019/12/27](https://imgkr.cn-bj.ufileos.com/cadca3d3-9fd5-41a9-bfaa-d3bb88ce95bf.jpg)
 
 一看标题，还有四天就2020年了。
 
