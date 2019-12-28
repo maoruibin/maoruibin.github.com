@@ -44,3 +44,7 @@ Less is more
 ```
 
 `成长`
+
+
+## Slogon
+* less is more http://www.sohu.com/a/245629404_559589
