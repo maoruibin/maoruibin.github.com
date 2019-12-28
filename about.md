@@ -3,7 +3,7 @@ title: About
 layout: page
 ---
 ![Profile Image]({{ site.url }}/{{ site.profile_bk }})
-<figcaption class="caption">求真求知，拥抱体系。</figcaption>
+<figcaption class="caption">{{site.bio}}</figcaption>
 
 <b>喜欢什么</b><br>
 <ul>
@@ -21,7 +21,7 @@ layout: page
 
 <b>简单的背景</b><br>
 <ul>
-    <li>90年生，甘肃-金昌（古凉州）</li>
+    <li>90年生，甘肃-金昌（古凉州区域）</li>
     <li>13年毕业于内蒙古工业大学</li>
     <li>目前就职于新浪微博，曾负责开发维护微博信息流相关业务，目前主要负责微博发布相关工作。</li>    
 </ul>
@@ -59,7 +59,7 @@ layout: page
 </ul>
 <br>
 
-<p style="color:#aaa;font-size: 1.0rem;font-weight: 300;">最近更新于2019/12/05，
+<p style="color:#aaa;font-size: 1.0rem;font-weight: 300;">最近更新于2019/12/23，
     {% include visitor.html %}
 </p>
 <br>
