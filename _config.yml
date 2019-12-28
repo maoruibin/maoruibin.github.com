@@ -53,8 +53,10 @@ valine:
   visitors: true
 
 # if you don't have any of social below, comment the line
+# 文件在include 下面的 icon  
 weibo: maoruibin
 # jianshu: 203065de3ced
+zhihu: maoruibin
 juejin: 55f6e9de00b0d7b2c13a8526
 # facebook: 
 # twitter: maoruibin9035

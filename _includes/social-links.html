@@ -102,6 +102,12 @@
         </a>
     {% endif %}    
 
+    {% if site.zhihu %}
+        <a class="link" data-title="知乎" href="https://www.zhihu.com/people/{{ site.zhihu }}" target="_blank">
+            <svg class="icon icon-zhihu"><use xlink:href="#icon-zhihu"></use></svg>
+        </a>
+    {% endif %}    
+
     {% if site.juejin %}
         <a class="link" data-title="掘金" href="https://juejin.im/user/{{ site.juejin }}" target="_blank">
             <svg class="icon icon-juejin"><use xlink:href="#icon-juejin"></use></svg>
@@ -119,14 +125,9 @@
             <svg class="icon icon-microphone"><use xlink:href="#icon-microphone"></use></svg>
         </a>
     {% endif %}
-<!-- 
-    {% if site.email %}
-        <a class="link" data-title="Email" href="mailto:{{ site.email }}">
-            <svg class="icon icon-mail"><use xlink:href="#icon-mail"></use></svg>
-        </a>
-    {% endif %} -->
+
     {% if site.rss %}
-        <a class="link" data-title="Feed" href="http://gudong.name/feed.xml" target="_blank">
+        <a class="link" data-title="Feed" href="{{ site.url}}/feed.xml" target="_blank">
             <svg class="icon icon-rss"><use xlink:href="#icon-rss"></use></svg>
         </a>
     {% endif %}    
