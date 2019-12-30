@@ -55,9 +55,16 @@ layout: page
     {% include daily-intro.html %}
 {% endif %}
 
-{% if site.related %}
-    {% include related.html %}
+{% if page.hide-related %}
+    <span></span>    
+{% else %}
+    {% if site.related  %}
+        {% include related.html %}
+    {% endif %}
 {% endif %}
+
+
+
 
 {% if page.qrcode_mp %}
     <div style="text-align: center;margin-top: 4em;margin-bottom: 4em;">

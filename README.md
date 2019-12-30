@@ -71,6 +71,11 @@ and lot of other options, like width, projects, pages, read-time, tags, related 
 published: false
 ```
 
+### 不显示相关文章
+```
+hide-related: true
+```
+
 ## 加目录
 * 根目录增加文件
 * 在 _sass/pages/home-blog-projects.sass 增加 css

@@ -5,6 +5,7 @@ title: "再见 2015 ，你好 2016 ~"
 description: ""
 cover-color:  "#d35400"
 catalog:    true
+hide-related: true
 tags: 年终总结 随想
 categories: blog 
 ---
