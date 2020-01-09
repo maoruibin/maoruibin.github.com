@@ -12,7 +12,8 @@ external-image: false
 picture: assets/profile/github_profile.png
 profile_bk: assets/profile/profile_bk_2017.jpg
 author: 咕咚
-gudongtx: https://cdn.jsdelivr.net/gh/maoruibin/assets/pic/2019/mmexport1578533815371.jpg
+gudongqr: https://cdn.jsdelivr.net/gh/maoruibin/assets/pic/2019/mmexport1578533815371.jpg
+gudonggzh: 咕咚同学
 
 # If you want to include your resume, set to true
 # and specify source (external or local).
