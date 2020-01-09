@@ -45,7 +45,7 @@ layout: page
     <li>Rss <a href="https://gudong.site/feed.xml" target="_blank">订阅</a></li>
     <li>公众号：「咕咚同学」  欢迎关注，每日更新。</li>
 </ul>
-<img style="width:150px;height:150px;" src="https://ws3.sinaimg.cn/large/006tNbRwgy1fykl72khq0j305g05g0sq.jpg"  />
+<img style="width:150px;height:150px;" src="{{site.gudongqr}}"  />
 
 <br>
 
