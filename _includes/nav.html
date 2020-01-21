@@ -6,6 +6,14 @@
             </li>
         {% endif %}
 
+        {% if site.daily == true %}
+            {% if page.title != "Daily" %}
+                <li class="item">
+                    <a class="link" href="{{ site.url }}/daily">Daily</a>
+                </li>
+            {% endif %}
+        {% endif %}
+        
         {% if site.blog == true %}
             {% if page.title != "Blog" %}
                 <li class="item">
@@ -30,13 +38,6 @@
             {% endif %}
         {% endif %}
 
-        {% if site.daily == true %}
-            {% if page.title != "Daily" %}
-                <li class="item">
-                    <a class="link" href="{{ site.url }}/daily">Daily</a>
-                </li>
-            {% endif %}
-        {% endif %}
 
         {% if site.product == true %}
             {% if page.title != "Product" %}
