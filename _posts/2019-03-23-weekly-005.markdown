@@ -22,9 +22,9 @@ qrcode_mp: true
 - [博客](https://gudong.site/weekly)
 - [语雀](https://www.yuque.com/gudong-osksb/weekly)
 - [Github Weekly](https://github.com/maoruibin/Weekly)
-- 公众号：咕喱咕咚
+- 公众号：咕咚同学
 
-![](https://ws3.sinaimg.cn/large/006tNbRwgy1fykl72khq0j305g05g0sq.jpg)
+![](https://cdn.jsdelivr.net/gh/maoruibin/assets/pic/2019/mmexport1578533815371.jpg)
 
 
 ## 本期目录
