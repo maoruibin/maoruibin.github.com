@@ -1,4 +1,13 @@
-# 如何配置 GitHub 为个人的手机图床（Android）
+---
+layout: post
+author: 咕咚
+title: "如何配置 GitHub 为个人的手机图床（Android）"
+author: gudong
+tags:  图床
+categories: product
+---
+
+
 
 首先解释一下标题中的两个词：
 
@@ -115,6 +124,8 @@
 另外除了在软件内上传图片，还支持在相册中以及任何支持系统分享的地方，通过系统分享上传图片，这样你就可以在浏览相册、系统截图或者其他文件分享时，找到咕咚 Markdown 助手的传图入口，然后进行上传，如下所示：
 
 ![](https://cdn.jsdelivr.net/gh/maoruibin/maoruibin.github.com/assets/picgo/2019/20200211213937.png)
+
+咕咚 Markdown 助手是为 Android 手机开发的图床上传工具，没有 iOS 版本跟 PC 版本，不过 PC 版也有不少这样的工具，比如 [PicGo](https://picgo.github.io/PicGo-Doc/zh/)，支持多平台，支持的图床也很丰富，其中就包括 GitHub 图床。还有 MAC 平台上很知名的 iPic，也相当不错。
 
 另外目前软件还在不断更新迭代中，后续会不断优化，添加新功能，如果你喜欢它，欢迎把它分享给更多的人。
 
