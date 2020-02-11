@@ -97,13 +97,13 @@ categories: product
 
 ### 在咕咚 Markdown 助手中配置 GitHub
 
-软件中的配置页面在设置->图床选择 页面，然后点击 GitHub 一项即可配置，如下所示：
+软件中的配置页面在设置 -> 图床选择 页面，然后点击 GitHub 一项即可配置，如下所示：
 
 ![](https://cdn.jsdelivr.net/gh/maoruibin/assets/pic/2020/Screenshot_20200211-212335.jpg)
 
 如上图所示，配置 GitHub 图片需要依次填入
 
-* token （上面生成的）
+* token （上面步骤三生成的 token）
 
 * github 用户名（注意是用户名，不是昵称）
 
@@ -127,9 +127,9 @@ categories: product
 
 ![](https://cdn.jsdelivr.net/gh/maoruibin/maoruibin.github.com/assets/picgo/2019/20200211213937.png)
 
-咕咚 Markdown 助手是为 Android 手机开发的图床上传工具，没有 iOS 版本跟 PC 版本，不过 PC 版也有不少这样的工具，比如 [PicGo](https://picgo.github.io/PicGo-Doc/zh/)，支持多平台，支持的图床也很丰富，其中就包括 GitHub 图床。还有 MAC 平台上很知名的 iPic，也相当不错。
+咕咚 Markdown 助手是为 Android 手机开发的图床上传工具，没有 iOS 版本跟 PC 版本，不过 PC 版也有不少这样的工具，比如 [PicGo](https://picgo.github.io/PicGo-Doc/zh/)，支持多平台，支持的图床也很丰富，其中就包括 GitHub 图床。还有 MAC 平台上很知名的 [iPic](https://toolinbox.net/iPic/)，也相当不错，操作体验很好。
 
-另外目前软件还在不断更新迭代中，后续会不断优化，添加新功能，如果你喜欢它，欢迎把它分享给更多的人。
+另外目前咕咚 Markdown 助手还在不断更新迭代中，后续会不断优化，添加新功能，如果你喜欢它，欢迎把它分享给更多的人。
 
 ### 关于作者
 
