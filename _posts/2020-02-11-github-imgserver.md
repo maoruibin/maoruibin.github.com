@@ -1,7 +1,7 @@
 ---
 layout: post
 author: 咕咚
-title: "如何配置 GitHub 为个人的手机图床（Android）"
+title: "如何配置 GitHub 为个人的手机图床"
 author: gudong
 tags:  图床
 categories: product
@@ -14,7 +14,7 @@ categories: product
 * 图床
 * Github
 
-如果对它们已经了解，可以选择跳过下面的部分。
+如果对它们已经了解，可以选择跳过下面的两部分。
 
 ## 图床
 
@@ -47,17 +47,19 @@ categories: product
 
 ---
 
+## 咕咚 Markdown 助手
+
 如上面所述，如果你觉得七牛云操作麻烦、腾讯云还要付费，那么你就可以选择用 GitHub 作为自己的图床，来存储自己的网络图片。只需要注册一个 GitHub 账号，创建一个仓库即可，然后直接在浏览器里进行上传，或者通过 git 命令这种极客的方式去上传。
 
-但是不论那种，其实都有点麻烦，而且很多时候，**我们需要把手机中的图片上传到图片**，使用 GitHub 可就太麻烦了。
+但是不论那种，其实都有点麻烦，而且很多时候，我们需要把**手机中的图片**上传到图床，如果要使用 GitHub 可就太麻烦了。
 
 其实不光是 GIthub 图床，所有图床在手机上要上传都不方便。所以前几个月我开发了一个 Android 软件 — **[咕咚 Markdown 助手](https://www.coolapk.com/apk/name.gudong.pic)**，其中最重要的功能就是**上传手机中图片到图床**。于此同时，还支持上传到 GitHub 图床。目前该应用只发布到了酷安市场，咕咚 Markdown 助手主页地址，[点击可访问](https://www.coolapk.com/apk/name.gudong.pic)。
-
-## 咕咚 Markdown 助手
 
 实际上，当你下载咕咚 Markdown 助手后，无需任何配置就可以把本地图片上传到图床了，只不过默认使用的[牛图图床](https://niupic.com/)，牛图图床有一个缺点就是上传后的图片无法管理，比如重新编辑、删除等，不过对于一般的使用场景倒也够用。
 
 **如果你对自己的数据管理很在意**，咕咚 Markdown 助手支持设置 GitHub 作为图床，所以你可以使用 GitHub 图床，不过还需要一些配置才可以使用，这些配置还是稍微有点麻烦，但是好在只需要配置一次，以后就不需要在折腾了，也划得来。接下来分享一下如何在咕咚 Markdown 助手中配置 GitHub 图床。
+
+## 配置 Github 图床
 
 ### 准备工作
 
@@ -93,7 +95,7 @@ categories: product
 
 ![](https://cdn.jsdelivr.net/gh/maoruibin/maoruibin.github.com/assets/picgo/2019/20200211212151.png)
 
-### 配置咕咚 Markdown 助手中的 GitHub 图床
+### 在咕咚 Markdown 助手中配置 GitHub
 
 软件中的配置页面在设置->图床选择 页面，然后点击 GitHub 一项即可配置，如下所示：
 
