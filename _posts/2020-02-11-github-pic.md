@@ -7,16 +7,12 @@ tags:  图床
 categories: product
 ---
 
+## 前言
+之前开发了[咕咚 Markdown 助手](https://www.coolapk.com/apk/name.gudong.pic)，这是一个用来上传手机图片到图床的 Android 软件，后来还支持了 GitHub 图床，不过对于普通用户，配置 GitHub 图床稍微有点麻烦，所以就有了这个教程。
 
+另外一些人可能对 **图床** 跟 **GitHub** 这两个概念比较陌生，所以为了更好的这里也简单介绍一下，如果对它们已经了解，可以选择跳过下面的两部分，直接[阅读正文部分](#咕咚-Markdown-助手)。
 
-首先解释一下标题中的两个词：
-
-* 图床
-* Github
-
-如果对它们已经了解，可以选择跳过下面的两部分。
-
-## 图床
+###  图床
 
 **图床是用来在网络上存储图片的服务**。可能有点抽象，这里先说说图片，图片是我们上网时除文字以外最常看到的东西，关于图片，如果通过存储形式区分，可以把图片分为：
 
@@ -37,7 +33,7 @@ categories: product
 
 上面说到的，能**提供图片存储的网络服务**就是图床服务。目前，国内有很多产品可以提供这种图床服务，比如主流的图床服务有七牛云、阿里云、腾讯云、微博图床等，还有不少小众的图床服务，如 SM.MS 等。
 
-## GitHub
+### GitHub
 
 这是一个国外公司开发的网站，这个网站主要为程序员提供了可以共享代码、文件的服务，比如你开发了一个程序，现在为了让更多人参与这个项目，一起开发，一共贡献 idea，就可以把代码上传到上面，GitHub 提供了友好的协作机制，然后大家就可以共同提交代码，共同维护项目，不少公司或者个人都选择用这样的方式去开发项目，这也是开源的力量。
 
@@ -54,6 +50,12 @@ categories: product
 但是不论那种，其实都有点麻烦，而且很多时候，我们需要把**手机中的图片**上传到图床，如果要使用 GitHub 可就太麻烦了。
 
 其实不光是 GIthub 图床，所有图床在手机上要上传都不方便。所以前几个月我开发了一个 Android 软件 — **[咕咚 Markdown 助手](https://www.coolapk.com/apk/name.gudong.pic)**，其中最重要的功能就是**上传手机中图片到图床**。于此同时，还支持上传到 GitHub 图床。目前该应用只发布到了酷安市场，咕咚 Markdown 助手主页地址，[点击可访问](https://www.coolapk.com/apk/name.gudong.pic)。
+
+
+
+![](https://cdn.jsdelivr.net/gh/maoruibin/assets/pic/2020/Screenshot_20200212-110000.jpg)
+
+
 
 实际上，当你下载咕咚 Markdown 助手后，无需任何配置就可以把本地图片上传到图床了，只不过默认使用的[牛图图床](https://niupic.com/)，牛图图床有一个缺点就是上传后的图片无法管理，比如重新编辑、删除等，不过对于一般的使用场景倒也够用。
 
@@ -115,7 +117,7 @@ categories: product
 
 这样就配置 OK 了，点击确定按钮，返回应用首页就可以尝试用刚配置的 GitHub 图床上传图片了。
 
-![](https://cdn.jsdelivr.net/gh/maoruibin/assets/pic/2020/Screenshot_20200211-213409.jpg)
+![](https://cdn.jsdelivr.net/gh/maoruibin/assets/pic/2020/Screenshot_20200211-231859.jpg)
 
 上面这个图片就是用咕咚 Markdown 助手上传的。
 
