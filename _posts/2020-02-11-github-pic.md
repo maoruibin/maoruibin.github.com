@@ -8,7 +8,7 @@ categories: product
 ---
 
 ## 前言
-之前开发了[咕咚 Markdown 助手](https://www.coolapk.com/apk/name.gudong.pic)，这是一个用来上传手机图片到图床的 Android 软件，后来还支持了 GitHub 图床，不过对于普通用户，配置 GitHub 图床稍微有点麻烦，所以就有了这个教程。
+之前开发了[PicPlus](https://www.coolapk.com/apk/name.gudong.pic)，曾用名：~~咕咚 Markdown 助手~~（名字太长了），这是一个用来上传手机图片到图床的 Android 软件，后来还支持了 GitHub 图床，不过对于普通用户，配置 GitHub 图床稍微有点麻烦，所以就有了这个教程。
 
 另外一些人可能对 **图床** 跟 **GitHub** 这两个概念比较陌生，所以为了更好的这里也简单介绍一下，如果对它们已经了解，可以选择跳过下面的两部分，直接[阅读正文部分](#咕咚-Markdown-助手)。
 
@@ -43,7 +43,7 @@ categories: product
 
 ---
 
-## 咕咚 Markdown 助手
+## PicPlus ~~咕咚 Markdown 助手~~
 
 如上面所述，如果你觉得七牛云操作麻烦、腾讯云还要付费，那么你就可以选择用 GitHub 作为自己的图床，来存储自己的网络图片。只需要注册一个 GitHub 账号，创建一个仓库即可，然后直接在浏览器里进行上传，或者通过 git 命令这种极客的方式去上传。
 
@@ -57,69 +57,9 @@ categories: product
 
 
 
-实际上，当你下载咕咚 Markdown 助手后，无需任何配置就可以把本地图片上传到图床了，只不过默认使用的[牛图图床](https://niupic.com/)，牛图图床有一个缺点就是上传后的图片无法管理，比如重新编辑、删除等，不过对于一般的使用场景倒也够用。
+实际上，当你下载 PicPlus ~~咕咚 Markdown 助手~~后，无需任何配置就可以把本地图片上传到图床了，只不过默认使用的[牛图图床](https://niupic.com/)，牛图图床有一个缺点就是上传后的图片无法管理，比如重新编辑、删除等，不过对于一般的使用场景倒也够用。
 
-**如果你对自己的数据管理很在意**，咕咚 Markdown 助手支持设置 GitHub 作为图床，所以你可以使用 GitHub 图床，不过还需要一些配置才可以使用，这些配置还是稍微有点麻烦，但是好在只需要配置一次，以后就不需要在折腾了，也划得来。接下来分享一下如何在咕咚 Markdown 助手中配置 GitHub 图床。
-
-## 配置 Github 图床
-
-### 准备工作
-
-在配置之前，首先得有一个 GitHub 账号，这是必须的，你可以打开 [GitHub 官网](https://github.com/)先去完成账号注册。
-
-有账号后，需要创建一个 github 仓库用来存储图片，如果你已经有仓库了，也可以直接复用，不过如果打算长期用 GitHub 做图床，还是建议建一个单独的图片仓库来存储图片，这样更容易管理。
-
-### 创建仓库
-
-点击 GitHub 页面右上角的加号按钮，可以选择创建仓库，如下图所示：
-
-![](https://cdn.jsdelivr.net/gh/maoruibin/maoruibin.github.com/assets/picgo/2019/20200211205755.png)
-
-点击 `New Reposity` 后，接下来需要填写仓库的基本信息，这里只需要填写仓库的名称即可（记得用英文，比如 MyPic、Picture 之类的），其他的信息默认就好，不用填也不用选，然后直接点击最底下绿色的创建按钮即可。
-
-![](https://cdn.jsdelivr.net/gh/maoruibin/maoruibin.github.com/assets/picgo/2019/20200211210722.png)
-
-> Note：不要去设置仓库的访问属性，默认公开，不用动，否则上传不了图片。
-
-### 获取 token 
-
-接下来需要为在自己 GitHub 账号下创建一个 token，这个 token 将用来让 app 帮你上传图床，它是软件可以上传图片到 GitHub 的通行证。
-
-具体可以点击 [https://github.com/settings/tokens] (https://github.com/settings/tokens) 去创建 token，打开页面后点击 `Generate new token` 按钮。
-
-![](https://cdn.jsdelivr.net/gh/maoruibin/maoruibin.github.com/assets/picgo/2019/20200211211229.png)
-
-点击按钮后会进入创建 token 的页面，这个页面只需要随便输入一个 token 名称即可，比如 pic 等，记得用英文，然后勾选下面的 repo 框就可以了，其余的不用选，然后点击最下方的绿色按钮就可以生成 token 了。
-
-![](https://cdn.jsdelivr.net/gh/maoruibin/maoruibin.github.com/assets/picgo/2019/20200211211548.png)
-
-生成 token 后，这个 token 很重要，现在立即复制它（刷新就没有了，只能重新生成。），发送到自己手机上，这个信息配置 GitHub 图床时需要。
-
-![](https://cdn.jsdelivr.net/gh/maoruibin/maoruibin.github.com/assets/picgo/2019/20200211212151.png)
-
-### 在咕咚 Markdown 助手中配置 GitHub
-
-软件中的配置页面在设置 -> 图床选择 页面，然后点击 GitHub 一项即可配置，如下所示：
-
-![](https://cdn.jsdelivr.net/gh/maoruibin/assets/pic/2020/Screenshot_20200211-212335.jpg)
-
-如上图所示，配置 GitHub 图片需要依次填入
-
-* token （上面步骤三生成的 token）
-
-* github 用户名（注意是用户名，不是昵称）
-
-* 仓库名称（上面创建的仓库名称）
-
-* 存储路径
-
-  >  可以不填，这样图片会存储在仓库根目录，如果想要存储在子目录，可以先在 GitHub 创建子目录，然后在这里输入子目录路径，建议默认存在根目录就行
-
-这样就配置 OK 了，点击确定按钮，返回应用首页就可以尝试用刚配置的 GitHub 图床上传图片了。
-
-![](https://cdn.jsdelivr.net/gh/maoruibin/assets/pic/2020/Screenshot_20200211-231859.jpg)
-
-上面这个图片就是用咕咚 Markdown 助手上传的。
+**如果你对自己的数据管理很在意**，咕咚 Markdown 助手支持设置 GitHub 作为图床，所以你可以使用 GitHub 图床，不过还需要一些配置才可以使用，这些配置还是稍微有点麻烦，但是好在只需要配置一次，以后就不需要在折腾了，也划得来。具体如何在 PicPlus 中配置 GitHub 图床，请查阅这篇文章，[如何为 PicPlus 配置 Github 作为远程图床](https://gudong.site/2020/02/14/pplus-github.html)
 
 ## 后记
 
@@ -127,7 +67,7 @@ categories: product
 
 另外除了在软件内上传图片，还支持在相册中以及任何支持系统分享的地方，通过系统分享上传图片，这样你就可以在浏览相册、系统截图或者其他文件分享时，找到咕咚 Markdown 助手的传图入口，然后进行上传，如下所示：
 
-![](https://cdn.jsdelivr.net/gh/maoruibin/maoruibin.github.com/assets/picgo/2019/20200211213937.png)
+![](https://tva1.sinaimg.cn/large/0082zybply1gbtn3m5sajj318g0kfgos.jpg)
 
 咕咚 Markdown 助手是为 Android 手机开发的图床上传工具，没有 iOS 版本跟 PC 版本，不过 PC 版也有不少这样的工具，比如 [PicGo](https://picgo.github.io/PicGo-Doc/zh/)，支持多平台，支持的图床也很丰富，其中就包括 GitHub 图床。还有 MAC 平台上很知名的 [iPic](https://toolinbox.net/iPic/)，也相当不错，操作体验很好。
 
