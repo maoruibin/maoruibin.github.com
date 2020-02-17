@@ -55,11 +55,13 @@ scaleType 为 center 表示按照图片尺寸在给定的 ImageView 上居中显
 它会根据 ImageView 的尺寸，把目标图片按照 ImageView 的尺寸进行等比例放大或缩小然后裁剪，最终显示。
 
 这里因为原图尺寸没有 ImageView 尺寸大，所以图片会被放大，然后最终被裁剪后显示成如下图所示的样式。
+
 ![](https://user-gold-cdn.xitu.io/2017/12/24/16084324e9e01d2e?w=270&h=462&f=jpeg&s=14533)
 
 
 ### 3、scaleType="centerInside"
 目前跟 center 一致 ，看不出有什么区别，
+
 ![](https://user-gold-cdn.xitu.io/2017/12/24/1608436dffcc8b0d?w=267&h=420&f=jpeg&s=4484)
 
 但是如果 ImageView 的尺寸小于图片自己的尺寸，它就会跟 center 的效果不一样了，它会自适应 ImageView 进行自适应，比如，我们将 ImageView 的尺寸特意设的特别小。
