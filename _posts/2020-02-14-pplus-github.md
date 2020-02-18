@@ -47,8 +47,7 @@ categories: blog
 
 软件中的配置页面在设置 -> 图床选择 页面，然后点击 GitHub 一项即可配置，如下所示：
 
-![](https://cdn.jsdelivr.net/gh/maoruibin/assets/pic/2020/Screenshot_20200211-212335.jpg)
-
+![](https://gitee.com/maoruibin/assert/raw/master/pic/test/11bae89-6f3bacda-97-17058c3c958.jpg)
 
 
 下面需要填入四项信息，假定现在已经完成了上面的注册，并获得了如下信息
@@ -57,13 +56,16 @@ categories: blog
 * Github 用户名：gudong
 * 仓库名称：pic
 
-接下来上面的示例为例，填写信息，如下图所示：
+#### PicGo 用户特别提醒
+按照 PicGo 的设置方式，仓库名的输入格式为：用户名/仓库名，而 PicPlus 中 **GitHub 用户名** 跟**仓库**是两个不同的属性，需要分别输入，特别注意。
+
+
+如下所示，首行需要输入 token 字符串，接着输入 github 用户名，然后输入仓库名称，按照示例分别填入 `gudong` 跟 `pic` 就 OK，如下图所示：
 
 ![](https://cdn.jsdelivr.net/gh/maoruibin/assets/pic/2020/Screenshot_20200214-190212.jpg)
 
 
-
-### 关于存储路径
+#### 关于存储路径
 
 默认可以不填，这样图片会存储在仓库根目录。
 
@@ -74,5 +76,6 @@ categories: blog
 创建完毕后，在最后一个输入框填入上面创建好的文件夹名，比如 2020，如果还有子文件夹，比如 work、home，则需要在目录之间加入 `\` 标识，比如填入 2020\work 
 
 
-
 以上就是配置 PicPlus GitHub 图床的所有步骤，希望我说明白了。
+
+如果在配置中还有什么问题，可以在酷安私信我，也可以发邮件(1252768410艾特qq.com)给我，说明具体情况，最好有截图，最后再次感谢你的使用。
