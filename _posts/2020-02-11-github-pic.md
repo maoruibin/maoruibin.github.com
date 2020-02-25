@@ -8,7 +8,7 @@ categories: product
 ---
 
 ## 前言
-之前开发了[PicPlus](https://www.coolapk.com/apk/name.gudong.pic)，曾用名：~~咕咚 Markdown 助手~~（名字太长了），这是一个用来上传手机图片到图床的 Android 软件，后来还支持了 GitHub 图床，不过对于普通用户，配置 GitHub 图床稍微有点麻烦，所以就有了这个教程。
+之前开发了[PicPlus](https://www.coolapk.com/apk/name.gudong.pic)，这是一个用来上传手机图片到图床的 Android 软件，后来还支持了 GitHub 图床，不过对于普通用户，配置 GitHub 图床稍微有点麻烦，所以就有了这个教程。
 
 另外一些人可能对 **图床** 跟 **GitHub** 这两个概念比较陌生，所以为了更好的这里也简单介绍一下，如果对它们已经了解，可以选择跳过下面的两部分，直接[阅读正文部分](#咕咚-Markdown-助手)。
 
