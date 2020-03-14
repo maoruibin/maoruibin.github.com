@@ -10,97 +10,48 @@ author: gudong
 tags: App 
 ---
 
-## 什么是 PicPlus？
+PicPlus 是我开发一个 Android 图床上传工具。开发初衷是在 Android 上方便的上传手机中图片到图床，以便自己写文章插图使用。
 
-快捷、便利，PicPlus（原名咕咚 Markdown 助手）是专为手机端打造的一款图床上传 APP，帮助你更快速的为手机中的图片生成远程地址。
+关于开发它的初衷，有另一篇进行了详细的介绍：[我的个人图床探索之路 · 语雀](https://www.yuque.com/gudong-osksb/twgz5k/unavwi)
 
-目前支持 GitHub 作为图床，还支持牛图、搜狗临时图床，后续还是支持更多的图床。
+该 APP 的主要功能特性介绍
 
-## 目标用户是谁？
+- 上传手机的图片（自动压缩）到图床服务器
+- 支持各大主流存储服务商，如七牛、阿里云、又拍云等
+- 支持 Github、码云作为图床
+- 支持删除已上传的远程图片(除了又拍云)
+- 支持格式化 URL 为 Markdown、HTML 格式
+- 支持通过系统分享上传图片
+- 支持自动复制链接
+- 支持数据导出、导入
 
-**经常在手机上写文章的文字爱好者。**
+## 支持的图床列表
 
-很多作者都喜欢用 Markdown 作为写作格式，而写作时经常有插图的需求场景，但是手机端添加图片非常不方便，很多手机端的文本编辑器也不支持上传图片到云服务器，所以这个 APP 可以很方便的解决图片的问题。
+![](https://gitee.com/maoruibin/assert/raw/master/pic/2020/Screenshot_20200314-122823.jpg)
 
-## 软件有什么好？
-
-* 传图方便，自动压缩，确保图片更快被加载出来，支持压缩自定义压缩比例。
-* 传图后一键分享图片 Markdown 链接到微信、QQ。
-* **支持在相册中直接传图到图床。**
-* 历史上传数据导出、导入。
-* 等等...
-
-## 如何使用？
-
-### 下载
+## 下载软件
 
 * 酷安市场 [下载](https://www.coolapk.com/apk/name.gudong.pic)
-* Fir [下载](https://fir.im/da9q) 
-* 扫码下载
+* Fir [下载](http://d.6short.com/da9q) 
 
-![](data:image/png;base64,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)
+## 使用
 
-### APP 内传图
+目前 APP 支持两种上传方式
 
-打开应用，点击中间 icon，然后选择图片上传，如下所示：
+* 在 APP 主界面可通过相册或者拍照上传
+* 通过系统分享上传，如下所示，你可以在浏览相册或者文件时，点击系统分享即可把图片上传到图床。
 
-![](https://tva1.sinaimg.cn/large/006tNbRwly1g9kxe3dyaej30kz0bggmv.jpg)
-
-### 通过系统分享传图
-
-这种方式更便捷，可以在相册等应用，选择分享，然后找到传图入口，如下所示为小米六相册调起的分享：
-
-![](https://tva1.sinaimg.cn/large/006tNbRwly1g9kxi9o0iej30kz0bg40f.jpg)
-
-### 更多
-关于图床的更多细节，可自行安装使用即可了解。
-
-## PicPlus 后续开发计划
-
-该版本为初始版本，后续已经规划了四个版本，我也会根据用户反馈不断优化升级 APP，如有任何建议可在评论区留言。
-
-## 更新日志
-## 1.0.5
-- 新增实验功能，可选择牛图图床，仅为实验性功能，不要过于依赖。
-- 首页支持分页加载(谷歌分页库很坑，最后还是自己实现了)
-- 图片上传成功后，格式化支持纯链接,具体查看截图示意
-- 关于页面增加更新日志链接，可查看历史更新日志
+![](https://gitee.com/maoruibin/assert/raw/master/picgo/20200314154407.png)
 
 
-### 1.0.4
-- 新增：图片上传增加确认对话框逻辑
-- 优化：调整首页 CardView 圆角以及 Margin 距离
-- 优化：重构图片上传逻辑
-- 优化：图片上传成功后首页自动添加记录
-- 优化：默认开启图片缩放功能
-- 新增：数据统计
-
-### 1.0.3
-- 新增：首页展示历史图片流
-- 新增：实验室
-- 优化：支持图片双击放大，缩小
-- 优化：点击图片隐藏顶部栏
-- 移除：上传图片数量限制（之前每天最多上传 12 张）
-- 优化：删除图片时使用动画
-- 优化：支持 AndroidX
-- 优化：历史记录为空页面
-- UI：可点击链接颜色改为蓝色
-
-### 1.0.2
-- 新增：关于页面（开源协议、关于作者等信息）
-- 优化：信息面板增加顶部圆角
-- 优化：微调信息面板布局
-- 优化：替换 QQ、微信图标
-
-### 1.0.1
-* 新增：原图上传功能
-* 新增：设置选项增加启用原图上传开关
-* 新增：关于 Dialog
-* 优化：删除本地生成的临时压缩图片
-* 修复: 压缩比不能设置 100 的问题
 
 ## 关于作者
 
-一名软件工程师，爱打球，爱分享，爱开发。
+咕咚同学，Android 工程师，独立软件开发者，喜欢篮球，喜欢写作，喜欢分享。
+
+- 微博：[大侠咕咚](https://weibo.com/maoruibin)
+- 公众号：咕咚同学
+- 博客：[咕咚的个人博客](https://gudong.site/)
+- 酷安：[咕咚](http://www.coolapk.com/u/509587)
 
 你也可以关注我的公众号「咕咚同学」订阅我，我会在哪里每天更新一些自己的日志，也可以通过我博客中的 Daily 频道订阅 [gudong.site/daily](https://gudong.site/daily)。
