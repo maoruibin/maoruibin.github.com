@@ -1,13 +1,13 @@
 ---
 layout: post
 author: 咕咚
-title: "如何为 PicPlus（手机端图床上传工具）配置 Github 作为远程图床"
+title: "如何为 PicPlus 配置 Github 作为远程图床"
 author: gudong
 tags:  图床
 categories: blog
 ---
 
-如果对 PicPlus 这个图床工具还不了解，可通过这篇文件了解，[PicPlus：Android 手机端的图床利器 \| 咕咚](https://gudong.site/2019/12/03/about-xPic.html)。
+PicPlus 是一个**手机端的图床上传工具**，支持七牛云、阿里云、又拍云等主流图床配置，同时还支持配置 GitHub、码云作为自己的图床，这篇文章主要介绍如何在 PicPlus 中配置 GitHub 为个人图床，更多关于 PicPlus 的介绍，可阅读这篇文章 - [PicPlus：Android 手机端的图床利器 \| 咕咚](https://gudong.site/2019/12/03/about-xPic.html)。
 
 ### 准备工作
 
