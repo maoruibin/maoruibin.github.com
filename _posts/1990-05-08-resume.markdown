@@ -119,8 +119,7 @@ published: false
 
 
 * 负责项目分享模块开发设计
-* 结合动态代理、自定义注解等技术，运用 MVP 架构思想搭建整个项目结构
-* 使用观察者模式，实现了类似 EventBus 的事件总线
+* 功能开发
 
 ---
 
@@ -148,8 +147,9 @@ published: false
 ## 技术文章
 - [Android 开发中是否应该使用枚举？ \| 咕咚](https://gudong.site/2019/11/04/use-enum-or-not.html)
 - [Android 多状态加载布局的开发 Tips](http://gudong.site/2017/04/26/loading_layout_practice.html)
+- [工程师的基本修养 — 从掌握面向对象开始 \| 咕咚](https://gudong.site/2020/02/12/oop.html)
 - [枚举介绍以及枚举的本质 \| 咕咚](https://gudong.site/2019/11/08/enum-introduce.html)
-- 更多请查看[个人博客主页](http://gudong.site/)
+- 更多请查看[个人博客主页](http://gudong.site/tech)
 
 ---
 
