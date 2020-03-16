@@ -146,8 +146,9 @@ published: false
 - 更多请看 GitHub 主页 [https://github.com/maoruibin](https://github.com/maoruibin)
 
 ## 技术文章
+- [Android 开发中是否应该使用枚举？ \| 咕咚](https://gudong.site/2019/11/04/use-enum-or-not.html)
 - [Android 多状态加载布局的开发 Tips](http://gudong.site/2017/04/26/loading_layout_practice.html)
-- [Android 项目开发清单](http://gudong.site/2017/03/25/project-list.html) 
+- [枚举介绍以及枚举的本质 \| 咕咚](https://gudong.site/2019/11/08/enum-introduce.html)
 - 更多请查看[个人博客主页](http://gudong.site/)
 
 ---
