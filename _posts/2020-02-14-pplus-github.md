@@ -7,7 +7,13 @@ tags:  图床
 categories: blog
 ---
 
-PicPlus 是一个**手机端的图床上传工具**，支持七牛云、阿里云、又拍云等主流图床配置，同时还支持配置 GitHub、码云作为自己的图床，这篇文章主要介绍如何在 PicPlus 中配置 GitHub 为个人图床，更多关于 PicPlus 的介绍，可阅读这篇文章 - [PicPlus：Android 手机端的图床利器 \| 咕咚](https://gudong.site/2019/12/03/about-xPic.html)。
+PicPlus 是一个**手机端的图床上传工具**，支持七牛云、阿里云、又拍云等主流图床配置，同时还支持配置 GitHub、码云作为自己的图床，如下所示：
+
+![](https://gitee.com/maoruibin/assert/raw/master/pic/2020/Screenshot_20200314-122823.jpg)
+
+这篇文章主要介绍如何在 PicPlus 中配置 GitHub 为个人图床，更多关于 PicPlus 的介绍，可阅读这篇文章 - [PicPlus：Android 手机端的图床利器 \| 咕咚](https://gudong.site/2019/12/03/about-xPic.html)。
+
+
 
 ### 准备工作
 

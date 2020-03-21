@@ -10,9 +10,9 @@ author: gudong
 tags: App 
 ---
 
-PicPlus 是我开发一个 Android 图床上传工具。开发初衷是在 Android 上方便的上传手机中图片到图床，以便自己写文章插图使用。
+PicPlus 是自己开发的一个 **Android 图床上传工具**。开发初衷是在 Android 上方便的**上传手机中图片**到图床，以便自己写文章插图使用。
 
-关于开发它的初衷，有另一篇进行了详细的介绍：[我的个人图床探索之路 · 语雀](https://www.yuque.com/gudong-osksb/twgz5k/unavwi)
+![](https://picgudong.oss-cn-beijing.aliyuncs.com/picgo20200321232446.png)
 
 该 APP 的主要功能特性介绍
 
@@ -29,7 +29,7 @@ PicPlus 是我开发一个 Android 图床上传工具。开发初衷是在 Andro
 
 ![](https://gitee.com/maoruibin/assert/raw/master/pic/2020/Screenshot_20200314-122823.jpg)
 
-## 下载软件
+## 下载
 
 * 酷安市场 [下载](https://www.coolapk.com/apk/name.gudong.pic)
 * Fir [下载](http://d.6short.com/da9q) 
