@@ -1,4 +1,7 @@
 <section class="disqus">
-    <div id="vcomments"></div>
-    {% include valine-script.html %}   
+    {% if site.enable_valine %}
+        <div id="vcomments"></div>
+        {% include valine-script.html %}       
+    {% endif %}
+    
 </section>

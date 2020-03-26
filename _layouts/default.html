@@ -35,7 +35,10 @@ layout: compress
     </style>
 
     <script src="/assets/js/typeit.min.js"></script>
-    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    {% if site.enable_valine %}
+        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>    
+    {% endif %}
+    
   
 </head>
 <body>

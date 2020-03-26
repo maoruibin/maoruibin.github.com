@@ -29,6 +29,11 @@ title: Blog
 	{% endif %}
 </section>
 <p hidden>
-	{% include visitor.html %}
-	{% include valine-script.html %}   
+
+	{% if site.enable_valine %}
+		{% include visitor.html %}
+		{% include valine-script.html %}   
+	{% endif %}
+
+	
 </p>

@@ -15,7 +15,7 @@ layout: page
     <time datetime="{{ page.date | date:"%d-%m-%Y" }}">{{ page.date | date: "%Y-%m-%d" }}</time>
     {% if site.read-time %} - {% include read-time.html %}{% endif %}
 
-    {% if site.valine.visitors %}
+    {% if site.valine.visitors and site.enable_valine %}
     &nbsp; | &nbsp;{% include visitor.html %}
     {% endif %}
 
@@ -68,7 +68,7 @@ layout: page
 
 {% if page.qrcode_mp %}
     <div style="text-align: center;margin-top: 4em;margin-bottom: 4em;">
-        <img src="{{site.gudongqr}}" alt="{{site.gudonggzh}}">
+        <img  style="width:150px;height:150px;"  src="{{site.gudongqr}}" alt="{{site.gudonggzh}}">
     <br/>
     <br/><strong style="font-weight: bold;letter-spacing: 2px;"><span>咕咚同学</span></strong>
     <br/><span style="font-size:10px;margin-top:14px">扫码关注公众号</span>
@@ -95,7 +95,9 @@ layout: page
     page.categories contains "daily" or 
     page.categories contains "product" 
 %}
+{% if site.enable_valine %}
     {% include valine.html %}    
+{% endif %}
 {% endif %}
 
 

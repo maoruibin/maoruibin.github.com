@@ -84,3 +84,4 @@ AOT：ART 虚拟机对 App 运行的优化机制，它在应用安装时就提�
 - [目前主流的 Java 虚拟机有哪些?](https://zhihu.com/question/29265430/answer/43818804)
 - [Dalvik虚拟机和JVM的区别。Java里面的，Android里面的区别](https://zhidao.baidu.com/question/1238373007717632179.html)
 - [Java 虚拟机与 Dalvik 虚拟机(简书)](http://www.jianshu.com/p/a8cc7a92137c)
+- [Android：ART 优化配置（Mstar\-6A648） \- sheldon\_blogs \- 博客园](https://www.cnblogs.com/blogs-of-lxl/p/11608115.html)

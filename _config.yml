@@ -45,7 +45,7 @@ disqus:
   categories: [blog, note, product] # only show disqus for posts that have these categories  
 
 # if you don't want comments in your posts, leave categories empty
-enable_valine: true
+enable_valine: false
 
 valine:
   shortname: gudong-name # enter this from your disqus account

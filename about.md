@@ -8,8 +8,8 @@ layout: page
 <b>喜欢什么</b><br>
 <ul>
     <li>户外运动，<a href="https://gudong.site/tags#%E7%AF%AE%E7%90%83" target="_blank">篮球</a>、健步听书。</li>
-    <li>个人 App 开发，曾开发设计过<a href="https://github.com/maoruibin/TranslateApp" target="_blank">咕咚翻译</a>、<a href="./2018/07/25/about_passbook.html" target="_blank">Passbook</a>等<a href="/product" target="_blank">工具</a>。</li>
-    <li>写东西（公众号「咕咚同学」每日更新，最下方可扫码）</li>
+    <li>个人 App 开发，曾开发设计过<a href="./2019/12/03/about-xPic.html" target="_blank">PicPlus</a>、<a href="./2016/02/26/gudong_translate.html" target="_blank">咕咚翻译</a> 等<a href="/product" target="_blank">工具</a>。</li>
+    <li>写东西（公众号「咕咚同学」最下方可扫码）</li>
     <li>爬山</li>
 </ul>
 
@@ -21,7 +21,7 @@ layout: page
 
 <b>简单的背景</b><br>
 <ul>
-    <li>90年生，甘肃-金昌（古凉州区域）</li>
+    <li>90年生，甘肃-金昌（金昌？？ = 古凉州区域 😜）</li>
     <li>13年毕业于内蒙古工业大学</li>
     <li>目前就职于新浪微博，曾负责开发维护微博信息流相关业务，目前主要负责微博发布相关工作。</li>    
 </ul>
@@ -43,7 +43,7 @@ layout: page
 <ul>
     <li>微博 <a href="https://weibo.com/1874136301" target="_blank">大侠咕咚</a></li>
     <li>Rss <a href="https://gudong.site/feed.xml" target="_blank">订阅</a></li>
-    <li>公众号：「咕咚同学」  欢迎关注，每日更新。</li>
+    <li>公众号：「咕咚同学」  欢迎关注</li>
 </ul>
 <img style="width:150px;height:150px;" src="{{site.gudongqr}}"  />
 
@@ -52,7 +52,7 @@ layout: page
 <b>博客历史</b>
 <ul>
     <li>2019/12/23: 更换域名为 gudong.site。</li>
-    <li>2019/11/14: 增加 Daily、Tech 分类，把日记跟技术文章进行单独分类。<li>
+    <li>2019/11/14: 增加 Daily、Tech 分类，把日记跟技术文章进行单独分类。</li>
     <li>2019/11/06: 评论系统替换为 <a href="https://valine.js.org" target="_blank">valine</a>，并启用阅读数。</li>
     <li>2018/12/13: 更改博客主题为极简模式的主题<a href="https://github.com/sergiokopplin/indigo" target="_blank">indigo</a></li>
     <li>2015/05/19: 使用 Github+Jekyll 搭建博客</li>
