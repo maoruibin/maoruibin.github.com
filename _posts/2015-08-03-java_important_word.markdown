@@ -3,12 +3,44 @@ layout: post
 author: 咕咚
 title:  "Java关键字之 volatile"
 catalog:    true
-tags:  Java volatile
-categories: tech 
+tags:  Java volatile 内存模型
+categories: tech  
 ---
 Java有众多关键字，volatile作为一个和同步相关的关键字，很少在自己的项目中使用，今天在看Handler源码时无意看到，顺便便了解了下。
 记录以备后用。
 
+
+
+## 做了一个实验
+
+> 更新于：2020/03/28
+
+在主线程创建一个 int 变量，然后开启两个线程 A、B
+
+- A 线程负责打印 int
+- B  线程负责更改 int
+
+预期：B 更改完 int，A 应该显示正确的值
+
+```
+update is 1585353251102
+------> 1585353251102
+------> 1585353251607
+update is 1585353251607
+------> 1585353251607
+```
+
+实际两个存在不同步的情况，这里当然可以用线程同步的方式的去处理这个问题，但是这里分析原因，为什么现在会存在不同步？
+
+因为 int 值的存在工作内存跟主内存，两者存在时间差， B 线程更新完 int 并没有及时同步，所以 A 就不能及时打印出正确的值。
+
+这时如果使用`volatile`来修饰 int 值，int 值每次的改变都会从工作内存更新到主内存，这样的更改是内存中彻底的更改。
+
+> 要解决共享对象可见性这个问题，我们可以使用 java volatile 关键字。 Java’s volatile keyword. volatile 关键字可以保证变量会直接从主存读取，而对变量的更新也会直接写到主存。volatile 原理是基于 CPU 内存屏障指令实现的
+
+[全面理解 Java 内存模型\_Java\_Heaven Wang 的专栏 \- CSDN 博客](https://blog.csdn.net/suifeng3051/article/details/52611310)
+
+---
 
 volatile关键字 可以被看作是一种 “程度较轻的 synchronized”；与 synchronized 块相比，volatile 变量所需的编码较少，并且运行时开销也较少，但是它所能实现的功能也仅是 synchronized 的一部分。
 
