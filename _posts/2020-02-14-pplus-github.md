@@ -27,9 +27,9 @@ PicPlus 是一个**手机端的图床上传工具**，支持七牛云、阿里�
 
 ![](https://cdn.jsdelivr.net/gh/maoruibin/maoruibin.github.com/assets/picgo/2019/20200211205755.png)
 
-点击 `New Reposity` 后，接下来需要填写仓库的基本信息，这里只需要填写仓库的名称即可（记得用英文，比如 MyPic、Picture 之类的），其他的信息默认就好，不用填也不用选，然后直接点击最底下绿色的创建按钮即可。
+点击 `New Reposity` 后，接下来需要填写仓库的基本信息，这里需要填写仓库的名称（记得用英文，比如 MyPic、Picture 之类的），建议勾选 `initialize`，它会在初始化仓库时生成一个 readme 文件。其他的信息默认就好，然后直接点击最底下绿色的创建按钮即可。
 
-![](https://cdn.jsdelivr.net/gh/maoruibin/maoruibin.github.com/assets/picgo/2019/20200211210722.png)
+![](https://gitee.com/maoruibin/assert/raw/master/picgo/20200407102003.png)
 
 > Note：不要去设置仓库的访问属性，默认公开，不用动，否则上传不了图片。
 
