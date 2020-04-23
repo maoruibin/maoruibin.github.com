@@ -23,7 +23,7 @@ layout: page
 <ul>
     <li>90年生，甘肃-金昌（金昌？？ = 古凉州区域 😜）</li>
     <li>13年毕业于内蒙古工业大学</li>
-    <li>目前就职于新浪微博，曾负责开发维护微博信息流相关业务，目前主要负责微博发布相关工作。</li>    
+    <li>目前从事互联网开发工作。</li>    
 </ul>
 
 <b>一些文章</b><br>
@@ -60,6 +60,6 @@ layout: page
 </ul>
 <br>
 
-<p style="color:#aaa;font-size: 1.0rem;font-weight: 300;">最近更新于2019/12/23，
+<p style="color:#aaa;font-size: 1.0rem;font-weight: 300;">最近更新于2020/04/23，
     {% include visitor.html %}
 </p>
