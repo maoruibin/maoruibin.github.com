@@ -1,5 +1,5 @@
 # main text of home
-name: 咕咚
+name: 咕咚同学
 bio: set target,daily progress,build system.
 bio-url: http://www.sohu.com/a/245629404_559589
 
@@ -9,9 +9,9 @@ description: A blog about gudong.site 咕咚
 # if it's an external image, update below for true
 # better with square images
 external-image: false
-picture: assets/profile/github_profile.png
+picture: assets/profile/github_profile_2020.png
 profile_bk: assets/profile/profile_bk_2017.jpg
-author: 咕咚
+author: 咕咚同学
 gudongqr: https://cdn.jsdelivr.net/gh/maoruibin/assets/pic/2019/mmexport1578533815371.jpg
 gudonggzh: 咕咚同学
 
@@ -86,7 +86,7 @@ authors:
         bio: 求知求真，拥抱体系。
         about: https://gudong.site/about
         external-image: false
-        picture: assets/profile/github_profile.png
+        picture: assets/profile/github_profile_2020.png
         twitter: FZ64pAZK2h8aP4r
 
 # do you want a larger site? change the option below
