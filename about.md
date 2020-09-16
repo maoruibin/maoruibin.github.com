@@ -7,7 +7,7 @@ layout: page
 
 <b>喜欢什么</b><br>
 <ul>
-    <li>户外运动，<a href="https://gudong.site/tags#%E7%AF%AE%E7%90%83" target="_blank">篮球</a>、健步听书。</li>
+    <li>户外运动，<a href="https://gudong.site/tags#%E7%AF%AE%E7%90%83" target="_blank">篮球</a>、听书。</li>
     <li>个人 App 开发，曾开发设计过<a href="./2019/12/03/about-xPic.html" target="_blank">PicPlus</a>、<a href="./2016/02/26/gudong_translate.html" target="_blank">咕咚翻译</a> 等<a href="/product" target="_blank">工具</a>。</li>
     <li>写东西（公众号「咕咚同学」最下方可扫码）</li>
     <li>爬山</li>
@@ -51,6 +51,7 @@ layout: page
 
 <b>博客历史</b>
 <ul>
+    <li>2020/09/17: 隐藏公众号二维码、关于 tab。</li>
     <li>2019/12/23: 更换域名为 gudong.site。</li>
     <li>2019/11/14: 增加 Daily、Tech 分类，把日记跟技术文章进行单独分类。</li>
     <li>2019/11/06: 评论系统替换为 <a href="https://valine.js.org" target="_blank">valine</a>，并启用阅读数。</li>

@@ -1,6 +1,6 @@
 # main text of home
 name: 咕咚同学
-bio: set target,daily progress,build system.
+bio: Target - Daily - System
 bio-url: http://www.sohu.com/a/245629404_559589
 
 # twitter summary info
@@ -12,7 +12,7 @@ external-image: false
 picture: assets/profile/github_profile_2020.png
 profile_bk: assets/profile/profile_bk_2017.jpg
 author: 咕咚同学
-gudongqr: https://cdn.jsdelivr.net/gh/maoruibin/assets/pic/2019/mmexport1578533815371.jpg
+gudongqr: https://cdn.jsdelivr.net/gh/maoruibin/assets@latest/2020/09/17/20200917010252741.jpg
 gudonggzh: 咕咚同学
 
 # If you want to include your resume, set to true
@@ -108,7 +108,7 @@ daily: true
 product: true
 
 # if you don't need "about" or "blog", comment them out below
-about: true
+about: false
 
 blog: true
 
@@ -125,7 +125,7 @@ related: true
 post-advance-links: [blog]
 
 # show author block at the end of a post ?
-show-author: true
+show-author: false
 
 # do you want some animations?
 animation: true
