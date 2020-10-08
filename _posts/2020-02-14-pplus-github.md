@@ -7,12 +7,10 @@ tags:  图床
 categories: blog
 ---
 
-# 如何为 PicPlus 配置 Github 作为远程图床
-
 PicPlus 是一个**图床上传 APP**，可帮你**上传手机图片到图床**，并生成 markdown 链接，支持七牛云、阿里云等主流图床，同时还支持配置 GitHub、码云为个人图床。
 
 
-这篇文章主要介绍如何在 PicPlus 中配置 GitHub 为个人图床，更多关于 PicPlus 的介绍，可阅读这篇文章 - [PicPlus：Android 手机端的图床利器 | 咕咚](https://www.yuque.com/gudong-osksb/twgz5k/bfdihv)。
+这篇文章主要介绍如何在 PicPlus 中配置 GitHub 为个人图床，更多关于 PicPlus 的介绍，可阅读这篇文章 - [PicPlus：Android 手机端的图床利器](https://www.yuque.com/gudong-osksb/twgz5k/bfdihv)。
 
 
 ### 准备工作
