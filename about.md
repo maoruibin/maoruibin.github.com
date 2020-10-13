@@ -51,6 +51,7 @@ layout: page
 
 <b>博客历史</b>
 <ul>
+    <li>2020/10/13: 增加 Twitter 链接</li>
     <li>2020/09/17: 隐藏公众号二维码、关于 tab。</li>
     <li>2019/12/23: 更换域名为 gudong.site。</li>
     <li>2019/11/14: 增加 Daily、Tech 分类，把日记跟技术文章进行单独分类。</li>
