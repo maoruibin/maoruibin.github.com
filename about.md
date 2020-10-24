@@ -26,6 +26,10 @@ layout: page
     <li>目前从事互联网开发工作。</li>    
 </ul>
 
+<b>我的书单</b><br>
+<a href="/2020/01/06/book.html" target="_blank">书单</a>
+
+
 <b>一些文章</b><br>
 <ul>
     <li><a href="/2017/04/26/loading_layout_practice.html" target="_blank">Android 多状态加载布局的开发 Tips</a></li>  
@@ -51,6 +55,7 @@ layout: page
 
 <b>博客历史</b>
 <ul>
+    <li>2020/10/24: 增加我的书单</li>
     <li>2020/10/13: 增加 Twitter 链接</li>
     <li>2020/09/17: 隐藏公众号二维码、关于 tab。</li>
     <li>2019/12/23: 更换域名为 gudong.site。</li>
@@ -62,6 +67,6 @@ layout: page
 </ul>
 <br>
 
-<p style="color:#aaa;font-size: 1.0rem;font-weight: 300;">最近更新于2020/04/23，
+<p style="color:#aaa;font-size: 1.0rem;font-weight: 300;">最近更新于2020/10/24，
     {% include visitor.html %}
 </p>
