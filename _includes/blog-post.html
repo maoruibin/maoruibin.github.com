@@ -11,9 +11,10 @@
                  {{post.description}}
                 {% endif %}
     </p>       
-    <p>
-        <time datetime="{{ post.date | date:"%d-%m-%Y" }}" >{{ post.date | date: "%Y-%m-%d" }}</time>     
+    <div>
+        <time datetime="{{ post.date | date:"%d-%m-%Y" }}" >{{ post.date | date: "%Y-%m-%d" }}</time>    
+        &nbsp;&nbsp; 
         <a class="url" href="{{ post.url }}">more...</a>
-    </p>
+    </div>
     
 </div>
