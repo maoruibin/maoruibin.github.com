@@ -3,15 +3,17 @@
             <h2 class="title" style="font-size: 1.5em">{{ post.title }}</h2>
     </a>
     
-    <time datetime="{{ post.date | date:"%d-%m-%Y" }}" >
-            {{ post.date | date: "%Y-%m-%d" }}
-    </time>
+    
     <p class="description">
                 {% if post.description == ‘’ or post.description == "" %}
                 {{ post.content | strip_html | truncate:100 }}
                 {% else %}
                  {{post.description}}
                 {% endif %}
-    </p>            
-    <a class="url" href="{{ post.url }}">more...</a>
+    </p>       
+    <p>
+        <time datetime="{{ post.date | date:"%d-%m-%Y" }}" >{{ post.date | date: "%Y-%m-%d" }}</time>     
+        <a class="url" href="{{ post.url }}">more...</a>
+    </p>
+    
 </div>
