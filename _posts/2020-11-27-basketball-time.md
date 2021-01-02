@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "今晚去打球 | Daily 11/27"
 author: gudong

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "存在即合理？"
 description: 独立思考，针对每天发生的事，试着从不同的角度去分析，争取找到不一定的观点，因为通用的观点知道的人太多了，多你一个，你只是分母。

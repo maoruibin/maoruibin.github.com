@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "如何为 PicPlus 配置 Github 作为远程图床"
 author: gudong

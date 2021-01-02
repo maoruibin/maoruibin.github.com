@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "在Android5.0以上设备实现过渡动画"
 description: ""

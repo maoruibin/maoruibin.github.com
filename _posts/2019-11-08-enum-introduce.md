@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "枚举介绍以及枚举的本质"
 description: 枚举是 JDK  1.5 推出的 API，以前经常用静态常量用作类型区分，枚举则是对类型的一种强化，且有更好的语义性，恰当的使用它可以写出非常优雅的代码。

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "稍后阅读：一种高效阅读方式的探索"
 description: "信息大爆炸后，我们可能需要更高效的阅读方式。"

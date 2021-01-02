@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "柳叶清单开放 Api "
 description: "最近使用 Python、Vue、Leancloud 开发了一个 Web 应用 - 柳叶清单，目前只是自己用。虽然自己一直从事客户端开发，但内心一直有一个愿望就是可以开放一个 api, 终于这次可以实现了，我把柳叶清单的 API 整理后决定开放，其他开发者可以通过该 API 直接开发自己的清单应用。"

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "开发 Intellij 插件（如AndroidStudio 插件）时如何在本地保存状态值"
 catalog: true

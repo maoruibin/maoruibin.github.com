@@ -12,17 +12,24 @@ title: 首页
       <h2 id="{{post_year}}">{{post_year}}</h2>
       <ul>
     {%- endif %}
-        <li>
-          <span class="date">{{ post.date | date: "%Y/%m/%d" }}</span>
-          <div class="title">
-            <a href="{{ site.baseurl | append: post.url }}" class="hover-underline">{{ post.title }}</a>
-          </div>
-          <div class="categories">
-            {% for categorie in post.categories -%}
-            <a href="{{site.baseurl}}/pages/categories.html#{{ categorie }}" class="hover-underline">{{ categorie }}</a>
-            {%- endfor %}
-          </div>
-        </li>
+
+      {% if post.hidden != true %}
+
+      <li>
+        <span class="date">{{ post.date | date: "%Y/%m/%d" }}</span>
+        <div class="title">
+          <a href="{{ site.baseurl | append: post.url }}" class="hover-underline">{{ post.title }}</a>
+        </div>
+        <div class="categories">
+          {% for categorie in post.categories -%}
+          <a href="{{site.baseurl}}/pages/categories.html#{{ categorie }}" class="hover-underline">{{ categorie }}</a>
+          {%- endfor %}
+        </div>
+      </li>
+      
+      {% endif %}
+
+
     {%- if forloop.last or post_previous_year != post_year %}
       </ul>
     </div>

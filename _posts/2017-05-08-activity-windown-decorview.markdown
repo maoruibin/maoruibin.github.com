@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title:  "Activity 与 Window、PhoneWindow、DecorView 之间的关系简述"
 description: "该篇文章主要探究 Android 中 Activity 与 Window、PhoneWindow、DecorView 之间的关系。Activity 的概念都比较熟悉，但是 Window、PhoneWindow、DecorView 这几个类并不常用，所以很多时候就忽略了它们的具体作用。其实在 Activity 的背后，它们都发挥着非常重要的作用，比如下文即将要说到的 setContentView()  原理、事件分发源头都可以看到这几个概念。"

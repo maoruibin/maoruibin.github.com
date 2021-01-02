@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "发现自己的无知 | Daily 09/15"
 author: gudong

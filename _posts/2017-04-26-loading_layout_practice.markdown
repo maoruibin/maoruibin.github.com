@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title:  "Android 多状态加载布局的开发 Tips"
 subtitle:  "『多状态布局开发的点点滴滴』"

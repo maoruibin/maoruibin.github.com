@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title:  "ReView 一个辅助设计师方便 review UI 的 view 组件集合"
 description: ""

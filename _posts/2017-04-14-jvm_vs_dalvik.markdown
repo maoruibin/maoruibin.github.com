@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title:  "JVM、Dalvik、ART 介绍"
 description: ""

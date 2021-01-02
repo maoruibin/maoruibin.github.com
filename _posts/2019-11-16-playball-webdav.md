@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: " Daily11/15 - 又可以单挑了~"
 author: gudong

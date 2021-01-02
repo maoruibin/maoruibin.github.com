@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "稳定高于一切，你成功吗？ | Daily 12/08"
 author: gudong

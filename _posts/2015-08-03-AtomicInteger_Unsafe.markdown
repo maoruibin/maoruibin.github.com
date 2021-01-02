@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title:  "Unsafe 类介绍"
 catalog:    true

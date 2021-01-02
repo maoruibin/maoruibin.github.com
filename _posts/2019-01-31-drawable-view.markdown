@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "Android Drawable 简析"
 description: Drawable 用的很多，值得好好学习一下，之前看过很多次，但是都没有记录，这次记录之。Drawable 有很多应用场景，多多挖掘。

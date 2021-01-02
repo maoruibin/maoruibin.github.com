@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "利用 Gradle Task 查看远程依赖库的本地存储路径"
 description: ""

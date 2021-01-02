@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "AppPlus：传送、分享 APK 到其他手机"
 description: "一个主要用 Android 用户间传送 Apk 文件、管理手机应用的工具软件。"

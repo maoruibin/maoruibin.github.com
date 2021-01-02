@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "有谁是单纯地喜欢编程吗？"
 qrcode_mp:  true

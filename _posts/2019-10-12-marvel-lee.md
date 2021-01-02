@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: " 读斯坦.李有感"
 description: 看了一篇关于斯坦李介绍的文章，很长，内容很详细，里面包含了很多漫威跟斯坦李的故事，本文算是读后感。

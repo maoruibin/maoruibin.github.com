@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "在Android 6.0 设备上动态获取权限"
 description: ""

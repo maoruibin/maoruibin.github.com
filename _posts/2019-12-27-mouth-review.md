@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "还有四天就2020了… | Daily 12/27"
 author: gudong

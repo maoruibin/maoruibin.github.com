@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title:  "用 Support 包显示 MaterialDialog"
 description: ""

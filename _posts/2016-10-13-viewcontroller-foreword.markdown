@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title:  "Android 复杂界面开发实践之 ViewController: 前言"
 description: ""

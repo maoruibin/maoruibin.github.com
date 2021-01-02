@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "提前计划第二天？ | Daily 11/26"
 author: gudong

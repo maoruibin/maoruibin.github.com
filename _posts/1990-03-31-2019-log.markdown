@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 title: "日志-2019"
 description: 那些平凡的日志
 hidden: true

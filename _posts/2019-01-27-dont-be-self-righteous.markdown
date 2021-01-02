@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "不要拿自己的标准去衡量别人"
 description: 换位思考，说起来容易做起来难。

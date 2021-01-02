@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "《基金：从0开始学基金投资》"
 description: 羊陪家同学的基金系列教材，也是自己投资方式的网上入门教程，只可惜读到的时候晚了，应该早点学。

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "在认知范围内赚钱 | Daily 04/08"
 author: gudong

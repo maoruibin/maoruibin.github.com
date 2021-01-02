@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "我的开发之路"
 description: "利用Github搭建博客后,我写的第一篇博客"

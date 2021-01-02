@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "什么是运行时（Runtime）"
 description: 运行时是一个通用概念，不同的语言可能都需要一个运行时才能让程序在硬件平台运行，这篇文章介绍了什么是运行时。

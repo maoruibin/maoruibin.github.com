@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "为什么微信没有这个功能？ | Daily 12/09"
 author: gudong

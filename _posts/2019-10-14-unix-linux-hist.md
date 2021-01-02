@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "追寻 Unix/Linux 的源头，那些改变世界的人们..."
 shang: true

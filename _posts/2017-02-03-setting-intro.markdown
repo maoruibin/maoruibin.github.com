@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title:  "使用 Android 原生 API 开发设置界面"
 description: ""

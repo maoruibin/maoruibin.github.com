@@ -5,7 +5,7 @@ title: 咕咚同学
 description: 咕咚的个人博客
 keywords: TMaize,Blog,Java,Html,JavaScript
 author: 咕咚
-footerText: 'Copyright © 2020 咕咚'
+footerText: 'Copyright © 2020'
 
 # 这些不要动
 permalink: /posts/:year/:month/:day/:title.html
@@ -34,11 +34,11 @@ menu:
     url: /pages/links.html
   - title: 留言
     url: /pages/chat.html
-  - title: 关于
-    url: /pages/about.html
+  # - title: 关于
+  #   url: /pages/about.html
 
 # 点击页面文字冒出特效,不需要请设置为false
-extClickEffect: true
+extClickEffect: false
 
 # Google Adsense,不需要请设置为false
 # _includes/ext-adsense.html 里面修改为自己的配置

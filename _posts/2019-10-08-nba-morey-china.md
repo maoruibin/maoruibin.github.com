@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "NBA 凉凉"
 description: 莫雷一条 Twitter 引发的舆论风暴。

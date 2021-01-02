@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "2018 年终总结"
 description: "算是回顾吧"

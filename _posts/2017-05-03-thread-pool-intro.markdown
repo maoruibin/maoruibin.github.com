@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title:  "关于线程池的执行原则及配置参数详解"
 subtitle: 『线程池的构造参数怎么可以这么多？』

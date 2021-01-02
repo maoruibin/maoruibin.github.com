@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: App中主题Theme使用以及Theme切换
 catalog:    true

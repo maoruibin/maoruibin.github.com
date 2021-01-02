@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: 在流式布局中使用PopupMenu，以及遇到的问题
 catalog:    true

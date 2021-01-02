@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "Flutter 概览"
 description: "Flutter 是谷歌今年初推出并开源的一套移动跨平台开发框架，相比其他跨平台方案，Flutter 使用自己的渲染引擎做到了真正的跨平台，这篇文章简单介绍一下 Flutter，算是自己最近学习的一个简单总结。话说现在文章写得越来越少了... "

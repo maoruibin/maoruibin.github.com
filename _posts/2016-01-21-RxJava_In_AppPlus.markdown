@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "RxJava 在 AppPlus 中的应用"
 description: ""

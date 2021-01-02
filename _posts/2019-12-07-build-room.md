@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "天气不错，一起盖房子 | Daily 12/07"
 author: gudong

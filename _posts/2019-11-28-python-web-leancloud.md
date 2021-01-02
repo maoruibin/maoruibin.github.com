@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "网络编程  / Flask / LeanCloud"
 description: 该文主要分享 Python 网络编程的一些介绍，自己开始学 Python 是从廖雪峰老师的在线教程开始，非常感谢老师的教程。文章后面分享到了 LeanCloud，这是一个对前端开发者特别友好的服务，非常值得一试。

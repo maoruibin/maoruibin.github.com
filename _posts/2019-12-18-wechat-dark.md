@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "微信适配了夜间模式 | Daily 12/18"
 author: gudong

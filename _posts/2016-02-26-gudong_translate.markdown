@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "咕咚翻译：Android 设备上翻译效率神器"
 description: "咕咚翻译是自己最近开发的一个实现『划词翻译』功能的 Android 应用 ，可能是目前 Android 市场上翻译效率最高的一款应用。"

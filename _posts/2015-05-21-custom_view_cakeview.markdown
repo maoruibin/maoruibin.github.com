@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: 自定义view之饼状图的实现
 catalog:    true

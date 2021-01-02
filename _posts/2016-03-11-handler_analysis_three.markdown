@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "Handler 之 ThreadLocal 相关"
 description: ""

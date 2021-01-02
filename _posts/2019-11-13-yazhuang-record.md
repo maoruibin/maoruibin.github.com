@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "2019芽庄之旅"
 description: 芽庄之旅已经结束近一个月了，那是一段快乐的回忆，趁着还记得，把这些美好的东西都记录下来。

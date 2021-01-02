@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "Daily11/13 - 与番茄钟的一次不期而遇..."
 author: gudong

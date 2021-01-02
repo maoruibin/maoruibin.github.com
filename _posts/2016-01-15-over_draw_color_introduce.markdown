@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "Android 过度绘制介绍"
 description: "Android 中的过度绘制是指同一个像素被绘制多次，从绘制性能角度讲，同一像素点被绘制的次数当然越少越好，这样有利于减轻 GPU 的工作压力，事实上，在具体开发过程中，不可避免的可能会出现过度绘制，这里，Android 系统本身在开发者选项里已经提供了一个选项开关 Debug GPU overdraw(调试 GPU 过度绘制)，用于检测 App 的过度绘制，只要打开这个开关，App 界面就会在不同的界面区域根据像素的绘制次数显示出不同的颜色，下面说说这几种颜色。"

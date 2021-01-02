@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title:  "Android 6.0 设备上自定义文本操作栏"
 description: ""

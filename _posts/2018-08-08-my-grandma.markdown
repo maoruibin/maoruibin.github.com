@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "我的奶奶"
 description: 关于奶奶的一些回忆、思考。

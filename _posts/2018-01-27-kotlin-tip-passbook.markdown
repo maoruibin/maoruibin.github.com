@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "应用开发过程中的一些 Kotlin 语法点记录"
 description: 应用开发过程中的一些 Kotlin 语法点记录

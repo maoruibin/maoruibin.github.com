@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "不要慌"
 description: 遇事不慌，才可以更好的处理。

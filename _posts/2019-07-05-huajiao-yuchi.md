@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "《鱼翅和花椒》"
 description: 可读性非常好的一篇纪实类文章，我很喜欢烹饪，里面的故事非常有意思。

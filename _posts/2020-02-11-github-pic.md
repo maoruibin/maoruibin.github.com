@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "如何配置 GitHub 为个人的手机图床"
 author: gudong

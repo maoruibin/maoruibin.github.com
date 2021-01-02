@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title:  "如何用好 github 中的 watch、star、fork"
 description: ""

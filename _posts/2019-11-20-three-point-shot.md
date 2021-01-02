@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "Daily11/20  - 又进了一个三分"
 author: gudong

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title:  "仅使用一张资源图片为 View 设置具有按下效果的背景 - OneDrawable"
 description: ""

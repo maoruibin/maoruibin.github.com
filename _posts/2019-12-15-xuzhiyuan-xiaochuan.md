@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "我喜欢这个节目 | Daily 12/15"
 author: gudong

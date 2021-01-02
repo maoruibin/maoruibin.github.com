@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: MAC 系统如何使用 Sublime Text 3 直接编译运行java代码
 catalog:    true

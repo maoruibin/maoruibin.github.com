@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "一次团队分享 | Daily 11/28"
 author: gudong

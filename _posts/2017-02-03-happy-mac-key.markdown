@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title:  "Mac 上修改按键映射工具推荐"
 description: ""

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "Flutter 与 灭霸 | Daily 12/17"
 author: gudong

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title:  "AsyncTask 官方文档翻译（部分）"
 description: "学习 AsyncTask "

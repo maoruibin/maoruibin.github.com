@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title:  "每年的十一都是怎么过的"
 description: "我甚至记得大学每一个十一"

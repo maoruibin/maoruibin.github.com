@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: Android使用WebView加载中文时，乱码问题解决
 catalog:    true

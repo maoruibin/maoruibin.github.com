@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "易剪：手机端的剪报助手"
 description: "为了解决个人在手机上阅读文章时而开发的一个收集笔记内容的 Android 工具 App，核心功能就是帮助用户在移动设备上快速剪贴自己感兴趣的文章片段。"

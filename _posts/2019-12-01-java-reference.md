@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "强、软、弱、虚引用的区别"
 description: "基础知识点"

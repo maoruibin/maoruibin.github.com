@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "掰腕子差点输给侄子"
 author: gudong

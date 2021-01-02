@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "Android so 文件概要"
 description: So 文件学习笔记

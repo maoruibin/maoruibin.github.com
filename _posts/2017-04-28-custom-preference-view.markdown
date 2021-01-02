@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title:  "自定义复杂 View 以及相关绘制优化实践"
 description: ""

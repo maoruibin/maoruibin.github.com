@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "PicPlus：Android 手机端的图床利器"
 description: "快捷、便利，咕咚云图是专为手机端打造的一款图床上传 APP，帮助你更快速的为手机中的图片生成远程地址。"

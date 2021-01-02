@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title:  "LeakCanary 工作原理浅析"
 description: "LeakCanary 是 Square 公司为 Android 开发者提供的用于在开发期检测内存泄漏的神器，本文简单分析一下LeakCanary 具体的检测原理。"

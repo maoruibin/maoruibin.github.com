@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "一个微信小号的实验 | Daily 12/05"
 author: gudong

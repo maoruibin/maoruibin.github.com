@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "日志-2015"
 catalog: true
@@ -16,7 +16,7 @@ categories: log
 为博文增加了一个开关，如下所示
 
     ---
-    layout: post
+    layout: mypost
     author: 咕咚
     title: "在Android5.0以上设备实现过度动画"
     description: ""

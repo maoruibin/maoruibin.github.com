@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "Daily11/19 - 华为开发者大会 — AI 很厉害，客户端也很重要"
 author: gudong

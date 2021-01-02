@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "String、StringBuffer 和 StringBuilder 的区别"
 description: "目前使用 String 直接进行加操作，已经被自动优化为 StringBuilder 形式了。"

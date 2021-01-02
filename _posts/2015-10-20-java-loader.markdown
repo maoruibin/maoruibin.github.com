@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 title: "Java 类加载机制"
 date:   2015-10-20 04:43:59
 description: ""

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "使用 RxJava 重构一段判断逻辑"
 description: ""

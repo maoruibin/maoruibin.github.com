@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "写在 2019 春节前的最后一个工作日"
 description: 最后一天，很轻松

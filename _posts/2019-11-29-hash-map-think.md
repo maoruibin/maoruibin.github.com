@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title: "由 HashMap 引申出的技术深度讨论"
 author: gudong

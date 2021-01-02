@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 title:  "我的Android项目开发规范（不断更新）"
 description:  "AndroidStudio中使用build.gradle的最佳实践"
