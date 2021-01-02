@@ -1,146 +1,61 @@
-# main text of home
-name: 咕咚同学
-bio: Target - Daily - System
-bio-url: http://www.sohu.com/a/245629404_559589
+encoding: utf-8
 
-# twitter summary info
-description: A blog about gudong.site 咕咚
+# SEO相关信息
+title: 咕咚同学
+description: 咕咚的个人博客
+keywords: TMaize,Blog,Java,Html,JavaScript
+author: 咕咚
+footerText: 'Copyright © 2020 咕咚'
 
-# if it's an external image, update below for true
-# better with square images
-external-image: false
-picture: assets/profile/github_profile_2020.png
-profile_bk: assets/profile/profile_bk_2017.jpg
-author: 咕咚同学
-gudongqr: https://cdn.jsdelivr.net/gh/maoruibin/assets/pic/2019/mmexport1578533815371.jpg
-gudonggzh: 咕咚同学
-
-# If you want to include your resume, set to true
-# and specify source (external or local).
-resume: false
-resume-external: true
-resume-url: https://gudong.site/2017/05/08/resume.html
-
-url: https://gudong.site
-# your url: http://USERNAME.github.io
-
-# permalink: /:title/
-permalink: /:year/:month/:day/:title.html
-
-# To enable google analytics, supply your token below
-analytics-google: ''
-
-analytics-baidu: 'de1df75db196971264bd87815c96f646'
-
-
-# To enable piwik tracking, supply your url & site ID below
-analytics-piwik-url: 'gudong.site'
-analytics-piwik-id: 1
-
-# if you don't want comments in your posts, leave categories empty
-enable_disque: false
-
-disqus:
-  shortname: gudong-name # enter this from your disqus account
-  categories: [blog, note, product] # only show disqus for posts that have these categories  
-
-# if you don't want comments in your posts, leave categories empty
-enable_valine: true
-
-valine:
-  shortname: gudong-name # enter this from your disqus account
-  categories: [blog, note, product,tech,daily] # only show disqus for posts that have these categories  
-  appId: 'q5V4aOUPHhbRT8jxCyNV2T7R-gzGzoHsz'
-  appKey: 'VRukIh8OADQLSmXKBcXM52bM'
-  visitors: true
-
-# if you don't have any of social below, comment the line
-# 文件在include 下面的 icon  
-weibo: maoruibin
-# jianshu: 203065de3ced
-zhihu: maoruibin
-juejin: 55f6e9de00b0d7b2c13a8526
-# facebook: 
-twitter: dxgudong
-# google: mygoogle
-# instagram: myinstagram
-# pinterest: mypinterest
-# linkedin: mylinkedin
-# youtube: UCyTmtkrzThgT1wGGUgQ4eZA
-# spotify: myspotify
-github: maoruibin
-# gitlab: mygitlab
-# lastfm: mylastfm
-# stackoverflow: 7044681/mystackoverflow
-# quora: userquora
-# reddit: username
-# medium: gudong.site
-# vimeo: myvimeo
-# lanyrd: mylanyrd
-# email: gudong.site#gmail.com
-rss: true
-
-authors:
-    gudong:
-        name: 咕咚
-        bio: 求知求真，拥抱体系。
-        about: https://gudong.site/about
-        external-image: false
-        picture: assets/profile/github_profile_2020.png
-        twitter: FZ64pAZK2h8aP4r
-
-# do you want a larger site? change the option below
-# options: [normal, large] | default: normal
-# normal = 720px / large = 810px
-width: normal
-
-# if you don't need pagination, comment the *paginate* configs below
-# paginate: 5
-# paginate_path: "blog/:num/"
-
-#note
-note: false
-
-tech: true
-daily: true
-
-# personal product
-product: true
-
-# if you don't need "about" or "blog", comment them out below
-about: false
-
-blog: true
-
-# do you want to show the "read time" of the posts?
-read-time: false
-
-# do you want to show the "tags" inside the posts?
-show-tags: true
-
-# related posts inside a post?
-related: true
-
-# Display links for next and previous posts for the specified categories
-post-advance-links: [blog]
-
-# show author block at the end of a post ?
-show-author: false
-
-# do you want some animations?
-animation: true
-
-plugins:
-  - jekyll-seo-tag
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-admin
-
-jekyll-mentions:
-    base_url: https://gudong.site
-
-markdown: kramdown
+# 这些不要动
+permalink: /posts/:year/:month/:day/:title.html
 kramdown:
-    input: GFM
-highlighter: rouge 
+  auto_ids: true
+  input: GFM
+exclude: ['CNAME', 'README.md', 'LICENSE', '_site', 'dist', 'Gemfile', 'Gemfile.lock', 'blog.sh']
+
+# 域名配置
+# baseurl配置,如果网站部署在根目录下的其他目录中，请设置为 /目录名
+domainUrl: 'http://gudong.site'
+baseurl: ''
+
+# 吐个槽地址，会在chat页面中重定向到该地址
+tucaoUrl: https://weibo.com/u/1874136301
+
+# 菜单
+menu:
+  - title: 首页
+    url: /
+  - title: 归类
+    url: /pages/categories.html
+  - title: 搜索
+    url: /pages/search.html
+  - title: 友链
+    url: /pages/links.html
+  - title: 留言
+    url: /pages/chat.html
+  - title: 关于
+    url: /pages/about.html
+
+# 点击页面文字冒出特效,不需要请设置为false
+extClickEffect: true
+
+# Google Adsense,不需要请设置为false
+# _includes/ext-adsense.html 里面修改为自己的配置
+extAdsense: false
+
+# 腾讯MTA移动分析,不需要请设置为false
+# _includes/ext-adsense.html 里面修改为自己的配置
+extMTA: true
+
+# 百度收录自动推送,不需要请设置为false
+extBaidu: true
+
+# 数学公式支持，比较影响加载速度,不需要请设置为false
+extMath: false
+
+# 友情链接
+links:
+  - title: TMaize
+    url: https://blog.tmaize.net/
+  

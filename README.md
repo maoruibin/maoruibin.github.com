@@ -1,102 +1,73 @@
+# 介绍
 
-[sergiokopplin/indigo: Minimalist Jekyll Template](https://github.com/sergiokopplin/indigo/)
+[![Language](https://img.shields.io/badge/Jekyll-Theme-blue)](https://github.com/TMaize/tmaize-blog)
+[![license](https://img.shields.io/github/license/TMaize/tmaize-blog)](https://github.com/TMaize/tmaize-blog)
+[![GitHub stars](https://img.shields.io/github/stars/TMaize/tmaize-blog?style=social)](https://github.com/TMaize/tmaize-blog)
 
-<p align="center">
-    <h2 align="center">Indigo Minimalist Jekyll Template - <a href="http://sergiokopplin.github.io/indigo/">Demo</a> · <a href="https://travis-ci.org/sergiokopplin/indigo"><img src="https://camo.githubusercontent.com/5393485b732749b3499264168fa8af60166071e8/68747470733a2f2f7472617669732d63692e6f72672f73657267696f6b6f70706c696e2f696e6469676f2e7376673f6272616e63683d67682d7061676573" alt="Build Status" data-canonical-src="https://travis-ci.org/sergiokopplin/indigo.svg?branch=gh-pages" style="max-width:100%;"></a></h2>
-</p>
+一款 jekyll 主题（[GitHub 地址](https://github.com/TMaize/tmaize-blog)），简洁纯净(主题资源请求<20KB)，未引入任何框架，秒开页面，支持自适应，支持全文检索
 
-<p align="center">This is a simple and minimalist template for Jekyll for those who likes to eat noodles.</p>
+你可以到[TMaize Blog](http://blog.tmaize.net/)查看主题效果，欢迎添加友链
 
-***
+## 感谢
 
-<p align="center">
-    <b><a href="README.md#what-has-inside">What has inside</a></b>
-    |
-    <b><a href="README.md#setup">Setup</a></b>
-    |
-    <b><a href="README.md#settings">Settings</a></b>
-    |
-    <b><a href="README.md#how-to">How to</a></b>
-</p>
+[JetBrains](https://www.jetbrains.com/?from=tmaize-blog) 免费提供的开发工具[![JetBrains](./static/img/jetbrains.svg)](https://www.jetbrains.com/?from=tmaize-blog)
 
-<p align="center">
-    <img src="https://raw.githubusercontent.com/sergiokopplin/indigo/gh-pages/assets/screen-shot.png" />
-</p>
+# 本地运行
 
-## What has inside
+一般提交到 github 过个几十秒就可以看到效果，如果你需要对在本地查看效果需要安装 ruby 环境和依赖
 
-- [Jekyll](https://jekyllrb.com/), [Sass](http://sass-lang.com/) ~[RSCSS](http://rscss.io/)~ and [SVG](https://www.w3.org/Graphics/SVG/)
-- Tests with [Travis](https://travis-ci.org/)
-- Google Speed: [98/100](https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fsergiokopplin.github.io%2Findigo%2F);
-- No JS. :sunglasses:
+```bash
+# linux下需要gcc
 
-## Setup
-
-0. :star: to the project. :metal:
-2. Fork the project [Indigo](https://github.com/sergiokopplin/indigo/fork)
-3. Edit `_config.yml` with your data (check <a href="README.md#settings">settings</a> section)
-4. Write some posts :bowtie:
-
-If you want to test locally on your machine, do the following steps also:
-
-1. Install [Jekyll](http://jekyllrb.com), [NodeJS](https://nodejs.org/) and [Bundler](http://bundler.io/).
-2. Clone the forked repo on your machine
-3. Enter the cloned folder via terminal and run `bundle install`
-4. Then run `bundle exec jekyll serve --config _config.yml,_config-dev.yml --incremental`
-5. Open it in your browser: `http://localhost:4000`
-6. Test your app with `bundle exec htmlproofer ./_site`
-7. Do you want to use the [jekyll-admin](https://jekyll.github.io/jekyll-admin/) plugin to edit your posts? Go to the admin panel: `http://localhost:4000/admin`. The admin panel will not work on GitHub Pages, [only locally](https://github.com/jekyll/jekyll-admin/issues/341#issuecomment-292739469).
-
-编辑器
-> http://127.0.0.1:4000/admin
-
-### Scss 编译
-通过步骤三  
-
-## Settings
-
-You must fill some informations on `_config.yml` to customize your site.
-
-```
-name: John Doe
-bio: 'A Man who travels the world eating noodles'
-picture: 'assets/images/profile.jpg'
-...
-
-and lot of other options, like width, projects, pages, read-time, tags, related posts, animations, multiple-authors, etc.
+# gem sources --add https://gems.ruby-china.com/
+# gem sources --remove https://rubygems.org/
+# gem sources --remove https://mirrors.aliyun.com/rubygems/
+# gem sources -l
+gem install bundler
+# bundle config mirror.https://rubygems.org https://gems.ruby-china.com
+bundle install
 ```
 
-### 不发布文章
-```
-published: false
-```
+通过下面命令启动/编译项目
 
-### 不显示相关文章
-```
-hide-related: true
+```bash
+bundle exec jekyll serve --watch --host=127.0.0.1 --port=8080
+bundle exec jekyll build --destination=dist
 ```
 
-## 加目录
-* 根目录增加文件
-* 在 _sass/pages/home-blog-projects.sass 增加 css
-* header.xml 增加判断
-* nav 中增加判断
+# 项目配置
 
-## todo
-```
-本文标题： 深入理解Android事件分发机制
-本文作者： maoqitian
-发布时间： 2019-01-30
-本文链接： https://www.maoqitian.com/2019/01/30/深入理解Android事件分发机制/ 
-版权声明： 本博客所有文章除特别声明外，均采用 CC BY-NC-ND 4.0 许可协议。转载请注明出处！
-```
+1. 如果使用自己的域名，`CNAME`文件里的内容请换成你自己的域名，然后 CNAME 解析到`用户名.github.com`
 
-## How To?
+2. 如果使用 GitHub 的的域名，请删除`CNAME`文件,然后把你的项目修改为`用户名.github.io`
 
-Check the [FAQ](./FAQ.md) if you have any doubt or problem.
+3. 修改`pages/about.md`中关于我的内容
 
+4. 修改`_config.yml`文件，具体作用请参考注释
+
+5. 清空`post _posts`目录下所有文件，注意是清空，不是删除这两个目录
+
+6. 网站的 logo 和 favicon 放在了`static/img/`下，替换即可，大小无所谓，图片比例最好是 1:1
+
+7. 如果你是把项目 fork 过去的，想要删除我的提交记录可以先软重置到第一个提交，然后再提交一次，最后强制推送一次就行了
+
+# 使用
+
+文章放在`_posts`目录下，命名为`yyyy-MM-dd-xxxx-xxxx.md`，内容格式如下
+
+```yaml
 ---
+layout: mypost
+title: 标题
+categories: [分类1, 分类2]
+---
+文章内容，Markdown格式
+```
 
-[MIT](http://kopplin.mit-license.org/) License © Sérgio Kopplin
+文章资源放在`posts`目录，如文章文件名是`2019-05-01-theme-usage.md`，则该篇文章的资源需要放在`posts/2019/05/01`下,在文章使用时直接引用即可。当然了，写作的时候会提示资源不存在忽略即可
 
+```md
+![这是图片](xxx.png)
 
+[xxx.zip 下载](xxx.zip)
+```

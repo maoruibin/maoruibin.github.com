@@ -1,6 +1,11 @@
-<footer class="footer-main">
-    {{ site.name }} © Copyright 2017-{{ site.time | date: '%Y' }}
-    <br>
-    Theme by <a style="color:#aaa;text-decoration: none;" href="https://github.com/sergiokopplin/indigo">indigo</a>
-    <!--<a class="link" href="{{ site.url }}/feed.xml" target="_blank"><svg class="icon icon-rss"><use xlink:href="#icon-rss"></use></svg></a>-->
+<footer class="footer">
+  <span>{{ site.footerText }}</span>
+  <a href="{{ site.baseurl }}/static/xml/rss.xml">RSS订阅</a>
+  {%- comment %} 请保留主题来源，么么哒~ {% endcomment %}
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
 </footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>

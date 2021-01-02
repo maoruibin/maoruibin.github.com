@@ -1,69 +1,8 @@
-{% if page.title == "Home"
-   or page.title == "Blog"
-   or page.title == "Note"
-   or page.title == "Contents"
-   or page.title == "Think"
-   or page.title == "Tech"
-   or page.title == "Daily"
-   or page.title == "Product"
-   or page.title == "Tags"
-%}{% assign showHeader = true %}{% endif %}
-
-{% if showHeader == true %}
-    <header class="header-home {% if site.animation %}animated{% endif %}">
-        {% if site.about %}
-            <a class="link" href="{{ site.url }}/about">
-                <img class="selfie" alt="{{ site.name }}" src="{% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" />
-            </a>
-        {% else %}
-            <!-- <span class="link">
-                <img class="selfie" alt="{{ site.name }}" src="{% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" />
-            </span> -->
-            <a class="link" href="{{ site.url }}/about">
-                <img class="selfie" alt="{{ site.name }}" src="{% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" />
-            </a>
-        {% endif %}
-
-        <h1 class="title">
-                {% if page.title == "Home"%}
-                    {{ site.name }}
-                {% else %}
-                    {{page.title}}
-                {% endif %}
-        </h1>
-        
-        
-        <h2 class="description">
-            <a style="text-decoration:none;color:black;" 
-            target="_blank" 
-            title="{{ site.bio }}" 
-            href="{{ site.bio-url}}">
-
-            <span id="type-it" >
-                    {% if page.bio %}
-                        {{ page.bio }}
-                    {% else %}
-                        {{ site.bio }}    
-                    {% endif %}
-                    
-                                
-            </span>
-            </a>
-        </h2>
-    
-        
-
-        <script type="text/javascript">
-            new TypeIt('#type-it', {
-                speed: 130,
-                startDelay: 500,
-                loop: {{ page.bioLoop }}
-            });
-        </script>
-
-
-        {% include social-links.html %}
-    </header>
-{% endif %}
-
-{% include nav.html %}
+<header class="header">
+  <img class="logo" src="{{ site.baseurl }}/static/img/logo.jpg" />
+  <nav class="menu">
+    {% for menu in site.menu -%}
+    <a href="{{ site.baseurl }}{{ menu.url }}" class="hover-underline">{{ menu.title }}</a>
+    {% endfor -%}
+  </nav>
+</header>
