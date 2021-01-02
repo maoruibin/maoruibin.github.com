@@ -51,6 +51,12 @@ bundle exec jekyll build --destination=dist
 
 7. 如果你是把项目 fork 过去的，想要删除我的提交记录可以先软重置到第一个提交，然后再提交一次，最后强制推送一次就行了
 
+8.过滤首页展示
+```
+<!-- {% if post.categories contains 'blog' %} -->
+<!-- {% endif %} -->
+```
+
 # 使用
 
 文章放在`_posts`目录下，命名为`yyyy-MM-dd-xxxx-xxxx.md`，内容格式如下

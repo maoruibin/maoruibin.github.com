@@ -15,17 +15,17 @@ title: 首页
 
       {% if post.hidden != true %}
 
-      <li>
-        <span class="date">{{ post.date | date: "%Y/%m/%d" }}</span>
-        <div class="title">
-          <a href="{{ site.baseurl | append: post.url }}" class="hover-underline">{{ post.title }}</a>
-        </div>
-        <div class="categories">
-          {% for categorie in post.categories -%}
-          <a href="{{site.baseurl}}/pages/categories.html#{{ categorie }}" class="hover-underline">{{ categorie }}</a>
-          {%- endfor %}
-        </div>
-      </li>
+        <li>
+          <span class="date">{{ post.date | date: "%Y/%m/%d" }}</span>
+          <div class="title">
+            <a href="{{ site.baseurl | append: post.url }}" class="hover-underline">{{ post.title }}</a>
+          </div>
+          <div class="categories">
+            {% for categorie in post.categories -%}
+            <a href="{{site.baseurl}}/pages/categories.html#{{ categorie }}" class="hover-underline">{{ categorie }}</a>
+            {%- endfor %}
+          </div>
+        </li>
       
       {% endif %}
 
