@@ -53,7 +53,7 @@ https://blog.csdn.net/suifeng3051/article/details/52611310
 Java 虚拟机在执行 Java 程序的过程中，会把它所管理的内存划分为5个不同的数据区域。这些区域都有各自的用途，以及创建、销毁的时间，有的区域空间随着虚拟机进程的启动而分配，有些区域则是依赖用户线程，他们随着线程的启动和结束而建立和销毁。
 
 Java 虚拟机管理的内存包括以下几个运行时数据区域，如图所示
-![{D431DF9A-9278-D045-49B5-F6AD12BC9FE9}.png](http://upload-images.jianshu.io/upload_images/588640-f0dd01b0f16bef6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![{D431DF9A-9278-D045-49B5-F6AD12BC9FE9}.png](https://user-gold-cdn.xitu.io/2018/3/28/1626d1c69abf5b0f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 
 可以看到有五部分组成，下面分别介绍
 
