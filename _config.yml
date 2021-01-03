@@ -3,9 +3,9 @@ encoding: utf-8
 # SEO相关信息
 title: 咕咚同学
 description: 咕咚的个人博客
-keywords: TMaize,Blog,Java,Html,JavaScript
+keywords: 咕咚,Blog,Java,Html,JavaScript,PicPlus,咕咚云图
 author: 咕咚
-footerText: 'Copyright © 2020'
+footerText: 'Copyright © 2020 咕咚'
 
 # 这些不要动
 permalink: /posts/:year/:month/:day/:title.html
@@ -46,7 +46,7 @@ extAdsense: false
 
 # 腾讯MTA移动分析,不需要请设置为false
 # _includes/ext-adsense.html 里面修改为自己的配置
-extMTA: true
+extMTA: false
 
 # 百度收录自动推送,不需要请设置为false
 extBaidu: true
