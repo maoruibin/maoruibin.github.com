@@ -1,0 +1,29 @@
+---
+layout: page
+title: 我的
+---
+
+<div class="page page-categories">
+  <div class="list-category">
+    <h2>日志列表</h2>
+  </div>
+  {%- for category in site.categories %}
+  <div class="list-post">
+    
+    <ul>
+      {%- for post in category[1] %}
+      
+      {% if post.hidden == true %}
+        <li>
+          <span class="date">{{ post.date | date: "%Y/%m/%d" }}</span>
+          <div class="title">
+            <a href="{{ site.baseurl | append: post.url }}" class="hover-underline">{{ post.title }}</a>
+          </div>
+        </li>
+      {% endif %}
+      
+      {%- endfor %}
+    </ul>
+  </div>
+  {%- endfor %}
+</div>
