@@ -39,6 +39,8 @@ categories: log
 
 还是记录下 一个 Liquid 语法问题,检查一个字符串是不是包含一个字符串
 
+[Liquid template language](https://shopify.github.io/liquid/basics/introduction/)
+
 ```js
 //定义一个全局 site 常量
 theme_color: "#607D8B"
