@@ -13,7 +13,7 @@ title: 首页
       <ul>
     {%- endif %}
 
-      {% if post.hidden != true and post.categories == "blog" %}
+      {% if post.hidden != true  %}
 
         <li>
           <span class="date">{{ post.date | date: "%Y/%m/%d" }}</span>
