@@ -12,7 +12,7 @@ layout: null
     <lastBuildDate>{{site.time | date_to_rfc822}}</lastBuildDate>
     <generator>Jekyll v{{ jekyll.version }}</generator>
     <atom:link href="{{ site.domainUrl | append: site.baseurl }}/static/xml/rss.xml" rel="self" type="application/rss+xml" />
-    {%- for post in site.posts  limit:15 %}
+    {%- for post in site.posts limit:{{site.rssCount}} %}
     <item>
       <title>{{post.title | escape}}</title>
       <link>{{site.domainUrl | append: site.baseurl | append: post.url}}</link>
