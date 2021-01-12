@@ -82,7 +82,7 @@ input:-webkit-autofill {
   background-color: #999999;
 }
 ::selection {
-  background-color: #4a4a4a;
+  background-color: #90c29b;
   color: #f9f9f9;
 }
 .hover-underline {
