@@ -95,7 +95,7 @@
 }
 .page-post code {
   font-size: 13px;
-  background-color: #eeeeee;
+  background-color: #DCF3DF;
   word-break: break-all;
   padding: 3px 5px;
   margin: 0 4px;
@@ -136,7 +136,7 @@
   text-align: left;
 }
 .page-post table tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: #DCF3DF;
 }
 .page-post .table-container {
   overflow: auto;
