@@ -5,16 +5,11 @@ title: 关于我
 
 > 大道至简
 
-我是咕咚，这是我的个人博客站点。这么多年的工作一直在跟代码打交道，工作之外，篮球是我的最爱。
+我是咕咚，这是我的个人博客。
 
-工作之余，喜欢开发一些工具 APP，算是半个独立开发者，如果你喜欢 Markdown 写作，可以了解一下[咕咚云图](https://www.coolapk.com/apk/name.gudong.pic)。
+我的工作是跟代码打交道，工作之外，篮球是我的最爱。另外，也喜欢开发一些工具 APP，算是半个独立开发者，如果你喜欢 Markdown 写作，可以了解一下[咕咚云图](https://www.coolapk.com/apk/name.gudong.pic)这个 APP。
 
-除此之外，也喜欢看书，偶尔写点东西。
-
-我的公众号-咕咚同学，欢迎关注。
-
-< img src="https://gitee.com/maoruibin/img/raw/master/2021/01/12/_export1610434130245.jpg.png" width="200"></img>
-
+除此之外，也喜欢看书，偶尔写点东西，我的公众号-[咕咚同学](https://gitee.com/maoruibin/img/raw/master/2021/01/12/_export1610434130245.jpg.png)，欢迎关注。
 
 
 ## 更多联系方式
