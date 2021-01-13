@@ -13,7 +13,9 @@ title: 关于我
 
 我的公众号-咕咚同学，欢迎关注。
 
-![咕咚同学](https://gitee.com/maoruibin/img/raw/master/2021/01/12/_export1610434130245.jpg.png)
+< img src="https://gitee.com/maoruibin/img/raw/master/2021/01/12/_export1610434130245.jpg.png" width="200"></img>
+
+
 
 ## 更多联系方式
 
