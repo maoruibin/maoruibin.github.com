@@ -43,7 +43,7 @@ html.dark {
     border-bottom: 1px solid #58a6ff;
   }
 
-  html.dark .page-post strong{
+  html.dark .page-post strong, .page-post b{
     color: #ffffff;
   }
 
