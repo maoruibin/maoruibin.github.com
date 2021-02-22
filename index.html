@@ -15,7 +15,7 @@ title: 首页
 
       {% if post.hidden != true  %}
 
-        {% if "tech" in post.categories %}
+        {% if  post.categories contains tech %}
 
           <li>
             <span class="date">{{ post.date | date: "%Y/%m/%d" }}</span>
