@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MAC 系统如何使用 Sublime Text 3 直接编译运行java代码-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="MAC 系统如何使用 Sublime Text 3 直接编译运行java代码"/>
+  <meta name="keywords" content="咕咚,tech"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="MAC 系统如何使用 Sublime Text 3 直接编译运行java代码">MAC 系统如何使用 Sublime Text 3 直接编译运行java代码</h1>
+  
+  <div class="subtitle">咕咚 于 2015-06-29 发布</div>
+  
+  <div class="post">
+    <p>在Mac下使用Sublime时，如果要编译java文件，直接使用command+B命令就可以达到编译的效果，此时会在java源文件的目录下生成对应的.class文件，但这显然不能够满足我们的需求。
+如何才能直接编译并运行java代码呢？</p>
+
+<p>我最终通过如下解决方案，达到了command+B 在Sublime控制台显示运行结果的效果</p>
+
+<h2 id="第一步">第一步</h2>
+
+<p>打开Finder 应用程序-&gt; Sublime Text -&gt; 右击 显示包内容 -&gt; /Contents/MacOS/Packages/Java.sublime-package</p>
+
+<h2 id="第二步">第二步</h2>
+
+<p>替换这个压缩文件夹下面 JavaC.sublime-build 的文件内容为</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+"cmd": ["java", "$file_base_name"],
+"file_regex": "^ *\\[javac\\] (.+):([0-9]+):() (.*)$",
+"selector": "source.java"
+}
+</code></pre></div></div>
+
+<p>ps:这个地方小费了点功夫，在mac上没有合适的软件可以编辑Java.sublime-package 这个文件里面的内容，后来我是这么做的，把文件发送到windows电脑上，然后用360压缩解决。</p>
+
+<h2 id="第三步">第三步</h2>
+
+<p>重新打开Sublime，使用快捷键command+B进行编译然后直接运行，然后控制台打印出 HelloWorld字符串，如下所示，妥妥的。</p>
+
+<p><img src="/assets/sublime_java.png" alt="运行成功" title="运行成功效果图" /></p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

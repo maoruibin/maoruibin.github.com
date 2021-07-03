@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>我的 App 发布了 | Daily 12/06-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="我的 App 发布了 | Daily 12/06"/>
+  <meta name="keywords" content="咕咚,daily"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="我的 App 发布了 | Daily 12/06">我的 App 发布了 | Daily 12/06</h1>
+  
+  <div class="subtitle">咕咚 于 2019-12-06 发布</div>
+  
+  <div class="post">
+    <p>前天就把自己的图床 app 上传到了酷安市场，今天终于审核通过了。目前十一下载量，十评论，有人说，要火，希望它能帮助写作爱好者更好的写作。再次感谢  drakeet （纯纯写作作者）同学的推荐。</p>
+
+<p><img src="https://i.loli.net/2019/12/06/aFdzXA1wvmGy5uB.jpg" alt="" /></p>
+
+<p>以前说过，一开始我并没有打算把这个 app 公布，但是确实比较好用，所以前段时间便优化了一下，目前有模有样，功能简单，体验友好。具体软件详细介绍可查看我的博客文章—<a href="https://gudong.site/2019/12/03/about-xPic.html">咕咚云图：Android 手机端的图床利器</a></p>
+
+<p>今天发布后的第一波用户主要来自写作软件爱好者，他们提了一些意见，确实是之前没注意到的，周末抽空改一改。</p>
+
+<p>另外，最近写字有点多，尽管写文章时我选择的都是夜间模式，但眼睛还是受到了影响，今天下午眼睛就有点恍惚，要注意保护才是。</p>
+
+<p>其实有时写字并没有花很多时间，真正费事的却是格式、插图以及多平台同步之类的周边事情，所以还是应该更聚焦内容。</p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

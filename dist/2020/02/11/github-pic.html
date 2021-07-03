@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>如何配置 GitHub 为个人的手机图床-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="如何配置 GitHub 为个人的手机图床"/>
+  <meta name="keywords" content="咕咚,product"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="如何配置 GitHub 为个人的手机图床">如何配置 GitHub 为个人的手机图床</h1>
+  
+  <div class="subtitle">咕咚 于 2020-02-11 发布</div>
+  
+  <div class="post">
+    <h2 id="前言">前言</h2>
+<p>之前开发了<a href="https://www.coolapk.com/apk/name.gudong.pic">PicPlus</a>，这是一个用来上传手机图片到图床的 Android 软件，后来还支持了 GitHub 图床，不过对于普通用户，配置 GitHub 图床稍微有点麻烦，所以就有了这个教程。</p>
+
+<p>另外一些人可能对 <strong>图床</strong> 跟 <strong>GitHub</strong> 这两个概念比较陌生，所以为了更好的这里也简单介绍一下，如果对它们已经了解，可以选择跳过下面的两部分，直接<a href="#咕咚-Markdown-助手">阅读正文部分</a>。</p>
+
+<h3 id="图床">图床</h3>
+
+<p><strong>图床是用来在网络上存储图片的服务</strong>。可能有点抽象，这里先说说图片，图片是我们上网时除文字以外最常看到的东西，关于图片，如果通过存储形式区分，可以把图片分为：</p>
+
+<ul>
+  <li>本地图片</li>
+  <li>网络图片</li>
+</ul>
+
+<p>本地图片很容易理解，比如我们用手机拍的照片，这些照片拍好后，它们会存储在手机的存储卡上，只有自己可以操作，你可以对它进行编辑、删除等任何操作，但是除手机主人之外的所有人都不能访问，因为它们在你的手机存储卡上。</p>
+
+<p><img src="https://cdn.jsdelivr.net/gh/maoruibin/assets/pic/2020/Screenshot_20200211-220346.jpg" alt="" /></p>
+
+<p>但是在上网过程中，为了让自己的照片被别人看到，本地图片就不行了，现在必须把照片上传到网络服务器上，让它成为网络图片。比如现在想要在微博上展示自己做的菜，那么就需要把自己拍的照片上传到微博的服务器，这样大家就都可以看到这个图片了，因为微博的图片服务是公开的，上传后的图片会有一个网络访问路径，任何支持网络请求的设备都可以根据路径下载展示那个图片。</p>
+
+<p>使用网络图片的场景很多。比如现在要写一篇文章发表在网上，文章里需要插入一张图片，应该怎么办，本地图片肯定不行，这时就需要找到一个<strong>可以存储图片的网路服务器</strong>，把图片上传到网络服务器上，然后拿到这个图片对应的远程访问地址，然后就可以在文章中使用这个远程地址来展示图片了。</p>
+
+<blockquote>
+  <p>一些网络文字编辑器，比如知乎、公众号后台、印象笔记等，它们支持把本地的图片上传并转化为远程图片。</p>
+</blockquote>
+
+<p>上面说到的，能<strong>提供图片存储的网络服务</strong>就是图床服务。目前，国内有很多产品可以提供这种图床服务，比如主流的图床服务有七牛云、阿里云、腾讯云、微博图床等，还有不少小众的图床服务，如 SM.MS 等。</p>
+
+<h3 id="github">GitHub</h3>
+
+<p>这是一个国外公司开发的网站，这个网站主要为程序员提供了可以共享代码、文件的服务，比如你开发了一个程序，现在为了让更多人参与这个项目，一起开发，一共贡献 idea，就可以把代码上传到上面，GitHub 提供了友好的协作机制，然后大家就可以共同提交代码，共同维护项目，不少公司或者个人都选择用这样的方式去开发项目，这也是开源的力量。</p>
+
+<p>上面说到的 GitHub 可以提供文件存储服务，所以它一定也支持图片存储，而且只要创建仓库时，仓库的访问属性是公开的，那么存储在这个仓库里的图片就可以为互联网上的所有人访问到。</p>
+
+<p>所以 GitHub 也就可以作为图床服务，而且 GitHub 可以免费使用（有付费版），存储空间也没什么限制，很好用。</p>
+
+<hr />
+
+<h2 id="picplus-咕咚-markdown-助手">PicPlus <del>咕咚 Markdown 助手</del></h2>
+
+<p>如上面所述，如果你觉得七牛云操作麻烦、腾讯云还要付费，那么你就可以选择用 GitHub 作为自己的图床，来存储自己的网络图片。只需要注册一个 GitHub 账号，创建一个仓库即可，然后直接在浏览器里进行上传，或者通过 git 命令这种极客的方式去上传。</p>
+
+<p>但是不论那种，其实都有点麻烦，而且很多时候，我们需要把<strong>手机中的图片</strong>上传到图床，如果要使用 GitHub 可就太麻烦了。</p>
+
+<p>其实不光是 GIthub 图床，所有图床在手机上要上传都不方便。所以前几个月我开发了一个 Android 软件 — <strong><a href="https://www.coolapk.com/apk/name.gudong.pic">咕咚 Markdown 助手</a></strong>，其中最重要的功能就是<strong>上传手机中图片到图床</strong>。于此同时，还支持上传到 GitHub 图床。目前该应用只发布到了酷安市场，咕咚 Markdown 助手主页地址，<a href="https://www.coolapk.com/apk/name.gudong.pic">点击可访问</a>。</p>
+
+<p><img src="https://cdn.jsdelivr.net/gh/maoruibin/assets/pic/2020/Screenshot_20200212-110000.jpg" alt="" /></p>
+
+<p>实际上，当你下载 PicPlus <del>咕咚 Markdown 助手</del>后，无需任何配置就可以把本地图片上传到图床了，只不过默认使用的<a href="https://niupic.com/">牛图图床</a>，牛图图床有一个缺点就是上传后的图片无法管理，比如重新编辑、删除等，不过对于一般的使用场景倒也够用。</p>
+
+<p><strong>如果你对自己的数据管理很在意</strong>，咕咚 Markdown 助手支持设置 GitHub 作为图床，所以你可以使用 GitHub 图床，不过还需要一些配置才可以使用，这些配置还是稍微有点麻烦，但是好在只需要配置一次，以后就不需要在折腾了，也划得来。具体如何在 PicPlus 中配置 GitHub 图床，请查阅这篇文章，<a href="https://gudong.site/2020/02/14/pplus-github.html">如何为 PicPlus 配置 Github 作为远程图床</a></p>
+
+<h2 id="后记">后记</h2>
+
+<p>这个软件的开发初衷是自己使用，目前支持 GitHub 图床、搜狗图床以及牛图图床，后续也会逐步支持七牛、腾讯云以及码云等其他主流图床。</p>
+
+<p>另外除了在软件内上传图片，还支持在相册中以及任何支持系统分享的地方，通过系统分享上传图片，这样你就可以在浏览相册、系统截图或者其他文件分享时，找到咕咚 Markdown 助手的传图入口，然后进行上传，如下所示：</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gbtn3m5sajj318g0kfgos.jpg" alt="" /></p>
+
+<p>咕咚 Markdown 助手是为 Android 手机开发的图床上传工具，没有 iOS 版本跟 PC 版本，不过 PC 版也有不少这样的工具，比如 <a href="https://picgo.github.io/PicGo-Doc/zh/">PicGo</a>，支持多平台，支持的图床也很丰富，其中就包括 GitHub 图床。还有 MAC 平台上很知名的 <a href="https://toolinbox.net/iPic/">iPic</a>，也相当不错，操作体验很好。</p>
+
+<p>另外目前咕咚 Markdown 助手还在不断更新迭代中，后续会不断优化，添加新功能，如果你喜欢它，欢迎把它分享给更多的人。</p>
+
+<h3 id="关于作者">关于作者</h3>
+
+<p><a href="https://gudong.site/">咕咚</a>，软件工程师，独立开发者，喜欢开发、打磨效率软件，之前还开发过支持划词翻译的 Android 应用软件-咕咚翻译，更多应用可以查看<a href="https://gudong.site/product">我的 product 页面</a>，我经常活跃在酷安市场，你可以搜索「咕咚」找到我。 此外我也是一个写作爱好者，每天都会坚持写作，分享一些感悟点滴，文章会发布在公众号、博客以及酷安，如果感兴趣可以通过如下方式关注我：</p>
+
+<ul>
+  <li>公众号：咕咚同学</li>
+  <li>博客：<a href="https://gudong.site/">咕咚的个人博客</a></li>
+  <li>微博：<a href="https://weibo.com/maoruibin">大侠咕咚</a></li>
+  <li>酷安：<a href="https://www.bootcss.com/">咕咚</a></li>
+</ul>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

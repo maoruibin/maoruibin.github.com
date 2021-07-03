@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>出 bug 了，难受… | Daily 01/20-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="出 bug 了，难受… | Daily 01/20"/>
+  <meta name="keywords" content="咕咚,daily"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="出 bug 了，难受… | Daily 01/20">出 bug 了，难受… | Daily 01/20</h1>
+  
+  <div class="subtitle">咕咚 于 2020-01-20 发布</div>
+  
+  <div class="post">
+    <p><img src="https://cdn.jsdelivr.net/gh/maoruibin/assets/pic/2020/IMG_20200120_230753.jpg" alt="泰康商学院 2020/01/20" /></p>
+
+<p>心情不好！！！负能量一篇…😭</p>
+
+<p>出 bug 总是很让人难受，工作中兢兢业业不出问题，别人也不会说你的好，但是如果你出问题了，就会拿你说事，其实很多事情都是如此。</p>
+
+<p>所以干工作可以照此分几个不同的等级，从最好到最坏</p>
+<ul>
+  <li>完成工作并超出预期（卓越）</li>
+  <li>无差错的完成工作（靠谱）</li>
+  <li>完成工作但偶有问题（一般）</li>
+</ul>
+
+<p>其实能保持中间的状态就很不容易，这样的人也是领导比较喜欢的。</p>
+
+<p>当然工作中的问题是多方面的，一个问题的后面一定不是简单的 bug 那么简单，开发流程，测试流程，产品上线如果要细究都是可以找到一些优化点的，不过大部分公司面对问题就是去解决问题本身，而很少思考问题背后更深层次的原因，或者去找一些更好的系统方法去拦截这些问题，作为个人你也无能为力，这种时候能做的就是想想自己以后怎么更好的避免或者减少这些问题。</p>
+
+<p>这是一个方法论的问题，很有意思，我过去几年在工作中遇到的让我印象深刻的问题，大部分都是小问题，小毛病，这些问题一些是测试人员测不出来的，一些可以很容易的测出来，但是忽略了，因为 case 太多了。</p>
+
+<p>我看多了国外的开源软件，他们有一点做的很好，就是自动化测试 case 代码，各种小细节都会有与之对应的 case 覆盖，尽管这些代码总会占据他们很大的代码量和工作量，但是他们对比却依旧坚持，国内的很多产品开发，更注重迭代速度，对各种 case 的代码覆盖测试几乎不怎么关心。</p>
+
+<p>我觉得前者更科学，后者可能更适合国情吧，我只能这么解释了。</p>
+
+<hr />
+
+<p>碎碎念于等媳妇下班的大厅…</p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

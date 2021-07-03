@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>2017 年终总结-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="2017 年终总结"/>
+  <meta name="keywords" content="咕咚,blog"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="2017 年终总结">2017 年终总结</h1>
+  
+  <div class="subtitle">咕咚 于 2017-12-31 发布</div>
+  
+  <div class="post">
+    <p>最近一直整理这一年散落在各处的文章、笔记，毕竟一年了，也是该整理整理了，平时我会在印象笔记、<a href="https://www.jianshu.com/u/203065de3ced">简书</a>、<a href="https://github.com/maoruibin">Github</a>、<a href="https://juejin.im/user/55f6e9de00b0d7b2c13a8526">掘金</a>、<a href="https://zhuanlan.zhihu.com/gudong">知乎专栏</a> 等不同的地方记录一些技术或者个人感悟，也会在 <a href="https://trello.com">Trello</a>、<a href="https://www.wunderlist.com/zh/">Wunderlist</a> 中记录一些一闪而过的点子。</p>
+
+<p>到今天终于也整理完了，最终我把技术性的文章都放在掘金，然后逐渐再同步到个人博客。</p>
+
+<p>在整理的过程中，总有一种放电影的感觉。一年的时间那么长却也那么短，从头到尾可以做那么多事，但是真真能做好的也就那么几件事，不过一年中还是有很多可以说的东西。</p>
+
+<h2 id="生活需要仪式感">生活需要仪式感</h2>
+
+<p>之前在墨迹天气时遇到的<a href="https://weibo.com/himsfei">黑羊老师</a>就曾对我们说，生活需要仪式感，我想也是，一年快过完了，如果要给这一年举行一个仪式，现实生活中可以来一串鞭炮，那这里写一篇年终总结也许是最好的方式了，再说 15、16 年已经连续两年写了年终总结，今年也没有理由让它断掉。</p>
+
+<p>关于年终总结，15 年写年终总结时是响应当时的社区号召，自己写了很多字，16年就有点拖沓了，基本没写什么。17年我想写的不一样一点，让年终总结有意思些，所以我想采用自问自答的形式，好组织也更加容易表达。</p>
+
+<h2 id="2017年">2017年</h2>
+
+<p><strong>这一年最高兴一次出行经历是什么？</strong></p>
+
+<blockquote>
+  <p>这无疑要数今年 11 月 跟同事一起去的黄山游了。</p>
+
+  <p>黄山是从小学就知道的一个地方，那时从小学课本上就知道它有猴子观海、迎客松等诸多景点，但是自己一直没机会去，甚至，直到今年我才算第一次去南方。</p>
+
+  <p>这次的安徽行先是去了老街，然后第二天去了黄山，最后去了黄村，整个过程让我影响非常深刻，我喜欢徽州的建筑风，喜欢那边的水，安静透彻；喜欢黄山，高大险峻，美不胜收；喜欢黄村，喜欢在古镇里来回穿梭的感觉，喜欢竹林，当我一个人在竹林里奔跑，就仿佛感觉自己在电影里，一种美梦成真的感觉。</p>
+
+  <p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fmz6mrjk5yj317g17gq9x.jpg" alt="" /></p>
+</blockquote>
+
+<hr />
+
+<p><strong>这一年对你影响最大的事是什么？</strong></p>
+
+<blockquote>
+  <p>换了一份新的工作。</p>
+
+  <p>我在17年初做了一个大概的年度规划，其中就有一项是换工作。</p>
+
+  <p>简短回顾一下墨迹的工作，在短短一年的工作时间里收获不少，从一开始加入墨迹便开始做项目重构，项目重构的过程很适合锻炼技术能力，因为有很多模块可以彻底的重写，这样就可以从大的角度的重新设计，锻炼自己的设计能力同时也可以引入一些新技术，增加技能点。</p>
+
+  <p>除了技术上的收获，有时对你更有价值的也许是那些与你共事的人。有幸在墨迹认识了不少优秀的同事，虽然现在已经离开半年多了，但是对他们印象深刻，很感激。（更多关于之前同事的评价，之前曾写过一篇文章有简述 - <a href="https://www.jianshu.com/p/2685577606f5">17 下半年的这段时间 </a>）</p>
+
+  <p>换工作之前自己先是准备了一段时间的基础知识包括算法、Java、Android 基础以及一些高级的内容，后来在5月份开始找工作，找了一个多月，最终6月末入职新浪微博。</p>
+
+  <p>关于微博这个产品，自己从13年开始注册后，一直使用到现在，算是微博的忠实用户，不过在找工作之前，我怎么也没想到自己最终会去微博，一是一直没怎么看到过微博的招聘信息，二是微博移动端技术人员在圈里相对很安静，所以自己对微博 Android 团队了解很少。</p>
+
+  <p>在自己面试的哪天，自己状态并不好，笔试题答得一般，但是最终被录用也是一个有意思的过程，到现在我从心底还是特别感谢溪总。</p>
+
+  <p>在新的环境下，很多东西跟之前的都不一样，不论开发模式还是工作流程，但是经过一段时间的熟悉，自己很快便找到了节奏。</p>
+</blockquote>
+
+<hr />
+
+<p><strong>在微博做 Android 客户端开发是一种什么样的体验？</strong></p>
+
+<blockquote>
+  <p>客户端模块很多，自己所在组负责的是那个最容易出问题的模块  —  <strong>首页信息流</strong>。都知道微博是国内移动平台上的顶级流量入口，而信息流则是微博的门面，所以大家都知道这里绝不能出问题，所以除了自己在意识上提高觉悟，团队会有非常严格的 Review（包括 Design Review 以及 CodeReview），以及发版后的 Checklist，以及最重要的灰度开关策略。</p>
+</blockquote>
+
+<hr />
+
+<p><strong>在微博工作中技术成长如何？</strong></p>
+
+<blockquote>
+  <p>关于技术成长，我一直认为师傅领进门，修行靠个人，所以工作中更多的成长来自于自己对自己的要求，同样一个问题，你可以用不同的方式完成，但是你对你使用的方案以及背后的原理以及潜在的风险有多清楚，完全取决于个人，你可以在做一个需求或者解一个 bug 时多花点时间把技术点分析透彻，一点点积累，这种积累随着时间的积累会在以后发挥出越来越大的作用。</p>
+</blockquote>
+
+<hr />
+
+<p><strong>你说了师傅领进门，修行靠个人，你有师傅吗？</strong></p>
+
+<blockquote>
+  <p>有，我很感激当初在创新工场时的 Android Leader，当然我也很喜欢我现在的组长，大家一起时更像是朋友，一起玩游戏一起打球，很喜欢这种环境。</p>
+</blockquote>
+
+<hr />
+
+<p><strong>在本职工作之外，有没有学习过什么新技能</strong></p>
+
+<blockquote>
+  <p>熟悉我的人应该知道，我的本职工作是 Android 开发，到目前为止，已经五年了。</p>
+
+  <p>对于 Android 开发，到目前为止大家都能感觉到，整个开发生态已经非常成熟。不论是看谷歌的动态还是国内市场，现在各种开发框架以及开发思想都已经成型，现在开发一个具有高水准的移动 APP 已不是什么难事，这是一种技术市场成熟的表现，随之而来的就是市场对技术人员要求的变高。现在能明显感觉到市场上对 Android 开发人员的技术要求在变高，企业都倾向于招聘高级开发。</p>
+
+  <p>作为技术人员，很多人应该感同身受，所以适当点亮一些新技能，扩展一下自己的视角也许是一种比较长远的计划。</p>
+
+  <p>所以 17 年我还是选择尝试性的接触了一些新东西。比如 Sketch 以及 Pathon。</p>
+
+  <p>学习 Sketch 是因为经常需要做一些平面图或者图标。以前刚做 Android 开发时就跟着做设计的同事学过 PS ，对于一些基本操作已经可以驾轻就熟，但是 PS 博大精深，后来在使用的过程中还是应用较少。直到后来接触了 Sketch，发现它非常易用，提供的功能以及使用方式刚刚好，很适合自己，而且日常开发中，设计师提供的切图也都是通过 Sketch 完成，所以今年8、9月份便花了点时间去学习。</p>
+
+  <p>通过学习 Sketch 可以或多或少的了解平时与你合作的设计师是如何工作的，这对平时开发工作中的交流会有很大的作用。举一反三，有时你想要跟你圈子外面的世界交流，也许学习他们的交流语言是一种很好的途径。</p>
+
+  <p>后来，继续学习了 Python，Python 去年就看着教程写过一些 Demo，这次买了一些教程，打算仔细的学一学，期间花了一个多月的时间，把 Python 的基础知识都学习了一篇，并做了几个小项目。</p>
+
+  <p>对于 Python，自己的期望就是可以掌握它的基本语法，可以看懂一些 Python 代码，所以一些 Python 库自己并没有花很多精力去学，总之够用即可。</p>
+</blockquote>
+
+<p><strong>这一年你有坚持过做一件事吗，坚持了多久？</strong></p>
+
+<blockquote>
+  <p>坚持锻炼身体。</p>
+
+  <p>去黄山玩得时候，玩得比较嗨，然后就在朋友圈发了自己的照片，后来看到照片后，大家对美景产生的注意力并没有我想想得多，反而对我的小肚腩更在意，呃呃~~这让我意识到也许自己确实有点发福了，今年的体重已经来到了我最重的时候 - 170斤，尽管我有 183 的身高，但是我的潜意识里自己一直都是 160 的完美体重，所以我坚持每天做俯卧撑以及仰卧起坐，并用 Loop 这个 APP 进行记录。关于 Loop 可以看看下面的介绍，这是一个很不错的开源应用。</p>
+
+  <p><a href="http://www.ifanr.com/app/648167">Loop : 好用又永久免费的习惯养成 app，让你无法放弃打卡 #Android | 爱范儿</a></p>
+
+  <p>App 很好用，目前我已经成功养成了两个 Loop。</p>
+</blockquote>
+
+<hr />
+
+<p><strong>你平时看书吗？</strong></p>
+
+<blockquote>
+  <p>今年在年初做计划时就把看书作为了自己的计划之一，目前看来执行的并不怎么好，但是相比去年今年看的算是已经比去年多了。下面是自己今年看到的一些书</p>
+
+  <p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fn6t3ylku7j30tu10uabs.jpg" alt="" /></p>
+</blockquote>
+
+<hr />
+
+<p><strong>看过什么印象比较深刻的书？</strong></p>
+
+<blockquote>
+  <p>有两本不错，一本叫简约至上，这是一本讲设计的书，书中大多时候用如何设计一个遥控器为例进行讲解，如何对产品功能交互进行有效控制，从而让产品变得好用，其中提到了专家用户这个概念，让我影响深刻。</p>
+
+  <p>另一本叫《最重要的事只有一件》，我很认同这个观点，书中用很多例子进行论证，关于这本书我觉得完全可以写一本读后感，很好的一本书，类似的观点我在知乎中也看到过一个类似的答案，讲的非常不错，<a href="https://www.zhihu.com/question/23819007/answer/131276556">你有什么道理后悔没有早点知道？ - 风墟的回答 - 知乎</a></p>
+</blockquote>
+
+<hr />
+
+<p><strong>今年影响最深刻的一段时间是那段时间？</strong></p>
+
+<blockquote>
+  <p>应该算是5月中旬到6月末的那一个月的时间。</p>
+
+  <p>那段时间找工作，平时主要就两件事，<strong>为找工作做准备</strong>以及<strong>投简历面试</strong></p>
+
+  <p>在准备找工作的过程中，一方面要复习巩固一些 Java Android 基础，并整理成文章输出（那段时间也是今年写文章写得最多的一段时间），另一方面需要把之前的工作做一此回顾，每天会看一下之前工作过程中写的代码以及一些自己负责过的模块，重新思考回顾。</p>
+
+  <p>相比准备的过程，面试过程更有意思点。每天会跟不同公司的技术人面谈，一起聊技术。很多时候聊得都比较愉快，但是同时也会不断地发现自己存在的一些问题，比如技术深度的问题，在知乎面试完后我有很明显的感觉，自己也确实意识到了这个问题，但是又不是一时半刻能解决的，只能在以后的工作学习中不断去提升，还有一些是技术细节问题，终归总结为对技术的态度问题。都说面试是一个很好的学习过程，确实如此。</p>
+
+  <p>另外每天会去不同的公司面试，挺奔波的，很多时间可能在地铁、等人中度过，不过忙忙碌碌的感觉还挺充实的。</p>
+
+  <p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fn6t8dacj5j30u01407a7.jpg" alt="" /></p>
+</blockquote>
+
+<p><strong>这一年有没有什么比较险的经历？</strong></p>
+
+<blockquote>
+  <p>后知后觉，要算的话，今年在求职的过程中差点去了小蓝单车，这应该算是一次吧，原因大家都知道。</p>
+
+  <p>后来想想自己还是挺幸运的。不过也让我更加明白了互联网的残酷。一个行业的洗盘速度之快让人咋舌，当时还风生水起，转眼之间已经灰飞烟灭。</p>
+</blockquote>
+
+<p><strong>在开源方面做过什么？</strong></p>
+
+<blockquote>
+  <p>相比往年，今年并没有很多精力去维护一些开源的东西。</p>
+
+  <p><a href="https://github.com/maoruibin/TranslateApp">咕咚翻译</a>从16年3月发布后连续迭代了几个版本后后来进入了长期的缓慢迭代过程，还在墨迹天气的时候曾抽出时间加过一些小功能，但是到17年，我几乎没有怎么去完善，没有那么多时间和精力，但是一直有用户断断续续的打赏，真的很<a href="http://gudong.site/1990/03/01/list_pay.html">感谢他们</a>，期间也有<a href="https://github.com/maoruibin/TranslateApp/graphs/contributors">部分开源爱好者</a>很热情的为咕咚翻译增加了一些特性，很有意思。</p>
+
+  <p>今年在找工作之前也开源过一个比较有意思的东西，<a href="https://github.com/maoruibin/OneDrawable">OneDrawable</a> - 仅使用一张资源图片为 View 设置具有按下效果的背景，关于 OneDrawable 更多说明可以查看<a href="http://gudong.site/2017/04/05/OneDrawable.html">文档</a>， 这是当时在墨迹工作时自己开发的一个辅助组件，在内部使用没问题后，后来便开源了出来。</p>
+
+  <p>直到后来入职微博，继续开源了几个小组件，<a href="https://github.com/maoruibin/FlowerLoading">FlowerLoading: Android 中转菊花效果实现方案.</a>  以及 <a href="https://github.com/maoruibin/ActionButton">ActionButton:给 TextView 设置 left icon  可任意定制</a> ，这两个都是平时工作过程中抽取出来的小组件，都比较小巧，第一个转菊花 View 目前已经在微博中使用，目前微博中大部分转菊花 View 都是 FlowerLoading 的实现方案，第二个是自己纯粹开发玩的，当时看到项目中的 Button 设计特别臃肿，所以自己就试着设计了相对比较轻量的 View。</p>
+
+  <p>开源有很多好处。你可以接触到不同公司的开发者，让大家一起贡献智慧到仓库中，也是交朋友、互相学习的一种好方式。</p>
+
+  <p>如果有时间，我还是希望 18 年可以有更多这样的输出。</p>
+</blockquote>
+
+<p><strong>17 年开发过什么好玩的 APP 没？</strong></p>
+
+<blockquote>
+  <p>从接触编程开始，自己就是那种非常喜欢动手的开发者，我喜欢完美解决一个需求的感觉，喜欢参与一个东西从无到有过程。平时如果有什么好点子，我会尽快把他记录在自己的点子库里，今年要说做完整的东西有两个。</p>
+
+  <ul>
+    <li><a href="http://gudong.site/product/2017/03/15/about_easypaper.html">易剪</a>：这是一个手机上收集文章片段的工具，一般人好像不怎么使用。当时找工作期间，每天都会在手机上花很多时间去阅读一些文字，看到一些好的片段就像把它摘录下来，当时试着用了各种便签都不方便，所以自己就想自己做一个好用的，我想到了 Android 6.0 中支持自定义文本 Action，所以就用这个新特性做了这个 APP，效果如下所示：</li>
+  </ul>
+
+  <p><img src="http://upload-images.jianshu.io/upload_images/588640-38f85015e2d782b2.gif?imageMogr2/auto-orient/strip" alt="" /></p>
+
+  <ul>
+    <li>This is me， 这个 APP 目前只有自己在用，它主要是用来统计我每天解锁手机的次数，以及每天我的手机轨迹。 原型是从一个 demo 演变而来的，一开始要做 Android 上的截屏拦截功能，后来便扩展了一个截屏定位的功能，后来又加了摇一摇定位手机的功能，但是后来发现摇一摇定位太频繁了，所以自己加了解锁手机定位，这样一天结束后，你就知道自己这一天大概都去了那些地方。接着又想统计一下我一天手机的解锁次数，所以又加了解锁次数统计功能。如下所示<img src="https://ws4.sinaimg.cn/large/006tKfTcly1fn2ou8l291j30u01400wi.jpg" alt="" /></li>
+  </ul>
+</blockquote>
+
+<p><strong>17年烦恼的事？</strong></p>
+
+<blockquote>
+  <p>房子。</p>
+</blockquote>
+
+<p><strong>17年对你影响最重要的事？</strong></p>
+
+<blockquote>
+  <p>换工作。</p>
+
+  <p>自己的换工作直接决定了后来搬家。之前在通州那边住，其实在北京的东面我已经住了三年多了，已经有点习惯那边了，不过去年住的小区一般，房子采光也不怎么好，所以搬家相对来说是一个比较轻松愉快的决定。通州照片一二如下</p>
+
+  <p><img src="https://wx2.sinaimg.cn/mw690/6fb50cedly1fn2pqx6f4uj20u01404kw.jpg" alt="" /></p>
+
+  <p>后来因为距离原因媳妇也换了一份工作，同时换工作后生活成本也相对降低，再也不用像去年一样，早早挤公交，上班非常匆忙，所以换工作后相对更舒心，况且后来找到的房子各方面条件都比较满意，整体说来这一切都比较满意。</p>
+
+  <p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fn6s4dpkbcj30u0140wha.jpg" alt="" /></p>
+</blockquote>
+
+<p><strong>重要的日期？</strong></p>
+
+<blockquote>
+  <p>06.22</p>
+</blockquote>
+
+<p><strong>自己对自己想说的话</strong></p>
+
+<blockquote>
+  <p>做好当下事，保持专注，制定一些长期短期的计划，并严格执行，同时应该保持宽的视线，不能把大部分精力花在一些事情上，工作不是全部，代码也不是全部，生活中有很多其他的东西值得自己认真对待，你怎么对待它，它也会怎么对待你，对生活保持热爱，认真对待生活。</p>
+</blockquote>
+
+<p><img src="https://ws1.sinaimg.cn/large/6fb50cedly1fn7212or43j21440u0tgc.jpg" alt="" /></p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

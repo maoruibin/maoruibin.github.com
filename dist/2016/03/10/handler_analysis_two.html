@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Handler 之 源码解析-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="Handler 之 源码解析"/>
+  <meta name="keywords" content="咕咚,tech"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="Handler 之 源码解析">Handler 之 源码解析</h1>
+  
+  <div class="subtitle">咕咚 于 2016-03-10 发布</div>
+  
+  <div class="post">
+    <p>上一篇博客<a href="/2016/03/10/handler_analysis_one.html">Handler 之 初识及简单应用</a>中介绍了 Handler 的作用，以及 Handler 的基本用法，同时也详细介绍了为什么子线程不能更新 UI 的原因，但是因为篇幅原因，所以对 Handler 的内部机制并没有展开叙述。这篇文章就从 Handler 开始解析与之相关的源码，从而更好的理解 Handler 以及 Looper MessageQueue。</p>
+
+<h2 id="handler-机制">Handler 机制</h2>
+
+<p>写完上一篇文章，下面我该再读一遍 Handler 的源码了，其实讲 Handler 内部机制的博客已经很多了，但是自己还是要在看一遍，源码是最好的资料。</p>
+
+<p>在具体看源码之前，有必要先理解一下 Handler、Looper、MessageQueue 以及 Message 他们的关系。</p>
+
+<h3 id="关系">关系</h3>
+
+<p>Looper: 是一个消息轮训器，他有一个叫 loop() 的方法，用于启动一个死循环，不停的去轮询消息池。</p>
+
+<p>MessageQueue: 就是上面说到的消息池</p>
+
+<p>Handler: 用于发送消息，和处理消息</p>
+
+<p>Message: 一个消息对象</p>
+
+<p>现在要问了，他们是怎么关联起来的？</p>
+
+<p>一切都要从 Handler 的构造方法开始。如下所示</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">final</span> <span class="nc">MessageQueue</span> <span class="n">mQueue</span><span class="o">;</span>
+<span class="kd">final</span> <span class="nc">Looper</span> <span class="n">mLooper</span><span class="o">;</span>
+<span class="kd">final</span> <span class="nc">Callback</span> <span class="n">mCallback</span><span class="o">;</span>
+<span class="kd">final</span> <span class="kt">boolean</span> <span class="n">mAsynchronous</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="nf">Handler</span><span class="o">(</span><span class="nc">Callback</span> <span class="n">callback</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">async</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">mLooper</span> <span class="o">=</span> <span class="nc">Looper</span><span class="o">.</span><span class="na">myLooper</span><span class="o">();</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">mLooper</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span>
+            <span class="s">"Can't create handler inside thread that has not called Looper.prepare()"</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="n">mQueue</span> <span class="o">=</span> <span class="n">mLooper</span><span class="o">.</span><span class="na">mQueue</span><span class="o">;</span>
+    <span class="n">mCallback</span> <span class="o">=</span> <span class="n">callback</span><span class="o">;</span>
+    <span class="n">mAsynchronous</span> <span class="o">=</span> <span class="n">async</span><span class="o">;</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<p>可以看到 Handler 本身定义了一个 MessageQueue 对象 mQueue，和一个 Looper 的对象 mLooper。</p>
+
+<p>不过，对 Handler 的这两个成员变量的初始化都是通过 Looper 来赋值的。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mLooper</span> <span class="o">=</span> <span class="nc">Looper</span><span class="o">.</span><span class="na">myLooper</span><span class="o">();</span>
+<span class="n">mQueue</span> <span class="o">=</span> <span class="n">mLooper</span><span class="o">.</span><span class="na">mQueue</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>现在，我们新建的 Handler 就和 Looper、MessageQueue 关联了起来，而且他们是一对一的关系，一个 Handler 对应一个 Looper，同时对应一个 MessageQueue 对象。这里给 MessageQueue 的赋值比较特殊，</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mQueue</span> <span class="o">=</span> <span class="n">mLooper</span><span class="o">.</span><span class="na">mQueue</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>这里直接使用 looper 的 mQueue 对象，将 looper 的 mQueue 赋值给了 Handler 自己，现在 Looper 和 Handler 持有着同一个 MessageQueue 。</p>
+
+<p>这里可以看到 Looper 的重要性，现在 Handler 中的 Looper 实例和 MessageQueue 实例都是通过 Looper 来完成设置的，那么下面我们具体看看 Looper 是怎么实例化的，以及他的 mQueue 是怎么来的。</p>
+
+<h4 id="looper">Looper</h4>
+
+<p>从上面 Handler 的构造方法中可以看到，Handler 的 mLooper 是这样被赋值的。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mLooper</span> <span class="o">=</span> <span class="nc">Looper</span><span class="o">.</span><span class="na">myLooper</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>接着看 myLooper() 的实现。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">static</span> <span class="kd">final</span> <span class="nc">ThreadLocal</span><span class="o">&lt;</span><span class="nc">Looper</span><span class="o">&gt;</span> <span class="n">sThreadLocal</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadLocal</span><span class="o">&lt;</span><span class="nc">Looper</span><span class="o">&gt;();</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nd">@Nullable</span> <span class="nc">Looper</span> <span class="nf">myLooper</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">sThreadLocal</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">这里出现了一个平时不怎么看到的 ThreadLocal 类，关于这个类，推荐去阅读任玉刚的一篇文章 - Android的消息机制之ThreadLocal的工作原理,讲的很不错。另外自己也写了一篇文章，用于讲解 ThreadLocal 的用法，以及他在 Handler 和 Looper 中的巧妙意义。</code></p>
+
+<p><a href="http://blog.csdn.net/singwhatiwanna/article/details/48350919">任玉刚 - Android的消息机制之ThreadLocal的工作原理</a></p>
+
+<p><a href="/2016/03/11/handler_analysis_three.html">咕咚 - Handler 之 ThreadLocal 相关</a></p>
+
+<p>这里他是通过 ThreadLocal 的 get 方法获得，很奇怪，之前我们没有在任何地方对 sThreadLocal 执行过 set 操作。
+这里却直接执行 get 操作，返回的结果必然为空啊！</p>
+
+<p>但是如果现在为空，我们在 new Handler() 时，程序就已经挂掉了啊，因为在 Handler 的构造方法中，如果执行 Looper.myLooper() 的返回结果为空。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mLooper</span> <span class="o">=</span> <span class="nc">Looper</span><span class="o">.</span><span class="na">myLooper</span><span class="o">();</span>
+<span class="k">if</span> <span class="o">(</span><span class="n">mLooper</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+   <span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span>
+       <span class="s">"Can't create handler inside thread that has not called Looper.prepare()"</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>但是，我们的程序没有挂掉，这意味着，我们在执行 myLooper() 方法时，他返回的结果不为空。</p>
+
+<p>为什么呢？那我们在 Looper 中看看，哪里有对应的 set 方法，如下所示,我们找到了一个全局静态方法 prepare</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">prepare</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">prepare</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">prepare</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">quitAllowed</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">sThreadLocal</span><span class="o">.</span><span class="na">get</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span><span class="s">"Only one Looper may be created per thread"</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="n">sThreadLocal</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="k">new</span> <span class="nc">Looper</span><span class="o">(</span><span class="n">quitAllowed</span><span class="o">));</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>我们看到，在最后一行这里，执行了对应的 set 操作，这里把一个 new 出来的 Looper 直接 set 到 sThreadLocal 中。</p>
+
+<p>但是我们不知道，到底什么时候，是谁调用了 prepare() 方法，从而给 sThreadLocal 设置了一个 Looper 对象。</p>
+
+<p>后来在网上经过搜索，找到了答案，我们的 Android 应用在启动时，会执行到 ActivityThread 类的 main 方法，就和我们以前写的 java 控制台程序一样，其实 ActivityThread 的 main 方法就是一个应用启动的入口。</p>
+
+<p>在这个入口里，会做很多初始化的操作。其中就有 Looper 相关的设置，代码如下</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">//............. 无关代码...............</span>
+   <span class="nc">Looper</span><span class="o">.</span><span class="na">prepareMainLooper</span><span class="o">();</span>
+   <span class="nc">Looper</span><span class="o">.</span><span class="na">loop</span><span class="o">();</span>
+   <span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span><span class="s">"Main thread loop unexpectedly exited"</span><span class="o">);</span>
+<span class="o">}</span>         
+</code></pre></div></div>
+<p>在这里，我们很清楚的看到，程序启动时，首先执行 Looper.prepareMainLooper() 方法，接着执行了 loop() 方法。</p>
+
+<p>先看看 prepareMainLooper 方法。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">prepareMainLooper</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">prepare</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+    <span class="kd">synchronized</span> <span class="o">(</span><span class="nc">Looper</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">sMainLooper</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalStateException</span><span class="o">(</span><span class="s">"The main Looper has already been prepared."</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">sMainLooper</span> <span class="o">=</span> <span class="n">myLooper</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="nd">@Nullable</span> <span class="nc">Looper</span> <span class="nf">myLooper</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">sThreadLocal</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">prepare</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">quitAllowed</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">sThreadLocal</span><span class="o">.</span><span class="na">get</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span><span class="s">"Only one Looper may be created per thread"</span><span class="o">);</span>
+  <span class="o">}</span>
+  <span class="n">sThreadLocal</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="k">new</span> <span class="nc">Looper</span><span class="o">(</span><span class="n">quitAllowed</span><span class="o">));</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>这里，首先调用了 prepare() 方法，执行完成后，sThreadLocal 成功绑定了一个 new Looper() 对象，然后执行</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sMainLooper</span> <span class="o">=</span> <span class="n">myLooper</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>可以看看 sMainLooper 的定义，以及 myLooper() 方法；</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="nc">Looper</span> <span class="n">sMainLooper</span><span class="o">;</span>  <span class="c1">// guarded by Looper.class    </span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nd">@Nullable</span> <span class="nc">Looper</span> <span class="nf">myLooper</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">sThreadLocal</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>现在的 sMainLooper 就有值了，也就是说，只要我们的 App 启动，sMainLooper 中就已经设置了一个 Looper 对象。以后调用
+sMainLooper 的 get 方法将返回在程序启动时设置的 Looper，不会为空的。</p>
+
+<p>下面在看 main 方法中的 调用的 Looper.loop() 方法。 已经把一些无关代码删了，否则太长了，</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">loop</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">//获得一个 Looper 对象</span>
+    <span class="kd">final</span> <span class="nc">Looper</span> <span class="n">me</span> <span class="o">=</span> <span class="n">myLooper</span><span class="o">();</span>
+
+    <span class="c1">// 拿到 looper 对应的 mQueue 对象</span>
+    <span class="kd">final</span> <span class="nc">MessageQueue</span> <span class="n">queue</span> <span class="o">=</span> <span class="n">me</span><span class="o">.</span><span class="na">mQueue</span><span class="o">;</span>
+
+    <span class="c1">//死循环监听(如果没有消息变化，他不会工作的) 不断轮训 queue 中的 Message</span>
+    <span class="k">for</span> <span class="o">(;;)</span> <span class="o">{</span>
+        <span class="c1">// 通过 queue 的 next 方法拿到一个 Message</span>
+        <span class="nc">Message</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="na">next</span><span class="o">();</span> <span class="c1">// might block</span>
+        <span class="c1">//空判断</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">msg</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span><span class="k">return</span><span class="o">;</span>
+        <span class="c1">//消息分发   </span>
+        <span class="n">msg</span><span class="o">.</span><span class="na">target</span><span class="o">.</span><span class="na">dispatchMessage</span><span class="o">(</span><span class="n">msg</span><span class="o">);</span>
+        <span class="c1">//回收操作  </span>
+        <span class="n">msg</span><span class="o">.</span><span class="na">recycleUnchecked</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>现在，想一个简单的过程，我们创建了一个 App,什么也不做，就是一个 HelloWorld 的 Android 应用，
+此时，你启动程序，即使什么也不干，按照上面的代码，你应该知道的是，现在的程序中已经有一个 Looper 存在了。
+并且还启动了消息轮询。 Looper.loop();</p>
+
+<p>但是，目前来看，他们好像没什么用，只是存在而已。</p>
+
+<p>此时你的项目如果使用了 Handler,你在主线程 new 这个 Handler 时，执行构造方法</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="nf">Handler</span><span class="o">(</span><span class="nc">Callback</span> <span class="n">callback</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">async</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">mLooper</span> <span class="o">=</span> <span class="nc">Looper</span><span class="o">.</span><span class="na">myLooper</span><span class="o">();</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">mLooper</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span>
+            <span class="s">"Can't create handler inside thread that has not called Looper.prepare()"</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="n">mQueue</span> <span class="o">=</span> <span class="n">mLooper</span><span class="o">.</span><span class="na">mQueue</span><span class="o">;</span>
+    <span class="n">mCallback</span> <span class="o">=</span> <span class="n">callback</span><span class="o">;</span>
+    <span class="n">mAsynchronous</span> <span class="o">=</span> <span class="n">async</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>此时的 myLooper() 返回的 Looper 就是应用启动时的那个 Looper 对象，我们从 Looper 的构造方法得知，在 new Looper 时，会新建一个对应
+的消息池对象 MessageQueue</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="nf">Looper</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">quitAllowed</span><span class="o">)</span> <span class="o">{</span>
+       <span class="n">mQueue</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MessageQueue</span><span class="o">(</span><span class="n">quitAllowed</span><span class="o">);</span>
+       <span class="n">mThread</span> <span class="o">=</span> <span class="nc">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>那么在 Handler 的构造方法中，那个 mQueue 其实也是在应用启动时就已经创建好了。</p>
+
+<p>现在再来回顾一下 Handler 的构造方法，在构造方法中，他为自己的 mQuery 和 mLooper 分别赋值，而这两个值其实在应用启动时，就已经初始化好了。</p>
+
+<p>并且，现在已经启动了一个消息轮训，在监听 mQuery 中是不是有新的 Message !</p>
+
+<p>现在这个轮训器已经好了，我们看发送消息的过程。</p>
+
+<h3 id="sendmessage">SendMessage</h3>
+
+<p>我们使用 Handler 发送消息</p>
+
+<p>mHandler.sendMessage(msg);</p>
+
+<p>Handler 有好多相关的发送消息的方法。但是追踪源码，发现他们最终都来到了 Handler 的这个方法 sendMessageAtTime</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">sendMessageAtTime</span><span class="o">(</span><span class="nc">Message</span> <span class="n">msg</span><span class="o">,</span> <span class="kt">long</span> <span class="n">uptimeMillis</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">MessageQueue</span> <span class="n">queue</span> <span class="o">=</span> <span class="n">mQueue</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">queue</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">RuntimeException</span> <span class="n">e</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RuntimeException</span><span class="o">(</span>
+                <span class="k">this</span> <span class="o">+</span> <span class="s">" sendMessageAtTime() called with no mQueue"</span><span class="o">);</span>
+        <span class="nc">Log</span><span class="o">.</span><span class="na">w</span><span class="o">(</span><span class="s">"Looper"</span><span class="o">,</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">(),</span> <span class="n">e</span><span class="o">);</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="nf">enqueueMessage</span><span class="o">(</span><span class="n">queue</span><span class="o">,</span> <span class="n">msg</span><span class="o">,</span> <span class="n">uptimeMillis</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>接着看 enqueueMessage() 方法体</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">enqueueMessage</span><span class="o">(</span><span class="nc">MessageQueue</span> <span class="n">queue</span><span class="o">,</span> <span class="nc">Message</span> <span class="n">msg</span><span class="o">,</span> <span class="kt">long</span> <span class="n">uptimeMillis</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">msg</span><span class="o">.</span><span class="na">target</span> <span class="o">=</span> <span class="k">this</span><span class="o">;</span>
+      <span class="c1">// 使用默认的 handler 构造方法时，mAsynchronous 为 false。</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">mAsynchronous</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">msg</span><span class="o">.</span><span class="na">setAsynchronous</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+      <span class="o">}</span>
+      <span class="k">return</span> <span class="n">queue</span><span class="o">.</span><span class="na">enqueueMessage</span><span class="o">(</span><span class="n">msg</span><span class="o">,</span> <span class="n">uptimeMillis</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p>这里有一句至关重要的代码</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">msg</span><span class="o">.</span><span class="na">target</span> <span class="o">=</span> <span class="k">this</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>我们看看 msg 的 target 是怎么声明的</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Handler</span> <span class="n">target</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>意思就是每个 Message 都有一个类型为 Handler 的 target 对象，这里在 handler 发送消息的时候，最终执行到
+上面的方法 enqueueMessage() 时,会自动把当前执行 sendMessage() 的 handler对象，赋值给 Message 的 target。</p>
+
+<p>也就是说，Handler 发送了 Message，并且这个 Message 的 target 就是这个 Handler。</p>
+
+<p>想想为什么要这么做？</p>
+
+<p>这里再说一下，Handler 的作用，</p>
+
+<ul>
+  <li>发送消息</li>
+  <li>处理消息</li>
+</ul>
+
+<p>先不看代码，我们可以想想，handler 发送了 message ,最终这个 message 会被发送到 MessageQueue 这个消息队列。
+那么最终，谁会去处理这个消息。</p>
+
+<p>在这里消息发送和处理遵循『谁发送，谁处理』的原则。</p>
+
+<p>现在问题来了，就按照上面说的，谁发送，谁处理，那现在应该是 handler 自己处理了，但是他在哪里处理呢？到现在我们也没看到啊。</p>
+
+<p>慢慢来，接下来继续看消息的传递。</p>
+
+<p>现在，我们只要发送了消息，那么消息池 mQuery 就会增加一个消息，Looper 就会开始工作，之前已经说了，在应用启动的时候，
+已经启动了 Looper 的 loop() 方法，这个方法会不断的去轮训 mQuery 消息池，只要有消息，它就会取出消息，并处理，那他是怎么处理的呢？看一下 loop() 的代码再说。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">loop</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">//获得一个 Looper 对象</span>
+    <span class="kd">final</span> <span class="nc">Looper</span> <span class="n">me</span> <span class="o">=</span> <span class="n">myLooper</span><span class="o">();</span>
+
+    <span class="c1">// 拿到 looper 对应的 mQueue 对象</span>
+    <span class="kd">final</span> <span class="nc">MessageQueue</span> <span class="n">queue</span> <span class="o">=</span> <span class="n">me</span><span class="o">.</span><span class="na">mQueue</span><span class="o">;</span>
+
+    <span class="c1">//死循环监听(如果没有消息变化，他不会工作的) 不断轮训 queue 中的 Message</span>
+    <span class="k">for</span> <span class="o">(;;)</span> <span class="o">{</span>
+        <span class="c1">// 通过 queue 的 next 方法拿到一个 Message</span>
+        <span class="nc">Message</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="na">next</span><span class="o">();</span> <span class="c1">// might block</span>
+        <span class="c1">//空判断</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">msg</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span><span class="k">return</span><span class="o">;</span>
+        <span class="c1">//消息分发   </span>
+        <span class="n">msg</span><span class="o">.</span><span class="na">target</span><span class="o">.</span><span class="na">dispatchMessage</span><span class="o">(</span><span class="n">msg</span><span class="o">);</span>
+        <span class="c1">//回收操作  </span>
+        <span class="n">msg</span><span class="o">.</span><span class="na">recycleUnchecked</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>看 for()循环，他在拿到消息后，发现 msg 不为空，接着就会执行下面这句非常重要的代码</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">msg</span><span class="o">.</span><span class="na">target</span><span class="o">.</span><span class="na">dispatchMessage</span><span class="o">(</span><span class="n">msg</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>这里执行了 msg.target 的方法 dispatchMessage，上面已经在 sendMessage 时看到了，我们在发送消息时，会把 msg 的 target
+设置为 handler 本身，也就是说，handler 发送了消息，最终自己处理了自己刚刚分发的消息。恩恩，答案就在这里，『谁发送，谁处理』的
+道理在这里终于得到了体现。</p>
+
+<p>那么他是怎么处理消息的？看看 Handler 的 dispatchMessage() 是怎么实现的。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">dispatchMessage</span><span class="o">(</span><span class="nc">Message</span> <span class="n">msg</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">msg</span><span class="o">.</span><span class="na">callback</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">handleCallback</span><span class="o">(</span><span class="n">msg</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">mCallback</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">mCallback</span><span class="o">.</span><span class="na">handleMessage</span><span class="o">(</span><span class="n">msg</span><span class="o">))</span> <span class="o">{</span>
+                <span class="k">return</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">handleMessage</span><span class="o">(</span><span class="n">msg</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>我们看到，我们没有给 msg 设置 callback 也没有给 handler 的 mCallback 设置过值，所以此时，会执行 handleMessage() 方法；</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">handleMessage</span><span class="o">(</span><span class="nc">Message</span> <span class="n">msg</span><span class="o">)</span> <span class="o">{</span>
+  
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>发现这是一个空方法，所以自己的新建 Handler 时，只要复写了这个方法，我们就可以接受到从子线程中发送过来的消息了 。</p>
+
+<p>在看一遍自己定义 Handler 时，如何定义的，如何复写 handlerMessage</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="nc">Handler</span> <span class="n">mHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Handler</span><span class="o">(){</span>
+     <span class="nd">@Override</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handleMessage</span><span class="o">(</span><span class="nc">Message</span> <span class="n">msg</span><span class="o">)</span> <span class="o">{</span>
+         <span class="kd">super</span><span class="o">.</span><span class="na">handleMessage</span><span class="o">(</span><span class="n">msg</span><span class="o">);</span>
+         <span class="k">switch</span> <span class="o">(</span><span class="n">msg</span><span class="o">.</span><span class="na">what</span><span class="o">){</span>
+             <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+                 <span class="nc">Bitmap</span> <span class="n">bitmap</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Bitmap</span><span class="o">)</span> <span class="n">msg</span><span class="o">.</span><span class="na">obj</span><span class="o">;</span>
+                 <span class="n">imageView</span><span class="o">.</span><span class="na">setImageBitmap</span><span class="o">(</span><span class="n">bitmap</span><span class="o">);</span>
+                 <span class="k">break</span><span class="o">;</span>
+             <span class="k">case</span> <span class="o">-</span><span class="mi">1</span><span class="o">:</span>
+                 <span class="nc">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="nc">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="s">"msg "</span><span class="o">+</span><span class="n">msg</span><span class="o">.</span><span class="na">obj</span><span class="o">.</span><span class="na">toString</span><span class="o">(),</span> <span class="nc">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+                 <span class="k">break</span><span class="o">;</span>
+         <span class="o">}</span>
+     <span class="o">}</span>
+ <span class="o">};</span>
+</code></pre></div></div>
+
+<p>在这里，我们处理了自己发送的消息，到此 Handler 的内部机制大体就分析完了。</p>
+
+<p>但是从上面的 dispatchMessage 方法我们也能看出，Handler 在处理消息时的顺序是什么？</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">dispatchMessage</span><span class="o">(</span><span class="nc">Message</span> <span class="n">msg</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">msg</span><span class="o">.</span><span class="na">callback</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">handleCallback</span><span class="o">(</span><span class="n">msg</span><span class="o">);</span>
+      <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+          <span class="k">if</span> <span class="o">(</span><span class="n">mCallback</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+              <span class="k">if</span> <span class="o">(</span><span class="n">mCallback</span><span class="o">.</span><span class="na">handleMessage</span><span class="o">(</span><span class="n">msg</span><span class="o">))</span> <span class="o">{</span>
+                  <span class="k">return</span><span class="o">;</span>
+              <span class="o">}</span>
+          <span class="o">}</span>
+          <span class="n">handleMessage</span><span class="o">(</span><span class="n">msg</span><span class="o">);</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<p>他首先判断 Message 对象的 callback 对象是不是为空，如果不为空，就直接调用 handleCallback 方法，并把 msg 对象传递过去，这样消息就被处理了。</p>
+
+<p>如果在发送消息时，我们没有给 Message 设置 callback 对象，那么程序会执行到 else 语句块，此时首先判断 Handler 的 mCallBack 对象是不是空的，如果不为空，直接调用 mCallback 的 handleMessage 方法进行消息处理。</p>
+
+<p>最终，只有当 Handler 的 mCallback 对象为空，才会执行自己的 handleMessage 方法。</p>
+
+<p>这是整个处理消息的流程。</p>
+
+<p>现在就会想了，在处理消息时，什么时候才能执行到第一种情况呢，也就是通过 Message 的 callback 对象处理。</p>
+
+<p>其实简单，查看源码发现</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*package*/</span> <span class="nc">Runnable</span> <span class="n">callback</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>callback 是一个 Runnable 接口，那我们这怎么才能设置 Message 的 callback 的参数呢？最后观察发现，Handler 发送消息时，除了使用 sendMessage 方法，还可以使用一个叫 post 的方法，而他的形参正好就是 Runnable,我们赶紧拔出他的源码看看。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="nf">post</span><span class="o">(</span><span class="nc">Runnable</span> <span class="n">r</span><span class="o">)</span>
+<span class="o">{</span>
+   <span class="k">return</span>  <span class="nf">sendMessageDelayed</span><span class="o">(</span><span class="n">getPostMessage</span><span class="o">(</span><span class="n">r</span><span class="o">),</span> <span class="mi">0</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>接着看 getPostMessage() 这个方法。</p>
+
+<p>private static Message getPostMessage(Runnable r) {</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nc">Message</span> <span class="n">m</span> <span class="o">=</span> <span class="nc">Message</span><span class="o">.</span><span class="na">obtain</span><span class="o">();</span>
+  <span class="n">m</span><span class="o">.</span><span class="na">callback</span> <span class="o">=</span> <span class="n">r</span><span class="o">;</span>
+  <span class="k">return</span> <span class="n">m</span><span class="o">;</span>
+</code></pre></div></div>
+<p>}</p>
+
+<p>代码看到这里，已经很清楚了，getPostMessage() 返回了一个 Message 对象，这个对象中设置了刚才传递过来的 runnable 对象。</p>
+
+<p>到这里，你应该明白了，在处理消息时，除了 Handler 自身的 handlerMessage() 方法设置处理，还可以直接在发消息时指定一个 runnable 对象用于处理消息。</p>
+
+<p>另外上面通过 dispatchMessage() 的代码已经看出来，处理消息有三种情形，第一种直接使用 Message 的 running 对象处理，如果不行使用第二种 用 Handler 的 mCallback 对象处理，最后才考虑使用 handlerMessage 处理，关于第二种情形，这里就不分析了，自己试着看代码应该能找到。Good luck ~</p>
+
+<h2 id="参考文章">参考文章</h2>
+
+<p><a href="http://blog.csdn.net/lmj623565791/article/details/38377229">鸿洋_ - Android 异步消息处理机制 让你深入理解 Looper、Handler、Message三者关系</a></p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

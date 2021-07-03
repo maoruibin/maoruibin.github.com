@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Passbook：我心目中的账号密码存储应用-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="Passbook：我心目中的账号密码存储应用"/>
+  <meta name="keywords" content="咕咚,product"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="Passbook：我心目中的账号密码存储应用">Passbook：我心目中的账号密码存储应用</h1>
+  
+  <div class="subtitle">咕咚 于 2018-07-25 发布</div>
+  
+  <div class="post">
+    <p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1ftlx47dqr2j31bm0qc0tb.jpg" alt="" /></p>
+
+<p>Passbook 是自己开发的一个用于存储账号密码的 App.</p>
+
+<h2 id="开发缘由">开发缘由</h2>
+
+<p>APP 是今年初开始开发的，当时主要是为了学习 Kotlin。众所周知，kotlin 已经是 Google 为 Android 指定的官方语言了，所以自己便开始学习 Kotlin，学习语言有很多方式，我选择了自己比较喜欢的这种方式 - 做项目，通过项目实践来加深巩固对 kotlin 的理解。</p>
+
+<p>开发的过程中，自己主要参考了官方的中文文档，另外还有很多知识细节则是通过百度谷歌获取到的。在开发的过程中自己也在不断积累相关的技术点，期间还整理成了一篇文章 -<a href="http://gudong.site/2018/01/27/kotlin-tip-passbook.html">应用开发过程中的一些 Kotlin 语法点记录 - 咕咚的个人站点</a></p>
+
+<h2 id="为什么选择密码存储作为应用切入点">为什么选择密码存储作为应用切入点</h2>
+
+<p>主要有以下两个原因吧。</p>
+
+<p><strong>1、 自己在日常生活中有密码存储的刚需。</strong>
+在工作生活中，自己经常需要去记录密码数据，自己曾经在印象笔记、便签等诸多地方记录过，但是体验均不佳，使用繁琐还不安全，所以自己想结合手机的指纹识别，来开发一个安全易用的密码存储 app，同时还可以学习了解新技术，何乐而不为。</p>
+
+<p><strong>2、自己曾经开发过一个类似的应用</strong>
+自己在 2013 年开发过一个类似的密码应用，那是我的第一个独立 APP，但是当时遇到了诸多问题，最终无奈只得下架。当时的主要问题是加密安全以及用户忘记登录密码的问题，都得不到很好的解决，所以最后给自己徒添很多烦恼。</p>
+
+<p>这次，重新用 kotlin 开发，界面采用了 MD 的设计，变得很好看，交互也有很多提升，同时使用了指纹识别认证，也让使用体验变得更好。但是最终我还是没有把应用完整的开放出来，毕竟是一个离线应用，而且要存储密码，安全性很难做到可靠，所以自己会先使用。</p>
+
+<h2 id="收获">收获</h2>
+
+<p><strong>1、技术方面的收获</strong>
+基本掌握了 kotlin 的基本语法，还体验了 android 的数据库框架 Room, 但是其他的 Android 架构组件还没有应用，其实我想在这个应用中更多的尝鲜一下 Android 新提供的组件，如 LiveData、LifeCycle 等。</p>
+
+<p><strong>2、产品方面的收获</strong>
+自己开发设计的同时也思考了不少产品方面的东西，很有意思，可以单独写一篇文章讲解自己在产品设计方面的取舍了。</p>
+
+<h2 id="体验地址">体验地址</h2>
+
+<p><a href="https://fir.im/xwyp">Passbook 体验版 - fir.im</a></p>
+
+<h2 id="未来">未来</h2>
+<p>可能会运营一些付费版的 Passbook，让自己的付出价值化，同时优化数据备份还原，争取更加稳定可靠。</p>
+
+<h2 id="思考">思考</h2>
+
+<p>App 开发越来越规范化，这一点从谷歌就可以看得出，这是一个技术市场在变得成熟的标志，在开发这个 APP 之初还没有 Flutter，到现在圈里已经谈了很久的 flutter，技术发展很快，跨平台是趋势，作为技术人我们和核心能力是什么？值得思考。</p>
+
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

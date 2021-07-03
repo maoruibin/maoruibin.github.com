@@ -15,7 +15,7 @@ title: 首页
 
       {% if post.hidden != true  %}
 
-        {% if  post.categories contains  "tech" or post.categories contains "blog" %}
+        <!-- {% if  post.categories contains  "tech" or post.categories contains "blog" %}
 
           <li>
             <span class="date">{{ post.date | date: "%Y/%m/%d" }}</span>
@@ -29,7 +29,20 @@ title: 首页
             </div>
           </li>
 
-        {% endif %}
+        {% endif %} -->
+
+
+        <li>
+          <span class="date">{{ post.date | date: "%Y/%m/%d" }}</span>
+          <div class="title">
+            <a href="{{ site.baseurl | append: post.url }}" class="hover-underline">{{ post.title }}</a>
+          </div>
+          <div class="categories">
+            {% for categorie in post.categories -%}
+            <a href="{{site.baseurl}}/categories.html#{{ categorie }}" class="hover-underline">{{ categorie }}</a>
+            {%- endfor %}
+          </div>
+        </li>
 
       
       {% endif %}

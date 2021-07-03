@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>微博工作记录-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="微博工作记录"/>
+  <meta name="keywords" content="咕咚,think"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="微博工作记录">微博工作记录</h1>
+  
+  <div class="subtitle">咕咚 于 2019-02-28 发布</div>
+  
+  <div class="post">
+    <blockquote>
+  <p>按时间顺序，记录入职微博后，自己负责开发过的大功能。主要记录核心内容以及开发过程中的问题，思考。</p>
+</blockquote>
+
+<h2 id="发布器进度-201908-10">发布器进度 2019/08-10</h2>
+<p>发布图片、视频支持进度展示</p>
+
+<h2 id="发布器支持最多-18-张图-201908-10">发布器支持最多 18 张图 2019/08-10</h2>
+<p>触摸事件搞的要死要活的。</p>
+
+<h2 id="自动存草稿20195">自动存草稿（2019/5）</h2>
+<p>切到后台自动存储用户输入，大退后者杀死进行提示。是一个用户体验相关的功能。</p>
+
+<h2 id="投票发布器20193">投票发布器（2019/3）</h2>
+<p>微博发布器增加投票功能，开发时就是开发一个发布器附件，这里面包括投票 View，数据，以及复杂的发布器互斥。
+<img src="https://ws1.sinaimg.cn/large/006tKfTcly1g1nxcbgjlwj30ou0nqwhx.jpg" alt="" /></p>
+
+<p><strong>输出</strong></p>
+<ul>
+  <li><a href="https://gist.github.com/maoruibin/4293314f0b7c277c2a635efa858a3e6e">提供语义化 API 用来创建 Shape Drawable</a></li>
+  <li><a href="https://gist.github.com/maoruibin/0c7bca8d024c0e5718fa8b029850bca0">EditText View 限制输入字符数，并倒计还能输入多少字符，兼容中英文字符</a></li>
+</ul>
+
+<h2 id="微博详情页重构20191-3">微博详情页重构(2019/1-3)</h2>
+<p>抽取转评赞模块。分为两期拆分，到微博后最大的一次代码改动。
+主要就分而治之，对正文页进行模块拆分，各自负责自己独立的业务，降低代码的耦合性，提升可维护性。</p>
+
+<h2 id="主页-tab-重构">主页 Tab 重构</h2>
+<p>对微博 tab 底栏进行改造。以前的 tab 大都是硬编码，不能支持灵活配置，重构主要解决配置的问题，重构后可以根据不同策略展示不同的底栏。</p>
+
+<h2 id="发布器-ui-改造">发布器 UI 改造</h2>
+<p>模仿 Facebook 发布器，替换原来的九宫格菜单，重新设计为底部滑动菜单。</p>
+
+<h2 id="编辑微博">编辑微博</h2>
+<p>微博可再次编辑。</p>
+
+<h2 id="主页小房子-lottie-动画">主页小房子 Lottie 动画</h2>
+<p>使用 Lottie，在首页有新微博时，显示一个刷新动画，以及点击时刷新消失的动画。</p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>搜索-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="咕咚的个人博客"/>
+  <meta name="keywords" content="咕咚,Blog,Java,Html,JavaScript,PicPlus,咕咚云图"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/page.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-search">
+  <input id="search-input" type="text" placeholder="请在这里输入关键词^_^"></input>
+  <h1>
+    <span>搜索结果</span>
+    <img src="/static/img/loading.svg">
+  </h1>
+  <ul class="list-search">
+    <li hidden>
+      <a href="/2021/07/02/june.html">
+        <p class="title">六月-季后赛正此时</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2021/05/31/may-summary.html">
+        <p class="title">五月-总结回顾的必要性</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2021/04/05/2020-summary.html">
+        <p class="title">2020 年终总结</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2021/01/17/custom-lint.html">
+        <p class="title">Android 自定义 Lint 研究</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/12/30/guwocheng.html">
+        <p class="title">掰腕子差点输给侄子</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/12/20/compress.html">
+        <p class="title">图片压缩库 compressor | DS</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/11/27/basketball-time.html">
+        <p class="title">今晚去打球 | Daily 11/27</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/11/21/rss.html">
+        <p class="title">写了一个 Android 订阅软件 | Daily 11/21</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/10/17/war.html">
+        <p class="title">战争的一些思考 | Daily 10/17</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/10/13/berak.html">
+        <p class="title">一个大胆的想法 | Daily 10/13</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/10/12/fmvp.html">
+        <p class="title">湖人总冠军 | Daily 10/12</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/10/10/2020shiyi.html">
+        <p class="title">岁月在变迁，亲人都安好—2020十一假期</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/09/15/humam-think.html">
+        <p class="title">发现自己的无知 | Daily 09/15</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/07/01/blog.html">
+        <p class="title">读一篇博文想到的 | Daily 07/01</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/06/29/likeback.html">
+        <p class="title">公众号点赞又回来了 | Daily 06/29</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/06/22/write.html">
+        <p class="title">写字需要状态… | Daily 06/22</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/06/10/lsky.html">
+        <p class="title">一个不错的图床框架 — lsky 兰空图床 | Daily 06/10</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/06/04/calm.html">
+        <p class="title">“不要上头” | Daily 06/04</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/05/18/picplus.html">
+        <p class="title">PicPlus 一个手机图床神器</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/04/30/doc.html">
+        <p class="title">由写文档想到的 | Daily 04/30</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/04/29/knowself.html">
+        <p class="title">认识自己 | Daily 04/29</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/04/27/bird.html">
+        <p class="title">发现的一个小众爱好-观鸟 | Daily 04/27</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/04/26/taisen.html">
+        <p class="title">泰森 | Daily 04/26</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/04/25/lzx.html">
+        <p class="title">罗志祥事件 | Daily 04/25</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/04/22/rebasketball.html">
+        <p class="title">复工后的第一场篮球 | Daily 04/22</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/04/19/picplus242.html">
+        <p class="title">多图并发上传图床 —  PicPlus 新版本发布 | Daily 04/19</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/04/12/picplus240.html">
+        <p class="title">发了 PicPlus 的新版本 | Daily 04/12</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/04/09/pym.html">
+        <p class="title">追剧—潘粤明—龙岭迷窟  | Daily 04/09</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/04/08/cognitive.html">
+        <p class="title">在认知范围内赚钱 | Daily 04/08</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/04/07/fugong.html">
+        <p class="title">复工了 | Daily 04/07</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/03/02/first-pay.html">
+        <p class="title"> 付费开发的一些感悟 | Daily 03/02</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/02/28/picplus-pay.html">
+        <p class="title">PicPlus 支付相关 QA</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/02/14/pplus-github.html">
+        <p class="title">如何为 PicPlus 配置 Github 作为远程图床</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/02/14/daily.html">
+        <p class="title">Daily 02/14</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/02/13/hubei.html">
+        <p class="title">湖北换省委书记 | Daily 02/13</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/02/12/oop.html">
+        <p class="title"> 工程师的基本修养 — 从掌握面向对象开始</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/02/12/flue.html">
+        <p class="title">流感不是感冒 | Daily 02/12</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/02/11/github-pic.html">
+        <p class="title">如何配置 GitHub 为个人的手机图床</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/02/11/copy-json.html">
+        <p class="title">如何复制 JSON 字符串中指定节点元素？</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/02/10/2010nba.html">
+        <p class="title">重温09-10赛季的总决赛 | Daily 02/10</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/02/09/shang.html">
+        <p class="title">收拾房间的一些思考 | Daily 02/09</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/02/08/stock.html">
+        <p class="title">Daily 02/08</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/02/07/liang.html">
+        <p class="title">明白，能… | Daily 02/07</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/02/06/homework.html">
+        <p class="title">远程工作的一周 | Daily 02/06</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/02/05/delete.html">
+        <p class="title">昨天的文章被删了 | Daily 02/05</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/02/04/2020-year.html">
+        <p class="title">2020年的这个春节 | Daily 02/04</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/27/kobe.html">
+        <p class="title">科比 | Daily 08/24</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/23/lock.html">
+        <p class="title">封城、管轶、股市 | Daily 01/23</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/22/year.html">
+        <p class="title">还有两天过年了  | Daily 01/22</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/21/kouzhao.html">
+        <p class="title">注定不一样的春节 | Daily 01/21</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/20/bug.html">
+        <p class="title">出 bug 了，难受… | Daily 01/20</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/19/ted.html">
+        <p class="title">罗辑思维与 TED | Daily 01/19</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/17/daily.html">
+        <p class="title">Daily 01/17</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/16/sina-metting.html">
+        <p class="title">体验不错的公司年会 | Daily 01/16</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/15/girl.html">
+        <p class="title">打球时一件有意思的事 | Daily 01/15</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/13/critical.html">
+        <p class="title">不公平的批评，付之一笑 | Daily 01/13</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/12/sogou.html">
+        <p class="title">Daily 01/12</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/10/three.html">
+        <p class="title">Daily 01/10</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/09/success.html">
+        <p class="title">成功可能并不是很难的事 | Daily 01/09</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/08/delay.html">
+        <p class="title">咕咚云图马上要支持 github 图床了，还支持 CDN 加速 | Daily 01/08</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/07/blog.html">
+        <p class="title">以前写博客的一些困惑 | Daily 01/07</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/06/summary.html">
+        <p class="title">2019 年终总结</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/06/snow.html">
+        <p class="title">又下雪了 | Daily 01/06</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/06/book.html">
+        <p class="title">书单</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/05/positive.html">
+        <p class="title">积极的心理状态 | Daily 01/05</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/04/bilibili.html">
+        <p class="title">B 站跨年晚会好看，被惊艳到了 | Daily 01/04</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/03/drink.html">
+        <p class="title">喝酒这件事 | Daily 01/03</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/02/basketball.html">
+        <p class="title">今天打球感悟 | Daily 01/02</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2020/01/01/child.html">
+        <p class="title">“圣诞老人真的来过了…”  | Daily 01/01</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/31/geshui.html">
+        <p class="title">个税申报 | Daily 12/31</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/30/summary.html">
+        <p class="title">分享一个年终总结的方法</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/29/brain.html">
+        <p class="title">大脑的变化 | Daily 12/29</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/28/sleeping.html">
+        <p class="title">unknow title | Daily 12/28</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/27/mouth-review.html">
+        <p class="title">还有四天就2020了… | Daily 12/27</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/26/writing.html">
+        <p class="title">从写字这件事说起 | Daily 12/26</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/25/logic.html">
+        <p class="title">只要逻辑正确，事实就一定发生 | Daily 12/25</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/24/mysite-name.html">
+        <p class="title">更换了博客域名 | Daily 12/24</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/22/zaikan.html">
+        <p class="title">如何设置微信“在看”可见范围 | Daily 12/22</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/22/product.html">
+        <p class="title">开发过的作品</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/21/exam.html">
+        <p class="title">说说考研 | Daily 12/21</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/20/review.html">
+        <p class="title">回顾这段时间的写作 | Daily 12/20</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/19/zaikan.html">
+        <p class="title">赞-鼓掌-好看-在看 | Daily 12/19</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/18/wechat-dark.html">
+        <p class="title">微信适配了夜间模式 | Daily 12/18</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/17/flutter-meiba.html">
+        <p class="title">Flutter 与 灭霸 | Daily 12/17</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/16/leonard.html">
+        <p class="title">这世界变化太快 | Daily 12/16</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/15/xuzhiyuan-xiaochuan.html">
+        <p class="title">我喜欢这个节目 | Daily 12/15</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/14/left-foot.html">
+        <p class="title">热身、放松， 相信科学 | Daily 12/14</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/13/guide-wechat.html">
+        <p class="title">长按二维码关注我 | Daily 12/13</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/12/subway.html">
+        <p class="title">挤地铁感想 | Daily 12/12</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/10/right-now.html">
+        <p class="title">不行，这事一定要马上做 | Daily 12/10</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/09/voice-progress.html">
+        <p class="title">为什么微信没有这个功能？ | Daily 12/09</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/08/stable-success.html">
+        <p class="title">稳定高于一切，你成功吗？ | Daily 12/08</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/07/build-room.html">
+        <p class="title">天气不错，一起盖房子 | Daily 12/07</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/06/my-pic-app.html">
+        <p class="title">我的 App 发布了 | Daily 12/06</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/05/be-quite-wechat.html">
+        <p class="title">一个微信小号的实验 | Daily 12/05</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/04/sad-day.html">
+        <p class="title">Sad Day</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/03/about-xPic.html">
+        <p class="title">PicPlus：Android 手机端的图床利器</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/02/dingtou.html">
+        <p class="title">不想花时间在投资上？试试定投… | Daily 12/02</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/01/time-night.html">
+        <p class="title">熬夜虽好，可不要太多。 | Daily 12/01</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/01/string-buffer-builder.html">
+        <p class="title">String、StringBuffer 和 StringBuilder 的区别</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/01/mvp-mvc.html">
+        <p class="title"> MVC 与 MVP 并无两样</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/12/01/java-reference.html">
+        <p class="title">强、软、弱、虚引用的区别</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/30/snow-day.html">
+        <p class="title">先定个小目标 | Daily 11/30</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/29/hash-map-think.html">
+        <p class="title">由 HashMap 引申出的技术深度讨论</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/29/basketball-day.html">
+        <p class="title">今天，写一篇日记… | Daily 11/29</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/28/team-share.html">
+        <p class="title">一次团队分享 | Daily 11/28</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/28/python-web-leancloud.html">
+        <p class="title">网络编程  / Flask / LeanCloud</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/27/wangyi.html">
+        <p class="title">网易裁员事件 | Daily 11/27</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/26/todo-last-day.html">
+        <p class="title">提前计划第二天？ | Daily 11/26</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/25/monday.html">
+        <p class="title">平淡的周一 | Daily 11/25</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/24/tj-things.html">
+        <p class="title">人生是选择题还是填空题？ | Daily 11/24</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/23/baby-day.html">
+        <p class="title">飞向太空，宇宙无限... | Daily 11/23</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/22/buy-app.html">
+        <p class="title">停止维护 App，备战中考 | Daily 11/22</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/22/android-so.html">
+        <p class="title">Android so 文件概要</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/21/dev-money.html">
+        <p class="title">一个付费 App 的诞生？ — Daily11/21</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/20/three-point-shot.html">
+        <p class="title">Daily11/20  - 又进了一个三分</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/19/huawei-metting.html">
+        <p class="title">Daily11/19 - 华为开发者大会 — AI 很厉害，客户端也很重要</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/18/monday.html">
+        <p class="title"> Daily11/18 - 给稍后阅读升个级</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/17/midway.html">
+        <p class="title"> Daily11/17 - 看了《中途岛》</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/16/think-special.html">
+        <p class="title"> Daily11/16 - 面皮不错</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/16/playball-webdav.html">
+        <p class="title"> Daily11/15 - 又可以单挑了~</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/16/asynctask.html">
+        <p class="title">AsyncTask 官方文档翻译（部分）</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/15/patch-day.html">
+        <p class="title"> Daily11/14 - 出 bug 啦！</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/14/tomoto-meeting.html">
+        <p class="title">Daily11/13 - 与番茄钟的一次不期而遇...</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/13/yazhuang-record.html">
+        <p class="title">2019芽庄之旅</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/08/enum-introduce.html">
+        <p class="title">枚举介绍以及枚举的本质</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/04/use-enum-or-not.html">
+        <p class="title">Android 开发中是否应该使用枚举？</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/11/02/young-of-you.html">
+        <p class="title">《少年的你》- “我要去北京” </p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/10/14/unix-linux-hist.html">
+        <p class="title">追寻 Unix/Linux 的源头，那些改变世界的人们...</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/10/12/marvel-lee.html">
+        <p class="title"> 读斯坦.李有感</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/10/11/unix-linux-origin.html">
+        <p class="title">Unix 与 Linux 操作系统的源头历史</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/10/08/nba-morey-china.html">
+        <p class="title">NBA 凉凉</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/08/28/safeball.html">
+        <p class="title">第一次住院后的一点碎碎念</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/07/05/huobijijin.html">
+        <p class="title">货币基金及其风险</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/07/05/huajiao-yuchi.html">
+        <p class="title">《鱼翅和花椒》</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/06/14/nba-play-final.html">
+        <p class="title">说说总决赛</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/06/06/about-readlater.html">
+        <p class="title">稍后阅读：一种高效阅读方式的探索</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/05/24/eco-book.html">
+        <p class="title">《斯坦福极简经济学》</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/05/23/deep-think-practice.html">
+        <p class="title">值得深入思考并实践的指南</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/04/05/android-why-java-harmony.html">
+        <p class="title">Sun 公司的 Java 跟 Android 使用的 Java 库有什么关系？</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/04/05/about-runtime.html">
+        <p class="title">什么是运行时（Runtime）</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/04/05/2019-tools.html">
+        <p class="title">2019 个人周边</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/03/30/weekly-006.html">
+        <p class="title">Weekly 006</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/03/28/drawable-builder.html">
+        <p class="title">用 Xml 写 Shape Drawable 还是挺让人烦的...</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/03/23/weekly-005.html">
+        <p class="title">Weekly 005</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/03/17/weekly-004.html">
+        <p class="title">Weekly 004</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/03/12/mother-food.html">
+        <p class="title">老妈的饭越来越好吃</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/03/10/weekly-003.html">
+        <p class="title">Weekly 003</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/03/02/weekly-002.html">
+        <p class="title">Weekly 002</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/02/28/weibo-work-record.html">
+        <p class="title">微博工作记录</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/02/25/stock-learning.html">
+        <p class="title">《为什么要学习股票投资？》</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/02/24/weekly-001.html">
+        <p class="title">Weekly 001</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/02/13/fund-learning.html">
+        <p class="title">《基金：从0开始学基金投资》</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/02/10/2019-years-time.html">
+        <p class="title">2019 春节7天 北京</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/02/03/last-work-day.html">
+        <p class="title">写在 2019 春节前的最后一个工作日</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/01/31/drawable-view.html">
+        <p class="title">Android Drawable 简析</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/01/27/dont-be-self-righteous.html">
+        <p class="title">不要拿自己的标准去衡量别人</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/01/20/ten-years.html">
+        <p class="title">十年</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2019/01/17/exist-is-right.html">
+        <p class="title">存在即合理？</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2018/12/31/2018-summary.html">
+        <p class="title">2018 年终总结</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2018/12/26/dont-panic.html">
+        <p class="title">不要慌</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2018/11/29/flutter-overview.html">
+        <p class="title">Flutter 概览</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2018/09/28/taisen-book.html">
+        <p class="title">《泰森自传》读后感</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2018/09/07/todo-api.html">
+        <p class="title">柳叶清单开放 Api </p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2018/08/08/my-grandma.html">
+        <p class="title">我的奶奶</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2018/07/28/jiangwen.html">
+        <p class="title">姜文这个导演</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2018/07/25/about_passbook.html">
+        <p class="title">Passbook：我心目中的账号密码存储应用</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2018/06/09/list-evety-day.html">
+        <p class="title">柳叶清单：管理日程的网页清单程序</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2018/05/30/time-slow.html">
+        <p class="title">让时间慢下来</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2018/01/27/kotlin-tip-passbook.html">
+        <p class="title">应用开发过程中的一些 Kotlin 语法点记录</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2018/01/11/save-value-to-local-in-intellij.html">
+        <p class="title">开发 Intellij 插件（如AndroidStudio 插件）时如何在本地保存状态值</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2018/01/06/greate-articles.html">
+        <p class="title">日常收集的精品技术文章</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/12/31/summary.html">
+        <p class="title">2017 年终总结</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/12/27/why-programe-zhihu.html">
+        <p class="title">有谁是单纯地喜欢编程吗？</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/12/26/movie_list_17.html">
+        <p class="title">2017 Movie List</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/12/01/imageview-scaletype.html">
+        <p class="title">ImageView 中不同 scaleType 的对比介绍</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/10/07/over_101.html">
+        <p class="title">每年的十一都是怎么过的</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/05/15/leakcanary-theory.html">
+        <p class="title">LeakCanary 工作原理浅析</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/05/08/activity-windown-decorview.html">
+        <p class="title">Activity 与 Window、PhoneWindow、DecorView 之间的关系简述</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/05/03/thread-pool-intro.html">
+        <p class="title">关于线程池的执行原则及配置参数详解</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/04/28/custom-preference-view.html">
+        <p class="title">自定义复杂 View 以及相关绘制优化实践</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/04/26/loading_layout_practice.html">
+        <p class="title">Android 多状态加载布局的开发 Tips</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/04/24/jvm_oom_gc.html">
+        <p class="title">JVM 内存分代、垃圾回收漫谈</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/04/22/github_usage.html">
+        <p class="title">如何用好 github 中的 watch、star、fork</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/04/18/jvm_merery_area.html">
+        <p class="title">JVM 内存区域介绍</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/04/14/jvm_vs_dalvik.html">
+        <p class="title">JVM、Dalvik、ART 介绍</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/04/05/OneDrawable.html">
+        <p class="title">仅使用一张资源图片为 View 设置具有按下效果的背景 - OneDrawable</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/03/25/project-list.html">
+        <p class="title">Android 项目开发清单</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/03/15/about_easypaper.html">
+        <p class="title">易剪：手机端的剪报助手</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/02/15/custom_text_select.html">
+        <p class="title">Android 6.0 设备上自定义文本操作栏</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/02/03/setting-intro.html">
+        <p class="title">使用 Android 原生 API 开发设置界面</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/02/03/happy-mac-key.html">
+        <p class="title">Mac 上修改按键映射工具推荐</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2017/01/02/my_2016_life.html">
+        <p class="title">再见 2016 ，你好 2017 ~</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2016/11/07/about-review.html">
+        <p class="title">ReView 一个辅助设计师方便 review UI 的 view 组件集合</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2016/11/06/viewcontroler-introduce.html">
+        <p class="title">Android 复杂界面开发实践之 ViewController: 介绍</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2016/10/13/viewcontroller-foreword.html">
+        <p class="title">Android 复杂界面开发实践之 ViewController: 前言</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2016/07/02/my-blog-update-record.html">
+        <p class="title">博客更新日志随想</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2016/04/15/butterknife_introduce.html">
+        <p class="title">ButterKnife 使用介绍</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2016/04/09/rxjava_operate.html">
+        <p class="title">使用 RxJava 重构一段判断逻辑</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2016/04/07/checkstyle.html">
+        <p class="title">使用 CheckStyle 检查代码</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2016/03/11/handler_analysis_three.html">
+        <p class="title">Handler 之 ThreadLocal 相关</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2016/03/10/handler_analysis_two.html">
+        <p class="title">Handler 之 源码解析</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2016/03/10/handler_analysis_one.html">
+        <p class="title">Handler 之 初识及简单应用</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2016/02/26/gudong_translate.html">
+        <p class="title">咕咚翻译：Android 设备上翻译效率神器</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2016/02/25/SharePreference_service_activity.html">
+        <p class="title">跨进程数据共享问题及解决方案</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2016/01/26/about-my-project.html">
+        <p class="title">关于个人项目</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2016/01/21/RxJava_In_AppPlus.html">
+        <p class="title">RxJava 在 AppPlus 中的应用</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2016/01/15/over_draw_color_introduce.html">
+        <p class="title">Android 过度绘制介绍</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2016/01/13/android-performance-patterns-first-note.html">
+        <p class="title">Android性能优化典范 - 第1季 阅读笔记</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/12/27/mars_felling.html">
+        <p class="title">《火星救援》有感</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/12/22/my_2015_life.html">
+        <p class="title">再见 2015 ，你好 2016 ~</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/12/21/reason-for-appplus.html">
+        <p class="title">AppPlus：传送、分享 APK 到其他手机</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/12/20/watch_dependencies_path.html">
+        <p class="title">利用 Gradle Task 查看远程依赖库的本地存储路径</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/11/24/copy-right-meizhi.html">
+        <p class="title">开源协议小风波</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/11/23/gank_mvp_introduce.html">
+        <p class="title"> MVP 模式在 GankDaily 中的应用</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/11/22/Android-transition.html">
+        <p class="title">在Android5.0以上设备实现过渡动画</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/11/10/android_m_permission.html">
+        <p class="title">在Android 6.0 设备上动态获取权限</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/10/27/bitmap-tip.html">
+        <p class="title">Bitmap相关的知识点整理</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/10/24/1024.html">
+        <p class="title">我的 1024</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/10/20/java-loader.html">
+        <p class="title">Java 类加载机制</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/09/27/project-rule.html">
+        <p class="title">我的Android项目开发规范（不断更新）</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/09/13/gradlebuild-best-practice.html">
+        <p class="title">build.gradle 最佳实践集合</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/09/10/alert_dialog_theme.html">
+        <p class="title">用 Support 包显示 MaterialDialog</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/08/03/java_important_word.html">
+        <p class="title">Java关键字之 volatile</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/08/03/AtomicInteger_Unsafe.html">
+        <p class="title">Unsafe 类介绍</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/08/03/AtomicInteger_Introduce.html">
+        <p class="title">AtomicInteger 一个和高并发有关的工具类</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/07/25/android_webview_chinese_encode.html">
+        <p class="title">Android使用WebView加载中文时，乱码问题解决</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/07/18/android_shift_theme.html">
+        <p class="title">App中主题Theme使用以及Theme切换</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/07/18/android_popupMenu_icon.html">
+        <p class="title">在流式布局中使用PopupMenu，以及遇到的问题</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/06/29/mac_sublime_java.html">
+        <p class="title">MAC 系统如何使用 Sublime Text 3 直接编译运行java代码</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/06/03/jekyll.html">
+        <p class="title">和Jekyll相关的有用博客网址收集</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/06/03/color_alaph.html">
+        <p class="title">Android通过颜色设置背景透明度</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/05/26/lock_screen.html">
+        <p class="title">Android设备上实现锁屏</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/05/21/custom_view_cakeview.html">
+        <p class="title">自定义view之饼状图的实现</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/2015/05/19/way.html">
+        <p class="title">我的开发之路</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/1990/03/07/2021-log.html">
+        <p class="title">日志-2021</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/1990/03/06/2020-log.html">
+        <p class="title">日志-2020</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/1990/03/05/2019-log.html">
+        <p class="title">日志-2019</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/1990/03/04/2018log.html">
+        <p class="title">日志-2018</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/1990/03/03/2017log.html">
+        <p class="title">日志-2017</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/1990/03/02/2016log.html">
+        <p class="title">日志-2016</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/1990/03/02/2020-mouth-review.html">
+        <p class="title">2020 年每月 review</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/1990/03/01/2015-log.html">
+        <p class="title">日志-2015</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/1990/02/03/list_pay.html">
+        <p class="title">咕咚翻译捐赠名单</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/1990/02/02/2019-mouth-review.html">
+        <p class="title">2019 年每月 review</p>
+        <p class="content"></p>
+      </a>
+    </li>
+    <li hidden>
+      <a href="/1990/02/01/tech-log.html">
+        <p class="title">技术微笔记</p>
+        <p class="content"></p>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

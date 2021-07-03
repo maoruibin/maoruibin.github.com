@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>柳叶清单开放 Api -咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="柳叶清单开放 Api "/>
+  <meta name="keywords" content="咕咚,blog"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="柳叶清单开放 Api ">柳叶清单开放 Api </h1>
+  
+  <div class="subtitle">咕咚 于 2018-09-07 发布</div>
+  
+  <div class="post">
+    <h2 id="介绍">介绍</h2>
+
+<p>柳叶清单是自己开发的一个 Web 清单应用，目前网页版已经上线运行，地址如下：</p>
+
+<p><a href="http://gudong.site/list">http://gudong.site/list</a></p>
+
+<p>为了方便其他开发者使用清单服务，现在开放了部分 API，以便大家可以使用这些 API 去开发自己的 todo 应用，而不需要去建立自己的后台。</p>
+
+<p>这里先简单说一下具体的数据 model 关系，目前一共有 4 个 model，分别是 User、Project、Group、Todo.</p>
+
+<ul>
+  <li>User: 用户信息</li>
+  <li>Project：清单项目，一个用户（User）可以创建多个清单项目。</li>
+  <li>Group：分组，一个清单项目（Project）包含多个清单分组</li>
+  <li>Todo：事项，每个分组（Group）下有若干 Todo 组成</li>
+</ul>
+
+<p>这个关系用图表示出来如下所示：</p>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fv2i1id2gtj316m0heaa9.jpg" alt="" /></p>
+
+<p>上面的示意有点抽象，这里用一个具体的例子进行展示如下：</p>
+
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fv2i15reybj31cw0ok3z8.jpg" alt="" /></p>
+
+<p>下面是目前开放出来的所有数据操作相关的 API，包括用户登录、注册，以及事项（Todo）、分组（Group）、项目（Project）数据的操作，如下所示：</p>
+
+<hr />
+
+<h2 id="用户信息">用户信息</h2>
+
+<h3 id="登录">登录</h3>
+<blockquote>
+  <p>https://waishuo.leanapp.cn/api/v1.0/users/login</p>
+</blockquote>
+
+<p>请求方式：POST</p>
+
+<p>请求参数：</p>
+
+<p><img src="https://ws3.sinaimg.cn/large/0069RVTdly1fv122pzfs4j30np02na9x.jpg" alt="" /></p>
+
+<p>响应结果：
+<img src="https://ws1.sinaimg.cn/large/006tNbRwly1fv249o3de2j31dw0pu0uv.jpg" alt="" /></p>
+
+<h3 id="注册">注册</h3>
+<blockquote>
+  <p>https://waishuo.leanapp.cn/api/v1.0/users/register</p>
+</blockquote>
+
+<p>请求方式：POST</p>
+
+<p>请求参数：
+<img src="https://ws1.sinaimg.cn/large/0069RVTdly1fv125ajg0ij30nu03ia9z.jpg" alt="" /></p>
+
+<p>响应结果：
+<img src="https://ws1.sinaimg.cn/large/006tNbRwly1fv24kj4l6nj31do0ouwgj.jpg" alt="" /></p>
+
+<h3 id="获取用户信息">获取用户信息</h3>
+<blockquote>
+  <p>https://waishuo.leanapp.cn/api/v1.0/users/<userId></userId></p>
+</blockquote>
+
+<p>请求方式：GET</p>
+
+<blockquote>
+  <p>说明：url 请求参数中最后需要指定 user id</p>
+</blockquote>
+
+<p>请求参数：</p>
+
+<p>无</p>
+
+<p>响应结果：
+<img src="https://ws4.sinaimg.cn/large/006tNbRwly1fv24s4zezxj31di0fgjsg.jpg" alt="" /></p>
+
+<hr />
+<h2 id="todo">Todo</h2>
+
+<h3 id="创建-todo">创建 todo</h3>
+<blockquote>
+  <p>https://waishuo.leanapp.cn/api/v1.0/todos</p>
+</blockquote>
+
+<p>请求方式：POST</p>
+
+<p>请求参数：</p>
+
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fv2gqi0bulj31bc0damxw.jpg" alt="" /></p>
+
+<p>响应结果：</p>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fv2abvicb4j31e00icjsm.jpg" alt="" /></p>
+
+<h3 id="更新-todo">更新 Todo</h3>
+<blockquote>
+  <p>https://waishuo.leanapp.cn/api/v1.0/todos/&lt;todoId&gt;</p>
+</blockquote>
+
+<p>请求方式：PUT</p>
+
+<blockquote>
+  <p>说明：url 请求参数中最后需要指定 todo id</p>
+</blockquote>
+
+<p>请求参数：</p>
+
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fv2gw0uml2j31bi0eymy1.jpg" alt="" /></p>
+
+<p>响应结果：</p>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fv2acucb8xj31e00f2gma.jpg" alt="" /></p>
+
+<h3 id="删除-todo">删除 Todo</h3>
+<blockquote>
+  <p>https://waishuo.leanapp.cn/api/v1.0/todos/&lt;todoId&gt;</p>
+</blockquote>
+
+<p>请求方式：DEL</p>
+
+<p>请求参数：</p>
+
+<blockquote>
+  <p>说明：url 请求参数中最后需要指定 todo id</p>
+</blockquote>
+
+<p>响应结果：</p>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fv2adkk67pj31ec05sweh.jpg" alt="" /></p>
+
+<h3 id="获取-todo">获取 Todo</h3>
+<blockquote>
+  <p>https://waishuo.leanapp.cn/api/v1.0/todos/&lt;todoId&gt;</p>
+</blockquote>
+
+<p>请求方式：GET</p>
+
+<p>请求参数：</p>
+
+<blockquote>
+  <p>说明：url 请求参数中最后需要指定 todo id</p>
+</blockquote>
+
+<p>响应结果：</p>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fv2aemqnszj31ea0hqwfp.jpg" alt="" /></p>
+
+<hr />
+
+<h2 id="分组-api">分组 API</h2>
+
+<h3 id="创建分组">创建分组</h3>
+<blockquote>
+  <p>https://waishuo.leanapp.cn/api/v1.0/groups</p>
+</blockquote>
+
+<p>请求方式：POST</p>
+
+<p>请求参数：</p>
+
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fv2atskz8rj31bc0aiwev.jpg" alt="" /></p>
+
+<p>响应结果：</p>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fv2au53o3dj31e00d6js3.jpg" alt="" /></p>
+
+<h3 id="更新分组">更新分组</h3>
+<blockquote>
+  <p>https://waishuo.leanapp.cn/api/v1.0/groups/&lt;groupId&gt;</p>
+</blockquote>
+
+<p>请求方式：PUT</p>
+
+<blockquote>
+  <p>说明：url 请求参数中最后需要指定 groupId</p>
+</blockquote>
+
+<p>请求参数：</p>
+
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fv2awsuikvj31ba0akaaf.jpg" alt="" /></p>
+
+<p>响应结果：</p>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fv2ax5naqij31e80eeaax.jpg" alt="" /></p>
+
+<h3 id="获取项目分组列表">获取项目分组列表</h3>
+<blockquote>
+  <p>https://waishuo.leanapp.cn/api/v1.0/groups/projects/<projectId></projectId></p>
+</blockquote>
+
+<p>请求方式：GET</p>
+
+<p>请求参数：</p>
+
+<blockquote>
+  <p>说明：url 请求参数中最后需要指定 projectId</p>
+</blockquote>
+
+<p>响应结果：</p>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fv2b730zvqj31dm0g8t9n.jpg" alt="" /></p>
+
+<h3 id="删除分组">删除分组</h3>
+<blockquote>
+  <p>https://waishuo.leanapp.cn/api/v1.0/groups/&lt;groupId&gt;</p>
+</blockquote>
+
+<p>请求方式：DEL</p>
+
+<p>请求参数：</p>
+
+<blockquote>
+  <p>说明：url 请求参数中最后需要指定 groupId</p>
+</blockquote>
+
+<p>响应结果：</p>
+
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fv2axmd09bj31e005m3yi.jpg" alt="" /></p>
+
+<hr />
+
+<h2 id="project-相关-api">Project 相关 api</h2>
+
+<h3 id="创建项目">创建项目</h3>
+<blockquote>
+  <p>https://waishuo.leanapp.cn/api/v1.0/project</p>
+</blockquote>
+
+<p>请求方式：POST</p>
+
+<p>请求参数：</p>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fv23m9qfscj31bm06s0sx.jpg" alt="" /></p>
+
+<p>响应结果：</p>
+
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fv23lkafkcj31dk0c60te.jpg" alt="" /></p>
+
+<h3 id="编辑项目">编辑项目</h3>
+<blockquote>
+  <p>https://waishuo.leanapp.cn/api/v1.0/project</p>
+</blockquote>
+
+<p>请求方式：PUT</p>
+
+<p>请求参数：</p>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fv2bfvigu6j31bk07y3yp.jpg" alt="" /></p>
+
+<p>响应结果：</p>
+
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fv2bgplan5j31e20eawfd.jpg" alt="" /></p>
+
+<h3 id="删除项目">删除项目</h3>
+<blockquote>
+  <p>https://waishuo.leanapp.cn/api/v1.0/projects/&lt;projectId&gt;
+注意：删除时，会把项目下的分组以及 todo 全部删除</p>
+</blockquote>
+
+<p>请求方式：DEL</p>
+
+<blockquote>
+  <p>说明：url 请求参数中最后需要指定 projectId</p>
+</blockquote>
+
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

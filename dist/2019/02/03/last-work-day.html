@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>写在 2019 春节前的最后一个工作日-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="写在 2019 春节前的最后一个工作日"/>
+  <meta name="keywords" content="咕咚,daily"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="写在 2019 春节前的最后一个工作日">写在 2019 春节前的最后一个工作日</h1>
+  
+  <div class="subtitle">咕咚 于 2019-02-03 发布</div>
+  
+  <div class="post">
+    <p><img src="https://upload-images.jianshu.io/upload_images/588640-c4e3d11b2fd505a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="今天的西二旗地铁早高峰" /></p>
+
+<figcaption class="caption">今天的西二旗地铁早高峰</figcaption>
+
+<p>今天是 2019 春节前的最后一个工作日，我还在公司里上班，因为今年父母、孩子都在北京，所以我没有回老家过年去。</p>
+
+<p>今天公司里人已经很少了，大部分人已经提前请假回家了，不过公司里却多了不少小朋友。</p>
+
+<p>之前还不知道有这样一个习惯，就是过年前的最后一天，公司有孩子的同事们会把自己的孩子带到公司里玩耍。</p>
+
+<p>我旁边工位的产品同学也带了自己的孩子，是个小男孩，很温柔，说话声音很细，一开始并不怎么说话，看着他一个人玩的无聊，我今天也没什么事，所以就主动过去逗他玩，我给他叠了纸飞机，后来还教他叠，他学的不错，模仿的有模有样。</p>
+
+<p>不一会儿就玩熟了，便开始主动跑过来跟我玩。他跟我介绍了自己的布娃娃，还有小车，听她妈妈说，他很喜欢车，貌似小男孩都有共同的爱好，就是小汽车，不管什么车好像都喜欢似的。</p>
+
+<p>我孩子也是。家里已经给他买了很多车，大的、小的、长的、短的，有卡车、挖掘机、吊车等等，玩起车来，他总是乐此不疲。</p>
+
+<p>中午去跟同事一起吃了饭，饭后我还是一如既往的去外面溜达。这个习惯已经很久了，因为吃完饭，如果直接回去工位呆着，总觉得是一种不健康的习惯，去外面溜溜可以让胃里的东西更好的消化，还可以让自己的眼睛也休息休息，这一年，明显觉得视力出现了下降，经常性的，在看电脑时眼睛觉得冒火花，觉得恍惚。</p>
+
+<p>昨天和前天在思考这些年开发过的 App。自己这几年开发了不少个人 App，但是每次都是从头去搭建一个项目，很多经验都没有得到沉淀，突然发现这是一种很大的损失，因为没有累计效应，一直在重复，其实效率低下。所以上周开始思考搭建一个个人的快速开发框架。这个框架包含自己经常用到的一个组件、页面，可以让自己在日后有 App 新点子时，快速帮助自己实现一个可用的 App。</p>
+
+<p>最终，我选择了用 Kotlin 作为开发语言，完成了这个快速开发框架。昨天已经跑通了所有功能，还把编译打包、代码混淆也都完成了，只是在上传到 Maven 时又出现了问题。今天早晨我想到不再上传到 Maven，改为 JitPack，上传过程方便多了，很顺利的完成了上传。</p>
+
+<p>这是最终的框架地址，<a href="https://github.com/maoruibin/MaoAppBase">https://github.com/maoruibin/MaoAppBase</a> 项目发布在了 Github，本来打算设置为私有，但是 JitPack 要求项目必须公开，所以设置了公开，但是这还是一个自用的项目。</p>
+
+<p>下午休息完，没过多久，同事们便开始走的差不多了，我也便提前联系媳妇一块回家了。</p>
+
+<p>媳妇公司是一家传统行业，今年的福利很多样化。哪天送了他们购物卡，今天给他们送了零食大礼包。回家后看到大礼包，发现有自己爱吃的牛肉干，真是太棒了。</p>
+
+<p>回到家里，老爹老妈在炸土豆丸子，貌似馅不是很好，因为土豆的原因，但是味道还可以，妈妈炸完，我们就吃了热腾腾的天丸子，</p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/588640-684529d359982170.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="丸子好吃，可不要贪多" /></p>
+
+<p>好吃，但是一不小心又吃多了。</p>
+
+<p>这两个月，自己经常因为吃多而胃不舒服。这在以前是很少见的。我记得以前胃口好，消化也不错，遇到想吃的、爱吃的，从来不管不顾，吃多了顶多肚子撑一会，但是很快便好了。而现在，我需要小心翼翼的对待我的胃，生怕吃多了，但是今天看到甜丸子，还是吃多了。加之是甜味的，不好消化，所以不舒服是在所难免了。</p>
+
+<p>下午妈妈问晚上吃什么，我说吃羊肉面片，但我只少吃一点。</p>
+
+<p>这段时间也是，吃东西时，我已经变得越来越小心翼翼，生怕吃多了，因为自己的胃现在真是越来越脆弱。也因此，我会在吃完中午饭会经常去溜达。</p>
+
+<p>从以前吃饭不管不顾，到现在吃东西小心翼翼，第一次意识到自己的身体在发生变化。自己也开始调整，毕竟这关乎自己的根本感受。我觉得一段时间内，自己还是应该去刻意控制饮食，少食多餐，多吃清淡，川菜等辛辣的我看我还是过几个月再吃吧，还有各种糖，包括甜食，自己也应该少吃，甚至不吃。目前来看，这些约束为我挺难的，但是不论如何，这次一定要调整了…</p>
+
+<h2 id="最后">最后</h2>
+
+<p>春节前的最后一天就这样结束了，跟其他时间没什么大的区别，只是回来的早了一点。这是今年一整年真真的结束。</p>
+
+<p>2018 <a href="https://gudong.site/2018/12/31/2018-summary.html">做了很多事</a>，不论工作还是生活，工作中自己还是有很多不满意，有客观因素也有主观因素，这一年，自己还是一线写着没完没了的需求，已经是常态，但我也在不断调整。生活中，逐渐稳定，家庭也在随着孩子的长大，变得越来越协调，希望越来越好。</p>
+
+<p>2019 年，其实很难说。工作中，我不知道还会有什么变动，但对自己来说，还是应该专心去提升自己价值，但说到如何提升价值，这可能又是一个大话题了，简单来说，还是应该专注于自己能力的提升，多思考多实践。</p>
+
+<p>生活中，今天孩子要上幼儿园…这可能会让今年很多事都随之变化，这是一个新的开始。</p>
+
+<blockquote>
+  <p>Less is more…</p>
+</blockquote>
+
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

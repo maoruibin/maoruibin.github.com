@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Daily11/20  - 又进了一个三分-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="Daily11/20  - 又进了一个三分"/>
+  <meta name="keywords" content="咕咚,daily"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="Daily11/20  - 又进了一个三分">Daily11/20  - 又进了一个三分</h1>
+  
+  <div class="subtitle">咕咚 于 2019-11-20 发布</div>
+  
+  <div class="post">
+    <p><img src="https://upload-images.jianshu.io/upload_images/588640-a64658be1afce68c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>中午去打球，天气还可以，没风，跟经常打球的朋友玩了一小时。大家战斗欲不强，不过我倒是玩的很开心，今天再次命中了一个三分，这算是自己这么多年来的第二记三分，影响深刻，😭😭😭。</p>
+
+<hr />
+
+<p>另外，今天还优化了个人的图床 APP。</p>
+
+<h2 id="我的个人图床-app">我的个人图床 APP</h2>
+
+<p>这两年我经常在手机上写东西，很喜欢 Markdown，简单易用高效，一套格式走天下，但是在手机码字时，经常需要插入图片，而 Markdown 要求必须是远程图片，所以如何在手机上快速传图到图床一直是个问题（Mac 电脑上有 iPic 这个神器）。</p>
+
+<p>今年初，自己模仿一个安卓软件—图床猫，给自己开发了一个手机传图工具。毕竟记录日志时，很多图片都是在手机里，所以手机中快速传图到图床对我很有用，我博客的很多图片，都是通过这个手机软件上传的。</p>
+
+<p>具体使用时可以在系统相册的分享找到传图入口，如下图所示：</p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/588640-3457bacf0c907069.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选择上传" /></p>
+
+<p>然后点击上传到图片图标，一键上传，稍等片刻，图片就可上传成功，如下所示：</p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/588640-03c7a0bf1e2f1e00.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="上传成功" /></p>
+
+<p>上传时会自动压缩原图，以便图片保持较小的质量，方便使用。同时，上传成功后自动把图片链接格式化为 Markdown，复制粘贴到文章中即可，另外如果是电脑端要使用，则用微信或者 qq 发送即可，非常方便。</p>
+
+<p>不过最近发现文章要发布在简书时图片老是传失败（简书会重传图片到自己的图床），今天一看原来是压缩比太大，导致压缩上传后的图片还是质量太大。</p>
+
+<p>今天把压缩比例设置到了 70%，同时让 app 支持自定义设置压缩比，妥妥的。同时还优化了上传成功后的交互，图片改变为全屏展示，之前设计的仅仅是顶部展示，所以图片展示不全，另外用了 BottomSheetDialog 展示上传成功的结果。</p>
+
+<h2 id="社交网络">社交网络</h2>
+<p>一开始社交媒体是一种自由的沟通工具，是一种新的娱乐方式，而现在你真的很难去定义社交媒体了，你会谨言慎行，一切都变了。</p>
+
+<p>社交媒体让人感觉到压力，让人感觉到虚假，很多东西都不真实。</p>
+
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Android Drawable 简析-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="Android Drawable 简析"/>
+  <meta name="keywords" content="咕咚,tech"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="Android Drawable 简析">Android Drawable 简析</h1>
+  
+  <div class="subtitle">咕咚 于 2019-01-31 发布</div>
+  
+  <div class="post">
+    <p><img src="http://upload-images.jianshu.io/upload_images/588640-f3c7beeead2d22c8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Photo by Patrick Tomasso on Unsplash" /></p>
+
+<p>Drawable 是开发中经常用到的一个概念，我们经常用它去设置 View 的背景，背景可以一个颜色值，也可以是一张资源图片，还可以是一个自定义的 Drawable等等。这篇文章就简单说下 Drawable 与 View 的关系，同时结合代码，简要分析一下 Drawable 如何作用于 View。</p>
+
+<h2 id="drawable-介绍">Drawable 介绍</h2>
+
+<p>官方介绍</p>
+
+<blockquote>
+  <p>A Drawable is a general abstraction for “something that can be drawn.” Most often you will deal with Drawable as the type of resource retrieved for drawing things to the screen; the Drawable class provides a generic API for dealing with an underlying visual resource that may take a variety of forms. Unlike a <code class="highlighter-rouge">View</code>, a Drawable does not have any facility to receive events or otherwise interact with the user.</p>
+</blockquote>
+
+<p>简单翻译下：</p>
+
+<blockquote>
+  <p>Drawable 是 “所有可绘制东西” 的一个抽象，大多数时候，我们只需要把各种不同类型的资源作为转化为 drawable，然后 View 会帮我们把它渲染到屏幕上。Drawable 类提供了一个通用 API，用于解析转化各种可视资源到 Canvas，跟 View 不一样，<strong>Drawable 不能接受任何事件以及用户交互</strong>。</p>
+</blockquote>
+
+<p>总而言之，Drawable 就是一个可绘制东西的抽象，相比 View，它更纯粹，就是用来做绘制相关事情的，它处理不了用户交互事件，也不需要处理，所有交互相关的事都是由 View 来完成，但是背景相关的事大都可以通过 Drawable 来完成。</p>
+
+<p>一般的，我们要为 View 设置背景，可通过如下几种方式：</p>
+
+<ul>
+  <li>通过颜色为 View 设置背景</li>
+  <li>通过自定义的 shape 设置背景</li>
+</ul>
+
+<h3 id="用颜色设置背景">用颜色设置背景</h3>
+<p>通过 View 的 setBackgroundColor 方法可以设置颜色为 View 的背景。</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button</span><span class="o">.</span><span class="na">setBackgroundColor</span><span class="o">(</span><span class="nc">Color</span><span class="o">.</span><span class="na">YELLOW</span><span class="o">);</span>
+</code></pre></div></div>
+<p>效果如下：</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/588640-10df2a93e49cce80.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" /></p>
+
+<h3 id="用自定义的-shape-设置背景">用自定义的 shape 设置背景</h3>
+
+<p>先用 xml 自定义一个圆角空心描边矩形 shape</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;shape</span>
+     <span class="na">android:shape=</span><span class="s">"rectangle"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;corners</span> <span class="na">android:radius=</span><span class="s">"4dp"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;solid</span> <span class="na">android:color=</span><span class="s">"#fff"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;stroke</span> <span class="na">android:color=</span><span class="s">"#ef6f06"</span> <span class="na">android:width=</span><span class="s">"1dp"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/shape&gt;</span>
+</code></pre></div></div>
+<p>通过代码进行设置</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button</span><span class="o">.</span><span class="na">setBackgroundResource</span><span class="o">(</span><span class="no">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">bk_normal</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>效果如下：
+<img src="http://upload-images.jianshu.io/upload_images/588640-3d920cfacd70e1aa.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" /></p>
+
+<p>可以看到，给 View 设置背景 drawable 非常简单，具体通过如下的 API 实现背景设置：</p>
+
+<ul>
+  <li>setBackgroundColor(@ColorInt int color)</li>
+  <li>setBackgroundResource(@DrawableRes int resid)</li>
+  <li>setBackground(Drawable background)</li>
+</ul>
+
+<p><strong>但是设置的背景 Drawable 是如何在 View 上生效的</strong>，可能很多人没去思考过这个问题，这里简单分析下。</p>
+
+<h2 id="drawable-如何作用于-view">Drawable 如何作用于 View</h2>
+
+<p>Drawable 是一个抽象类，这里通过它的的几个抽象方法就能大概猜得出 Drawable 如何作用于 View，下面是 Drawable 的几个抽象方法：</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">draw</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="nc">Canvas</span> <span class="n">canvas</span><span class="o">);</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">setAlpha</span><span class="o">(</span><span class="nd">@IntRange</span><span class="o">(</span><span class="n">from</span><span class="o">=</span><span class="mi">0</span><span class="o">,</span><span class="n">to</span><span class="o">=</span><span class="mi">255</span><span class="o">)</span> <span class="kt">int</span> <span class="n">alpha</span><span class="o">);</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">setColorFilter</span><span class="o">(</span><span class="nd">@Nullable</span> <span class="nc">ColorFilter</span> <span class="n">colorFilter</span><span class="o">);</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="nd">@PixelFormat</span><span class="o">.</span><span class="na">Opacity</span> <span class="kt">int</span> <span class="nf">getOpacity</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>可以看到这里有一个 draw 方法，并且参数中提供了 canvas 对象。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">draw</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="nc">Canvas</span> <span class="n">canvas</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>现在可以想象一下，<strong>View 通过 setBackground 方法为自己设置了一个 drawable 对象后，而 drawable 又有一个 draw 方法，那么 View 绘制自己的背景时，直接调用 drawable 对象的的 draw 方法，这个 draw 方法需要一个 canvas 对象，这里可直接把 View 的 Canvas 对象传递过去，那么 Drawable 就可以成功的把自己的绘制内容应用到 View 之上。</strong></p>
+
+<p>这个过程，相当于 View 把自己的背景绘制功能外包给了 Drawable 对象。</p>
+
+<p>而且，这也是一种非常好的设计模式，<strong>View 负责测量自己大小，给自己指定位置，并绘制 View 前景 ，但是把自己的背景绘制外派给了更独立的 drawable 去做，从而做到了让自己更加轻量，现在 View 就成功的把背景绘制职责分配给了自己的 drawable 对象。</strong></p>
+
+<p>尽管上面只是想象，但事实上也确实如此。通过查看源码，在 View 中有一个私有方法 <code class="highlighter-rouge">drawBackground</code>，它的作用就是把 drawable 绘制在 canvas 上。</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Draws the background onto the specified canvas.
+ * @param canvas Canvas on which to draw the background
+ */</span>
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">drawBackground</span><span class="o">(</span><span class="nc">Canvas</span> <span class="n">canvas</span><span class="o">)</span> <span class="o">{</span>
+	<span class="kd">final</span> <span class="nc">Drawable</span> <span class="n">background</span> <span class="o">=</span> <span class="n">mBackground</span><span class="o">;</span>
+	<span class="k">if</span> <span class="o">(</span><span class="n">background</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span><span class="o">;</span>
+	<span class="o">}</span>
+	<span class="n">setBackgroundBounds</span><span class="o">();</span>
+    <span class="c1">//省略部分代码</span>
+	<span class="kd">final</span> <span class="kt">int</span> <span class="n">scrollX</span> <span class="o">=</span> <span class="n">mScrollX</span><span class="o">;</span>
+	<span class="kd">final</span> <span class="kt">int</span> <span class="n">scrollY</span> <span class="o">=</span> <span class="n">mScrollY</span><span class="o">;</span>
+	<span class="k">if</span> <span class="o">((</span><span class="n">scrollX</span> <span class="o">|</span> <span class="n">scrollY</span><span class="o">)</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//调用 drawable 自己的 draw 方法，从而将绘制的功能移交到 drawable 类</span>
+		<span class="n">background</span><span class="o">.</span><span class="na">draw</span><span class="o">(</span><span class="n">canvas</span><span class="o">);</span>
+	<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+		<span class="n">canvas</span><span class="o">.</span><span class="na">translate</span><span class="o">(</span><span class="n">scrollX</span><span class="o">,</span> <span class="n">scrollY</span><span class="o">);</span>
+		<span class="n">background</span><span class="o">.</span><span class="na">draw</span><span class="o">(</span><span class="n">canvas</span><span class="o">);</span>
+		<span class="n">canvas</span><span class="o">.</span><span class="na">translate</span><span class="o">(-</span><span class="n">scrollX</span><span class="o">,</span> <span class="o">-</span><span class="n">scrollY</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="drawable-与-view-的关系">Drawable 与 View 的关系</h3>
+
+<ul>
+  <li>View 是皮，它是一个具体的东西，看得见摸得着，因为它自己可以测量自己打消、指定自己位置，还能接受 onTouch 事件从而处理用户交互。</li>
+  <li>Drawable 是毛，它可以不存在，因为 View 完全可以在自己的 onDraw 时机中，自己把自己绘制了，无需把绘制进行外包。</li>
+  <li>但是 Drawable 更专业，更独立，它提供了一整套丰富的背景 Drawable 机制，它有丰富的实现类，可以提供给 View 进行方便的背景设置，对 View 来说 drawable 提供的那些实现类开箱即用，还可以减少自己的职能，节省自己的维护开销，何乐而不为。</li>
+</ul>
+
+<h2 id="总结">总结</h2>
+
+<p>Drawable 是一个抽象的概念，只要理解了它跟 View 的关系，其实 Drawable 的想象力会非常大。通过自定义 Drawable，可以在 Drawable 中完成各种绘制逻辑，自定义完成后，只需要让 View 调用 setBackground() 方法，把自定义的 Drawable 传递进去，这样就可以方便把自定义 Drawable 和 View 关联在一起。</p>
+
+<p>之前写过一个转菊花的 Loading 效果，就是用自定义 Drawable 实现的，目前已开源在 github，感兴趣的去看看。</p>
+
+<p><a href="https://github.com/maoruibin/FlowerLoading">FlowerLoading: Android loading or progress view, just like iOS IndicatorView.</a></p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

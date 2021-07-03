@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AsyncTask 官方文档翻译（部分）-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="AsyncTask 官方文档翻译（部分）"/>
+  <meta name="keywords" content="咕咚,tech"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="AsyncTask 官方文档翻译（部分）">AsyncTask 官方文档翻译（部分）</h1>
+  
+  <div class="subtitle">咕咚 于 2019-11-16 发布</div>
+  
+  <div class="post">
+    <p>这一篇文章主要记录 AsyncTask 相关的知识点。</p>
+
+<blockquote>
+  <p>大部分内容来自官方文档，<a href="https://developer.android.google.cn/reference/android/os/AsyncTask#summary">AsyncTask  |  Android Developers</a></p>
+</blockquote>
+
+<h2 id="什么是-asynctask">什么是 AsyncTask</h2>
+
+<p>通过使用 AsyncTask，我们可以正确、简单的在 UI 线程中操作耗时任务，并可以处理任务的进度以及任务结果。整个过程，我们不需要关心任何线程、Handler 相关的操作，它对它们进行了封装。//</p>
+
+<p>AsyncTask 被设计为一个围绕线程和 Handler的帮助类，而用来处理任务，但它并不构成一个通用的线程框架。理想情况下，AsyncTask 应该用于短操作（最多几秒），如果线程需要长时间执行，强烈强烈建议使用 java.util.concurrent 包提供的各种 API，如 Executor、ThreadPoolExecutor 和 FutureTask。</p>
+
+<blockquote>
+  <p>检查为什么要短操作</p>
+</blockquote>
+
+<p>AsyncTask 被设计为在后台执行任务，而在 UI 线程处理任务进度和任务结果。异步任务由3个泛型类型（称为Params、Progress和Result）和4个步骤（称为onPreExecute、doInBackground、onProgressUpdate 和 onPostExecute）定义。</p>
+
+<h2 id="任务执行顺序">任务执行顺序</h2>
+
+<p>从一开始，异步任务是在单个后台线程上串行执行的。从 Android DONUT（1.6） 版本开始，被设计为线程池执行模型，多任务可以并发执行，从 Android HONEYCOMB（3.0）版本开始，任务在单个线程上执行，<strong>以避免由并行执行导致的常见应用程序错误。</strong></p>
+
+<p>如果真的想要并行执行，应该使用线程池的 executeOnExecutor 方法。</p>
+
+<blockquote>
+  <p>也就是说 AsyncTask 不建议执行并行任务，它目前只支持任务串行操作，这样做的目的是为了保证多任务并行操作会导致的潜在问题。</p>
+
+  <p>就目前来看，Android 的主流版本已经是 5.0 以后的系统了，所以几乎可以不用关心因版本而异的执行顺序，开发中用到的 AsyacTask 都是串行执行的。</p>
+</blockquote>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

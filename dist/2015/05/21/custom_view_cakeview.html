@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>自定义view之饼状图的实现-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="自定义view之饼状图的实现"/>
+  <meta name="keywords" content="咕咚,tech"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="自定义view之饼状图的实现">自定义view之饼状图的实现</h1>
+  
+  <div class="subtitle">咕咚 于 2015-05-21 发布</div>
+  
+  <div class="post">
+    <p>一个圆形饼状View的实现过程。</p>
+
+<p><strong>CakeView</strong>是一个通过自定义做的饼状图，如下图所示，会根据比例显示不同的占比。</p>
+
+<p><img src="/assets/cakeview_v2.png" alt="CakeView原理图" title="CakeView原理图" style="width: 50%;margin: auto;" /></p>
+
+<p>这个view会根据传入的两个数字参数 生成不同的占比大小。</p>
+
+<h3 id="实现原理">实现原理###</h3>
+
+<p>画出一个背景为红色的大圆圈，然后再画一个圆心跟红色圆圈一致的扇形。最后在中央画一个白色小圆，然后大概的样式就出来了，最后在中央写上文字内容即可。如下演示
+<img src="/assets/cakeview_principle_v2.png" alt="CakeView原理图" title="CakeView原理图" /></p>
+
+<p>上面已经很清楚的看到了具体的实现过程。核心操作均在onDraw方法，如下</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@Override
+protected void onDraw(Canvas canvas) {
+    super.onDraw(canvas);
+    RectF rPrimary = new RectF(0,0,mWidth,mWidth);
+    RectF rSecond = new RectF(mBorderWidth,mBorderWidth,mWidth-mBorderWidth,mWidth-mBorderWidth);
+    //绘制主色圆圈
+    canvas.drawOval(rPrimary, mPrimaryPaint);
+    //绘制副色圆圈 这里绘制一个指定角度的扇形
+    canvas.drawArc(rPrimary, mStartAngle, mSweepAngle, true, mSecondaryPaint);
+    //绘制中心圆圈 白色中心
+    canvas.drawOval(rSecond, mCenterPaint);
+
+    //绘制标题文本
+    if(!TextUtils.isEmpty(mTitle)){
+        Path titlePath = new Path();
+        titlePath.moveTo(mHalf * (1f / 4f), mHalf * (7f / 8f));
+        titlePath.lineTo(mHalf * (7f / 4f), mHalf * (7f / 8f));
+        mTitlePaint.setTextSize(sp2px(getContext(), 14f));
+        mTitlePaint.setTextAlign(Paint.Align.CENTER);
+        canvas.drawTextOnPath(mTitle, titlePath, 0, 0, mTitlePaint);
+    }
+
+    //绘制内容文本
+    if(!TextUtils.isEmpty(mContent)){
+        Path contentPath = new Path();
+        contentPath.moveTo(mHalf*(1f/4f), mHalf*(7f/6f));
+        contentPath.lineTo(mHalf * (7f / 4f), mHalf * (7f / 6f));
+        mContentPaint.setTextSize(sp2px(getContext(), 24f));
+        mContentPaint.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+        mContentPaint.setTextAlign(Paint.Align.CENTER);
+        canvas.drawTextOnPath(mContent, contentPath, 0, 0, mContentPaint);
+    }
+}
+</code></pre></div></div>
+
+<p>关于画扇形，这里推荐一篇国外的博客，写的很好，对carvas的drawArc方法解释的很详细。</p>
+
+<p><a href="http://www.cumulations.com/blogs/5/Understanding-Sweep-angle-in-drawArc-method-of-android" title="Title">Understanding Sweep angle in drawArc method of android</a></p>
+
+<p>此外。整个实现过程中，还发现canvas有一个特别好的方法<strong>drawTextOnPath()</strong>
+利用这个方法可以方便的文字的显示位置。</p>
+
+<p>update:上述的画饼状图的方式会存在过度绘制的问题，尽管问题看上去不大，其实如果只是画一个圆圈，没必要这么麻烦，可以直接
+画一个指定宽度的圆线就对了，自己的实现其实有点麻烦了。</p>
+
+<p>更新于 2016/01/16 00:30</p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

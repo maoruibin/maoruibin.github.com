@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>文章分类-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="咕咚的个人博客"/>
+  <meta name="keywords" content="咕咚,Blog,Java,Html,JavaScript,PicPlus,咕咚云图"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/page.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-categories">
+  <div class="list-category">
+    <h2>所有分类</h2>
+    <div>
+        
+        
+        <a href="javascript:document.getElementById('blog').scrollIntoView()">blog</a>
+        
+        <a href="javascript:document.getElementById('tech').scrollIntoView()">tech</a>
+        
+        <a href="javascript:document.getElementById('product').scrollIntoView()">product</a>
+        
+        <a href="javascript:document.getElementById('note').scrollIntoView()">note</a>
+        
+        <a href="javascript:document.getElementById('think').scrollIntoView()">think</a>
+        
+        <a href="javascript:document.getElementById('daily').scrollIntoView()">daily</a>
+    </div>
+  </div>
+  <div class="list-post">
+    
+  <div class="list-post">
+    
+      <h2 id="blog">blog</h2>
+      
+        <ul>
+              
+              <li>
+                <span class="date">2021/07/02</span>
+                <div class="title">
+                  <a href="/2021/07/02/june.html" class="hover-underline">六月-季后赛正此时</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2021/05/31</span>
+                <div class="title">
+                  <a href="/2021/05/31/may-summary.html" class="hover-underline">五月-总结回顾的必要性</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2021/04/05</span>
+                <div class="title">
+                  <a href="/2021/04/05/2020-summary.html" class="hover-underline">2020 年终总结</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/12/30</span>
+                <div class="title">
+                  <a href="/2020/12/30/guwocheng.html" class="hover-underline">掰腕子差点输给侄子</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/10/10</span>
+                <div class="title">
+                  <a href="/2020/10/10/2020shiyi.html" class="hover-underline">岁月在变迁，亲人都安好—2020十一假期</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/02/14</span>
+                <div class="title">
+                  <a href="/2020/02/14/pplus-github.html" class="hover-underline">如何为 PicPlus 配置 Github 作为远程图床</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/13</span>
+                <div class="title">
+                  <a href="/2019/11/13/yazhuang-record.html" class="hover-underline">2019芽庄之旅</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/02</span>
+                <div class="title">
+                  <a href="/2019/11/02/young-of-you.html" class="hover-underline">《少年的你》- “我要去北京” </a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/10/14</span>
+                <div class="title">
+                  <a href="/2019/10/14/unix-linux-hist.html" class="hover-underline">追寻 Unix/Linux 的源头，那些改变世界的人们...</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/10/12</span>
+                <div class="title">
+                  <a href="/2019/10/12/marvel-lee.html" class="hover-underline"> 读斯坦.李有感</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/10/08</span>
+                <div class="title">
+                  <a href="/2019/10/08/nba-morey-china.html" class="hover-underline">NBA 凉凉</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/08/28</span>
+                <div class="title">
+                  <a href="/2019/08/28/safeball.html" class="hover-underline">第一次住院后的一点碎碎念</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/06/14</span>
+                <div class="title">
+                  <a href="/2019/06/14/nba-play-final.html" class="hover-underline">说说总决赛</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/03/12</span>
+                <div class="title">
+                  <a href="/2019/03/12/mother-food.html" class="hover-underline">老妈的饭越来越好吃</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/01/27</span>
+                <div class="title">
+                  <a href="/2019/01/27/dont-be-self-righteous.html" class="hover-underline">不要拿自己的标准去衡量别人</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/01/17</span>
+                <div class="title">
+                  <a href="/2019/01/17/exist-is-right.html" class="hover-underline">存在即合理？</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2018/12/31</span>
+                <div class="title">
+                  <a href="/2018/12/31/2018-summary.html" class="hover-underline">2018 年终总结</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2018/12/26</span>
+                <div class="title">
+                  <a href="/2018/12/26/dont-panic.html" class="hover-underline">不要慌</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2018/09/28</span>
+                <div class="title">
+                  <a href="/2018/09/28/taisen-book.html" class="hover-underline">《泰森自传》读后感</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2018/09/07</span>
+                <div class="title">
+                  <a href="/2018/09/07/todo-api.html" class="hover-underline">柳叶清单开放 Api </a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2018/08/08</span>
+                <div class="title">
+                  <a href="/2018/08/08/my-grandma.html" class="hover-underline">我的奶奶</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2018/07/28</span>
+                <div class="title">
+                  <a href="/2018/07/28/jiangwen.html" class="hover-underline">姜文这个导演</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2018/05/30</span>
+                <div class="title">
+                  <a href="/2018/05/30/time-slow.html" class="hover-underline">让时间慢下来</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2017/12/31</span>
+                <div class="title">
+                  <a href="/2017/12/31/summary.html" class="hover-underline">2017 年终总结</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2017/12/27</span>
+                <div class="title">
+                  <a href="/2017/12/27/why-programe-zhihu.html" class="hover-underline">有谁是单纯地喜欢编程吗？</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2017/04/22</span>
+                <div class="title">
+                  <a href="/2017/04/22/github_usage.html" class="hover-underline">如何用好 github 中的 watch、star、fork</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2017/02/03</span>
+                <div class="title">
+                  <a href="/2017/02/03/happy-mac-key.html" class="hover-underline">Mac 上修改按键映射工具推荐</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2017/01/02</span>
+                <div class="title">
+                  <a href="/2017/01/02/my_2016_life.html" class="hover-underline">再见 2016 ，你好 2017 ~</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2016/07/02</span>
+                <div class="title">
+                  <a href="/2016/07/02/my-blog-update-record.html" class="hover-underline">博客更新日志随想</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2016/03/10</span>
+                <div class="title">
+                  <a href="/2016/03/10/handler_analysis_one.html" class="hover-underline">Handler 之 初识及简单应用</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2016/01/26</span>
+                <div class="title">
+                  <a href="/2016/01/26/about-my-project.html" class="hover-underline">关于个人项目</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/12/27</span>
+                <div class="title">
+                  <a href="/2015/12/27/mars_felling.html" class="hover-underline">《火星救援》有感</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/12/22</span>
+                <div class="title">
+                  <a href="/2015/12/22/my_2015_life.html" class="hover-underline">再见 2015 ，你好 2016 ~</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/11/24</span>
+                <div class="title">
+                  <a href="/2015/11/24/copy-right-meizhi.html" class="hover-underline">开源协议小风波</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/10/24</span>
+                <div class="title">
+                  <a href="/2015/10/24/1024.html" class="hover-underline">我的 1024</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/05/19</span>
+                <div class="title">
+                  <a href="/2015/05/19/way.html" class="hover-underline">我的开发之路</a>
+                </div>
+              </li>
+              
+        </ul>
+      
+    </div>
+  
+  <div class="list-post">
+    
+      <h2 id="tech">tech</h2>
+      
+        <ul>
+              
+              <li>
+                <span class="date">2021/01/17</span>
+                <div class="title">
+                  <a href="/2021/01/17/custom-lint.html" class="hover-underline">Android 自定义 Lint 研究</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/12/20</span>
+                <div class="title">
+                  <a href="/2020/12/20/compress.html" class="hover-underline">图片压缩库 compressor | DS</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/02/12</span>
+                <div class="title">
+                  <a href="/2020/02/12/oop.html" class="hover-underline"> 工程师的基本修养 — 从掌握面向对象开始</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/02/11</span>
+                <div class="title">
+                  <a href="/2020/02/11/copy-json.html" class="hover-underline">如何复制 JSON 字符串中指定节点元素？</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/01</span>
+                <div class="title">
+                  <a href="/2019/12/01/string-buffer-builder.html" class="hover-underline">String、StringBuffer 和 StringBuilder 的区别</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/01</span>
+                <div class="title">
+                  <a href="/2019/12/01/mvp-mvc.html" class="hover-underline"> MVC 与 MVP 并无两样</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/01</span>
+                <div class="title">
+                  <a href="/2019/12/01/java-reference.html" class="hover-underline">强、软、弱、虚引用的区别</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/29</span>
+                <div class="title">
+                  <a href="/2019/11/29/hash-map-think.html" class="hover-underline">由 HashMap 引申出的技术深度讨论</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/28</span>
+                <div class="title">
+                  <a href="/2019/11/28/python-web-leancloud.html" class="hover-underline">网络编程  / Flask / LeanCloud</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/22</span>
+                <div class="title">
+                  <a href="/2019/11/22/android-so.html" class="hover-underline">Android so 文件概要</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/16</span>
+                <div class="title">
+                  <a href="/2019/11/16/asynctask.html" class="hover-underline">AsyncTask 官方文档翻译（部分）</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/08</span>
+                <div class="title">
+                  <a href="/2019/11/08/enum-introduce.html" class="hover-underline">枚举介绍以及枚举的本质</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/04</span>
+                <div class="title">
+                  <a href="/2019/11/04/use-enum-or-not.html" class="hover-underline">Android 开发中是否应该使用枚举？</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/04/05</span>
+                <div class="title">
+                  <a href="/2019/04/05/android-why-java-harmony.html" class="hover-underline">Sun 公司的 Java 跟 Android 使用的 Java 库有什么关系？</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/04/05</span>
+                <div class="title">
+                  <a href="/2019/04/05/about-runtime.html" class="hover-underline">什么是运行时（Runtime）</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/03/28</span>
+                <div class="title">
+                  <a href="/2019/03/28/drawable-builder.html" class="hover-underline">用 Xml 写 Shape Drawable 还是挺让人烦的...</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/01/31</span>
+                <div class="title">
+                  <a href="/2019/01/31/drawable-view.html" class="hover-underline">Android Drawable 简析</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2018/11/29</span>
+                <div class="title">
+                  <a href="/2018/11/29/flutter-overview.html" class="hover-underline">Flutter 概览</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2018/01/27</span>
+                <div class="title">
+                  <a href="/2018/01/27/kotlin-tip-passbook.html" class="hover-underline">应用开发过程中的一些 Kotlin 语法点记录</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2018/01/11</span>
+                <div class="title">
+                  <a href="/2018/01/11/save-value-to-local-in-intellij.html" class="hover-underline">开发 Intellij 插件（如AndroidStudio 插件）时如何在本地保存状态值</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2018/01/06</span>
+                <div class="title">
+                  <a href="/2018/01/06/greate-articles.html" class="hover-underline">日常收集的精品技术文章</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2017/12/01</span>
+                <div class="title">
+                  <a href="/2017/12/01/imageview-scaletype.html" class="hover-underline">ImageView 中不同 scaleType 的对比介绍</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2017/05/15</span>
+                <div class="title">
+                  <a href="/2017/05/15/leakcanary-theory.html" class="hover-underline">LeakCanary 工作原理浅析</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2017/05/08</span>
+                <div class="title">
+                  <a href="/2017/05/08/activity-windown-decorview.html" class="hover-underline">Activity 与 Window、PhoneWindow、DecorView 之间的关系简述</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2017/05/03</span>
+                <div class="title">
+                  <a href="/2017/05/03/thread-pool-intro.html" class="hover-underline">关于线程池的执行原则及配置参数详解</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2017/04/28</span>
+                <div class="title">
+                  <a href="/2017/04/28/custom-preference-view.html" class="hover-underline">自定义复杂 View 以及相关绘制优化实践</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2017/04/26</span>
+                <div class="title">
+                  <a href="/2017/04/26/loading_layout_practice.html" class="hover-underline">Android 多状态加载布局的开发 Tips</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2017/04/24</span>
+                <div class="title">
+                  <a href="/2017/04/24/jvm_oom_gc.html" class="hover-underline">JVM 内存分代、垃圾回收漫谈</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2017/04/18</span>
+                <div class="title">
+                  <a href="/2017/04/18/jvm_merery_area.html" class="hover-underline">JVM 内存区域介绍</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2017/04/14</span>
+                <div class="title">
+                  <a href="/2017/04/14/jvm_vs_dalvik.html" class="hover-underline">JVM、Dalvik、ART 介绍</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2017/04/05</span>
+                <div class="title">
+                  <a href="/2017/04/05/OneDrawable.html" class="hover-underline">仅使用一张资源图片为 View 设置具有按下效果的背景 - OneDrawable</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2017/03/25</span>
+                <div class="title">
+                  <a href="/2017/03/25/project-list.html" class="hover-underline">Android 项目开发清单</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2017/02/15</span>
+                <div class="title">
+                  <a href="/2017/02/15/custom_text_select.html" class="hover-underline">Android 6.0 设备上自定义文本操作栏</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2017/02/03</span>
+                <div class="title">
+                  <a href="/2017/02/03/setting-intro.html" class="hover-underline">使用 Android 原生 API 开发设置界面</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2016/11/07</span>
+                <div class="title">
+                  <a href="/2016/11/07/about-review.html" class="hover-underline">ReView 一个辅助设计师方便 review UI 的 view 组件集合</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2016/11/06</span>
+                <div class="title">
+                  <a href="/2016/11/06/viewcontroler-introduce.html" class="hover-underline">Android 复杂界面开发实践之 ViewController: 介绍</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2016/10/13</span>
+                <div class="title">
+                  <a href="/2016/10/13/viewcontroller-foreword.html" class="hover-underline">Android 复杂界面开发实践之 ViewController: 前言</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2016/04/15</span>
+                <div class="title">
+                  <a href="/2016/04/15/butterknife_introduce.html" class="hover-underline">ButterKnife 使用介绍</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2016/04/09</span>
+                <div class="title">
+                  <a href="/2016/04/09/rxjava_operate.html" class="hover-underline">使用 RxJava 重构一段判断逻辑</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2016/04/07</span>
+                <div class="title">
+                  <a href="/2016/04/07/checkstyle.html" class="hover-underline">使用 CheckStyle 检查代码</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2016/03/11</span>
+                <div class="title">
+                  <a href="/2016/03/11/handler_analysis_three.html" class="hover-underline">Handler 之 ThreadLocal 相关</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2016/03/10</span>
+                <div class="title">
+                  <a href="/2016/03/10/handler_analysis_two.html" class="hover-underline">Handler 之 源码解析</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2016/02/25</span>
+                <div class="title">
+                  <a href="/2016/02/25/SharePreference_service_activity.html" class="hover-underline">跨进程数据共享问题及解决方案</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2016/01/21</span>
+                <div class="title">
+                  <a href="/2016/01/21/RxJava_In_AppPlus.html" class="hover-underline">RxJava 在 AppPlus 中的应用</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2016/01/15</span>
+                <div class="title">
+                  <a href="/2016/01/15/over_draw_color_introduce.html" class="hover-underline">Android 过度绘制介绍</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/12/20</span>
+                <div class="title">
+                  <a href="/2015/12/20/watch_dependencies_path.html" class="hover-underline">利用 Gradle Task 查看远程依赖库的本地存储路径</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/11/23</span>
+                <div class="title">
+                  <a href="/2015/11/23/gank_mvp_introduce.html" class="hover-underline"> MVP 模式在 GankDaily 中的应用</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/11/22</span>
+                <div class="title">
+                  <a href="/2015/11/22/Android-transition.html" class="hover-underline">在Android5.0以上设备实现过渡动画</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/11/10</span>
+                <div class="title">
+                  <a href="/2015/11/10/android_m_permission.html" class="hover-underline">在Android 6.0 设备上动态获取权限</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/10/27</span>
+                <div class="title">
+                  <a href="/2015/10/27/bitmap-tip.html" class="hover-underline">Bitmap相关的知识点整理</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/10/20</span>
+                <div class="title">
+                  <a href="/2015/10/20/java-loader.html" class="hover-underline">Java 类加载机制</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/09/27</span>
+                <div class="title">
+                  <a href="/2015/09/27/project-rule.html" class="hover-underline">我的Android项目开发规范（不断更新）</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/09/13</span>
+                <div class="title">
+                  <a href="/2015/09/13/gradlebuild-best-practice.html" class="hover-underline">build.gradle 最佳实践集合</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/09/10</span>
+                <div class="title">
+                  <a href="/2015/09/10/alert_dialog_theme.html" class="hover-underline">用 Support 包显示 MaterialDialog</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/08/03</span>
+                <div class="title">
+                  <a href="/2015/08/03/java_important_word.html" class="hover-underline">Java关键字之 volatile</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/08/03</span>
+                <div class="title">
+                  <a href="/2015/08/03/AtomicInteger_Unsafe.html" class="hover-underline">Unsafe 类介绍</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/08/03</span>
+                <div class="title">
+                  <a href="/2015/08/03/AtomicInteger_Introduce.html" class="hover-underline">AtomicInteger 一个和高并发有关的工具类</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/07/25</span>
+                <div class="title">
+                  <a href="/2015/07/25/android_webview_chinese_encode.html" class="hover-underline">Android使用WebView加载中文时，乱码问题解决</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/07/18</span>
+                <div class="title">
+                  <a href="/2015/07/18/android_shift_theme.html" class="hover-underline">App中主题Theme使用以及Theme切换</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/07/18</span>
+                <div class="title">
+                  <a href="/2015/07/18/android_popupMenu_icon.html" class="hover-underline">在流式布局中使用PopupMenu，以及遇到的问题</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/06/29</span>
+                <div class="title">
+                  <a href="/2015/06/29/mac_sublime_java.html" class="hover-underline">MAC 系统如何使用 Sublime Text 3 直接编译运行java代码</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/06/03</span>
+                <div class="title">
+                  <a href="/2015/06/03/color_alaph.html" class="hover-underline">Android通过颜色设置背景透明度</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/05/26</span>
+                <div class="title">
+                  <a href="/2015/05/26/lock_screen.html" class="hover-underline">Android设备上实现锁屏</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/05/21</span>
+                <div class="title">
+                  <a href="/2015/05/21/custom_view_cakeview.html" class="hover-underline">自定义view之饼状图的实现</a>
+                </div>
+              </li>
+              
+        </ul>
+      
+    </div>
+  
+  <div class="list-post">
+    
+      <h2 id="product">product</h2>
+      
+        <ul>
+              
+              <li>
+                <span class="date">2020/05/18</span>
+                <div class="title">
+                  <a href="/2020/05/18/picplus.html" class="hover-underline">PicPlus 一个手机图床神器</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/02/11</span>
+                <div class="title">
+                  <a href="/2020/02/11/github-pic.html" class="hover-underline">如何配置 GitHub 为个人的手机图床</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/03</span>
+                <div class="title">
+                  <a href="/2019/12/03/about-xPic.html" class="hover-underline">PicPlus：Android 手机端的图床利器</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/06/06</span>
+                <div class="title">
+                  <a href="/2019/06/06/about-readlater.html" class="hover-underline">稍后阅读：一种高效阅读方式的探索</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2018/07/25</span>
+                <div class="title">
+                  <a href="/2018/07/25/about_passbook.html" class="hover-underline">Passbook：我心目中的账号密码存储应用</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2018/06/09</span>
+                <div class="title">
+                  <a href="/2018/06/09/list-evety-day.html" class="hover-underline">柳叶清单：管理日程的网页清单程序</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2017/03/15</span>
+                <div class="title">
+                  <a href="/2017/03/15/about_easypaper.html" class="hover-underline">易剪：手机端的剪报助手</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2016/02/26</span>
+                <div class="title">
+                  <a href="/2016/02/26/gudong_translate.html" class="hover-underline">咕咚翻译：Android 设备上翻译效率神器</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2015/12/21</span>
+                <div class="title">
+                  <a href="/2015/12/21/reason-for-appplus.html" class="hover-underline">AppPlus：传送、分享 APK 到其他手机</a>
+                </div>
+              </li>
+              
+        </ul>
+      
+    </div>
+  
+  <div class="list-post">
+    
+      <h2 id="note">note</h2>
+      
+        <ul>
+              
+              <li>
+                <span class="date">2020/01/06</span>
+                <div class="title">
+                  <a href="/2020/01/06/book.html" class="hover-underline">书单</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/10/11</span>
+                <div class="title">
+                  <a href="/2019/10/11/unix-linux-origin.html" class="hover-underline">Unix 与 Linux 操作系统的源头历史</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/07/05</span>
+                <div class="title">
+                  <a href="/2019/07/05/huobijijin.html" class="hover-underline">货币基金及其风险</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/07/05</span>
+                <div class="title">
+                  <a href="/2019/07/05/huajiao-yuchi.html" class="hover-underline">《鱼翅和花椒》</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/05/24</span>
+                <div class="title">
+                  <a href="/2019/05/24/eco-book.html" class="hover-underline">《斯坦福极简经济学》</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/02/25</span>
+                <div class="title">
+                  <a href="/2019/02/25/stock-learning.html" class="hover-underline">《为什么要学习股票投资？》</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/02/13</span>
+                <div class="title">
+                  <a href="/2019/02/13/fund-learning.html" class="hover-underline">《基金：从0开始学基金投资》</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2016/01/13</span>
+                <div class="title">
+                  <a href="/2016/01/13/android-performance-patterns-first-note.html" class="hover-underline">Android性能优化典范 - 第1季 阅读笔记</a>
+                </div>
+              </li>
+              
+        </ul>
+      
+    </div>
+  
+  <div class="list-post">
+    
+      <h2 id="think">think</h2>
+      
+        <ul>
+              
+              <li>
+                <span class="date">2019/05/23</span>
+                <div class="title">
+                  <a href="/2019/05/23/deep-think-practice.html" class="hover-underline">值得深入思考并实践的指南</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/04/05</span>
+                <div class="title">
+                  <a href="/2019/04/05/2019-tools.html" class="hover-underline">2019 个人周边</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/02/28</span>
+                <div class="title">
+                  <a href="/2019/02/28/weibo-work-record.html" class="hover-underline">微博工作记录</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/01/20</span>
+                <div class="title">
+                  <a href="/2019/01/20/ten-years.html" class="hover-underline">十年</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2017/10/07</span>
+                <div class="title">
+                  <a href="/2017/10/07/over_101.html" class="hover-underline">每年的十一都是怎么过的</a>
+                </div>
+              </li>
+              
+        </ul>
+      
+    </div>
+  
+  <div class="list-post">
+    
+      <h2 id="daily">daily</h2>
+      
+        <ul>
+              
+              <li>
+                <span class="date">2020/11/27</span>
+                <div class="title">
+                  <a href="/2020/11/27/basketball-time.html" class="hover-underline">今晚去打球 | Daily 11/27</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/11/21</span>
+                <div class="title">
+                  <a href="/2020/11/21/rss.html" class="hover-underline">写了一个 Android 订阅软件 | Daily 11/21</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/10/17</span>
+                <div class="title">
+                  <a href="/2020/10/17/war.html" class="hover-underline">战争的一些思考 | Daily 10/17</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/10/13</span>
+                <div class="title">
+                  <a href="/2020/10/13/berak.html" class="hover-underline">一个大胆的想法 | Daily 10/13</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/10/12</span>
+                <div class="title">
+                  <a href="/2020/10/12/fmvp.html" class="hover-underline">湖人总冠军 | Daily 10/12</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/09/15</span>
+                <div class="title">
+                  <a href="/2020/09/15/humam-think.html" class="hover-underline">发现自己的无知 | Daily 09/15</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/07/01</span>
+                <div class="title">
+                  <a href="/2020/07/01/blog.html" class="hover-underline">读一篇博文想到的 | Daily 07/01</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/06/29</span>
+                <div class="title">
+                  <a href="/2020/06/29/likeback.html" class="hover-underline">公众号点赞又回来了 | Daily 06/29</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/06/22</span>
+                <div class="title">
+                  <a href="/2020/06/22/write.html" class="hover-underline">写字需要状态… | Daily 06/22</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/06/10</span>
+                <div class="title">
+                  <a href="/2020/06/10/lsky.html" class="hover-underline">一个不错的图床框架 — lsky 兰空图床 | Daily 06/10</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/06/04</span>
+                <div class="title">
+                  <a href="/2020/06/04/calm.html" class="hover-underline">“不要上头” | Daily 06/04</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/04/30</span>
+                <div class="title">
+                  <a href="/2020/04/30/doc.html" class="hover-underline">由写文档想到的 | Daily 04/30</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/04/29</span>
+                <div class="title">
+                  <a href="/2020/04/29/knowself.html" class="hover-underline">认识自己 | Daily 04/29</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/04/27</span>
+                <div class="title">
+                  <a href="/2020/04/27/bird.html" class="hover-underline">发现的一个小众爱好-观鸟 | Daily 04/27</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/04/26</span>
+                <div class="title">
+                  <a href="/2020/04/26/taisen.html" class="hover-underline">泰森 | Daily 04/26</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/04/25</span>
+                <div class="title">
+                  <a href="/2020/04/25/lzx.html" class="hover-underline">罗志祥事件 | Daily 04/25</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/04/22</span>
+                <div class="title">
+                  <a href="/2020/04/22/rebasketball.html" class="hover-underline">复工后的第一场篮球 | Daily 04/22</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/04/19</span>
+                <div class="title">
+                  <a href="/2020/04/19/picplus242.html" class="hover-underline">多图并发上传图床 —  PicPlus 新版本发布 | Daily 04/19</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/04/12</span>
+                <div class="title">
+                  <a href="/2020/04/12/picplus240.html" class="hover-underline">发了 PicPlus 的新版本 | Daily 04/12</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/04/09</span>
+                <div class="title">
+                  <a href="/2020/04/09/pym.html" class="hover-underline">追剧—潘粤明—龙岭迷窟  | Daily 04/09</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/04/08</span>
+                <div class="title">
+                  <a href="/2020/04/08/cognitive.html" class="hover-underline">在认知范围内赚钱 | Daily 04/08</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/04/07</span>
+                <div class="title">
+                  <a href="/2020/04/07/fugong.html" class="hover-underline">复工了 | Daily 04/07</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/03/02</span>
+                <div class="title">
+                  <a href="/2020/03/02/first-pay.html" class="hover-underline"> 付费开发的一些感悟 | Daily 03/02</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/02/14</span>
+                <div class="title">
+                  <a href="/2020/02/14/daily.html" class="hover-underline">Daily 02/14</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/02/13</span>
+                <div class="title">
+                  <a href="/2020/02/13/hubei.html" class="hover-underline">湖北换省委书记 | Daily 02/13</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/02/12</span>
+                <div class="title">
+                  <a href="/2020/02/12/flue.html" class="hover-underline">流感不是感冒 | Daily 02/12</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/02/10</span>
+                <div class="title">
+                  <a href="/2020/02/10/2010nba.html" class="hover-underline">重温09-10赛季的总决赛 | Daily 02/10</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/02/09</span>
+                <div class="title">
+                  <a href="/2020/02/09/shang.html" class="hover-underline">收拾房间的一些思考 | Daily 02/09</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/02/08</span>
+                <div class="title">
+                  <a href="/2020/02/08/stock.html" class="hover-underline">Daily 02/08</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/02/07</span>
+                <div class="title">
+                  <a href="/2020/02/07/liang.html" class="hover-underline">明白，能… | Daily 02/07</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/02/06</span>
+                <div class="title">
+                  <a href="/2020/02/06/homework.html" class="hover-underline">远程工作的一周 | Daily 02/06</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/02/05</span>
+                <div class="title">
+                  <a href="/2020/02/05/delete.html" class="hover-underline">昨天的文章被删了 | Daily 02/05</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/02/04</span>
+                <div class="title">
+                  <a href="/2020/02/04/2020-year.html" class="hover-underline">2020年的这个春节 | Daily 02/04</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/27</span>
+                <div class="title">
+                  <a href="/2020/01/27/kobe.html" class="hover-underline">科比 | Daily 08/24</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/23</span>
+                <div class="title">
+                  <a href="/2020/01/23/lock.html" class="hover-underline">封城、管轶、股市 | Daily 01/23</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/22</span>
+                <div class="title">
+                  <a href="/2020/01/22/year.html" class="hover-underline">还有两天过年了  | Daily 01/22</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/21</span>
+                <div class="title">
+                  <a href="/2020/01/21/kouzhao.html" class="hover-underline">注定不一样的春节 | Daily 01/21</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/20</span>
+                <div class="title">
+                  <a href="/2020/01/20/bug.html" class="hover-underline">出 bug 了，难受… | Daily 01/20</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/19</span>
+                <div class="title">
+                  <a href="/2020/01/19/ted.html" class="hover-underline">罗辑思维与 TED | Daily 01/19</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/17</span>
+                <div class="title">
+                  <a href="/2020/01/17/daily.html" class="hover-underline">Daily 01/17</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/16</span>
+                <div class="title">
+                  <a href="/2020/01/16/sina-metting.html" class="hover-underline">体验不错的公司年会 | Daily 01/16</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/15</span>
+                <div class="title">
+                  <a href="/2020/01/15/girl.html" class="hover-underline">打球时一件有意思的事 | Daily 01/15</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/13</span>
+                <div class="title">
+                  <a href="/2020/01/13/critical.html" class="hover-underline">不公平的批评，付之一笑 | Daily 01/13</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/12</span>
+                <div class="title">
+                  <a href="/2020/01/12/sogou.html" class="hover-underline">Daily 01/12</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/10</span>
+                <div class="title">
+                  <a href="/2020/01/10/three.html" class="hover-underline">Daily 01/10</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/09</span>
+                <div class="title">
+                  <a href="/2020/01/09/success.html" class="hover-underline">成功可能并不是很难的事 | Daily 01/09</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/08</span>
+                <div class="title">
+                  <a href="/2020/01/08/delay.html" class="hover-underline">咕咚云图马上要支持 github 图床了，还支持 CDN 加速 | Daily 01/08</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/07</span>
+                <div class="title">
+                  <a href="/2020/01/07/blog.html" class="hover-underline">以前写博客的一些困惑 | Daily 01/07</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/06</span>
+                <div class="title">
+                  <a href="/2020/01/06/snow.html" class="hover-underline">又下雪了 | Daily 01/06</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/05</span>
+                <div class="title">
+                  <a href="/2020/01/05/positive.html" class="hover-underline">积极的心理状态 | Daily 01/05</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/04</span>
+                <div class="title">
+                  <a href="/2020/01/04/bilibili.html" class="hover-underline">B 站跨年晚会好看，被惊艳到了 | Daily 01/04</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/03</span>
+                <div class="title">
+                  <a href="/2020/01/03/drink.html" class="hover-underline">喝酒这件事 | Daily 01/03</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/02</span>
+                <div class="title">
+                  <a href="/2020/01/02/basketball.html" class="hover-underline">今天打球感悟 | Daily 01/02</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2020/01/01</span>
+                <div class="title">
+                  <a href="/2020/01/01/child.html" class="hover-underline">“圣诞老人真的来过了…”  | Daily 01/01</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/31</span>
+                <div class="title">
+                  <a href="/2019/12/31/geshui.html" class="hover-underline">个税申报 | Daily 12/31</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/30</span>
+                <div class="title">
+                  <a href="/2019/12/30/summary.html" class="hover-underline">分享一个年终总结的方法</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/29</span>
+                <div class="title">
+                  <a href="/2019/12/29/brain.html" class="hover-underline">大脑的变化 | Daily 12/29</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/28</span>
+                <div class="title">
+                  <a href="/2019/12/28/sleeping.html" class="hover-underline">unknow title | Daily 12/28</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/27</span>
+                <div class="title">
+                  <a href="/2019/12/27/mouth-review.html" class="hover-underline">还有四天就2020了… | Daily 12/27</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/26</span>
+                <div class="title">
+                  <a href="/2019/12/26/writing.html" class="hover-underline">从写字这件事说起 | Daily 12/26</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/25</span>
+                <div class="title">
+                  <a href="/2019/12/25/logic.html" class="hover-underline">只要逻辑正确，事实就一定发生 | Daily 12/25</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/24</span>
+                <div class="title">
+                  <a href="/2019/12/24/mysite-name.html" class="hover-underline">更换了博客域名 | Daily 12/24</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/22</span>
+                <div class="title">
+                  <a href="/2019/12/22/zaikan.html" class="hover-underline">如何设置微信“在看”可见范围 | Daily 12/22</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/22</span>
+                <div class="title">
+                  <a href="/2019/12/22/product.html" class="hover-underline">开发过的作品</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/21</span>
+                <div class="title">
+                  <a href="/2019/12/21/exam.html" class="hover-underline">说说考研 | Daily 12/21</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/20</span>
+                <div class="title">
+                  <a href="/2019/12/20/review.html" class="hover-underline">回顾这段时间的写作 | Daily 12/20</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/19</span>
+                <div class="title">
+                  <a href="/2019/12/19/zaikan.html" class="hover-underline">赞-鼓掌-好看-在看 | Daily 12/19</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/18</span>
+                <div class="title">
+                  <a href="/2019/12/18/wechat-dark.html" class="hover-underline">微信适配了夜间模式 | Daily 12/18</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/17</span>
+                <div class="title">
+                  <a href="/2019/12/17/flutter-meiba.html" class="hover-underline">Flutter 与 灭霸 | Daily 12/17</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/16</span>
+                <div class="title">
+                  <a href="/2019/12/16/leonard.html" class="hover-underline">这世界变化太快 | Daily 12/16</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/15</span>
+                <div class="title">
+                  <a href="/2019/12/15/xuzhiyuan-xiaochuan.html" class="hover-underline">我喜欢这个节目 | Daily 12/15</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/14</span>
+                <div class="title">
+                  <a href="/2019/12/14/left-foot.html" class="hover-underline">热身、放松， 相信科学 | Daily 12/14</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/13</span>
+                <div class="title">
+                  <a href="/2019/12/13/guide-wechat.html" class="hover-underline">长按二维码关注我 | Daily 12/13</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/12</span>
+                <div class="title">
+                  <a href="/2019/12/12/subway.html" class="hover-underline">挤地铁感想 | Daily 12/12</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/10</span>
+                <div class="title">
+                  <a href="/2019/12/10/right-now.html" class="hover-underline">不行，这事一定要马上做 | Daily 12/10</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/09</span>
+                <div class="title">
+                  <a href="/2019/12/09/voice-progress.html" class="hover-underline">为什么微信没有这个功能？ | Daily 12/09</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/08</span>
+                <div class="title">
+                  <a href="/2019/12/08/stable-success.html" class="hover-underline">稳定高于一切，你成功吗？ | Daily 12/08</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/07</span>
+                <div class="title">
+                  <a href="/2019/12/07/build-room.html" class="hover-underline">天气不错，一起盖房子 | Daily 12/07</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/06</span>
+                <div class="title">
+                  <a href="/2019/12/06/my-pic-app.html" class="hover-underline">我的 App 发布了 | Daily 12/06</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/05</span>
+                <div class="title">
+                  <a href="/2019/12/05/be-quite-wechat.html" class="hover-underline">一个微信小号的实验 | Daily 12/05</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/02</span>
+                <div class="title">
+                  <a href="/2019/12/02/dingtou.html" class="hover-underline">不想花时间在投资上？试试定投… | Daily 12/02</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/12/01</span>
+                <div class="title">
+                  <a href="/2019/12/01/time-night.html" class="hover-underline">熬夜虽好，可不要太多。 | Daily 12/01</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/30</span>
+                <div class="title">
+                  <a href="/2019/11/30/snow-day.html" class="hover-underline">先定个小目标 | Daily 11/30</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/29</span>
+                <div class="title">
+                  <a href="/2019/11/29/basketball-day.html" class="hover-underline">今天，写一篇日记… | Daily 11/29</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/28</span>
+                <div class="title">
+                  <a href="/2019/11/28/team-share.html" class="hover-underline">一次团队分享 | Daily 11/28</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/27</span>
+                <div class="title">
+                  <a href="/2019/11/27/wangyi.html" class="hover-underline">网易裁员事件 | Daily 11/27</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/26</span>
+                <div class="title">
+                  <a href="/2019/11/26/todo-last-day.html" class="hover-underline">提前计划第二天？ | Daily 11/26</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/25</span>
+                <div class="title">
+                  <a href="/2019/11/25/monday.html" class="hover-underline">平淡的周一 | Daily 11/25</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/24</span>
+                <div class="title">
+                  <a href="/2019/11/24/tj-things.html" class="hover-underline">人生是选择题还是填空题？ | Daily 11/24</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/23</span>
+                <div class="title">
+                  <a href="/2019/11/23/baby-day.html" class="hover-underline">飞向太空，宇宙无限... | Daily 11/23</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/22</span>
+                <div class="title">
+                  <a href="/2019/11/22/buy-app.html" class="hover-underline">停止维护 App，备战中考 | Daily 11/22</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/21</span>
+                <div class="title">
+                  <a href="/2019/11/21/dev-money.html" class="hover-underline">一个付费 App 的诞生？ — Daily11/21</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/20</span>
+                <div class="title">
+                  <a href="/2019/11/20/three-point-shot.html" class="hover-underline">Daily11/20  - 又进了一个三分</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/19</span>
+                <div class="title">
+                  <a href="/2019/11/19/huawei-metting.html" class="hover-underline">Daily11/19 - 华为开发者大会 — AI 很厉害，客户端也很重要</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/18</span>
+                <div class="title">
+                  <a href="/2019/11/18/monday.html" class="hover-underline"> Daily11/18 - 给稍后阅读升个级</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/17</span>
+                <div class="title">
+                  <a href="/2019/11/17/midway.html" class="hover-underline"> Daily11/17 - 看了《中途岛》</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/16</span>
+                <div class="title">
+                  <a href="/2019/11/16/think-special.html" class="hover-underline"> Daily11/16 - 面皮不错</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/16</span>
+                <div class="title">
+                  <a href="/2019/11/16/playball-webdav.html" class="hover-underline"> Daily11/15 - 又可以单挑了~</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/15</span>
+                <div class="title">
+                  <a href="/2019/11/15/patch-day.html" class="hover-underline"> Daily11/14 - 出 bug 啦！</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/11/14</span>
+                <div class="title">
+                  <a href="/2019/11/14/tomoto-meeting.html" class="hover-underline">Daily11/13 - 与番茄钟的一次不期而遇...</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/03/30</span>
+                <div class="title">
+                  <a href="/2019/03/30/weekly-006.html" class="hover-underline">Weekly 006</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/03/23</span>
+                <div class="title">
+                  <a href="/2019/03/23/weekly-005.html" class="hover-underline">Weekly 005</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/03/17</span>
+                <div class="title">
+                  <a href="/2019/03/17/weekly-004.html" class="hover-underline">Weekly 004</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/03/10</span>
+                <div class="title">
+                  <a href="/2019/03/10/weekly-003.html" class="hover-underline">Weekly 003</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/03/02</span>
+                <div class="title">
+                  <a href="/2019/03/02/weekly-002.html" class="hover-underline">Weekly 002</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/02/24</span>
+                <div class="title">
+                  <a href="/2019/02/24/weekly-001.html" class="hover-underline">Weekly 001</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/02/10</span>
+                <div class="title">
+                  <a href="/2019/02/10/2019-years-time.html" class="hover-underline">2019 春节7天 北京</a>
+                </div>
+              </li>
+              
+              
+              <li>
+                <span class="date">2019/02/03</span>
+                <div class="title">
+                  <a href="/2019/02/03/last-work-day.html" class="hover-underline">写在 2019 春节前的最后一个工作日</a>
+                </div>
+              </li>
+              
+        </ul>
+      
+    </div>
+  
+</div>
+
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

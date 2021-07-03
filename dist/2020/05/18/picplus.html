@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PicPlus 一个手机图床神器-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="PicPlus 一个手机图床神器"/>
+  <meta name="keywords" content="咕咚,product"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="PicPlus 一个手机图床神器">PicPlus 一个手机图床神器</h1>
+  
+  <div class="subtitle">咕咚 于 2020-05-18 发布</div>
+  
+  <div class="post">
+    <p><img src="https://gitee.com/maoruibin/assert/raw/master/pic/2020/npxXWgQ33ZQ.jpg" alt="" /></p>
+
+<p>不少人喜欢用  <a href="https://baike.sogou.com/v7868944.htm?fromTitle=markdown" title="Markdown">Markdown</a> 进行写作，因为它语法简单，上手快，可能不到一小时，即可掌握这种写作方式。</p>
+
+<p>而在一般写作过程中，为了更好的表达，大家都会选择在一些时候插入图片，因为恰当的插图会给文章增色不少。</p>
+
+<p>但是长久以来， Markdown 这种写作方式的插图体验并不好，因为大多数 Markdown 编辑器要插入一张图片时，需要图片的远程地址，而非本地图片。</p>
+
+<p>所以要想插图，就必须先把一张本地图片上传到云端图床，然后使用图片的远程地址，才可以在文章中插图，格式如下所示：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![](https://imgkr.cn.com/a2ed2.jpg)
+</code></pre></div></div>
+<blockquote>
+  <p>如果还不了解什么是图床，可查看<a href="https://gudong.site/2020/02/11/github-pic.html" title="这篇文章">这篇文章</a></p>
+</blockquote>
+
+<p>针对上面所述的 Markdown 插图问题，其实不少人都有探索。</p>
+
+<h2 id="探索">探索</h2>
+
+<p>之前，经常在电脑上写作，所以很早就接触了到了 <a href="https://toolinbox.net/iPic/" title="iPic">iPic</a>，它是一个 mac 端的图床上传工具，使用起来很方便，默认使用微博图床，但是微博默认是匿名图床，所以你永远也不知道那天图片就会消失。</p>
+
+<p>后来出现了 <a href="https://picgo.github.io/PicGo-Doc/zh/" title="PicGo">PicGo</a>，这是一个跨平台的开源图床上传工具，支持 mac、windows 以及 linux。</p>
+
+<p><img src="https://gitee.com/maoruibin/assert/raw/master/pic/2020/15893321928208427621256856673450.jpg" alt="picgo 应用主页" /></p>
+
+<p>与此同时，还支持配置各种图床服务器，比如七牛、阿里等云存储，此外还支持 github 以及码云作为图床，很好很优秀。</p>
+
+<p>不过 PicGo 有一个缺点，<strong>默认不支持删除云端图片</strong>，也就是说可以通过 PicGo 上传图片，但是如果想要删掉已上传图片，就需要登录对应的平台，才能删除，这对于有图片管理需求的同学会比较麻烦。</p>
+
+<p>此外，上面的两个工具都<strong>只针对于 PC 平台</strong>，如果你经常在手机上进行 Markdown 创作，上述两个工具可能并不方便，而且<strong>即使我们经常在 PC 上写作，有时也需要上传手机图片到图床，比如截屏、拍照笔记等</strong>。</p>
+
+<p>这时我们就需要一个手机端的图床上传工具，而且最好也支持主流图床，如果还能支持 Github、码云就更好了。</p>
+
+<h2 id="picplus">PicPlus</h2>
+
+<p>鉴于此，加上自己也是一个 Markdown 写作爱好者，所以在 19 年便开发了这样一个图床上传工具软件（Android） —  <a href="https://www.yuque.com/gudong-osksb/twgz5k">PicPlus</a> 。</p>
+
+<p><img src="https://cdn.jsdelivr.net/gh/maoruibin/assets/pic/test/2981a48-9ae42f0d-115-0.png" alt="" /></p>
+
+<p>PicPlus 支持市面上主流的图床服务，如七牛云、阿里云、又拍云、腾讯云，同时也支持了 Github 以及码云作为图床。</p>
+
+<p><img src="https://gitee.com/maoruibin/assert/raw/master/pic/2020/9aeefce-268c691f-170-0.png" alt="图床选择列表" /></p>
+
+<p>此外，为了提高图片最终的加载速度，在上传时会对图片自动压缩（可设置），同时，还支持删除已上传到图床的图片文件。</p>
+
+<h2 id="系统分享传图">系统分享传图</h2>
+
+<p>另外，为了更好的挖掘上传图片的场景，还支持通过系统分享上传图片，这样不论在任何 app 中浏览图片，都可以很方便的上传图片到图床，如下 gif 图所示:</p>
+
+<p><img src="https://i.loli.net/2020/05/18/GAU73KInTgsyx1R.gif" alt="" /></p>
+
+<p>举例来说，你可以在浏览知乎或者手机网页时，长按图片，选择分享，然后找到 PicPlus ，就可以轻松上传图片到图床。</p>
+
+<p>上传后会生成一个 Markdown 格式的链接，你可以选择复制或者分享链接，以便自己使用，同时也支持自动复制，即上传图片成功后，自动复制格式化链接到系统粘贴板。</p>
+
+<h2 id="更多">更多</h2>
+
+<p>PicPlus 还有很多功能特性，比如</p>
+<ul>
+  <li>多图批量上传</li>
+  <li>WebDAV 同步数据</li>
+  <li>常用图收藏</li>
+  <li>gif 图上传、图片压缩质量设置</li>
+  <li>数据自动备份</li>
+  <li>编辑 Markdown 链接标题</li>
+  <li>等等…</li>
+  <li>更多特性，欢迎<a href="https://www.coolapk.com/apk/name.gudong.pic">下载体验</a>，希望它可以帮你更好的写作。</li>
+</ul>
+
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

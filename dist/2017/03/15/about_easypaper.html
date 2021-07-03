@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>易剪：手机端的剪报助手-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="易剪：手机端的剪报助手"/>
+  <meta name="keywords" content="咕咚,product"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="易剪：手机端的剪报助手">易剪：手机端的剪报助手</h1>
+  
+  <div class="subtitle">咕咚 于 2017-03-15 发布</div>
+  
+  <div class="post">
+    <p>易剪是自己为了解决在手机上阅读文章时而开发的一个收集笔记内容的 Android 工具 App，核心功能就是帮助用户在移动设备上快速剪贴自己感兴趣的文章片段。</p>
+
+<h2 id="下载">下载</h2>
+
+<p>Fir <a href="https://fir.im/pl7r">下载地址</a></p>
+
+<p>酷安市场-<a href="http://www.coolapk.com/apk/name.gudong.easypaper">易剪</a></p>
+
+<h2 id="开发缘由">开发缘由</h2>
+
+<p>当我们在手机上阅读文章时，对于自己感兴趣的片段，我们可能会想粘贴到便签或者印象笔记作为自己的笔记，方便日后查阅。</p>
+
+<p>类似的场景就像小时候读作文时，经常在旁边放一个小本子，看到别人作文中有写的比较好的排比句或者拟人句，我们常常会把这些句子摘抄下来，作为自己的摘抄笔记。在以前这不失为一种非常好的阅读习惯。</p>
+
+<p>长大了，我们再也不需要去写作文了，但是我们依旧会阅读，不过我们把大量的阅读时间都花在手机上，而不是书本上，这就带来了一个问题，如文章开始所言，我们在阅读文章时，看到感兴趣的片段大都会复制粘贴在印象笔记或者便签。但是频繁的切换应用无疑对沉浸式的阅读体验是一种非常大的破坏。</p>
+
+<h2 id="期望">期望</h2>
+
+<p>能不能通过一种简单的方式做到及时剪辑，统一保存，而且无需切换应用，如下 gif 图所示，这就是易剪所实现的功能。</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/588640-38f85015e2d782b2.gif?imageMogr2/auto-orient/strip" alt="easypaper.gif" /></p>
+
+<p>通过易剪，可以在当前页面即可完成片段剪贴的功能，无需切换到其他 App。</p>
+
+<p>它会把每次选择的内容不断的在同一份剪报里进行追加，当你阅读完成后，你再安心打开易剪，即可看到自己的剪辑结果，如下所示。</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/588640-f5dab307d0af6a9b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="DAB37CD0AC8BA5B650DC8A420C3283CA.jpg" /></p>
+
+<p>在这里你可以对剪报做二次加工，发送到印象笔记或者删除无用段落，你都可以在这里完成。</p>
+
+<h2 id="note">Note</h2>
+
+<blockquote>
+  <p>这里 6.0 以下的手机，因为不支持自定义文本操作按钮，所以长按文本后，不能在文本操作栏找到 <code class="highlighter-rouge">追加到剪报</code> 的 Action, 这时你可以在长按文本后，选择文本操作栏上面的分享按钮，然后选择易剪，同样可以达到同样的目的。</p>
+</blockquote>
+
+<h2 id="关于作者">关于作者</h2>
+
+<p>咕咚，Android 开发者，咕咚翻译作者。</p>
+
+<ul>
+  <li>
+    <p>个人站点 <a href="http://gudong.site/">gudong.site</a></p>
+  </li>
+  <li>
+    <p>github <a href="https://github.com/maoruibin">maoruibin</a></p>
+  </li>
+  <li>
+    <p>微博 <a href="http://weibo.com/maoruibin">大侠咕咚</a></p>
+  </li>
+</ul>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

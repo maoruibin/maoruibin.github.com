@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>开发 Intellij 插件（如AndroidStudio 插件）时如何在本地保存状态值-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="开发 Intellij 插件（如AndroidStudio 插件）时如何在本地保存状态值"/>
+  <meta name="keywords" content="咕咚,tech"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="开发 Intellij 插件（如AndroidStudio 插件）时如何在本地保存状态值">开发 Intellij 插件（如AndroidStudio 插件）时如何在本地保存状态值</h1>
+  
+  <div class="subtitle">咕咚 于 2018-01-11 发布</div>
+  
+  <div class="post">
+    <p>开发 Intellij 插件时，比如自己最近开发的一个 AndroidStudio 插件，需要存储一些状态值，方便做一些 UI 上的偏好设置。</p>
+
+<p>比如这次选中了一个选项，希望下次打开插件时继续选中相应的选项，此时就需要做一些本地状态存储。就像 Android APP 常见的设置选项。</p>
+
+<p>Intellij 也提供了响应的 API - <code class="highlighter-rouge">PropertiesComponent</code> ，使用方式如下所示：</p>
+<h2 id="存数据到本地">存数据到本地</h2>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PropertiesComponent</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">setValue</span><span class="o">(</span><span class="s">"key"</span><span class="o">,</span><span class="s">"valuw"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<h2 id="获取数据">获取数据</h2>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">value</span> <span class="o">=</span> <span class="nc">PropertiesComponent</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getValue</span><span class="o">(</span><span class="s">"key"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>Source frmo <a href="http://gudong.site/">咕咚的个人站点</a></p>
+
+<h2 id="参考链接">参考链接</h2>
+<p><a href="https://www.jetbrains.org/intellij/sdk/docs/basics/persisting_state_of_components.html?search=Serialization">Persisting State of Components</a></p>
+
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

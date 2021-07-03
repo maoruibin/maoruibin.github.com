@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>复工了 | Daily 04/07-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="复工了 | Daily 04/07"/>
+  <meta name="keywords" content="咕咚,daily"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="复工了 | Daily 04/07">复工了 | Daily 04/07</h1>
+  
+  <div class="subtitle">咕咚 于 2020-04-07 发布</div>
+  
+  <div class="post">
+    <p><img src="https://gitee.com/maoruibin/assert/raw/master/pic/2020/3dc0508-6f3bacda-97-1715513dba8.jpg" alt="" /></p>
+
+<p>上周五接到通知，这周全面复工，还有点小激动，家里呆久了就会想念公司，公司是一个更大的集体，办公条件更完整，而且除了办公，公司里还有不少朋友，可以面对面交流，这种感觉不一样。</p>
+
+<h2 id="这个假期">这个假期</h2>
+<p><img src="https://gitee.com/maoruibin/assert/raw/master/pic/2020/IMG_20200407_224407.jpg" alt="" /></p>
+
+<p>从没有想过大学毕业后最长的长假会是这样的方式进行，这个假期有点长，也可能是人生中一段特殊的记忆。</p>
+
+<p>两个月的假期一直呆在家里，过年时疫情最严重的时候也曾恐慌，身体还有点不舒服，好在后来都没什么，但是思考了下，一个家庭在疫病年前好脆弱，牵一发而动全身，之前也思考过，不过没有像这次这么深刻过。</p>
+
+<p>假期里难得可以有很多时间，可以跟父母聊天回忆过往，有时候陪伴就是最好的礼物。</p>
+
+<h2 id="picplus">PicPlus</h2>
+<p><img src="https://gitee.com/maoruibin/assert/raw/master/pic/2020/e5d95a4-816ce9da-115-0.png" alt="" /></p>
+
+<p>在春节前我已经发布了这个图床软件，发布后反响不错，从一开始就想过这个软件会做付费，所以在假期里趁着有时间，发布了付费版。</p>
+
+<p>说是付费版，其实也没有什么付费才可用的功能，只是对部分免费功能做了一些限制，所以我的引导语是 “付费支持开发者”，其实更多的是捐赠支持。</p>
+
+<p>发布后让我很意外，第一天有10多个付费支持的同学，这在我之前是很难想象的，这侧面反应出目前国内 android 用户的付费意识明显比以前好很多，我觉得这里应该感谢纯纯写作的作者 Drakeet，国内这种良好的 android 软件付费氛围跟他之前成功开发了纯纯写作有密切的关系。</p>
+
+<p>后面陆续有付费的用户进行购买，任何可持续的事情，我觉得正向激励很重要，软件更是如此，当有用户不断使用，不断付费这种动力就源源不断。</p>
+
+<p>不过对于工程师而言，<strong>最难的可能不是开发能力，而是产品规划以及设计能力</strong>，这个感觉在开发  PicPlus 的过程中感觉尤为深刻，一些很简单的问题可能并不需要写代码，只需要改变一下交互方式就可以很优雅的解决，总之，凡事真的要做时需要很多功夫，时刻保持谦虚。</p>
+
+<p>假期花了不少时间完善优化，尤其是支持了不同云存储，目前 PicPlus 已经支持了世面上所有主流的云存储服务，比如七牛、又拍、阿里。</p>
+
+<p>还有一个功能呼声很高 — 多选上传。由于旧的交互设定限制，所以全选上传这个功能不好设计，所以最近花了点时间重构了老的上传的交互，新交互实现后更容易实现多选上传，但是目前并不打算上这个功能，先把新的上传交互发布到新版本运行一个版本再考虑让全选功能，最近公众号新增长的粉丝不少都是  PicPlus 的用户，这里发布一个内测版本，可以体验最新版本，下载地址：http://d.6short.com/da9q</p>
+
+<p><img src="https://gitee.com/maoruibin/assert/raw/master/pic/2020/Screenshot_20200407-222926.jpg" alt="" /></p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

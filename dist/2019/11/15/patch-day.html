@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Daily11/14 - 出 bug 啦！-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content=" Daily11/14 - 出 bug 啦！"/>
+  <meta name="keywords" content="咕咚,daily"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id=" Daily11/14 - 出 bug 啦！"> Daily11/14 - 出 bug 啦！</h1>
+  
+  <div class="subtitle">咕咚 于 2019-11-15 发布</div>
+  
+  <div class="post">
+    <p><img src="https://i.loli.net/2019/11/14/Cwm8vHpL7B4hyZS.jpg" alt="" /></p>
+
+<p>番茄工作法挺好，昨天已经说了，所以昨晚我已经规划好了第二天的事项。</p>
+
+<p>不过，事与愿违，今天一整天我却只完成了一个番茄钟，那今天到底发生了什么呢…</p>
+
+<p>昨晚马上就要睡觉了，微信群里开始报 bug，还是线上问题，那个揪心！！ 然后开始查 bug、找原因，跟同事一起合力找问题，最终找到了原因以及解决方案，那已经是两点了。所以今天大部分的时间都是在跟这个 bug 纠缠，今天的番茄计划也就泡汤了，直到下午才勉强完成了一个番茄钟，很惭愧…</p>
+
+<p>然后今天就发了一条的热修复 patch，年底将至，发 patch 可不是好事。到微博后这是第二次发 patch，最近这一年多的时间内，我都没有踩过这种坑，也没有触发过大问题，但是黑天鹅事件就这样发生了。得到的教训就是:</p>
+<blockquote>
+  <p>对待代码要严谨，尤其是那种底层调用，不论多小的改动，都要确保明白改动的上下文，以及使用影响。</p>
+</blockquote>
+
+<hr />
+
+<p>开发遇到 bug 是常态，我认为对一个团队来说，快速解决 bug 是一种必备的能力，但是更重要的应该是在不断处理问题过程中，逐步去健全发现 bug、减少 bug 的体系。这包括自动化测试 case、代码 review 机制、以及一切其他的工程手段。<strong>bug 永远有，而一个好的开发体系可以最大限度的降低出 bug 的几率。</strong></p>
+
+<hr />
+
+<p>打算给公众号换一个名字，但是目前还不知道用哪个。一开始公众号的名字跟我的微博账号一样—大侠咕咚，后来被自己改成了现在的咕喱咕咚，我认为这个名字并不好记，也不好读，现在想换回大侠咕咚，跟我微博名一致。</p>
+
+<p>同时还想到了其他可选的名字</p>
+<ul>
+  <li>咕咚的日记本</li>
+  <li>咕咚的小本子</li>
+  <li>咕咚Daily</li>
+</ul>
+
+<p>纠结中… 😖</p>
+
+<hr />
+
+<p>OK，今天就这样了，明天要继续我的番茄工作计划。</p>
+
+<p>还有，明天中午可以去打球 🏀啦~ 开心​~</p>
+
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

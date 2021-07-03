@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>枚举介绍以及枚举的本质-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="枚举介绍以及枚举的本质"/>
+  <meta name="keywords" content="咕咚,tech"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="枚举介绍以及枚举的本质">枚举介绍以及枚举的本质</h1>
+  
+  <div class="subtitle">咕咚 于 2019-11-08 发布</div>
+  
+  <div class="post">
+    <p>枚举是 JDK  1.5 推出的 API，以前经常用静态常量用作类型区分，枚举则是对类型的一种强化，且有更好的语义性，恰当的使用它可以写出非常优雅的代码。</p>
+
+<h2 id="使用枚举">使用枚举</h2>
+
+<p>在没有枚举之前，定义不同类型，常常用静态变量进行定义，如下所示要定义颜色的类型：</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">TYPE_RED</span> <span class="o">=</span> <span class="mi">100</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">TYPE_BLACK</span> <span class="o">=</span> <span class="mi">101</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>有了枚举之后，便可以像下面这样写</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">enum</span> <span class="nc">Color</span><span class="o">{</span>
+    <span class="no">RED</span><span class="o">,</span>
+    <span class="no">BLACK</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>开始使用时两者区别并不大，如下所示，在其他类里有一个 draw 方法，需要传递颜色类型的参数进去，</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 使用静态变量</span>
+<span class="kt">void</span> <span class="nf">draw</span><span class="o">(</span><span class="kt">int</span> <span class="n">color</span><span class="o">){</span>
+   <span class="n">prepareDraw</span><span class="o">();</span>
+	<span class="k">if</span><span class="o">(</span><span class="n">color</span> <span class="o">==</span> <span class="no">TYPE_RED</span><span class="o">){</span>
+		 <span class="n">paint</span><span class="o">(</span><span class="s">"#f00"</span><span class="o">)</span>
+	<span class="o">}</span><span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">color</span> <span class="o">==</span> <span class="no">TYPE_BLACK</span><span class="o">){</span>
+		<span class="n">paint</span><span class="o">(</span><span class="s">"#000"</span><span class="o">)</span>
+	<span class="o">}</span>
+  <span class="n">finishDraw</span><span class="o">();</span>
+<span class="o">}</span>
+<span class="c1">//使用枚举</span>
+<span class="kt">void</span> <span class="nf">draw</span><span class="o">(</span><span class="nc">Color</span> <span class="n">color</span><span class="o">){</span>
+  <span class="n">prepareDraw</span><span class="o">();</span>
+	<span class="k">if</span><span class="o">(</span><span class="n">color</span> <span class="o">==</span> <span class="no">RED</span><span class="o">){</span>
+		 <span class="n">paint</span><span class="o">(</span><span class="s">"#f00"</span><span class="o">);</span>
+	<span class="o">}</span><span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">color</span> <span class="o">==</span> <span class="no">BLACK</span><span class="o">){</span>
+		<span class="n">paint</span><span class="o">(</span><span class="s">"#000"</span><span class="o">);</span>
+	<span class="o">}</span>
+  <span class="n">finishDraw</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>初看，区别并不大，只是枚举看上去语义性更好，更容易阅读，这只是枚举的一点好处。</p>
+
+<h2 id="枚举的本质">枚举的本质</h2>
+
+<p>实际上，枚举的背后是一个类，跟正常的对象一样，它支持构造方法、它可以实现接口、它可以继承抽象类，它就是普通的类，这里只是 Java 把这些都包装了起来，所有的枚举实例都继承自 Enum 这个抽象类，如下所示：</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Enum</span><span class="o">&lt;</span><span class="no">E</span> <span class="kd">extends</span> <span class="nc">Enum</span><span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;&gt;</span> <span class="kd">implements</span> <span class="nc">Comparable</span><span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;,</span> <span class="nc">Serializable</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">ordinal</span><span class="o">;</span>
+<span class="o">}</span>	
+</code></pre></div></div>
+
+<p>所以这里要明白一点，枚举拓展了类型，一般的普通常量就是一个常量，它没有方法，没有属性，是死的，但是枚举让类型活了，它让一个常量类型可以自己去控制一些行为，扩展了类型的边界，让它面向对象，具有了类的特性。比如现在就可以用枚举的特性去优化上面的代码。</p>
+
+<p>我们可以使用枚举的构造方法在构造枚举时就指定颜色值，如下所示：</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">enum</span> <span class="nc">Color</span><span class="o">{</span>
+    <span class="no">RED</span><span class="o">(</span><span class="s">"#f00"</span><span class="o">),</span>
+    <span class="no">BLACK</span><span class="o">(</span><span class="s">"#000"</span><span class="o">)</span>
+    
+    <span class="kd">public</span> <span class="nc">String</span> <span class="n">mValue</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Color</span><span class="o">(</span><span class="nc">String</span> <span class="n">value</span><span class="o">){</span>
+	    <span class="k">this</span><span class="o">.</span><span class="na">mValue</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>于此同时，原来的 draw 方法就可以变得更加简洁：</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">draw</span><span class="o">(</span><span class="nc">Color</span> <span class="n">color</span><span class="o">){</span>
+			<span class="n">prepareDraw</span><span class="o">();</span>
+			<span class="n">paint</span><span class="o">(</span><span class="n">color</span><span class="o">.</span><span class="na">mValue</span><span class="o">);</span>
+			<span class="n">finishDraw</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>另外，还可以更进一步，直接让枚举自己实现 paint 方法。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">enum</span> <span class="nc">Color</span><span class="o">{</span>
+    <span class="no">RED</span><span class="o">(</span><span class="s">"#f00"</span><span class="o">),</span>
+    <span class="no">BLACK</span><span class="o">(</span><span class="s">"#000"</span><span class="o">)</span>
+    
+    <span class="kd">public</span> <span class="nc">String</span> <span class="n">mValue</span><span class="o">;</span>    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">draw</span><span class="o">(){</span>
+			<span class="n">paint</span><span class="o">(</span><span class="n">mValue</span><span class="o">)</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>然后在调用处，直接调用枚举实例的方法即可，更加简洁。</p>
+
+<p>这里已经可以看到枚举的便捷性了。它面向对象，以前很多使用静态常量的时候，好多 if  else 语句都可以更加友好的处理掉了，枚举还有其他好玩的地方，总之用它的时候，就把它当做一个正常的类，可以各种操作。</p>
+
+<h2 id="什么时候该用枚举">什么时候该用枚举</h2>
+
+<p>一般情况下，如果只是要用常量进行类型定义时，完全没必要用枚举，有点大材小用，比如要定义简单的类型：</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">enum</span> <span class="nc">Type</span><span class="o">{</span>
+    <span class="nc">Noraml</span><span class="o">,</span>
+    <span class="nc">Big</span><span class="o">,</span>
+    <span class="nc">Small</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>这种情况下用整形常量就够了，枚举只是让语义性变得更好。</p>
+
+<p>而如果定义的常量类型有一些模板化操作的逻辑，就可以考虑用枚举，将模板方法实现在枚举中，从而简化自己的类型定义。</p>
+
+<p>例如我之前开发过一个翻译软件-咕咚翻译，它支持不同的翻译引擎，每一个翻译引擎都自己的名称、请求路径以及对应的实体类，那么用枚举来定义翻译引擎的类型就最合适不过了，如下所示：</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span>  <span class="nc">ETranslateFrom</span> <span class="o">{</span>
+
+  <span class="no">BAI_DU</span><span class="o">(</span><span class="s">"百度"</span><span class="o">,</span><span class="s">"http://api.fanyi.baidu.com/"</span><span class="o">,</span> <span class="nc">ApiBaidu</span><span class="o">.</span><span class="na">class</span><span class="o">),</span>
+  <span class="no">YOU_DAO</span><span class="o">(</span><span class="s">"有道"</span><span class="o">,</span><span class="s">"http://fanyi.youdao.com/"</span><span class="o">,</span><span class="nc">ApiYouDao</span><span class="o">.</span><span class="na">class</span><span class="o">),</span>
+  <span class="no">JIN_SHAN</span><span class="o">(</span><span class="s">"金山"</span><span class="o">,</span><span class="s">"http://dict-co.iciba.com/"</span><span class="o">,</span><span class="nc">ApiJinShan</span><span class="o">.</span><span class="na">class</span><span class="o">),</span>
+  <span class="no">GOOGLE</span><span class="o">(</span><span class="s">"谷歌"</span><span class="o">,</span> <span class="s">"http://translate.google.cn/"</span><span class="o">,</span><span class="nc">ApiGoogle</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+
+  <span class="kd">public</span> <span class="kt">int</span> <span class="n">index</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="nc">String</span> <span class="n">url</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="nc">Class</span> <span class="n">aqiClass</span><span class="o">;</span>
+
+  <span class="nc">ETranslateFrom</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span><span class="nc">String</span> <span class="n">url</span><span class="o">,</span> <span class="nc">Class</span> <span class="n">aqiClass</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">url</span> <span class="o">=</span> <span class="n">url</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">aqiClass</span> <span class="o">=</span> <span class="n">aqiClass</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>具体源码<a href="https://github.com/maoruibin/TranslateApp/blob/a87c3e07ab8c63db01a2f97dc679ab403296a5fa/app/src/main/java/name/gudong/translate/mvp/model/type/ETranslateFrom.java">地址</a></p>
+
+<p>非常优雅，有木有~</p>
+
+<p>另外在开发过程中，从思维上不要把枚举更静态常量挂钩，枚举有更广阔的使用场景，完全可以放开思路去用枚举。<strong>任何有模板性质的类，都可以考虑用枚举</strong>。</p>
+
+<h2 id="枚举的替代写法">枚举的替代写法</h2>
+
+<p>如果整形静态常量看上去有点弱，那么 JDK 1.5 之后提供的自定义注解，这里可以用它去优化。通过自定义注解限定类型的可选值，如下所示，借助 IntDef 来定义类型自定义注解 Color.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="nd">@IntDef</span><span class="o">({</span><span class="no">RED</span><span class="o">,</span> <span class="nc">Black</span><span class="o">})</span>
+    <span class="nd">@Retention</span><span class="o">(</span><span class="nc">RetentionPolicy</span><span class="o">.</span><span class="na">SOURCE</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nd">@interface</span> <span class="nc">Color</span><span class="o">{}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">RED</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">GREEN</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">YELLOW</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>那么后续在传参数时就可以用 Color 注解去限制参数的传入值。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">paint</span><span class="o">(</span><span class="nd">@Color</span> <span class="kt">int</span> <span class="n">color</span><span class="o">){}</span>
+</code></pre></div></div>
+
+<p>更多注解相关的介绍，看参看技术小黑屋的<a href="https://droidyue.com/blog/2016/08/14/android-annnotation">这篇文章</a>。</p>
+
+<h2 id="枚举混淆注意事项">枚举混淆注意事项</h2>
+
+<p>在开启混淆的情况下，如果不做任何 keep，ProGuard 会把枚举类的方法名进行混淆，而应用运行期间，枚举类有两个方法会被反射调用，所以在 Proguard 规则中需要对其进行保护，如下所示：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-keepclassmembers enum * {  
+    public static **[] values();  
+    public static ** valueOf(java.lang.String);  
+}
+</code></pre></div></div>
+
+<h2 id="android-中是否应该使用枚举">Android 中是否应该使用枚举</h2>
+
+<p>这曾是一个谈论很多的话题，对此我写了一篇文章分享自己的观点，具体查看 <a href="../../../2019/11/04/use-enum-or-not.html">Android 开发中是否应该使用枚举？ | 咕咚</a></p>
+
+<h2 id="总结">总结</h2>
+
+<p>本文阐述了个人对枚举设计的理解，它是一个很好的设计，在特定的场景下，尤其是那种针对类型有模板化操作的的情况下，使用枚举可以让代码更优雅，另外也记录了枚举的替代写法以及混淆代码时枚举的注意事项。</p>
+
+<h2 id="参考链接">参考链接</h2>
+
+<ul>
+  <li><a href="https://www.liaohuqiu.net/cn/posts/android-enum-memory-usage/">Android 中的 Enum 到底占多少内存？该如何用？ | Yet Another Summer Rain</a></li>
+</ul>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

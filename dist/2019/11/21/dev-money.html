@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>一个付费 App 的诞生？ — Daily11/21-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="一个付费 App 的诞生？ — Daily11/21"/>
+  <meta name="keywords" content="咕咚,daily"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="一个付费 App 的诞生？ — Daily11/21">一个付费 App 的诞生？ — Daily11/21</h1>
+  
+  <div class="subtitle">咕咚 于 2019-11-21 发布</div>
+  
+  <div class="post">
+    <p>昨天提到了自己的<a href="https://mp.weixin.qq.com/s/2X330QoyDlo6dErHlqfIHA">个人图床 app</a>，就自己而言，我觉得体验还是挺不错的，使用很方便，尤其是我在手机上频繁传图的时候。</p>
+
+<p>今天有人问到了可不可以开放到市场，让大家都用起来，而且可以接受付费。实际上，在我一开始开发的时候我就想过这个问题。</p>
+
+<p>我做了不少 app，开始的基本都是免费，后来做了<a href="https://www.jianshu.com/p/e77b251c46aa">咕咚翻译</a>，开放了捐赠，后来还是有不少用户<a href="https://gudong.site/1990/03/01/list_pay.html">进行了捐赠</a>，很感谢他们的支持。</p>
+
+<h2 id="图床-app-商业化-">图床 app “商业化” ？</h2>
+
+<p>不过捐赠是被动的，而且不可以持久，所以我一直也想做一个半付费的 app，就是那种高级版收费的 app ，后来一直没想到好的点子。直到做这个图床app时，我又想起来了，可以做一个付费功能的 app，只是需要多花费一点心思，需要把高级功能做的让大家有付费的意愿。</p>
+
+<p>但是付费需要解决后端记账、客户端验证等问题，其实做起来还是有不少工作的（别看着其他人通过 app付费 赚钱容易，实际上真要做事的时候，还是比较考验人的），后来就耽搁了，直到现在。</p>
+
+<p>今天经过他的提醒，我想我是可以做这件事的。</p>
+
+<p>付费功能，可以让图床支持多个图床服务，普通用户只能使用一个默认的。另外高级账户的图片记录可以支持云同步，普通用户不支持，等等，暂时就想到这两点（听上去简单的功能实现起来可能一点都不简单）。</p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/588640-1c503890eb293967.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" /></p>
+
+<p>另外，对于后端付费用户记账问题，可以采用支付宝转账，然后发激活码的方式，然后还需要自己写一个激活码的验证接口，这个做起来其实也还好。实际上今天我已经完成了，使用了 LeanCloud  的云引擎，LeanCloud 真心好。</p>
+
+<h2 id="团队技术分享">团队技术分享</h2>
+
+<p>今天团队进行了组内技术分享，是其他同学分享的，分享的主题是屏幕渲染机制，以及滤镜原理。讲的内容还是挺抽象的，并没怎么听懂，不过以后屏幕渲染的技术点可以找同事请教了。</p>
+
+<p>其实对于技术团队，每周进行技术分享是很好的事，可以增强技术氛围，也可以拉进彼此的距离，还可以分享知识，开拓视野。下周该我分享了，我已经很久没有写过 ppt 了，小紧张。</p>
+
+<h2 id="xxxl">XXXL</h2>
+
+<p>买衣服裤子以后看来不能选 xxxl 了。</p>
+
+<p>小！！</p>
+
+<p>今年双十一买的上衣跟裤子都小了，要退货，尴尬…</p>
+
+<p>还好，淘宝的七天无理由退货体验很好，自己也是第一次用这个服务，退货很方便…</p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

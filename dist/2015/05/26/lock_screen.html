@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Android设备上实现锁屏-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="Android设备上实现锁屏"/>
+  <meta name="keywords" content="咕咚,tech"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="Android设备上实现锁屏">Android设备上实现锁屏</h1>
+  
+  <div class="subtitle">咕咚 于 2015-05-26 发布</div>
+  
+  <div class="post">
+    <p>在Android设备上实现锁屏功能。</p>
+
+<h2 id="最终结果">最终结果</h2>
+
+<p>点击主界面的锁屏按钮，实现立即锁屏</p>
+
+<h3 id="准备阶段">准备阶段</h3>
+
+<p>新建一个空的Android项目，并在主界面上拖放一个按钮。并在Button的布局文件中声明onClick事件。如下</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;Button android:text="锁屏"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:onClick="lockScreen"/&gt;    
+</code></pre></div></div>
+
+<p>在MainActivity.java文件中实现lockScreen方法。</p>
+
+<h3 id="实现步骤">实现步骤</h3>
+
+<p>1、创建一个空的广播接受者AdminManageReceiver.java</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import android.app.admin.DeviceAdminReceiver;
+public class AdminManageReceiver extends DeviceAdminReceiver {
+
+}
+</code></pre></div></div>
+
+<p>2、配置Manifest文件</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;receiver
+        android:name=".AdminManageReceiver"
+        android:label="@string/app_name"
+        android:permission="android.permission.BIND_DEVICE_ADMIN" &gt;
+        &lt;meta-data
+            android:name="android.app.device_admin"
+            android:resource="@xml/device_admin" /&gt;
+        &lt;intent-filter&gt;
+            &lt;action android:name="android.app.action.DEVICE_ADMIN_ENABLED" /&gt;
+        &lt;/intent-filter&gt;
+    &lt;/receiver&gt;
+</code></pre></div></div>
+
+<p>3、新建文件device_admin.xml
+AdminManageReceiver需要一个资源文件的支持，我们在res目录下面创建名为xml的文件夹，接着创建device_admin.xml文件，内容如下</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;device-admin xmlns:android="http://schemas.android.com/apk/res/android"&gt;
+    &lt;uses-policies&gt;
+        &lt;force-lock /&gt;
+    &lt;/uses-policies&gt;
+&lt;/device-admin&gt;
+</code></pre></div></div>
+
+<p>4、主逻辑的实现
+    直接上MainActivity.java 代码如下</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class MainActivity extends ActionBarActivity {
+    ComponentName mAdminName;
+    DevicePolicyManager mDPM;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        mAdminName = new ComponentName(this, AdminManageReceiver.class);
+        mDPM = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
+        //如果设备管理器尚未激活，这里会启动一个激活设备管理器的Intent,具体的表现就是第一次打开程序时，手机会弹出激活设备管理器的提示，激活即可。
+        if (!mDPM.isAdminActive(mAdminName)) {
+            showAdminManagement(mAdminName);
+        }
+    }
+    //执行锁屏
+    public void lockScreen(View view){
+        if (mDPM.isAdminActive(mAdminName)) {
+            mDPM.lockNow();
+        }
+    }
+
+    //激活设备管理器
+    private void showAdminManagement(ComponentName mAdminName) {
+        Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
+        intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, mAdminName);
+        intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, "activity device");
+        startActivityForResult(intent,1);
+    }
+}
+</code></pre></div></div>
+
+<p>Note:如果正常运行这个程序，并且按照要求激活了设备，那么在你要准备卸载程序时，需要去设备管理器先移除这个程序，才可以正常执行卸载。</p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

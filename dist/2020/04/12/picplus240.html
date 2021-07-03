@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>发了 PicPlus 的新版本 | Daily 04/12-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="发了 PicPlus 的新版本 | Daily 04/12"/>
+  <meta name="keywords" content="咕咚,daily"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="发了 PicPlus 的新版本 | Daily 04/12">发了 PicPlus 的新版本 | Daily 04/12</h1>
+  
+  <div class="subtitle">咕咚 于 2020-04-12 发布</div>
+  
+  <div class="post">
+    <table>
+  <tbody>
+    <tr>
+      <td>![软件园</td>
+      <td>Daily 04/12](https://gitee.com/maoruibin/assert/raw/master/pic/2020/IMG_20200412_092218.jpg)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="https://www.coolapk.com/apk/name.gudong.pic">PicPlus</a>是自己开发的一个手机端的图床上传软件，支持市面上绝大多数的主流的图床服务，如七牛云、阿里云等，还支持Github 、码云作为图床。</p>
+
+<p><img src="https://gitee.com/maoruibin/assert/raw/master/pic/2020/mmexport1586700971842.jpg" alt="" /></p>
+
+<p>对于这个工具软件，核心功能特别清晰，即上传手机图片到图床服务器。</p>
+
+<p>尽管功能很明确，很单一，但是开发的过程中，首页如何设计，核心上传交互如何设计，却不是一蹴而就的，相反，在迭代的过程中，到目前为止，首页设计已经改了四次。</p>
+
+<p>简单就是生产力，但是太简单有时又显得很单调。这次新版本的首页，调整了最近上传记录与上传入口排列顺序，从操作上看，上传完毕后，最近列表立即更新已上传的图片，操作语义更自然，而且这次把上传进度设计到了首页，所以整体的上传显得更加流畅自然。</p>
+
+<p><img src="https://gitee.com/maoruibin/assert/raw/master/pic/2020/Screenshot_20200412-200155.jpg" alt="" /></p>
+
+<p>回顾从开始到现在的设计过程， PicPlus 的首页一直在强调上传功能入口，目前它是绝对第一优先级，因为这个 app 就是为了传图而存在。</p>
+
+<p>与此同时，上传历史是一个次要的产物，大多数时候，大家关心的是上传后的结果，一次上传完成后，这个图片的使命就已经完成，所以历史记录图片不会填充满首页。之前有一个版本尝试过首页展示历史记录信息流，后来总是觉得多余，所以即使把首页空着也没有展示历史记录，为了权衡，后来便只显示最近的十张图片。</p>
+
+<p>不过也曾想过，有一种场景，用户会特别关心历史上传的图片，即那种可复用的图片，比如自己的二维码或者广告头图，这种其实可以通过做一个收藏功能实现，不过暂时场景并不多，所以暂不考虑。</p>
+
+<p>当然，目前的设计依旧是一个不断优化的结果，并不是最好的，后续会继续去探索优化这个工具…</p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>存在即合理？-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="存在即合理？"/>
+  <meta name="keywords" content="咕咚,blog"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="存在即合理？">存在即合理？</h1>
+  
+  <div class="subtitle">咕咚 于 2019-01-17 发布</div>
+  
+  <div class="post">
+    <p><strong>存在即合理</strong>，这是流传很久的一句话。但事实上并不能应用于所有事。</p>
+
+<p>有时我们应该去试着质疑一切存在的事物，当然这不是要去做”杠精”，而是用一种独特的眼光去看世界。</p>
+
+<p>一旦真的这样做了，会发现存在的并不一定合理，甚至一些东西存在很久了，或者你已经习惯很久了，但他们可能都是错的或者不好的，总之它们可能并不是合理的。</p>
+
+<p>比如说地铁里的”先下后上”，在这之前我是一个坚定的支持者，我认为地铁到站后就是应该先让乘客下完，然后车外的乘客再按顺序上车，自己一直也是这样执行的，只到今天早晨，我觉得这个规则其实并不完善。</p>
+
+<p>早晨在换乘地铁站时，人比较多，由于我在车门口，但我还没有终点站，所以我选择下车，等人下完再上车。下去后，我还是按照先下后上，等车里的人下完再上，但是里面的人下的很慢，导致自己最终没上去。</p>
+
+<p>里面的人为什么下车慢，一方面是因为人确实太多了，他可能不好出来，另外一方面也许是他就没想着提前换一下，把自己换车门口…不论如何，最终的结果就是自己没上去，我奉行”先下后上”，最后却没有上去。</p>
+
+<p>这不禁让我觉得规则是死的，在具体的场景下，一些规则是不能完全遵守的，要去破坏它你才能更好的让自己出于有利位置，甚至规则本来就不一定是完善的，有时就需要一些不守规则的人去破幻它，打破它，让制定规则的人去重新思考规则合理性。</p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

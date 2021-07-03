@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>再见 2016 ，你好 2017 ~-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="再见 2016 ，你好 2017 ~"/>
+  <meta name="keywords" content="咕咚,blog"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="再见 2016 ，你好 2017 ~">再见 2016 ，你好 2017 ~</h1>
+  
+  <div class="subtitle">咕咚 于 2017-01-02 发布</div>
+  
+  <div class="post">
+    <p>不知不觉，就已经 2017 了，时间飞快，2016 很短暂，但是却很丰富，却也不想重来。</p>
+
+<p>在 16 年三月时我最终离开了我的上家公司，尽管离开的过程有点不愉快，但是离开是一个 2016 做的第一个正确的决定。</p>
+
+<p>同时也是在三月初，我发布了自己开发的咕咚翻译，一个划词翻译 App，从一开始推出就得到了很多同行的支持，自己在这个过程中也认识了一个非设计专业的 UI 设计爱好者，他帮我完成了咕咚翻译的 1.0 UI 设计，我也打鸡血式的快速迭代了 1.0 ，后来发布到市场，好评如潮，后来尝试加入了打赏功能，没想到一开始的一段时间，每天都能收到来自不同用户的打赏，不论多少，我都觉得这是一件有意义的事。</p>
+
+<p>在发布咕咚翻译后自己认识了很多同学，包括给咕咚翻译贡献源码的支付宝的一个同学，后来也认识了今日头条的一位同学，等等，后来在找工作时也充分利用这些资源，找内推，很感谢他们的支持。</p>
+
+<p>但最终，我去了墨迹天气。</p>
+
+<p>从一进入墨迹，墨迹的 Android 就正巧在进行项目重构，所以从3月末到墨迹，一直到7月，自己一直在做重构相关的事，不过基本是功能重构。</p>
+
+<p>重构的过程中思考良多，我还是喜欢写框架，因为写框架更能锻炼你的大局观，同时也要求你需要足够细心。</p>
+
+<p>后来在10月，因为项目存在两个网络框架的缘故，跟 leader 讨论后，决定统一为一个，然后自己负责了整个网络框架的重构整合。</p>
+
+<p>然后自己用了一个月时间，还算顺利的完成了重构，但是整个过程中自己也遇到了很多问题和挑战，这里就不一一列举了，如果可以，我觉得后续可以专门写一篇文章，记录一下重构的过程。</p>
+
+<p>重构完成上线后，一直没有爆出什么异常问题，这让我很开心，因为在重构过程中，由于之前代码的耦合性，所有的网络请和业务代码是严重耦合的，所以所有和网络相关的业务代码我也做了相应的更改。一直很担心这块会出现问题，比较修改的内容太多。</p>
+
+<h2 id="不足">不足</h2>
+
+<ul>
+  <li>写的文章变少了。主要原因是工作开始变得很忙，而且生活中的事情也变得多起来，所以技术方面输出偏少了，也许这是开发者都会经历。</li>
+</ul>
+
+<h2 id="期许">期许</h2>
+
+<ul>
+  <li>多读书。我觉得微信读书是个非常不错的读书软件，推荐。</li>
+</ul>
+
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

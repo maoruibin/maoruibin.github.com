@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>写了一个 Android 订阅软件 | Daily 11/21-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="写了一个 Android 订阅软件 | Daily 11/21"/>
+  <meta name="keywords" content="咕咚,daily"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="写了一个 Android 订阅软件 | Daily 11/21">写了一个 Android 订阅软件 | Daily 11/21</h1>
+  
+  <div class="subtitle">咕咚 于 2020-11-21 发布</div>
+  
+  <div class="post">
+    <p>之前，自己也会用一些市面上的订阅软件，比如 Inoreader，Rolly 等，但是前者不稳定，需要fq，后者，个人觉得操作有点奇怪，我理解订阅软件的首页都应该是信息流，而不是订阅源流。</p>
+
+<p>对于订阅软件，自己的需求比较简单，订阅+阅读，后来从一篇文章中得知了一个名叫 Feeder 的软件，设计简单，体验稳定，深得我心。</p>
+
+<p><img src="https://gitee.com/maoruibin/img/raw/master/2020/11/21/20201121145820160.jpg" title="20201121145820160" alt="20201121145820160" width="300" /></p>
+
+<p>但是首页总是看的拥挤。后来一个周末的早晨，睡醒后思考了一下订阅软件的逻辑，其实非常简单，主要就是解析订阅源，加上自己之前有<a href="https://www.coolapk.com/apk/name.gudong.pic">咕咚云图</a>的开发基础，所以说干就干，用了一天时间，便开发了一个最基本的软件模型，然后第二天就上架了谷歌商店。</p>
+
+<p><img src="https://gitee.com/maoruibin/img/raw/master/2020/11/21/4198d3eef20cb63db6e3241b25908ce7.jpg" width="300" /></p>
+
+<p>这其实就是一个月前的事，后面自己又不断优化，到这个周末，陆续又加入了以下功能</p>
+
+<h2 id="自动夜间模式">自动夜间模式</h2>
+<p>设置时间段，默认为晚上八点到早晨六点，会自动软件为夜间模式，有利于更好的阅读。</p>
+
+<h2 id="收藏订阅文章">收藏订阅文章</h2>
+<p>有时会看到一些不错的教程或者其他文章，可能想要标记一下，以便后续阅读使用，所以加入了简单的收藏功能，也可以理解标记。</p>
+
+<p>目前标记只能通过首页中的文章菜单完成，如果要查看已收藏的文章，需要点击首页左上角，选择已收藏如下所示:</p>
+
+<p><img src="https://gitee.com/maoruibin/img/raw/master/2020/11/21/20201121151130358.jpg" alt="已收藏" /></p>
+
+<h2 id="提升刷新速度">提升刷新速度</h2>
+<p>Rss 软件的刷新是个难题，如果选择全部，每次刷新都需要把每个订阅源请求一遍，有些源只开放少量的文章，所以还好，但是一些订阅源会把自己博客的所有文章都开放出来，这样刷新就会很慢。</p>
+
+<p>原始版本但是串行请求，有时会花费一分多钟时间，还在用了多线程并发请求，速度快了不少。</p>
+
+<p>但目前感觉还是慢，我会考虑后续把加载动画做在主页 title 下方，另外继续研究研究有没有更好的 rss 订阅源同步方案，如果你知道，欢迎评论区留言。</p>
+
+<h2 id="菜单逻辑优化">菜单逻辑优化</h2>
+
+<p>现在首页流中最明显的菜单是文章菜单，点击可以收藏，复制链接。除此之外，点击订阅源名称以及 icon ，会弹出订阅源操作菜单，如下所示：</p>
+
+<p><img src="https://gitee.com/maoruibin/img/raw/master/2020/11/21/20201121152104117.jpg" alt="" /></p>
+
+<p>这版本主要就改了这么多。</p>
+
+<h2 id="软件的后续">软件的后续</h2>
+<p>我在开发时，就知道了目前市场不允许订阅软件上架，但是自己还是开发了，主要原因就是自己需要这样的软件，订阅软件可以帮助去人们主动去筛选优质内容，尽管目前市场主流的内容大都是靠推荐，但是在小众的领域内，还是有不少人喜欢这种传统的方式，总之适合自己的就是最好的。</p>
+
+<p>另外有人说要不要做个订阅市场什么的，我不会做。通过订阅获取信息，是一种很主动的形式，你需要你才会去订阅，所以订阅的前提是你已经知道了这个订阅源，而不是去搜索。</p>
+
+<h2 id="不足">不足</h2>
+<p>目前软件也有很多不足，比如本地 html 解析，现在默认阅读中的是 Google Chrome 的 customtab，如果你手机中安装了 Google Chrome 阅读体验还不错，如果没安装，会跳转到系统浏览器，可能有点奇怪，但是自己暂时没时间去继续优化本地文章解析，所以暂时搁置。</p>
+
+<p>另外导入导出，数据备份也可以通过坚果云做的更好，这些后面根据时间、需要再安排。</p>
+
+<h2 id="下载地址">下载地址</h2>
+<p>目前只上架了谷歌，如果觉得比较麻烦，可以直接通过 fir 下载，<a href="http://d.firim.pro/gulz">下载地址</a></p>
+
+<p>后续谷歌也不会更新的很勤快，但是 fir 会更新的比较多，但就是没有什么提示，如果关注这个软件，可以通过关注我的<a href="http://www.coolapk.com/u/509587">酷安动态</a>或者我的 <a href="https://twitter.com/dxgudong?s=09">twitter</a></p>
+
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>多图并发上传图床 —  PicPlus 新版本发布 | Daily 04/19-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="多图并发上传图床 —  PicPlus 新版本发布 | Daily 04/19"/>
+  <meta name="keywords" content="咕咚,daily"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="多图并发上传图床 —  PicPlus 新版本发布 | Daily 04/19">多图并发上传图床 —  PicPlus 新版本发布 | Daily 04/19</h1>
+  
+  <div class="subtitle">咕咚 于 2020-04-19 发布</div>
+  
+  <div class="post">
+    <blockquote>
+  <p>PicPlus 是一个图床上传 APP，帮你快速上传手机图片到各个图床，支持七牛云、阿里云、又拍云等主流图床，此外还 <strong>支持配置GitHub、码云为个人图床</strong>。<a href="https://www.coolapk.com/apk/name.gudong.pic">酷安主页地址</a></p>
+</blockquote>
+
+<p>昨天，PicPlus 发布了 242 版本，该版本主要支持了<strong>多图上传</strong>。</p>
+
+<p><img src="https://gitee.com/maoruibin/assert/raw/master/pic/2020/Screenshot_20200419-174330.jpg" alt="" /></p>
+
+<p>一开始并没有在意这个功能，因为自己使用过程中多图上传场景并不多。</p>
+
+<p>在逐渐迭代过程中，发现 PicPlus 的不少用户是学生，他们经常需要把一些读书笔记或者试卷上传到图床，往往同时会有好几张图片，这时如果每次只能上传单张，显得很没有效率。</p>
+
+<p>其实，不仅仅是笔记场景，<strong>有时我们去旅游、游玩或者参加会议，其中可能会拍下很多照片，这时如果写游记或者记录，批量上传就会很有用</strong>，一次性上传多张照片到图床，美哉。</p>
+
+<p>此外，如上所述，批量上传操作完成后，往往需要批量复制链接，这样就可以把图片一次性的插入自己的文章中。</p>
+
+<p>批量上传+批量复制，这才是一个完整的批量操作，所以这次 PicPlus 在开发批量上传的同时，<strong>也支持了批量复制</strong>，批量上传成功后，会显示批量复制的面板，方便用户选择。</p>
+
+<p><img src="https://gitee.com/maoruibin/assert/raw/master/pic/2020/Screenshot_2020-04-18-21-17-08-043_name.gudong.pic.png" alt="批量上传结果" /></p>
+
+<p>除此之外，同时也加强了历史页面的功能。现在历史页面也支持了批量操作，可以批量删除图片，以及复制链接，具体可通过两种方式触发批量操作。</p>
+
+<ul>
+  <li>长按历史记录列表项</li>
+  <li>右上角菜单 -&gt; 选择</li>
+</ul>
+
+<blockquote>
+  <p>PS：不会支持全选以及反选功能</p>
+</blockquote>
+
+<p><img src="https://gitee.com/maoruibin/assert/raw/master/pic/2020/Screenshot_2020-04-18-21-18-20-797_name.gudong.pic.png" alt="批量删除" /></p>
+
+<p>以上，就是 242 版本中的主要功能。</p>
+
+<p>功能稳定后，下版本会优化数据备份相关逻辑，同时会支持<strong>数据云同步</strong>，具体通过 WebDAV 实现，这也是目前个人软件中最常使用的方式。</p>
+
+<p><img src="https://gitee.com/maoruibin/assert/raw/master/pic/2020/Screenshot_2020-04-18-21-15-05-858_name.gudong.pic.png" alt="" /></p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

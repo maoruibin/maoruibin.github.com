@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>日志-2016-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="日志-2016"/>
+  <meta name="keywords" content="咕咚,log"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="日志-2016">日志-2016</h1>
+  
+  <div class="subtitle">咕咚 于 1990-03-02 发布</div>
+  
+  <div class="post">
+    <p><img src="https://ws1.sinaimg.cn/large/6fb50cedly1fn76jmiz48j217g17gnpd.jpg" alt="" /></p>
+
+<h2 id="20161128">2016/11/28</h2>
+<p>今天还是把去年特别喜欢的一个背景图上传作为了我的博客背景。</p>
+
+<p>一年的时间，经历了太多，人生就是不断认识自己的过程，自己会对以前的一些决定进行思考，大多数时候，自己不会去太深刻的思考那些已经发生的事，但是这一年发生的一系列事，不由得让你去重新审视自己。</p>
+
+<p>幼稚、人心、生活。。。。。</p>
+
+<h2 id="20161107">2016/11/07</h2>
+
+<p>今天新增了一篇介绍 <a href="https://github.com/maoruibin/ReView">ReView</a> 的文章，昨天就想写，但是净忙着写 <a href="https://github.com/maoruibin/ViewControler/">ViewControler</a> 的文章了，就没有顾上，今天即使再晚也要补上。</p>
+
+<p>另外，今天因为自己的原因（一行 log 引发的惨案），公司项目日志数据上传异常，日志数据成倍增长，着实吓我一跳，自己确实需要对上千万的用户负责啊，你的一个小错误，到用户那里累计起来的影响太大了。好在并没有造成什么大面积事故，以后要小心。</p>
+
+<h2 id="20161025">2016/10/25</h2>
+<p>昨天是 1024 程序员节,依旧记得去年是一个人过的,那天是周日,我一人宅在家里宅了一天,还写了一篇长长的日志,记得特别清楚,那天为自己换了一个 jekyll 主题,很喜欢的主题。不过现在已经被我换了,哈哈。黄玄的这个主题确实没法拒绝,太多特性是自己期待了很久的东西。</p>
+
+<p>很快,今年的 1024 这么快已经到了,到今天已经过去一天了,但是昨天的事却历历在目,今年的 1024,我不在是程序员,而是作为一个人民群众去所在地派出所办理户口、身份证相关手续。</p>
+
+<p>整整一天,我从早晨 6.30 起床,到晚上8点多坐车回永昌,终于将整个其实只需要半小时就能办完的手续办完了。我目睹了地方机构办事效率的地下,以及鸡毛当令箭使得形式主义作风。</p>
+
+<p>终归办完了,思考良多,一方面这种办事机构有问题,另一方面地方群众的素质也是一个问题,不想展开说了!</p>
+
+<h3 id="字符串包含判断">字符串包含判断</h3>
+
+<p>还是记录下 一个 Liquid 语法问题,检查一个字符串是不是包含一个字符串</p>
+
+<p><a href="https://shopify.github.io/liquid/basics/introduction/">Liquid template language</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//定义一个全局 site 常量</span>
+<span class="nx">theme_color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#607D8B</span><span class="dl">"</span>
+
+<span class="c1">//判断 双括号</span>
+<span class="p">{</span><span class="nx">page</span><span class="p">.</span><span class="nx">cover</span><span class="p">}</span> <span class="nx">contains</span> <span class="dl">'</span><span class="s1">zzz</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<h3 id="自定义背景">自定义背景</h3>
+
+<p>至此,我的博客背景支持了自定义纯色背这个特性,默认使用一张箭头背景图片,如果不喜欢,可以为 post 设变量 <code class="highlighter-rouge">cover</code> 这个属性用于设置文章头部背景颜色</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//使用自定义颜色</span>
+<span class="nx">cover</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#f78789</span><span class="dl">"</span>
+<span class="c1">//表示使用博客主题颜色</span>
+<span class="nx">cover</span><span class="p">:</span> <span class="dl">"</span><span class="s2">zzz</span><span class="dl">"</span>
+<span class="c1">//使用指定图片作为背景图</span>
+<span class="nx">header</span><span class="o">-</span><span class="nx">img</span><span class="p">:</span> <span class="nx">assets</span><span class="o">/</span><span class="nx">header</span><span class="o">/</span><span class="nx">header_image_road</span><span class="p">.</span><span class="nx">jpg</span>
+</code></pre></div></div>
+
+<h3 id="自定义-title-color">自定义 Title color</h3>
+
+<p>因为一些背景是亮色背景,但是默认所有 title 都是白色,所以在一些文章中,如果选用了浅色的背景,标题就会不清晰,所以今天加了一个新特性,可以用来设置 title 颜色,如下所示,
+直接在 post 使用 titleColor 属性即可。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">titleColor</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#404040</span><span class="dl">"</span>
+</code></pre></div></div>
+
+<h2 id="20161022">2016/10/22</h2>
+
+<p>今天回家了,火车没事干,想起自己的博客草稿箱还有好几篇文章已经放了好久,感觉可以趁这个空修理下,然后就把 <a href="/2016/10/22/Android-transition.html">5.0 的元素共享</a>那篇博文更新了。</p>
+
+<p>今晚给 post 新增了一个属性 <code class="highlighter-rouge">conver</code> 用于控制头部背景颜色,如果不设置默认使用一张转为博客设计的背景图片,也很好看。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">background</span><span class="o">-</span><span class="nx">image</span><span class="p">:</span> <span class="nx">url</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">background</span><span class="o">-</span><span class="nx">color</span><span class="p">:</span> <span class="p">;</span>
+</code></pre></div></div>
+
+<p>修改 CSS 使用</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">grunt</span> <span class="nt">watch</span>
+
+</code></pre></div></div>
+
+<h2 id="20160702">2016/07/02</h2>
+<p>不知不觉，已经放弃上一个博客主题好久了，现在福生还在使用我的主题<a href="http://sunfusheng.com/">sunfusheng</a></p>
+
+<p>今天，终于有时间可以搞下博客了，这段时间都太忙了。</p>
+
+<h2 id="20160327">2016/03/27</h2>
+<p>项目主颜色设置在 less 目录下的 variables.less</p>
+
+<h2 id="20160326">2016/03/26</h2>
+<p>今天已经修改自己博客的主题为另一个主题了</p>
+
+<h2 id="20160229">2016/02/29</h2>
+<p>隐藏了post 页面的 tag、category 点击相应，因为 jekyll archive 不支持 Github Page <br />
+使用了新的代码高亮样式 减小了 padding 值</p>
+
+<h2 id="20160226">2016/02/26</h2>
+<p>指定引用图片的宽度大小，可通过如下方式</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;img src="/assets/over_draw_color_2.png" style="width: 50%;margin: auto;"&gt;&lt;br&gt;
+</code></pre></div></div>
+
+<p>##2016/01/20</p>
+
+<p>修改代码块的主题样式在 _include/head.html 文件中修改</p>
+
+<p>可以再 <a href="http://www.bootcdn.cn/highlight.js/">bootcdn</a>下载</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;!-- thanks to http://www.bootcdn.cn/lightbox2/      --&gt;
+    &lt;!-- thanks to http://www.bootcdn.cn/highlight.js/   --&gt;
+    &lt;!-- thanks to https://highlightjs.org/static/demo/  --&gt;
+    &lt;link  rel="stylesheet" href="//cdn.bootcss.com/highlight.js/8.5/styles/androidstudio.min.css"&gt;
+    &lt;link rel="stylesheet" href="//cdn.bootcss.com/lightbox2/2.8.2/css/lightbox.css"&gt;
+</code></pre></div></div>
+
+<p>修改代码块的padding font  在 _sass/_layout.scss</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    pre code.hljs {
+    	font-size: modular-scale(0);
+    	padding: 1.5em;
+    }
+</code></pre></div></div>
+
+<p>##2016/01/12</p>
+
+<p>修改底部四个按钮大小 在 footer.html</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.fa-lg{
+        font-size: 1.5em;
+    }
+</code></pre></div></div>
+
+<p>设置顶部 Title(咕咚)的高度</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  .logo {
+    float: left;
+    height: 4em;
+    border:0px solid #000;
+    padding-top: 0.6em;
+    @include media ($tablet) {
+    	padding-left: $em-base;
+    }
+</code></pre></div></div>
+
+<p>设置底部的按分类查看为隐藏</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;p style="display:none;"&gt;
+    &lt;a href="posts"&gt;View All Posts by Category&lt;/a&gt;
+  &lt;/p&gt;
+</code></pre></div></div>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Daily 02/08-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="Daily 02/08"/>
+  <meta name="keywords" content="咕咚,daily"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="Daily 02/08">Daily 02/08</h1>
+  
+  <div class="subtitle">咕咚 于 2020-02-08 发布</div>
+  
+  <div class="post">
+    <h2 id="不可捉摸的股市">不可捉摸的股市</h2>
+<p>上周2月3号开盘后，因为冠状病毒的原因，周一大跌。在开盘前很多人也做了预测，大跌是必然的，不少人预测会是5%左右，结果周一开盘，上来就跌了8%，而且一整天的交易时间内，几乎没什么像样的反弹，到下午2:30后也是如此。</p>
+
+<p>在假期的时候就设想过如果面对大跌，周一犹豫了一会，最终还是选择了加仓，当时是这样想的，对于3000点以下的 A股，大跌大买，而且历史上的任何一次股灾、大跌最终都会回去，即使是08年的金融危机，很快在09年便得到了修复，所以面对 A 股的这种大跌，最差的操作就是杀跌，当然要具体还要根据自身具体情况。</p>
+
+<p>在加仓时，并没有完全抄底，设想第二天如果继续跌再买，而且根据那天的情况，一整天都没有反弹，上证指数的曲线完全被按在地上。在收盘后，我看到有两个博主说，对于这种阵势，大概率大跌还没结束，第二天还会继续跌，结果剩下的四天也看到了，即使疫情并没有获得明显的控制，但是大盘还是逆势连涨四天，😌，完全不是预想的那种。</p>
+
+<p>搞不懂…</p>
+
+<h2 id="android-写作软件">Android 写作软件</h2>
+
+<p><img src="https://cdn.jsdelivr.net/gh/maoruibin/assets/pic/2020/ba6dcc9-6f3bacda-97-170253b5f88.jpg" alt="" /></p>
+
+<p>这段时间在酷安下载了很多写作软件，发现对于写作体验这个事，大部分的软件处理的很一般，大家都是简单的实现了编辑功能，实际上结合自己手机上写字的体验，编辑文本这个事可以优化的地方还是不少的。对于写作，三点很重要：</p>
+<ul>
+  <li>连续、不打断的写字体验</li>
+  <li>安全不丢失文字</li>
+  <li>流畅便捷的符号插入</li>
+</ul>
+
+<p>我在春节期间开发了自己的写作软件，后续会不断的通过自己的软件写作（包括这篇以及前面三篇都是通过自己的软件编辑），不断发现问题，不断优化，让它成为很好的写作软件。</p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

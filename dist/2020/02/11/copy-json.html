@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>如何复制 JSON 字符串中指定节点元素？-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="如何复制 JSON 字符串中指定节点元素？"/>
+  <meta name="keywords" content="咕咚,tech"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="如何复制 JSON 字符串中指定节点元素？">如何复制 JSON 字符串中指定节点元素？</h1>
+  
+  <div class="subtitle">咕咚 于 2020-02-11 发布</div>
+  
+  <div class="post">
+    <p>如何复制 JSON 字符串中指定节点元素？</p>
+
+<h2 id="问题场景">问题场景</h2>
+
+<p>有时我们会有一串很长的 Json 字符串，如下所示：</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1ga0qd2fazcj30jo0bxabg.jpg" alt="" /></p>
+
+<p>这时我们需要摘出其中一个节点，也就是拷贝某个节点的 json 内容，比如上图中的 sk 节点，现在我们可以手动用鼠标去选择复制。</p>
+
+<p>但是对于<strong>一些特别大的 JSON  数据节点</strong>，它的内容很长，这时手动选择复制就很容易出错。</p>
+
+<h2 id="解决方案">解决方案</h2>
+
+<p>Google 的 Chrome 浏览器提供了可以精确辅助的功能，如下图 gif 所示，通过 Chrome 提供的 copy 命令就可以非常方便的做到这点。</p>
+
+<p><img src="https://thumbs.gfycat.com/JadedUnsteadyFennecfox-size_restricted.gif" alt="" /></p>
+
+<h2 id="操作步骤">操作步骤</h2>
+
+<ul>
+  <li>复制目标 json 内容</li>
+  <li>打开 Chrome 开发者工具</li>
+  <li>选择 Console 界面</li>
+  <li>粘贴 JSON 代码到控制台并回车</li>
+  <li>点击已输入的 JSON 串，右键菜单选择 Store as Global Variable</li>
+  <li>这时原来的 json 串会被转换为一个变量名称 temp1</li>
+  <li>用 copy 命令进行复制，copy 的参数可以是 temp1，还可以精细化，指定到 json 节点，总之你想复制那个节点，指定就 OK</li>
+  <li>执行完 copy 命令，复制的内容已经到系统粘贴板，到目标地方复制即可。</li>
+</ul>
+
+<h2 id="参考链接">参考链接</h2>
+
+<ul>
+  <li><a href="https://stackoverflow.com/questions/10305365/javascript-chrome-how-to-copy-an-object-from-the-webkit-inspector-as-code">jquery - Javascript / Chrome - How to copy an object from the webkit inspector as code - Stack Overflow</a></li>
+</ul>
+
+<p><a href="https://tool.oschina.net/regex?optionGlobl=global">在线正则表达式测试</a></p>
+
+<p><a href="https://fanyi.baidu.com/#zh/en/%E6%8F%90%E5%8F%96">百度翻译</a></p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

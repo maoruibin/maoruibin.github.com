@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>我的Android项目开发规范（不断更新）-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="我的Android项目开发规范（不断更新）"/>
+  <meta name="keywords" content="咕咚,tech"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="我的Android项目开发规范（不断更新）">我的Android项目开发规范（不断更新）</h1>
+  
+  <div class="subtitle">咕咚 于 2015-09-27 发布</div>
+  
+  <div class="post">
+    <p>代码永远写不完，但是写的时间久了，就应该形成自己的代码规范或者自己团队的规范，尽管一些规范已经形成于脑海，但是还是有必要记录下来。从现在开始，一点点积累开发规范。这里积累开发过程中所有的规范细节，尽可能详细。</p>
+
+<h3 id="类文件">类文件</h3>
+
+<h3 id="项目目录结构">项目目录结构</h3>
+
+<h3 id="接口文件">接口文件</h3>
+
+<h3 id="命名规范">命名规范</h3>
+
+<ul>
+  <li>id命名采用右侧格式 {view缩写}<em>{module_name}</em>{view的逻辑名称}</li>
+</ul>
+<table>
+    <tr>
+        <td>空间</td>
+        <td>缩写</td>
+    </tr>
+    <tr>
+        <td>LinearLayout</td>
+        <td>ll</td>
+    </tr>
+    <tr>
+        <td>RelativeLayout</td>
+        <td>rl</td>
+    </tr>
+    <tr>
+        <td>FrameLayout</td>
+        <td>fl</td>
+    </tr>
+    <tr>
+        <td>TextView</td>
+        <td>tv</td>
+    </tr>
+    <tr>
+        <td>EditText</td>
+        <td>et</td>
+    </tr>
+    <tr>
+        <td>Button</td>
+        <td>btn</td>
+    </tr>
+    <tr>
+        <td>ImageView</td>
+        <td>iv</td>
+    </tr>
+    <tr>
+        <td>ProgressBar</td>
+        <td>pb</td>
+    </tr>
+    <tr>
+        <td>Spinner</td>
+        <td>spn</td>
+    </tr>
+    <tr>
+        <td>ListView</td>
+        <td>lv</td>
+    </tr>
+    <tr>
+        <td>RecycleView</td>
+        <td>rcv</td>
+    </tr>
+    <tr>
+        <td>RadioButton</td>
+        <td>rb</td>
+    </tr>
+    <tr>
+        <td>CheckBox</td>
+        <td>cb</td>
+    </tr>
+</table>
+
+<ul>
+  <li>
+    <p>接口命名规范</p>
+
+    <p>命名规则与类一样采用大驼峰命名法，多以able或ible结尾。例如：<br />
+  interface Runable | interface Accessible
+  自己定义的接口最好以I开头<br />
+  接口中定义的方法以on开头，如onInit();</p>
+  </li>
+  <li>
+    <p>成员变量命名规范</p>
+
+    <p>采用小驼峰命名法，以m开头。</p>
+  </li>
+  <li>
+    <p>临时变量命名
+  使用标准的Java命名方法，不推荐使用Google的m命名法。例如：</p>
+
+    <p>private String userName; 而不推荐使用 private String mUserName;</p>
+  </li>
+  <li>
+    <p>常量命名</p>
+
+    <p>常量使用全大写字母加下划线的方式命名。例如：</p>
+
+    <p>public static final String TAG = “tag”;</p>
+  </li>
+  <li>
+    <p>控件实例命名</p>
+
+    <p>类中控件名称必须与xml布局id保持一致(可以去掉{module_name})。例如:</p>
+
+    <p>在布局文件中 Button 的id为: android:id=”@+id/btn_pay”</p>
+
+    <p>private Button mBtnPay;</p>
+  </li>
+  <li>
+    <p>方法命名规范</p>
+
+    <p>动词或动名词，采用小驼峰命名法。例如：</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>run();</td>
+          <td>onCreate();</td>
+          <td>syncProducts();</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>布局文件(Layout)命名规范</p>
+
+    <p>全部小写，采用下划线命名法。其中{module_name}为业务模块或是功能模块等模块化的名称或简称。<br />
+  对于小项目，可以不用使用module_name作为前缀。</p>
+
+    <ul>
+      <li>
+        <p>activity layout： {module_name}<em>activity</em>{名称} 例如：</p>
+
+        <table>
+          <tbody>
+            <tr>
+              <td>user_activity_main.xml</td>
+              <td>user_activity_shopping.xml</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <p>fragment layout:{module_name}<em>fragment</em>{名称} 例如：</p>
+
+        <table>
+          <tbody>
+            <tr>
+              <td>user_fragment_main.xml</td>
+              <td>user_fragment_shopping.xml</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <p>Dialog layout: {module_name}<em>dialog</em>{名称} 例如：</p>
+
+        <p>user_dialog_loading.xml</p>
+      </li>
+      <li>
+        <p>列表项布局命名：{module_name}<em>list_item</em>{名称} 例如：</p>
+
+        <p>user_listitem_customer.xml</p>
+      </li>
+      <li>
+        <p>包含项布局命名：include_{名称} 例如：</p>
+
+        <p>include_head.xml</p>
+      </li>
+      <li>
+        <p>adapter的子布局： {module_name}<em>item</em>{名称} 例如：</p>
+
+        <p>user_item_order.xml</p>
+      </li>
+      <li>
+        <p>widget layout： {module_name}<em>widget</em>{名称} 例如：</p>
+
+        <p>user_widget_shopping_detail.xml</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

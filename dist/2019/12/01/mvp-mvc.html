@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> MVC 与 MVP 并无两样-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content=" MVC 与 MVP 并无两样"/>
+  <meta name="keywords" content="咕咚,tech"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id=" MVC 与 MVP 并无两样"> MVC 与 MVP 并无两样</h1>
+  
+  <div class="subtitle">咕咚 于 2019-12-01 发布</div>
+  
+  <div class="post">
+    <p>关于 MVC 的定义介绍，摘一段百度百科介绍：</p>
+
+<blockquote>
+  <p>MVC 是一种使用 MVC（Model View Controller 模型-视图-控制器）设计创建 Web 应用程序的模式：</p>
+  <ul>
+    <li>Model（模型）表示应用程序核心（比如数据库记录列表）。</li>
+    <li>View（视图）显示数据（数据库记录）。</li>
+    <li>Controller（控制器）处理输入（写入数据库记录）。</li>
+  </ul>
+</blockquote>
+
+<p>简单也可以这样理解，View 单纯负责 UI，如果要更新 UI 数据，则去调用 Controller，让 Controller 去控制 UI ，Controller 不生产数据，数据层都在 Model 中，而 Controller 持有 Model 层引用，所以它会调用 Model 层然后接受到数据，接着分发给 UI，整个流程就类似于这样。</p>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/159409/1574381333532-a89d1103-6746-476a-897d-a0f5b90ce358.jpeg#align=left&amp;display=inline&amp;height=353&amp;originHeight=353&amp;originWidth=512&amp;size=0&amp;status=done&amp;style=none&amp;width=512" alt="" /></p>
+
+<p>实际上，这就是一种简单的分层机制，不同的层次做不同的事，让代码结构更清楚，各层职责也清楚，不用把所有逻辑写一块，导致代码臃肿，而且复用性也差。</p>
+
+<hr />
+
+<p>在 16、17 年左右，Android 领域大家突然开始讨论 MVP，也有很多人讨论两者的区别，实际上，个人觉得 MVC 跟 MVP 几乎没啥差别，同样的思想只是换了一个名字而已，Controller VS  Presenter，都是控制器的角色。</p>
+
+<p>MVP  为什么在 Android 中被大家所讨论，最主要的原因还是由于 Activity 机制。每一个 Android 开发大都是从写 Activity 开始，一个界面对应一个 Activity，所以一开始业务简单的时候，大家会很容易的把所有的操作逻辑都写在 activity 里，这很正常，因为 Activity 就是这么一个机制，Google 就是这样设计的。</p>
+
+<p>后来软件规模越来越大，Activity 中的代码越来越多，代码越来越难以维护，原来在 Activity 中堆代码的机制就受到了考验。实际上，如果正确利用 MVC 模式完全可以解决 Activity 臃肿问题，只不过后来同样用了分层模型去解决问题，但是给这个模型起了另外一个名字 — MVP。</p>
+
+<p>实际上，MVC、MVP 不重要，重要的是去理解正确的软件开发理念。分而治之，各司其职永远都是软件开发的真谛。</p>
+
+<h2 id="链接">链接</h2>
+<p><a href="https://github.com/Moosphan/Android-Daily-Interview/issues/33">2019-04-19：请谈谈你对 MVC 和 MVP 的理解？ · Issue #33 · Moosphan/Android-Daily-Interview</a></p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

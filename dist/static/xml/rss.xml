@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>咕咚同学</title>
+    <link>http://gudong.site</link>
+    <description>咕咚的个人博客</description>
+    <language>zh-CN</language>
+    <pubDate>Sat, 03 Jul 2021 18:43:56 +0800</pubDate>
+    <lastBuildDate>Sat, 03 Jul 2021 18:43:56 +0800</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
+    <atom:link href="http://gudong.site/static/xml/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>六月-季后赛正此时</title>
+      <link>http://gudong.site/2021/07/02/june.html</link>
+      <description>六⽉，⼀年的⼀半⼜过去了，时间就是这么快。NBA季后赛这个⽉开始了NBA季后赛，我是快船球迷，准确说我是莱昂纳德的⽀持者，我喜欢他。但是这个⽉最让⼈惊喜的不是莱昂纳德，⽽是泰伦卢，卢指导。作为⼀个主教练，连续两轮系列赛完成了0-2的翻...</description>
+      <pubDate>Fri, 02 Jul 2021 00:00:00 +0800</pubDate>
+      <gui>http://gudong.site/2021/07/02/june.html</gui>
+    </item>
+    <item>
+      <title>五月-总结回顾的必要性</title>
+      <link>http://gudong.site/2021/05/31/may-summary.html</link>
+      <description>博客从21年初换了新模板后，博客的评论功能就也就没了，因为本来之前也没什么互动，所以也没有再去折腾评论功能。最近得知还有朋友在关注博客，所以爬上来更新一下。今年工作会很忙，但是每月还是会继续去做总结，我认为做总结是很好的习惯，当然大部...</description>
+      <pubDate>Mon, 31 May 2021 00:00:00 +0800</pubDate>
+      <gui>http://gudong.site/2021/05/31/may-summary.html</gui>
+    </item>
+    <item>
+      <title>2020 年终总结</title>
+      <link>http://gudong.site/2021/04/05/2020-summary.html</link>
+      <description>这篇总结写在一月初，但是年初因为忙于复习、找工作，一直也就没有发布到博客，如果尘埃即将落定，遂发布。慌乱、焦虑的一年这一年的记忆从自己参加公司体检开始。每年公司都会让员工自己约体检，19年的体检被我约在了一月份，由于公司有亲人优惠套餐...</description>
+      <pubDate>Mon, 05 Apr 2021 00:00:00 +0800</pubDate>
+      <gui>http://gudong.site/2021/04/05/2020-summary.html</gui>
+    </item>
+    <item>
+      <title>Android 自定义 Lint 研究</title>
+      <link>http://gudong.site/2021/01/17/custom-lint.html</link>
+      <description>作为开发人员，我们的大部分时间都在跟代码打交道，而代码的世界中充满各种规则（语法规则、设计原则等），为了更好的编码，我们必须按照那些规则去书写代码。但实际工作中，由于个人经验的欠缺或一时疏忽，总还是会写出有问题或者性能欠佳、不合规范的...</description>
+      <pubDate>Sun, 17 Jan 2021 00:00:00 +0800</pubDate>
+      <gui>http://gudong.site/2021/01/17/custom-lint.html</gui>
+    </item>
+    <item>
+      <title>掰腕子差点输给侄子</title>
+      <link>http://gudong.site/2020/12/30/guwocheng.html</link>
+      <description>从去年疫情开始，生活的节奏就逐渐被打乱了，加上后面复工后开始加班，所以之前每天坚持的一些习惯都被冲击的乱七八糟。尤其是俯卧撑，去年应该有连续半年每天都做100俯卧撑，每天早晨洗漱完毕后，做十组，当时还特意从软件市场找了一个循环倒计时的...</description>
+      <pubDate>Wed, 30 Dec 2020 00:00:00 +0800</pubDate>
+      <gui>http://gudong.site/2020/12/30/guwocheng.html</gui>
+    </item>
+    <item>
+      <title>图片压缩库 compressor | DS</title>
+      <link>http://gudong.site/2020/12/20/compress.html</link>
+      <description>compressor是一个Android平台上的开源图片压缩库，使用它，可以对本地图片进行压缩，与此同时，还提供了各种压缩参数的设置选项。使用valcompressedImageFile=Compressor.compress(con...</description>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0800</pubDate>
+      <gui>http://gudong.site/2020/12/20/compress.html</gui>
+    </item>
+    <item>
+      <title>今晚去打球 | Daily 11/27</title>
+      <link>http://gudong.site/2020/11/27/basketball-time.html</link>
+      <description>已经三周没打球了。往常，每周都会打两次左右，一般都是工作日的中午，会去公司附近的球场打球。但是这几周太忙了，中午也没有时间去，倒不是中午也在工作，主要是整天事情很多，晚上回去也晚，所以中午还需要休息。跟往年不一样，以前时到年末的时候，...</description>
+      <pubDate>Fri, 27 Nov 2020 00:00:00 +0800</pubDate>
+      <gui>http://gudong.site/2020/11/27/basketball-time.html</gui>
+    </item>
+    <item>
+      <title>写了一个 Android 订阅软件 | Daily 11/21</title>
+      <link>http://gudong.site/2020/11/21/rss.html</link>
+      <description>之前，自己也会用一些市面上的订阅软件，比如Inoreader，Rolly等，但是前者不稳定，需要fq，后者，个人觉得操作有点奇怪，我理解订阅软件的首页都应该是信息流，而不是订阅源流。对于订阅软件，自己的需求比较简单，订阅+阅读，后来从...</description>
+      <pubDate>Sat, 21 Nov 2020 00:00:00 +0800</pubDate>
+      <gui>http://gudong.site/2020/11/21/rss.html</gui>
+    </item>
+    <item>
+      <title>战争的一些思考 | Daily 10/17</title>
+      <link>http://gudong.site/2020/10/17/war.html</link>
+      <description>以前打仗、发动战争，图的是对方国家的资源，比如金矿、煤矿以及经济作物等，这些资源可以通过战争快速获得，所以战争可以让国家利益最大化。进入现代社会，一个国家的主要资源不在聚集在哪些物质类的东西，更多的是科技，银行，人才等，所以发动传统的...</description>
+      <pubDate>Sat, 17 Oct 2020 00:00:00 +0800</pubDate>
+      <gui>http://gudong.site/2020/10/17/war.html</gui>
+    </item>
+    <item>
+      <title>一个大胆的想法 | Daily 10/13</title>
+      <link>http://gudong.site/2020/10/13/berak.html</link>
+      <description>早晨大脑中闪现出了一种对自己极具吸引力的生活方式：辞职，给自己放一年假，不工作，并计算设定好一年的基础开支。然后这一年纯粹做自己喜欢的事，比如开发app，写文章（每日经历以及一些思考），去游历，去没去过的地方。体验完一年，再继续决定要...</description>
+      <pubDate>Tue, 13 Oct 2020 00:00:00 +0800</pubDate>
+      <gui>http://gudong.site/2020/10/13/berak.html</gui>
+    </item>
+    <item>
+      <title>湖人总冠军 | Daily 10/12</title>
+      <link>http://gudong.site/2020/10/12/fmvp.html</link>
+      <description>今天湖人夺冠了，“湖人总冠军”终于不在是一个口号，而是2020一个特殊的标记。一些人质疑今年缩水赛季的总冠军含量，但总冠军本身就是一种肯定，质疑含金量确实有点伪球迷吹毛求疵的感觉。湖人一路在詹姆斯跟浓眉的带领下，取得了最终的胜利，一路...</description>
+      <pubDate>Mon, 12 Oct 2020 00:00:00 +0800</pubDate>
+      <gui>http://gudong.site/2020/10/12/fmvp.html</gui>
+    </item>
+    <item>
+      <title>岁月在变迁，亲人都安好—2020十一假期</title>
+      <link>http://gudong.site/2020/10/10/2020shiyi.html</link>
+      <description>回家总是高兴的今年十一因为要回家办事，所以提前请了四天假，27号便启程了，机票价格合适，这次定了机票，跟老妈、孩子一起坐飞机回去。这次是自己第一次跟儿子一起做飞机。他很喜欢坐飞机，一路上奔奔跳跳，高兴的不得了，上飞机后主动系好安全带，...</description>
+      <pubDate>Sat, 10 Oct 2020 00:00:00 +0800</pubDate>
+      <gui>http://gudong.site/2020/10/10/2020shiyi.html</gui>
+    </item>
+    <item>
+      <title>发现自己的无知 | Daily 09/15</title>
+      <link>http://gudong.site/2020/09/15/humam-think.html</link>
+      <description>《人类简史》中有一个有意思的问题。作者问道，为什么最先征服澳洲的是欧洲人，而不是中国人、印度人或者土耳其帝国等亚洲区域的人。事实上，在十七、十八世纪，欧洲的航海等科学技术跟中国等亚洲国家差距并不大，而且，亚洲距离离澳洲更近。作者的答案...</description>
+      <pubDate>Tue, 15 Sep 2020 00:00:00 +0800</pubDate>
+      <gui>http://gudong.site/2020/09/15/humam-think.html</gui>
+    </item>
+    <item>
+      <title>读一篇博文想到的 | Daily 07/01</title>
+      <link>http://gudong.site/2020/07/01/blog.html</link>
+      <description>今天在寻我看到一个博主的文章—我过去一年的卖货经历，他在文末提到了别人说的一句话。Saythisaloud:IdeservetomakealivingdoingwhatIlove大声说出来，我应该通过做我喜欢的事去谋生下去。这是一种不...</description>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0800</pubDate>
+      <gui>http://gudong.site/2020/07/01/blog.html</gui>
+    </item>
+    <item>
+      <title>公众号点赞又回来了 | Daily 06/29</title>
+      <link>http://gudong.site/2020/06/29/likeback.html</link>
+      <description>记得一开始微信把公众号的点赞改为“在看”后，很多人都惊呼这一举措，“在看在微信生态内构建了一个新的信息分发渠道”，同时也引起了“机器推荐”与“好友推荐”，孰优孰劣的讨论，个人觉得“在看”对创作者更有利，点赞对读者更友好。有时看到不错的...</description>
+      <pubDate>Mon, 29 Jun 2020 00:00:00 +0800</pubDate>
+      <gui>http://gudong.site/2020/06/29/likeback.html</gui>
+    </item>
+  </channel>
+</rss>

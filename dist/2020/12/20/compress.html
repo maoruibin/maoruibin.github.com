@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>图片压缩库 compressor | DS-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="图片压缩库 compressor | DS"/>
+  <meta name="keywords" content="咕咚,tech"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="图片压缩库 compressor | DS">图片压缩库 compressor | DS</h1>
+  
+  <div class="subtitle">咕咚 于 2020-12-20 发布</div>
+  
+  <div class="post">
+    <p><a href="https://github.com/zetbaitsu/Compressor">compressor</a> 是一个 Android 平台上的开源图片压缩库，使用它，可以对本地图片进行压缩，与此同时，还提供了各种压缩参数的设置选项。</p>
+
+<h2 id="使用">使用</h2>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">compressedImageFile</span> <span class="p">=</span> <span class="nc">Compressor</span><span class="p">.</span><span class="nf">compress</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">actualImageFile</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">resolution</span><span class="p">(</span><span class="m">1280</span><span class="p">,</span> <span class="m">720</span><span class="p">)</span>
+    <span class="nf">quality</span><span class="p">(</span><span class="m">80</span><span class="p">)</span>
+    <span class="nf">format</span><span class="p">(</span><span class="nc">Bitmap</span><span class="p">.</span><span class="nc">CompressFormat</span><span class="p">.</span><span class="nc">WEBP</span><span class="p">)</span>
+    <span class="nf">size</span><span class="p">(</span><span class="m">2</span><span class="n">_097_152</span><span class="p">)</span> <span class="c1">// 2 MB</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>输入一个正常的图片文件，并设置压缩质量，以及格式化类型、最大压缩质量。</p>
+
+<p>输出压缩后的图片文件，该文件默认存储应用的沙盒目录下。</p>
+
+<h2 id="核心">核心</h2>
+
+<h3 id="压缩实现">压缩实现</h3>
+
+<p>该库得功能微压缩图片，具体是通过 Bitmap 自身提供的 compress 方法进行压缩，但是这个方法有一定的限制，具体看 ##细节</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bitmap</span><span class="p">.</span><span class="nf">compress</span><span class="p">(</span><span class="n">format</span><span class="p">,</span> <span class="n">quality</span><span class="p">,</span> <span class="n">fileOutputStream</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="压缩参数组合">压缩参数组合</h3>
+
+<p>通过单例类 <code class="highlighter-rouge">Compressor</code> 的 <code class="highlighter-rouge">compress </code>方法入口先指定目标压缩文件，具体压缩参数控制是通过第四个参数 compressionPatch 控制，它有一个默认的实现 DefaultConstraint.default()，所以如果不指定其他设置，默认设置就会生效。</p>
+
+<p>此外，当设置了自定义的压缩参数设置，这些参数设置项都会保存在 Compression 的 constraints 集合中，这是一个图片压缩参数的抽象接口集合，然后遍历参数集合，并调用的实现。</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">compression</span><span class="p">.</span><span class="n">constraints</span><span class="p">.</span><span class="nf">forEach</span> <span class="p">{</span> <span class="n">constraint</span> <span class="p">-&gt;</span>
+    <span class="c1">//该策略是否满足条件</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">constraint</span><span class="p">.</span><span class="nf">isSatisfied</span><span class="p">(</span><span class="n">result</span><span class="p">).</span><span class="nf">not</span><span class="p">())</span> <span class="p">{</span>
+      	<span class="c1">//如果不满足，就进行处理</span>
+        <span class="n">result</span> <span class="p">=</span> <span class="n">constraint</span><span class="p">.</span><span class="nf">satisfy</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>这样<strong>每一个压缩参数的实现结果，都会作为接下来压缩参数的输入，从而达到链式调用的效果</strong>，一步一步，让所有的参数设置在一个图片源文件上生效。</p>
+
+<h3 id="压缩参数接口">压缩参数接口</h3>
+
+<p>Constraint 接口是该库的核心，也是一个很巧妙的设计。</p>
+
+<p>通常来讲，对于图片压缩，我们可以按照面向过程的思想，只需要定义一个方法，然后在方法中对图片压缩质量、压缩格式、输出位置等按个进行处理，最终进行压缩，这样代码逻辑就会集中在一块里，这样的设计对后续代码的维护并不好，而且不具备模块性，整个是一个大块，看着也不是很优雅。</p>
+
+<p>该库通过 Constraint 的接口很优雅的解决了这个问题。</p>
+
+<p>不同的压缩参数，自己去实现自己的压缩方案，这个接口提供了两个方法：</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">interface</span> <span class="nc">Constraint</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">isSatisfied</span><span class="p">(</span><span class="n">imageFile</span><span class="p">:</span> <span class="nc">File</span><span class="p">):</span> <span class="nc">Boolean</span>
+    <span class="k">fun</span> <span class="nf">satisfy</span><span class="p">(</span><span class="n">imageFile</span><span class="p">:</span> <span class="nc">File</span><span class="p">):</span> <span class="nc">File</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>第一个方法是 isSatisfied，它用于<strong>判断当前图片文件是否已经满足参数设置条件</strong>，如果已经满足，就不执行 satisfy 方法，否则就执行 satisfy 方法，satisfy 方法用于具体的压缩选项设置。</p>
+
+<p>比如 FormatConstraint 的实现，这是指定压缩格式的实现类，如果当前图片已经是指定的格式，就进行处理，否则不处理。</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">FormatConstraint</span><span class="p">(</span><span class="k">private</span> <span class="kd">val</span> <span class="py">format</span><span class="p">:</span> <span class="nc">Bitmap</span><span class="p">.</span><span class="nc">CompressFormat</span><span class="p">)</span> <span class="p">:</span> <span class="nc">Constraint</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">isSatisfied</span><span class="p">(</span><span class="n">imageFile</span><span class="p">:</span> <span class="nc">File</span><span class="p">):</span> <span class="nc">Boolean</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">format</span> <span class="p">==</span> <span class="n">imageFile</span><span class="p">.</span><span class="nf">compressFormat</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">satisfy</span><span class="p">(</span><span class="n">imageFile</span><span class="p">:</span> <span class="nc">File</span><span class="p">):</span> <span class="nc">File</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nf">overWrite</span><span class="p">(</span><span class="n">imageFile</span><span class="p">,</span> <span class="nf">loadBitmap</span><span class="p">(</span><span class="n">imageFile</span><span class="p">),</span> <span class="n">format</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>这里当检测到当前图片的格式不是指定的格式，就会执行 <code class="highlighter-rouge">satisfy</code> 方法，<code class="highlighter-rouge">satisfy</code> 方法中执行具体的压缩，纵观其他几个参数策略的实现，它们大都是通过 <code class="highlighter-rouge">overWriter</code> 去进行具体的图片参数设置。</p>
+
+<h3 id="overwrite-的实现">overWrite 的实现</h3>
+
+<ul>
+  <li>检查图片格式是否跟指定格式一致，否则更改图片名称后缀</li>
+  <li>删除临时的本地图片文件</li>
+  <li>使用新参数对 Bitmap 进行压缩、处理，并保存到新的临时文件并返回</li>
+</ul>
+
+<p>代码如下所示：</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">overWrite</span><span class="p">(</span><span class="n">imageFile</span><span class="p">:</span> <span class="nc">File</span><span class="p">,</span> <span class="n">bitmap</span><span class="p">:</span> <span class="nc">Bitmap</span><span class="p">,</span> <span class="n">format</span><span class="p">:</span> <span class="nc">Bitmap</span><span class="p">.</span><span class="nc">CompressFormat</span> <span class="p">=</span> <span class="n">imageFile</span><span class="p">.</span><span class="nf">compressFormat</span><span class="p">(),</span> <span class="n">quality</span><span class="p">:</span> <span class="nc">Int</span> <span class="p">=</span> <span class="m">100</span><span class="p">):</span> <span class="nc">File</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">result</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">format</span> <span class="p">==</span> <span class="n">imageFile</span><span class="p">.</span><span class="nf">compressFormat</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">imageFile</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nc">File</span><span class="p">(</span><span class="s">"${imageFile.absolutePath.substringBeforeLast("</span><span class="p">.</span><span class="s">")}.${format.extension()}"</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="n">imageFile</span><span class="p">.</span><span class="nf">delete</span><span class="p">()</span>
+    <span class="nf">saveBitmap</span><span class="p">(</span><span class="n">bitmap</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">format</span><span class="p">,</span> <span class="n">quality</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">saveBitmap</code> 方法具体就是调用 Bitmap 的 compress 方法进行压缩。</p>
+
+<h2 id="拆分">拆分</h2>
+
+<ul>
+  <li>Constraint 压缩参数设置的抽象接口，每一种压缩策略必须实现该接口</li>
+  <li>Compressor 压缩门面类，入口类，只提供一个 方法，用于让调用者设置不同的压缩选项，并启动压缩。
+    <ul>
+      <li>Compression 一个用于盛放不同 Constraint 的集合</li>
+    </ul>
+  </li>
+  <li>不同压缩策略的实现类
+    <ul>
+      <li>DefaultConstraint 默认压缩参数的实现</li>
+      <li>DestinationConstraint 指定压缩文件输出的文件位置</li>
+      <li>FormatConstraint 指定文件最终输出的压缩格式</li>
+      <li>QualityConstraint 指定压缩质量</li>
+      <li>ResolutionConstraint 指定图片宽高值</li>
+      <li>SizeConstraint 指定图片最终的压缩大小</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="细节">细节</h2>
+
+<ul>
+  <li>压缩质量设置对 PNG图片无效。</li>
+</ul>
+
+<blockquote>
+  <p>这是由于 Bitmap 自身的压缩限制，它提供的 compress 方法，即使设置了压缩质量，但是对 PNG 格式无效。</p>
+
+  <p>from Bitmap#compress 参数介绍</p>
+</blockquote>
+
+<ul>
+  <li>如何实现指定大小的压缩 #SizeConstraint</li>
+</ul>
+
+<blockquote>
+  <p>设置文件最大质量，如果当前文件大小大于最大质量，则继续进行压缩，具体通过设置图片采样率进行压缩，并设置最低采样率为10，另外设置了压缩次数，如果超过了指定的压缩次数，还没有达到大小，则不再压缩，技即使图片质量还没有达到目标值。</p>
+</blockquote>
+
+<h2 id="不足">不足</h2>
+
+<p>从上面 <code class="highlighter-rouge">overWrite</code> 方法的实现可以看到，每一次压缩参数的生效，都会伴随上一个缓存文件的删除，以及下一个临时文件的生成，这样可能导致压缩会产生比较多的 IO 开销。</p>
+
+<p>但这是一种博弈，这样的好处，是把不同的压缩参数实现拆分到不同的模块类，让代码结构更清晰，而且在我开发<a href="https://www.coolapk.com/apk/name.gudong.pic">咕咚云图</a>（一个手机图床）的过程中，并没有发现 IO 开销导致什么问题，所以，相比这样设计为代码带来的简洁以及可维护性，这样的 IO 开销可以忽略。</p>
+
+<blockquote>
+  <p>咕咚 DeepSource 2020/12/03</p>
+</blockquote>
+
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

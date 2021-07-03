@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Daily11/18 - 给稍后阅读升个级-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content=" Daily11/18 - 给稍后阅读升个级"/>
+  <meta name="keywords" content="咕咚,daily"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id=" Daily11/18 - 给稍后阅读升个级"> Daily11/18 - 给稍后阅读升个级</h1>
+  
+  <div class="subtitle">咕咚 于 2019-11-18 发布</div>
+  
+  <div class="post">
+    <p>今天周一，改 bug，调 UI，单调的一天。午饭后听书，在大厦内部绕着大厦转了好几圈，以后只要中午不打球，就争取转圈听书，这会是一个不错的习惯。</p>
+
+<p>另外，这段时间的感悟是，不论听书、看书一定要强制自己写笔记，不论笔记多少。</p>
+
+<hr />
+
+<p>下午空闲时间继续折腾 WebDAV。准备把我之前做的<a href="https://gudong.site/2019/06/06/about-readlater.html">稍后阅读</a>升级一下，简单说下稍后阅读是一个什么 APP。</p>
+
+<p>在手机上浏览各种信息时，有时遇到好的文章可能没法及时阅读，那么这时就可以用稍后阅读 APP 把文章暂时收到待阅读列表，这样，在自己空闲的时候再去继续阅读，效果可能更好。</p>
+
+<p>使用场景很简单，其实不少人用微信的文件传输助手做同样的事，不过我觉得用一个 APP 管理更好，所以自己就在顺带学习 Kotlin 时把 APP 开发了。</p>
+
+<p><img src="https://i.loli.net/2019/11/18/3fgsK7ewvDhkNnC.jpg" alt="" /></p>
+
+<p>之前的版本里，APP 中的文章数据完全存储在本地数据库，这样只要数据清了，所有的文章就都没了，所以这里需要一个备份机制，用来备份自己的文章。</p>
+
+<p>现在计划开发把文章导出为文本文件的功能，然后再用坚果云对备份文件云同步，妥妥的…（未来的高级付费功能？？[阴脸笑]）。</p>
+
+<hr />
+
+<p>写代码时状态很好，又没人打扰，效率很高，但是往往一旦进入这种状态，其他计划好的事情就被自己拖延了，一旦拖延，正常的节奏就可能被破坏。（写这篇日志时，还是强拉着自己写的。<a href="https://gudong.site/2019/11/14/tomoto-meeting.html">为什么写日志</a>）</p>
+
+<p>稳定高于一切，工作、生活的节奏都是如此，还是应该<strong>尽力去让每天要做的事情形成惯例，这样才可以更好的控制工作、生活的节奏</strong>。</p>
+
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

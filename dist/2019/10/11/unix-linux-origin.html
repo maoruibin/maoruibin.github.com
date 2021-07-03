@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Unix 与 Linux 操作系统的源头历史-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="Unix 与 Linux 操作系统的源头历史"/>
+  <meta name="keywords" content="咕咚,note"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="Unix 与 Linux 操作系统的源头历史">Unix 与 Linux 操作系统的源头历史</h1>
+  
+  <div class="subtitle">咕咚 于 2019-10-11 发布</div>
+  
+  <div class="post">
+    <p>本文是自己看<a href="http://cn.linux.vbird.org/linux_basic/0110whatislinux.php#whatislinux_unix#">鸟哥的 Linux 私房菜 -- Linux是什么？从Linux的历史谈起 </a>的摘录，对原文做了部分摘录，并加以自己的注释。感谢鸟哥的文章。</p>
+
+<h2 id="unix-起源">Unix 起源</h2>
+
+<blockquote>
+  <p>60 年代，为了强化大型主机的功能，让主机的资源更好的被利用，在 1965 年前后， 由贝尔实验室 (Bell)、麻省理工学院 (MIT) 及奇异公司 (GE, 或称为通用电器) 共同发起了 <strong>Multics</strong> 的计划， Multics 计划的目的是想要<strong>让大型主机可以达成提供 300 个以上的终端机联机使用的目标</strong>。 不过，到了 1969 年前后，计划进度落后，资金也短缺，所以该计划虽然继续在研究，但贝尔实验室还是退出了该计划的研究工作。</p>
+</blockquote>
+
+<p>一个大项目失败了。失败其实是常态，成功不易。</p>
+
+<blockquote>
+  <p>在认为 Multics 计划不可能成功之后，<a href="http://www.bell-labs.com/">贝尔研究室</a>就退出该计划。不过，原本参与 Multics 计划的人员中，已经从该计划当中获得一些点子， <a href="http://plan9.bell-labs.com/cm/cs/who/ken/index.html">Ken Thompson</a> 就是其中一位！</p>
+</blockquote>
+
+<p>即使失败，但是参与的过程中，参与的人一定有收获。</p>
+
+<blockquote>
+  <p>Thompson 因为自己的需要，希望开发一个小的操作系统以满足自己的需求。 在开发时，有一部 DEC (Digital Equipment Corporation) 公司推出的 PDP-7 刚好没人使用， 于是他就准备针对这部主机进行操作系统核心程序的撰写。</p>
+
+  <p>本来 Thompson 应该是没时间的 (有家有小孩的宿命？)， 巧的是，在 1969 年八月份左右，刚好 Thompson 的妻儿去了美西探亲， 于是他有了额外的一个月的时间好好的待在家将一些构想实现出来！</p>
+</blockquote>
+
+<p>巧了，Unix 应该给 Thompson 媳妇发一份感谢信。</p>
+
+<blockquote>
+  <p>经过四个星期的奋斗，他终于以汇编语言 (Assembler) 写出了一组核心程序，同时包括一些核心工具程序， 以及一个小小的文件系统。那个系统就是 Unix 的原型！ 当时 Thompson 将 Multics 庞大的复杂系统简化了不少，于是同实验室的朋友都戏称这个系统为：Unics。</p>
+</blockquote>
+
+<p>一开始的 Unix 雏形使用汇编语言写的，厉害厉害，不过那时可选择的语言也并不多。</p>
+
+<blockquote>
+  <p>由于 Thompson 写的那个操作系统实在太好用了，所以在贝尔实验室内部广为流传，并且数度经过改版。 但是因为 Unics 本来是以汇编语言写成的，而汇编语言跟硬件平台有关，不同的平台指令，加上当时的计算机机器架构都不太相同，所以每次要安装到不同的机器都得要重新编写汇编语言，真不方便！</p>
+</blockquote>
+
+<p>是的，非常麻烦，汇编语言没有可移植性，还是要高阶的语言写操作系统才合适。</p>
+
+<blockquote>
+  <p>后来 Thompson 与 Ritchie 合作想将 Unics 改以高阶程序语言来撰写。当时现成的高阶程序语言有 B 语言。 但是由 B 语言所编译出来的核心效能不是很好。后来 <a href="http://cm.bell-labs.com/cm/cs/who/dmr/">Dennis Ritchie</a> 将 B 语言重新改写成 C 语言，再以 C 语言重新改写与编译 Unics 的核心， 最后正名与发行出 Unix 的正式版本！</p>
+</blockquote>
+
+<p>正式发行的 Unix 是 C 语言实现的。这很重要，这样他的可移植性大大增加。</p>
+
+<blockquote>
+  <p>由于贝尔实验室是隶属于美国电信大厂 <a href="http://www.att.com/">AT&amp;T</a> 公司的， 只是 AT&amp;T 当时忙于其他商业活动，对于 Unix 并不支持也不排斥。此外，Unix 在这个时期的发展者都是贝尔实验室的工程师， 这些工程师对于程序当然相当有研究，所以，Unix 在此时当然是不容易被一般人所接受的！</p>
+</blockquote>
+
+<p>那时应该还没有产品经理一职吧，Unix 的产品经理就是那些工程师，牛逼…</p>
+
+<p>另外，原来贝尔实验室是电信公司 AT&amp;T 下面的，贝尔实验室真是出了不少出名的东西，计算机界的活化石。</p>
+
+<blockquote>
+  <p>虽然贝尔属于 AT&amp;T，但是 AT&amp;T 此时对于 Unix 是采取较开放的态度，此外，Unix 是以高阶的 C 语言写成的， 理论上是具有可移植性的！亦即只要取得 Unix 的源代码，并且针对大型主机的特性加以修订原有的源代码 (Source Code)， 就可能将 Unix 移植到另一部不同的主机上头了。所以在 1973 年以后，Unix 便得以与学术界合作开发！ 最重要的接触就是与加州柏克莱 (Berkeley) 大学的合作了。</p>
+</blockquote>
+
+<blockquote>
+  <p>柏克莱大学的 Bill Joy 在取得了 Unix 的核心原代码后，着手修改成适合自己机器的版本， 并且同时增加了很多工具软件与编译程序，最终将它命名为 Berkeley Software Distribution (BSD)。这个 BSD 是 Unix 很重要的一个分支，Bill Joy 也是 Unix 业者『Sun (升阳)』这家公司的创办者！ Sun 公司即是以 BSD 发展的核心进行自己的商业 Unix 版本的发展的。</p>
+</blockquote>
+
+<p>Mac OX 也是源自 Unix 的 BSD 分支，只是 BSD 允许闭源，所以 Mac OS 闭源的。</p>
+
+<p>Unix 越来越火，与此同时，商业纠纷也越来越多。</p>
+
+<blockquote>
+  <p>因为 AT&amp;T 由于商业的考虑，以及在当时现实环境下的思考，于是想将 Unix 的版权收回去。因此， AT&amp;T 在 1979 年发行的第七版 Unix 中，特别提到了 <strong>『不可对学生提供原始码』</strong>的严格限制！ 同时，也造成 Unix 业界之间的紧张气氛，并且也引爆了很多的商业纠纷～</p>
+</blockquote>
+
+<p>不是很明白为什么要对学生禁止。</p>
+
+<blockquote>
+  <p>1979 年的版权声明中，影响最大的当然就是学校教 Unix 核心原始码相关学问的教授了！ 如果没有核心原始码，那么如何教导学生认识 Unix 呢？这问题对于 Andrew Tanenbaum 教授来说，实在是很伤脑筋的！不过，学校的课程还是得继续啊！那怎么办？</p>
+</blockquote>
+
+<blockquote>
+  <p>既然 1979 年的 Unix 第七版可以在 Intel 的 x86 架构上面进行移植， 那么是否意味着可以将 Unix 改写并移植到 x86 上面了呢？在这个想法上， Tanenbaum教授于是乎自己动手写了 Minix 这个 Unix Like 的核心程序！ 在撰写的过程中，为了避免版权纠纷，Tanenbaum完全不看 Unix 核心原始码！ 并且强调他的 Minix 必须能够与 Unix 兼容才行！Tanenbaum在 1984 年开始撰写核心程序， 到了 1986 年终于完成。</p>
+</blockquote>
+
+<p>没有出路自己就创造道路，况且能用代码解决的问题都不算大问题。 Minix 花了两年完成，非常棒啊。</p>
+
+<blockquote>
+  <p>这个 Minix 版本比较有趣的地方是，他并不是完全免费的，无法在网络上提供下载！ ** 必须要透过磁盘 / 磁带购买才行！** 虽然真的很便宜～不过，毕竟因为没有在网络上流传， 所以 Minix 的传递速度并没有很快速！此外，购买时，随磁盘还会附上 Minix 的原始代码！ 这意味着使用者可以学习 Minix 的核心程序设计概念喔！ (这个特色对于 Linux 的启始开发阶段，可是有很大的关系喔！)</p>
+
+  <p>此外，Minix 操作系统的开发者仅有 Tanenbaum 教授，因为学者很忙啊！加上 Tanenbaum 始终认为 Minix 主要用在教育用途上面， 所以对于 Minix 是点到为止！</p>
+</blockquote>
+
+<p>其实是可以理解的。教授的时间有限，能开发出来已经不错，那先发扬光大的事交给学生做更好。</p>
+
+<h2 id="gnu-计划与-fsf-基金会的成立">GNU 计划与 FSF 基金会的成立</h2>
+
+<blockquote>
+  <p>Richard Mathew Stallman (史托曼) 在 1984 年发起的 GNU 计划，对于现今的自由软件风潮， 真有不可磨灭的地位！目前我们所使用得很多自由软件，几乎均直接或间接受益于 GNU 这个计划呢！ 那么史托曼是何许人也？为何他会发起这个 GNU 计划呢？</p>
+</blockquote>
+
+<p>Stallman 可以称为自由软件鼻祖。他崇尚自由软件。</p>
+
+<blockquote>
+  <p><a href="http://www.stallman.org/">Richard Mathew Stallman</a>(生于 1953 年， 网络上自称的 ID 为 RMS) 从小就很聪明！他在 1971 年的时候，进入黑客圈中相当出名的人工智能实验室 (AI Lab.)</p>
+
+  <p>当时的黑客圈对于软件的着眼点几乎都是在 <strong>『分享』</strong>，所以并没有专利方面的困扰！ 这个特色对于史托曼的影响很大！</p>
+
+  <p>不过，后来由于管理阶层的问题，导致实验室的优秀黑客离开该实验室， 并且进入其他商业公司继续发展优秀的软件。但史托曼并不服输，仍然持续在原来的实验室开发新的程序与软件。 后来，他发现到，自己一个人并无法完成所有的工作，于是想要成立一个开放的团体来共同努力！</p>
+</blockquote>
+
+<p>一个人的力量是渺小的，要干大事一定需要一个团队。</p>
+
+<blockquote>
+  <p>1983 年以后，因为实验室硬件的更换，使得史托曼无法继续以原有的硬件与操作系统继续自由程序的撰写～ 而且他进一步发现到，过去他所使用的 Lisp 操作系统，是麻省理工学院的<strong>专利软件， 是无法共享的</strong>，这对于想要成立一个开放团体的史托曼是个阻碍。</p>
+
+  <p>于是他便放弃了 Lisp 这个系统。 后来，他接触到 Unix 这个系统，并且发现，Unix 在理论与实际上，都可以在不同的机器间进行移植。虽然 Unix 依旧是专利软件， 但至少 Unix 架构上还是比较开放的！于是他开始转而使用 Unix 系统。</p>
+
+  <p>因为 Lisp 与 Unix 是不同的系统，所以，他原本已经撰写完毕的软件是无法在 Unix 上面运行的！为此， 他就开始将软件移植到 Unix 上面。并且，为了让软件可以在不同的平台上运作， 因此，史托曼将他发展的软件均撰写成可以移植的型态！也就是他都会将程序的原始代码公布出来！</p>
+</blockquote>
+
+<p>能感觉到 Stallman 是一个非常 open 的人。</p>
+
+<blockquote>
+  <p>1984 年，史托曼开始 <a href="http://www.gnu.org/">GNU</a> 计划， 这个计划的目的是：<strong>建立一个自由、开放的 Unix 操作系统 (Free Unix)。</strong> 但是建立一个操作系统谈何容易啊！而且在当时的 GNU 是仅有自己一个人单打独斗的史托曼～ 这实在太麻烦，但又不想放弃这个计划，那可怎么办啊？</p>
+
+  <p>聪明的史托曼干脆反其道而行～『既然操作系统太复杂，我就先写可以在 Unix 上面运行的小程序，这总可以了吧？』在这个想法上， 史托曼开始参考 Unix 上面现有的软件，并依据这些软件的作用开发出功能相同的软件，且开发期间史托曼绝不看其他软件的源代码， 以避免吃上官司。后来一堆人知道免费的 GNU 软件，并且实际使用后发现与原有的专利软件也差不了太多，于是便转而使用 GNU 软件， 于是 GNU 计划逐渐打开知名度。</p>
+</blockquote>
+
+<p>联合大家的力量，让 Unix 变得 open</p>
+
+<blockquote>
+  <p>虽然 GNU 计划渐渐打开知名度，但是能见度还是不够。这时史托曼又想：不论是什么软件， 都得要进行编译成为二进制文件 (binary program) 后才能够执行，如果能够写出一个不错的编译程序，那不就是大家都需要的软件了吗？ 因此他便开始撰写 C 语言的编译程序，那就是现在相当有名的 GNU C Compiler (gcc)！ 这个点相当的重要！这是因为 C 语言编译程序版本众多，但都是专利软件， 如果他写的 C 编译程序够棒，效能够佳，那么将会大大的让 GNU 计划出现在众人眼前！</p>
+</blockquote>
+
+<p>原来 GCC 就是这样来的，它是一个编译软件。</p>
+
+<blockquote>
+  <p>到了 1985 年，为了避免 GNU 所开发的自由软件被其他人所利用而成为专利软件， 所以他与律师草拟了有名的通用公共许可证 (General Public License, GPL)， 并且称呼他为 copyleft (相对于专利软件的 copyright！)。</p>
+
+  <p>而为了避免自己的开发出来的 Open source 自由软件被拿去做成专利软件， 于是 Stallman 同时将 GNU 与 FSF 发展出来的软件，都挂上 GPL 的版权宣告～ 这个 FSF 的核心观念是『版权制度是促进社会进步的手段， 版权本身不是自然权力。</p>
+</blockquote>
+
+<p>这是一个厉害人，他非常清楚自己要做什么，他所有做的事都在围绕着自己的目标。GPL 应该是限制最宽泛的软件许可证。</p>
+
+<h3 id="自由软件活动">自由软件活动</h3>
+
+<blockquote>
+  <p>1984 年创立 GNU 计划与 FSF 基金会的 Stallman 先生认为，<strong>写程序最大的快乐就是让自己发展的良好的软件让大家来使用了！</strong> 而既然程序是想要分享给大家使用的，不过，每个人所使用的计算机软硬件并不相同， 既然如此的话，那么该程序的源代码 (Source code) 就应该要同时释出， 这样才能方便大家修改而适用于每个人的计算机中呢！这个将源代码连同软件程序释出的举动， 就称为自由软件 (Free Software) 运动！</p>
+
+  <p>此外，史托曼同时认为，如果你将你程序的 Source code 分享出来时，若该程序是很优秀的，那么将会有很多人使用， 而每个人对于该程序都可以查阅 source code，无形之中，就会有一票人帮你除错啰！ 你的这支程序将会越来越壮大！越来越优秀呢！</p>
+</blockquote>
+
+<p>是的，就是这种分享精神，分享让我快乐，让我觉得自己的价值被体现。</p>
+
+<h2 id="linux-出世">Linux 出世</h2>
+
+<blockquote>
+  <p><a href="http://en.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a>(托瓦兹，1969 年出生) 的外祖父是赫尔辛基大学的统计学家， 他的外祖父为了让自己的小孙子能够学点东西，所以从小就将托瓦兹带到身边来管理一些微计算机。 在这个时期，托瓦兹接触了汇编语言 (Assembly Language)，那是一种直接与芯片对谈的程序语言，也就是所谓的低级语言。 必须要很了解硬件的架构，否则很难以汇编语言撰写程序的。</p>
+</blockquote>
+
+<p>一个人的家庭环境对自己日后的影响真大，所以家庭很重要，孩子的好奇心也很重要。</p>
+
+<blockquote>
+  <p>在 1988 年间，托瓦兹顺利的进入了赫尔辛基大学，并选读了计算机科学系。在就学期间，因为学业的需要与自己的兴趣， 托瓦兹接触到了 Unix 这个操作系统。当时整个赫尔辛基只有一部最新的 Unix 系统，同时仅提供 16 个终端机 (terminal)。 还记得我们上一节刚刚提过的，早期的计算机仅有主机具有运算功能，terminal 仅负责提供 Input/Output 而已。在这种情况下， 实在很难满足托瓦兹的需求，因为….. 光是等待使用 Unix 的时间，就很耗时～为此，他不禁想到： 『我何不自己搞一部 Unix 来玩？』不过，就如同 Stallman 当初的 GNU 计划一样，要写核心程序，谈何容易～</p>
+</blockquote>
+
+<p>爱玩的 Torvalds ，也是一个很能折腾的人啊…</p>
+
+<blockquote>
+  <p>不过，幸运之神并未背离托瓦兹，因为不久之后，他就知道有一个类似 Unix 的系统， 并且与 Unix 完全兼容，还可以在 Intel 386 机器上面跑的操作系统， 那就是我们上一节提过的，Tanenbaum 教授为了教育需要而撰写的 Minix 系统！ 他在购买了最新的 Intel 386 的个人计算机后，就立即安装了 Minix 这个操作系统。</p>
+</blockquote>
+
+<p>这时 Torvalds 跟其他 Minix 爱好者一样，都是拿到他折腾，在 Linus 的折腾下，当时的 minix 已经可以支持多任务了。</p>
+
+<blockquote>
+  <p>探索完了 386 的硬件之后，终于拿到 Minix 并且安装在托瓦兹的 386 计算机上之后，托瓦兹跟 BBS 上面一堆工程师一样， 他发现 Minix 虽然真的很棒，但是 Tanenbaum 教授就是不愿意进行功能的加强，导致一堆工程师在操作系统功能上面的欲求不满！ 这个时候年轻的托瓦兹就想：『既然如此，那我何不自己来改写一个我想要的操作系统？』 于是他就开始了核心程序的撰写了。</p>
+</blockquote>
+
+<p>历史会偶尔停下自己的脚步，但是终归还是要向前走…</p>
+
+<blockquote>
+  <p>撰写程序需要什么呢？首先需要的是能够进行工作的环境，再来则是可以将源代码编译成为可执行文件的编译程序。 好在有 GNU 计划提供的 bash 工作环境软件以及 gcc 编译程序等自由软件， 让托瓦兹得以顺利的撰写核心程序。</p>
+</blockquote>
+
+<p>这时候，Linux 的历史条件都已经成熟很多了，就差 Torvalds 来完成最后一步…</p>
+
+<blockquote>
+  <p>他参考 Minix 的设计理念与书上的程序代码，然后仔细研究出 386 个人计算机的效能优化， 然后使用 GNU 的自由软件将核心程序代码与 386 紧紧的结合在一起，最终写出他所需要的核心程序。 而这个小玩意竟然真的可以在 386 上面顺利的跑起来～还可以读取 Minix 的文件系统。 真是太好了！不过还不够，他希望这个程序可以获得大家的一些修改建议， 于是他便将这个核心放置在网络上提供大家下载，同时在 BBS 上面贴了一则消息：</p>
+</blockquote>
+
+<p><a href="https://camo.githubusercontent.com/53cea600e89b9695745d064e4cabaf803dfe242a/68747470733a2f2f747661312e73696e61696d672e636e2f6c617267652f30303679386d4e366c7931673775346366386763336a3330677930346e6a72632e6a7067"><img src="https://camo.githubusercontent.com/53cea600e89b9695745d064e4cabaf803dfe242a/68747470733a2f2f747661312e73696e61696d672e636e2f6c617267652f30303679386d4e366c7931673775346366386763336a3330677930346e6a72632e6a7067" alt="img" /></a></p>
+
+<blockquote>
+  <p>他说，他完成了一个小小的操作系统，这个核心是用在 386 机器上的， 同时，他真的仅是好玩，并不是想要做一个跟 GNU 一样大的计划！ 另外，他希望能够得到更多人的建议与回馈来发展这个操作系统！这个概念跟 Minix 刚好背道而驰呢！ 这则新闻引起很多人的注意，他们也去托瓦兹提供的网站上下载了这个核心来安装。</p>
+</blockquote>
+
+<p>开放是 Linux 成功的前提。</p>
+
+<blockquote>
+  <p>同时，为了让自己的 Linux 能够兼容于 Unix 系统，于是托瓦兹开始将一些能够在 Unix 上面运作的软件拿来在 Linux 上面跑。 不过，他发现到有很多的软件无法在 Linux 这个核心上运作。这个时候他有两种作法， 一种是修改软件，让该软件可以在 Linux 上跑， 另一种则是修改 Linux，让 Linux 符合软件能够运作的规范！ 由于 Linux 希望能够兼容于 Unix，于是托瓦兹选择了第二个作法『修改 Linux』！ 为了让所有的软件都可以在 Linux 上执行，于是托瓦兹开始参考标准的 <a href="http://en.wikipedia.org/wiki/POSIX">POSIX</a> 规范。</p>
+</blockquote>
+
+<p>作为一个有抱负的工程师，面对这个问题，他肯定会选择后者这种方式，因为这样能更彻底的解决问题，对 Linux 长远发展更有价值。况且，这时已经有规范了，所以实现规范一种非常专业的做法。</p>
+
+<blockquote>
+  <p><strong>Tips:</strong>
+POSIX 是可携式操作系统接口 (Portable Operating System Interface) 的缩写，重点在规范核心与应用程序之间的接口， 这是由美国电器与电子工程师学会 (IEEE) 所发布的一项标准喔！</p>
+</blockquote>
+
+<blockquote>
+  <p>这个正确的决定让 Linux 在起步的时候体质就比别人优良～因为 POSIX 标准主要是针对 Unix 与一些软件运行时候的标准规范， 只要依据这些标准规范来设计的核心与软件，理论上，就可以搭配在一起执行了。 而 Linux 的发展就是依据这个 POSIX 的标准规范，Unix 上面的软件也是遵循这个规范来设计的， 如此一来，让 Linux 很容易就与 Unix 兼容共享互有的软件了！同时，因为 Linux 直接放置在网络下，提供大家下载， 所以在流通的速度上相当的快！导致 Linux 的使用率大增！这些都是造成 Linux 大受欢迎的几个重要因素呢！</p>
+</blockquote>
+
+<p>所以大多数情况下，Linux 跟 Unix 的兼容性应该是非常好的。</p>
+
+<p>读完应该知道</p>
+
+<ul>
+  <li>Linux 跟 Unix 完全是两码事，但是间接借鉴了 Unix 的设计</li>
+  <li>Linux 兼容 Unix，很多软件在两个平台均可运行</li>
+</ul>
+
+<p>另外文章挺长的，后面的没有继续读…</p>
+
+<h2 id="参考链接">参考链接</h2>
+
+<p><a href="http://cn.linux.vbird.org/linux_basic/0110whatislinux.php#whatislinux_unix#">鸟哥的 Linux 私房菜 -- Linux是什么？从Linux的历史谈起</a></p>
+
+<blockquote>
+  <p>鸟哥这个介绍相当详细啊</p>
+</blockquote>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

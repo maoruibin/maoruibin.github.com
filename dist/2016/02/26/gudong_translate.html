@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>咕咚翻译：Android 设备上翻译效率神器-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="咕咚翻译：Android 设备上翻译效率神器"/>
+  <meta name="keywords" content="咕咚,product"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="咕咚翻译：Android 设备上翻译效率神器">咕咚翻译：Android 设备上翻译效率神器</h1>
+  
+  <div class="subtitle">咕咚 于 2016-02-26 发布</div>
+  
+  <div class="post">
+    <p>咕咚翻译是自己最近开发的一个实现『划词翻译』功能的 Android 应用 ，可能是目前 Android 市场上翻译效率最高的一款应用。</p>
+
+<h2 id="示意图">示意图</h2>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/588640-bb21211def7c14a3.gif?imageMogr2/auto-orient/strip|imageView2/2/w/393/format/webp" style="width: 50%;" /></p>
+
+<h2 id="项目地址">项目地址</h2>
+<p>目前咕咚翻译已经开源到了 Github ,<a href="https://github.com/maoruibin/TranslateApp">咕咚翻译</a>,欢迎 star ,如果有 bug 或者更好的意见可以提 issue.</p>
+
+<h2 id="下载">下载</h2>
+<p>如果想第一时间体验，可通过以下方式下载。</p>
+
+<ul>
+  <li><a href="http://www.coolapk.com/apk/name.gudong.translate">酷安市场</a></li>
+  <li><a href="http://fir.im/gdTranslater">Fir</a></li>
+</ul>
+
+<h2 id="缘起">缘起</h2>
+<p>自己经常在手机上会阅读一些英文的技术 blog 或者文档，经常会遇到陌生的单词，
+想必大家都有类似的经历，一般的，如果是上班期间，我可能会打开谷歌翻译，然后查词，但是当你不在电脑旁，
+就只能通过手机上的翻译软件来翻译生词，这里我们具体思考一下整个操作过程。</p>
+
+<p>通常遇到生词我们会这样操作，</p>
+
+<ul>
+  <li>1、长按生词</li>
+  <li>2、选择复制</li>
+  <li>3、点击 Home 键</li>
+  <li>4、找到翻译 App,有道翻译或者谷歌翻译之类的</li>
+  <li>5、长按输入框</li>
+  <li>6、选择粘贴，</li>
+  <li>7、翻译</li>
+</ul>
+
+<p>可以看到，经过上面漫长的7个步骤后，我们才可以查到一个单词的意思。试想，如果连续碰到几个不认识的单词，然后每次都想上面一样操作几次，呃呃 ~此刻的心情~</p>
+
+<p><img src="/assets/about_gd_1.jpg" style="width: 30%;margin: auto;" /></p>
+
+<p>其实整个过程是一个非常考验用户耐性的事，我曾经做过一次记录，记录自己完成上面一连串操作所花费的时间，我对手机的操作相对比较熟练，但是也花了15秒的时间，这15秒对于一个沉浸在阅读中的用户来讲是十分不友好的，因为他会很大几率的打断用户的阅读连贯性。</p>
+
+<p>所以，我就想，我能不能做一个稍微友好一点的翻译 App,能不能让上面的步骤变得少点，因为自己一直有这个需求，所以自己就有了做这个 App 想法，而且我一直认为技术应该是用来解决问题的。</p>
+
+<p><img src="/assets/about_gd_duang.jpg" style="width: 30%;margin: auto;" /></p>
+
+<h2 id="咕咚来了">咕咚来了</h2>
+
+<p>最终,咕咚翻译仅仅只通过两步就实现了翻译的目的，长按单词、复制翻译。</p>
+
+<p><img src="/assets/about_gd_solve.jpg" style="width: 30%;margin: auto;" /></p>
+
+<p>就是这么简单，此时单词的释义就会出现在手机屏幕，如下所示</p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/588640-958e1b75817f53c5.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/540/format/webp" style="width: 50%;margin: auto;" /><br /></p>
+
+<p>同时还支持收藏功能，既然是用户要翻译的词语，那应该很可能就是陌生单词，此时可以加入收藏到你的生词本。方便日后查阅。</p>
+
+<h2 id="优点">优点</h2>
+
+<ul>
+  <li>1、高效翻译，及时展现释义在手机界面。</li>
+  <li>2、支持多个翻译引擎切换，目前支持百度、有道、金山。</li>
+  <li>3、方便快捷加入生词本</li>
+</ul>
+
+<h2 id="发布后续">发布后续</h2>
+<p>在发布后收到了各个渠道的一致好评，包括少数派就专门对咕咚翻译做过一次评测，<a href="https://sspai.com/post/33226">Android 上划词翻译该有的样子：咕咚翻译</a>，与此同时，不断有人对咕咚翻译进行打赏支持，为表谢意这里有一个页面列出了所有打赏同学的打赏记录。<a href="/1990/03/01/list_pay.html">咕咚翻译捐赠名单
+</a></p>
+
+<h2 id="关于作者">关于作者</h2>
+
+<p>咕咚，爱折腾、爱新鲜…</p>
+
+<p><a href="http://gudong.site/">个人站点</a></p>
+
+<p><a href="https://github.com/maoruibin">github</a></p>
+
+<p><a href="http://weibo.com/u/1874136301">微博</a></p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

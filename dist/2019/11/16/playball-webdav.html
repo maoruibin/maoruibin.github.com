@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Daily11/15 - 又可以单挑了~-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content=" Daily11/15 - 又可以单挑了~"/>
+  <meta name="keywords" content="咕咚,daily"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id=" Daily11/15 - 又可以单挑了~"> Daily11/15 - 又可以单挑了~</h1>
+  
+  <div class="subtitle">咕咚 于 2019-11-16 发布</div>
+  
+  <div class="post">
+    <p><img src="https://i.loli.net/2019/11/15/MRsnmU8bSzdagVX.jpg" alt="" /></p>
+
+<p>今年打球的频率应该是工作后最高的一年。在夏天的时候，经常性的一周会打四、五次，一般都是中午或者晚上去公司附近的球场，那个球场离公司近，球场也不错。也许是因为打球频率太高了，终于还是把鼻子骨折了，很意外。后来打球少了，同时也带了面具，打球时也小心多了。</p>
+
+<p>篮球打的多也不好。但是一直以来对打球频率也没有好的限制，同事只要叫了就总想去玩会，所以前段时间特意加了限制，一周最多只能打两次，否则会有惩罚（具体以后在说），现在每周开始时，都会去看十五天天气预报，决定哪天去。</p>
+
+<p>这周一天气不错去了，周二其实也不错，但是连续两天不好，所以今天便去了。</p>
+
+<p>今天天气比较凉，球场就我一个人，尽管天有点凉，但是玩了一会就很热了。练习了运球，投篮，后来同事来了，跟他一起单挑、比投篮，这样玩玩挺好的，不一定要分组打波。另外，经过了一段时间的胯下运球练习，现在单挑时可以结合运球节奏正面突破，这正是自己一直想学的东西，之前都是各种篮下技术。</p>
+
+<hr />
+
+<p>写测试 case，很痛苦，主要是这东西大家并不重视，做好了对质量保证很有效，但是现在高不成低不就，难受。</p>
+
+<hr />
+
+<p>我有好几个个人 APP，数据有些在本地，有些在云端（<a href="https://leancloud.cn/">LeanCloud</a>）。之前在用 一本日记 这个 APP 时，知道了 WebDAV 这个东西，然后一直种草到现在，而 LeanCloud 数据也有一些限制，所以最近一直想试试 WebDAV，这样就可以把网盘当做数据中心，这是更好更稳定的数据存储方式。</p>
+
+<p>今天下午工作状态不好，便稍微研究了一下，在自己的 APP 中小试牛刀，挺好，很方便。</p>
+
+<p>这里分享一个 Android Lib：</p>
+
+<ul>
+  <li><a href="https://github.com/thegrizzlylabs/sardine-android">sardine-android: A WebDAV library for Android</a></li>
+</ul>
+
+<p>用它可以很方便的操作那些支持 WebDAV 的网盘，一行代码搞定用户身份认证，具体周末用用再说。</p>
+
+<hr />
+
+<p>Happy weekend ~</p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

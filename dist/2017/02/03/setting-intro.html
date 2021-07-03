@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>使用 Android 原生 API 开发设置界面-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="使用 Android 原生 API 开发设置界面"/>
+  <meta name="keywords" content="咕咚,tech"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="使用 Android 原生 API 开发设置界面">使用 Android 原生 API 开发设置界面</h1>
+  
+  <div class="subtitle">咕咚 于 2017-02-03 发布</div>
+  
+  <div class="post">
+    <p>算是 17 年第一篇文章，初衷就是简单介绍下用 xml 配置设置界面，为自定义设置界面 UI 做一个铺垫。</p>
+
+<h2 id="场景介绍">场景介绍</h2>
+
+<p>为了更好的用户体验，现在的大多数的应用都会提供一个设置界面，供用户去设置一些应用属性，比如用户名、昵称等信息的修改，或者还会有一些消息开关等都会在设置界面中完成。如下所示就是一个常见的设置界面截图（from 咕咚翻译）</p>
+
+<p><img src="http://7xr9gx.com1.z0.glb.clouddn.com/pref_translate_msg.jpg" style="width:50%;" /></p>
+
+<p>类似这样的设置界面在一个应用中都会或多或少的存在。对于开发者而言，如何快速开发这样的设置界面呢？</p>
+
+<p>如果他对 Android 提供的设置 API 不了解，可能会自然而然的想到使用 layout 去画出来。然后在Activity 中实例化每个 item 对应的 view，接着处理对应的 click、check 等事件。但是这样有很多不足和麻烦。</p>
+
+<p>你需要自己编写布局文件，设置样式，还需要处理设置数据的本地存储逻辑。</p>
+
+<p>其实，Android 早就提供了相应的设置 API 可以方便开发者快速开发设置 UI 。</p>
+
+<p>这就是现在要说的 PreferenceActivity / PreferenceFragment 。</p>
+
+<p>更多关于设置相关的官方介绍可通过 <a href="https://developer.android.com/guide/topics/ui/settings.html">Setting</a> 查阅。</p>
+
+<blockquote>
+  <p>建议直接看官方文档，比这里更加全面。</p>
+</blockquote>
+
+<h2 id="主要api-介绍">主要API 介绍</h2>
+
+<p>见名知意</p>
+
+<ul>
+  <li><a href="https://developer.android.com/reference/android/preference/PreferenceActivity.html">PreferenceActivity</a>  偏好设置 Activity</li>
+  <li><a href="https://developer.android.com/reference/android/preference/PreferenceFragment.html">PreferenceFragment</a>  偏好设置 Fragment</li>
+</ul>
+
+<p>这俩是 Android 系统提供的两个跟设置相关的 API 组件，使用他们就可以方便快捷的开发出具有统一体验的设置UI。鉴于灵活性，大多数时候个人使用 ·PreferenceFragment 较多，官方也推荐使用 Fragment。</p>
+
+<h2 id="开发指南">开发指南</h2>
+
+<p>这部分建议直接看官方文档，很清晰。下面罗列自己简单总结的一些点。</p>
+
+<h3 id="几个要点">几个要点</h3>
+
+<ul>
+  <li>不同于一般的 Fragment, PreferenceFragment  的布局是通过在XML 文件中声明的 <code class="highlighter-rouge">Preference</code> 类的各种子类构建而成，而不是使用 <code class="highlighter-rouge">View</code> 对象构建用户界面。</li>
+  <li>您必须将 XML 文件保存在 res/xml/ 目录中。尽管您可以随意命名该文件，但它通常命名为 preferences.xml</li>
+  <li>XML 文件的根节点必须是一个 PreferenceScreen 元素。您可以在此元素内添加每个 Preference。在 <PreferenceScreen> 元素内添加的每个子项均将作为单独的项目显示在设置列表中。</PreferenceScreen></li>
+</ul>
+
+<p>如下所示就是一个常规的设置配置文件。</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;PreferenceScreen</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;CheckBoxPreference</span>
+        <span class="na">android:key=</span><span class="s">"pref_sync"</span>
+        <span class="na">android:title=</span><span class="s">"@string/pref_sync"</span>
+        <span class="na">android:summary=</span><span class="s">"@string/pref_sync_summ"</span>
+        <span class="na">android:defaultValue=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;ListPreference</span>
+        <span class="na">android:dependency=</span><span class="s">"pref_sync"</span>
+        <span class="na">android:key=</span><span class="s">"pref_syncConnectionType"</span>
+        <span class="na">android:title=</span><span class="s">"@string/pref_syncConnectionType"</span>
+        <span class="na">android:dialogTitle=</span><span class="s">"@string/pref_syncConnectionType"</span>
+        <span class="na">android:entries=</span><span class="s">"@array/pref_syncConnectionTypes_entries"</span>
+        <span class="na">android:entryValues=</span><span class="s">"@array/pref_syncConnectionTypes_values"</span>
+        <span class="na">android:defaultValue=</span><span class="s">"@string/pref_syncConnectionTypes_default"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/PreferenceScreen&gt;</span>
+</code></pre></div></div>
+
+<h3 id="使用配置文件">使用配置文件</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public static class SettingsFragment extends PreferenceFragment {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        // Load the preferences from an XML resource
+        addPreferencesFromResource(R.xml.preferences);
+    }
+    ...
+}
+</code></pre></div></div>
+
+<p>然后，正如您对其他任何 <code class="highlighter-rouge">Fragment</code> 的处理一样，您可以将此片段添加到 <code class="highlighter-rouge">Activity</code>。例如：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class SettingsActivity extends Activity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        // Display the fragment as the main content.
+        getFragmentManager().beginTransaction()
+                .replace(android.R.id.content, new SettingsFragment())
+                .commit();
+    }
+}
+</code></pre></div></div>
+
+<p>至此，启动 SettingsActivity 就可以看到一个设置界面了。</p>
+
+<h2 id="原理分析">原理分析</h2>
+
+<p>这里简单说下背后的原理。</p>
+
+<p>PreferenceFragment 和 PreferenceActivity 的布局本身包含一个 ListView ，使用 <code class="highlighter-rouge">addPreferencesFromResource</code> 方法后，PreferenceFragment 他们会去解析 xml 文件中定义的 Preference 对象，并把它们实例化，然后通过 Adapter 的形式填充到 ListView。然后就是我们看到的设置界面了。</p>
+
+<h2 id="关于">关于</h2>
+
+<p>这篇文章属于技术介绍类文章，主要是为下一篇文章《自定义设置 UI 》做铺垫，其实没什么干货可写的，因为官方文档已经很详细，所以文章一开头，我也建议直接去看官方提供的文档，现在已经有很好的中文版本了，而且讲得很详细，很权威。</p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

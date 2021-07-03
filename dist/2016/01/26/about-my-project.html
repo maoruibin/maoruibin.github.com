@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>关于个人项目-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="关于个人项目"/>
+  <meta name="keywords" content="咕咚,blog"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="关于个人项目">关于个人项目</h1>
+  
+  <div class="subtitle">咕咚 于 2016-01-26 发布</div>
+  
+  <div class="post">
+    <p><img src="http://7xr9gx.com1.z0.glb.clouddn.com/marketingproject.jpg" style="width: 50%;margin: auto;" /><br /></p>
+
+<p>作品展示画廊，有图有真相。<a href="https://makerslate.io/gudong" target="_blank">链接</a></p>
+
+<h3 id="关于个人项目">关于个人项目</h3>
+
+<p>从一开始工作，自己就是个比较爱动手的开发者，喜欢将自己的想法变(编)成(程)具体可以看见的东西，做东西的过程也是一个学习的过程。
+因为自己的作品可以随意加入各种最新的知识点，所以这也是一个很好的体验新技术的方法.</p>
+
+<p>并且自己做的东西，还可能帮助到别人，给别人带来便利，何乐而不为。</p>
+
+<p>尽管我知道，做一个好用的东西，其实还是挺不容易的，因为好用就不单单是代码好实现的问题，还要涉及交互体验等繁多的事情。</p>
+
+<p>有时做东西做的多了，会突然有种想去做产品经理的冲动，觉得其实做产品还挺好玩，不过目前也只是冲动，业余做点自己的东西过过瘾就好，哈哈！</p>
+
+<p>下面罗列了自己做过的一些东西，无一例外，都是很简单的 App,页面可能不超过5个，但是每个应用都是自己用心用力做出来的。其中除了 GankDaily 是为学习
+之用，其余的 App 均是自己生活场景中需要，而市面上没有合适的，所以自己动手做的，比如 咕咚翻译、AppPlus 以及密码本。</p>
+
+<p>对个人做 App 来讲，简单永远是第一法则，能简单就不忘复杂里做。当然，一开始我并不是这样想的，自己做的第一个 App 密码本，因为自己的不克制，导致后续加了很多
+无用的交互，对核心的功能却没在意，导致后来代码写的很痛苦，界面做的也一般，后来因为很多用户向我反应密码本的诸多问题(他们的问题我都耐心的帮他们解决了)，最后只得下架应用。</p>
+
+<p>到后来，越来越觉得对于 App 而言,『简单就是生产力』，其实这话放在其他事情上也合理。</p>
+
+<p>总之，自己虽然是写代码的，但是对产品有自己的理解，努力做个懂产品的程序员，显然，目前对产品的理解还很肤浅。但我会坚守这份对产品的爱。</p>
+
+<p>我也希望，在以后的工作中能够遇到一些懂技术的产品经理，比如 <a href="https://www.zhihu.com/people/GeoffreyR">NovaDNG</a>,听过他的一次公开演讲，就觉得这才是产品经理的范，因为一个懂技术的产品经理在做产品的时候，他甚至可以考虑到技术人员会用什么技术去实现等等诸如此类的细节(也许只是臆想~)。</p>
+
+<p>下面简单罗列项目的部分信息。</p>
+
+<h2 id="1咕咚翻译">1、咕咚翻译</h2>
+
+<p>一个实现『划词翻译』功能的 Android 应用 ，可能是目前 Android 市场上翻译效率最高的一款应用。</p>
+
+<p>目前项目已经开源在 Github []项目地址](https://github.com/maoruibin/TranslateApp)</p>
+
+<p>一篇关于咕咚翻译的介绍文章 <a href="http://gudong.site/product/2016/02/26/gudong_translate.html">关于咕咚翻译</a></p>
+
+<p><a href="https://github.com/maoruibin/TranslateApp">Github项目主页</a></p>
+
+<p><a href="http://fir.im/gdTranslate">Fir主页</a></p>
+
+<h2 id="2gankdaily">2、GankDaily</h2>
+<p>自己利用<a href="http://gank.io/">干货集中营</a>对外开放的 <a href="http://gank.io/api">API</a> 为干货集中营开发的一个手机客户端软件，客户端主要用于展现网站技术干货。</p>
+
+<p>该 App 是自己在 drakeet 的<a href="https://github.com/drakeet/Meizhi">妹纸</a>基础上修改而来，但是不论在 UI 方面还是项目结构方面，
+自己都做了自己的修改 。</p>
+
+<p>在 UI 上更加重视干货内容展现，在项目结构设计上使用 MVP 模式，项目更加清晰。</p>
+
+<p><a href="https://github.com/maoruibin/GankDaily">Github项目主页</a></p>
+
+<p><a href="http://fir.im/gankdaily">Fir主页</a></p>
+
+<h2 id="3appplus">3、AppPlus</h2>
+
+<p>App+是一个MD风格的用于传送、提取APK文件的开源工具软件。</p>
+
+<p><a href="https://github.com/maoruibin/AppPlus">Github项目主页</a></p>
+
+<p><a href="http://fir.im/appplus">Fir主页</a></p>
+
+<h2 id="4powerkey">4、PowerKey</h2>
+
+<p>模仿 MIUI6 长按电源键的关机App</p>
+
+<p><a href="https://github.com/maoruibin/PowerKey">Github项目主页</a></p>
+
+<h2 id="5passbook">5、PassBook</h2>
+<p>用于存储日常生活中用到的密码。目前已经在市场下架，不过自己仍然在使用。</p>
+
+<p>这个项目暂时没有展示链接了，等以后再补充吧！</p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

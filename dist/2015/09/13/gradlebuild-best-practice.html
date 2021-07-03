@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>build.gradle 最佳实践集合-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="build.gradle 最佳实践集合"/>
+  <meta name="keywords" content="咕咚,tech"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="build.gradle 最佳实践集合">build.gradle 最佳实践集合</h1>
+  
+  <div class="subtitle">咕咚 于 2015-09-13 发布</div>
+  
+  <div class="post">
+    <p>使用 AndroidStudio 进行开发，其中很重要的一个文件就是 build.gradle，它是整个项目编译打包的控制中心，这里收集一些日常会用到的语法或者使用技巧，以备后用。</p>
+
+<h2 id="排除依赖包中的-support-依赖">排除依赖包中的 support 依赖</h2>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">implementation</span> <span class="o">(</span><span class="s1">'com.github.anzewei:parallaxbacklayout:1.1.9'</span><span class="o">){</span>
+     <span class="n">exclude</span> <span class="nl">group:</span> <span class="s2">"com.android.support"</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>通过 exclude 排除掉依赖包中的 support 依赖，这样可以解决跟主工程的冲突问题，其他的重复也可通过类似的方式解决。</p>
+
+<h2 id="指定签名信息">指定签名信息</h2>
+
+<p>签名信息比较隐私，不应该直接出现在项目中，可以把密钥文件、密码、账号，存储在本地的文件夹，然后把这个信息定义在 lcoal.properties 文件中，并且让该文件不受 git 版本控制，通过 .gitignore 文件过滤。</p>
+
+<p>如下是具体的签名信息指定方式</p>
+
+<p>在主 app 的 build.gradle 文件中这样配置</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">defaultConfig</span><span class="o">{</span>
+    <span class="n">signingConfigs</span> <span class="o">{</span>
+        <span class="c1">//指定名叫release的一个签名对象，下面会动态根据配置文件设置属性</span>
+        <span class="n">releaseConfig</span>
+    <span class="o">}</span>
+    <span class="n">buildTypes</span> <span class="o">{</span>
+        <span class="n">release</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">signingConfigs</span><span class="o">.</span><span class="na">releaseConfig</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">signingConfig</span> <span class="n">signingConfigs</span><span class="o">.</span><span class="na">releaseConfig</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>在 gradle 文件 android 同级配置下设置 releaseConfig 信息</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Properties</span> <span class="n">props</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Properties</span><span class="o">()</span>
+<span class="kt">def</span> <span class="n">propFile</span> <span class="o">=</span> <span class="n">file</span><span class="o">(</span><span class="s1">'../local.properties'</span><span class="o">)</span>
+<span class="k">if</span> <span class="o">(</span><span class="n">propFile</span><span class="o">.</span><span class="na">exists</span><span class="o">())</span> <span class="o">{</span>
+    <span class="n">props</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">propFile</span><span class="o">))</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">props</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span>
+            <span class="n">props</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="s1">'SIGN_FILE'</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">props</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="s1">'SIGN_KEYSTORE_PASS'</span><span class="o">)</span> <span class="o">&amp;&amp;</span>
+            <span class="n">props</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="s1">'SIGN_KEYSTORE_ALIAS'</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">props</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="s1">'SIGN_KEYSTORE_ALIAS_PASS'</span><span class="o">))</span> <span class="o">{</span>
+        <span class="n">android</span><span class="o">.</span><span class="na">signingConfigs</span><span class="o">.</span><span class="na">releaseConfig</span><span class="o">.</span><span class="na">storeFile</span> <span class="o">=</span> <span class="n">file</span><span class="o">(</span><span class="n">props</span><span class="o">[</span><span class="s1">'SIGN_FILE'</span><span class="o">])</span>
+        <span class="n">android</span><span class="o">.</span><span class="na">signingConfigs</span><span class="o">.</span><span class="na">releaseConfig</span><span class="o">.</span><span class="na">storePassword</span> <span class="o">=</span> <span class="n">props</span><span class="o">[</span><span class="s1">'SIGN_KEYSTORE_PASS'</span><span class="o">]</span>
+        <span class="n">android</span><span class="o">.</span><span class="na">signingConfigs</span><span class="o">.</span><span class="na">releaseConfig</span><span class="o">.</span><span class="na">keyAlias</span> <span class="o">=</span> <span class="n">props</span><span class="o">[</span><span class="s1">'SIGN_KEYSTORE_ALIAS'</span><span class="o">]</span>
+        <span class="n">android</span><span class="o">.</span><span class="na">signingConfigs</span><span class="o">.</span><span class="na">releaseConfig</span><span class="o">.</span><span class="na">keyPassword</span> <span class="o">=</span> <span class="n">props</span><span class="o">[</span><span class="s1">'SIGN_KEYSTORE_ALIAS_PASS'</span><span class="o">]</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="n">android</span><span class="o">.</span><span class="na">buildTypes</span><span class="o">.</span><span class="na">release</span><span class="o">.</span><span class="na">signingConfig</span> <span class="o">=</span> <span class="kc">null</span>
+    <span class="o">}</span>
+<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+    <span class="n">android</span><span class="o">.</span><span class="na">buildTypes</span><span class="o">.</span><span class="na">release</span><span class="o">.</span><span class="na">signingConfig</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>local.properties 文件内容</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SIGN_KEYSTORE_PASS</span><span class="o">=******</span>
+<span class="n">SIGN_FILE</span><span class="o">=</span><span class="s">/Users/</span><span class="n">ruibin1</span><span class="s">/Downloads/</span><span class="n">work</span><span class="s">/key/</span><span class="o">****.</span><span class="na">jks</span>
+<span class="n">SIGN_KEYSTORE_ALIAS_PASS</span><span class="o">=******</span>
+<span class="n">SIGN_KEYSTORE_ALIAS</span><span class="o">=******</span>
+</code></pre></div></div>
+
+<h2 id="定义清单文件占位变量">定义清单文件占位变量</h2>
+<p>以下为一个清单文件占位符号</p>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">intent</span><span class="o">-</span><span class="n">filter</span> <span class="o">...</span> <span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">data</span> <span class="nl">android:</span><span class="n">scheme</span><span class="o">=</span><span class="s2">"http"</span> <span class="nl">android:</span><span class="n">host</span><span class="o">=</span><span class="s2">"${hostName}"</span> <span class="o">...</span> <span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">intent</span><span class="o">-</span><span class="n">filter</span><span class="o">&gt;</span>
+</code></pre></div></div>
+<p>只需要在 gradle 文件中这样定义，即可使用：</p>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">android</span> <span class="o">{</span>
+        <span class="n">defaultConfig</span> <span class="o">{</span>
+            <span class="n">manifestPlaceholders</span> <span class="o">=</span> <span class="o">[</span><span class="nl">hostName:</span><span class="s2">"www.example.com"</span><span class="o">]</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>默认情况下，编译工具还会在 <code class="highlighter-rouge">${applicationId}</code> 占位符中提供应用的应用 ID。该值始终与当前编译的最终应用 ID（包括编译变体的应用 ID 更改）一致。</p>
+
+<blockquote>
+  <p>更多查看 <a href="https://developer.android.com/studio/build/manifest-build-variables">将编译变量注入清单  |  Android Developers</a></p>
+</blockquote>
+
+<h2 id="定义-buildconfig-常量">定义 BuildConfig 常量</h2>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 定义 int 常量</span>
+<span class="n">buildConfigField</span><span class="o">(</span><span class="s2">"int"</span> <span class="o">,</span> <span class="s2">"LimitCount"</span> <span class="o">,</span> <span class="s2">"12"</span><span class="o">)</span>
+<span class="c1">// 定义 bool 常量</span>
+<span class="n">buildConfigField</span> <span class="s1">'boolean'</span><span class="o">,</span> <span class="s1">'isPro'</span><span class="o">,</span> <span class="s1">'true'</span>
+</code></pre></div></div>
+
+<h2 id="定义-res-资源">定义 Res 资源</h2>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// string 资源</span>
+<span class="n">resValue</span> <span class="s2">"string"</span><span class="o">,</span> <span class="s2">"app_name"</span><span class="o">,</span> <span class="s2">"云图debug"</span>
+</code></pre></div></div>
+
+<h2 id="定义包名版本号后缀">定义包名、版本号后缀</h2>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 包名后缀</span>
+<span class="n">applicationIdSuffix</span> <span class="s2">".debug"</span>
+<span class="c1">// 版本号后缀</span>
+<span class="n">versionNameSuffix</span> <span class="s2">"-full"</span>
+</code></pre></div></div>
+
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

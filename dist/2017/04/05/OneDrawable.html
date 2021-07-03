@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>仅使用一张资源图片为 View 设置具有按下效果的背景 - OneDrawable-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="仅使用一张资源图片为 View 设置具有按下效果的背景 - OneDrawable"/>
+  <meta name="keywords" content="咕咚,tech"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="仅使用一张资源图片为 View 设置具有按下效果的背景 - OneDrawable">仅使用一张资源图片为 View 设置具有按下效果的背景 - OneDrawable</h1>
+  
+  <div class="subtitle">咕咚 于 2017-04-05 发布</div>
+  
+  <div class="post">
+    <p>该篇文章主要分享介绍，如何使用一张资源图片为 View 设置具有按下效果的 Background Drawable.</p>
+
+<p><img src="http://7xr9gx.com1.z0.glb.clouddn.com/slogin.gif" alt="OneDrawable" /></p>
+
+<p>开源地址 <a href="https://github.com/maoruibin/OneDrawable">OneDrawable</a></p>
+
+<h2 id="缘起">缘起</h2>
+
+<p>前段时间在开发项目新版本的过程中，设计师出了一套项目的按下效果规范。规范大概是这样的。</p>
+
+<p>对于一般的按钮，按钮按下的效果只有两种不同的实现。</p>
+
+<p>1、按下后将前置背景图片变暗，具体就是在正常状态的 drawable 上面增加一层 20% 的黑色遮罩。</p>
+
+<p>2、按下后降低前置背景资源透明度，具体就是在按下时改变正常状态的 drawable 透明度为原来的 70% 。</p>
+
+<p>很明显，这套规范会带来以下好处。</p>
+
+<ul>
+  <li>设计师在出图时只需要出一张图，然后只需要告诉开发人员对应的按下效果策略，这样可以减轻设计师的出图负担。</li>
+  <li>客户端这边也是，不需要因为实现一个按下效果而导入两张资源图片，这样在减小包大小的同时也省去了客户端开发人员去写 selector 文件的麻烦。</li>
+</ul>
+
+<h2 id="实现方案">实现方案</h2>
+
+<p>其实在之前的开发过程中，我也曾有过这样的思考，想怎么可以根据一张图来设置 View 的背景，并让他具有按下效果。一开始自然而然的想到了处理 View 的 touch 事件，然后在按下时动态的根据正常背景设置按下后的背景资源。</p>
+
+<p>但是后来觉得还是麻烦，而且一些时候一些 View 本身就需要处理 touch 事件，会造成冲突，所以当时也就一了百了。</p>
+
+<p>这次经过一些搜索，思考，最终使用 <code class="highlighter-rouge">StateListDrawable</code> 达到了了目标效果。</p>
+
+<p>StateListDrawable 有一个方法 <code class="highlighter-rouge">addState</code> 用于设置不同状态下的 drawable ，包括按下、聚焦、不可用等等所有的状态。</p>
+
+<p>所以结合需求，这里只需要根据正常状态下的 drawable 计算出按下状态的 drawable，然后设置给按下按下状态，就可以完美实现一套资源实现 View 的按下状态。</p>
+
+<h2 id="具体实现">具体实现</h2>
+
+<p>方案已经说清楚了，实现其实很简单，代码如下所示。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="nc">Drawable</span> <span class="nf">getBackground</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="nc">Context</span> <span class="n">context</span><span class="o">,</span> <span class="nd">@DrawableRes</span> <span class="kt">int</span> <span class="n">res</span><span class="o">,</span> <span class="nd">@StatePressedMode</span><span class="o">.</span><span class="na">Mode</span> <span class="kt">int</span> <span class="n">mode</span><span class="o">,</span> <span class="nd">@FloatRange</span><span class="o">(</span><span class="n">from</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="o">,</span> <span class="n">to</span> <span class="o">=</span> <span class="mf">1.0f</span><span class="o">)</span> <span class="kt">float</span> <span class="n">alpha</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Drawable</span> <span class="n">normal</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="na">getResources</span><span class="o">().</span><span class="na">getDrawable</span><span class="o">(</span><span class="n">res</span><span class="o">);</span>
+    <span class="nc">Drawable</span> <span class="n">pressed</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="na">getResources</span><span class="o">().</span><span class="na">getDrawable</span><span class="o">(</span><span class="n">res</span><span class="o">);</span>
+    <span class="n">pressed</span><span class="o">.</span><span class="na">mutate</span><span class="o">();</span>
+    <span class="c1">//根据不同的按下要求设置不同的按下drawable</span>
+    <span class="n">setPressedStateDrawable</span><span class="o">(</span><span class="n">mode</span><span class="o">,</span> <span class="n">alpha</span><span class="o">,</span> <span class="n">pressed</span><span class="o">);</span>
+    <span class="kd">final</span> <span class="nc">StateListDrawable</span> <span class="n">stateListDrawable</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StateListDrawable</span><span class="o">();</span>
+    <span class="c1">//按下状态</span>
+    <span class="n">stateListDrawable</span><span class="o">.</span><span class="na">addState</span><span class="o">(</span><span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span><span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">attr</span><span class="o">.</span><span class="na">state_pressed</span><span class="o">},</span> <span class="n">pressed</span><span class="o">);</span>
+    <span class="c1">//正常状态</span>
+    <span class="n">stateListDrawable</span><span class="o">.</span><span class="na">addState</span><span class="o">(</span><span class="k">new</span> <span class="kt">int</span><span class="o">[]{},</span> <span class="n">normal</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">stateListDrawable</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>根据不同按下模式，处理按下的 drawable</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setPressedStateDrawable</span><span class="o">(</span><span class="nd">@StatePressedMode</span><span class="o">.</span><span class="na">Mode</span> <span class="kt">int</span> <span class="n">mode</span><span class="o">,</span> <span class="nd">@FloatRange</span><span class="o">(</span><span class="n">from</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="o">,</span> <span class="n">to</span> <span class="o">=</span> <span class="mf">1.0f</span><span class="o">)</span> <span class="kt">float</span> <span class="n">alpha</span><span class="o">,</span> <span class="nd">@NonNull</span> <span class="nc">Drawable</span> <span class="n">pressed</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">switch</span> <span class="o">(</span><span class="n">mode</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">case</span> <span class="nc">StatePressedMode</span><span class="o">.</span><span class="na">ALPHA</span><span class="o">:</span>
+            <span class="n">pressed</span><span class="o">.</span><span class="na">setAlpha</span><span class="o">(</span><span class="n">convertAlphaToInt</span><span class="o">(</span><span class="n">alpha</span><span class="o">));</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="k">case</span> <span class="nc">StatePressedMode</span><span class="o">.</span><span class="na">DARK</span><span class="o">:</span>
+            <span class="n">pressed</span><span class="o">.</span><span class="na">setColorFilter</span><span class="o">(</span><span class="n">alphaColor</span><span class="o">(</span><span class="nc">Color</span><span class="o">.</span><span class="na">BLACK</span><span class="o">,</span> <span class="n">convertAlphaToInt</span><span class="o">(</span><span class="n">alpha</span><span class="o">)),</span> <span class="nc">PorterDuff</span><span class="o">.</span><span class="na">Mode</span><span class="o">.</span><span class="na">SRC_ATOP</span><span class="o">);</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="n">pressed</span><span class="o">.</span><span class="na">setAlpha</span><span class="o">(</span><span class="n">convertAlphaToInt</span><span class="o">(</span><span class="n">alpha</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>下图为 demo 截图</p>
+
+<p><img src="http://7xr9gx.com1.z0.glb.clouddn.com/statebackgroundv2.gif" alt="demo" /></p>
+
+<h2 id="兼容问题">兼容问题</h2>
+
+<p>后来有网友反馈在 4.4 的机型下按下效果失效，后来发现是因为 Drawable 的 setColorFilter 方法在 4.4 的手机上失效，后来采用了 BitmapDrawable 的方式解决，具体可以看代码实现，这里贴出最重要的一段代码。</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">private</span> <span class="kd">static</span> <span class="nc">Drawable</span> <span class="nf">kitkatDrawable</span><span class="o">(</span><span class="nc">Context</span> <span class="n">context</span><span class="o">,</span> <span class="nd">@NonNull</span> <span class="nc">Drawable</span> <span class="n">pressed</span><span class="o">,</span> <span class="nd">@PressedMode</span><span class="o">.</span><span class="na">Mode</span> <span class="kt">int</span> <span class="n">mode</span><span class="o">,</span> <span class="nd">@FloatRange</span><span class="o">(</span><span class="n">from</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="o">,</span> <span class="n">to</span> <span class="o">=</span> <span class="mf">1.0f</span><span class="o">)</span> <span class="kt">float</span> <span class="n">alpha</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Bitmap</span> <span class="n">bitmap</span> <span class="o">=</span> <span class="nc">Bitmap</span><span class="o">.</span><span class="na">createBitmap</span><span class="o">(</span><span class="n">pressed</span><span class="o">.</span><span class="na">getIntrinsicWidth</span><span class="o">(),</span> <span class="n">pressed</span><span class="o">.</span><span class="na">getIntrinsicHeight</span><span class="o">(),</span> <span class="nc">Bitmap</span><span class="o">.</span><span class="na">Config</span><span class="o">.</span><span class="na">ARGB_8888</span><span class="o">);</span>
+        <span class="nc">Canvas</span> <span class="n">myCanvas</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Canvas</span><span class="o">(</span><span class="n">bitmap</span><span class="o">);</span>
+        <span class="k">switch</span> <span class="o">(</span><span class="n">mode</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">case</span> <span class="nc">PressedMode</span><span class="o">.</span><span class="na">ALPHA</span><span class="o">:</span>
+                <span class="n">pressed</span><span class="o">.</span><span class="na">setAlpha</span><span class="o">(</span><span class="n">convertAlphaToInt</span><span class="o">(</span><span class="n">alpha</span><span class="o">));</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="k">case</span> <span class="nc">PressedMode</span><span class="o">.</span><span class="na">DARK</span><span class="o">:</span>
+                <span class="n">pressed</span><span class="o">.</span><span class="na">setColorFilter</span><span class="o">(</span><span class="n">alphaColor</span><span class="o">(</span><span class="nc">Color</span><span class="o">.</span><span class="na">BLACK</span><span class="o">,</span> <span class="n">convertAlphaToInt</span><span class="o">(</span><span class="n">alpha</span><span class="o">)),</span> <span class="nc">PorterDuff</span><span class="o">.</span><span class="na">Mode</span><span class="o">.</span><span class="na">SRC_ATOP</span><span class="o">);</span>
+                <span class="k">break</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">pressed</span><span class="o">.</span><span class="na">setBounds</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">pressed</span><span class="o">.</span><span class="na">getIntrinsicWidth</span><span class="o">(),</span> <span class="n">pressed</span><span class="o">.</span><span class="na">getIntrinsicHeight</span><span class="o">());</span>
+        <span class="n">pressed</span><span class="o">.</span><span class="na">draw</span><span class="o">(</span><span class="n">myCanvas</span><span class="o">);</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">BitmapDrawable</span><span class="o">(</span><span class="n">context</span><span class="o">.</span><span class="na">getResources</span><span class="o">(),</span> <span class="n">bitmap</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="一些细节">一些细节</h2>
+<p>在设置按下状态的 drawable 时，</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Drawable</span> <span class="n">normal</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="na">getResources</span><span class="o">().</span><span class="na">getDrawable</span><span class="o">(</span><span class="n">res</span><span class="o">);</span>
+<span class="nc">Drawable</span> <span class="n">pressed</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="na">getResources</span><span class="o">().</span><span class="na">getDrawable</span><span class="o">(</span><span class="n">res</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>这里的 normal 和 pressed 使用的资源 res 资源是同一个 id。但是由于 drawable 在加载过程中，同一个 res 资源只要在内存中加载过一次,这个 drawable 对应的 state 就会保持一致，所以这里要对 pressed 进行可变设置。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pressed</span><span class="o">.</span><span class="na">mutate</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>关于 mutate 方法的官方说明</p>
+
+<blockquote>
+  <p>This is especially useful when you need to modify properties of drawables loaded from resources. By default, all drawables instances loaded from the same resource share a common state;</p>
+</blockquote>
+
+<p>另外需要注意的是，由于 View 的按下效果只有在设置了 clickable 为 true 时才可以看到效果，所以当你使用 OneDrawable 为 View 设置背景后却发现没有按下效果，你应该知道怎么办。</p>
+
+<p>最后，如果你发现还有什么问题，欢迎在 <a href="https://github.com/maoruibin/OneDrawable/issues">issue</a> 或者评论区指出，也欢迎你把更好的方案 PR 上来。</p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

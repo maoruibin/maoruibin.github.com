@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>一个微信小号的实验 | Daily 12/05-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="一个微信小号的实验 | Daily 12/05"/>
+  <meta name="keywords" content="咕咚,daily"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="一个微信小号的实验 | Daily 12/05">一个微信小号的实验 | Daily 12/05</h1>
+  
+  <div class="subtitle">咕咚 于 2019-12-05 发布</div>
+  
+  <div class="post">
+    <p>就在不久前，自己买了一个手机号，特意用来注册微信小号，注册小号后，马上就把自己不重要的微信群都转移了过去，这样做的目的是
+<strong>减少群消息对自己注意力的消耗。</strong></p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/588640-1b89f20219a71e9e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="小号" /></p>
+
+<p>实际上，微信群消息已经困扰自己很久了，自己总是被那些不重要的群信息打扰，尽管自己已经退了不少群，但剩下的还是有点吵，所以希望有一个小号专门去收纳这些群。然后我每天只需要切换一次账号，一次性的把所有的消息过一遍，筛选出对自己有用的群消息。这样，群对自己就成了一种订阅制，自己也成功从之前的<strong>信息被动接受者变成了主动查询者。</strong></p>
+
+<p>在转移微信群时，我只保留了那些自己真正关心的群，比如一起打球的群，工作群，还有家人群等，而技术群，社区交流群等统统都被自己转移到了小号。</p>
+
+<p>然后自己每天固定的去打开小号一次，去查阅一次消息，试行几天我觉得效果挺好。直到最近，我发现一个有意思的现象：<strong>我打开小号的频率越来对低，越来越低，到现在，甚至一周才打开一次。</strong></p>
+
+<p>我突然明白，那些群其实完全可以退掉。我不看这些群后，对我生活工作基本没有任何影响，反而获得了更多的时间。</p>
+
+<p>———————— ps ———————–</p>
+
+<p>实际上，我认为目前的微信群消息设计还是不够合理，群消息太多，有点过载，尽管微信提供了免打扰机制，以及不活跃沉底机制，但依旧没有解决问题。</p>
+
+<p>这就像一开始的订阅号，当时也是显示在消息流主页面，结果导致整个消息流被订阅号消息霸占，毕竟订阅号发消息的驱动力更大，后来微信非常优雅的解决了这个问题，也就是现在的方式— <strong>子文件夹收纳订阅号。</strong></p>
+
+<p>这样，订阅号就如其名，真的成了一种订阅机制，用户想看的时候才打开，不想看的时候，任由订阅号有多少消息，也不会分散用户宝贵的注意力。</p>
+
+<p>所以同样的问题，我在想对于当前的微信群，是不是也可以用同样的方式去解决呢？也就是对群消息也建立一种子文件夹机制，<strong>把免打扰的群都纳入到子文件夹内</strong>，就像这样：</p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/588640-ca68e0d97e61b7ca.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" /></p>
+
+<p>当然，这只是自己的一个脑洞而已，仅供参考，欢迎交流。</p>
+
+<blockquote>
+  <ul>
+    <li>图片打码 by <a href="https://www.coolapk.com/apk/me.drakeet.puremosaic">纯纯打码</a>（<a href="https://writer.drakeet.com">drakeet</a>）</li>
+    <li>微信 Markdown 排版工具 markdown-nice（<a href="https://mdnice.com/">mdnice</a>）</li>
+  </ul>
+</blockquote>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

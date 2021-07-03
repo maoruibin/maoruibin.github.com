@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>日志-2015-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="日志-2015"/>
+  <meta name="keywords" content="咕咚,log"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="日志-2015">日志-2015</h1>
+  
+  <div class="subtitle">咕咚 于 1990-03-01 发布</div>
+  
+  <div class="post">
+    <p><img src="https://ws1.sinaimg.cn/large/6fb50cedly1fn775g79x8j217g17ge81.jpg" alt="year" /></p>
+
+<h2 id="2015125">2015/12/5</h2>
+<p>为博文增加了一个开关，如下所示</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: mypost
+author: 咕咚
+title: "在Android5.0以上设备实现过度动画"
+description: ""
+categories: Technology
+publish: false
+tags: Android Animation
+---
+</code></pre></div></div>
+
+<p>只要设置 publish 为 false ，那么这篇博文将不会出现在主页列表，不设置默认表示文章处于发布状态</p>
+
+<h2 id="20151027">2015/10/27</h2>
+
+<p>修改了默认的博客头部背景颜色设置。</p>
+
+<p>在写博客时，在博客一开始指定cover时，现在可以有四种可选项了，</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  cover: "assets/1024_programer.png"
+  cover: "#f8f8f8"
+  cover: "zzz"
+  不设置
+</code></pre></div></div>
+
+<p>四种设置分别对应下面的四种表现</p>
+
+<ul>
+  <li>
+    <p>在博文中设置cover属性为assert下面的图片，必须是assets下面
+此时文章头部背景将会是一张大图</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  style="background-image: url(/////);"
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>在博文中设置cover属性为以#开头的颜色值
+此时文章头部背景将会是纯色</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  style="background-color:#xxxxxx;"
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>在博文中设置cover属性为”zzz”
+此时文章头部背景将会是主题指色，这个颜色在config中指定</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  theme_color: "#607D8B"
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>在博文中不设置cover属性
+此时文章头部将不会显示任何大背景色，只有一个分割线</p>
+  </li>
+</ul>
+
+<h2 id="20151025">2015/10/25</h2>
+
+<p>当设置博客北京的conver属性后，如果没有设置图片，则会显示一个纯色的背景，这个纯色的背景的设置具体在/sass/layout.scss下面</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  .scrim {
+    padding: 3em 1em;
+    &amp;.has-cover {
+      background-color: $action-color;
+      padding: 6em 1em !important;
+      @include media($tablet) {
+        padding: 9em 1em !important;
+      }
+    }
+  }
+</code></pre></div></div>
+
+<p>$action-color在/sass/base/variables.scss下面</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Font Colors
+$base-background-color: #fff;
+$base-font-color: $dark-gray;
+$action-color: $blue;
+$highlight-color: tint($action-color, 33%);
+</code></pre></div></div>
+
+<p>真心佩服作者这种清晰明了的设置方案。</p>
+
+<p>经验证 上面的方式有问题，background-color 必须为半透明颜色，还是改回来，换个颜色就行！</p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

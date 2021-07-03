@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>关于我-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="咕咚的个人博客"/>
+  <meta name="keywords" content="咕咚,Blog,Java,Html,JavaScript,PicPlus,咕咚云图"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="关于我">关于我</h1>
+  
+  <div class="post">
+    <blockquote>
+  <p>大道至简</p>
+</blockquote>
+
+<p>我是咕咚，这是我的个人博客。</p>
+
+<p>我的工作是跟代码打交道，工作之外，篮球是我的最爱。另外，也喜欢开发一些工具 APP，算是半个独立开发者，如果你喜欢 Markdown 写作，可以了解一下<a href="https://www.coolapk.com/apk/name.gudong.pic">咕咚云图</a>这个 APP。</p>
+
+<p>除此之外，也喜欢看书，偶尔写点东西，我的公众号-<a href="https://gitee.com/maoruibin/img/raw/master/2021/01/12/_export1610434130245.jpg.png">咕咚同学</a>，欢迎关注。</p>
+
+<h2 id="更多联系方式">更多联系方式</h2>
+
+<ul>
+  <li>微博：<a href="https://weibo.com/maoruibin">大侠咕咚</a></li>
+  <li>Twitter：<a href="https://twitter.com/dxgudong?s=05">咕咚</a></li>
+  <li>GitHub: <a href="https://github.com/maoruibin">https://github.com/maoruibin</a></li>
+</ul>
+
+<h2 id="博客历史">博客历史</h2>
+<ul>
+  <li>2021/01/02: 更新主题为<a href="https://github.com/TMaize/tmaize-blog">tmaize</a></li>
+  <li>2020/10/24: 增加我的书单</li>
+  <li>2020/10/13: 增加 Twitter 链接</li>
+  <li>2020/09/17: 隐藏公众号二维码、关于 tab。</li>
+  <li>2019/12/23: 更换域名为 gudong.site。</li>
+  <li>2019/11/14: 增加 Daily、Tech 分类，把日记跟技术文章进行单独分类。</li>
+  <li>2019/11/06: 评论系统替换为 valine，并启用阅读数。</li>
+  <li>2018/12/13: 更改博客主题为极简模式的主题 indigo</li>
+  <li>2015/05/19: 使用 Github+Jekyll 搭建博客</li>
+</ul>
+
+<blockquote>
+  <p>最近更新于 2020/01/12</p>
+</blockquote>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

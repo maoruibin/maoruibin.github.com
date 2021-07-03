@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>自定义复杂 View 以及相关绘制优化实践-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="自定义复杂 View 以及相关绘制优化实践"/>
+  <meta name="keywords" content="咕咚,tech"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="自定义复杂 View 以及相关绘制优化实践">自定义复杂 View 以及相关绘制优化实践</h1>
+  
+  <div class="subtitle">咕咚 于 2017-04-28 发布</div>
+  
+  <div class="post">
+    <p>墨迹天气是一款免费的天气信息查询软件，由于要展示各种各样的数据信息，所以项目中有大量的涉及到图表相关的自定义 View，如展示 24 小时的温度曲线图、潮汐图等等。这里就简单分享一些自己在开发空气质量页面时，开发逐小时预报曲线的一些经验。</p>
+
+<blockquote>
+  <p>版权声明：本文为 <strong>咕咚</strong> 原创文章，可以随意转载，但必须在明确位置注明出处。</p>
+
+  <p>作者博客地址: <a href="http://gudong.site/">http://gudong.site</a></p>
+
+  <p>本文博客地址: <a href="http://gudong.site/2017/04/28/custom-preference-view.html">http://gudong.site/2017/04/28/custom-preference-view.html</a></p>
+</blockquote>
+
+<p>目前该 View 的实现已开源在 GitHub，<a href="https://github.com/maoruibin/TrendChartView">TrendChartView</a>，如果觉得不错，就 star 支持下。</p>
+
+<p>如下是最终的效果示意图。</p>
+
+<p><img src="http://7xr9gx.com1.z0.glb.clouddn.com/trendchart.gif" alt="trendchart" /></p>
+
+<p>整个 View 需要显示最近6天的逐小时空气质量信息，共绘制了144个小柱子，以及背景还有随着手指移动的指示器，但是最终实现完成的效果还是挺流畅的，在手机上做帧率测试时一直维持在 60 fps，滑动几乎没有卡顿的感觉。</p>
+
+<p>下面简单分析下这个 View 有哪些需求点。</p>
+
+<h2 id="分析">分析</h2>
+
+<ul>
+  <li>1、该 View 用于按照逐小时来展示最近6天的空气质量指数（后文简称为空指）。</li>
+  <li>2、最左侧纵轴展示空指的大小，一直处于显示状态。</li>
+  <li>3、逐小时预报柱状图显示在纵轴左侧，可滑动显示出每一天的预报数据。</li>
+  <li>4、数据指示器显示滑动到时间对应的空值数值，且颜色要随着等级而变化。</li>
+  <li>5、数据指示器需要一直显示在屏幕可见区域。</li>
+  <li>6、滑动到哪天，哪天对应的日期要高亮，其余未滑动的日期置灰。</li>
+</ul>
+
+<p>想了想重要的就这些，还有些细节就不一一列举了。</p>
+
+<p>现在考虑实现，可不可以直接把整个区域画在一个 View 上？</p>
+
+<p>当然可以，但是考虑到这里面有滑动操作，这样做会很麻烦，费力不讨好。由于左边的纵轴区域位置固定，所以现在考虑把整个区域拆成两部分，可以分为最左边的纵轴部分和位于其右侧的可滑动柱状图两部分。</p>
+
+<p>这样最左侧纵轴部分可以使用一个 LinearLayout 就可以实现，但是实际做的时候，因为他的背景有一些曲线效果，随意最终还是使用了自定义 View 来绘制实现。</p>
+
+<p>接下来考虑位于其右侧的柱状图部分，这部分比较复杂，这里仔细分析一下，他主要的特征有两个：</p>
+
+<ul>
+  <li>1、响应手势，可左右滑动</li>
+  <li>2、跟随手势，显示指示器</li>
+</ul>
+
+<p>这里，如果一开始就形成思维定势，仅使用一个 View 来做滑动以及绘制，那么你就必须在自己的自定义 View 里处理 onTouch 事件，这样这个 View 就会因此复杂很多。之前看到过一个开源的曲线项目<a href="https://github.com/whataa/SuitLines">SuitLines</a>，就是把触摸滑动逻辑做在 View 中，通过处理 onTouch 事件来做滑动效果，整个 View 代码逻辑会复杂很多。</p>
+
+<p>这里，我们采用了取巧的方式，把柱状图以及滑动效果的实现通过 View 组合的形式实现。</p>
+
+<p>滑动效果的实现通过 HorizontalScrollView 实现，而我们自定义的 View 处理所有元素的绘制。然后让 HorizontalScrollView 把自定义 View 包起来即可。</p>
+
+<p>这样就完了吗？显然不是，看上面说到的第二点 - <code class="highlighter-rouge">跟随手势，显示指示器</code>,这里需要实现这个效果，那么就需要这两个 View 来互相通信才能完成。</p>
+
+<p>HorizontalScrollView 可以通过设置监听拿到当前的水平滑动距离，所以他可以把这个距离传递给柱状图 View(这里把这个柱状图 View 命名为 TrendChartView)，然后 TrendChartView 拿到这里距离值，然后自己做计算，控制指示器位置。大概逻辑就是这样。</p>
+
+<p>很显然为了更好的控制 HorizontalScrollView ，这里对他也要进行简单的自定义。下面就是整个布局的 layout 代码。如下所示</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- 水平的 LinearLayout 整个根布局--&gt;</span>
+<span class="nt">&lt;LinearLayout</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+    <span class="na">android:layout_gravity=</span><span class="s">"center"</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- 纵轴 View  --&gt;</span>
+    <span class="nt">&lt;name.gudong.trendchart.TrendYAxisView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/trend_y_axis"</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span><span class="nt">/&gt;</span>
+
+    <span class="c">&lt;!-- 自定义的  HorizontalScrollView --&gt;</span>
+    <span class="nt">&lt;name.gudong.trendchart.HorizontalScrollChartParentView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/sv_container"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+        <span class="na">android:scrollbars=</span><span class="s">"none"</span><span class="nt">&gt;</span>
+
+        <span class="c">&lt;!-- 核心的柱状图 View --&gt;</span>
+        <span class="nt">&lt;name.gudong.trendchart.TrendChartView</span>
+            <span class="na">android:id=</span><span class="s">"@+id/trend_chart_view"</span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;/name.gudong.trendchart.HorizontalScrollChartParentView&gt;</span>
+
+<span class="nt">&lt;/LinearLayout&gt;</span>
+</code></pre></div></div>
+
+<h2 id="实现">实现</h2>
+<p>具体可见代码 <a href="https://github.com/maoruibin/TrendChartView/blob/master/trendchart/src/main/java/name/gudong/trendchart/TrendChartView.java">TrendChartView.java</a></p>
+
+<p>下面贴出核心 onDraw 方法的代码。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onDraw</span><span class="o">(</span><span class="nc">Canvas</span> <span class="n">canvas</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">super</span><span class="o">.</span><span class="na">onDraw</span><span class="o">(</span><span class="n">canvas</span><span class="o">);</span>
+  <span class="c1">//画等级虚线背景</span>
+  <span class="n">drawGradeAxis</span><span class="o">(</span><span class="n">canvas</span><span class="o">);</span>
+  <span class="c1">//画柱状图</span>
+  <span class="n">drawCharts</span><span class="o">(</span><span class="n">canvas</span><span class="o">);</span>
+  <span class="c1">//画指示器</span>
+  <span class="n">drawIndicatorLine</span><span class="o">(</span><span class="n">canvas</span><span class="o">,</span> <span class="n">mOffset</span><span class="o">,</span> <span class="n">mCurrentData</span><span class="o">);</span>
+  <span class="c1">//画底部的时间</span>
+  <span class="n">drawBottomDateInfo</span><span class="o">(</span><span class="n">canvas</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="卡顿问题">卡顿问题</h2>
+
+<p>按照思路开发完成花费不了多少时间，但是一开始开发完成后，发现滑动会有明显的卡顿，因为每一次滑动都需要根据手势移动的距离去重新设置指示器的位置，所以每次计算完新的位置后需要不停的 invalidate, 与此同时就会不停的触发 onDraw 方法，所以如果 onDraw 里的操作如果耗时比较多，就会很容易出现卡顿。</p>
+
+<p>所以，现在主要的优化点就应该集中在 onDraw 方法中，只要把 onDraw 方法的耗时降下来，卡顿问题也就迎刃而解。</p>
+
+<h2 id="解决问题">解决问题</h2>
+
+<p>后来仔细查看后，发现在 onDraw 中有大量的计算逻辑，比如使用 for 循环计算每一个柱子的高度、计算背景虚线对应的 path等等。尤其是柱子高度，其实没必要每次都去计算，因为只要空气指数大小确定，那么对应的柱子高度就是确定的，包括颜色，所以这里没必要每次去计算，只要计算一次即可，了解了这些就去做优化。</p>
+
+<h3 id="提前计算">提前计算</h3>
+
+<p>把所有能提前完成的计算都尽可能的提前完成。那什么时候去做这个计算比较合适呢？TrendChartView 有一个 <code class="highlighter-rouge">fillData</code>的方法，用于提供给外部设置填充空值数据集合并刷新界面，所以这个地方就是最佳的地方，我们可以在拿到数据后就去做一些绘制相关的数据计算，如柱子区域、日期对应的坐标点集合。对应到代码中，如下所示：</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">fillData</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">ITrendData</span><span class="o">&gt;</span> <span class="n">dataList</span><span class="o">,</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">dayListInfo</span><span class="o">,</span> <span class="kt">int</span> <span class="n">dayCount</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">mListSize</span> <span class="o">=</span> <span class="n">dataList</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+    <span class="n">mControlPoints</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;(</span><span class="n">mListSize</span><span class="o">);</span>
+    <span class="n">mChartTrendWidthAbs</span> <span class="o">=</span> <span class="n">mListSize</span> <span class="o">*</span> <span class="n">getItemWidthWithSpace</span><span class="o">();</span>
+    <span class="n">mDataList</span> <span class="o">=</span> <span class="n">dataList</span><span class="o">;</span>
+    <span class="n">mDayCount</span> <span class="o">=</span> <span class="n">dayCount</span><span class="o">;</span>
+    <span class="n">mDayRecord</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SparseIntArray</span><span class="o">(</span><span class="n">mDayCount</span><span class="o">);</span>
+    <span class="n">mDayListInfo</span> <span class="o">=</span> <span class="n">dayListInfo</span><span class="o">;</span>
+    <span class="n">mCurrentTimePosition</span> <span class="o">=</span> <span class="n">getCurrentTimePosition</span><span class="o">(</span><span class="n">mDayListInfo</span><span class="o">);</span>
+    <span class="n">mAverageDayWidth</span> <span class="o">=</span> <span class="n">mChartTrendWidthAbs</span> <span class="o">/</span> <span class="n">mDayCount</span><span class="o">;</span>
+	<span class="c1">//省略部分代码</span>
+  	
+    <span class="c1">//计算柱状图的点集合</span>
+    <span class="n">calculateCurveDot</span><span class="o">();</span>
+    <span class="c1">//计算背景虚线的 path</span>
+    <span class="n">calculatedLinePath</span><span class="o">();</span>
+    <span class="c1">//计算底部时间对应的坐标信息</span>
+    <span class="n">calculateBottomTextPoint</span><span class="o">();</span>
+    <span class="c1">//发起重绘请求</span>
+    <span class="n">requestLayout</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>这里拿 <code class="highlighter-rouge">calculateCurveDot </code>这个方法举例说明，该方法用于提前计算柱状图的点集合。所以这里实现定义好一个集合</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//图表绘制点集合</span>
+<span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">ChartRect</span><span class="o">&gt;</span> <span class="n">mChartRectList</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+</code></pre></div></div>
+
+<p>其中，<code class="highlighter-rouge">ChartRect</code>为封装的用于画柱状图的属性对象。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * 封装的用于画柱状图的属性对象
+ */</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">ChartRect</span> <span class="o">{</span>
+    <span class="cm">/**
+     * 柱状图矩区域
+     */</span>
+    <span class="nc">RectF</span> <span class="n">rectChart</span><span class="o">;</span>
+    <span class="cm">/**
+     * 柱子颜色
+     */</span>
+    <span class="nd">@ColorInt</span> <span class="kt">int</span> <span class="n">color</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>现在就要提前把对应的点集合计算完成，如下所示：</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kt">void</span> <span class="nf">calculateCurveDot</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">mChartRectList</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+        <span class="kt">float</span> <span class="n">currentPosX</span><span class="o">;</span>
+        <span class="kt">float</span> <span class="n">currentPosY</span><span class="o">;</span>
+        <span class="kt">float</span> <span class="n">lastX</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="kt">float</span> <span class="n">lastY</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">roundRadius</span> <span class="o">=</span> <span class="n">dp2</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">lastDay</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">position</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">mListSize</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="nc">ITrendData</span> <span class="n">data</span> <span class="o">=</span> <span class="n">mDataList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+            <span class="kt">int</span> <span class="n">dataWrapValue</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">warpValue</span><span class="o">();</span>
+            <span class="nc">ChartRect</span> <span class="n">chartRect</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ChartRect</span><span class="o">();</span>
+
+            <span class="kt">float</span> <span class="n">left</span> <span class="o">=</span> <span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">*</span> <span class="n">mChartSpace</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">mChartItemWidth</span><span class="o">;</span>
+            <span class="kt">float</span> <span class="n">bottom</span> <span class="o">=</span> <span class="n">mViewHeight</span> <span class="o">-</span> <span class="n">mBottomBlankSize</span> <span class="o">+</span> <span class="n">roundRadius</span><span class="o">;</span>
+            <span class="kt">float</span> <span class="n">top</span> <span class="o">=</span> <span class="n">bottom</span> <span class="o">-</span> <span class="o">(</span><span class="n">dataWrapValue</span> <span class="o">/</span> <span class="n">mMaxAqiValue</span><span class="o">)</span> <span class="o">*</span> <span class="o">(</span><span class="n">mChartContentHeight</span><span class="o">)</span> <span class="o">-</span> <span class="n">roundRadius</span><span class="o">;</span>
+            <span class="kt">float</span> <span class="n">right</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="n">mChartItemWidth</span><span class="o">;</span>
+            <span class="n">chartRect</span><span class="o">.</span><span class="na">rectChart</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RectF</span><span class="o">(</span><span class="n">left</span><span class="o">,</span> <span class="n">top</span><span class="o">,</span> <span class="n">right</span><span class="o">,</span> <span class="n">bottom</span><span class="o">);</span>
+            <span class="n">chartRect</span><span class="o">.</span><span class="na">color</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">levelColor</span><span class="o">();</span>
+            <span class="n">mChartRectList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">chartRect</span><span class="o">);</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>这里主要领会精神即可。</p>
+
+<p>总之数据提前计算，不要做无意义的重复计算，除非一些属性要变化，只要不变化的属性能提前计算尽量都提前完成。</p>
+
+<h2 id="使用位运算">使用位运算</h2>
+
+<p>在 onDraw 方法中总有一些计算无法避免，这时为了追求极致的运算效率，对除法可以使用位运算。如下所示：</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">width</span><span class="o">/</span><span class="mi">2</span> <span class="o">-&gt;</span> <span class="n">width</span> <span class="o">&gt;&gt;</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<h2 id="使用-cliprect">使用 ClipRect</h2>
+
+<p>对于绘制过程中可能存在重复绘制的 View 区域，此时为了绘制效率，建议使用 Canvas 的 <code class="highlighter-rouge">clipRect</code>方法lai来精确控制 View 可绘制的边界，具体 clipRect 的详细介绍，可参看<a href="https://medium.com/@seanutf/cliprect-and-quickreject-c7db16e066cd">链接</a>。</p>
+
+<h2 id="path-优化">Path 优化</h2>
+
+<p>该 View 中的背景有三根垂直排列的直线，这里用到了 path，一开始自己也是在 onDraw 中每次去计算这三根线的起始点坐标，后来经同事提示，可以事先一次性把 Path 的坐标都计算好，然后绘制时，一次性就可以把三根线绘制好。如下所示：</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//提前计算 path </span>
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">calculatedLinePath</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">mPathGradLine</span><span class="o">.</span><span class="na">reset</span><span class="o">();</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">mGradeCount</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="n">mPathGradLine</span><span class="o">.</span><span class="na">moveTo</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">bottomLine</span> <span class="o">-</span> <span class="n">averageGradleHeight</span> <span class="o">*</span> <span class="n">i</span><span class="o">);</span>
+        <span class="n">mPathGradLine</span><span class="o">.</span><span class="na">lineTo</span><span class="o">(</span><span class="n">getChartRealWidth</span><span class="o">(),</span> <span class="n">bottomLine</span> <span class="o">-</span> <span class="n">averageGradleHeight</span> <span class="o">*</span> <span class="n">i</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="cm">/**
+ * 绘制三根背景虚线
+ * @param canvas
+ */</span>
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">drawGradeAxis</span><span class="o">(</span><span class="nc">Canvas</span> <span class="n">canvas</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="na">drawPath</span><span class="o">(</span><span class="n">mPathGradLine</span><span class="o">,</span> <span class="n">mGradeAxisPaint</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="总结">总结</h2>
+
+<p>当然，具体做绘制优化时，可能不同的 View 需求，具体优化策略也可能千变万化，这里只是拿这个具体的 View 来做一点具体的介绍，不具有通用性，但是优化的思想应该有共性。</p>
+
+<p>View 绘制的优化是无止境的，始终保持学习钻研、精益求精的态度方可做到最好。</p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

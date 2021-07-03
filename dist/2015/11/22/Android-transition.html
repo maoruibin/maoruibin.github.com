@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>在Android5.0以上设备实现过渡动画-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="在Android5.0以上设备实现过渡动画"/>
+  <meta name="keywords" content="咕咚,tech"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="在Android5.0以上设备实现过渡动画">在Android5.0以上设备实现过渡动画</h1>
+  
+  <div class="subtitle">咕咚 于 2015-11-22 发布</div>
+  
+  <div class="post">
+    <p>从Android5.0开始，系统提供一个很好看的Activity间的转场动画，具体就是共享两个界面中一些共有的View，让前后两个界面的跳转变得很流畅
+好看。</p>
+
+<h2 id="具体效果">具体效果</h2>
+
+<p>一图胜千语,下面就是 Android 5.0 设备上使用转场动画后示意图，这样的交互在 Google 自家的 App 里已经司空见惯。比如 Google Play
+中，从应用列表界面跳转到应用详情页，就使用了类似的转场动画。下面的示意 gif 来自 Android 官方 Demo。</p>
+
+<p><img src="/assets/tronsition_effect.gif" alt="tronsition_effect" title="tronsition_effect" /></p>
+
+<p>看上去确实很好看,使用后让原本硬生生的界面跳转变得特别自然。那怎么实现呢,简单分析下。</p>
+
+<p>现在有两个 Activity 分别为 MainActivity 和 DetailActivity 。MainActivity中是一些动物的列表展示，每个 Item包含一个动物图片和动物名称。
+点击 Item 需要跳转到对应动物的详情介绍页。详情介绍页，会显示动物的大图，名称以及这个动物的详细介绍。</p>
+
+<p>因为两个界面中动物的图片和名称是一致的,也就是说这两个界面有共有的 View 元素,所以这种场景就比较适合用转场动画来
+优化交互逻辑，现在点击 MainActivity 的 Item，需要产生一个转场动画来到达详情页。下面就是具体实现方式。</p>
+
+<h2 id="实现方法">实现方法</h2>
+
+<h3 id="1在detailactivity中为指定的-view-设置一个字符串的标记">1、在DetailActivity中为指定的 View 设置一个字符串的标记</h3>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="c1">// View name of the header image. Used for activity scene transitions</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">String</span> <span class="no">VIEW_NAME_HEADER_IMAGE</span> <span class="o">=</span> <span class="s">"detail:header:image"</span><span class="o">;</span>
+    
+    <span class="c1">// View name of the header title. Used for activity scene transitions</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">String</span> <span class="no">VIEW_NAME_HEADER_TITLE</span> <span class="o">=</span> <span class="s">"detail:header:title"</span><span class="o">;</span>
+    
+</code></pre></div></div>
+
+<h3 id="2使用-activitycompat-启动目标-activity">2、使用 ActivityCompat 启动目标 Activity</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="nc">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Intent</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="nc">DetailActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="nc">DetailActivity</span><span class="o">.</span><span class="na">EXTRA_PARAM_ID</span><span class="o">,</span> <span class="n">item</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+
+    <span class="cm">/**
+     * 通过ActivityOptionsCompat的工厂方法创建一个ActivityOptions实例
+     */</span>
+    <span class="nc">ActivityOptionsCompat</span> <span class="n">activityOptions</span> <span class="o">=</span> <span class="nc">ActivityOptionsCompat</span><span class="o">.</span><span class="na">makeSceneTransitionAnimation</span><span class="o">(</span>
+            <span class="k">this</span><span class="o">,</span>
+            <span class="c1">//关联两个界面中的共有 View 元素</span>
+            <span class="k">new</span> <span class="nc">Pair</span><span class="o">&lt;</span><span class="nc">View</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;(</span><span class="n">itemView</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="no">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">imageview_item</span><span class="o">),</span>
+                    <span class="nc">DetailActivity</span><span class="o">.</span><span class="na">VIEW_NAME_HEADER_IMAGE</span><span class="o">),</span>
+            <span class="k">new</span> <span class="nc">Pair</span><span class="o">&lt;</span><span class="nc">View</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;(</span><span class="n">itemView</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="no">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">textview_name</span><span class="o">),</span>
+                    <span class="nc">DetailActivity</span><span class="o">.</span><span class="na">VIEW_NAME_HEADER_TITLE</span><span class="o">));</span>
+    <span class="c1">//启动目标 Activity </span>
+    <span class="nc">ActivityCompat</span><span class="o">.</span><span class="na">startActivity</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">intent</span><span class="o">,</span> <span class="n">activityOptions</span><span class="o">.</span><span class="na">toBundle</span><span class="o">());</span>
+   
+</code></pre></div></div>
+
+<h3 id="3在-detailactivity-的-oncreate-方法中接受并处理">3、在 DetailActivity 的 onCreate 方法中接受并处理</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="c1">//找到 detail 界面中的 View 元素</span>
+    <span class="n">mHeaderImageView</span> <span class="o">=</span> <span class="o">(</span><span class="nc">ImageView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="no">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">imageview_header</span><span class="o">);</span>
+    <span class="n">mHeaderTitle</span> <span class="o">=</span> <span class="o">(</span><span class="nc">TextView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="no">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">textview_title</span><span class="o">);</span>
+
+    <span class="c1">//关联</span>
+    <span class="nc">ViewCompat</span><span class="o">.</span><span class="na">setTransitionName</span><span class="o">(</span><span class="n">mHeaderImageView</span><span class="o">,</span> <span class="no">VIEW_NAME_HEADER_IMAGE</span><span class="o">);</span>
+    <span class="nc">ViewCompat</span><span class="o">.</span><span class="na">setTransitionName</span><span class="o">(</span><span class="n">mHeaderTitle</span><span class="o">,</span> <span class="no">VIEW_NAME_HEADER_TITLE</span><span class="o">);</span>
+    
+</code></pre></div></div>
+
+<h2 id="总结">总结</h2>
+
+<p>总体说来使用还是挺简单的,这个效果尤其对图片类应用特别棒,不过目前只有 5.0 以上设备才能支持这个效果,如果想要兼容5.0以下的设备,你可能需要去 Github 搜搜有没有合适库。</p>
+
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

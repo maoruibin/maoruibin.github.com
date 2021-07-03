@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>我的开发之路-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="我的开发之路"/>
+  <meta name="keywords" content="咕咚,blog"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="我的开发之路">我的开发之路</h1>
+  
+  <div class="subtitle">咕咚 于 2015-05-19 发布</div>
+  
+  <div class="post">
+    <p>对于自己做开发工作到现在，有时想想，也许是命运的安排。</p>
+
+<p>高中填报志愿，我选择的是当时比较热门的机械设计制造，但是因为成绩没够着，并且服从调配，所以被调到了计算机科学与技术专业，从此我便和软件、程序挂起了钩。</p>
+
+<p>大一开始学习C语言，却发现对这个东西一点都没感觉，持续到大二，还是没感觉，后来就觉得不对啊，即使是被选择到了计算机专业，但也不能荒废时间啊，后来自己开始上网找教程，
+自学一些比较有意思的项目，我记得很清楚，当时看了一个视频教程《C语言也能干大事》，
+才发现原来编程是可以让我产生兴趣的。从此便开始了自己的程序员之旅。</p>
+
+<p>后来开始不停的学习新东西，乐此不疲，从一开始的MFC到后来的Java，再开始学习JavaScript、Css、JavaWeb、三大框架，数据库。
+后来发现自学其实是个特别有意思的事情，你可以学习任何你想学习的东西。</p>
+
+<p>后来甚至翘课去听一些网络教程，说到这里，我觉得对于在校大学生，如果你现在还在大学，同时对编程有兴趣，建议除了专业相关的重要课程，翘课学习自己喜欢的东西，未尝不可。</p>
+
+<p>后来大四第一学期，一所北京培训机构去学校宣讲，招收学生去北京培训移动开发，而且培训费有优惠，所以就来到了北京，开始参加Android开发培训…</p>
+
+<p>培训时间是四个月，第三个月试着去面试，顺利的拿到Offer,然后开始自己的开发生涯。</p>
+
+<p>第一份工作是在一家创业公司做Android开发，一开始公司只有五个人，CEO，前端、市场、移动客户端。老板是华为出生，懂技术懂销售。</p>
+
+<p>到公司后服务端老板负责，我负责客户端，至于产品设计，无，当时在我的建议下，用腾讯的一个原型工具，花了一周时间，自己做了一个简单的产品原型，然后就开始开发客户端。</p>
+
+<p>用了三个月时间，在13年5月份产品上线，产品功能很简单，帮助用户查询周边的农场，数据全部来自老板之前做的web网站。</p>
+
+<p>后来，微信公众号比较火，老板说能不能做个公众号，研究了段时间，没过多久，用 PHP 写的后台做了公司公众号，不知不觉也算是PHP入门了。</p>
+
+<p>再后来公司要转型（恩，这是典型的创业公司），要做农产品电商，需要做一个电商网站，但是老板公务繁忙，没时间搞，只能让我负责，还好有一家公司提供整个一套电商解决方案。</p>
+
+<p>后来还算顺利的利用三方提供的方案，搭起了网站的雏形，至此Android已经和我没有关系了。</p>
+
+<p>尽管网站已经可以跑起来了，但是问题很多，界面丑，后台管理缺功能等等问题接踵而至。从此开始有做起了网页前端，不时的开始去改后台逻辑。</p>
+
+<p>14年3月网站总算能见人了，这时的网站首页，已经被我改的面目全非（褒义），因为我比较喜欢小米（我是一个代码层面的米粉），后来整个主页被我改的颇有几分小米官网的感觉，现在想想也是醉了。</p>
+
+<p>我改版后的商城主页地址    <a href="http://www.ubive.com" target="_blank">http://www.ubive.com</a></p>
+
+<p>一个农产品电商主页，其实不该走简洁路线，这是一个产品定位问题，但当时确实任性了，完全按照个人主观喜好去做，目前网页现在还是这个风格。<a href="http://www.ubive.com/" target="blank">优倍商城</a> 不知道网站现在运营如何，但是老板确实挺牛，没有融资，坚持了三年，也是蛮拼的，祝福老板。</p>
+
+<p>网站上线的几个月后，继续负责网站优化，但是隐隐觉得我还是爱Android多一点，后来14年六月份辞职，继续开始自己的Android开发之路。</p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weekly 006-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="Weekly 006"/>
+  <meta name="keywords" content="咕咚,daily"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="Weekly 006">Weekly 006</h1>
+  
+  <div class="subtitle">咕咚 于 2019-03-30 发布</div>
+  
+  <div class="post">
+    <p><img src="https://images.unsplash.com/photo-1465352609784-461df6a5b768?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2089&amp;q=80" alt="" /></p>
+
+<blockquote>
+  <p>题图：Photo by Banter Snaps on Unsplash</p>
+</blockquote>
+
+<p>工作日的每一天都围绕一些看到、想到的事去写一篇感悟、思考短文，然后周末整理出来发表。</p>
+
+<p>通过这种方式做一些较深入的思考和记录，同时与朋友更好的交流分享。</p>
+
+<h2 id="回顾这周">回顾这周</h2>
+
+<ul>
+  <li>工作时间大部分都在做投票发布器，自己只负责 Android 客户端一侧的发布，但是整个链路很长，问题也就较多，加上参与人数多，变数就多，已经延期两版了。</li>
+  <li>认识了新球友和新同桌。</li>
+  <li>工作中的项目切换成本太高了，所以做完一件事显得更重要，否则再回去做开销太大了。</li>
+  <li>这周每日习惯执行的不好，尤其是早起，当然最主要的原因还是不能早睡。</li>
+  <li>去简书参加了日更的挑战记录，跟我的日计划正好契合，所以参与了。</li>
+  <li>每天不追求写的多，而在于写的深入、有思考，通畅。</li>
+  <li>基于 wechat-format 做了自定义，定制了自己公众号文章的样式，也就是现在这篇的样式，地址<a href="https://github.com/maoruibin/wechat-format/">maoruibin/wechat-format: 微信公众号排版编辑器，转换 Markdown 到微信特制的 HTML</a></li>
+</ul>
+
+<h2 id="本期目录">本期目录</h2>
+
+<ul>
+  <li>03/25 我要买个车吗？</li>
+  <li>03/26 音乐是个神奇的东西</li>
+  <li>03/27 听过很多大道理…</li>
+  <li>03/28 996.ICU 这个项目为什么会火起来</li>
+  <li>03/29 聚餐</li>
+</ul>
+
+<h2 id="0325-我要买个车吗">03/25 我要买个车吗？</h2>
+<p>周末用媳妇的身份申请了天津的小客车摇号，从此我也加入了摇号大军。</p>
+
+<p>都知道北京号难摇，其实天津也不简单，我看了下二月份普通车是 80 万人在摇，中的概率是千分之五，如果是节能车貌似概率大点。没管那么多，我申请了普通车，先摇一次看看，不一定就中了呢。</p>
+
+<p>如果中了，我会买车吗？</p>
+
+<p>之前我一直不愿意买车。都知道投资中有一个道理，即 要购买资产，而不是负债。显然，对自己而言，车是典型的负债，购车需要花钱，而养车更需要花钱，不仅花钱，还花精力，停车位，事故等等都是要话费精力去处理的。所以买车是典型的负债。</p>
+
+<p>不过最近送孩子上学的途中，确实又觉得如果有车的话，接送孩子会方便不少。今年他上幼儿园时，我买了一辆电动车，用来接送他上学，这几周每天早晨都是我送他去学校，路上还有点冷，他坐在我背后，尽管给他穿的挺厚实，但是如果有车，确实就好多了，而且他还特别喜欢车。</p>
+
+<p>另外就是，车能提升生活的幸福感，在一些场合下，一个好的车也会让自己有面子，当然这都是虚的东西。</p>
+
+<p>最终的购买行为还是要结合自身的实际需要，个人暂时而言，车并不是刚需，还没有到非卖不可的时候，所以现在只会关注，不会购买。</p>
+
+<p>另外最近竟然被同事成功安利电动车，哎哎，以后买车我应该会买电动车了。你看这辆车如何？
+<img src="https://i.loli.net/2019/03/25/5c98d18a0c041.jpg" alt="" /></p>
+
+<h2 id="0326-音乐是个神奇的东西">03/26 音乐是个神奇的东西</h2>
+
+<p>我喜欢听歌，也喜欢唱歌。对歌曲最开始的记忆是在三年级。那时候每周都有一节音乐课，跟其他课程不同，音乐课是三个年级一起上的，也就是一到三年级的同学在一个教室里进行上课，然后那时是统一在三年级的教室里上课，一二年级的同学都要搬凳子到三年级教室。所以可以想象的出，教室里会特别拥挤。</p>
+
+<p>上课的是柴老师，一般就是教我们一句一句的唱歌，那时候我们学会了《长江之歌》《少先队之歌》当然还有《国歌》等等。</p>
+
+<p>然后每学期末，音乐考试的方式也很特别，依旧是大家聚在一个教室里，然后按个唱歌，三个班加起来也得三十人左右，所以一般考试也就需要两周才能进行完。</p>
+
+<p>那时考试时唱的歌是自己选的，不论是不是音乐课上教的，都可以唱，然后唱完后，老师根据自己感受给打一个分就算老师结束。我记得有一次考试，我特意准备了下。那时刚是香港回顾没多久，那时有一首歌特别火，《七子之歌》，我在电视上听了好多遍便学会了，也很喜欢唱，所以终于要考试了，我准备把《七子之歌》作为考试的曲目。</p>
+
+<p>我记得当时轮到我唱歌时，我站起来，跟大家说了自己要唱的歌名后便开始唱，那时第一次感受到了舞台的感觉。那次我感觉唱的很好，我很投入。</p>
+
+<p>这也便是自己对唱歌最开始的记忆了，很美好。</p>
+
+<p>后来发现，除了教室里，山里、田野里唱歌更自在。可以大声的唱，也不用管是不是跑调，或者词是不是准确，后来到高中后，在一次音乐课上，我唱了一次后，竟然让大家觉得我唱的挺不错的，我挺意外。</p>
+
+<p>说到这，实际上在音乐天赋方面，我是明显不如我老爹他们父辈那一代的，具体就是在乐器方面不如老爹他们，唱歌方面不如姑妈们。</p>
+
+<p>在村里，老爹，四叔他们拉二胡，吹笛子等都算是高手了，简直就是村里的明间艺术家，二老爹他们的妹妹们，也就是我的姑妈们，他们很喜欢跳舞，歌唱的也特别好，声音好听，节奏感，音准都是业余中的佼佼者。</p>
+
+<p>实际上，小时候我很少听到他们唱歌，直到现在在一个 K 歌软件里听了姑妈们的声音，才发现他们都是那么棒。</p>
+
+<p>但是挺遗憾的是，那时他们的音乐天赋都无法兑现，不过音乐，舞蹈，乐器依旧给他们带来了很多快乐。</p>
+
+<p>突然发现有点偏题了，写着写着写到父辈们了，父辈的音乐故事有很多，要单独写一篇都不一定写完。</p>
+
+<p>关于音乐，真是一种特别好的调节生活的方式。</p>
+
+<p>不同的阶段听不同的歌，往往一段旋律就是一段回忆。</p>
+
+<h2 id="0327-听过很多大道理">03/27 听过很多大道理…</h2>
+
+<p>随着移动互联网的发展，大家获取信息的方式变得异常便捷，触手可及。</p>
+
+<p>比如微信公众号，订阅后信息就会源源不断的传送过来，比如头条，通过机器学习自动推荐个性化信息给用户，我们通过手机就可以可以学习到心理，体育，财经等各个领域的东西，而且更厉害的是，我们可以订阅专家、大牛的一手信息。</p>
+
+<p>这在以前是不可想象的。比如春秋时代，你想听孔子的学说，只能去找到他，做他的门徒，这不仅要跨越地理上的障碍，还要有相当的决心（不论如何，怎么都得说服爸妈吧）。试想，如果老人家活在当代，开个微博账号就可以了，每天发微博治学。</p>
+
+<p>相比哪个时代，如今信息流通异常简单，不可同日而语，内容也异常丰富。但是在这样的环境下，我认为最重要的已经不是如何获取信息的问题了，而是信息处理能力，也就是把信息转化为自己的东西，做信息的主人，而不是被信息的海洋淹没。</p>
+
+<h2 id="0328-996icu-这个项目为什么会火起来">03/28 996.ICU 这个项目为什么会火起来</h2>
+
+<p>### 关于996.ICU</p>
+
+<p>一个国人在 github 上发起的一个项目，用来介绍国内的  996 工作机制，并让大家一起翻译成多国语言，项目网址 https://996.icu/#/zh_CN</p>
+
+<p>### 怎么叫火起来了</p>
+
+<p>github 是一个国外的网站，主要用来做项目协作，比如多个人一起在网上开发一个项目，github 就提供了很好的平台可以让大家身处不同的地方，却能有条不紊的通过这个网络平台开展项目。github 上面主要还是工程师居多，大家大都用来共享项目或者给其他项目贡献代码。</p>
+
+<p>相比其他社交平台，github 的传播性并不好，主要就是通过给项目点  star ，有点类似微信微博的点赞，然后在 github 站内传播，而用过的人都知道这个传播性并不高，所以一般个人的项目能有 1000 个star 已经不错了，如果有好几千过万 star 则已经是出名项目了，然后这个 996.ICU 却已经6万 star ，更重要的是他仅仅用了两三天的功夫，目前它在整个 github 项目里排名已经是第21的位置了。</p>
+
+<p><strong>在一个传播属性不怎么强的平台上短时间聚集了如此多的关注量，这不叫火那什么叫火。</strong></p>
+
+<h3 id="如何火起来的">如何火起来的</h3>
+
+<p>这跟这个项目本身有直接的关系。</p>
+
+<p>#### 1、996加班机制积怨已久</p>
+
+<p>在国内加班是个很常见的事，见惯不惯，而且更重要的是大家对于这种不符合劳动法的雇佣法则都一致的容忍，大家不发声不代表内心不抵触，很多时候。处于雇佣关系弱势的一方，大多数人都选择忍气吞声，也有迫于生活压力。还有一些人用脚投票，跳槽离职。</p>
+
+<h4 id="2国内受限制的言论平台">2、国内受限制的言论平台</h4>
+
+<p>相比国内其他平台，github 本身的传播性不强，但是它是十分自由的平台，不会受到其他管制，对信息的质量而言，这是国内平台无法比拟的。</p>
+
+<h2 id="0329-聚餐">03/29 聚餐</h2>
+
+<p>今天团队同事升职，大家一起庆祝吃饭，8个人一桌，却发现90后只有自己一个。</p>
+
+<p>事实上去年还有好几个，一年功夫，竟是如此模样。</p>
+
+<p>这也侧面反映了90后在职场更活跃，跳槽更频繁，而自己为什么是独有的一个呢，原因很简单，我是为数不多结婚生子的九零后，多么痛的领悟。</p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>

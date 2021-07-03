@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>更换了博客域名 | Daily 12/24-咕咚同学</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="zh-CN" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="google-site-verification" content="ckhUaoa05QCmWoE1FafzTBcqYI4yBOy-UJKopXDS18M" />
+  <meta name="author" content="咕咚" />
+  <meta name="description" content="更换了博客域名 | Daily 12/24"/>
+  <meta name="keywords" content="咕咚,daily"/>
+  <link rel="icon" href="/static/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/img/logo.png" />
+  <link rel="stylesheet" href="/static/css/common.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/theme-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/post.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-dark.css?t=20210703184356">
+  <link rel="stylesheet" href="/static/css/code-light.css?t=20210703184356">
+  <script>
+    window.blog = {
+      baseurl:"",
+      buildAt:"20210703184356",
+      darkTheme: false,
+      setDarkTheme: function (dark) {
+        this.darkTheme = Boolean(dark);
+        document.documentElement.className = this.darkTheme ? 'dark': '';
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkTheme ? '#2D2E32': '#FFFFFF');
+      }
+    }
+    if (sessionStorage.darkTheme !== undefined) {
+      blog.setDarkTheme(sessionStorage.darkTheme === 'true'); // 记忆值，单个窗口内有效
+    } else {
+      blog.setDarkTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); // 跟随系统
+    }
+
+    if (window.matchMedia) {
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addListener(function (ev) {
+        blog.setDarkTheme(ev.currentTarget.matches);
+        sessionStorage.removeItem('darkTheme');
+      });
+    }
+  </script>
+</head><body ondragstart="return false;">
+<header class="header">
+  <img class="logo" src="/static/img/logo.jpg" alt="logo"/>
+  <nav class="menu">
+    <a href="/" class="hover-underline">首页</a>
+    <a href="/categories.html" class="hover-underline">归类</a>
+    <a href="/search.html" class="hover-underline">搜索</a>
+    <a href="/about.html" class="hover-underline">关于</a>
+    </nav>
+</header>
+<div class="page page-post">
+  <h1 class="title" id="更换了博客域名 | Daily 12/24">更换了博客域名 | Daily 12/24</h1>
+  
+  <div class="subtitle">咕咚 于 2019-12-24 发布</div>
+  
+  <div class="post">
+    <p><img src="https://imgkr.cn-bj.ufileos.com/373c5d9a-0918-4dc2-b308-ac2e56d853b6.jpg" alt="" /></p>
+
+<p>我的个人博客从2015年搭建后，到现在已经四年了，与此同时，我的域名 gudong.name 也服役了四年。</p>
+
+<p>还记得一开始，我最中意的域名其实是 gudong.me ，但是这个域名一直被抢注，后来就放弃了，慢慢的觉得 gudong.name 这个域名也还不错。</p>
+
+<p>但是这个域名一直有一个问题，<strong>不支持备案</strong>。</p>
+
+<p>因为不支持备案，所以我的博客文章在微信内打开时，总会被微信这样提示，然后二次点击才可以访问。</p>
+
+<p><img src="https://imgkr.cn-bj.ufileos.com/d7ad6349-8364-45af-ba11-6dbba7a10598.jpg" alt="" /></p>
+
+<p>另外，自己最近在折腾各种图床，其中的图床服务之一 — <strong>七牛云</strong>，它的文件存储功能需要绑定一个域名，而且要求域名备案，所以七牛云图床暂时就 gg 了。</p>
+
+<p>然后，前段时间我的 .name 域名到期了，阿里云短信提示我续费，续费时发现 .site 域名支持备案，价格还比 .name 便宜，所以就果断买下了 gudong.site 的域名。</p>
+
+<p>这次一次买了五年期，一共才99块大洋，而之前的 gudong.name 每年55，而且即使多买几年也不优惠。</p>
+
+<p>买下了域名，还有一个问题，我如果直接把博客的域名替换了，我之前所有对外公布的博客文章链接都会失效。所以想了个权宜之计，把我原来的博客 fork 了一份到另一个 github 账号，让它继续指向 gudong.name，不过每篇文章的最顶部都给了一个黄色的 Warning 提示，让访问者去访问新站点，如下所示:</p>
+
+<p>这样就解决了大量的 404 问题，不过 gudong.name 这个域名只续费了一年，明年这个时候就再也不能访问了，say goodbye~</p>
+
+  </div>
+  
+</div>
+<footer class="footer">
+  <span>Copyright © 2020 咕咚</span>
+  <a href="/static/xml/rss.xml">RSS订阅</a>
+  <span>Theme By</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+</footer>
+<div id="to-top">
+  <span></span>
+  <span></span>
+</div>
+<script type="text/javascript" src="/static/js/blog.js?t=20210703184356"></script>
+<script type="text/javascript" src="/static/js/search.js?t=20210703184356"></script><!-- 百度自动推送 -->
+<script>
+  ;(function () {
+    if (window.location.hostname == '127.0.0.1') {
+      return
+    }
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+</body>
+</html>
