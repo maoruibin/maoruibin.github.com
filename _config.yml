@@ -33,8 +33,8 @@ menu:
     url: /search.html
   # - title: 友链
   #   url: links.html
-  # - title: 留言
-  #   url: /chat.html
+  - title: 留言
+    url: /chat.html
   - title: 关于
     url: /about.html
 

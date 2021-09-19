@@ -19,6 +19,7 @@ title: 关于我
 - GitHub: [https://github.com/maoruibin](https://github.com/maoruibin)
 
 ## 博客历史
+- 2021/09/19: 增加留言面板
 - 2021/01/02: 更新主题为[tmaize](https://github.com/TMaize/tmaize-blog)
 - 2020/10/24: 增加我的书单
 - 2020/10/13: 增加 Twitter 链接
@@ -29,4 +30,4 @@ title: 关于我
 - 2018/12/13: 更改博客主题为极简模式的主题 indigo
 - 2015/05/19: 使用 Github+Jekyll 搭建博客
 
-> 最近更新于 2020/01/12 
+> 最近更新于 2020/09/19
