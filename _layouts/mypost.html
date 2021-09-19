@@ -8,6 +8,13 @@
   {% if page.date %}
   <div class="subtitle">{{site.author}} 于 {{ page.date | date: "%Y-%m-%d" }} 发布</div>
   {% endif %}
+
+  {% if page.header-img %}
+</br>
+  <img src="{{page.header-img}}" style="width: 100%;margin: auto;"/>  
+</br>
+  {% endif %}
+
   <div class="post">
     {{ content }}
   </div>
