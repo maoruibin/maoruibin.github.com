@@ -12,11 +12,12 @@ title: 关于我
 除此之外，也喜欢看书，偶尔写点东西，我的公众号-[咕咚同学](https://gitee.com/maoruibin/img/raw/master/2021/01/12/_export1610434130245.jpg.png)，欢迎关注。
 
 
-## 更多联系方式
+## 关注/订阅
 
 - 微博：[大侠咕咚](https://weibo.com/maoruibin)
 - Twitter：[咕咚](https://twitter.com/dxgudong?s=05)
 - GitHub: [https://github.com/maoruibin](https://github.com/maoruibin)
+- Rss：[订阅地址](https://gudong.site/static/xml/rss.xml)
 
 ## 博客历史
 - 2021/09/19: 增加留言面板
