@@ -7,7 +7,7 @@ catalog:    true
 qrcode_mp: false
 tags:	list 
 shang:	true 
-hidden: false
+hidden: true
 ---
 从16年开始，陆续有很多好友对咕咚翻译进行了数量不等的捐赠，这里再次谢过你们对咕咚翻译的支持。
 

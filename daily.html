@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 首页
+title: 咚记
 ---
 <div class="page page-index">
   {% for post in site.posts  -%}
@@ -17,8 +17,6 @@ title: 首页
 
         {% if  post.categories contains  "daily" %}
 
-        {% else %}
-
           <li>
             <span class="date">{{ post.date | date: "%Y/%m/%d" }}</span>
             <div class="title">
@@ -32,7 +30,12 @@ title: 首页
           </li>
 
         {% endif %}
+
+
+      
       {% endif %}
+
+
     {%- if forloop.last or post_previous_year != post_year %}
       </ul>
     </div>
