@@ -1,4 +1,3 @@
-
 ---
 layout: mypost
 author: 咕咚
