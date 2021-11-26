@@ -20,6 +20,7 @@ title: 关于我
 - Rss：[订阅地址](https://gudong.site/static/xml/rss.xml)
 
 ## 博客历史
+- 2021/10/17: 增加评论 [utteranc.es](https://utteranc.es)
 - 2021/10/17: 增加「咚记」模块
 - 2021/09/19: 增加留言面板
 - 2021/01/02: 更新主题为[tmaize](https://github.com/TMaize/tmaize-blog)
