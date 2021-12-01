@@ -12,9 +12,6 @@ DongReader 是自己开发的一个 Android 订阅软件，追求极致简洁与
 
 - 新增：支持导出图片分享
 - 新增：支持拦截 Rss url，比如从微信打开 rss 链接，选择用浏览器打开，这时会出现 DongReader 的入口
-
-![](https://gitee.com/maoruibin/img/raw/master/2021/12/01/IMG_20211201_191747.jpg)
-
 - 优化：设置页面入口逻辑调整
 - 优化：菜单按钮 移除 -> 删除
 - 修复：阅读页面底部导航器调整
