@@ -1,7 +1,7 @@
 ---
 layout: mypost
 author: 咕咚
-title: "一份很长的更新日志"
+title: "有点长的更新日志"
 description: ""
 author: gudong
 tags: 总结
@@ -23,3 +23,5 @@ DongReader 是自己开发的一个 Android 订阅软件，追求极致简洁与
 - 优化：收藏改为「喜欢」，阅读页面增加喜欢入口
 - 界面：列表、阅读页面增加喜欢标识
 - 界面：侧滑菜单中调换了未读与喜欢的顺序
+
+DongReader 下载地址：[链接](http://d.firim.top/gulz)
