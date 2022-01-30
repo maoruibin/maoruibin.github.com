@@ -63,4 +63,5 @@ categories: blog
 ## 结尾
 
 关于泰森真是可以说太多了，他身上有诸多可以讨论的东西，读书的过程就是了解他的过程，他本身有很多故事，这些故事的背后往往可以带来更多的反思，所以这也是读这本书的价值意义所在。
-![image](http://upload-images.jianshu.io/upload_images/588640-8bd3023c7f6d9fac.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![](https://gitee.com/maoruibin/img/raw/master/2022/01/30/20220130143510969.jpg)
