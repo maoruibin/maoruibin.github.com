@@ -12,10 +12,23 @@ title: 友情链接
 头像：{{ site.domainUrl }}{{ site.baseurl }}/static/img/logo.jpg
 ```
 
-<ul>
+<div style="display:flex;flex-direction:  column">
   {%- for link in site.links %}
-  <li>
-    <p><a href="{{ link.url }}" title="{{ link.desc }}" target="_blank" >{{ link.title }}</a></p>
-  </li>
+    <div style="display:flex;width:100%;">
+      <div style="display:flex;width:100%;margin-bottom:16px;">
+        <div style="text-decoration: none;">
+          <a href="{{link.url}}" style="display: block;border-bottom:none;">
+          <img style="border:0px solid #f00;width:50px;height:50px;border-radius: 50%;" src="{{ link.header }}">
+          </a>
+        </div>
+        <div style="margin-left:12px;margin-top:0px;display:flex;flex-direction:column">
+          <p style="border:0px solid #000;height:28px;">
+            <a href="{{ link.url }}" title="{{ link.desc }}" target="_blank" >{{ link.title }}</a>
+          </p>
+          <div style="border:0px solid #000;font-size:12px;height:14px;">{{link.desc}}</div>
+          <!-- <div style="border:0px solid #000;font-size:12px;height:24px;">{{link.tag}}</div> -->
+        </div>
+      </div>
+    </div>
   {%- endfor %}
-</ul>
+</div>

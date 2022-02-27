@@ -63,4 +63,13 @@ rssCount: 15
 links:
   - title: TMaize
     url: https://blog.tmaize.net/
-  
+    desc: TMaize的个人博客
+    tag:  前端 数据库 后端 Java NodeJS GO
+    header: https://blog.tmaize.net/static/img/logo.jpg
+
+  - title: 素履独行
+    url: https://blog.yuanpei.me
+    desc: 起风了，唯有努力生存
+    tag: 数据分析 微服务 Web
+    header: https://blog.yuanpei.me/img/avatar_hu7b9e13b9a2c0eeae2e47afd7a36b6ae0_47623_300x0_resize_q75_box.jpg
+
