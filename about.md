@@ -19,6 +19,7 @@ title: 关于我
 
 - 微博：[大侠咕咚](https://weibo.com/maoruibin)
 - 即刻：[咕咚同学](https://okjk.co/l8IUzO)
+- 竹白：[咕咚同学](https://gudong.zhubai.love)
 - Twitter：[咕咚](https://twitter.com/dxgudong?s=05)
 - GitHub: [https://github.com/maoruibin](https://github.com/maoruibin)
 - Rss：[订阅地址](https://gudong.site/static/xml/rss.xml)
