@@ -21,4 +21,4 @@ DongReader 是自己开发的一个 Android 订阅软件，追求极致简洁与
 - 界面：列表、阅读页面增加喜欢标识
 - 界面：侧滑菜单中调换了未读与喜欢的顺序
 
-DongReader 下载地址：[链接](http://d.firim.top/gulz)
+DongReader 下载地址：[链接](http://fir.gudong.site/gulz)
