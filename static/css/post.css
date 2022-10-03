@@ -12,6 +12,24 @@
   font-size: 12px;
   color: #999999;
 }
+
+.page-post .nav {
+  display: flex;
+  border: 1px solid #e0e0e0;
+  padding: 16px;
+  border-radius: 4px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.page-post .nav > div {
+  flex: 1 1 0;
+}
+
+.page-post .nav-next {
+  text-align: right;
+}
+
 .page-post .post > * {
   margin: 18px 0;
 }

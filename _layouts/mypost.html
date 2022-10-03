@@ -19,6 +19,19 @@
     {{ content }}
   </div>
 
+	<div class="nav">
+		<div>
+			{% if page.next.url %}
+			<a href="{{page.next.url}}">&laquo;&nbsp;{{page.next.title}}</a>
+			{% endif %}
+		</div>
+		<div class="nav-next">
+			{% if page.previous.url %}
+			<a href="{{page.previous.url}}">{{page.previous.title}}&nbsp;&raquo;</a>
+			{% endif %}
+		</div>
+	</div>
+
   <script src="https://utteranc.es/client.js"
         repo="maoruibin/maoruibin.github.com"
         issue-term="pathname"
