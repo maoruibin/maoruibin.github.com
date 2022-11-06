@@ -19,8 +19,6 @@ title: 首页
 
         {% else %}
 
-        {% endif %}
-
 				<li>
 					<span class="date">{{ post.date | date: "%Y/%m/%d" }}</span>
 					<div class="title">
@@ -31,7 +29,11 @@ title: 首页
 						<a href="{{site.baseurl}}/categories.html#{{ categorie }}" class="hover-underline">{{ categorie }}</a>
 						{%- endfor %}
 					</div>
-				</li>
+				</li>				
+
+        {% endif %}
+
+
 				
       {% endif %}
     {%- if forloop.last or post_previous_year != post_year %}
