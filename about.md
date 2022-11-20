@@ -3,26 +3,35 @@ layout: mypost
 title: 关于我
 ---
 
-> 大道至简
+你好，我是咕咚，这是我的个人博客。
 
-我是咕咚，这是我的个人博客。
+我的一个是软件工程师，喜欢创造，喜欢开发，喜欢分享，喜欢表达。
 
-我的工作是跟代码打交道，工作之外，我是一个篮球爱好者，另外，也喜欢开发一些工具 APP，算是半个独立开发者，下面是我开发的几款 APP：
-- [inBox笔记](https://doc.gudong.site/inbox/) 数据安全，本地存储，标签优先、双向链接，这是一个记录灵感、想法的本地笔记软件。
-- [咕咚订阅](https://doc.gudong.site/rssplus/) 一个实用简洁的 RSS 订阅软件
-- [咕咚云图](https://www.coolapk.com/apk/name.gudong.pic) 手机端的图床 APP，轻松将图片上传并转换为 Markdown 链接。
+业余喜欢开发自己的软件，目前 Focus 的软件是 [inBox 笔记](https://doc.gudong.site/inbox/)，这是一个极致轻量的本地笔记软件，希望帮大家快速记录一闪而过的灵感，主要特性有：
+- 标签化管理笔记
+- 数据自主可控，支持 WebDAV
+- 双向链接
+- 笔记批注
 
-除此之外，也喜欢看书，偶尔写点东西，我的公众号-[咕咚同学](https://gitee.com/maoruibin/img/raw/master/2021/01/12/_export1610434130245.jpg.png)，欢迎关注。
+此外还开发过一个 RSS 订阅软件 [咕咚订阅](https://doc.gudong.site/rssplus/) 一个实用简洁的 RSS 订阅软件
+
+除此之外，还是一个十足的篮球爱好者，主打位置：中锋 | 前锋。
+
+我的篮球理念：**安全第一，开心打球，互相分享**。
+
+博客用来记录一些自己的碎碎念、感悟。
+
+感谢与你相遇。
 
 
 ## 关注/订阅
-
+- 公众号-[咕咚同学](https://gitee.com/maoruibin/img/raw/master/2021/01/12/_export1610434130245.jpg.png)
 - 即刻：[咕咚同学](https://okjk.co/l8IUzO)
-- 竹白：[咕咚同学](https://gudong.zhubai.love) 可通过邮件订阅月刊
 - GitHub: [https://github.com/maoruibin](https://github.com/maoruibin)
 - Rss：[订阅地址](https://gudong.site/static/xml/rss.xml)
 
 ## 博客历史
+- 2022/11/20: 更新关于说明
 - 2022/11/06: 咚记 Tab 回归 
 - 2022/10/03: 增加上一篇下一篇导航，取消咚记 Tab 
 - 2022/05/06: 网站备案完成 for leancloud
