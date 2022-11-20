@@ -23,7 +23,7 @@ title: 关于我
 - Rss：[订阅地址](https://gudong.site/static/xml/rss.xml)
 
 ## 博客历史
-- 2022/11/06: 加会了咚记 Tab 
+- 2022/11/06: 咚记 Tab 回归 
 - 2022/10/03: 增加上一篇下一篇导航，取消咚记 Tab 
 - 2022/05/06: 网站备案完成 for leancloud
 - 2021/10/17: 增加评论 [utteranc.es](https://utteranc.es)
