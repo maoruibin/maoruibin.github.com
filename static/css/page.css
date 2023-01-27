@@ -1,5 +1,5 @@
 .list-post > h2 {
-  font-size: 15px;
+  font-size: 22px;
   font-weight: bold;
   padding: 12px 0;
 }
@@ -14,7 +14,7 @@
 }
 .list-post li .date {
   color: #666666;
-  font-size: 14px;
+  font-size: 17px;
   flex-shrink: 0;
   margin-right: 10px;
 }
@@ -27,7 +27,7 @@
   text-overflow: ellipsis;
 }
 .list-post li .title a {
-  font-size: 15px;
+  font-size: 17px;
 }
 .list-post li .categories {
   flex-shrink: 0;
@@ -35,7 +35,7 @@
   margin-left: 10px;
 }
 .list-post li .categories a {
-  font-size: 12px;
+  font-size: 14px;
   color: #666666;
   margin-left: 8px;
 }

@@ -1,12 +1,12 @@
 .page-post {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 2;
   word-break: break-all;
 }
 .page-post .title {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
-  color: #666666;
+  color: #333333;
 }
 .page-post .subtitle {
   font-size: 12px;
@@ -58,8 +58,8 @@
   font-weight: bold;
 }
 .page-post blockquote {
-  border-left: 3px solid #333333;
-  background-color: #DCF3DF;
+  border-left: 3px solid #e6cc89;
+  background-color: #faeed1;
   padding: 9px 9px 9px 15px;
 }
 
@@ -113,7 +113,7 @@
 }
 .page-post code {
   font-size: 13px;
-  background-color: #DCF3DF;
+  background-color: #faeed1;
   word-break: break-all;
   padding: 3px 5px;
   margin: 0 4px;
@@ -154,7 +154,7 @@
   text-align: left;
 }
 .page-post table tr:nth-child(even) {
-  background-color: #DCF3DF;
+  background-color: #faeed1;
 }
 .page-post .table-container {
   overflow: auto;

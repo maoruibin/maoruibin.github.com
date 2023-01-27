@@ -19,6 +19,8 @@
     {{ content }}
   </div>
 
+	{% if page.next %}
+
 	<div class="nav">
 		<div>
 			{% if page.next.url %}
@@ -32,11 +34,14 @@
 		</div>
 	</div>
 
+
+  {% endif %}
+
   <script src="https://utteranc.es/client.js"
         repo="maoruibin/maoruibin.github.com"
         issue-term="pathname"
         label="dong..."
-        theme="github-light"
+        theme="boxy-light"
         crossorigin="anonymous"
         async>
 </script>

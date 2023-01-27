@@ -6,7 +6,7 @@
 
 html {
   color: #333333;
-  background: #ebfeee;
+  background: #f5efe0;
   scroll-behavior: smooth;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -82,7 +82,7 @@ input:-webkit-autofill {
   background-color: #999999;
 }
 ::selection {
-  background-color: #90c29b;
+  background-color: #f5efe0;
   color: #f9f9f9;
 }
 .hover-underline {

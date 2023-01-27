@@ -1,0 +1,13 @@
+---
+layout: mypost
+author: 咕咚
+title: "拒绝 | 01/19"
+author: gudong
+tags:  think
+categories: daily
+---
+
+学会拒绝，很多的不幸烦恼是因为不懂得拒绝。
+
+但重点不在于我们如何拒绝，而在于知道自己为什么需要拒绝，如何认知自己的界限，如何维护自己的原则，自己要什么，不要什么。
+
