@@ -28,8 +28,8 @@ tucaoUrl: https://weibo.com/u/1874136301
 menu:
   - title: 首页
     url: /
-  - title: 咚记
-    url: /daily.html
+  # - title: 咚记
+  #   url: /daily.html
   - title: 归类
     url: /categories.html
   # - title: 搜索
