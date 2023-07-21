@@ -58,6 +58,9 @@ extBaidu: true
 # 数学公式支持，比较影响加载速度,不需要请设置为false
 extMath: false
 
+# 是否支持评论
+enableComment: false
+
 rssCount: 15
 
 # 友情链接
@@ -97,6 +100,6 @@ links:
     url: https://www.yuzhang.wang/
     desc: PLUSULTRA！ 
     tag: 博主
-    header: https://gcore.jsdelivr.net/gh/YuZhangWang/Creative-pictures02/2022/04/18/20220418175156528.jpg
+    header: https://gcore.jsdelivr.net/gh/YuZhangWang/Creative-pictures02@master/img/202210171416164.png
 
 
