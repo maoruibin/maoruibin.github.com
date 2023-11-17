@@ -28,8 +28,8 @@ tucaoUrl: https://weibo.com/u/1874136301
 menu:
   - title: 首页
     url: /
-  # - title: 咚记
-  #   url: /daily.html
+  - title: 咚记
+    url: /daily.html
   - title: 归类
     url: /categories.html
   # - title: 搜索
@@ -59,7 +59,7 @@ extBaidu: true
 extMath: false
 
 # 是否支持评论
-enableComment: false
+enableComment: true
 
 rssCount: 15
 
