@@ -15,12 +15,12 @@ categories: tech
 ### 准备阶段
 
 新建一个空的Android项目，并在主界面上拖放一个按钮。并在Button的布局文件中声明onClick事件。如下
-
+```xml
     <Button android:text="锁屏"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="lockScreen"/>    
-
+        android:onClick="lockScreen"/>   
+```
 在MainActivity.java文件中实现lockScreen方法。
 
 ### 实现步骤

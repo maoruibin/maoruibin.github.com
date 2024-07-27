@@ -20,7 +20,7 @@ categories: tech
 ![CakeView原理图](/assets/cakeview_principle_v2.png "CakeView原理图")
 
 上面已经很清楚的看到了具体的实现过程。核心操作均在onDraw方法，如下
-
+```java
 	@Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -54,7 +54,7 @@ categories: tech
             canvas.drawTextOnPath(mContent, contentPath, 0, 0, mContentPaint);
         }
     }
-
+```
 
 关于画扇形，这里推荐一篇国外的博客，写的很好，对carvas的drawArc方法解释的很详细。
 
