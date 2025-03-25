@@ -2,7 +2,7 @@ encoding: utf-8
 
 # SEO相关信息
 title: 咕咚同学
-description: 咕咚的个人博客
+description: 独立开发者，inBox 笔记作者
 keywords: 咕咚,Blog,Java,Html,JavaScript,PicPlus,咕咚云图
 author: 咕咚
 footerText: 'Copyright © 2022 咕咚'
@@ -28,16 +28,20 @@ tucaoUrl: https://weibo.com/u/1874136301
 menu:
   - title: 首页
     url: /
-  - title: 咚记
-    url: /daily.html
-  - title: 归类
-    url: /categories.html
+  # - title: 咚记
+  #   url: /daily.html
+  # - title: 归类
+  #   url: /categories.html
+  - title: 作品
+    url: /works.html
   # - title: 搜索
   #   url: /search.html
   - title: 友链
     url: links.html
   # - title: 留言
   #   url: /chat.html
+  - title: 订阅
+    url: /subscribe.html
   - title: 关于
     url: /about.html
 
@@ -63,6 +67,16 @@ enableComment: true
 
 rssCount: 15
 
+profile_icon: /assets/profile/gudong_2023.png
+
+# 应用图标
+app_icons:
+  inbox: /assets/app_icon/ic_launcher_inbox.png
+  cang: /assets/app_icon/ic_launcher_cang.jpg
+  light: /assets/app_icon/ic_launcher_light.png
+  rssplus: /assets/app_icon/ic_launcher_rss.png
+  picplus: /assets/app_icon/ic_launcher_pic.png
+
 # 友情链接
 links:
   - title: TMaize
@@ -71,11 +85,11 @@ links:
     tag:  前端 数据库 后端 Java NodeJS GO
     header: https://blog.tmaize.net/static/img/logo.jpg
 
-  - title: 素履独行
+  - title: 元视角
     url: https://blog.yuanpei.me
     desc: 起风了，唯有努力生存
     tag: 数据分析 微服务 Web
-    header: https://blog.yuanpei.me/img/avatar_hua7928eb00aba15d39c6fa1306f8b1683_27373_300x0_resize_q75_box.jpg
+    header: https://blog.yuanpei.me/img/default-avatar_hua3ac297279c484e6ad1f3f5acd3cb005_125342_300x0_resize_q75_box.jpg
 
   - title: Jason
     url: https://atjason.com/

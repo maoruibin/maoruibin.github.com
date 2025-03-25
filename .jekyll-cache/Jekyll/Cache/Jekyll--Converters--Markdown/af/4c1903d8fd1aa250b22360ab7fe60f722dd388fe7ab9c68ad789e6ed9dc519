@@ -1,0 +1,109 @@
+I"�<h2 id="textview-maxems">TextView maxEms</h2>
+
+<p>这个属性用于设置 view 显示的长度，如设置 TextView 的 maxEms 为 10，那它表示 TextView 显示的最大长度为 10 个 M 的长度。</p>
+
+<p>而 maxLength 则用于设置最多的字符数目，中英文都算一个字符。</p>
+
+<h2 id="systemarraycopy-参数解释">System.arraycopy 参数解释</h2>
+
+<pre><code class="language-Java">public static native void arraycopy(Object src,  int  srcPos,
+                                        Object dest, int destPos,
+                                        int length);
+</code></pre>
+
+<p>复制指定源数组 sr c到<strong>目标数组 dest</strong>。<strong>复制从 src 的 srcPos 索引开始</strong>，复制的个数是 length，复制到 des t的索引从 destPos 开始。</p>
+
+<p>##JVM</p>
+
+<p>JVM 是一个虚拟的计算机，跟实际的计算机一样，它具有指令集并使用不同的存储区域，JVM 负责执行指令，还要管理数据、内存和寄存器。</p>
+
+<p>Java 是一种编译性语言，同时也是一种解释性语言，它在编译阶段，把 Java 源码通过编译工具编译为与平台无关的字节码文件（.class），然后在 JVM 中解释运行，JVM 是一套规范，它有一套抽象接口，不同的平台都有自己的一个实现，这样就确保了 Java 的跨平台性，JVM 解释运行字节码文件。</p>
+
+<p>李刚《疯狂 Java 讲义》</p>
+
+<h2 id="指令重排">指令重排</h2>
+
+<p>指令重排是指 JVM 在编译 java 代码，或者 CPU 在执行字节码时，对现有的指令顺序重新排序。</p>
+
+<p>指令重排的目的是在<strong>不改变程序运行结果</strong>的前提下，提高指令运行的效率，不过要注意，这里是说的不改变程序运行结果，是指在单线程环境下。</p>
+
+<p>这里可想而知，尽管指令重排进行了优化，但是在多线程环境下，就有可能出现问题。</p>
+
+<p>在公众号里搜到一篇不错的谅解指令</p>
+
+<h2 id="volatile">volatile</h2>
+<p>一个 java 关键字，作用有两个
+    1. 保证内存可见性
+    2. 防止指令重排</p>
+
+<h2 id="线程安全">线程安全</h2>
+
+<p>多个线程访问时不会出现问题的代码就可以称为线程安全的代码，比如类初始化就是线程安全的，而一般的方法，如果多个线程调用，就很很容易出现多线程不同步的问题。</p>
+
+<h2 id="协程">协程</h2>
+
+<p>协程是1964年就有的概念，不少语言已经支持，比如kotlin,在安卓中使用它，可以使网络交互代码变得更简单，因此现在变得很流行。</p>
+
+<p>协程解决了安卓中两个主要问题</p>
+
+<ul>
+  <li>耗时任务运行时间过长阻塞主线程</li>
+  <li>主线程安全，允许主线程调用任何同步代码</li>
+</ul>
+
+<p>协程提供了一种永远不会阻塞主线程的代码方式。</p>
+
+<p>协程提供了两个操作来构造常规的功能，挂起和恢复，</p>
+
+<ul>
+  <li>挂起 Suspend 挂起当前协程的执行，保存所有局部变量</li>
+  <li>恢复 Resume 从挂起协程的地方继续执行</li>
+</ul>
+
+<p>协程就是通过挂起和恢复来替换之前的回调形式。</p>
+
+<blockquote>
+  <p>我认为挂起就是一个语法糖，协程框架帮你把标识为挂起的函数放入了子线程，然后挂起函数调用完毕，通过记住的栈</p>
+</blockquote>
+
+<p>启动协程</p>
+
+<p>使用 launch 或者 async 即可启动一个协程，启动后的协程可控制，可以手动取消。</p>
+
+<p>启动后，遇到耗时任务它会开启一个新的线程进行操作，具体通过 Dispatcher 控制，多个协程会公用一个线程，具体都在 Dispatcher 完成。</p>
+
+<p>在切换时，协程会把当前方法的上下文进行入栈保存操作，当挂起操作完成后，会唤醒协程，从上下文恢复挂起前的操作，继续下一步。</p>
+
+<h2 id="切换线程-withcontext">切换线程 withContext</h2>
+
+<p>协程使用 withContext 进行线程切换，如下：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>withContext(Dispatchers.IO){
+      Logger.d("2 "+Thread.currentThread().name+" "+Thread.currentThread().id+" isDeman "+Thread.currentThread().isDaemon)
+        val list: List&lt;Todo&gt;? = DataCenter.getInstance(
+            this@MainActivity).getUnCompleteList()
+            Logger.d("3 "+Thread.currentThread().name+" "+Thread.currentThread().id+" isDeman "+Thread.currentThread().isDaemon)
+    }
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2 DefaultDispatcher-worker-1 56442 isDeman true
+3 DefaultDispatcher-worker-1 56442 isDeman true
+</code></pre></div></div>
+
+<p>可以看到其实 withContext 会把耗时任务放到子线程中，它就是一个语法糖，然后执行完回到主线程。</p>
+
+<p>而且多个耗时任务会公用一个线程，这也是 demo 验证后的结论。</p>
+
+<p>协程可以用 withContext 方法方便的切换线程，如果使用 rxJava 只是用于线程切换，可以考虑使用协程替换，还需要继续学习。</p>
+
+<h2 id="链表">链表</h2>
+
+<p>去农学院学习，很困，先休息了半小时，接着学习数据结构，一节链表。</p>
+
+<p>链表的很多操作都要遍历，遍历时设置临时变量会让操作变得简单，接着在循环中不断更改变量值。</p>
+
+<p>另外，一定要搞清楚 next 的意义，否则有时容易出错。</p>
+
+<p>链表的删除插入操作高效，但是单向链表在执行真真的操作前需要遍历，所以实际的时间复杂度还是O(n)，双向链表可以很好的解决这个问题，这也是空间换时间的典型应用。</p>
+
+:ET

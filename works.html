@@ -1,0 +1,275 @@
+---
+layout: page
+title: 作品
+---
+
+<div class="intro-text">
+  <p class="quote">「编码如歌，软件是我观察世界的一扇窗」</p>
+  <p class="sub-quote">每一行代码都是内心的表达，每一个作品都是对生活的独特诠释。</p>
+</div>
+
+<div class="works-container">
+  <div class="work-card">
+    <div class="work-icon">
+      <a href="https://doc.gudong.site/inbox/" target="_blank">
+        <img src="{{ site.app_icons.inbox }}" alt="inBox笔记">
+      </a>
+    </div>
+    <div class="work-info">
+      <h3 class="work-title">
+        <a href="https://doc.gudong.site/inbox/" target="_blank">inBox笔记</a>
+      </h3>
+      <p class="work-desc">一个本地优先，记录灵感、想法的卡片笔记软件</p>
+      <div class="work-tags">
+        <span class="tag">笔记</span>
+        <span class="tag">效率</span>
+        <span class="tag">Android</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="work-card">
+    <div class="work-icon">
+      <a href="https://doc.gudong.site/cang/" target="_blank">
+        <img src="{{ site.app_icons.cang }}" alt="仓咚咚">
+      </a>
+    </div>
+    <div class="work-info">
+      <h3 class="work-title">
+        <a href="https://doc.gudong.site/cang/" target="_blank">仓咚咚</a>
+      </h3>
+      <p class="work-desc">资产管理工具，让资产管理变得简单高效。</p>
+      <div class="work-tags">
+        <span class="tag">资产管理</span>
+        <span class="tag">效率</span>
+        <span class="tag">Android\iOS</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="work-card">
+    <div class="work-icon">
+      <a href="https://doc.gudong.site/light/" target="_blank">
+        <img src="{{ site.app_icons.light }}" alt="点亮">
+      </a>
+    </div>
+    <div class="work-info">
+      <h3 class="work-title">
+        <a href="https://doc.gudong.site/light/" target="_blank">点亮</a>
+      </h3>
+      <p class="work-desc">极简习惯打卡软件，成为更好的自己</p>
+      <div class="work-tags">
+        <span class="tag">打卡</span>
+        <span class="tag">效率</span>
+        <span class="tag">Android</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="work-card">
+    <div class="work-icon">
+      <a href="https://doc.gudong.site/rssplus/" target="_blank">
+        <img src="{{ site.app_icons.rssplus }}" alt="RSS Plus">
+      </a>
+    </div>
+    <div class="work-info">
+      <h3 class="work-title">
+        <a href="https://doc.gudong.site/rssplus/" target="_blank">咕咚订阅</a>
+      </h3>
+      <p class="work-desc">个性化我的信息源，简单易用的 RSS 阅读器。</p>
+      <div class="work-tags">
+        <span class="tag">RSS</span>
+        <span class="tag">阅读</span>
+        <span class="tag">Android</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="work-card">
+    <div class="work-icon">
+      <a href="https://doc.gudong.site/picplus/" target="_blank">
+        <img src="{{ site.app_icons.picplus }}" alt="咕咚云图">
+      </a>
+    </div>
+    <div class="work-info">
+      <h3 class="work-title">
+        <a href="https://doc.gudong.site/picplus/" target="_blank">咕咚云图</a>
+      </h3>
+      <p class="work-desc">手机端的图床工具，支持多种图床服务。</p>
+      <div class="work-tags">
+        <span class="tag">图片</span>
+        <span class="tag">工具</span>
+        <span class="tag">Android</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="update-time">
+  <blockquote>最新更新于：{{ site.time | date: "%Y-%m-%d" }}</blockquote>
+  <blockquote>增加作品模块</blockquote>
+</div>
+
+<style>
+.intro-text {
+  text-align: left;
+  margin: 40px 0;
+  padding: 0;
+}
+
+.intro-text .quote {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.intro-text .sub-quote {
+  font-size: 16px;
+  color: #666;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* 暗色模式适配 */
+html.dark .intro-text .quote {
+  color: #e1e1e1;
+}
+
+html.dark .intro-text .sub-quote {
+  color: #999;
+}
+
+.works-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.work-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.work-icon {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.work-icon img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.work-info {
+  flex: 1;
+}
+
+.work-title {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.work-title a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.work-title a:hover {
+  color: #000;
+}
+
+.work-desc {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.work-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #f5f5f5;
+  color: #666;
+}
+
+/* 暗色模式适配 */
+html.dark .work-card {
+  background: #1a1a1a;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+html.dark .work-title a {
+  color: #fff;
+}
+
+html.dark .work-desc {
+  color: #aaa;
+}
+
+html.dark .tag {
+  background: #333;
+  color: #aaa;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+  .works-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .work-card {
+    margin: 0 0 15px;
+  }
+}
+
+.update-time {
+  text-align: left;
+  color: #666;
+  font-size: 14px;
+  margin-top: 40px;
+  padding-bottom: 20px;
+}
+
+.update-time blockquote {
+  margin: 0;
+  padding-left: 15px;
+  border-left: 4px solid #ddd;
+  color: #666;
+}
+
+/* 暗色模式适配 */
+html.dark .update-time {
+  color: #999;
+}
+
+html.dark .update-time blockquote {
+  border-left-color: #444;
+  color: #999;
+}
+</style> 

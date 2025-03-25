@@ -1,0 +1,111 @@
+I"�<blockquote>
+  <p>版权声明：本文为 <strong>咕咚</strong> 原创文章，可以随意转载，但必须在明确位置注明出处。</p>
+
+  <p>个人主页: <a href="http://gudong.site/">http://gudong.site</a></p>
+
+  <p>文章地址: <a href="http://gudong.site/2017/12/01/imageview-scaletype.html">http://gudong.site/2017/12/01/imageview-scaletype.html</a></p>
+</blockquote>
+
+<h2 id="介绍">介绍</h2>
+<p>在使用 ImageView 的时候，经常需要设置它的 scaleType，但是一些时候对他们的区别总是很难把握，这次通过示例完整的了解一下不同的 scaleType 对一个 ImageView 的展示到底会有什么样的区别。</p>
+
+<p>这是原图片</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2017/12/24/160842d6de3252f2?w=215&amp;h=199&amp;f=jpeg&amp;s=12988" alt="" /></p>
+
+<p>可以看到，其实他有一个内部 padding 的距离。</p>
+
+<h2 id="imageview-布局">ImageView 布局</h2>
+<p>下面使用 ImageView 用来显示这个图片资源，然后分别使用不同的 scaleType 进行展示，布局代码如下</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ImageView</span>
+    <span class="na">android:layout_width=</span><span class="s">"300dp"</span>
+    <span class="na">android:layout_height=</span><span class="s">"500dp"</span>
+    <span class="na">android:layout_centerInParent=</span><span class="s">"true"</span>
+    <span class="na">android:scaleType=</span><span class="s">"center"</span>
+    <span class="na">android:src=</span><span class="s">"@mipmap/ic_launcher"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+<p>这是一个宽 300dp 高 500dp 的 ImageView，现在设置 scaleType 为 center</p>
+
+<blockquote>
+  <p>说明：为了显示方便，这里设置 ImageView 的背景为灰色，下面所有截图中看到的灰色区域就是 ImageView 的区域。</p>
+</blockquote>
+
+<h3 id="1scaletypecenter">1、scaleType=”center”</h3>
+
+<p>scaleType 为 center 表示按照图片尺寸在给定的 ImageView 上居中显示图片，如下所示，当 ImageView 尺寸很大足够容纳图片时，图片会居中显示在 ImageView 中。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2017/12/24/1608436dffcc8b0d?w=267&amp;h=420&amp;f=jpeg&amp;s=4484" alt="" /></p>
+
+<p>但是当 ImageView 的 size 被设置的较小，如下 ImageView 的宽高被设置为 20-50 时，此时 ImageView 的 size 小于图片的大小，会发现图片依旧居中显示，但是为了居中显示，图片会被按 ImageView 的宽高比例进行缩小然后裁剪如下所示：</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2017/12/24/160843c917f771e2?w=268&amp;h=416&amp;f=jpeg&amp;s=2451" alt="" /></p>
+
+<h3 id="2scaletypecentercrop">2、scaleType=”centerCrop”</h3>
+<p>它会根据 ImageView 的尺寸，把目标图片按照 ImageView 的尺寸进行等比例放大或缩小然后裁剪，最终显示。</p>
+
+<p>这里因为原图尺寸没有 ImageView 尺寸大，所以图片会被放大，然后最终被裁剪后显示成如下图所示的样式。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2017/12/24/16084324e9e01d2e?w=270&amp;h=462&amp;f=jpeg&amp;s=14533" alt="" /></p>
+
+<h3 id="3scaletypecenterinside">3、scaleType=”centerInside”</h3>
+<p>目前跟 center 一致 ，看不出有什么区别，</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2017/12/24/1608436dffcc8b0d?w=267&amp;h=420&amp;f=jpeg&amp;s=4484" alt="" /></p>
+
+<p>但是如果 ImageView 的尺寸小于图片自己的尺寸，它就会跟 center 的效果不一样了，它会自适应 ImageView 进行自适应，比如，我们将 ImageView 的尺寸特意设的特别小。</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Image</span>
+    <span class="na">android:layout_width=</span><span class="s">"20dp"</span>
+    <span class="na">android:layout_height=</span><span class="s">"50dp"</span>
+    <span class="na">android:layout_centerInParent=</span><span class="s">"true"</span>
+    <span class="na">android:scaleType=</span><span class="s">"fitCenter"</span>
+    <span class="na">android:src=</span><span class="s">"@mipmap/ic_launcher"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+<p>然后效果如下。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2017/12/24/1608437029320bea?w=375&amp;h=523&amp;f=jpeg&amp;s=3511" alt="" /></p>
+
+<p>对比 scaleType = center 在 ImageView size 小于图片 size 的情况下, center 会把图片进行裁剪，但是 centerInside 就不会，这也是为什么叫 <code class="language-plaintext highlighter-rouge">inside</code> 的缘故吧。</p>
+
+<h3 id="4scaletypefitstartfitendfitcenter">4、scaleType=”fitStart/fitEnd/fitCenter”</h3>
+
+<p>fit 表示图片自己会根据 ImageView 的尺寸进行自适应。</p>
+
+<p>start 表示在图片靠上面，end 表示靠下边，center 表示居中</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2017/12/24/16084530e73482e0?w=257&amp;h=411&amp;f=jpeg&amp;s=9254" alt="" /></p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2017/12/24/160843abbb957d6e?w=257&amp;h=408&amp;f=jpeg&amp;s=9017" alt="" /></p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2017/12/24/160843a805a7645f?w=265&amp;h=407&amp;f=jpeg&amp;s=9345" alt="" /></p>
+
+<p>这里区分一下 <code class="language-plaintext highlighter-rouge">fitCenter</code> 和 <code class="language-plaintext highlighter-rouge">centerInside</code></p>
+
+<p>fitCenter 会放大图片自身，然后居中显示，如上图所示。但是 centerInside 不会放大图片，还是根据图片尺寸居中显示在 ImageView 中。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2017/12/24/1608436dffcc8b0d?w=267&amp;h=420&amp;f=jpeg&amp;s=4484" alt="" /></p>
+
+<h3 id="5scaletypematrix">5、scaleType=”matrix”</h3>
+<p>matrix 是 ImageView 默认的 scaleType, 他不改变原图的大小，从ImageView的左上角开始绘制原图，原图超过ImageView的部分作裁剪处理。
+同样对比下 ImageView 在不同尺寸下的样式</p>
+
+<ul>
+  <li>ImageView 尺寸大于图片尺寸</li>
+</ul>
+
+<p><img src="https://user-gold-cdn.xitu.io/2017/12/24/160843d005338772?w=253&amp;h=406&amp;f=jpeg&amp;s=4601" alt="" /></p>
+
+<ul>
+  <li>ImageView 尺寸小于图片尺寸</li>
+</ul>
+
+<p><img src="https://user-gold-cdn.xitu.io/2017/12/24/160843d16555a5cc?w=248&amp;h=404&amp;f=jpeg&amp;s=2445" alt="" /></p>
+
+<h3 id="6scaletypefitxy">6、scaleType=”fitXY</h3>
+<p>这中类型最好理解，不管原图的宽高比例，直接把原图按照 ImageView 的大小尺寸进行拉伸，使原图填满 ImageView，非常暴力，实际开发中用到的不多，因为很容易造成图片变形的问题。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2017/12/24/160843d518ea7c16?w=249&amp;h=416&amp;f=jpeg&amp;s=12073" alt="" /></p>
+
+<h2 id="总结">总结</h2>
+<p>结合平时的开发经验，一般主要用的 scaleType 就几种，比较多的是 center 、centerInside 以及 fitCenter, 主要掌握这几个类型的区别。</p>
+:ET

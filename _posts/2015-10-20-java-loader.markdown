@@ -1,7 +1,7 @@
 ---
 layout: mypost
 title: "Java 类加载机制"
-date:   2015-10-20 04:43:59
+date:   "2015-10-20 04:43:59"
 description: ""
 author: 咕咚
 catalog:    true
@@ -99,16 +99,16 @@ public class Test{
     public static void main(String[]args){
 
          Person p1 = new Person();
-         p1.name = “大虾”;
+         p1.name = "大虾";
 
-          System.out.println(“p1 name is “+p1.name);
+          System.out.println("p1 name is "+p1.name);
 
          Person p2 = new Person();
-         p2.name = “咕咚”;
+         p2.name = "咕咚";
 
-         System.out.println(“p2 name is “+p2.name);
+         System.out.println("p2 name is "+p2.name);
 
-         System.out.println(“p1 max age “+Person.MAX_AGE);
+         System.out.println("p1 max age "+Person.MAX_AGE);
     }
 }
 ```

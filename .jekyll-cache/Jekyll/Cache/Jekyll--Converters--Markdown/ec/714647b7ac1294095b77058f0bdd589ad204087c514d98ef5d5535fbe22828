@@ -1,0 +1,16 @@
+I"R<p><img src="https://tva1.sinaimg.cn/large/008vxvgGly1h7ndfigegoj30xu0jq75g.jpg" alt="" /></p>
+
+<p>今天有 inBox 的用户反馈支付无反应，检查后是因为支付服务商 <a href="https://mbd.pub/">面包多</a> 最近因为不可抗力的原因在整改，更多说明见：<a href="https://mp.weixin.qq.com/s/CZt2-UYSQ18NYPy5zSuMUA">关于最近情况的说明</a>。</p>
+
+<p>如作者最后所言，鸡蛋不应该放在一个篮子里，由于目前<a href="https://doc.gudong.site/">我的软件</a>均使用面包多，所以，暂时这几个软件的支付都将处于不可用的状态。</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/008vxvgGly1h7ndoge2kzj30u00idq3k.jpg" alt="" /></p>
+
+<h2 id="后面的打算">后面的打算</h2>
+<ul>
+  <li>面包多这边，目前恢复时间不定，我会一直关注，只要恢复了，第一时间恢复支付功能，</li>
+  <li>考量自己对接支付宝，微信支持。这个相对麻烦点，短期内没时间开发。</li>
+  <li>如果有十分想购买支持的同学，可以加微信( bxm1252768410 )转账购买。</li>
+</ul>
+
+:ET

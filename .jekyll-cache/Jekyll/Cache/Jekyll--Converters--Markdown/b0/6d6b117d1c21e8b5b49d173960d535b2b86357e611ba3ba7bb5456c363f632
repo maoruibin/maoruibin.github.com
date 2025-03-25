@@ -1,0 +1,147 @@
+I"�<p>so, DrawableBuilder is comming…</p>
+
+<p>该 Builder 类主要提供语义化的 API 进行快捷的 Shape 创建操作。</p>
+
+<p>通过语义化的 API 创建 shape drawable。</p>
+
+<h2 id="代码地址">代码地址</h2>
+
+<p>https://gist.github.com/maoruibin/4293314f0b7c277c2a635efa858a3e6e</p>
+
+<p>如下，几行代码就生成了一个线条背景 drawable。</p>
+
+<pre><code class="language-Java">Drawable drawable = new DrawableBuilder()
+  .line()
+  .build();
+tvName.setBackground(drawable);
+</code></pre>
+
+<p>效果：</p>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1g1eumuk7isj30dg03mmwx.jpg" alt="" /></p>
+
+<p>而之前，我们大都是像如下方式来构造线条 shape。</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;shape</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span> 
+       <span class="na">android:shape=</span><span class="s">"rectangle"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;stroke</span> <span class="na">android:width=</span><span class="s">"1dp"</span> <span class="na">android:color=</span><span class="s">"#34495e"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/shape&gt;</span>
+</code></pre></div></div>
+
+<p>用 xml drawable 设置背景</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tvName</span> <span class="o">=</span> <span class="o">(</span><span class="nc">TextView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="no">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">tvName</span><span class="o">);</span>
+<span class="n">tvName</span><span class="o">.</span><span class="na">setBackgroundResource</span><span class="o">(</span><span class="no">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">bk_line_drawable</span><span class="o">);</span>
+</code></pre></div></div>
+<p>样式</p>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1g1eumuk7isj30dg03mmwx.jpg" alt="" /></p>
+
+<p>可以看到，两种方式效果一致，但是使用体验却更好。在写好布局文件后，都需要去 res 目录下再创建 drawable 文件，然后再切换回 Activity 或者布局文件进行背景设置，这就免不了我们跳来跳去的切换目录，很麻烦。</p>
+
+<p>相比而言，语义化 API 就显得非常友好易用，如下所示：</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Drawable</span> <span class="n">drawable</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DrawableBuilder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">line</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tvName.setBackground(drawable);
+</code></pre></div></div>
+
+<p>样式：</p>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1g1eumuk7isj30dg03mmwx.jpg" alt="" /></p>
+
+<p>跟 xml 样式一致，并且代码更少，更易于使用。</p>
+
+<p>以下是圆角等其他线条的展示。</p>
+
+<p><strong>指定度数的圆角线条</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nc">DrawableBuilder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">line</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">corner</span><span class="o">(</span><span class="mi">4</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>样式：</p>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1g1eu63aw9rj30d603imwx.jpg" alt="" /></p>
+
+<p><strong>椭圆形圆角</strong></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nc">DrawableBuilder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">line</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">roundCorner</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>		
+</code></pre></div></div>
+
+<p>样式：</p>
+
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1g1eu8cytmqj30d403et8h.jpg" alt="" /></p>
+
+<p><strong>充满颜色的圆角</strong></p>
+
+<pre><code class="language-Java">new DrawableBuilder()
+  .line()
+  .roundCorner()
+  .fill("#d35400")
+  .build();
+</code></pre>
+
+<p>样式：</p>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1g1eug4duitj30de03wwe9.jpg" alt="" /></p>
+
+<p><strong>虚线线条</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nc">DrawableBuilder</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">line</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">dash</span><span class="o">()</span>
+  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>样式</p>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1g1eus2o5l1j30d603sq2p.jpg" alt="" /></p>
+
+<h2 id="其他-api">其他 API</h2>
+
+<p>除了以上语义化 API，还提供了相应自定义参数的 API，如下所示：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>API</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>lineWidth(int width)</td>
+      <td>设置线条宽度，参数为具体数值，无需转换</td>
+    </tr>
+    <tr>
+      <td>lineColor(int lineColor)</td>
+      <td>设置线条颜色</td>
+    </tr>
+    <tr>
+      <td>corner(float cornerRadius)</td>
+      <td>设置圆角度数</td>
+    </tr>
+    <tr>
+      <td>dashWidth(float dashWidth)</td>
+      <td>设置虚线每个单元长度</td>
+    </tr>
+    <tr>
+      <td>dashGap(float dashGap)</td>
+      <td>设置虚线边框每个单元之间的间距</td>
+    </tr>
+    <tr>
+      <td>fill(@ColorInt int bkColor)</td>
+      <td>设置填充颜色</td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

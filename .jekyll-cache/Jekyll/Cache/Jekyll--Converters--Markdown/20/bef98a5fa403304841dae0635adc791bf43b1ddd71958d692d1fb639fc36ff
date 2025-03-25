@@ -1,0 +1,25 @@
+I"c<p>读者朋友们，晚上好！咚记时间到，今天下雨，算是今年第一场雨，还下了一整天，所以整天都是阴沉沉的，倒是玻璃上的雨珠还挺好看。</p>
+
+<p><img src="https://files.mdnice.com/user/1319/aedf0f7f-bd98-41ba-a20f-356ea96c4ae7.jpg" alt="" /></p>
+
+<hr />
+<p>最近好几个用户跟我提到 inBox 中一个很好用的点。原话这样说的：</p>
+<blockquote>
+  <p>我发现 inBox 好厉害，我从 <strong>AI 软件</strong>中复制生成的文本，粘贴到 inBox笔记后，会有乱乱七八糟的星星等符号，但是保存后，发现星星什么的都没了没，好神奇，而且样式还好看了。 🧙‍♀️</p>
+</blockquote>
+
+<p>其实这个原理也很简单，简单说就是：<strong>inBox 笔记支持 Markdown 语法。</strong> 具体原理我可以展开说下。</p>
+
+<p>现在所有的 AI 软件，他们在生成文本后，比如让它生成一篇文章或者短文，生成的内容一般都会有标题、还有加粗、列表等标记，我们在复制时，这些标记都会被转化为 Markdown 格式，比如段落以符号 ## 开头，后面跟标题内容，就是二级标题，段落以一个- 开头，这个段落就是一个无序列表，前面会显示一个小圆点，一图胜千言，如下图所示：</p>
+
+<p><img src="https://files.mdnice.com/user/1319/6b4c155c-a64d-466f-98ec-3e1871bad885.png" alt="" /></p>
+
+<p>左边是原始的从 AI 软件中拷贝过来的 Markdown 格式的文本，右侧就是保存笔记后在 inBox 笔记中展示的样式，可以看到保存后的文本样式更美观，Markdown 标记都消失了。</p>
+
+<p>inBox笔记是去年支持的 Markdown 渲染功能，如果对 Markdown 还想了解更多，可以查看文章<a href="https://mp.weixin.qq.com/s/eefg7s-V3fYR34aCnTKYOw">inBox 笔记支持 Markdown 模式</a></p>
+
+<hr />
+<p>好了，今天的 <strong>咚记</strong> 就到这里，如果你有这种需求，欢迎试用 inBox 笔记。</p>
+
+<p>我是咕咚，一个独立开发者，inBox 笔记作者，每天我会在咚记中分享一些开发思考和日常感悟，欢迎关注。</p>
+:ET

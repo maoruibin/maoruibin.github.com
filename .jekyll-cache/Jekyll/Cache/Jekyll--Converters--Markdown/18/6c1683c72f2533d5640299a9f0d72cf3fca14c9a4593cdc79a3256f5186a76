@@ -1,0 +1,19 @@
+I"�<p>开发 Intellij 插件时，比如自己最近开发的一个 AndroidStudio 插件，需要存储一些状态值，方便做一些 UI 上的偏好设置。</p>
+
+<p>比如这次选中了一个选项，希望下次打开插件时继续选中相应的选项，此时就需要做一些本地状态存储。就像 Android APP 常见的设置选项。</p>
+
+<p>Intellij 也提供了响应的 API - <code class="language-plaintext highlighter-rouge">PropertiesComponent</code> ，使用方式如下所示：</p>
+<h2 id="存数据到本地">存数据到本地</h2>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PropertiesComponent</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">setValue</span><span class="o">(</span><span class="s">"key"</span><span class="o">,</span><span class="s">"valuw"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<h2 id="获取数据">获取数据</h2>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">value</span> <span class="o">=</span> <span class="nc">PropertiesComponent</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getValue</span><span class="o">(</span><span class="s">"key"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>Source frmo <a href="http://gudong.site/">咕咚的个人站点</a></p>
+
+<h2 id="参考链接">参考链接</h2>
+<p><a href="https://www.jetbrains.org/intellij/sdk/docs/basics/persisting_state_of_components.html?search=Serialization">Persisting State of Components</a></p>
+
+:ET

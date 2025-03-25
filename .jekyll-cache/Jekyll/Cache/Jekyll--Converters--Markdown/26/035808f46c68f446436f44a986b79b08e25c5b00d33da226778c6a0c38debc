@@ -1,0 +1,20 @@
+I"�<p>最近 inbox 笔记开发了两个比较大的功能</p>
+<ul>
+  <li>​双列回顾模式（<del>堆叠模式被废弃</del>）</li>
+  <li>​笔记合并功能</li>
+</ul>
+
+<p><a href="https://doc.gudong.site/inbox/">关于 inbox 笔记</a></p>
+
+<p>双列更紧凑，浏览效率更高，这里的模式选择交互参考了抖音里，推荐页面的模式切换。</p>
+
+<p><img src="https://raw.githubusercontent.com/maoruibin/assets/master/2023/06/11/Screenshot_2023-06-11-17-38-45-43_451c07e5fd31c3cd91f7582c46a0f3f8.jpg" alt="" /></p>
+
+<p>笔记合并是指多个笔记，可以合并为一篇笔记。之前也看到其他软件有实现的，对于 inbox 主打收集灵感的 app ，输入确实很轻，可以方便大家无压力的写下很多自己的想法，但是整理笔记就会显得麻烦。之前好几个朋友也反馈过，但一直没想好怎么做，传统的长按选多选我觉得不好，合并笔记一定是合并相关联的笔记，所以最近想到了现在的交互方式，如图所示：</p>
+
+<p><img src="https://raw.githubusercontent.com/maoruibin/assets/master/2023/06/11/Screenshot_2023-06-11-11-29-47-71_451c07e5fd31c3cd91f7582c46a0f3f8.jpg" alt="" /></p>
+
+<p>可以在选择区进行选择，这里面的笔记，优先<strong>展示和要合并的笔记同标签，有链接关系的笔记</strong>，所以效率更高，如果找不到，也可以进行搜索。</p>
+
+<p>总之，这样的合并体验要相对更好。</p>
+:ET

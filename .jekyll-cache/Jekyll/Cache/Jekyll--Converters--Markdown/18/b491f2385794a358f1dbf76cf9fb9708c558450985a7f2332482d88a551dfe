@@ -1,0 +1,28 @@
+I")<p>inBox 之前支持的文本标记并不多，只有两个</p>
+<ul>
+  <li>﻿无序列表 *</li>
+  <li>﻿加粗 ** 
+新版本中增加了两个标记</li>
+  <li>﻿勾选框 -［ ］</li>
+  <li>﻿引用标记 &gt; 
+这几个无一例外，都使用了 <strong>Markdown 的语法</strong>，这样可以更好的将笔记和其他笔记软件向结合。</li>
+</ul>
+
+<p>如下是新增的两个标记的演示：</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />﻿这是一个标记</li>
+</ul>
+
+<blockquote>
+  <p>﻿这是一个引用</p>
+</blockquote>
+
+<p>关于新增的两个标记，我自己也没有想好，姑且试一试，移动设备上，勾选框可以做轻量级的状态标记，不一定能和双向链接，标签擦出不一样的火化…</p>
+
+<p><a href="https://doc.gudong.site/inbox/">关于 inbox 笔记</a></p>
+
+<p>#App/inBox/思考</p>
+
+<p><img src="https://cdn.jsdelivr.net/gh/maoruibin/assets@master/2023/06/25/20230625214829724.jpg" alt="" /></p>
+:ET

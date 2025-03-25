@@ -1,0 +1,61 @@
+I"�&<p>一个圆形饼状View的实现过程。</p>
+
+<p><strong>CakeView</strong>是一个通过自定义做的饼状图，如下图所示，会根据比例显示不同的占比。</p>
+
+<p><img src="/assets/cakeview_v2.png" alt="CakeView原理图" title="CakeView原理图" style="width: 50%;margin: auto;" /></p>
+
+<p>这个view会根据传入的两个数字参数 生成不同的占比大小。</p>
+
+<h3 id="实现原理">实现原理###</h3>
+
+<p>画出一个背景为红色的大圆圈，然后再画一个圆心跟红色圆圈一致的扇形。最后在中央画一个白色小圆，然后大概的样式就出来了，最后在中央写上文字内容即可。如下演示
+<img src="/assets/cakeview_principle_v2.png" alt="CakeView原理图" title="CakeView原理图" /></p>
+
+<p>上面已经很清楚的看到了具体的实现过程。核心操作均在onDraw方法，如下</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onDraw</span><span class="o">(</span><span class="nc">Canvas</span> <span class="n">canvas</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onDraw</span><span class="o">(</span><span class="n">canvas</span><span class="o">);</span>
+        <span class="nc">RectF</span> <span class="n">rPrimary</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RectF</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">0</span><span class="o">,</span><span class="n">mWidth</span><span class="o">,</span><span class="n">mWidth</span><span class="o">);</span>
+        <span class="nc">RectF</span> <span class="n">rSecond</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RectF</span><span class="o">(</span><span class="n">mBorderWidth</span><span class="o">,</span><span class="n">mBorderWidth</span><span class="o">,</span><span class="n">mWidth</span><span class="o">-</span><span class="n">mBorderWidth</span><span class="o">,</span><span class="n">mWidth</span><span class="o">-</span><span class="n">mBorderWidth</span><span class="o">);</span>
+        <span class="c1">//绘制主色圆圈</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="na">drawOval</span><span class="o">(</span><span class="n">rPrimary</span><span class="o">,</span> <span class="n">mPrimaryPaint</span><span class="o">);</span>
+        <span class="c1">//绘制副色圆圈 这里绘制一个指定角度的扇形</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="na">drawArc</span><span class="o">(</span><span class="n">rPrimary</span><span class="o">,</span> <span class="n">mStartAngle</span><span class="o">,</span> <span class="n">mSweepAngle</span><span class="o">,</span> <span class="kc">true</span><span class="o">,</span> <span class="n">mSecondaryPaint</span><span class="o">);</span>
+        <span class="c1">//绘制中心圆圈 白色中心</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="na">drawOval</span><span class="o">(</span><span class="n">rSecond</span><span class="o">,</span> <span class="n">mCenterPaint</span><span class="o">);</span>
+
+        <span class="c1">//绘制标题文本</span>
+        <span class="k">if</span><span class="o">(!</span><span class="nc">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">mTitle</span><span class="o">)){</span>
+            <span class="nc">Path</span> <span class="n">titlePath</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Path</span><span class="o">();</span>
+            <span class="n">titlePath</span><span class="o">.</span><span class="na">moveTo</span><span class="o">(</span><span class="n">mHalf</span> <span class="o">*</span> <span class="o">(</span><span class="mi">1</span><span class="n">f</span> <span class="o">/</span> <span class="mi">4</span><span class="n">f</span><span class="o">),</span> <span class="n">mHalf</span> <span class="o">*</span> <span class="o">(</span><span class="mi">7</span><span class="n">f</span> <span class="o">/</span> <span class="mi">8</span><span class="n">f</span><span class="o">));</span>
+            <span class="n">titlePath</span><span class="o">.</span><span class="na">lineTo</span><span class="o">(</span><span class="n">mHalf</span> <span class="o">*</span> <span class="o">(</span><span class="mi">7</span><span class="n">f</span> <span class="o">/</span> <span class="mi">4</span><span class="n">f</span><span class="o">),</span> <span class="n">mHalf</span> <span class="o">*</span> <span class="o">(</span><span class="mi">7</span><span class="n">f</span> <span class="o">/</span> <span class="mi">8</span><span class="n">f</span><span class="o">));</span>
+            <span class="n">mTitlePaint</span><span class="o">.</span><span class="na">setTextSize</span><span class="o">(</span><span class="n">sp2px</span><span class="o">(</span><span class="n">getContext</span><span class="o">(),</span> <span class="mi">14</span><span class="n">f</span><span class="o">));</span>
+            <span class="n">mTitlePaint</span><span class="o">.</span><span class="na">setTextAlign</span><span class="o">(</span><span class="nc">Paint</span><span class="o">.</span><span class="na">Align</span><span class="o">.</span><span class="na">CENTER</span><span class="o">);</span>
+            <span class="n">canvas</span><span class="o">.</span><span class="na">drawTextOnPath</span><span class="o">(</span><span class="n">mTitle</span><span class="o">,</span> <span class="n">titlePath</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">mTitlePaint</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="c1">//绘制内容文本</span>
+        <span class="k">if</span><span class="o">(!</span><span class="nc">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">mContent</span><span class="o">)){</span>
+            <span class="nc">Path</span> <span class="n">contentPath</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Path</span><span class="o">();</span>
+            <span class="n">contentPath</span><span class="o">.</span><span class="na">moveTo</span><span class="o">(</span><span class="n">mHalf</span><span class="o">*(</span><span class="mi">1</span><span class="n">f</span><span class="o">/</span><span class="mi">4</span><span class="n">f</span><span class="o">),</span> <span class="n">mHalf</span><span class="o">*(</span><span class="mi">7</span><span class="n">f</span><span class="o">/</span><span class="mi">6</span><span class="n">f</span><span class="o">));</span>
+            <span class="n">contentPath</span><span class="o">.</span><span class="na">lineTo</span><span class="o">(</span><span class="n">mHalf</span> <span class="o">*</span> <span class="o">(</span><span class="mi">7</span><span class="n">f</span> <span class="o">/</span> <span class="mi">4</span><span class="n">f</span><span class="o">),</span> <span class="n">mHalf</span> <span class="o">*</span> <span class="o">(</span><span class="mi">7</span><span class="n">f</span> <span class="o">/</span> <span class="mi">6</span><span class="n">f</span><span class="o">));</span>
+            <span class="n">mContentPaint</span><span class="o">.</span><span class="na">setTextSize</span><span class="o">(</span><span class="n">sp2px</span><span class="o">(</span><span class="n">getContext</span><span class="o">(),</span> <span class="mi">24</span><span class="n">f</span><span class="o">));</span>
+            <span class="n">mContentPaint</span><span class="o">.</span><span class="na">setTypeface</span><span class="o">(</span><span class="nc">Typeface</span><span class="o">.</span><span class="na">defaultFromStyle</span><span class="o">(</span><span class="nc">Typeface</span><span class="o">.</span><span class="na">BOLD</span><span class="o">));</span>
+            <span class="n">mContentPaint</span><span class="o">.</span><span class="na">setTextAlign</span><span class="o">(</span><span class="nc">Paint</span><span class="o">.</span><span class="na">Align</span><span class="o">.</span><span class="na">CENTER</span><span class="o">);</span>
+            <span class="n">canvas</span><span class="o">.</span><span class="na">drawTextOnPath</span><span class="o">(</span><span class="n">mContent</span><span class="o">,</span> <span class="n">contentPath</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">mContentPaint</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p>关于画扇形，这里推荐一篇国外的博客，写的很好，对carvas的drawArc方法解释的很详细。</p>
+
+<p><a href="http://www.cumulations.com/blogs/5/Understanding-Sweep-angle-in-drawArc-method-of-android" title="Title">Understanding Sweep angle in drawArc method of android</a></p>
+
+<p>此外。整个实现过程中，还发现canvas有一个特别好的方法<strong>drawTextOnPath()</strong>
+利用这个方法可以方便的文字的显示位置。</p>
+
+<p>update:上述的画饼状图的方式会存在过度绘制的问题，尽管问题看上去不大，其实如果只是画一个圆圈，没必要这么麻烦，可以直接
+画一个指定宽度的圆线就对了，自己的实现其实有点麻烦了。</p>
+
+<p>更新于 2016/01/16 00:30</p>
+:ET

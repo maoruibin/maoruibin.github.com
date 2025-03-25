@@ -1,0 +1,269 @@
+I"�B<p><img src="https://ws1.sinaimg.cn/large/6fb50cedly1fn76x7detsj217g17gnpd.jpg" alt="" /></p>
+
+<h2 id="20171231">2017/12/31</h2>
+<ul>
+  <li>替换首页背景图以及日志页面的背景</li>
+</ul>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fn00r9y6tdj31kw0i31kx.jpg" alt="" /></p>
+
+<h2 id="20171224">2017/12/24</h2>
+<ul>
+  <li>增加打赏页面(CSS 有点问题) 通过 shang 这个标志进行控制</li>
+  <li>增加了一篇文章</li>
+</ul>
+
+<p>grunt watch -&gt; https://github.com/Huxpro/huxpro.github.io/issues/57</p>
+
+<h2 id="20171219">2017/12/19</h2>
+
+<p>有段时间没在这里写东西了。这段时间都干啥了呢</p>
+
+<ul>
+  <li>公司内部的篮球赛结束了，很尴尬的连季军都没有拿到，但是在三个月期间的10多场比赛中认识了不少微博的朋友，很值得。</li>
+  <li>开始思考一些问题</li>
+</ul>
+
+<h2 id="20171026">2017/10/26</h2>
+
+<p>早晨再一次经体验了早高峰，看到沙河的长队我还是选择了摩拜去高教园坐车，事后证明这是一个正确的选择。</p>
+
+<p>1小时候 到北京南站，然后乘坐高铁开始了我的第一次南下之旅，很激动。</p>
+
+<p>下午到达黄山北，先来到了老街。我一直比较喜欢古街，旁边还有一条水很清澈的河流 新安河， 夕阳西下，风景不错，后续再补图。</p>
+
+<p>晚上吃了徽菜，老板娘比较有意思，很霸气，一点不在乎我们的态度。</p>
+
+<p>嗯嗯 休息，明天爬黄山。</p>
+
+<h2 id="20171025">2017/10/25</h2>
+
+<p>明天就要去黄山。第一次南下，小激动</p>
+
+<p>另外，今天在内部发布了开发的 AndroidStudio 插件，反响不错。</p>
+
+<p>中午去公园投篮，感觉不错，三分也是可以有的。</p>
+
+<p>公园旁边就是西山一号院，北京豪宅就是这个样子。</p>
+
+<p><img src="https://ooo.0o0.ooo/2017/10/25/59f09a86d8588.jpg" alt="IMG_20171025_131447.jpg" /></p>
+
+<h2 id="20171017">2017/10/17</h2>
+<p>公园里的秋天是一个美丽的季节
+<img src="https://wx4.sinaimg.cn/mw690/6fb50cedly1fkl62nd10sj20zn0qogsn.jpg" alt="shot" /></p>
+
+<p>另外，明天 NBA 要开赛了，不错不错。</p>
+
+<h2 id="20171013">2017/10/13</h2>
+
+<p>中午去小公园偶遇网易的几个哥们在打球，然后加入他们打了一中午球，打的很过瘾。
+其中有一个篮下强起砸框进球，感觉就像是扣篮，特别棒，终于知道扣篮是会上瘾的，尤其是前面还有一个人站在那里。</p>
+
+<p>晚上参加了公司内部比赛，输了，但是很开心，打的很轻松，跑完了整场。</p>
+
+<h2 id="20171012内部-androidstudio-插件开发基本完成">2017/10/12（内部 AndroidStudio 插件开发基本完成）</h2>
+
+<p>放假前就开始开发一个 AndroidStudio 插件，<a href="https://plugins.jetbrains.com/plugin/10055-wei-studio-tools">Wei-studio-tools</a></p>
+
+<p>这是专为微博 Android 项目开发的用户修改 gradle 配置以及上传 apk 到内部仓库。后期打算把 ADB 那个工具开放出来，其他 Android 项目也就可以用了。</p>
+
+<p>主要是之前受够了在浏览器中上传时的麻烦，不过开始想的简单，功能很快就做完了，但是自己是个追求细节完美的人，所以在很多交互细节上又花了很多功夫，还在回家的路上用 sketch 设计了界面，总体现在还是比较满意的，除了有一个比较难缠的 bug, 目前已经在 feed 项目组使用，准备在完善下，把几个严重的 bug 修复了在跟架构组推荐下。</p>
+
+<p><img src="https://i.loli.net/2017/10/10/59dc63c596f76.png" alt="shot" /></p>
+
+<p>另外很感谢 SM 的图床 很好用啊</p>
+
+<p>推荐 <a href="https://sm.ms/">SM</a></p>
+
+<h3 id="开关">开关</h3>
+
+<ul>
+  <li>hideLast</li>
+  <li>hideHot</li>
+  <li>hideTizi</li>
+  <li>hideFriend</li>
+  <li>hideTag</li>
+</ul>
+
+<h3 id="if-或-于">if 或 于</h3>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  
+
+  
+</code></pre></div></div>
+
+<h2 id="20171002回家">2017/10/02(回家)</h2>
+<p>在家里呆了5天，老家天气很好，8号回京
+<img src="https://i.loli.net/2017/10/04/59d42c4d97a8e.jpg" alt="IMG_20171004_080439.jpg" /></p>
+
+<h2 id="20170926">2017/09/26</h2>
+
+<blockquote>
+  <p>永远不要害怕问题</p>
+</blockquote>
+
+<p><img src="https://wx1.sinaimg.cn/mw690/6fb50cedly1fjx4j3k3quj21kw0oltcl.jpg" alt="mmexport1506420079841.jpg" /></p>
+
+<p>顶部消息提示 impl</p>
+
+<h2 id="20170922">2017/09/22</h2>
+
+<p><img src="https://i.loli.net/2017/09/26/59ca26120345f.jpg" alt="mmexport1506420234675.jpg" /></p>
+
+<p>很久没有赢球了。happy ~</p>
+
+<h2 id="20170919使用来比利评论系统">2017/09/19（使用来比利评论系统）</h2>
+
+<p>还是更换了一个评论系统，</p>
+
+<p><a href="https://livere.com/">来必力</a></p>
+
+<p>优点</p>
+<ul>
+  <li>可以评论设置提醒</li>
+</ul>
+
+<h2 id="20170918时间好快">2017/09/18(时间好快)</h2>
+
+<p>不知不觉已经找完工作在新公司工作了快三个月了。自从到了新公司现在很少打理博客了，甚至连一篇文章都没有。其实又准备过一篇关于 Drawable 的，这段时间对 Drawable 有了更多的了解，写写还是可以写出一些有意思的东西的，不过好几次动笔都没写完，先搁着吧。</p>
+
+<p>前段时间玩了玩 Chrome 插件，拿咕咚翻译做了个实验，顺便练练 Html CSS，今晚发布了 1.1，于以往做的 APP 不同，这次自己用 sketch 设计了界面，尽管界面很简单，不过还是体验到了 sketch 的专业，使用 sketch 可以方便的做一些平面图，挺好的，包括简单的图标，不说了，我的咕咚翻译 <a href="https://chrome.google.com/webstore/detail/enpemcpghfpenphpefmocgpdiipgkkjd/publish-accepted?utm_source=chrome-ntp-icon&amp;authuser=1">插件地址</a></p>
+
+<p>不早了，睡觉去了。</p>
+
+<h2 id="20170915">2017/09/15</h2>
+
+<p>晚上跟同事打球，左脚又扭了一次，吓死我了，脆弱的脚踝，以后是不是应该去外线打球呢。。。</p>
+
+<h2 id="20170908补图">2017/09/08(补图)</h2>
+<p>公司附近是百望山，中午时我会自己去溜一圈，很喜欢户外的感觉，哪怕是一会儿</p>
+
+<p><img src="https://ooo.0o0.ooo/2017/09/18/59bf3de331efd.jpg" alt="59bf3de331efd.jpg" /></p>
+
+<h2 id="20170824新浪微博">2017/08/24(新浪微博)</h2>
+
+<p><img src="https://i.loli.net/2017/09/18/59bf40816b616.jpg" alt="59bf3de331efd.jpg" /></p>
+
+<p>here is new start</p>
+
+<h2 id="20170613尴尬的一个时间段">2017/06/13(尴尬的一个时间段)</h2>
+<p>上周五打球崴脚了，当时正在篮下进行拼抢，不幸在落地时落在了别人的脚面上，我听到了『咔』的一声，我很清楚这是从右脚踝传来的，然后就到底了。</p>
+
+<p>从高中开始打球到现在，尽管我一直擅长打篮下，篮板也很不错，但是从来没有在篮下崴过脚，终究还是来了。</p>
+
+<p>短暂休息的过程中，我用微信搜了搜一般的处理方法，然后叫同事去帮我买了一袋冰块进行冰敷，效果不错。</p>
+
+<p>周末在家休息了两天，第一天不能很方便的走路，在跟媳妇商量后我最终买了拐，后来到第二天就发现这是个错误，因为第二天行走已经没有什么大碍。</p>
+
+<p>然后今天已经基本好了，今天下午还有公司的篮球赛，不过我一定不会去了。</p>
+
+<p>崴脚的经历告诉我以后打球风格可能要改变啦，而且确实应该在打球时记得保护自己。</p>
+
+<h2 id="20170531放假回来">2017/05/31(放假回来)</h2>
+
+<p>从家里回来上班，在家里的几天每天过的都很快，农村很漂亮，我喜欢那些绿色，可以在田野里大口的呼吸，感觉好极了。</p>
+
+<p>回家的途中火车真的很拥挤！</p>
+
+<p><a href="http://gudong.site/2017/05/08/resume.html">我的在线简历（2017-墨迹天气）</a></p>
+
+<h2 id="20170521添加访问次数">2017/05/21(添加访问次数)</h2>
+<p>最近一直在忙面试，今天看到一微博私信要互加友链，发现对方有一篇文章分享<a href="http://linglinyp.com/2017/05/17/busuanzi.html">如何给 jekyll 主题的博客加访问统计</a>，随即就加了，毕竟惦记这个功能很久了。</p>
+
+<p>//网站倒计时运行代码</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+   <span class="nb">window</span><span class="p">.</span><span class="nx">setInterval</span><span class="p">(</span><span class="dl">'</span><span class="s1">counter()</span><span class="dl">'</span><span class="p">,</span><span class="mi">1000</span><span class="p">);</span>
+   <span class="kd">function</span> <span class="nx">counter</span><span class="p">(){</span>
+     <span class="kd">var</span> <span class="nx">date</span><span class="o">=</span><span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+     <span class="kd">var</span> <span class="nx">startDate</span><span class="o">=</span><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">07</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+     <span class="kd">var</span> <span class="nx">time</span><span class="o">=</span><span class="p">(</span><span class="nx">date</span><span class="o">-</span><span class="nx">startDate</span><span class="p">)</span><span class="o">/</span><span class="mi">1000</span><span class="p">;</span>
+     <span class="kd">var</span> <span class="nx">day</span><span class="o">=</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">time</span><span class="o">/</span><span class="p">(</span><span class="mi">24</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="p">));</span>
+     <span class="kd">var</span> <span class="nx">hour</span><span class="o">=</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">time</span><span class="o">%</span><span class="p">(</span><span class="mi">24</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="p">));</span>
+     <span class="kd">var</span> <span class="nx">minute</span><span class="o">=</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">time</span><span class="o">%</span><span class="p">(</span><span class="mi">24</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span><span class="o">%</span><span class="p">(</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span><span class="o">/</span><span class="mi">60</span><span class="p">);</span>
+     <span class="kd">var</span> <span class="nx">second</span><span class="o">=</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">time</span><span class="o">%</span><span class="p">(</span><span class="mi">24</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span><span class="o">%</span><span class="p">(</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span><span class="o">%</span><span class="mi">60</span><span class="p">);</span>
+     <span class="kd">var</span> <span class="nx">str</span><span class="o">=</span><span class="dl">"</span><span class="s2">我的博客已默默运行了</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">day</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">天</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">hour</span> <span class="o">+</span><span class="dl">"</span><span class="s2">时</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">minute</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">分</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">second</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">秒</span><span class="dl">"</span><span class="p">;</span>
+     <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">count</span><span class="dl">'</span><span class="p">).</span><span class="nx">innerHTML</span><span class="o">=</span><span class="nx">str</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<h2 id="20170508优化首页博客描述文案显示逻辑">2017/05/08(优化首页博客描述文案显示逻辑)</h2>
+
+<h3 id="隐藏文章显示在首页">隐藏文章显示在首页</h3>
+
+<blockquote>
+  <p>设置文章的 hide 属性为 false</p>
+</blockquote>
+
+<p>jekyll if else语法以及 字符串空判断</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      
+          
+      
+</code></pre></div></div>
+<h2 id="20170428完善个人作品展示">2017/04/28(完善个人作品展示)</h2>
+
+<p>增加了全国空气质量展示</p>
+
+<p>手动设置主页背景高度，通过修改 ./css/hux-blog-min.css</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">intro-header</span> <span class="nc">.page-heading</span><span class="p">{</span><span class="nl">text-align</span><span class="p">:</span><span class="nb">center</span><span class="p">;</span><span class="nl">height</span><span class="p">:</span> <span class="m">450px</span><span class="p">;}</span>
+</code></pre></div></div>
+
+<h2 id="20170427公众号二维码增加开关">2017/04/27(公众号二维码增加开关)</h2>
+
+<blockquote>
+  <p>qrcode_mp 新增的一个 page 属性 用于控制页面底部是不是显示公众号二维码</p>
+</blockquote>
+
+<p><img src="http://7xr9gx.com1.z0.glb.clouddn.com/IMG_20170427_111732.jpg" style="width: 50%" /></p>
+
+<h2 id="20170425博客增加了公众号">2017/04/25(博客增加了公众号)</h2>
+
+<p>突然心血来潮，看到<a href="http://droidyue.com/">小黑屋</a>的公众号后，自己终于把申请了好久的公众号再次打扮了一下，并且在博客中放置了二维码。</p>
+
+<p><img src="http://7xr9gx.com1.z0.glb.clouddn.com/qrcode_for_gh_58ac6be237a4_430.jpg" style="width: 50%" /></p>
+
+<p>昨晚添加了自定义菜单，并且编辑了四篇文章。尽管还有很多问题，但是公众号总算是跑起来了。</p>
+
+<p>接下来要认真学习，写一写技术文章。</p>
+
+<p>如果你看到这里了，不妨关注下公众号？ *_*</p>
+
+<h2 id="20170424">2017/04/24</h2>
+
+<p>最近这段时间做了不少好玩的东西。</p>
+
+<p>先做了一个 App <a href="http://gudong.site/product/2017/03/15/about_easypaper.html">易剪</a>,本打算开源，后来赖的没做。然后倒是开源了 <a href="https://github.com/maoruibin/OneDrawable">OneDrawable</a> 这一按钮按下效果处理方案，当然这个方案对一般 MD 设计没太大用处，基本做给 iOS 设计的 UI 效果。</p>
+
+<p>最近在看 Java 虚拟机。感觉比以前理解的深入多了。</p>
+
+<h2 id="有用的查询网址">有用的查询网址</h2>
+
+<ul>
+  <li><a href="http://www.tianyancha.com/">企业注册信息查询</a></li>
+</ul>
+
+<h2 id="20170215">2017/02/15</h2>
+<p>今天更新了 Android 6.0 自定义文本操作的一篇<a href="http://www.jianshu.com/p/40e84359d683">文章</a>，并且投稿给了鸿洋，第一次投稿，看看效果！</p>
+
+<h2 id="20170204">2017/02/04</h2>
+
+<p>适配了 Chrome tab</p>
+
+<p>thanks <a href="https://teaink.com/archives/270.html">https://teaink.com/archives/270.html</a></p>
+
+<h2 id="20170203">2017/02/03</h2>
+<p>不知不觉已经 17 了，我的 2017 会不一样一点。</p>
+
+<p>今天终于把 G 键的映射通过一个映射软件修改了。</p>
+
+<h3 id="运行草稿">运行草稿</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll server --drafts
+
+To preview your site with drafts, simply run jekyll serve or jekyll build with the --drafts switch. 
+</code></pre></div></div>
+
+:ET

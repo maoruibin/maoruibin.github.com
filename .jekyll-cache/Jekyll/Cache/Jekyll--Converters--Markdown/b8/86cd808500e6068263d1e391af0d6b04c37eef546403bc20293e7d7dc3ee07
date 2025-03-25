@@ -1,0 +1,9 @@
+I"�<p>双向链接在本地 App 上很少见，inBox 中支持的笔记都比较短小，笔记间可以通过插入链接的方式将两篇笔记关联在一起，但是如何展示这种关联关系，开始偷懒，只是展示关联笔记的第一行内容，但是考虑到卡片本身就比较短，为了更好的展示卡片关联，直接将卡片渲染了出来，如下所示：</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/008vxvgGly1h7mdurkaulj30u01uo427.jpg" alt="" /></p>
+
+<p>这样不同卡片的关联关系一面了然。</p>
+
+<p>实现过程中使用 DialogBottomSheetFragment + RecycleView，自带的动画效果就很满意，现在也越来越喜欢底部弹框，后面重操作的弹框提示优先用 BottomSheet。</p>
+
+:ET

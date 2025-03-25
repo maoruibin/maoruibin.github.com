@@ -1,0 +1,46 @@
+I"j<p>inBox 最近积累了不少 bug，今天修 bug ！！</p>
+
+<hr />
+<p>inBox 笔记的分享支持了批注分享功能。
+<img src="https://cdn.jsdelivr.net/gh/maoruibin/assets@master/2024/12/21/20241221231028789.jpg" alt="点击编辑标题" /></p>
+
+<hr />
+<p>让 AI 写样板代码太舒服了。提供 menu 文件后，自动根据 menus 中的 id 生成代码，妥妥的</p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">MenuVisible</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="py">a</span><span class="p">:</span><span class="nc">Boolean</span> <span class="p">=</span> <span class="k">false</span>
+    <span class="kd">var</span> <span class="py">b</span><span class="p">:</span><span class="nc">Boolean</span> <span class="p">=</span> <span class="k">false</span>
+    <span class="kd">var</span> <span class="py">c</span><span class="p">:</span><span class="nc">Boolean</span> <span class="p">=</span> <span class="k">false</span>
+    <span class="kd">var</span> <span class="py">d</span><span class="p">:</span><span class="nc">Boolean</span> <span class="p">=</span> <span class="k">false</span>
+    <span class="kd">var</span> <span class="py">e</span><span class="p">:</span><span class="nc">Boolean</span> <span class="p">=</span> <span class="k">false</span>
+    <span class="kd">var</span> <span class="py">f</span><span class="p">:</span><span class="nc">Boolean</span> <span class="p">=</span> <span class="k">false</span>
+    <span class="kd">var</span> <span class="py">g</span><span class="p">:</span><span class="nc">Boolean</span> <span class="p">=</span> <span class="k">false</span>
+    <span class="kd">var</span> <span class="py">h</span><span class="p">:</span><span class="nc">Boolean</span> <span class="p">=</span> <span class="k">false</span>
+    <span class="kd">var</span> <span class="py">i</span><span class="p">:</span><span class="nc">Boolean</span> <span class="p">=</span> <span class="k">false</span>
+    <span class="kd">var</span> <span class="py">j</span><span class="p">:</span><span class="nc">Boolean</span> <span class="p">=</span> <span class="k">false</span>
+<span class="p">}</span>
+<span class="k">private</span> <span class="kd">var</span> <span class="py">menuVisible</span> <span class="p">=</span> <span class="nc">MenuVisible</span><span class="p">()</span>
+<span class="k">private</span> <span class="k">fun</span> <span class="nf">showSelectCommentMode</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nc">ToastUtils</span><span class="p">.</span><span class="nf">show</span><span class="p">(</span><span class="s">"点击批注，选择要分享的批注"</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">menu</span> <span class="p">=</span> <span class="n">toolbar</span><span class="p">.</span><span class="n">menu</span>
+    <span class="c1">//初始化菜单状态为</span>
+    <span class="n">menuVisible</span><span class="p">.</span><span class="nf">apply</span> <span class="p">{</span>
+        <span class="n">a</span> <span class="p">=</span> <span class="n">menu</span><span class="p">.</span><span class="nf">findItem</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">action_edit</span><span class="p">).</span><span class="n">isVisible</span>
+        <span class="n">b</span> <span class="p">=</span> <span class="n">menu</span><span class="p">.</span><span class="nf">findItem</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">action_share</span><span class="p">).</span><span class="n">isVisible</span>
+        <span class="n">c</span> <span class="p">=</span> <span class="n">menu</span><span class="p">.</span><span class="nf">findItem</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">action_add</span><span class="p">).</span><span class="n">isVisible</span>
+        <span class="n">d</span> <span class="p">=</span> <span class="n">menu</span><span class="p">.</span><span class="nf">findItem</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">action_copy</span><span class="p">).</span><span class="n">isVisible</span>
+        <span class="n">e</span> <span class="p">=</span> <span class="n">menu</span><span class="p">.</span><span class="nf">findItem</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">action_stick_top</span><span class="p">).</span><span class="n">isVisible</span>
+        <span class="n">f</span> <span class="p">=</span> <span class="n">menu</span><span class="p">.</span><span class="nf">findItem</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">action_favorite</span><span class="p">).</span><span class="n">isVisible</span>
+        <span class="n">g</span> <span class="p">=</span> <span class="n">menu</span><span class="p">.</span><span class="nf">findItem</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">action_delete</span><span class="p">).</span><span class="n">isVisible</span>
+        <span class="n">h</span> <span class="p">=</span> <span class="n">menu</span><span class="p">.</span><span class="nf">findItem</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">action_sync</span><span class="p">).</span><span class="n">isVisible</span>
+        <span class="n">i</span> <span class="p">=</span> <span class="n">menu</span><span class="p">.</span><span class="nf">findItem</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">action_box</span><span class="p">).</span><span class="n">isVisible</span>
+        <span class="n">j</span> <span class="p">=</span> <span class="n">menu</span><span class="p">.</span><span class="nf">findItem</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">action_more</span><span class="p">).</span><span class="n">isVisible</span>
+    <span class="p">}</span>
+    <span class="n">mViewModel</span><span class="p">.</span><span class="n">mSelectBlock</span><span class="p">.</span><span class="n">value</span> <span class="p">=</span> <span class="k">true</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>每日<a href="https://fcngifhkzsmc.feishu.cn/wiki/TUF1wJIrbiY9OKkpCotch8Q8nud?fromScene=spaceOverview">⁡⁡⁢⁤‌‌​​‌⁢​​‬​‬‍‍​⁤⁤‌⁤⁢‌⁤⁤⁡‬﻿​⁡﻿⁣‌‌​⁣⁢⁣⁣‍﻿‬‬⁡‌‍﻿咚记</a>
+by 咕咚</p>
+:ET

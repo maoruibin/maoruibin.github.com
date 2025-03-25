@@ -1,0 +1,87 @@
+I"<p>在Android设备上实现锁屏功能。</p>
+
+<h2 id="最终结果">最终结果</h2>
+
+<p>点击主界面的锁屏按钮，实现立即锁屏</p>
+
+<h3 id="准备阶段">准备阶段</h3>
+
+<p>新建一个空的Android项目，并在主界面上拖放一个按钮。并在Button的布局文件中声明onClick事件。如下</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;Button</span> <span class="na">android:text=</span><span class="s">"锁屏"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:onClick=</span><span class="s">"lockScreen"</span><span class="nt">/&gt;</span>   
+</code></pre></div></div>
+<p>在MainActivity.java文件中实现lockScreen方法。</p>
+
+<h3 id="实现步骤">实现步骤</h3>
+
+<p>1、创建一个空的广播接受者AdminManageReceiver.java</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import android.app.admin.DeviceAdminReceiver;
+public class AdminManageReceiver extends DeviceAdminReceiver {
+
+}
+</code></pre></div></div>
+
+<p>2、配置Manifest文件</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;receiver
+        android:name=".AdminManageReceiver"
+        android:label="@string/app_name"
+        android:permission="android.permission.BIND_DEVICE_ADMIN" &gt;
+        &lt;meta-data
+            android:name="android.app.device_admin"
+            android:resource="@xml/device_admin" /&gt;
+        &lt;intent-filter&gt;
+            &lt;action android:name="android.app.action.DEVICE_ADMIN_ENABLED" /&gt;
+        &lt;/intent-filter&gt;
+    &lt;/receiver&gt;
+</code></pre></div></div>
+
+<p>3、新建文件device_admin.xml
+AdminManageReceiver需要一个资源文件的支持，我们在res目录下面创建名为xml的文件夹，接着创建device_admin.xml文件，内容如下</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;device-admin xmlns:android="http://schemas.android.com/apk/res/android"&gt;
+    &lt;uses-policies&gt;
+        &lt;force-lock /&gt;
+    &lt;/uses-policies&gt;
+&lt;/device-admin&gt;
+</code></pre></div></div>
+
+<p>4、主逻辑的实现
+    直接上MainActivity.java 代码如下</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class MainActivity extends ActionBarActivity {
+    ComponentName mAdminName;
+    DevicePolicyManager mDPM;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        mAdminName = new ComponentName(this, AdminManageReceiver.class);
+        mDPM = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
+        //如果设备管理器尚未激活，这里会启动一个激活设备管理器的Intent,具体的表现就是第一次打开程序时，手机会弹出激活设备管理器的提示，激活即可。
+        if (!mDPM.isAdminActive(mAdminName)) {
+            showAdminManagement(mAdminName);
+        }
+    }
+    //执行锁屏
+    public void lockScreen(View view){
+        if (mDPM.isAdminActive(mAdminName)) {
+            mDPM.lockNow();
+        }
+    }
+
+    //激活设备管理器
+    private void showAdminManagement(ComponentName mAdminName) {
+        Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
+        intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, mAdminName);
+        intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, "activity device");
+        startActivityForResult(intent,1);
+    }
+}
+</code></pre></div></div>
+
+<p>Note:如果正常运行这个程序，并且按照要求激活了设备，那么在你要准备卸载程序时，需要去设备管理器先移除这个程序，才可以正常执行卸载。</p>
+:ET

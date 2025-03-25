@@ -1,0 +1,98 @@
+I"�#<blockquote>
+  <p>版权声明：本文为 <strong>咕咚</strong> 原创文章，可以随意转载，但必须在明确位置注明出处。</p>
+
+  <p>作者博客地址: <a href="http://gudong.site/">http://gudong.site</a></p>
+
+  <p>本文博客地址: <a href="http://gudong.site/2017/05/15/leakcanary-theory.html">http://gudong.site/2017/05/15/leakcanary-theory.html</a></p>
+</blockquote>
+
+<p>LeakCanary 是 Square 公司为 Android 开发者提供的用于在开发期检测内存泄漏的神器，本文简单分析一下LeakCanary 具体的检测原理。通过本文你将会收获：</p>
+
+<ul>
+  <li>Application.ActivityLifecycleCallbacks （应用中所有 Activity 生命周期检测）</li>
+  <li>WeakReference 的另一个构造方法</li>
+</ul>
+
+<h2 id="原理分析">原理分析</h2>
+
+<p><a href="https://github.com/square/leakcanary">LeakCanary</a> 在 Application 中安装完成后，会注册对应用内所有 Activity 生命周期的监听，具体监听的原理在于 Application 的 <code class="language-plaintext highlighter-rouge">registerActivityLifecycleCallbacks</code> 方法，该方法可以对应用内所有 Activity 的生命周期做监听。那具体在什么地方注册了对应的监听呢？追踪发现具体在：</p>
+
+<p><em>#</em>ActivityRefWatcher#watchActivities</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">watchActivities</span><span class="o">()</span> <span class="o">{</span>
+  <span class="c1">// Make sure you don't get installed twice.</span>
+  <span class="n">stopWatchingActivities</span><span class="o">();</span>
+  <span class="c1">//注册 Activity 生命周期监听</span>
+      <span class="n">application</span><span class="o">.</span><span class="na">registerActivityLifecycleCallbacks</span><span class="o">(</span><span class="n">lifecycleCallbacks</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>这里的 lifecycleCallbacks 是一个监听的简单实现，但是这个实现只对 Activity 的销毁回调 onDestory 做了监听处理，如下所示：</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">final</span> <span class="nc">Application</span><span class="o">.</span><span class="na">ActivityLifecycleCallbacks</span> <span class="n">lifecycleCallbacks</span> <span class="o">=</span>
+  <span class="k">new</span> <span class="nc">Application</span><span class="o">.</span><span class="na">ActivityLifecycleCallbacks</span><span class="o">()</span> <span class="o">{</span>
+  <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onActivityCreated</span><span class="o">(</span><span class="nc">Activity</span> <span class="n">activity</span><span class="o">,</span> <span class="nc">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onActivityStarted</span><span class="o">(</span><span class="nc">Activity</span> <span class="n">activity</span><span class="o">)</span> <span class="o">{</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onActivityResumed</span><span class="o">(</span><span class="nc">Activity</span> <span class="n">activity</span><span class="o">)</span> <span class="o">{</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onActivityPaused</span><span class="o">(</span><span class="nc">Activity</span> <span class="n">activity</span><span class="o">)</span> <span class="o">{</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onActivityStopped</span><span class="o">(</span><span class="nc">Activity</span> <span class="n">activity</span><span class="o">)</span> <span class="o">{</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onActivitySaveInstanceState</span><span class="o">(</span><span class="nc">Activity</span> <span class="n">activity</span><span class="o">,</span> <span class="nc">Bundle</span> <span class="n">outState</span><span class="o">)</span> <span class="o">{</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onActivityDestroyed</span><span class="o">(</span><span class="nc">Activity</span> <span class="n">activity</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">ActivityRefWatcher</span><span class="o">.</span><span class="na">this</span><span class="o">.</span><span class="na">onActivityDestroyed</span><span class="o">(</span><span class="n">activity</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">};</span>
+</code></pre></div></div>
+
+<p>接着看 <code class="language-plaintext highlighter-rouge">onActivityDestroyed</code> 方法：</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">onActivityDestroyed</span><span class="o">(</span><span class="nc">Activity</span> <span class="n">activity</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">refWatcher</span><span class="o">.</span><span class="na">watch</span><span class="o">(</span><span class="n">activity</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">watch</span><span class="o">(</span><span class="nc">Object</span> <span class="n">watchedReference</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">watch</span><span class="o">(</span><span class="n">watchedReference</span><span class="o">,</span> <span class="s">""</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="c1">//存放被 GC 后对象队列</span>
+<span class="nc">ReferenceQueue</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ReferenceQueue</span><span class="o">&lt;&gt;();</span>
+
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">watch</span><span class="o">(</span><span class="nc">Object</span> <span class="n">watchedReference</span><span class="o">,</span> <span class="nc">String</span> <span class="n">referenceName</span><span class="o">)</span> <span class="o">{</span>
+  	<span class="c1">// .....</span>
+    <span class="kd">final</span> <span class="nc">KeyedWeakReference</span> <span class="n">reference</span> <span class="o">=</span> 
+      <span class="k">new</span> <span class="nf">KeyedWeakReference</span><span class="o">(</span><span class="n">watchedReference</span><span class="o">,</span> <span class="n">key</span><span class="o">,</span> <span class="n">referenceName</span><span class="o">,</span> <span class="n">queue</span><span class="o">);</span>
+    <span class="c1">// .....</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>这里会把检测到的 activity 实例关联包装为一个自定义的弱引用（KeyedWeakReference），但是这里在指定弱引用时，LeakCanary 同时还为这个弱引用指定了一个 ReferenceQueue 队列。</p>
+
+<p>这个队列很重要，它是 WeakReference 的第二个构造参数，下面是 ReferenceQueue 的文档介绍</p>
+
+<blockquote>
+  <p>Reference queues, to which registered reference objects are appended by the garbage collector after the appropriate reachability changes are detected.</p>
+</blockquote>
+
+<p>该队列的具体作用就是当发生 GC 后，WeakReference 所持有的对象如果被回收就会进入该队列，所以只要在 activity onDestory 时，把 Activity 对象绑定在 WeakReference 中，然后手动执行一次 GC，然后观察 ReferenceQueue 中是不是包含对应的 Activity 对象，如果不包含，说明 Activity 被强引用，也就是发生了内存泄漏。</p>
+
+<p>接着 LeakCanary 会使用 Square 开源库 <a href="https://github.com/square/haha">haha</a> 来分析Android heap dump文件，并把最终结果通过通知的方式显示在通知栏。</p>
+
+<p>这就是 LeakCanary 工作的大致原理。</p>
+
+<blockquote>
+  <p>本文原创发布于公众号 大侠咕咚，欢迎扫码关注更多原创文章。
+<img src="http://upload-images.jianshu.io/upload_images/588640-20fdcda8075edb5d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="大侠咕咚" /></p>
+</blockquote>
+
+:ET

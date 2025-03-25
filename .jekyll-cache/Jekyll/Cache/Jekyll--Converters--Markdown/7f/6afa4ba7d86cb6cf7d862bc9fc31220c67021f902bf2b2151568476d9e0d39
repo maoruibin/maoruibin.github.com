@@ -1,0 +1,73 @@
+I"�<p>PicPlus 是一个<strong>图床上传 APP</strong>，可帮你<strong>上传手机图片到图床</strong>，并生成 markdown 链接，支持七牛云、阿里云等主流图床，同时还支持配置 GitHub、码云为个人图床。</p>
+
+<p>这篇文章主要介绍如何在 PicPlus 中配置 GitHub 为个人图床，更多关于 PicPlus 的介绍，可阅读这篇文章 - <a href="https://www.yuque.com/gudong-osksb/twgz5k/bfdihv">PicPlus：Android 手机端的图床利器</a>。</p>
+
+<h3 id="准备工作">准备工作</h3>
+
+<p>在配置之前，首先需要一个 GitHub 账号，你可以打开 <a href="https://github.com/">GitHub 官网</a>先去完成账号注册。</p>
+
+<p>注册账号后，需要创建一个 github 仓库用来存储图片，如果你已经有仓库了，也可以直接复用，不过如果打算长期用 GitHub 做图床，还是建议建一个单独的图片仓库来存储图片，这样更容易管理。</p>
+
+<h3 id="创建仓库">创建仓库</h3>
+
+<p>点击 GitHub 页面右上角的加号按钮，可以选择创建仓库，如下图所示：</p>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/159409/1584324593239-18f7c41e-82bf-4b94-8049-e4b97271f193.png#align=left&amp;display=inline&amp;height=514&amp;margin=%5Bobject%20Object%5D&amp;originHeight=514&amp;originWidth=1292&amp;size=0&amp;status=done&amp;style=none&amp;width=1292" alt="" /></p>
+
+<p>点击 <code class="language-plaintext highlighter-rouge">New Reposity</code> 后，接下来需要填写仓库的基本信息，这里需要填写<strong>仓库的名称</strong>（记得用英文，比如 MyPic、Picture 之类的），<strong>建议勾选 initialize，</strong>它会在初始化仓库时生成一个 readme 文件。其他的信息默认就好，然后直接点击最底下绿色的创建按钮即可。</p>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/159409/1586226031552-d262211a-d39c-4632-9b89-9c35ae0646c3.png#align=left&amp;display=inline&amp;height=661&amp;margin=%5Bobject%20Object%5D&amp;originHeight=661&amp;originWidth=853&amp;size=0&amp;status=done&amp;style=none&amp;width=853" alt="" /></p>
+
+<blockquote>
+  <p>Note：不要去设置仓库的访问属性，默认公开，不用动，否则上传不了图片。</p>
+</blockquote>
+
+<h3 id="获取-token">获取 token</h3>
+
+<p>接下来需要为在自己 GitHub 账号下创建一个 token，这个 token 将用来让 app 帮你上传图床，它是软件可以上传图片到 GitHub 的通行证。</p>
+
+<p>具体可以点击 [<a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a>] (<a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a>) 去创建 token，打开页面后点击 <code class="language-plaintext highlighter-rouge">Generate new token</code> 按钮。</p>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/159409/1584324592953-a4af9ba7-1e6a-45e7-9038-faa041b1f492.png#align=left&amp;display=inline&amp;height=260&amp;margin=%5Bobject%20Object%5D&amp;originHeight=260&amp;originWidth=1526&amp;size=0&amp;status=done&amp;style=none&amp;width=1526" alt="" /></p>
+
+<p>点击按钮后会进入创建 token 的页面，这个页面只需要随便输入一个 token 名称即可，比如 pic 等，记得用英文，然后勾选下面的 repo 框就可以了，其余的不用选，然后点击最下方的绿色按钮就可以生成 token 了。</p>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/159409/1584324593024-ff72bf72-d40b-44be-9f76-b984ef285c1a.png#align=left&amp;display=inline&amp;height=1106&amp;margin=%5Bobject%20Object%5D&amp;originHeight=1106&amp;originWidth=1546&amp;size=0&amp;status=done&amp;style=none&amp;width=1546" alt="" /></p>
+
+<p>生成 token 后，这个 token 很重要，现在立即复制它（刷新就没有了，只能重新生成。），发送到自己手机上，这个信息配置 GitHub 图床时需要。</p>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/159409/1584324593153-cde2d676-2014-455d-9148-15b1c1ead078.png#align=left&amp;display=inline&amp;height=272&amp;margin=%5Bobject%20Object%5D&amp;originHeight=272&amp;originWidth=1512&amp;size=0&amp;status=done&amp;style=none&amp;width=1512" alt="" /></p>
+
+<h3 id="在-picplus-中配置-github-图床">在 PicPlus 中配置 GitHub 图床</h3>
+
+<p>通过软件中的侧滑菜单，找到图床列表，选择添加图床&gt; Github 图床，如下所示：</p>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/159409/1602146930151-16856f22-f859-410e-aaa1-76c01657e9a7.jpeg#align=left&amp;display=inline&amp;height=1080&amp;margin=%5Bobject%20Object%5D&amp;originHeight=1080&amp;originWidth=1080&amp;size=0&amp;status=done&amp;style=none&amp;width=1080" alt="" /></p>
+
+<p>如下所示：</p>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/159409/1602146997564-9bdf5948-1e8e-4166-81b2-7da3f1659338.jpeg#align=left&amp;display=inline&amp;height=1170&amp;margin=%5Bobject%20Object%5D&amp;originHeight=2340&amp;originWidth=1080&amp;size=0&amp;status=done&amp;style=none&amp;width=540" alt="" /></p>
+
+<p>下面需要填入四项信息，假定现在已经完成了上面的注册，并获得了如下信息</p>
+
+<ul>
+  <li>token：  xxxxxxxxxxxxxxx</li>
+  <li>Github 用户名：gudong</li>
+  <li>仓库名称：pic</li>
+  <li>默认分支：main</li>
+</ul>
+
+<p>如下所示，首行需要输入 token 字符串，接着输入 github 用户名，然后输入仓库名称，按照示例分别填入 <code class="language-plaintext highlighter-rouge">gudong</code> 跟 <code class="language-plaintext highlighter-rouge">pic</code> 就 OK，如下图所示：</p>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/159409/1602147105210-fc7f89b5-d1e0-4865-ab80-25aabd774cf4.jpeg#align=left&amp;display=inline&amp;height=1170&amp;margin=%5Bobject%20Object%5D&amp;originHeight=2340&amp;originWidth=1080&amp;size=0&amp;status=done&amp;style=none&amp;width=540" alt="" /></p>
+
+<h4 id="关于存储路径">关于存储路径</h4>
+
+<p>默认按照年月日的目录结构进行存储，比如今天是 2020年10月8号，那么上传后，图片将会存储在 2020/10/08/目录下。</p>
+
+<p>你也可以自己指定目录进行固定位置的存储，需要关闭按年月日存储的开关，然后输入自己的目录名即可。</p>
+
+<p>以上就是配置 PicPlus GitHub 图床的所有步骤，希望我说明白了。</p>
+
+<p>如果在配置中还有什么问题，可以在酷安私信我，也可以发邮件(1252768410艾特qq.com)给我，说明具体情况，最好有截图，最后再次感谢你的使用。</p>
+:ET

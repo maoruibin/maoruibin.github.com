@@ -5,17 +5,18 @@ title: 关于我
 
 你好，我是咕咚同学，这里是我的个人博客，会在这里发表一些个人软件的动态以及一些碎碎念。
 
-关于我自己，我是一个软件工程师，喜欢用代码解决问题，喜欢交朋友，下面是详细介绍：
+关于我
 
 ## 软件工程师
-我的一个是软件工程师，业余喜欢开发自己的软件，目前 Focus 的软件是 [inBox 笔记](https://doc.gudong.site/inbox)，这是一个极致轻量的本地笔记软件，用来快速记录一闪而过的灵感，主要特性有：
+我的一个是软件工程师，业余喜欢开发自己的[软件](./works.html)，目前 Focus 的软件是 [inBox 笔记](https://doc.gudong.site/inbox)，这是一个极致轻量的本地笔记软件，用来快速记录一闪而过的灵感，主要特性有：
 - 本地优先 
 - 标签化管理笔记
 - 数据自主可控，支持 WebDAV
 - 灵活的导入导出
 - 双向链接，笔记批注等
 
-此外还开发过
+此外还开发
+- 资产管理软件(开发中) [仓咚咚](https://doc.gudong.site/cang/) 
 - 打卡软件 [点亮](https://doc.gudong.site/light/) 一个实用特别的打卡软件
 - RSS 订阅软件 [咕咚订阅](https://doc.gudong.site/rssplus/) 一个实用简洁的 RSS 订阅软件
 
@@ -27,13 +28,15 @@ title: 关于我
 ## 厨房好手
 喜欢做菜，做菜是一门创造的艺术，是一种高级趣味。
 
+
 ## 关注/订阅
-- 公众号-[咕咚同学](https://gitee.com/maoruibin/img/raw/master/2021/01/12/_export1610434130245.jpg.png)
+- 公众号-[咕咚同学](https://mp.weixin.qq.com/mp/qrcode?scene=10000004&size=102&__biz=MzIwNzU5NTQ1Mg==&mid=2247485043&idx=1&sn=c7a288bf50462037ad1dd4679c670300&send_time=)
 - 即刻：[咕咚同学](https://okjk.co/l8IUzO)
 - GitHub: [https://github.com/maoruibin](https://github.com/maoruibin)
 - Rss：[订阅地址](https://gudong.site/static/xml/rss.xml)
 
 ## 博客历史
+- 2025/03/25: 使用 AI 更改了主页，优化了订阅页面，有 AI 就是好。
 - 2024/07/27: 更新关于介绍
 - 2024/02/09: 更新关于页面，增加个人标签
 - 2023/00/00: --------------------------
@@ -55,4 +58,4 @@ title: 关于我
 - 2018/12/13: 更改博客主题为极简模式的主题 indigo
 - 2015/05/19: 使用 Github+Jekyll 搭建博客
 
-> 最近更新于 2024/07/27
+> 最近更新于 2025/03/25

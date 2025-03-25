@@ -1,0 +1,182 @@
+I",<p>在软件开发中，池一直都是一种非常优秀的设计思想，通过建立池可以有效的利用系统资源，节约系统性能。Java 中的线程池就是一种非常好的实现，从 JDK 1.5 开始 Java 提供了一个线程工厂 Executors 用来生成线程池，通过 Executors 可以方便的生成不同类型的线程池。但是要更好的理解使用线程池，就需要了解线程池的配置参数意义以及线程池的具体工作机制。</p>
+
+<blockquote>
+  <p>版权声明：本文为 <strong>咕咚</strong> 原创文章，可以随意转载，但必须在明确位置注明出处。</p>
+
+  <p>作者博客地址: <a href="http://gudong.site/">http://gudong.site</a></p>
+
+  <p>本文博客地址: <a href="http://gudong.site/2017/05/03/thread-pool-intro.html">http://gudong.site/2017/05/03/thread-pool-intro.html</a></p>
+</blockquote>
+
+<p>下面先介绍一下线程池的好处以及创建方式，接着会着重介绍关于线程池的执行原则以及构造方法的参数详解。</p>
+
+<h2 id="线程池的好处">线程池的好处</h2>
+
+<p>引用自 <a href="http://ifeve.com/java-threadpool/">http://ifeve.com/java-threadpool/</a> 的说明：</p>
+
+<ul>
+  <li>降低资源消耗。通过重复利用已创建的线程降低线程创建和销毁造成的消耗。</li>
+  <li>提高响应速度。当任务到达时，任务可以不需要等到线程创建就能立即执行。</li>
+  <li>提高线程的可管理性。线程是稀缺资源，如果无限制的创建，不仅会消耗系统资源，还会降低系统的稳定性，使用线程池可以进行统一的分配，调优和监控。</li>
+</ul>
+
+<h2 id="创建线程池">创建线程池</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//参数初始化</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">CPU_COUNT</span> <span class="o">=</span> <span class="nc">Runtime</span><span class="o">.</span><span class="na">getRuntime</span><span class="o">().</span><span class="na">availableProcessors</span><span class="o">();</span>
+<span class="c1">//核心线程数量大小</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">corePoolSize</span> <span class="o">=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="nc">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="no">CPU_COUNT</span> <span class="o">-</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">4</span><span class="o">));</span>
+<span class="c1">//线程池最大容纳线程数</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">maximumPoolSize</span> <span class="o">=</span> <span class="no">CPU_COUNT</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+<span class="c1">//线程空闲后的存活时长</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">keepAliveTime</span> <span class="o">=</span> <span class="mi">30</span><span class="o">;</span>
+
+<span class="c1">//任务过多后，存储任务的一个阻塞队列</span>
+<span class="nc">BlockingQueue</span><span class="o">&lt;</span><span class="nc">Runnable</span><span class="o">&gt;</span>  <span class="n">workQueue</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SynchronousQueue</span><span class="o">&lt;&gt;();</span>
+
+<span class="c1">//线程的创建工厂</span>
+<span class="nc">ThreadFactory</span> <span class="n">threadFactory</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadFactory</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">AtomicInteger</span> <span class="n">mCount</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AtomicInteger</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+
+    <span class="kd">public</span> <span class="nc">Thread</span> <span class="nf">newThread</span><span class="o">(</span><span class="nc">Runnable</span> <span class="n">r</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Thread</span><span class="o">(</span><span class="n">r</span><span class="o">,</span> <span class="s">"AdvacnedAsyncTask #"</span> <span class="o">+</span> <span class="n">mCount</span><span class="o">.</span><span class="na">getAndIncrement</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">};</span>
+
+<span class="c1">//线程池任务满载后采取的任务拒绝策略</span>
+<span class="nc">RejectedExecutionHandler</span> <span class="n">rejectHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadPoolExecutor</span><span class="o">.</span><span class="na">DiscardOldestPolicy</span><span class="o">();</span>
+
+<span class="c1">//线程池对象，创建线程</span>
+<span class="nc">ThreadPoolExecutor</span> <span class="n">mExecute</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadPoolExecutor</span><span class="o">(</span>
+        <span class="n">corePoolSize</span><span class="o">,</span> 
+        <span class="n">maximumPoolSize</span><span class="o">,</span>
+        <span class="n">keepAliveTime</span><span class="o">,</span>
+        <span class="nc">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">,</span>
+        <span class="n">workQueue</span><span class="o">,</span>
+        <span class="n">threadFactory</span><span class="o">,</span> 
+        <span class="n">rejectHandler</span>
+<span class="o">);</span>
+</code></pre></div></div>
+
+<h2 id="具体参数介绍">具体参数介绍</h2>
+
+<ul>
+  <li>corePoolSize</li>
+</ul>
+
+<blockquote>
+  <p>线程池的核心线程数。在没有设置 allowCoreThreadTimeOut 为 true 的情况下，核心线程会在线程池中一直存活，即使处于闲置状态。</p>
+</blockquote>
+
+<ul>
+  <li>maximumPoolSize</li>
+</ul>
+
+<blockquote>
+  <p>线程池所能容纳的最大线程数。当活动线程(核心线程+非核心线程)达到这个数值后，后续任务将会根据 RejectedExecutionHandler 来进行拒绝策略处理。</p>
+</blockquote>
+
+<ul>
+  <li>keepAliveTime</li>
+</ul>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">非核心线程</code>闲置时的超时时长。超过该时长，<strong>非核心线程</strong>就会被回收。若线程池通设置核心线程也允许 timeOut，即 allowCoreThreadTimeOut 为 true，则该时长同样会作用于核心线程，在超过 aliveTime 时，核心线程也会被回收，AsyncTask 配置的线程池就是这样设置的。</p>
+</blockquote>
+
+<ul>
+  <li>unit</li>
+</ul>
+
+<blockquote>
+  <p>keepAliveTime 时长对应的单位。</p>
+</blockquote>
+
+<ul>
+  <li>workQueue</li>
+</ul>
+
+<blockquote>
+  <p>线程池中的任务队列，通过线程池的 execute() 方法提交的 Runnable 对象会存储在该队列中。</p>
+</blockquote>
+
+<ul>
+  <li>ThreadFactory</li>
+</ul>
+
+<blockquote>
+  <p>线程工厂，功能很简单，就是为线程池提供创建新线程的功能。这是一个接口，可以通过自定义，做一些自定义线程名的操作。</p>
+</blockquote>
+
+<ul>
+  <li>RejectedExecutionHandler</li>
+</ul>
+
+<blockquote>
+  <p>当任务无法被执行时(超过线程最大容量 maximum 并且 workQueue 已经被排满了)的处理策略，这里有四种任务拒绝类型。</p>
+</blockquote>
+
+<h2 id="线程池工作原则">线程池工作原则</h2>
+
+<ul>
+  <li>1、当线程池中线程数量小于 corePoolSize 则创建线程，并处理请求。</li>
+  <li>2、当线程池中线程数量大于等于 corePoolSize 时，则把请求放入 workQueue 中,随着线程池中的核心线程们不断执行任务，只要线程池中有空闲的核心线程，线程池就从 workQueue 中取任务并处理。</li>
+  <li>3 、当 workQueue 已存满，放不下新任务时则新建非核心线程入池，并处理请求直到线程数目达到 maximumPoolSize（最大线程数量设置值）。</li>
+  <li>4、如果线程池中线程数大于 maximumPoolSize 则使用 RejectedExecutionHandler 来进行任务拒绝处理。</li>
+</ul>
+
+<h2 id="任务队列-blockingqueue">任务队列 BlockingQueue</h2>
+
+<p>任务队列 workQueue 是用于存放不能被及时处理掉的任务的一个队列，它是
+一个 BlockingQueue 类型。</p>
+
+<blockquote>
+  <p>关于 BlockingQueue，虽然它是 Queue 的子接口，但是它的主要作用并不是容器，而是作为线程同步的工具，他有一个特征，当生产者试图向 BlockingQueue 放入(put)元素，如果队列已满，则该线程被阻塞；当消费者试图从 BlockingQueue 取出(take)元素，如果队列已空，则该线程被阻塞。(From 疯狂Java讲义)</p>
+</blockquote>
+
+<h2 id="任务拒绝类型">任务拒绝类型</h2>
+
+<ul>
+  <li>ThreadPoolExecutor.AbortPolicy:</li>
+</ul>
+
+<blockquote>
+  <p>当线程池中的数量等于最大线程数时抛 java.util.concurrent.RejectedExecutionException 异常，涉及到该异常的任务也不会被执行，线程池默认的拒绝策略就是该策略。</p>
+</blockquote>
+
+<ul>
+  <li>ThreadPoolExecutor.DiscardPolicy():</li>
+</ul>
+
+<blockquote>
+  <p>当线程池中的数量等于最大线程数时,默默丢弃不能执行的新加任务，不报任何异常。</p>
+</blockquote>
+
+<ul>
+  <li>ThreadPoolExecutor.CallerRunsPolicy():</li>
+</ul>
+
+<blockquote>
+  <p>当线程池中的数量等于最大线程数时，重试添加当前的任务；它会自动重复调用execute()方法。</p>
+</blockquote>
+
+<ul>
+  <li>ThreadPoolExecutor.DiscardOldestPolicy():</li>
+</ul>
+
+<blockquote>
+  <p>当线程池中的数量等于最大线程数时,抛弃线程池中工作队列头部的任务(即等待时间最久的任务)，并执行新传入的任务。</p>
+</blockquote>
+
+<h2 id="参考">参考</h2>
+<ul>
+  <li><a href="http://ifeve.com/java-threadpool/">聊聊并发（三）Java线程池的分析和使用</a></li>
+  <li><a href="http://blog.csdn.net/lfdfhl/article/details/40739093">Android线程池(二)——ThreadPoolExecutor及其拒绝策略RejectedExecutionHandler使用示例</a></li>
+  <li><a href="http://blog.csdn.net/u014099894/article/details/50900689">多线程 线程池ThreadPoolExecutor介绍</a></li>
+</ul>
+
+<blockquote>
+  <p>本文原创发布于公众号 大侠咕咚，欢迎扫码关注更多原创文章。
+<img src="http://upload-images.jianshu.io/upload_images/588640-20fdcda8075edb5d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="大侠咕咚" /></p>
+</blockquote>
+:ET

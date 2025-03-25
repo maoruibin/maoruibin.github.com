@@ -1,0 +1,7 @@
+I"<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 404 page not found.</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">found</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">throw</span> <span class="p">(</span><span class="dl">"</span><span class="s2">(╯°□°)╯︵ ┻━┻</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+:ET

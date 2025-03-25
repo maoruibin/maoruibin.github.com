@@ -28,6 +28,9 @@
   {%- if page.layout == "page" %}
   <link rel="stylesheet" href="{{site.baseurl}}/static/css/page.css?t={{buildAt}}">
   {%- endif %}
+  {%- if page.title == "首页" %}
+  <link rel="stylesheet" href="{{site.baseurl}}/static/css/new-index-style.css?t={{buildAt}}">
+  {%- endif %}
   <script>
     window.blog = {
       baseurl:"{{site.baseurl}}",

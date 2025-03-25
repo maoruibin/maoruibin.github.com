@@ -1,0 +1,34 @@
+I"<p><img src="https://gitee.com/maoruibin/img/raw/master/2022/01/20/20220120141548960.png" alt="" /></p>
+
+<p>自己一直有在手机上 RSS 订阅的习惯，如果关于 RSS 还不太了解，可以查看我之前写的一篇文章 <a href="https://gudong.site/2021/09/24/job.html">什么是 RSS 订阅-咕咚同学</a>，RSS 的好处在于<strong>免除打扰，自定义信息源</strong>，</p>
+
+<p>相比当前大行其道的个性化推荐，RSS 其实算是一种非主流的信息订阅方式，但市面上依旧有很多可用的 RSS 软件，比如 Feedly、Inoreader、Rolly 等，但试用一段时间，还是有很多不满意的地方，所以后来便根据自己需求，开发了一个<strong>主打简洁实用</strong>的 RSS 阅读器 - <a href="http://fir.gudong.site/gulz">DongReader</a>。</p>
+
+<p>而在手机上阅读 RSS 推送的文章时，经常会产生一些想法，需要快速记录，所以最近开发了一个新功能</p>
+
+<p><strong>写批注</strong></p>
+
+<p>就是可以对当前文章进行笔记、批注，如下所示</p>
+
+<p><img src="https://gitee.com/maoruibin/img/raw/master/2022/01/20/20220120085119701.jpg" alt="" /></p>
+
+<p>后来开发完毕后，立即有用户反馈，他希望<strong>批注可以自动同步至自己的 flomo 笔记</strong>，而 flomo 是支持 API 写入的，所以顺手就支持了自动同步 flomo。</p>
+
+<p>这样在写批注时，只要勾选 同步至 flomo，发送完毕后，笔记不仅记录在阅读器本地，也会同步到 flomo 笔记。</p>
+
+<p><img src="https://gitee.com/maoruibin/img/raw/master/2022/01/20/IMG_20220120_085406.jpg" alt="" /></p>
+
+<blockquote>
+  <p>flomo 的 API 写入是 PRO 功能，需要付费开启。</p>
+</blockquote>
+
+<p>至此，一个支持自动同步批注到 flomo 笔记的 RSS 阅读器就完成了。</p>
+
+<p>后续计划：</p>
+
+<ul>
+  <li>目前 DongReader 的批注只能正对整篇文章，后面会支持对句子、段落进行批注。</li>
+  <li>开发一个单独的页面用来展示所有的批注</li>
+</ul>
+
+:ET

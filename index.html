@@ -8,33 +8,28 @@ title: 首页
     {%- capture post_previous_year %}{{ post.previous.date | date: "%Y" }}{% endcapture -%}
     {%- capture post_next_year %}{{ post.next.date | date: "%Y" }}{% endcapture -%}
     {%- if forloop.first or post_next_year != post_year -%}
-    <div class="list-post">
+    <div class="post-list">
       <h2 id="{{post_year}}">{{post_year}}</h2>
       <ul>
     {%- endif %}
 
       {% if post.hidden != true  %}
 
-        {% if  post.categories contains  "daily" %}
-
-        {% else %}
-
-				<li>
-					<span class="date">{{ post.date | date: "%Y/%m/%d" }}</span>
-					<div class="title">
-						<a href="{{ site.baseurl | append: post.url }}" class="hover-underline">{{ post.title }}</a>
-					</div>
-					<div class="categories">
-						{% for categorie in post.categories -%}
-						<a href="{{site.baseurl}}/categories.html#{{ categorie }}" class="hover-underline">{{ categorie }}</a>
-						{%- endfor %}
-					</div>
-				</li>				
-
-        {% endif %}
-
-
-				
+        <li>
+          <span class="date">{{ post.date | date: "%Y/%m/%d" }}</span>
+          <a href="{{ site.baseurl | append: post.url }}" class="hover-underline">{{ post.title }}</a>
+          {% if post.description %}
+            <a href="{{ site.baseurl | append: post.url }}" class="description-link"><p class="description">{{ post.description }}</p></a>
+          {% else %}
+            <a href="{{ site.baseurl | append: post.url }}" class="description-link"><p class="description">{{ post.content | strip_html | truncate: 120 }}</p></a>
+          {% endif %}
+          <div>
+            {% for categorie in post.categories -%}
+            <span class="category">{{ categorie }}</span>
+            {%- endfor %}
+          </div>
+        </li>
+        
       {% endif %}
     {%- if forloop.last or post_previous_year != post_year %}
       </ul>

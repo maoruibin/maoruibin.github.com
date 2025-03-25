@@ -1,0 +1,29 @@
+I"�<p>#咚记/Daily 
+优化了一下博客发布 app。</p>
+
+<p>昨天只能支持发布，但文章发布后，发现内容有问题，想改，还得去电脑修改，所以今天便把修改也做了。</p>
+
+<p>现在通过 app 发布博客文章后，本地会记住历史发布文章，然后再次点击可以进行修改，这里调用 github 的 api 即可。</p>
+
+<p>此外，删除也是，能发布就应该能删除，这样直接在手机完成博客文章的管理。</p>
+
+<p><strong>缺点</strong></p>
+<ul>
+  <li>​操作依旧有不稳定性，因为 github</li>
+  <li>​Jekyll  header 信息还不能进行修改，后面考虑做成模板</li>
+</ul>
+
+<p><strong>待开发功能点</strong></p>
+<ul>
+  <li>​<strong>草稿</strong>，记住当前编辑的文章，否则重启 app 就丢了</li>
+  <li><strong>​预览，</strong>本来就是 markdown，所以预览时支持 markdown 会不错，如果 app 发布，考虑作为 Pro 功能。</li>
+</ul>
+
+<p><strong>想法</strong></p>
+<ul>
+  <li>​这个 app 就是为了自用，而且本来用 github page 做频繁发布的同学也不多。我自己主要是因为要写 daily，所以才有高频更新博客的需求，所以暂时先让自己用的爽就好。</li>
+  <li>​有了这个工具后，我的 Daily 发布门槛变得更低，后面争取每天写一篇。</li>
+</ul>
+
+<p><img src="https://missuo.ru/file/1d5a0ecf610bf01d1fe60.jpg" alt="Screenshot_2023-02-21-13-18-03-43_d792380f3919786dad2894cf3ce8d219" /></p>
+:ET

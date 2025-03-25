@@ -1,0 +1,151 @@
+I"�4<h2 id="string">String</h2>
+
+<p>字符串常量，一旦创建，不可改变。这里的不可改变指字符串对应堆内存，当我们执行字符串的加操作时，实际上是复制被加字符串的内容到新开辟的字符串空间中，原来的作废。</p>
+
+<p>String 是线程安全的，String 类是 final 类，不可以被继承。</p>
+
+<p>String 的长度是不变的，适用于少量的字符串操作。</p>
+
+<h2 id="stringbuffer">StringBuffer</h2>
+
+<p>字符串变量，长度可变，<strong>线程安全</strong>。适用于多线程下在字符缓冲区进行大量字符串操作</p>
+
+<h2 id="stringbuilder">StringBuilder</h2>
+
+<p>字符串变量，长度可变，<strong>线程不安全</strong>。适用于<strong>单线程</strong>下在字符缓冲区进行大量字符串操作</p>
+
+<p>字符串操作在执行速度：StringBuilder &gt; StringBuffer &gt; String</p>
+
+<h2 id="源码分析">源码分析</h2>
+
+<blockquote>
+  <p>基于 Android SDK 26 版本分析</p>
+</blockquote>
+
+<p>StringBuffer 与 StringBuilder 共同继承自 AbstractStringBuilder，二者基本的方法调用都是使用了父类的实现，子类只是简单包装了一下，区别在于，<strong>StringBuffer 支持多线程，所以它的操作方法均是同步方法</strong>。 这里使用 synchronized 关键字标记方法为同步方法，所以它的效率较低，因为调用同步方法时，首先要去获取同步锁。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kd">synchronized</span> <span class="nc">StringBuffer</span> <span class="nf">append</span><span class="o">(</span><span class="nc">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">toStringCache</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+  <span class="kd">super</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+  <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>AbstractStringBuilder 定义了一个字符数组用于进行所有的字符处理，</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+* The value is used for character storage.
+*/</span>
+<span class="kt">char</span><span class="o">[]</span> <span class="n">value</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>使用默认的构造方法时，会指定初始字符数组的大小为 16，如果构造时指定了初始的字符串，那么初始容量为字符串长度加 16。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="nf">StringBuffer</span><span class="o">(</span><span class="nc">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
+	<span class="kd">super</span><span class="o">(</span><span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">+</span> <span class="mi">16</span><span class="o">);</span>
+	<span class="n">append</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="append-方法实现">append 方法实现</h3>
+
+<p>append 支持空数据。执行该方法时，会首先检查 append 的值是否是 null，如果是，即参数值为 null，这时 AbstractStringBuilder 会把空值做特殊处理，最终在字符数组结尾追加 “null”。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="nc">AbstractStringBuilder</span> <span class="nf">appendNull</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">count</span><span class="o">;</span>
+  <span class="n">ensureCapacityInternal</span><span class="o">(</span><span class="n">c</span> <span class="o">+</span> <span class="mi">4</span><span class="o">);</span>
+  <span class="kd">final</span> <span class="kt">char</span><span class="o">[]</span> <span class="n">value</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">value</span><span class="o">;</span>
+  <span class="n">value</span><span class="o">[</span><span class="n">c</span><span class="o">++]</span> <span class="o">=</span> <span class="sc">'n'</span><span class="o">;</span>
+  <span class="n">value</span><span class="o">[</span><span class="n">c</span><span class="o">++]</span> <span class="o">=</span> <span class="sc">'u'</span><span class="o">;</span>
+  <span class="n">value</span><span class="o">[</span><span class="n">c</span><span class="o">++]</span> <span class="o">=</span> <span class="sc">'l'</span><span class="o">;</span>
+  <span class="n">value</span><span class="o">[</span><span class="n">c</span><span class="o">++]</span> <span class="o">=</span> <span class="sc">'l'</span><span class="o">;</span>
+  <span class="n">count</span> <span class="o">=</span> <span class="n">c</span><span class="o">;</span>
+  <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>具体追加字符串时，先会根据要插入字符串的长度，对原来的字符容器进行扩容，然后巧妙的通过 String 的 getChars 方法进行数据拼接、追加。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="nc">AbstractStringBuilder</span> <span class="nf">append</span><span class="o">(</span><span class="nc">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">str</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
+    <span class="k">return</span> <span class="nf">appendNull</span><span class="o">();</span>
+  <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
+  <span class="c1">// 扩容</span>
+  <span class="n">ensureCapacityInternal</span><span class="o">(</span><span class="n">count</span> <span class="o">+</span> <span class="n">len</span><span class="o">);</span>
+  <span class="c1">// 追加 str 到字符数组容器中，这里会把 str 追加到 value 数组中，count 原来字符的数量，在参数中是偏移的值，</span>
+  <span class="n">str</span><span class="o">.</span><span class="na">getChars</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">len</span><span class="o">,</span> <span class="n">value</span><span class="o">,</span> <span class="n">count</span><span class="o">);</span>
+  <span class="c1">// 追加完成后，同步一下 count 的值</span>
+  <span class="n">count</span> <span class="o">+=</span> <span class="n">len</span><span class="o">;</span>
+  <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>getChars 的具体实现跟 System 的 arrayCopy 一样，都是 native 的实现。</p>
+
+<h3 id="tostring">toString()</h3>
+
+<p>不论使用 StringBuffer 还是 StringBuilder，在构造、追加完成后，要使用字符串就必须调用 toString 方法，跟其他方法的调用不一样。它们的父类并没有提供统一的实现。</p>
+
+<p>StringBuffer 自己做了优化，它定义了一个字符数组 toStringCache，在调用 toString 时，如果 toStringCache 已经有值，就简单包装返回，如下所示：</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kd">synchronized</span> <span class="nc">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">toStringCache</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">toStringCache</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOfRange</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">count</span><span class="o">);</span>
+  <span class="o">}</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nf">String</span><span class="o">(</span><span class="n">toStringCache</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">count</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>toStringCache 会在 StringBuilder 被修改时被置为 null。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * A cache of the last value returned by toString. Cleared
+ * whenever the StringBuffer is modified.
+ */</span>
+<span class="kd">private</span> <span class="kd">transient</span> <span class="kt">char</span><span class="o">[]</span> <span class="n">toStringCache</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>StringBuilder 的 toString 实现没有用到缓存机制，直接用 StringFactory 提供的工具方法把字符数组转化为字符串。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="nc">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">count</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+  <span class="o">}</span>
+  <span class="c1">// 也是一个 native 实现，实际上字符串的很多操作都是通过 native 操作完成</span>
+  <span class="k">return</span> <span class="nc">StringFactory</span><span class="o">.</span><span class="na">newStringFromChars</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">count</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="string-加操作">String 加操作</h2>
+
+<p>开发中如果字符串需要追加字符串，经常这样操作</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">content</span> <span class="o">=</span> <span class="s">"hello"</span><span class="o">;</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">content</span><span class="o">+</span><span class="s">" world"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p><del>这里给该字符串添加上 world 时，也就是 String 在执行加操作时，首先会先开辟空间存储 world 这个字符串，然后再开辟空间将两个字符串拼接，也就是说，一个简单的拼接工作，String需要开辟三块空间来完成。</del></p>
+
+<blockquote>
+  <p>注意：以上是不准确的解释。</p>
+</blockquote>
+
+<p>实际上上面说对了一半，在 Java 1.8 之前，确实是上面所说的那样，但是 1.8 之后优化了 String 的 加操作，在编译运行时会根据不同情况使用 StringBuilder 或者 StringBuffer  进行内部优化替换。这一点在 String 的源码注释中有说明：</p>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/159409/1572992596799-b72abd81-921f-47ff-840b-51e957da5572.jpeg#align=left&amp;display=inline&amp;height=109&amp;originHeight=109&amp;originWidth=587&amp;size=0&amp;status=done&amp;width=587" alt="" /></p>
+
+<p>所以这样说来，平时为了使用方便，完全可以用 + 号进行字符串拼接了，没必要用 StringBuilder。这也是技术发展的趋势所在，好用、简单永远是主流。</p>
+
+<h2 id="总结">总结</h2>
+
+<p>这篇文章从三者的区别说起，是一个经常面试时被问到的问题，后面主要分析了 StringBuilder 以及 StringBuffer 部分源码，算是学习研究。</p>
+
+<p>说道最终的性能，经过优化的 String 其实跟 StringBuilder 一致，性能都不错，所以开发过程中没必要纠结用 String 还是 StringBuilder，但是前提是你要知道 String 被优化这个事。</p>
+
+<h2 id="关于作者">关于作者</h2>
+
+<p>咕咚，Android 工程师，个人博客 <a href="gudong.site">gudong.site</a>，公众号：咕喱咕咚</p>
+:ET

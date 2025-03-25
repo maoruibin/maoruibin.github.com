@@ -1,0 +1,41 @@
+I"�<p>如何复制 JSON 字符串中指定节点元素？</p>
+
+<h2 id="问题场景">问题场景</h2>
+
+<p>有时我们会有一串很长的 Json 字符串，如下所示：</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1ga0qd2fazcj30jo0bxabg.jpg" alt="" /></p>
+
+<p>这时我们需要摘出其中一个节点，也就是拷贝某个节点的 json 内容，比如上图中的 sk 节点，现在我们可以手动用鼠标去选择复制。</p>
+
+<p>但是对于<strong>一些特别大的 JSON  数据节点</strong>，它的内容很长，这时手动选择复制就很容易出错。</p>
+
+<h2 id="解决方案">解决方案</h2>
+
+<p>Google 的 Chrome 浏览器提供了可以精确辅助的功能，如下图 gif 所示，通过 Chrome 提供的 copy 命令就可以非常方便的做到这点。</p>
+
+<p><img src="https://thumbs.gfycat.com/JadedUnsteadyFennecfox-size_restricted.gif" alt="" /></p>
+
+<h2 id="操作步骤">操作步骤</h2>
+
+<ul>
+  <li>复制目标 json 内容</li>
+  <li>打开 Chrome 开发者工具</li>
+  <li>选择 Console 界面</li>
+  <li>粘贴 JSON 代码到控制台并回车</li>
+  <li>点击已输入的 JSON 串，右键菜单选择 Store as Global Variable</li>
+  <li>这时原来的 json 串会被转换为一个变量名称 temp1</li>
+  <li>用 copy 命令进行复制，copy 的参数可以是 temp1，还可以精细化，指定到 json 节点，总之你想复制那个节点，指定就 OK</li>
+  <li>执行完 copy 命令，复制的内容已经到系统粘贴板，到目标地方复制即可。</li>
+</ul>
+
+<h2 id="参考链接">参考链接</h2>
+
+<ul>
+  <li><a href="https://stackoverflow.com/questions/10305365/javascript-chrome-how-to-copy-an-object-from-the-webkit-inspector-as-code">jquery - Javascript / Chrome - How to copy an object from the webkit inspector as code - Stack Overflow</a></li>
+</ul>
+
+<p><a href="https://tool.oschina.net/regex?optionGlobl=global">在线正则表达式测试</a></p>
+
+<p><a href="https://fanyi.baidu.com/#zh/en/%E6%8F%90%E5%8F%96">百度翻译</a></p>
+:ET

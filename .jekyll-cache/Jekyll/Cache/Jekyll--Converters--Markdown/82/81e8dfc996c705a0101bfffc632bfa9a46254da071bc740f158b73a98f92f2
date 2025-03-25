@@ -1,0 +1,14 @@
+I"{<p>刚刚发布了 inbox 新版本，这个版本新增了一个小功能：<strong>支持了数字密码</strong>，之前只支持指纹，数字密码算是一个补充，但是数字密码存在忘记密码的风险，所以这个功能只是功能补齐，如果有指纹，不建议开启数字密码。</p>
+
+<p><img src="https://telegraph-image.pages.dev/file/b1ffd9da7cb66b3fc2204.jpg" alt="" /></p>
+
+<p>除了上面的数字密码功能，这个版本更多的是做优化。这段期间看到了很多稳定性的问题，比如闪退，尤其是搜索页面，只要操作层级变深，就很容易操作奔溃，认真排查后成功解决这个顽疾，这比开发一个新功能更重要，后面再操作搜索页面不再会异常退出了。</p>
+
+<p>其他都是细节优化，比如打开标签下的笔记时，页面会先显示快捷搜索，删除图片没有及时同步 webdav。</p>
+
+<p>详细日志见截图，inBox 笔记 app  详细说明 <a href="https://doc.gudong.site/inbox/">inBox 主页</a></p>
+
+<p>#咚记/Daily</p>
+
+<p><img src="https://telegraph-image.pages.dev/file/f1c3f5b9d37de22d19414.jpg" alt="" /></p>
+:ET

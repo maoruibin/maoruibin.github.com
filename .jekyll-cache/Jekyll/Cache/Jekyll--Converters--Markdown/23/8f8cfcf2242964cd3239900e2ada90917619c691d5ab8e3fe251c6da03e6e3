@@ -1,0 +1,203 @@
+I"�U<p>最近在开发一个小应用密码本，开发的目的是自己确实有存储密码的需要，同时还有更重要的目的便是学习使用 <code class="language-plaintext highlighter-rouge">Kotlin</code>。</p>
+
+<p>最近已经把基本的功能都开发完成了，包括指纹验证登录、手势登录以及最重要的密码条目存储，本地数据库使用 <code class="language-plaintext highlighter-rouge">Room</code>。</p>
+
+<p>下面是使用 Kotlin 过程中的一些积累点滴，如果有什么错误的地方，欢迎指正。另外，如果你对这个密码本感兴趣，不论是对开发感兴趣，还是对这个产品感兴趣，均可以通过最下方的联系方式联系到我。</p>
+
+<h3 id="通过-kotlin-为-view-设置回调事件">通过 Kotlin 为 View 设置回调事件</h3>
+
+<p>在 <code class="language-plaintext highlighter-rouge">Java</code> 中通过如下方式设置</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">btnView</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="nc">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="nc">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//todo</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</code></pre></div></div>
+
+<p>在 <code class="language-plaintext highlighter-rouge">Kotlin</code> 中可以直接通过 <code class="language-plaintext highlighter-rouge">lambda</code> 表达式，如下所示</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">btnView</span><span class="p">.</span><span class="nf">setOnClickListener</span><span class="p">({</span>
+    <span class="c1">//todo</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>也可以省略括号直接使用如下简写方式</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">btnView</span><span class="p">.</span><span class="nf">setOnClickListener</span> <span class="p">{</span>
+	<span class="c1">// todo</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>如果在回调中需要使用 <code class="language-plaintext highlighter-rouge">view</code> 参数，可以通过如下方式</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">btnView</span><span class="p">.</span><span class="nf">setOnClickListener</span> <span class="p">{</span> <span class="n">view</span> <span class="p">-&gt;</span>
+  	<span class="n">view</span><span class="p">.</span><span class="n">visibility</span> <span class="p">=</span> <span class="nc">View</span><span class="p">.</span><span class="nc">VISIBLE</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="kotlin-接口中有多个接口方法需要实现">Kotlin 接口中有多个接口方法需要实现</h3>
+
+<p>如下有一个接口</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">OnTaskSwitchListener</span> <span class="o">{</span>
+  
+    <span class="kt">void</span> <span class="nf">onTaskSwitchToForeground</span><span class="o">(</span><span class="nc">Activity</span> <span class="n">topActivity</span><span class="o">);</span>
+
+    <span class="kt">void</span> <span class="nf">onTaskSwitchToBackground</span><span class="o">(</span><span class="nc">Activity</span> <span class="n">topActivity</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>对应有一个 set 方法</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">setOnTaskSwitchListener</span><span class="o">(</span><span class="nc">OnTaskSwitchListener</span> <span class="n">listener</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">mOnTaskSwitchListener</span> <span class="o">=</span> <span class="n">listener</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>在 kotlin 中如何使用 set 方法，如下所示</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">taskSwitch</span><span class="o">?.</span><span class="nf">setOnTaskSwitchListener</span><span class="p">(</span><span class="kd">object</span> <span class="err">: </span><span class="nc">BaseTaskSwitch</span><span class="p">.</span><span class="nc">OnTaskSwitchListener</span><span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onTaskSwitchToBackground</span><span class="p">(</span><span class="n">activity</span><span class="p">:</span> <span class="nc">Activity</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span><span class="s">"88888"</span><span class="p">,</span><span class="s">"到后台"</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onTaskSwitchToForeground</span><span class="p">(</span><span class="n">activity</span><span class="p">:</span> <span class="nc">Activity</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nc">Log</span><span class="p">.</span><span class="nf">e</span><span class="p">(</span><span class="s">"88888"</span><span class="p">,</span><span class="s">"到前台"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>refer to http://blog.csdn.net/afanyusong/article/details/77866953</p>
+
+<h3 id="kotlin-使用-intent-跳转">Kotlin 使用 Intent 跳转</h3>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">editorIntent</span> <span class="p">=</span> <span class="nc">Intent</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nc">EditorActivity</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">)</span>
+<span class="n">editorIntent</span><span class="p">.</span><span class="nf">putExtra</span><span class="p">(</span><span class="s">"pass"</span><span class="p">,</span> <span class="n">entity</span><span class="p">)</span>
+<span class="nf">startActivity</span><span class="p">(</span><span class="n">editorIntent</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>如果是在内部类中，不能直接拿到 <code class="language-plaintext highlighter-rouge">this</code>,使用下面的方式</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">editorIntent</span> <span class="p">=</span> <span class="nc">Intent</span><span class="p">(</span><span class="k">this</span><span class="nd">@MainActivity</span><span class="p">,</span> <span class="nc">EditorActivity</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">)</span>
+<span class="n">editorIntent</span><span class="p">.</span><span class="nf">putExtra</span><span class="p">(</span><span class="s">"pass"</span><span class="p">,</span> <span class="n">entity</span><span class="p">)</span>
+<span class="k">this</span><span class="nd">@MainActivity</span><span class="o">!!</span><span class="p">.</span><span class="nf">startActivity</span><span class="p">(</span><span class="n">editorIntent</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="kotlin-中使用-alertdialog">Kotlin 中使用 AlertDialog</h3>
+
+<p>使用 Java 生成一个 AlertDialog</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nc">AlertDialog</span><span class="o">.</span><span class="na">Builder</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="s">"提示"</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">setMessage</span><span class="o">(</span><span class="s">"你好，世界"</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">setPositiveButton</span><span class="o">(</span><span class="s">"确定"</span><span class="o">,</span> <span class="k">new</span> <span class="nc">DialogInterface</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="nc">DialogInterface</span> <span class="n">dialog</span><span class="o">,</span> <span class="kt">int</span> <span class="n">which</span><span class="o">)</span> <span class="o">{</span>
+                
+            <span class="o">}</span>
+        <span class="o">})</span>
+        <span class="o">.</span><span class="na">show</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>Kotlin 中如下所示</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">msg</span> <span class="p">=</span> <span class="s">"你好世界"</span>
+<span class="nc">AlertDialog</span><span class="p">.</span><span class="nc">Builder</span><span class="p">(</span><span class="n">holder</span><span class="p">.</span><span class="n">itemView</span><span class="p">.</span><span class="n">context</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">setMessage</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">setPositiveButton</span><span class="p">(</span><span class="s">"复制"</span><span class="p">,</span> <span class="nc">DialogInterface</span><span class="p">.</span><span class="nc">OnClickListener</span> <span class="p">{</span> <span class="n">dialogInterface</span><span class="p">,</span> <span class="n">i</span> <span class="p">-&gt;</span>
+            <span class="nf">copyText</span><span class="p">(</span><span class="n">holder</span><span class="p">.</span><span class="n">itemView</span><span class="p">.</span><span class="n">context</span><span class="p">,</span> <span class="n">item</span><span class="p">.</span><span class="n">value</span><span class="p">)</span>
+            <span class="nc">Toast</span><span class="p">.</span><span class="nf">makeText</span><span class="p">(</span><span class="n">holder</span><span class="p">.</span><span class="n">itemView</span><span class="p">.</span><span class="n">context</span><span class="p">,</span> <span class="s">"复制成功"</span><span class="p">,</span> <span class="nc">Toast</span><span class="p">.</span><span class="nc">LENGTH_SHORT</span><span class="p">).</span><span class="nf">show</span><span class="p">()</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nf">setNeutralButton</span><span class="p">(</span><span class="s">"取消"</span><span class="p">,</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">create</span><span class="p">()</span>
+        <span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>另外，在给<code class="language-plaintext highlighter-rouge">PositiveButton</code>设置点击回调时，使用了 lambda 表达式，这里的 <code class="language-plaintext highlighter-rouge">dialogInterface</code> 和<code class="language-plaintext highlighter-rouge">i</code>两个参数均没有使用，在 AndroidStudio 3.0 中会提示可以用 _ 代替，修改后如下所示：</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">msg</span> <span class="p">=</span> <span class="s">"你好世界"</span>
+<span class="nc">AlertDialog</span><span class="p">.</span><span class="nc">Builder</span><span class="p">(</span><span class="n">holder</span><span class="p">.</span><span class="n">itemView</span><span class="p">.</span><span class="n">context</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">setMessage</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">setPositiveButton</span><span class="p">(</span><span class="s">"复制"</span><span class="p">,</span> <span class="nc">DialogInterface</span><span class="p">.</span><span class="nc">OnClickListener</span> <span class="p">{</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="p">-&gt;</span>
+            <span class="nf">copyText</span><span class="p">(</span><span class="n">holder</span><span class="p">.</span><span class="n">itemView</span><span class="p">.</span><span class="n">context</span><span class="p">,</span> <span class="n">item</span><span class="p">.</span><span class="n">value</span><span class="p">)</span>
+            <span class="nc">Toast</span><span class="p">.</span><span class="nf">makeText</span><span class="p">(</span><span class="n">holder</span><span class="p">.</span><span class="n">itemView</span><span class="p">.</span><span class="n">context</span><span class="p">,</span> <span class="s">"复制成功"</span><span class="p">,</span> <span class="nc">Toast</span><span class="p">.</span><span class="nc">LENGTH_SHORT</span><span class="p">).</span><span class="nf">show</span><span class="p">()</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nf">setNeutralButton</span><span class="p">(</span><span class="s">"取消"</span><span class="p">,</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">create</span><span class="p">()</span>
+        <span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>当然，如果要使用，就不要这么简写了。</p>
+
+<h3 id="kotlin-中使用-alertlistdialog">Kotlin 中使用 AlertListDialog</h3>
+
+<p>如下所示的 dialog 经常看到</p>
+
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fnv4k8ipnej30go0tngm1.jpg" alt="" /></p>
+
+<p>实现如下所示：</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">list</span> <span class="p">=</span> <span class="nc">Array</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="p">{</span> <span class="s">"打开应用"</span><span class="p">,</span><span class="s">"卸载应用"</span><span class="p">,</span><span class="s">"查看详情"</span><span class="p">,</span><span class="s">"去市场查看"</span> <span class="p">})</span>
+<span class="n">android</span><span class="p">.</span><span class="n">support</span><span class="p">.</span><span class="n">v7</span><span class="p">.</span><span class="n">app</span><span class="p">.</span><span class="nc">AlertDialog</span><span class="p">.</span><span class="nc">Builder</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nf">setItems</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="nc">DialogInterface</span><span class="p">.</span><span class="nc">OnClickListener</span> <span class="p">{</span> <span class="n">_</span><span class="p">,</span> <span class="n">i</span> <span class="p">-&gt;</span>
+    <span class="k">when</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="m">0</span> <span class="p">-&gt;</span> <span class="p">{</span>
+          <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span><span class="nc">TAG</span><span class="p">,</span><span class="s">"open"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="m">1</span> <span class="p">-&gt;</span> <span class="p">{</span>
+          <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span><span class="nc">TAG</span><span class="p">,</span><span class="s">"uninstall"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="m">2</span> <span class="p">-&gt;</span> <span class="p">{</span>
+          <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span><span class="nc">TAG</span><span class="p">,</span><span class="s">"detail"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="m">3</span> <span class="p">-&gt;</span> <span class="p">{</span>
+          <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span><span class="nc">TAG</span><span class="p">,</span><span class="s">"watch"</span><span class="p">);</span>
+        <span class="p">}</span>      
+    <span class="p">}</span>
+<span class="p">}).</span><span class="nf">create</span><span class="p">().</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="kotlin-中强转类型">Kotlin 中强转类型</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Java</code> 中的类型强转如下所示</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Entity</span> <span class="n">entity</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Entity</span><span class="o">)</span><span class="n">getIntent</span><span class="o">().</span><span class="na">getSerializableExtra</span><span class="o">(</span><span class="s">"entity"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>在 <code class="language-plaintext highlighter-rouge">Kotlin</code> 中可以用更优雅的形式</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">manager</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="nf">getSystemService</span><span class="p">(</span><span class="nc">Context</span><span class="p">.</span><span class="nc">FINGERPRINT_SERVICE</span><span class="p">)</span> <span class="k">as</span> <span class="nc">FingerprintManager</span>
+<span class="n">key</span> <span class="p">=</span> <span class="n">keyStore</span><span class="p">.</span><span class="nf">getKey</span><span class="p">(</span><span class="nc">KEY_STORE_ALIAS</span><span class="p">,</span> <span class="k">null</span><span class="p">)</span> <span class="k">as</span> <span class="nc">SecretKey</span>
+</code></pre></div></div>
+
+<h3 id="kotlin-设置静态变量提供给其他类使用">Kotlin 设置静态变量提供给其他类使用</h3>
+
+<p>Java 中这样</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">buttonGravity</span> <span class="o">=</span> <span class="mi">120</span><span class="o">;</span>
+</code></pre></div></div>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Test</span><span class="p">{</span>
+    <span class="k">companion</span> <span class="k">object</span> <span class="p">{</span>
+        <span class="kd">val</span> <span class="py">buttonGravity</span> <span class="p">=</span> <span class="m">120</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>使用</p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="py">value</span> <span class="p">=</span> <span class="nc">Test</span><span class="p">.</span><span class="n">buttonGravity</span>
+</code></pre></div></div>
+
+<h2 id="关于作者">关于作者</h2>
+
+<blockquote>
+  <ul>
+    <li>邮箱 - <a href="mailto:gudong.site@gmail.com">gudong.site@gmail.com</a></li>
+    <li>微博 - <a href="https://weibo.com/maoruibin">大侠咕咚</a></li>
+    <li>知乎 - <a href="https://www.zhihu.com/people/maoruibin/activities">咕咚</a></li>
+    <li>Github - <a href="https://github.com/maoruibin">咕咚</a></li>
+  </ul>
+</blockquote>
+
+:ET

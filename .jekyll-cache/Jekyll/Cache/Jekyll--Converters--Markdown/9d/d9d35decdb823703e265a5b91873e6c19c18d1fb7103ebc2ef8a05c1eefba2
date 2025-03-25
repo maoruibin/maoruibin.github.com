@@ -1,0 +1,28 @@
+I"�<p>在Mac下使用Sublime时，如果要编译java文件，直接使用command+B命令就可以达到编译的效果，此时会在java源文件的目录下生成对应的.class文件，但这显然不能够满足我们的需求。
+如何才能直接编译并运行java代码呢？</p>
+
+<p>我最终通过如下解决方案，达到了command+B 在Sublime控制台显示运行结果的效果</p>
+
+<h2 id="第一步">第一步</h2>
+
+<p>打开Finder 应用程序-&gt; Sublime Text -&gt; 右击 显示包内容 -&gt; /Contents/MacOS/Packages/Java.sublime-package</p>
+
+<h2 id="第二步">第二步</h2>
+
+<p>替换这个压缩文件夹下面 JavaC.sublime-build 的文件内容为</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+"cmd": ["java", "$file_base_name"],
+"file_regex": "^ *\\[javac\\] (.+):([0-9]+):() (.*)$",
+"selector": "source.java"
+}
+</code></pre></div></div>
+
+<p>ps:这个地方小费了点功夫，在mac上没有合适的软件可以编辑Java.sublime-package 这个文件里面的内容，后来我是这么做的，把文件发送到windows电脑上，然后用360压缩解决。</p>
+
+<h2 id="第三步">第三步</h2>
+
+<p>重新打开Sublime，使用快捷键command+B进行编译然后直接运行，然后控制台打印出 HelloWorld字符串，如下所示，妥妥的。</p>
+
+<p><img src="/assets/sublime_java.png" alt="运行成功" title="运行成功效果图" /></p>
+:ET
