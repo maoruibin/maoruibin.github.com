@@ -8,7 +8,7 @@ title: 关于我
 关于我
 
 ## 软件工程师
-我的一个是软件工程师，业余喜欢开发自己的[软件](./works.html)，目前 Focus 的软件是 [inBox 笔记](https://doc.gudong.site/inbox)，这是一个极致轻量的本地笔记软件，用来快速记录一闪而过的灵感，主要特性有：
+业余喜欢开发自己的[软件](./works.html)，目前 Focus 的软件是 [inBox 笔记](https://doc.gudong.site/inbox)，这是一个极致轻量的本地笔记软件，用来快速记录一闪而过的灵感，主要特性有：
 - 本地优先 
 - 标签化管理笔记
 - 数据自主可控，支持 WebDAV
@@ -28,6 +28,8 @@ title: 关于我
 ## 厨房好手
 喜欢做菜，做菜是一门创造的艺术，是一种高级趣味。
 
+## 相信什么
+但行好事，莫问前程。
 
 ## 关注/订阅
 - 公众号-[咕咚同学](https://mp.weixin.qq.com/mp/qrcode?scene=10000004&size=102&__biz=MzIwNzU5NTQ1Mg==&mid=2247485043&idx=1&sn=c7a288bf50462037ad1dd4679c670300&send_time=)
