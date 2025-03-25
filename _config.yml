@@ -109,11 +109,28 @@ links:
     tag: 博主
     header: https://cravatar.cn/avatar/a4368b0f22f9820265d7d2431addc8da?s=120&r=g
 
-
   - title: YuZhangWang
     url: https://www.yuzhang.wang/
     desc: PLUSULTRA！ 
     tag: 博主
     header: https://gcore.jsdelivr.net/gh/YuZhangWang/Creative-pictures02@master/img/202210171416164.png
+
+  - title: 往日信笺
+    url: https://www.xingmail.cn/
+    desc: 一个Xing分享自己的故事的地方
+    tag: 博主 故事
+    header: https://www.xingmail.cn/favicon.webp
+
+  - title: 关关和六六
+    url: https://www.gmcllp.cn
+    desc: 向世界分享我们的故事
+    tag: 博主 故事 生活
+    header: https://www.gmcllp.cn/logo-y.png
+
+  - title: 博客星球
+    url: https://www.blogplanet.cn/
+    desc: 每一个博客都是一个独立星球！
+    tag: 博客 社区
+    header: https://www.blogplanet.cn/img/bkxq.png
 
 
