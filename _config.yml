@@ -187,4 +187,16 @@ links:
     tag: 博主 随笔 技术
     header: https://suus.me/avatar.jpg
 
+  - title: 朱某的生活印记
+    url: https://zhuxu.asia/
+    desc: 没有销声匿迹，我在热爱生活
+    tag: 博主 生活 随笔
+    header: https://img1.zhuxu.asia/img/logo500.png
+
+  - title: 墨迹日志
+    url: https://log.ink/
+    desc: 虽多尘色染，犹见墨痕浓
+    tag: 博主 随笔 生活
+    header: https://log.ink/wp-content/uploads/2024/12/cropped-%E5%A4%B4%E5%83%8F.png
+
 
