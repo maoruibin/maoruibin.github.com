@@ -133,4 +133,22 @@ links:
     tag: 博客 社区
     header: https://www.blogplanet.cn/img/bkxq.png
 
+  - title: 阿锋的小宇宙
+    url: https://feng.pub
+    desc: 沧海一粟，微亮而渺小。
+    tag: 博主 随笔
+    header: https://feng.pub/favicon.ico
+
+  - title: Mark's Blog
+    url: https://mark.vergilisme.com/
+    desc: 记录生活，分享所思
+    tag: 博主 技术
+    header: https://mark.vergilisme.com/favicon.ico
+
+  - title: 南川吟梦
+    url: https://blog.southz.top/
+    desc: 人生能有几回搏，天涯何处无芳草🌟
+    tag: 博主 技术
+    header: https://blog.southz.top/favicon.ico
+
 
