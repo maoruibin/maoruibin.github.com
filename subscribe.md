@@ -22,7 +22,7 @@ title: 订阅
 您也可以通过关注我的微信公众号【咕咚同学】获取最新文章和动态。扫描下方二维码即可关注：
 
 <div class="qrcode-container">
-  <img src="https://mp.weixin.qq.com/mp/qrcode?scene=10000004&size=102&__biz=MzIwNzU5NTQ1Mg==&mid=2247485043&idx=1&sn=c7a288bf50462037ad1dd4679c670300&send_time=" alt="咕咚同学公众号二维码" class="qrcode">
+  <img src="assets/profile/gongzhonghao.jpg" alt="咕咚同学公众号二维码" class="qrcode">
   <p>微信扫一扫关注公众号</p>
 </div>
 
