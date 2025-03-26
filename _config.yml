@@ -137,7 +137,7 @@ links:
     url: https://feng.pub
     desc: 沧海一粟，微亮而渺小。
     tag: 博主 随笔
-    header: https://feng.pub/favicon.ico
+    header: https://cravatar.cn/avatar/868740183b995d2707e307ce0a89633a?s=200
 
   - title: Mark's Blog
     url: https://mark.vergilisme.com/
@@ -149,6 +149,18 @@ links:
     url: https://blog.southz.top/
     desc: 人生能有几回搏，天涯何处无芳草🌟
     tag: 博主 技术
-    header: https://blog.southz.top/favicon.ico
+    header: https://cn.cravatar.com/avatar/8418eeff381919776ab9bdb0bf488d5a?s=96&d=mp&r=g
+
+  - title: 陶其的个人博客
+    url: https://www.tqazy.com
+    desc: 当下，即是未来
+    tag: 博主 技术
+    header: https://oss.tqazy.com/wordpress/resources/img/taoqilogo.jpg
+
+  - title: 二十六
+    url: https://www.ershiliu.com/
+    desc: 人生如逆旅，我亦是行人。
+    tag: 博主 随笔
+    header: https://www.ershiliu.com/tx.jpeg
 
 
