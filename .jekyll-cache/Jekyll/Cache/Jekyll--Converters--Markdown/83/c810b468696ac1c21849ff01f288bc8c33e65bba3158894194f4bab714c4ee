@@ -1,9 +1,4 @@
----
-layout: mypost
-title: 关于我
----
-
-<div class="about-container">
+I"	.<div class="about-container">
   <div class="about-header">
     <div class="quote-box">
       <blockquote>但行好事，莫问前程。</blockquote>
@@ -91,7 +86,7 @@ title: 关于我
     <h2 class="section-title">🔗 关注/订阅</h2>
     <div class="qrcode-container">
       <div class="qrcode-wrapper">
-        <img src="assets/profile/gongzhonghao.jpg" width="200" alt="微信公众号:咕咚同学">
+        <img src="assets/profile/gongzhonghao.jpg" width="200" alt="微信公众号:咕咚同学" />
         <p>扫码关注公众号: 咕咚同学</p>
       </div>
     </div>
@@ -433,3 +428,5 @@ html.dark .article-list li {
   color: #999;
 }
 </style>
+
+:ET

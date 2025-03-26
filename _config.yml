@@ -2,7 +2,7 @@ encoding: utf-8
 
 # SEO相关信息
 title: 咕咚同学
-description: 独立开发者，inBox 笔记作者
+description: 一个独立开发者的日常
 keywords: 咕咚,Blog,Java,Html,JavaScript,PicPlus,咕咚云图
 author: 咕咚
 footerText: 'Copyright © 2022 咕咚'
@@ -185,7 +185,7 @@ links:
     url: https://suus.me/
     desc: A nook where thoughts and ideas sometimes echo
     tag: 博主 随笔 技术
-    header: https://suus.me/avatar.jpg
+    header: https://suus.me/avatar.webp
 
   - title: 朱某的生活印记
     url: https://zhuxu.asia/
@@ -227,7 +227,7 @@ links:
     url: https://gfjzz.cn
     desc: 君主，永远在高峰等你！
     tag: 博主 技术 生活
-    header: https://gfjzz.cn/upload/2024/01/avatar-3c8e0c7e0c2f4c0c9c3c7c7c7c7c7c7.jpg
+    header: https://gfjzz.cn/upload/sitelogo.png
 
   - title: HIPVOGUE
     url: https://hipvogue.com/

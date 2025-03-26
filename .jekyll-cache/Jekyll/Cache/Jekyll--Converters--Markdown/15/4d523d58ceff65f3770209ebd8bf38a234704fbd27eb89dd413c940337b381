@@ -1,9 +1,4 @@
----
-layout: mypost
-title: 关于我
----
-
-<div class="about-container">
+I"k$<div class="about-container">
   <div class="about-header">
     <div class="quote-box">
       <blockquote>但行好事，莫问前程。</blockquote>
@@ -55,12 +50,9 @@ title: 关于我
   <div class="about-section">
     <h2 class="section-title">🏀 篮球爱好者</h2>
     <div class="section-content">
-      <p>篮球是我开发软件之外的最大爱好，从高中开始接触篮球，到现在几乎没周都会打球，篮球已经不仅仅是一个兴趣爱好，更是我生活中的一部分，感谢篮球。</p>
+      <p>我是一个十足的篮球爱好者，篮球给我快乐。</p>
       <div class="motto">
         篮球理念：<strong>安全第一，开心打球，互相分享</strong>
-      </div>
-      <div class="motto">
-        打球特点：<strong>大部分时候打中锋，习惯勾手投篮，脚步也不错，喜欢分享球。</strong>
       </div>
     </div>
   </div>
@@ -91,7 +83,7 @@ title: 关于我
     <h2 class="section-title">🔗 关注/订阅</h2>
     <div class="qrcode-container">
       <div class="qrcode-wrapper">
-        <img src="assets/profile/gongzhonghao.jpg" width="200" alt="微信公众号:咕咚同学">
+        <img src="assets/profile/gongzhonghao.jpg" width="200" alt="微信公众号:咕咚同学" />
         <p>扫码关注公众号: 咕咚同学</p>
       </div>
     </div>
@@ -137,58 +129,6 @@ title: 关于我
       <div class="timeline-item">
         <span class="date">2022/11/20</span>
         <span class="content">更新关于说明</span>
-      </div>
-      <div class="timeline-item">
-        <span class="date">2022/11/06</span>
-        <span class="content">咚记 Tab 回归</span>
-      </div>
-      <div class="timeline-item">
-        <span class="date">2022/10/03</span>
-        <span class="content">增加上一篇下一篇导航，取消咚记 Tab</span>
-      </div>
-      <div class="timeline-item">
-        <span class="date">2022/05/06</span>
-        <span class="content">网站备案完成 for leancloud</span>
-      </div>
-      <div class="timeline-item">
-        <span class="date">2021/10/17</span>
-        <span class="content">增加评论 utteranc.es，增加「咚记」模块</span>
-      </div>
-      <div class="timeline-item">
-        <span class="date">2021/09/19</span>
-        <span class="content">增加留言面板</span>
-      </div>
-      <div class="timeline-item">
-        <span class="date">2021/01/02</span>
-        <span class="content">更新主题为 tmaize</span>
-      </div>
-      <div class="timeline-item">
-        <span class="date">2020/10/24</span>
-        <span class="content">增加我的书单</span>
-      </div>
-      <div class="timeline-item">
-        <span class="date">2020/10/13</span>
-        <span class="content">增加 Twitter 链接</span>
-      </div>
-      <div class="timeline-item">
-        <span class="date">2020/09/17</span>
-        <span class="content">隐藏公众号二维码、关于 tab</span>
-      </div>
-      <div class="timeline-item">
-        <span class="date">2019/12/23</span>
-        <span class="content">更换域名为 gudong.site</span>
-      </div>
-      <div class="timeline-item">
-        <span class="date">2019/11/14</span>
-        <span class="content">增加 Daily、Tech 分类，把日记跟技术文章进行单独分类</span>
-      </div>
-      <div class="timeline-item">
-        <span class="date">2019/11/06</span>
-        <span class="content">评论系统替换为 valine，并启用阅读数</span>
-      </div>
-      <div class="timeline-item">
-        <span class="date">2018/12/13</span>
-        <span class="content">更改博客主题为极简模式的主题 indigo</span>
       </div>
       <div class="timeline-item">
         <span class="date">2015/05/19</span>
@@ -433,3 +373,5 @@ html.dark .article-list li {
   color: #999;
 }
 </style>
+
+:ET

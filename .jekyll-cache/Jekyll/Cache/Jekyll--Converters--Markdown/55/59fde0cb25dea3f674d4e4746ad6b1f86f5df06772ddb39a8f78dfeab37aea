@@ -1,0 +1,710 @@
+I"�y<p>欢迎各位朋友与我建立友链，如果您想和我交换友链，可以通过以下方式联系我：</p>
+
+<ol>
+  <li>在评论区留言</li>
+  <li>发送邮件至 <a href="mailto:1397516172@qq.com">1397516172@qq.com</a></li>
+</ol>
+
+<p>本站的友链信息如下：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>名称：咕咚同学
+描述：一个独立开发者的日常
+地址：https://gudong.site
+头像：https://gudong.site/assets/profile/gudong_2023.png
+</code></pre></div></div>
+
+<div class="friend-links-container">
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://blog.tmaize.net/" target="_blank">
+            <img src="https://blog.tmaize.net/static/img/logo.jpg" alt="TMaize" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">T</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://blog.tmaize.net/" title="TMaize的个人博客" target="_blank" class="friend-link-title" style="text-decoration: none !important;">TMaize</a>
+        <div class="friend-link-desc">TMaize的个人博客</div>
+        <div class="friend-link-tags">
+            <span class="tag">前端</span>
+            <span class="tag">数据库</span>
+            <span class="tag">后端</span>
+            <span class="tag">Java</span>
+            <span class="tag">NodeJS</span>
+            <span class="tag">GO</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://blog.yuanpei.me" target="_blank">
+            <img src="https://blog.yuanpei.me/img/default-avatar_hua3ac297279c484e6ad1f3f5acd3cb005_125342_300x0_resize_q75_box.jpg" alt="元视角" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">元</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://blog.yuanpei.me" title="起风了，唯有努力生存" target="_blank" class="friend-link-title" style="text-decoration: none !important;">元视角</a>
+        <div class="friend-link-desc">起风了，唯有努力生存</div>
+        <div class="friend-link-tags">
+            <span class="tag">数据分析</span>
+            <span class="tag">微服务</span>
+            <span class="tag">Web</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://atjason.com/" target="_blank">
+            <img src="https://ps.toolinbox.net/ezw8l.jpg" alt="Jason" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">J</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://atjason.com/" title="Jason，独立开发者，自由职业者" target="_blank" class="friend-link-title" style="text-decoration: none !important;">Jason</a>
+        <div class="friend-link-desc">Jason，独立开发者，自由职业者</div>
+        <div class="friend-link-tags">
+            <span class="tag">量化投资</span>
+            <span class="tag">Mac开发者</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://hutusi.com/" target="_blank">
+            <img src="https://hutusi.com/assets/apple-touch-icon.png" alt="胡涂说" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">胡</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://hutusi.com/" title="任抛星汉归园圃，留取乾坤盛酒囊" target="_blank" class="friend-link-title" style="text-decoration: none !important;">胡涂说</a>
+        <div class="friend-link-desc">任抛星汉归园圃，留取乾坤盛酒囊</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://tumutanzi.com/" target="_blank">
+            <img src="https://cravatar.cn/avatar/a4368b0f22f9820265d7d2431addc8da?s=120&amp;r=g" alt="土木坛子" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">土</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://tumutanzi.com/" title="和光同尘，与时舒卷" target="_blank" class="friend-link-title" style="text-decoration: none !important;">土木坛子</a>
+        <div class="friend-link-desc">和光同尘，与时舒卷</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://www.yuzhang.wang/" target="_blank">
+            <img src="https://gcore.jsdelivr.net/gh/YuZhangWang/Creative-pictures02@master/img/202210171416164.png" alt="YuZhangWang" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">Y</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://www.yuzhang.wang/" title="PLUSULTRA！" target="_blank" class="friend-link-title" style="text-decoration: none !important;">YuZhangWang</a>
+        <div class="friend-link-desc">PLUSULTRA！</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://www.xingmail.cn/" target="_blank">
+            <img src="https://www.xingmail.cn/favicon.webp" alt="往日信笺" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">往</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://www.xingmail.cn/" title="一个Xing分享自己的故事的地方" target="_blank" class="friend-link-title" style="text-decoration: none !important;">往日信笺</a>
+        <div class="friend-link-desc">一个Xing分享自己的故事的地方</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">故事</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://www.gmcllp.cn" target="_blank">
+            <img src="https://www.gmcllp.cn/logo-y.png" alt="关关和六六" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">关</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://www.gmcllp.cn" title="向世界分享我们的故事" target="_blank" class="friend-link-title" style="text-decoration: none !important;">关关和六六</a>
+        <div class="friend-link-desc">向世界分享我们的故事</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">故事</span>
+            <span class="tag">生活</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://www.blogplanet.cn/" target="_blank">
+            <img src="https://www.blogplanet.cn/img/bkxq.png" alt="博客星球" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">博</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://www.blogplanet.cn/" title="每一个博客都是一个独立星球！" target="_blank" class="friend-link-title" style="text-decoration: none !important;">博客星球</a>
+        <div class="friend-link-desc">每一个博客都是一个独立星球！</div>
+        <div class="friend-link-tags">
+            <span class="tag">博客</span>
+            <span class="tag">社区</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://feng.pub" target="_blank">
+            <img src="https://cravatar.cn/avatar/868740183b995d2707e307ce0a89633a?s=200" alt="阿锋的小宇宙" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">阿</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://feng.pub" title="沧海一粟，微亮而渺小。" target="_blank" class="friend-link-title" style="text-decoration: none !important;">阿锋的小宇宙</a>
+        <div class="friend-link-desc">沧海一粟，微亮而渺小。</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">随笔</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://mark.vergilisme.com/" target="_blank">
+            <img src="https://mark.vergilisme.com/favicon.ico" alt="Mark's Blog" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">M</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://mark.vergilisme.com/" title="记录生活，分享所思" target="_blank" class="friend-link-title" style="text-decoration: none !important;">Mark's Blog</a>
+        <div class="friend-link-desc">记录生活，分享所思</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">技术</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://blog.southz.top/" target="_blank">
+            <img src="https://cn.cravatar.com/avatar/8418eeff381919776ab9bdb0bf488d5a?s=96&amp;d=mp&amp;r=g" alt="南川吟梦" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">南</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://blog.southz.top/" title="人生能有几回搏，天涯何处无芳草🌟" target="_blank" class="friend-link-title" style="text-decoration: none !important;">南川吟梦</a>
+        <div class="friend-link-desc">人生能有几回搏，天涯何处无芳草🌟</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">技术</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://www.tqazy.com" target="_blank">
+            <img src="https://oss.tqazy.com/wordpress/resources/img/taoqilogo.jpg" alt="陶其的个人博客" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">陶</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://www.tqazy.com" title="当下，即是未来" target="_blank" class="friend-link-title" style="text-decoration: none !important;">陶其的个人博客</a>
+        <div class="friend-link-desc">当下，即是未来</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">技术</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://www.ershiliu.com/" target="_blank">
+            <img src="https://www.ershiliu.com/tx.jpeg" alt="二十六" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">二</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://www.ershiliu.com/" title="人生如逆旅，我亦是行人。" target="_blank" class="friend-link-title" style="text-decoration: none !important;">二十六</a>
+        <div class="friend-link-desc">人生如逆旅，我亦是行人。</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">随笔</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://xizi.live/" target="_blank">
+            <img src="https://cozier-1315026820.cos.ap-guangzhou.myqcloud.com/%E5%A4%B4%E5%83%8F1.png" alt="洗子の小窝" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">洗</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://xizi.live/" title="但行己路 无问山海" target="_blank" class="friend-link-title" style="text-decoration: none !important;">洗子の小窝</a>
+        <div class="friend-link-desc">但行己路 无问山海</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">随笔</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://gravatar.loli.net/" target="_blank">
+            <img src="https://gravatar.loli.net/avatar/8391fb097fff7eec5ff0a8877b94967b" alt="林海草原" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">林</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://gravatar.loli.net/" title="愿我经历的苦难你不要经历，愿我已有的幸福你触手可及" target="_blank" class="friend-link-title" style="text-decoration: none !important;">林海草原</a>
+        <div class="friend-link-desc">愿我经历的苦难你不要经历，愿我已有的幸福你触手可及</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">随笔</span>
+            <span class="tag">生活</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://blog.forecho.com" target="_blank">
+            <img src="https://gravatar.loli.net/avatar/c7c95fe80293c0a114a2c3b0daa24003?s=150" alt="forecho's Blog" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">f</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://blog.forecho.com" title="把生命浪费在美好的事物上" target="_blank" class="friend-link-title" style="text-decoration: none !important;">forecho's Blog</a>
+        <div class="friend-link-desc">把生命浪费在美好的事物上</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">技术</span>
+            <span class="tag">投资</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://suus.me/" target="_blank">
+            <img src="https://suus.me/avatar.webp" alt="蘇 SU" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">蘇</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://suus.me/" title="A nook where thoughts and ideas sometimes echo" target="_blank" class="friend-link-title" style="text-decoration: none !important;">蘇 SU</a>
+        <div class="friend-link-desc">A nook where thoughts and ideas sometimes echo</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">随笔</span>
+            <span class="tag">技术</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://zhuxu.asia/" target="_blank">
+            <img src="https://img1.zhuxu.asia/img/logo500.png" alt="朱某的生活印记" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">朱</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://zhuxu.asia/" title="没有销声匿迹，我在热爱生活" target="_blank" class="friend-link-title" style="text-decoration: none !important;">朱某的生活印记</a>
+        <div class="friend-link-desc">没有销声匿迹，我在热爱生活</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">生活</span>
+            <span class="tag">随笔</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://log.ink/" target="_blank">
+            <img src="https://log.ink/wp-content/uploads/2024/12/cropped-%E5%A4%B4%E5%83%8F.png" alt="墨迹日志" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">墨</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://log.ink/" title="虽多尘色染，犹见墨痕浓" target="_blank" class="friend-link-title" style="text-decoration: none !important;">墨迹日志</a>
+        <div class="friend-link-desc">虽多尘色染，犹见墨痕浓</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">随笔</span>
+            <span class="tag">生活</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://blog.meowo.moe/" target="_blank">
+            <img src="https://server.meowo.moe/api/v2/objects/avatar/o4cctz9mtnt6hmz0yv.jpg" alt="喵喵の小窝" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">喵</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://blog.meowo.moe/" title="フランドール・スカーレット赛高！" target="_blank" class="friend-link-title" style="text-decoration: none !important;">喵喵の小窝</a>
+        <div class="friend-link-desc">フランドール・スカーレット赛高！</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">ACG</span>
+            <span class="tag">生活</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://blog.xpdbk.com" target="_blank">
+            <img src="https://img.xpdbk.com/file/imglol/img/avatar.jpg" alt="XiaoPang的个人博客" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">X</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://blog.xpdbk.com" title="追随梦想需竭尽全力" target="_blank" class="friend-link-title" style="text-decoration: none !important;">XiaoPang的个人博客</a>
+        <div class="friend-link-desc">追随梦想需竭尽全力</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">技术</span>
+            <span class="tag">生活</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://www.ximi.me/" target="_blank">
+            <img src="https://www.ximi.me/tx.webp" alt="Ximi's Diary" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">X</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://www.ximi.me/" title="希米的小窝" target="_blank" class="friend-link-title" style="text-decoration: none !important;">Ximi's Diary</a>
+        <div class="friend-link-desc">希米的小窝</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">生活</span>
+            <span class="tag">随笔</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://vjo.cc/" target="_blank">
+            <img src="https://vjo.cc/usr/uploads/logo.jpeg" alt="刘郎阁" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">刘</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://vjo.cc/" title="一个积极向上的生活探索者！" target="_blank" class="friend-link-title" style="text-decoration: none !important;">刘郎阁</a>
+        <div class="friend-link-desc">一个积极向上的生活探索者！</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">生活</span>
+            <span class="tag">随笔</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://gfjzz.cn" target="_blank">
+            <img src="https://gfjzz.cn/upload/sitelogo.png" alt="君主阁" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">君</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://gfjzz.cn" title="君主，永远在高峰等你！" target="_blank" class="friend-link-title" style="text-decoration: none !important;">君主阁</a>
+        <div class="friend-link-desc">君主，永远在高峰等你！</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">技术</span>
+            <span class="tag">生活</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://hipvogue.com/" target="_blank">
+            <img src="https://hipvogue.com/hipvogue.jpg" alt="HIPVOGUE" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">H</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://hipvogue.com/" title="生活中的每个小事、思考、灵感都值得被记录。" target="_blank" class="friend-link-title" style="text-decoration: none !important;">HIPVOGUE</a>
+        <div class="friend-link-desc">生活中的每个小事、思考、灵感都值得被记录。</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">生活</span>
+            <span class="tag">随笔</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://www.yiyou.bj.cn" target="_blank">
+            <img src="https://www.yiyou.bj.cn/logo/youlogo.png" alt="益友网站" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">益</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://www.yiyou.bj.cn" title="美好的日常生活值得我们去记录，希望我们的生活每天都能充满着乐趣跟开心事。" target="_blank" class="friend-link-title" style="text-decoration: none !important;">益友网站</a>
+        <div class="friend-link-desc">美好的日常生活值得我们去记录，希望我们的生活每天都能充满着乐趣跟开心事。</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">生活</span>
+            <span class="tag">随笔</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://rhopaper.top/" target="_blank">
+            <img src="https://rhopaper.top/avatar.jpg" alt="RhoPaperの小站" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">R</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://rhopaper.top/" title="纸至执" target="_blank" class="friend-link-title" style="text-decoration: none !important;">RhoPaperの小站</a>
+        <div class="friend-link-desc">纸至执</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">随笔</span>
+        </div>
+      </div>
+    </div>
+    <div class="friend-link-card">
+      <div class="friend-link-avatar">
+        <div class="avatar-wrapper">
+          <a href="https://www.xiaorin.com" target="_blank">
+            <img src="https://www.xiaorin.com/Image.jpg" alt="小林的小窝" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;" />
+            <div class="avatar-fallback">小</div>
+          </a>
+        </div>
+      </div>
+      <div class="friend-link-info">
+        <a href="https://www.xiaorin.com" title="分享技术教程、日常" target="_blank" class="friend-link-title" style="text-decoration: none !important;">小林的小窝</a>
+        <div class="friend-link-desc">分享技术教程、日常</div>
+        <div class="friend-link-tags">
+            <span class="tag">博主</span>
+            <span class="tag">技术</span>
+            <span class="tag">生活</span>
+        </div>
+      </div>
+    </div>
+</div>
+
+<style>
+.friend-links-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px 20px;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .friend-links-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.friend-link-card {
+  display: flex;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.friend-link-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.friend-link-avatar {
+  margin-right: 15px;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+}
+
+.avatar-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid #eee;
+}
+
+.friend-link-avatar a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.friend-link-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.avatar-fallback {
+  width: 100%;
+  height: 100%;
+  background: #f0f0f0;
+  color: #666;
+  font-size: 24px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.friend-link-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.friend-link-info a {
+  text-decoration: none !important;
+}
+
+.friend-link-title {
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+  transition: color 0.3s ease;
+  display: block;
+  text-decoration: none !important;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #ddd !important;
+}
+
+.friend-link-title:hover {
+  color: #4a4a4a;
+}
+
+.friend-link-desc {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  margin-top: 6px;
+}
+
+.friend-link-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #f5f5f5;
+  color: #666;
+}
+
+/* 暗色模式适配 */
+html.dark .friend-link-card {
+  background: #1a1a1a;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+html.dark .friend-link-title {
+  color: #e1e1e1;
+  border-bottom-color: #444 !important;
+}
+
+html.dark .friend-link-title:hover {
+  color: #fff;
+}
+
+html.dark .friend-link-desc {
+  color: #999;
+}
+
+html.dark .tag {
+  background: #333;
+  color: #aaa;
+}
+
+html.dark .avatar-wrapper {
+  border-color: #333;
+}
+
+html.dark .friend-link-avatar img {
+  border-color: #333;
+}
+</style>
+
+:ET

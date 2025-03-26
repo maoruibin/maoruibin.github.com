@@ -21,13 +21,22 @@ title: 友情链接
   {%- for link in site.links %}
     <div class="friend-link-card">
       <div class="friend-link-avatar">
-        <a href="{{link.url}}" target="_blank">
-          <img src="{{ link.header }}" alt="{{ link.title }}">
-        </a>
+        <div class="avatar-wrapper">
+          <a href="{{link.url}}" target="_blank">
+            <img src="{{ link.header }}" alt="{{ link.title }}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="pointer-events: none;">
+            <div class="avatar-fallback">{{ link.title | slice: 0, 1 }}</div>
+          </a>
+        </div>
       </div>
       <div class="friend-link-info">
-        <a href="{{ link.url }}" title="{{ link.desc }}" target="_blank" class="friend-link-title">{{ link.title }}</a>
+        <a href="{{ link.url }}" title="{{ link.desc }}" target="_blank" class="friend-link-title" style="text-decoration: none !important;">{{ link.title }}</a>
         <div class="friend-link-desc">{{link.desc}}</div>
+        <div class="friend-link-tags">
+          {%- assign tags = link.tag | split: ' ' -%}
+          {%- for tag in tags %}
+            <span class="tag">{{tag}}</span>
+          {%- endfor %}
+        </div>
       </div>
     </div>
   {%- endfor %}
@@ -38,6 +47,7 @@ title: 友情链接
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px 20px;
+  margin-top: 30px;
 }
 
 @media (max-width: 768px) {
@@ -48,8 +58,8 @@ title: 友情链接
 
 .friend-link-card {
   display: flex;
-  padding: 10px 15px;
-  border-radius: 8px;
+  padding: 15px;
+  border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   background-color: #fff;
@@ -57,38 +67,130 @@ title: 友情链接
 
 .friend-link-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 .friend-link-avatar {
   margin-right: 15px;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+}
+
+.avatar-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid #eee;
+}
+
+.friend-link-avatar a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
 }
 
 .friend-link-avatar img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 1px solid #eee;
+  display: block;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.avatar-fallback {
+  width: 100%;
+  height: 100%;
+  background: #f0f0f0;
+  color: #666;
+  font-size: 24px;
+  display: none;
+  align-items: center;
+  justify-content: center;
 }
 
 .friend-link-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  flex: 1;
+}
+
+.friend-link-info a {
+  text-decoration: none !important;
 }
 
 .friend-link-title {
+  position: relative;
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
   color: #333;
-  text-decoration: none;
+  transition: color 0.3s ease;
+  display: block;
+  text-decoration: none !important;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #ddd !important;
+}
+
+.friend-link-title:hover {
+  color: #4a4a4a;
 }
 
 .friend-link-desc {
-  font-size: 12px;
+  font-size: 13px;
   color: #666;
   line-height: 1.5;
+  margin-bottom: 8px;
+  margin-top: 6px;
+}
+
+.friend-link-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #f5f5f5;
+  color: #666;
+}
+
+/* 暗色模式适配 */
+html.dark .friend-link-card {
+  background: #1a1a1a;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+html.dark .friend-link-title {
+  color: #e1e1e1;
+  border-bottom-color: #444 !important;
+}
+
+html.dark .friend-link-title:hover {
+  color: #fff;
+}
+
+html.dark .friend-link-desc {
+  color: #999;
+}
+
+html.dark .tag {
+  background: #333;
+  color: #aaa;
+}
+
+html.dark .avatar-wrapper {
+  border-color: #333;
+}
+
+html.dark .friend-link-avatar img {
+  border-color: #333;
 }
 </style>
