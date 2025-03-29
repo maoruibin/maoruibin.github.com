@@ -37,7 +37,7 @@ menu:
   # - title: 搜索
   #   url: /search.html
   - title: 友链
-    url: links.html
+    url: /links.html
   # - title: 留言
   #   url: /chat.html
   - title: 订阅
@@ -270,5 +270,11 @@ links:
     desc: 甜甜哒~萌萌哒~ε๑⍥๑з
     tag: 博主 生活 萌系
     header: https://www.sweetsmoe.com/upload/linkicon/66b0740dc4ed9aa9435042ac.webp?v=1722840125148
+
+  - title: liuzhen932 的小窝
+    url: https://blog.liuzhen932.top/
+    desc: 只要愿意去做，人无所不通
+    tag: 技术 网络 生活
+    header: https://blog.liuzhen932.top/favicon.png
 
 

@@ -15,6 +15,7 @@ title: 友情链接
 描述：{{ site.description }}
 地址：{{ site.domainUrl }}{{ site.baseurl }}
 头像：{{ site.domainUrl }}{{ site.baseurl }}{{ site.profile_icon }}
+标签：随笔 生活 技术 写作 Android 独立开发 
 ```
 
 <div class="friend-links-container">
