@@ -119,6 +119,10 @@ title: 关于我
     <h2 class="section-title">📝 博客历史</h2>
     <div class="timeline">
       <div class="timeline-item">
+        <span class="date">2025/10/07</span>
+        <span class="content">域名更改为 blog.gudong.site</span>
+      </div>
+      <div class="timeline-item">
         <span class="date">2025/03/25</span>
         <span class="content">使用 AI 更改了主页，优化了订阅页面，有 AI 就是好。</span>
       </div>
