@@ -6,7 +6,7 @@ description: 一个独立开发者的日常
 keywords: 咕咚,Blog,Java,Html,JavaScript,PicPlus,咕咚云图
 author: 咕咚
 footerText: 'Copyright © 2022 咕咚'
-footerIcp: '陇ICP备2022001147号'
+footerIcp: '京ICP备2025146648号'
 
 # 这些不要动
 permalink: /:year/:month/:day/:title.html
@@ -18,7 +18,7 @@ exclude: ['CNAME', 'README.md', 'LICENSE', '_site', 'dist', 'Gemfile', 'Gemfile.
 
 # 域名配置
 # baseurl配置,如果网站部署在根目录下的其他目录中，请设置为 /目录名
-domainUrl: 'https://gudong.site'
+domainUrl: 'https://blog.gudong.site'
 baseurl: ''
 
 # 吐个槽地址，会在chat页面中重定向到该地址
