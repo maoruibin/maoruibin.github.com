@@ -3,7 +3,7 @@ layout: mypost
 author: 咕咚
 tags: daily
 categories: blog
-title: "slidenote"
+title: "侧边笔记，常伴左右：我用 Claude Code 开发了一个浏览器插件"
 ---
 
 ![](https://gudong.s3.bitiful.net/weimd/1768443166661_image.png)
