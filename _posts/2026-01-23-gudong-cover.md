@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mypost
 author: 咕咚
 tags: 公众号 封面图 开源
 categories: blog
