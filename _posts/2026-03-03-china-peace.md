@@ -1,0 +1,78 @@
+---
+layout: mypost
+author: 咕咚
+tags: daily
+categories: blog
+title: "刷到空中的导弹，聊聊我们习以为常的"太平"
+---
+
+![图 1：一半是节日的烟火，一半是战争的硝烟，或者一张安静祥和的国内街道夜景](https://gudong.s3.bitiful.net/weimd/placeholder_peace_war.png)
+
+今天是元宵节，外面是节日的烟火，但打开手机，抖音里刷到的却是中东天空上的各种导弹和拦截画面。
+
+最近伊朗、美国和以色列的冲突不断升级，看着那些真实的战争画面，我有一种强烈的“正在见证历史”的感觉。
+
+对于我们这一代中国人来说，战争似乎是一个很遥远的名词。
+
+除了课本里的抗日战争、解放战争，我们在现实生活中几乎感受不到战争的阴影。
+
+从上世纪七八十年代之后，中国已经有 40 多年没有打过仗了。我们总觉得世界是和平的，但其实，这 40 年里中东和世界其他地区的战火就没断过。
+
+看着外面的动荡，我越发觉得咱们国家的顶层战略非常有智慧，或者说，这背后体现的是中国文化骨子里的先进性。
+
+从历史上看，中华民族并不缺尚武精神，现在的军事和武器装备也足够先进。但为什么我们这 40 年能忍住不打仗？
+
+因为近代那段屈辱的历史让我们太痛了，中国人比谁都清楚战争的代价是什么。所以我们的目标无比清晰：不折腾，谋发展，让老百姓富起来，一心一意搞经济和科技。
+
+这跟美国的逻辑是截然不同的。
+
+作为超级大国，美国习惯了做全球的“大家长”，哪里都要插手，处处彰显霸权文化。
+
+而中国则是管好自己的事，在互相尊重主权的前提下去做生意、去帮别人。这不仅是外交策略的不同，更是文明基因的差异。中华文明能作为四大文明古国中唯一延续至今的文明，它的包容和内敛，本身就印证了这种文化的生命力。
+
+这种国家层面的大智慧，落到我们普通人身上，最直观的感受就是两个字：安全。
+
+现在网上有很多老外发视频，感叹中国有多安全。
+
+作为一个土生土长的中国人，我深有同感。晚上可以放心地出门吃夜宵，在高铁或地铁上把包放在座位上去个洗手间，回来东西还在。这种“路不拾遗”的状态，放在新加坡那种小国家或许容易管理，但要在一个 14 亿人口的泱泱大国里实现，简直是个奇迹。
+
+当然，我们也不是一开始就这么完美的，90 年代的时候也有过混乱和治安问题，但最近这二三十年，社会治理的进步真的太大了。能生活在这样一个环境里，是一件非常值得庆幸的事。
+
+每当看到别的国家在打仗、流血，你就会越发觉得眼前的和平有多么来之不易。
+
+我当然知道我们国家也有很多问题，比如人口结构的压力、大家背负的房贷、生活的内卷……我也绝不盲目觉得一切都好。
+
+但最起码，我们拥有一个稳定、安全、不用担心导弹落到屋顶的周边环境。这就是一切生活和发展的基础。
+
+所以，偶尔在网上看到一些带节奏、无脑抨击国家的言论时，我都很反感，甚至觉得可笑。我不会去跟他们争执，但我觉得，人应该客观看待自己所处的环境。
+
+抬头看看外面的世界，再看看自己身边的烟火气，你就能掂量出这“太平”二字的分量。
+
+生于此时，生于此地，唯有珍惜。
+
+---
+
+**相关阅读**
+
+- [没必要挑战软肋](https://mp.weixin.qq.com/s/4WHHKjC1IaVHWpBMBgKWKg)
+- [路虽远，行则将至](https://mp.weixin.qq.com/s/pmhGudQZKSNSes7Vv7zpLw)
+- [初七，过了一个"静悄悄"的年](https://mp.weixin.qq.com/s/qD2eU3WSP4-bGOyAOuKJBw)
+
+---
+
+<section style="margin: 40px 0 20px; padding: 24px; background: #f9f9f9; border-radius: 12px; border: 1px solid #eee;">
+<div style="font-weight: bold; font-size: 18px; margin-bottom: 8px; color: #333;">关于咕咚</div>
+<div style="font-size: 13px; color: #666; margin-bottom: 16px; letter-spacing: 0.5px;">
+<a href="https://mp.weixin.qq.com/s/l-EZl5MsXh-Y4uTbPAy80Q" style="color: inherit; text-decoration: none; border-bottom: 1px dashed currentColor;">inBox 笔记</a> 作者 | 独立开发者 | AI 编程实践者
+</div>
+<div style="font-size: 15px; color: #333; line-height: 1.8;">
+爱开发，爱分享。<br/>
+在这里，持续分享有价值的 AI 实践与开发感悟。<br/>
+关注我，一起探索<a href="https://mp.weixin.qq.com/s/7SYcsdO0NOaq72P8W_ZMIA" style="color: inherit; text-decoration: none; border-bottom: 1px dashed currentColor;">「AI 编程」</a>的实践与思考。
+</div>
+</section>
+<p></p>
+
+<p style="text-align: center; color: #ccc; font-size: 12px; margin-top: 30px;">
+排版 by <a href="https://mp.weixin.qq.com/s/qkR_8tHELX3NYlAxG-fkpg" style="color: #999;">weimd</a>
+</p>
