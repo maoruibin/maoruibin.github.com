@@ -3,16 +3,9 @@ layout: mypost
 author: 咕咚
 tags: daily
 categories: blog
-title: "article"
+title: "从百度到豆包"
 ---
 
-
----
-title: 从百度到豆包
-date： 咕咚 ｜ 2026-02-15
-keywords: [豆包, AI, 搜索]
-summary: 春节红包大战背后，是 AI 入口的争夺战。下一代孩子的搜索习惯，已经从"百度一下"变成了"问问豆包"。
----
 
 今天是腊月二十八。
 
