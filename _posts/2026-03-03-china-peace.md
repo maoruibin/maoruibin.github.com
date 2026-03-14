@@ -3,7 +3,7 @@ layout: mypost
 author: 咕咚
 tags: daily
 categories: blog
-title: "刷到空中的导弹，聊聊我们习以为常的"太平"
+title: "刷到空中的导弹，聊聊我们习以为常的 太平 "
 ---
 
 ![图 1：一半是节日的烟火，一半是战争的硝烟，或者一张安静祥和的国内街道夜景](https://gudong.s3.bitiful.net/weimd/placeholder_peace_war.png)
