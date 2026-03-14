@@ -3,7 +3,7 @@ layout: mypost
 author: 咕咚
 tags: daily
 categories: blog
-title: "AI 时代的"活人感"
+title: "AI 时代的 活人感 "
 ---
 
 今天在抖音刷到罗振宇的一个视频。
