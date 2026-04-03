@@ -1,9 +1,6 @@
 ---
-layout: mypost
-author: 咕咚
-tags: daily
-categories: blog
-title: "关于写文章插图这件事"
+title: 关于写文章插图这件事
+cover: https://gudong.s3.bitiful.net/weimd/cover.png
 ---
 
 写文章要不要插图？这件事我一直很矛盾。
