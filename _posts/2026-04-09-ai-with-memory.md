@@ -1,0 +1,52 @@
+---
+layout: mypost
+author: 咕咚
+tags: daily
+categories: blog
+title: "当 AI 有了记忆，我感觉自己像个配了秘书的老板"
+---
+
+![封面](https://gudong.s3.bitiful.net/weimd/cover-ai-memory.png)
+
+最近我一直在用小龙虾，我发现它跟之前的 AI 工具最大的不同，就是它能把我之前的对话、我的人设以及我的很多碎片信息都记下来，也就是说，AI 开始有真正的记忆了。
+
+当 AI 有了记忆之后，随着你用得越久，它就越懂你，它知道我的喜好，知道我的工作，知道我平时喜欢干什么，比如它知道我喜欢打篮球、喜欢写文章、喜欢折腾 AI，甚至连我有几个智能体、每天怎么倒腾这些东西，它都会记在脑子里。
+
+尽管现阶段它的记忆机制还不够完美，很多事情说了可能还是会偶尔遗忘，但在不断使用的过程中，我真切地意识到，它正在慢慢变成一个懂我的个人代理。
+
+要知道在以前，如果我们用 DeepSeek 或者豆包，在没有长期记忆功能的时候是完全做不到这些的，它们只能停留在单次会话里，一旦关掉窗口，之前的信息就全忘了。
+
+但是有了这种持久化的记忆之后，AI 真的可以逐渐演化成我们的私人秘书。
+
+就拿写文章来说，我可以把我关心的话题发给它，因为它之前跟我聊过很多，非常了解我的思考方式和写作风格，也知道我平时的一些个性化想法，所以只要给它一个主题，它就能按照我的习惯去生成内容，最后写出来的文章非常有我个人的特色，而不再是干巴巴的一堆 AI 机器生成的套话。
+
+现在社群里也有很多做 AI 记忆方向的工具，随着这种记忆机制越来越好，AI 能帮我们处理更多以前想不到、或者不敢交给它的事。
+
+也许有一天，如果别人找我聊事情或者谈合作，可以先去跟我的智能体对接，让它先去沟通和过滤，最后再给我做一个汇总汇报。
+
+这时候我真的就像一个老板一样，只需要在关键时刻拍板做决策，剩下的繁琐沟通全靠 AI 代理搞定，这绝对会极大地减少我们的沟通成本并大幅提高效率。
+
+这就是我最近折腾带记忆的 AI 带来的一点个人思考。
+
+---
+
+**相关阅读**
+
+- [我的 8 个 AI 队友，他们都是怎么干活的？](https://mp.weixin.qq.com/s/ksJYofqoZ3pSHbJHtPXBCg)
+- [用了几周 AI 助手后，我的几个偏见](https://mp.weixin.qq.com/s/XnRNdUeHz3IRkymTF7p93g)
+
+---
+
+<section style="text-align: left;">
+  <div><strong>关于咕咚</strong></div>
+  <div>inBox 笔记作者，篮球爱好者，日更写作，每天用 AI 约 8 小时。</div>
+  <div>我的作品：</div>
+  <table bgcolor="#eff6ff" cellpadding="8" cellspacing="0"><tr><td>
+    <a href="https://mp.weixin.qq.com/s/l-EZl5MsXh-Y4uTbPAy80Q">✍️ <strong>inBox 笔记</strong><br><small>本地优先 · 隐私安全</small></a>
+  </td></tr></table>
+  <table bgcolor="#fff7ed" cellpadding="8" cellspacing="0"><tr><td>
+    <a href="https://mp.weixin.qq.com/s/JZM1emcSuehKqzcg3iFZjQ">🦞 <strong>咚力圈</strong><br><small>实践社群 · 一起探索</small></a>
+  </td></tr></table>
+  <div>如果觉得不错，欢迎点赞和爱心～想第一时间收到推送，也欢迎设为星标⭐</div>
+  <div>感谢阅读，我们明天见。</div>
+</section>
