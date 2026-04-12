@@ -75,7 +75,19 @@ date: 2026-01-23
 
 我是咕咚，好工具，值得被更多人看见。
 
-**相关阅读**：
-- [附 Prompt：如何用 AI+代码，打造极简质感的公众号封面？](https://mp.weixin.qq.com/s/j27v2GV3MDst6dGVdLPaqg)
-- [为了传图方便，我用 AI 魔改了一个公众号排版工具](https://mp.weixin.qq.com/s/qkR_8tHELX3NYlAxG-fkpg)
-- [为了写公众号更爽，我给自己的排版工具加了 3 个"刚需"功能](https://mp.weixin.qq.com/s/j55UD1JheTfe7Ll80fYUzw)
+---
+
+**关于咕咚**
+
+inBox 笔记作者，独立开发者，每天用 AI 约 8 小时。
+
+我的作品：
+- [inBox 笔记](https://doc.gudong.site/inbox) - 本地笔记，数据自主
+- [点亮](https://doc.gudong.site/light/) - 打卡软件，记录坚持
+- [咚力圈](https://mp.weixin.qq.com/s/JZM1emcSuehKqzcg3iFZjQ) - AI 实践社群，一起搭建个人智能助手
+
+关注我：
+- 即刻：[咕咚同学](https://okjk.co/l8IUzO)
+- 公众号：咕咚同学
+
+![公众号二维码](https://blog.gudong.site/assets/profile/gongzhonghao.jpg)

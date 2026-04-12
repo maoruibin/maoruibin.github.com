@@ -61,3 +61,20 @@ title: "第一感觉会骗人"
 世界不是非黑即白的。难易相成，福祸相依，事物总是多面且流动的。在人际交往和个人成长的路上，给自己，也给别人，多留一点"不轻易下结论"的空隙吧。
 
 时间，终究会给出最完整的答案。
+
+---
+
+**关于咕咚**
+
+inBox 笔记作者，独立开发者，每天用 AI 约 8 小时。
+
+我的作品：
+- [inBox 笔记](https://doc.gudong.site/inbox) - 本地笔记，数据自主
+- [点亮](https://doc.gudong.site/light/) - 打卡软件，记录坚持
+- [咚力圈](https://mp.weixin.qq.com/s/JZM1emcSuehKqzcg3iFZjQ) - AI 实践社群，一起搭建个人智能助手
+
+关注我：
+- 即刻：[咕咚同学](https://okjk.co/l8IUzO)
+- 公众号：咕咚同学
+
+![公众号二维码](https://blog.gudong.site/assets/profile/gongzhonghao.jpg)

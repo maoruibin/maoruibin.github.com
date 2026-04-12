@@ -125,22 +125,17 @@ title: "我的写作流程,经历了三个阶段"
 
 ---
 
-**相关阅读**
+**关于咕咚**
 
-- [小龙虾（OpenClaw）到底是不是 AI？](https://mp.weixin.qq.com/s/50iFh6kVC7BAc0JexoKp2w)
-- [打了会球，顺便开发了 1 个 APP，小龙虾，真牛](https://mp.weixin.qq.com/s/iw_jGuYoh9x0un8LWZbqtw)
-- [让 AI 动起来，「咚」力圈来了](https://mp.weixin.qq.com/s/JZM1emcSuehKqzcg3iFZjQ)
+inBox 笔记作者，独立开发者，每天用 AI 约 8 小时。
 
----
+我的作品：
+- [inBox 笔记](https://doc.gudong.site/inbox) - 本地笔记，数据自主
+- [点亮](https://doc.gudong.site/light/) - 打卡软件，记录坚持
+- [咚力圈](https://mp.weixin.qq.com/s/JZM1emcSuehKqzcg3iFZjQ) - AI 实践社群，一起搭建个人智能助手
 
-<section style="text-align: left;">
-  <div><strong>关于咕咚</strong></div>
-  <div>inBox 笔记作者,篮球爱好者,日更写作,每天用 AI 约 8 小时。</div>
-  <div>我的作品：</div>
-  <table bgcolor="#eff6ff" cellpadding="8" cellspacing="0"><tr><td>
-    <a href="https://mp.weixin.qq.com/s/l-EZl5MsXh-Y4uTbPAy80Q">✍️ <strong>inBox 笔记</strong><br><small>本地优先 · 隐私安全</small></a>
-  </td></tr></table>
-  <table bgcolor="#fff7ed" cellpadding="8" cellspacing="0"><tr><td>
-    <a href="https://mp.weixin.qq.com/s/JZM1emcSuehKqzcg3iFZjQ">🦞 <strong>咚力圈</strong><br><small>实践社群 · 一起探索</small></a>
-  </td></tr></table>
-</section>
+关注我：
+- 即刻：[咕咚同学](https://okjk.co/l8IUzO)
+- 公众号：咕咚同学
+
+![公众号二维码](https://blog.gudong.site/assets/profile/gongzhonghao.jpg)

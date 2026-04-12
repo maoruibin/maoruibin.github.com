@@ -93,8 +93,6 @@ AI 看完会告诉你：“C 列第 5 行超标了。”
 
 像我现在写这篇公众号文章，录音转写、口语去噪、提取关键词、生成标准排版的 Markdown，全部都是靠我后台挂载的 Skills 自动跑完的，包括推送文章到微信公众号后台，我只负责“想法和思考”，剩下的「粗活」，AI 拿着我写的 Skill 去干。
 
-
-
 ### 写在最后
 
 其实，Skill 这个东西，光看别人说或者逛“技能市场”，体感是很弱的。
@@ -139,27 +137,19 @@ description: 对财务报表进行规则校验和体检。触发词："检查表
 - 发现错误直接将错误行标红，并生成一个 `audit-report.md` 文件保存在当前目录。
 ```
 
+---
 
+**关于咕咚**
 
-**相关阅读**：
-- [多 Agent 编排：一人公司的开始](https://mp.weixin.qq.com/s/KDhOnAWhgMlnlyOM3Hxb4A)
-- [聊聊 Claude Code：它不是工具，它是实习生](https://mp.weixin.qq.com/s/tSnxzIxljuRSS-r8xaUzSA)
+inBox 笔记作者，独立开发者，每天用 AI 约 8 小时。
 
+我的作品：
+- [inBox 笔记](https://doc.gudong.site/inbox) - 本地笔记，数据自主
+- [点亮](https://doc.gudong.site/light/) - 打卡软件，记录坚持
+- [咚力圈](https://mp.weixin.qq.com/s/JZM1emcSuehKqzcg3iFZjQ) - AI 实践社群，一起搭建个人智能助手
 
+关注我：
+- 即刻：[咕咚同学](https://okjk.co/l8IUzO)
+- 公众号：咕咚同学
 
-<section style="margin: 40px 0 20px; padding: 24px; background: #f9f9f9; border-radius: 12px; border: 1px solid #eee;">
-<div style="font-weight: bold; font-size: 18px; margin-bottom: 8px; color: #333;">关于咕咚</div>
-<div style="font-size: 13px; color: #666; margin-bottom: 16px; letter-spacing: 0.5px;">
-<a href="https://mp.weixin.qq.com/s/l-EZl5MsXh-Y4uTbPAy80Q" style="color: inherit; text-decoration: none; border-bottom: 1px dashed currentColor;">inBox 笔记</a> 作者 | 独立开发者 | AI 编程实践者
-</div>
-<div style="font-size: 15px; color: #333; line-height: 1.8;">
-爱开发，爱分享。<br/>
-在这里，持续分享有价值的 AI 实践与开发感悟。<br/>
-关注我，一起探索<a href="https://mp.weixin.qq.com/s/7SYcsdO0NOaq72P8W_ZMIA" style="color: inherit; text-decoration: none; border-bottom: 1px dashed currentColor;">「AI 编程」</a>的实践与思考。
-</div>
-</section>
-<p></p>
-
-<p style="text-align: center; color: #ccc; font-size: 12px; margin-top: 30px;">
-排版 by <a href="https://mp.weixin.qq.com/s/qkR_8tHELX3NYlAxG-fkpg" style="color: #999;">weimd</a>
-</p>
+![公众号二维码](https://blog.gudong.site/assets/profile/gongzhonghao.jpg)

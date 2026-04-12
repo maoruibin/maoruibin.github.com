@@ -47,3 +47,20 @@ title: "十年一梦：关于逃离、重启与不骗自己"
 这十年，现在说起来只是一句话的事，但每一天、每一件事都是熬过来的，并没有那么轻松。
 
 这或许就是成长的代价，曾经做了一些简单的选择，后来就要背负巨大的后果，所以人生在世，还是要做正确的选择，不要做简单的选择。
+
+---
+
+**关于咕咚**
+
+inBox 笔记作者，独立开发者，每天用 AI 约 8 小时。
+
+我的作品：
+- [inBox 笔记](https://doc.gudong.site/inbox) - 本地笔记，数据自主
+- [点亮](https://doc.gudong.site/light/) - 打卡软件，记录坚持
+- [咚力圈](https://mp.weixin.qq.com/s/JZM1emcSuehKqzcg3iFZjQ) - AI 实践社群，一起搭建个人智能助手
+
+关注我：
+- 即刻：[咕咚同学](https://okjk.co/l8IUzO)
+- 公众号：咕咚同学
+
+![公众号二维码](https://blog.gudong.site/assets/profile/gongzhonghao.jpg)

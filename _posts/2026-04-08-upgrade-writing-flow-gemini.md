@@ -19,3 +19,20 @@ title: "升级写作流：让小龙虾自动操作浏览器找 Gemini 润色"
 在写这个操作浏览器的 Skill 时，一开始老是失败，即使能把内容输入到网页聊天框，也总是获取不到最终的返回结果，后来我就想了个办法，把我之前写的自动发微博、发推特的 Skill 文件发给 AI，让它去学习参考，它学了一会儿就领悟到怎么弄了，所以有时候 AI 犯错或者卡壳的时候，我们给它提供一些成功的代码做参考，它就能更好地解决问题。
 
 如果后面没什么问题的话，我的录音稿润色还是会继续交给 Gemini 去完成，它润色的效果确实更加符合我的个人要求，以上就是我今天折腾出来的最新录音润色方案。
+
+---
+
+**关于咕咚**
+
+inBox 笔记作者，独立开发者，每天用 AI 约 8 小时。
+
+我的作品：
+- [inBox 笔记](https://doc.gudong.site/inbox) - 本地笔记，数据自主
+- [点亮](https://doc.gudong.site/light/) - 打卡软件，记录坚持
+- [咚力圈](https://mp.weixin.qq.com/s/JZM1emcSuehKqzcg3iFZjQ) - AI 实践社群，一起搭建个人智能助手
+
+关注我：
+- 即刻：[咕咚同学](https://okjk.co/l8IUzO)
+- 公众号：咕咚同学
+
+![公众号二维码](https://blog.gudong.site/assets/profile/gongzhonghao.jpg)

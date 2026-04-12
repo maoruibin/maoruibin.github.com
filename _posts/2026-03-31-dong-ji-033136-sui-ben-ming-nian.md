@@ -168,22 +168,19 @@ inBox 笔记这一年我一直在断断续续地开发。
 
 2026.03.31
 
-<section style="margin: 15px 0 8px; padding: 10px; background: #f0f4f8; border-radius: 6px; border: 1px solid #e1e8ed;">
-<strong style="font-size: 14px; color: #333;">关于咕咚</strong>
-<br/>
-<span style="font-size: 12px; color: #666;">独立开发者，每天用 AI，在这里分享真实心得。</span>
-<br/><br/>
-<div style="padding: 6px; background: #fff; border-radius: 4px; border: 1px solid #e8e8e8; margin-bottom: 8px;">
-  <span style="font-weight: 600; font-size: 13px; color: #333; display: block; margin: 0; padding: 0;">
-    <a href="https://mp.weixin.qq.com/s/l-EZl5MsXh-Y4uTbPAy80Q" style="color: inherit; text-decoration: none;">📝 inBox 笔记</a>
-  </span>
-  <span style="font-size: 11px; color: #888;">本地优先，记录灵感与想法</span>
-</div>
-<div style="padding: 6px; background: #fff; border-radius: 4px; border: 1px solid #e8e8e8; margin-bottom: 8px;">
-  <span style="font-weight: 600; font-size: 13px; color: #333; display: block; margin: 0; padding: 0;">
-    <a href="https://mp.weixin.qq.com/s/JZM1emcSuehKqzcg3iFZjQ" style="color: inherit; text-decoration: none;">🦞 咚力圈</a>
-  </span>
-  <span style="font-size: 11px; color: #888;">小龙虾实践社群</span>
-</div>
-<span style="font-size: 11px; color: #666; display: block; padding-top: 8px; padding-bottom: 8px; border-top: 1px solid #e0e0e0;">重复的事交给 AI，把时间留给自己 · 关注我一起探索「小龙虾」的实践</span>
-</section>
+---
+
+**关于咕咚**
+
+inBox 笔记作者，独立开发者，每天用 AI 约 8 小时。
+
+我的作品：
+- [inBox 笔记](https://doc.gudong.site/inbox) - 本地笔记，数据自主
+- [点亮](https://doc.gudong.site/light/) - 打卡软件，记录坚持
+- [咚力圈](https://mp.weixin.qq.com/s/JZM1emcSuehKqzcg3iFZjQ) - AI 实践社群，一起搭建个人智能助手
+
+关注我：
+- 即刻：[咕咚同学](https://okjk.co/l8IUzO)
+- 公众号：咕咚同学
+
+![公众号二维码](https://blog.gudong.site/assets/profile/gongzhonghao.jpg)
