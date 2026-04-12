@@ -112,6 +112,10 @@ title: 关于我
         <span class="icon">📡</span>
         <span class="text">RSS 订阅</span>
       </a>
+      <a href="/search.html" class="social-link">
+        <span class="icon">🔍</span>
+        <span class="text">搜索文章</span>
+      </a>
     </div>
   </div>
 
