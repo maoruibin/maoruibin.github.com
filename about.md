@@ -122,6 +122,10 @@ title: 关于我
   <div class="about-section">
     <h2 class="section-title">📝 博客历史</h2>
     <div class="timeline">
+     <div class="timeline-item">
+        <span class="date">2026/04/13</span>
+        <span class="content">更新新的评论系统为 twikoo</span>
+      </div>
       <div class="timeline-item">
         <span class="date">2025/10/07</span>
         <span class="content">域名更改为 blog.gudong.site</span>

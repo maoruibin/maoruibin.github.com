@@ -61,15 +61,16 @@ title: "十年一梦：关于逃离、重启与不骗自己"
 
 **关于咕咚**
 
-inBox 笔记作者，独立开发者，每天用 AI 约 8 小时。
+inBox 笔记作者，独立开发者。每天用 AI 约 8 小时，每天在公众号和博客写作。
 
 我的作品：
 - [inBox 笔记](https://doc.gudong.site/inbox) - 本地笔记，数据自主
 - [点亮](https://doc.gudong.site/light/) - 打卡软件，记录坚持
 - [咚力圈](https://mp.weixin.qq.com/s/JZM1emcSuehKqzcg3iFZjQ) - AI 实践社群，一起搭建个人智能助手
+- 公众号「咕咚同学」- 每天更新，记录思考与实践
 
 关注我：
 - 即刻：[咕咚同学](https://okjk.co/l8IUzO)
-- 公众号：咕咚同学
+- 博客：[blog.gudong.site](https://blog.gudong.site)
 
-![公众号二维码](https://blog.gudong.site/assets/profile/gongzhonghao.jpg)
+<img src="/assets/profile/gongzhonghao.jpg" width="200" alt="公众号二维码" style="display:block;margin-left:0;">
