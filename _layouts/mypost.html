@@ -39,14 +39,15 @@
   
   
   {% if site.enableComment %}
-    <script src="https://utteranc.es/client.js"
-            repo="maoruibin/maoruibin.github.com"
-            issue-term="pathname"
-            label="dong..."
-            theme="boxy-light"
-            crossorigin="anonymous"
-            async>
-    </script>
+  <div id="tcomment"></div>
+  <script src="https://cdn.jsdelivr.net/npm/twikoo@1.7.7/dist/twikoo.min.js"></script>
+  <script>
+    twikoo.init({
+      envId: 'https://twikoo.gudong.site',
+      el: '#tcomment',
+      lang: 'zh-CN'
+    })
+  </script>
   {% endif %}
 
 
