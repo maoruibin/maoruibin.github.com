@@ -31,7 +31,7 @@ Claude Code 很快给了一整套操作流程，一步一步，清清楚楚。
 
 那一刻我突然觉得，自己特别像电影里的特工。
 
-![](https://gudong.s3.bitiful.net/weimd/1776045565287_image.png)
+![](https://gudong.s3.bitiful.net/weimd/file_12---4b29af40-21ff-4225-98bc-69b8d9edf911.jpg)
 
 
 
