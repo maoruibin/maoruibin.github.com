@@ -3,7 +3,7 @@ layout: mypost
 author: 咕咚
 tags: 'daily'
 categories: blog
-title: "给评论换个皮肤"
+title: "10 分钟，换了博客评论系统"
 ---
 
 博客换了新评论系统，从开始到搞定，只用了10分钟，说实话我自己都没想到。

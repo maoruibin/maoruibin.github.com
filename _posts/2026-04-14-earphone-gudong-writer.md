@@ -3,7 +3,7 @@ layout: mypost
 author: 咕咚
 tags: 'daily'
 categories: blog
-title: "earphone-gudong-writer"
+title: "失而复得"
 ---
 
 上周五，我把耳机弄丢了。
