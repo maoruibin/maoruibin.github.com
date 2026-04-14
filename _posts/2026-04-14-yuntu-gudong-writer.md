@@ -3,7 +3,7 @@ layout: mypost
 author: 咕咚
 tags: 'daily'
 categories: blog
-title: "yuntu-gudong-writer"
+title: "上架了一个没用的 APP"
 ---
 
 这两天，我把咕咚云图上架到了小米应用商店，一个对我来说挺特别的 APP。
