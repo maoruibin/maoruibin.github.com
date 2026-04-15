@@ -3,7 +3,7 @@ layout: mypost
 author: 咕咚
 tags: 'daily'
 categories: blog
-title: "day50-gudong-writer"
+title: "不是每天都有话说"
 ---
 
 不是每天都有话说
