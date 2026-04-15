@@ -3,7 +3,7 @@ layout: mypost
 author: 咕咚
 tags: 'daily'
 categories: blog
-title: "basketball2-gudong-writer"
+title: "砸扣"
 ---
 
 今晚去打了个球，打完坐在场边，汗一直往下淌，但整个人轻了不少。
