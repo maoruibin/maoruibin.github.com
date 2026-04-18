@@ -3,7 +3,7 @@ layout: mypost
 author: 咕咚
 tags: 'daily'
 categories: blog
-title: "inbox-future-gudong-writer"
+title: "inBox 笔记还可以做得更好"
 ---
 
 最近这段时间一直在频繁更新 inBox 笔记，越更新越觉得不够好。
