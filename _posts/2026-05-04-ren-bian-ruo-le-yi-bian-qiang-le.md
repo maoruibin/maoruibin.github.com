@@ -3,7 +3,7 @@ layout: mypost
 author: 咕咚
 tags: 'daily'
 categories: blog
-title: "人变弱了，也变强了"
+title: "人这么弱，怎么就主宰了地球"
 ---
 
 ![封面](https://gudong.s3.bitiful.net/weimd/cover.png)
