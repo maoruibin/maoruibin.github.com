@@ -3,7 +3,7 @@ layout: mypost
 author: 咕咚
 tags: 'daily'
 categories: blog
-title: "人这么弱，怎么就主宰了地球"
+title: "人类这么弱，怎么就成了地球的主宰"
 ---
 
 ![封面](https://gudong.s3.bitiful.net/weimd/cover.png)
