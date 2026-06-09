@@ -1,0 +1,241 @@
+---
+layout: mypost
+author: 咕咚
+tags: daily
+categories: blog
+title: "Codex 这么好用啊，在国内如何用上"
+---
+
+![封面：Codex 这么好用啊，在国内如何用上](https://img.wemd.app/1781015745448_qgp8kr.png)
+
+> 实操教程 + 真实使用场景。全程不需要海外账号，不需要信用卡，顶多花 10 块钱就能上车。
+
+这段时间，我的社交媒体时间线上不断给我推送 Codex。
+
+![图 0：社交媒体时间线上铺天盖地的 Codex 推送](https://s3.bitiful.net/gudong/images/codex-guide/10-so-many-codex-article.png)
+
+Codex 是 OpenAI 开发的一款桌面智能体工具，说白了就是一个桌面 APP，可以帮我们完成日常的工作。目前它的风头甚至超过了 Claude Code 和小龙虾 AI。
+
+但卡住很多人的就是第一步——**它是 OpenAI 开发的，需要一个 ChatGPT 账号**。
+
+连我自己都没有 ChatGPT 账号。
+
+但后来我想，这肯定有办法。它只是一个桌面智能体，一定有方案能让它在国内用起来。我试过一些代理方案，用下来很费劲。直到最近，我发现可以结合另外一个工具叫 **CC Switch**。它是一个 AI 智能体网关代理工具，可以给 Codex 配置国内 AI API 服务。
+
+最后我用 **CC Switch + DeepSeek** 做到了。
+
+整个过程很简单，三步搞定。
+
+---
+
+### 1. 三步配置，零门槛上车
+
+#### 1.1 下载 Codex
+
+打开 Codex 官网 [openai.com/codex](https://openai.com/codex/)[1]，下载安装包。
+
+支持 Mac 和 Windows，安装跟普通软件一样，下一步下一步。
+
+![图 1：Codex 官网下载页面](https://s3.bitiful.net/gudong/images/codex-guide/01-codex-download-page.png)
+
+#### 1.2 安装 CC Switch
+
+CC Switch 是一个 AI 智能体网关代理工具，**开源免费**。你可以把它理解为一个"转接头"——把国产的 AI 服务（比如 DeepSeek）转接到 Codex 里。
+
+去 [ccswitch.io](https://ccswitch.io/zh/)[2] 下载。页面会跳转到 GitHub，如果 GitHub 打不开，可以搜一下国内镜像，一定能找到——它就是一个免费软件。
+
+**注意：CC Switch 必须是 3.16.1 以上版本**，低于这个版本不支持 Codex 的接入。
+
+![图 2：CC Switch 官网下载页面](https://s3.bitiful.net/gudong/images/codex-guide/02-ccswitch-download-page.png)
+
+#### 1.3 注册 DeepSeek + 获取 API Key
+
+打开 [deepseek.com](https://www.deepseek.com/)[3]，选择**开放平台**（不是聊天页面）。
+
+![图 3-2：DeepSeek 开放平台控制台](https://s3.bitiful.net/gudong/images/codex-guide/03-2-deepseek-dev-consold-page.png)
+
+注册需要**实名认证**，这是正常的，要用就认证。然后充值——我这个月充了 30 块钱，日常使用绰绰有余。
+
+![图 4：DeepSeek 充值页面](https://s3.bitiful.net/gudong/images/codex-guide/04-deepseek-recharge-page.png)
+
+进控制台 → API Key 管理 → 新建 Key。
+
+![图 3：DeepSeek API Key 管理页面](https://s3.bitiful.net/gudong/images/codex-guide/03-deepseek-apikey-page.png)
+
+#### 1.4 配置节点
+
+打开 CC Switch，先在左侧选中 GPT，然后点右边的加号，选择 DeepSeek，把 API Key 填进去。
+
+![图 5-a：CC Switch 供应商主页面，选中 GPT 后点击加号](https://s3.bitiful.net/gudong/images/codex-guide/05-ccswitch-config-deepseek.png)
+
+![图 5-b：CC Switch 配置 DeepSeek 节点](https://s3.bitiful.net/gudong/images/codex-guide/05-ccswitch-config-node.png)
+
+重启 Codex，就能正常使用了。
+
+**搞定。** 整个过程不到 10 分钟，没有海外账号，没有信用卡。
+
+---
+
+### 2. 场景一：用 Codex 管理你的"文档工作台"
+
+好了，到这里，我觉得我们已经把 Codex 装好了。整个过程不到 10 分钟。
+
+既然装好了，那应该怎么用呢？大家都在说它很好用，那到底有什么用法？
+
+我最核心的用法——写公众号。这不是简单的"用 AI 写文章"，而是一套完整的文档管理工作流。
+
+#### 2.1 从建一个文件夹开始
+
+我在电脑上建了一个文件夹，然后告诉 Codex：
+
+> "这是我的写作工作区。我在这里写公众号稿子，我的写作风格是怎样的，我关注哪些领域。"
+
+它不会上来就写文章，而是先想怎么帮我**组织这个文件夹**——素材放在哪、草稿怎么命名、截图存在哪个子目录。它给出方案，我确认，就这么定了。
+
+![图 6：写作工作区文件夹目录结构](https://s3.bitiful.net/gudong/images/codex-guide/06-workspace-folder-structure.png)
+
+每个人的文件夹结构可能不一样，可以根据自己的习惯来。但核心是一样的：**这个文件夹就是你的文档工作台**。
+
+#### 2.2 跟 Codex 协作写一篇文章
+
+每次写新文章，我会开一个新会话。把想法丢给它，它会帮我策展、捋思路。
+
+然后我把素材、语音转文字的稿子、截图都丢进去，它帮我整理。一篇长文不是一蹴而就的，它是一个渐进式的过程——今天冒出个想法，明天补充点素材，后天再打磨一下。Codex 在这个文件夹上下文中都记得。
+
+这篇文章其实也是这么写的。我跟它聊我的需求，它帮我理结构，然后一段一段地改。
+
+![图 7-a：Codex 整体界面，极简设计但功能强大](https://s3.bitiful.net/gudong/images/codex-guide/07-codex-chat-context.png)
+
+Codex 的界面特别极简、特别干净，我很喜欢。但同时功能又很强大。它真的是一个特别好的产品设计。
+
+#### 2.3 "侧边聊天"功能
+
+还有一个我特别喜欢的功能——**侧边聊天**。
+
+在对话过程中，如果你对某段内容有疑问，可以选中这段文字，选择在侧边聊天。这时候，你可以基于当前对话进行分叉，去聊另一个话题，而且**不会丢失当前的上下文**。
+
+顺便吐槽一下 Claude Code。它也有类似的功能，有个命令叫 `btw`，可以离开当前会话去问问题。但命令行操作很麻烦，不能连续对话，总之就是用起来费劲。
+
+![图 7-b：Codex 侧边聊天功能](https://s3.bitiful.net/gudong/images/codex-guide/07-codex-chat-slide.png)
+
+而 Codex 用侧边栏这种界面化的方式，就非常好地解决了这个问题。在那边聊完，结果可以直接拿回主对话。这个设计太贴心了。
+
+#### 2.4 不只是公众号
+
+这个方法可以扩展到很多场景——学习笔记管理、工作文档撰写、产品文档维护。
+
+而且 Codex 支持**技能扩展**。比如我写文章时需要上传图片、处理图片、或者发布到公众号和博客，它都有对应的技能可以调用。它就是我的文章控制台。
+
+---
+
+### 3. 场景二：一个让我说"太聪明了"的例子
+
+写公众号是日常使用，但我真正被 Codex 震到，是下面这件事。
+
+#### 3.1 一个之前没解决的问题
+
+我每天工作上要做一件事：打开一个网页，输入一些信息，点击确定按钮。
+
+我一直想让它自动化，让 AI 帮我完成。但之前用小龙虾、Claude Code，都没搞定——要么是网页操作太复杂，要么是它直接说做不到。
+
+#### 3.2 Codex 的思路不一样
+
+我跟 Codex 说了这个需求。它没有说"我能操作浏览器"，而是给了一个完全不一样的思路：
+
+> "你先自己操作一遍，打开开发者模式，把对应的接口请求信息发给我。"
+
+我将信将疑地照做了。把请求信息发给它——里面包含详细的请求参数和网址。它很快就写了一个脚本，提取了网页的 cookie 和 token 参数。
+
+**之前没解决的问题，就这么解决了。**
+
+![图 9：Codex 用 curl 脚本解决网页自动化](https://s3.bitiful.net/gudong/images/codex-guide/09-codex-smart-tip-curl.png)
+
+它解决问题的思路，不是上来就蛮干，而是先研究、再想办法。
+
+#### 3.3 蒲公英上传
+
+还有一次，我想把开发的 App 安装包都上传到蒲公英（一个应用内测平台）。我有七八个 App，一个一个注册上传太麻烦了。
+
+我一开始也以为它要去操作浏览器。但它先去研究了蒲公英这个网站，发现支持 API。然后它让我去申请 API Key，把申请地址都给了我。
+
+申请好之后，我把本地项目地址告诉它，它自己分析代码结构、找到编译产物、配置上传参数。
+
+**自动打包、自动上传、自动更新网站信息。**
+
+全程我就在旁边看着。它自己就干完了。
+
+![图 8：Codex 自动上传 APK 到蒲公英](https://s3.bitiful.net/gudong/images/codex-guide/08-codex-pgyer-upload.png)
+
+---
+
+### 4. 到底聪明在哪？
+
+用了这几天，我一直在想一件事：为什么 Codex 干活的效果就是不一样？
+
+其实不论是 Claude Code 还是小龙虾 AI，底层用的都是同样的大模型。DeepSeek 就是那个 DeepSeek，在哪用都一样。
+
+**真正的差异在于智能体本身的设计。**
+
+#### 4.1 工具调用与任务编排
+
+不同的智能体，差异在于本地的工具调用设计，以及智能体的任务编排。Codex 在这块做得更精妙——它知道什么时候该调什么工具，什么时候该向你提问，什么时候该自己琢磨。
+
+![图 10：Codex 工具调用与任务编排决策流程图](https://s3.bitiful.net/gudong/images/codex-guide/ai-agent-orchestration-flow.jpeg)
+
+#### 4.2 可视化优势
+
+Claude Code 在命令行里操作，对程序员来说 OK，但对大多数普通人来说太抽象了。管理会话不方便，想开一个新会话得敲命令，想从当前会话延伸出另一个话题也得敲命令。
+
+Codex 是可视化的，界面简洁。侧边栏聊天功能——在不丢失当前会话上下文的情况下，在侧边开一个新会话聊别的事。这个设计很贴心。
+
+#### 4.3 不是蛮干
+
+它解决问题的思路，不只是"执行指令"，而是**先研究，再动手**。上传蒲公英的例子是最好的证明——它不是上去操作浏览器，而是先去研究网站有没有 API，有就写脚本，更优雅、更高效。
+
+---
+
+### 5. 为什么我觉得这套方案值得推荐
+
+- **省钱**：几十块钱 vs ChatGPT Plus 20 刀/月
+- **数据本地**：所有文件都在你电脑上，不强制上传
+- **灵活**：想换模型？换个 API Key 就行，DeepSeek、通义千问、Gemini 随便切
+- **项目级协作**：它不是简单的问答工具，而是理解你项目上下文的协作伙伴
+
+---
+
+### 6. 写在最后
+
+这套方案我用了好几天，真的很香。
+
+如果你也是那种"想用 Codex 但卡在第一步"的人，按上面的步骤试一试——10 分钟，你也能用上。
+
+说实话，我也是最近才刚用上 Codex。它的工作流、自动化插件、更多玩法我都还在探索中——估计现在只用了不到 10%-20% 的功能。
+
+但这反而是好事，说明它的天花板很高。关注我，后面有什么新用法我都会继续分享。
+
+如果你觉得一个人折腾有点麻烦，或者想跟着我一起深入用好这些工具——
+
+我有个付费社群叫 **[咚力圈](https://mp.weixin.qq.com/s/JZM1emcSuehKqzcg3iFZjQ)[4]**，我会第一时间在里面分享最新的个人工作流、AI 工具的深度用法、独立开发的踩坑记录。
+
+一起把工具用起来，让工作更有意思。
+
+---
+
+**关于咕咚**
+
+inBox 笔记作者，独立开发者，每天用 AI 约 8 小时。
+
+我的作品：
+
+- ✍️ [inBox 笔记](https://mp.weixin.qq.com/s/l-EZl5MsXh-Y4uTbPAy80Q) — 本地优先，隐私安全
+- 🦞 [咚力圈](https://mp.weixin.qq.com/s/JZM1emcSuehKqzcg3iFZjQ) — AI 实践社群，一起探索
+
+感谢阅读，如果觉得不错，欢迎点赞和爱心～想第一时间收到推送，也欢迎设为星标⭐
+
+---
+
+**参考链接**
+
+1. Codex 官网：openai.com/codex/
+2. CC Switch 官网：ccswitch.io/zh/
+3. DeepSeek 开放平台：deepseek.com
