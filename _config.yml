@@ -69,13 +69,18 @@ rssCount: 15
 
 profile_icon: /assets/profile/gudong_2023.png
 
-# 应用图标
+# 应用图标（统一走 Bitiful 图床，与 doc.gudong.site 的 apps.yml 保持一致）
 app_icons:
-  inbox: /assets/app_icon/ic_launcher_inbox.png
-  cang: /assets/app_icon/ic_launcher_cang.jpg
-  light: /assets/app_icon/ic_launcher_light.png
-  rssplus: /assets/app_icon/ic_launcher_rss.png
-  picplus: /assets/app_icon/ic_launcher_pic.png
+  inbox: https://gudong.s3.bitiful.net/icon/inbox_ic_launcher.png
+  cang: https://gudong.s3.bitiful.net/icon/cang_launcher_icon.png?no-wait=on
+  light: https://gudong.s3.bitiful.net/icon/ic_launcher_light.png
+  rssplus: https://gudong.s3.bitiful.net/icon/rss_ic_launcher.png
+  picplus: https://gudong.s3.bitiful.net/icon/pic_ic_launcher.png
+  xiexia: https://gudong.s3.bitiful.net/icon/xiexia_icon.png
+  tudongdong: https://gudong.s3.bitiful.net/icon/tudongdong_icon.png?no-wait=on
+  mosaic: https://gudong.s3.bitiful.net/icon/damadong_icon.png
+  music: https://gudong.s3.bitiful.net/icon/tingdongdong-icon.png?no-wait=on
+  time: https://gudong.s3.bitiful.net/icon/dong-time.png
 
 # 友情链接
 links:

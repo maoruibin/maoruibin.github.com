@@ -103,11 +103,110 @@ title: 作品
       </div>
     </div>
   </div>
+
+  <div class="work-card">
+    <div class="work-icon">
+      <a href="https://doc.gudong.site/xiexia/" target="_blank">
+        <img src="{{ site.app_icons.xiexia }}" alt="写下">
+      </a>
+    </div>
+    <div class="work-info">
+      <h3 class="work-title">
+        <a href="https://doc.gudong.site/xiexia/" target="_blank">写下</a>
+      </h3>
+      <p class="work-desc">本地优先、一天一页的私人日记，打开就是今天，写下就有过去。</p>
+      <div class="work-tags">
+        <span class="tag">日记</span>
+        <span class="tag">Markdown</span>
+        <span class="tag">Android\macOS</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="work-card">
+    <div class="work-icon">
+      <a href="https://doc.gudong.site/tudongdong/" target="_blank">
+        <img src="{{ site.app_icons.tudongdong }}" alt="图咚咚">
+      </a>
+    </div>
+    <div class="work-info">
+      <h3 class="work-title">
+        <a href="https://doc.gudong.site/tudongdong/" target="_blank">图咚咚</a>
+      </h3>
+      <p class="work-desc">简单易用、高颜值的全能本地图片处理工具箱。</p>
+      <div class="work-tags">
+        <span class="tag">图片</span>
+        <span class="tag">工具</span>
+        <span class="tag">Android</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="work-card">
+    <div class="work-icon">
+      <a href="https://doc.gudong.site/mosaic/" target="_blank">
+        <img src="{{ site.app_icons.mosaic }}" alt="打码咚">
+      </a>
+    </div>
+    <div class="work-info">
+      <h3 class="work-title">
+        <a href="https://doc.gudong.site/mosaic/" target="_blank">打码咚</a>
+      </h3>
+      <p class="work-desc">拖框即打码的截图隐私工具，免费无广告。</p>
+      <div class="work-tags">
+        <span class="tag">隐私</span>
+        <span class="tag">截图</span>
+        <span class="tag">Android</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="work-card">
+    <div class="work-icon">
+      <a href="https://doc.gudong.site/music/" target="_blank">
+        <img src="{{ site.app_icons.music }}" alt="听咚咚">
+      </a>
+    </div>
+    <div class="work-info">
+      <h3 class="work-title">
+        <a href="https://doc.gudong.site/music/" target="_blank">听咚咚</a>
+      </h3>
+      <p class="work-desc">纯净简洁的本地音乐播放器，歌单、歌词、资料库一应俱全。</p>
+      <div class="work-tags">
+        <span class="tag">音乐</span>
+        <span class="tag">播放器</span>
+        <span class="tag">Android</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="work-card">
+    <div class="work-icon">
+      <a href="https://doc.gudong.site/time/" target="_blank">
+        <img src="{{ site.app_icons.time }}" alt="咚时光">
+      </a>
+    </div>
+    <div class="work-info">
+      <h3 class="work-title">
+        <a href="https://doc.gudong.site/time/" target="_blank">咚时光</a>
+      </h3>
+      <p class="work-desc">为宝宝记录每一个珍贵时刻的成长记录软件。</p>
+      <div class="work-tags">
+        <span class="tag">记录</span>
+        <span class="tag">家庭</span>
+        <span class="tag">Android</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="works-more">
+  <a href="https://doc.gudong.site/" target="_blank">更多作品与文档中心 →</a>
 </div>
 
 <div class="update-time">
   <blockquote>最新更新于：{{ site.time | date: "%Y-%m-%d" }}</blockquote>
-  <blockquote>增加作品模块</blockquote>
+  <blockquote>新增写下、图咚咚、打码咚、听咚咚、咚时光</blockquote>
 </div>
 
 <style>
@@ -246,6 +345,38 @@ html.dark .tag {
   .work-card {
     margin: 0 0 15px;
   }
+}
+
+.works-more {
+  text-align: center;
+  margin: 30px 0 10px;
+}
+
+.works-more a {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 24px;
+  background: #f5f5f5;
+  color: #555;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.works-more a:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* 暗色模式适配 */
+html.dark .works-more a {
+  background: #333;
+  color: #aaa;
+}
+
+html.dark .works-more a:hover {
+  background: #555;
+  color: #fff;
 }
 
 .update-time {
